@@ -1,1 +1,1 @@
-export default from './InformationModal';
+export { default as InformationModal } from './InformationModal';
