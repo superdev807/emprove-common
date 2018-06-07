@@ -55,6 +55,18 @@ To facilitate development, you can use the build command with a watch parameter.
 npm run build:watch
 ```
 
+### Git Workflow
+
+This workflow was conceived because adding this package as a dependency with a repository URL for its value pulls code from a specific branch, no matter the `NODE_ENV`. See *Installation* section for more details.
+
+Version branches are created from `master`. For example, the `0.0.1` branch is created from `master`. For development, create feature branches that are meant to be merged into the current version's branch. In the example, create feature branches from `0.0.1` and make PRs to merge into it.
+
+Once a version is finished, merge the version branch into `master`. Then, branch off `master` with a new branch number. For example, after merging `0.0.1` back to `master`, create a new branch `0.0.2` from `master`.
+
+For this project's `package.json`, don't forget to update the `version` number.
+
+For projects that use this package, make sure to update the branch number in the `dependencies` section of its `package.json` to ensure it pulls code from the new version.
+
 ## Installation
 
 To use this package from another project, run the following command:
