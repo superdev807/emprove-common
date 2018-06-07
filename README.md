@@ -6,6 +6,28 @@ Note:
 
 Contains all the shared components, utility files, etc.
 
+Run the following command to install all dependencies:
+
+```
+npm install
+```
+
+### Linking
+
+This is important if you would like the local changes to be reflected in your other project that includes this package. This allows you test the new changes without having to push to GitHub and re-install the package.
+
+Link this package to the global `node_modules` using:
+
+```sh
+npm link
+```
+
+Then, from YOUR OTHER PROJECT root directory, run:
+
+```sh
+npm link emprove-common
+```
+
 ## Installation
 
 To use this package from another project, run the following command:
