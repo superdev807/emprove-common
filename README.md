@@ -65,7 +65,15 @@ Once a version is finished, merge the version branch into `master`. Then, branch
 
 For this project's `package.json`, don't forget to update the `version` number.
 
-For projects that use this package, make sure to update the branch number in the `dependencies` section of its `package.json` to ensure it pulls code from the new version.
+For projects that use this package, make sure to update the branch number in the `dependencies` section of its `package.json` to ensure it pulls code from the new version. For example, change the first piece of code into the next:
+
+```
+"emprove-common": "git+ssh/.../emprove-common.git#0.0.1"
+```
+
+```
+"emprove-common": "git+ssh/.../emprove-common.git**#0.0.2**"
+```
 
 ## Installation
 
