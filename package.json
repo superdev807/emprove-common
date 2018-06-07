@@ -2,8 +2,10 @@
   "name": "emprove-common",
   "version": "0.0.1",
   "description": "",
-  "main": "src/index.js",
+  "main": "build/index.js",
   "scripts": {
+    "build": "babel ./src --out-dir ./build",
+    "build:watch": "babel ./src --out-dir ./build --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Emprove Inc",
@@ -11,5 +13,10 @@
   "private": true,
   "dependencies": {
     "react": "^16.4.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1"
   }
 }
