@@ -1,5 +1,16 @@
 # EmproveIt
 
+## TL;DR for Development
+
+```sh
+npm install
+npm link
+npm run build:watch
+
+# Go to other project that uses this package and run:
+npm link emprove-common
+```
+
 ## Development environment setup
 Note:
 - Node v8.10.0 and npm v5.6.0 are used for development (as of 04/22/2018).
