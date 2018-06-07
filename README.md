@@ -72,7 +72,7 @@ For projects that use this package, make sure to update the branch number in the
 ```
 
 ```
-"emprove-common": "git+ssh/.../emprove-common.git**#0.0.2**"
+"emprove-common": "git+ssh/.../emprove-common.git#0.0.2"
 ```
 
 ## Installation
