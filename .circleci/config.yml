@@ -1,0 +1,30 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/tool
+    docker:
+      - image: circleci/node:8.11
+    steps:
+      - checkout
+
+      - run:
+          name: Building
+          command: |
+            npm install
+            npm run build
+
+      - add_ssh_keys:
+          fingerprints:
+            # For GitHub to have write access
+            - "59:9e:17:8b:8c:f9:6b:f5:5c:ef:72:64:47:40:4e:95"
+
+      - run:
+          name: Git Tagging
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ] || [ "${CIRCLE_BRANCH}" == "0.0.1" ]; then
+              git fetch --tags
+              git tag ${CIRCLE_BRANCH}-`date +%F_%H-%M-%S`
+              git push origin --tags
+            else
+              echo "No need to git-tag"
+            fi
