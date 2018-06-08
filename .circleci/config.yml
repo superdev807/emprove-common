@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/tool
+    working_directory: ~/emprove-common
     docker:
       - image: circleci/node:8.11
     steps:
