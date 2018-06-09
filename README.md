@@ -77,6 +77,8 @@ For projects that use this package, make sure to update the branch number in the
 
 ## Installation
 
+> *SSH Keys*: This section assumes you have a public ssh key in GitHub. [Follow this guide](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) to generate your ssh key. Then, add the ssh *public* key (`~/.ssh/id_rsa.pub` file) to [your GitHub account settings](https://github.com/settings/keys).
+
 To use this package from another project, run the following command:
 
 ```sh
