@@ -11,6 +11,38 @@ npm run build:watch
 npm link emprove-common
 ```
 
+## Installation From Another Project
+
+> *SSH Keys*: This section assumes you have a public ssh key in GitHub. [Follow this guide](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) to generate your ssh key. Then, add the ssh *public* key (`~/.ssh/id_rsa.pub` file) to [your GitHub account settings](https://github.com/settings/keys).
+
+> If you still get a permission error: (1) verify you have [your git user.name and user.email set up](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup); (2) clone this repository, if everything works then your credentials will be correct. Then try installing this package again from another project.
+
+To use this package from another project, run the following command:
+
+```sh
+npm install ssh+git@github.com:EmproveIt/emprove-common.git
+```
+
+Alternatively, you can add the following to your `package.json` dependencies:
+
+```json
+  "dependencies": {
+    "emprove-common": "git+ssh://git@github.com/EmproveIt/emprove-common.git"
+  }
+```
+
+You may choose to use a branch other than master. For example, to use version `0.0.1`, the repository url value should be appended with the branch/version name:
+
+```
+"git+ssh://git@github.com/EmproveIt/emprove-common.git#0.0.1"
+```
+
+## Usage From Another Project
+
+```javascript
+import { SomeComponent } from 'emprove-common';
+```
+
 ## Development environment setup
 Note:
 - Node v8.10.0 and npm v5.6.0 are used for development (as of 04/22/2018).
@@ -73,34 +105,4 @@ For projects that use this package, make sure to update the branch number in the
 
 ```
 "emprove-common": "git+ssh/.../emprove-common.git#0.0.2"
-```
-
-## Installation
-
-> *SSH Keys*: This section assumes you have a public ssh key in GitHub. [Follow this guide](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) to generate your ssh key. Then, add the ssh *public* key (`~/.ssh/id_rsa.pub` file) to [your GitHub account settings](https://github.com/settings/keys).
-
-To use this package from another project, run the following command:
-
-```sh
-npm install ssh+git@github.com:EmproveIt/emprove-common.git
-```
-
-Alternatively, you can add the following to your `package.json` dependencies:
-
-```json
-  "dependencies": {
-    "emprove-common": "git+ssh://git@github.com/EmproveIt/emprove-common.git"
-  }
-```
-
-You may choose to use a branch other than master. For example, to use version `0.0.1`, the repository url value should be appended with the branch/version name:
-
-```
-"git+ssh://git@github.com/EmproveIt/emprove-common.git#0.0.1"
-```
-
-## Usage
-
-```javascript
-import { SomeComponent } from 'emprove-common';
 ```
