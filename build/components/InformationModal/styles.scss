@@ -1,0 +1,17 @@
+.information-modal {
+  &-body-paragraph, &-definition {
+    margin-bottom: 30px;
+  }
+
+  &-definition {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &-close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
