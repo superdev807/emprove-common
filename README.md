@@ -39,12 +39,7 @@ Then, from YOUR OTHER PROJECT root directory, run:
 npm link emprove-common
 ```
 
-### ~~Building~~
-
-```diff
-- Please disregard this Building section for the time being.
-- It seems like importing directly from the ES6 source code works fine from the `consumer` project.
-```
+### Building
 
 The `src/` directory contains code written in ES6. That code needs to be transpiled to ES5. Run the following command to transpile the code to ES5 using Babel:
 
