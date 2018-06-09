@@ -23,7 +23,7 @@ To use this package from another project, run the following command:
 npm install ssh+git@github.com:EmproveIt/emprove-common.git
 ```
 
-Alternatively, you can add the following to your `package.json` dependencies:
+Alternatively, you can add the following to your `package.json` dependencies and run `npm install`:
 
 ```json
   "dependencies": {
@@ -34,7 +34,7 @@ Alternatively, you can add the following to your `package.json` dependencies:
 You may choose to use a branch other than master. For example, to use version `0.0.1`, the repository url value should be appended with the branch/version name:
 
 ```
-"git+ssh://git@github.com/EmproveIt/emprove-common.git#0.0.1"
+  "emprove-common": "git+ssh://git@github.com/EmproveIt/emprove-common.git#0.0.1"
 ```
 
 ## Usage From Another Project
