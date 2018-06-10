@@ -71,7 +71,7 @@ Then, from YOUR OTHER PROJECT root directory, run:
 npm link emprove-common
 ```
 
-**Note:** Running `npm install` from YOUR OTHER PROJECT might undo the linking, so you have to do it again. Check your `node_modules/emprove-common` directory file from YOUR OTHER PROJECT to see if you have a linked directory or the actual one.
+**Note:** Running `npm install` from YOUR OTHER PROJECT might undo the linking, so you have to do it again. Check your `node_modules/emprove-common` directory file from YOUR OTHER PROJECT to see if you have a linked directory or the actual one. See [this NPM issue on GitHub](https://github.com/npm/npm/issues/17287).
 
 ### Building
 
