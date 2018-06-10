@@ -45,3 +45,4 @@ InformationModal.propTypes = {
 };
 
 export default connectModal({ name: 'informationModal' })(InformationModal);
+export { InformationModal }; // for testing
