@@ -2,7 +2,7 @@
   "name": "emprove-common",
   "version": "0.0.1",
   "description": "",
-  "main": "build/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "rimraf lib/ && babel ./src --out-dir ./lib --copy-files",
     "build:watch": "npm run build -- --watch",
