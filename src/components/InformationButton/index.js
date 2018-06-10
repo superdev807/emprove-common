@@ -16,7 +16,7 @@ class InformationButton extends Component {
 
   render() {
     return (
-      <IconButton className="information-button" onClick={this.handleContractTypeInfoClick}>
+      <IconButton className="information-button" onClick={this.handleClick}>
         <IconInfoOutline />
       </IconButton>
     );
