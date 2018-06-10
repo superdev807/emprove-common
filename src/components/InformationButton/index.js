@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 import IconButton from '@material-ui/core/IconButton';
 import IconInfoOutline from '@material-ui/icons/InfoOutline';
 import { connect } from 'react-redux';
@@ -16,8 +17,13 @@ class InformationButton extends Component {
 
   render() {
     return (
-      <IconButton className="information-button" onClick={this.handleClick}>
-        <IconInfoOutline />
+      <IconButton
+        className={cx('information-button', { 'information-button--size-16': this.props.size === 16 })}
+        onClick={this.handleClick}
+      >
+        <IconInfoOutline
+          className={cx({ 'information-button--size-16': this.props.size === 16 })}
+        />
       </IconButton>
     );
   }
@@ -25,6 +31,7 @@ class InformationButton extends Component {
 
 InformationButton.propTypes = {
   information: PropTypes.object.isRequired,
+  size: PropTypes.oneOf([16])
 };
 
 const actions = {
