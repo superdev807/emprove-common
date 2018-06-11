@@ -4,7 +4,7 @@
   "description": "",
   "main": "lib/index.js",
   "scripts": {
-    "build": "rimraf lib/ && babel ./src --out-dir ./lib --copy-files",
+    "build": "rm -rf lib/ && babel ./src --out-dir ./lib --copy-files",
     "build:watch": "npm run build -- --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -36,6 +36,5 @@
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-modal": "^1.7.0",
-    "rimraf": "^2.6.2"
   }
 }
