@@ -8,9 +8,10 @@ jobs:
       - checkout
 
       - run:
-          name: Building
+          name: Building & Testing
           command: |
             npm install
+            npm test
             npm run build
 
       - add_ssh_keys:

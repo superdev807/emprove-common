@@ -1,3 +1,5 @@
+'use strict';
+
 import React from 'react';
 import { shallow } from 'enzyme';
 import { createShallow } from '@material-ui/core/test-utils';
