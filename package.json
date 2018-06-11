@@ -4,7 +4,7 @@
   "description": "",
   "main": "lib/index.js",
   "scripts": {
-    "build": "rimraf lib/ && babel ./src --out-dir ./lib --copy-files",
+    "build": "rm -rf lib/ && babel ./src --out-dir ./lib --copy-files",
     "build:watch": "npm run build -- --watch",
     "test": "jest --config jest.config.js tests/",
     "test:watch": "npm test -- --watch"
@@ -42,7 +42,6 @@
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-modal": "^1.7.0",
-    "regenerator-runtime": "^0.11.1",
-    "rimraf": "^2.6.2"
+    "regenerator-runtime": "^0.11.1"
   }
 }
