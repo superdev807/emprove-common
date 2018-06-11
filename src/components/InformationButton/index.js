@@ -39,3 +39,4 @@ const actions = {
 };
 
 export default connect(null, actions)(InformationButton);
+export { InformationButton }; // for testing
