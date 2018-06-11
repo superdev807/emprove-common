@@ -20,7 +20,7 @@ const COST_ESTIMATE = {
       id: 3,
       name: 'Contingency',
       definition:
-        'A budgeted allowance calculated to cover the cost of items or work which are not known at the time of the cost estimate but which, statistically, might occur.In the case of a Lump Sum Agreement, contingency is generally not included in the contractors price, rather is held aside by the homeowner in addition to the contractors price.'
+        'A budgeted allowance calculated to cover the cost of items or work which are not known at the time of the cost estimate but which, statistically, might occur.In the case of a Lump Sum Agreement, contingency is generally not included in the contractor’s price, rather is held aside by the homeowner in addition to the contractor’s price.'
     }
   ]
 };
