@@ -18,7 +18,7 @@ class InformationButton extends Component {
   render() {
     return (
       <IconButton
-        className={cx('information-button', { 'information-button--size-16': this.props.size === 16 })}
+        className={cx('information-button', { 'information-button--size-16': this.props.size === 16 }, this.props.className)}
         onClick={this.handleClick}
       >
         <IconInfoOutline
@@ -31,7 +31,8 @@ class InformationButton extends Component {
 
 InformationButton.propTypes = {
   information: PropTypes.object.isRequired,
-  size: PropTypes.oneOf([16])
+  size: PropTypes.oneOf([16]),
+  className: PropTypes.string,
 };
 
 const actions = {
