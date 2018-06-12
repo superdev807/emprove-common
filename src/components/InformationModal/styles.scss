@@ -1,17 +1,46 @@
 .information-modal {
-  &-body-paragraph, &-definition {
+  &-body-paragraph {
     margin-bottom: 30px;
-  }
-
-  &-definition {
-    &:last-child {
-      margin-bottom: 0;
-    }
   }
 
   &-close-button {
     position: absolute;
     top: 0;
     right: 0;
+  }
+}
+
+.information-definition {
+  margin-bottom: 30px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &--undefined {
+    margin-bottom: 10px;
+  }
+}
+
+.information-image {
+  margin-bottom: 30px;
+  margin-top: 30px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__description {
+    margin-bottom: 15px;
+  }
+
+  &__image-container {
+    text-align: center;
+  }
+
+  &__image {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
   }
 }
