@@ -27,11 +27,18 @@ const InformationDefinition = props => {
 };
 
 const InformationImage = props => {
-  return (
-    <div className="information-image">
+  let imageDescription = '';
+  if (props.image.description) {
+    imageDescription = (
       <Typography className="information-image__description">
         {props.image.description}
       </Typography>
+    );
+  }
+
+  return (
+    <div className="information-image">
+      {imageDescription}
       <div className="information-image__image-container">
         <img className="information-image__image" src={props.image.url} alt="Information Image" />
       </div>
