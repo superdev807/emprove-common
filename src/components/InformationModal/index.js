@@ -33,7 +33,7 @@ const InformationImage = props => {
         {props.image.description}
       </Typography>
       <div className="information-image__image-container">
-        <img className="information-image__image" src={props.image.url} />
+        <img className="information-image__image" src={props.image.url} alt="Information Image" />
       </div>
     </div>
   );
