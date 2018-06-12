@@ -1,3 +1,5 @@
+'use strict';
+
 const PROJECT_SCOPE = {
   title: 'PROJECT SCOPE',
   body: [
