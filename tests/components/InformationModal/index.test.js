@@ -73,4 +73,20 @@ describe('InformationModal', () => {
     expect(definitions.at(1).prop('term')).toBe(terms[1]);
     expect(definitions.at(2).prop('term')).toBe(terms[2]);
   });
+
+  it('should display an InformationImage for each specified images', () => {
+    const images = [
+      { id: 1, filename: 'image1.png' },
+      { id: 2, filename: 'image2.png' },
+      { id: 3, filename: 'image3.png' }
+    ];
+    component.setProps({ images });
+
+    const informationImages = component.find('WithStyles(DialogContent) InformationImage');
+    images.forEach((image, index) => {
+      const actualImage = informationImages.at(index).prop('image');
+      expect(actualImage.id).toBe(images[index].id);
+      expect(actualImage.filename).toBe(images[index].filename);
+    });
+  });
 });
