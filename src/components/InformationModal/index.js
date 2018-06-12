@@ -40,7 +40,13 @@ const InformationImage = props => {
     <div className="information-image">
       {imageDescription}
       <div className="information-image__image-container">
-        <img className="information-image__image" src={props.image.url} alt="Information Image" />
+        <img
+          className="information-image__image"
+          src={props.image.url}
+          alt="Information Image"
+          width={props.image.displayWidth}
+          height={props.image.displayHeight}
+        />
       </div>
     </div>
   );
@@ -48,10 +54,13 @@ const InformationImage = props => {
 
 const InformationModal = props => {
   const images = props.images.map(image => {
-    const imageHeight = image.height && image.height < 400 ? image.height : 400;
+    const displayHeight = image.height && image.height < 400 ? image.height : 400;
+    const displayWidth = (image.width / image.height) * displayHeight;
     const imageWithUrl = ({
       ...image,
-      url: process.env.IMGIX_PUBLIC_IMAGES_HOST + image.filename + '?h=' + imageHeight
+      url: process.env.IMGIX_PUBLIC_IMAGES_HOST + image.filename + '?h=' + displayHeight,
+      displayWidth,
+      displayHeight
     });
 
     return <InformationImage key={image.id} image={imageWithUrl} />;
