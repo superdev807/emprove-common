@@ -2,7 +2,7 @@
 
 import business from 'moment-business-days';
 import moment from 'moment';
-import timeline from '~/data/rfp_timeline';
+import timeline from '../data/rfp_timeline.json';
 
 const dateFormat = 'YYYY-MM-DD';
 
@@ -10,13 +10,11 @@ export const strToday = () => {
   return moment().format(dateFormat);
 };
 
-export const dateToStr = (date, allowToday, preferredDateFormat) => {
-  if (date) {
-    return moment.utc(date).format(preferredDateFormat || dateFormat);
-  } else {
-    return allowToday ? moment().format(dateFormat) : null;
-  }
-};
+/*
+ * Converts the ISO date string to given format in UTC timezone
+ */
+export const formatUtcDate = (isoDateString, format = 'L') => moment.utc(isoDateString).format(format);
+
 
 export const localDateToUTC = date => {
   if (date) {
@@ -31,9 +29,10 @@ export const localDateToUTC = date => {
 
 export const utcDateWithZeroTime = date => {
   if (date) {
-    return moment(date)
-      .set({ hour: 0, minute: 0, second: 0, millisecond: 0 })
-      .toISOString();
+    let dateOnly = date instanceof moment ? date.format('MM/DD/YYYY') : date;
+    return moment.utc(dateOnly)
+    .set({ hour: 0, minute: 0, second: 0, millisecond: 0 })
+    .toISOString();
   } else {
     return null;
   }

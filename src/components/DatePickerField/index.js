@@ -14,12 +14,11 @@ class DatePickerField extends Component {
   static propTypes = {
     input: PropTypes.object,
     className: PropTypes.string,
-    dateValidator: PropTypes.func,
     fullWidth: PropTypes.bool,
     hideErrorText: PropTypes.bool,
     label: PropTypes.string,
     meta: PropTypes.object,
-    disableDatePast: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
+    disableDatePast: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     datePickerInputText: PropTypes.string
   };
 
@@ -96,3 +95,4 @@ class DatePickerField extends Component {
 }
 
 export default DatePickerField;
+export { DatePickerField } //for testing

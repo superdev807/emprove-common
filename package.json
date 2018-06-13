@@ -18,6 +18,7 @@
     "prop-types": "^15.6.0",
     "classnames": "^2.2.5",
     "moment": "^2.22.2",
+    "moment-business-days": "^1.0.6",
     "react": "16.3.0",
     "react-datetime": "^2.14.0",
     "react-dom": "16.3.0",
@@ -39,6 +40,7 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^23.1.0",
     "moment": "^2.22.2",
+    "moment-business-days": "^1.0.6",
     "prop-types": "^15.6.0",
     "react": "16.3.0",
     "react-datetime": "^2.14.0",
@@ -47,5 +49,5 @@
     "redux": "^3.7.2",
     "redux-modal": "^1.7.0",
     "regenerator-runtime": "^0.11.1"
-  }
+  },
 }
