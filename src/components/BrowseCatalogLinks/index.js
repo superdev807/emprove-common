@@ -8,6 +8,7 @@ import './styles.scss';
 
 // TODO: use values from metaData
 const homeAreas = [
+  'BY HOME AREA',
   <Link to="#">Guest Bathroom</Link>,
   <Link to="#">Master Bathroom</Link>,
   <Link to="#">Powder Room</Link>,
@@ -19,6 +20,7 @@ const homeAreas = [
 
 // TODO: use values from metaData
 const homeStyles = [
+  'BY STYLE',
   <Link to="#">Comtemporary</Link>,
   <Link to="#">Country</Link>,
   <Link to="#">Craftsman</Link>,
@@ -32,8 +34,9 @@ const homeStyles = [
 const BrowseCatalogLinks = (props) => {
   return (
     <div className="browse-catalog-links">
-      <FooterList items={homeAreas} />
-      <FooterList items={homeStyles} />
+      <FooterList className="browse-catalog-links__section" items={homeAreas} />
+      <div className="browse-catalog-links__category-divider">|</div>
+      <FooterList className="browse-catalog-links__section" items={homeStyles} />
     </div>
   );
 };
