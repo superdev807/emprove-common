@@ -1,0 +1,156 @@
+[
+	{
+		"id" : 1,
+		"order" : 1,
+		"label" : "consumer prepares RFP",
+		"action_role" : "consumer",
+		"next_step" : 2,
+		"sm_project_business_days" : null,
+		"md_project_business_days" : null,
+		"lg_project_business_days" : null,
+		"qa_business_days": null
+	},
+	{
+		"id" : 2,
+		"order" : 2,
+		"label" : "consumer sends RFP",
+		"action_role" : "consumer",
+		"next_step" : 5,
+		"sm_project_business_days" : null,
+		"md_project_business_days" : null,
+		"lg_project_business_days" : null,
+		"qa_business_days": null
+	},
+	{
+		"id" : 3,
+		"order" : 3,
+		"label" : "contractors confirm interest in submitting bid",
+		"action_role" : "contractor",
+		"next_step" : 4,
+		"sm_project_business_days" : 2,
+		"md_project_business_days" : 5,
+		"lg_project_business_days" : 2,
+		"qa_business_days": 0
+	},
+	{
+		"id" : 4,
+		"order" : 4,
+		"label" : "contractors submit bids",
+		"action_role" : "contractor",
+		"next_step" : 6,
+		"sm_project_business_days" : 3,
+		"md_project_business_days" : 5,
+		"lg_project_business_days" : 8,
+		"qa_business_days": 1
+	},
+	{
+		"id" : 5,
+		"order" : 5,
+		"label" : "consumer reviews bids and selects some contractors for site visit",
+		"action_role" : "consumer",
+		"next_step" : 8,
+		"sm_project_business_days" : 2,
+		"md_project_business_days" : 3,
+		"lg_project_business_days" : 4,
+		"qa_business_days": 1
+	},
+	{
+		"id" : 6,
+		"order" : 6,
+		"label" : "contractor coordinates and conducts site visit",
+		"action_role" : "contractor",
+		"next_step" : 7,
+		"sm_project_business_days" : 3,
+		"md_project_business_days" : 3,
+		"lg_project_business_days" : 4,
+		"qa_business_days": 0
+	},
+	{
+		"id" : 7,
+		"order" : 7,
+		"label" : "contractors submit final bid",
+		"action_role" : "contractor",
+		"next_step" : 9,
+		"sm_project_business_days" : 1,
+		"md_project_business_days" : 3,
+		"lg_project_business_days" : 2,
+		"qa_business_days": 1
+	},
+	{
+		"id" : 8,
+		"order" : 8,
+		"label" : "consumer reviews final bids and decides to hire one",
+		"action_role" : "consumer",
+		"next_step" : 10,
+		"sm_project_business_days" : 2,
+		"md_project_business_days" : 2,
+		"lg_project_business_days" : 3,
+		"qa_business_days": 1
+	},
+	{
+		"id" : 9,
+		"order" : 9,
+		"label" : "contractor is notified of the award",
+		"action_role" : "contractor",
+		"next_step" : 11,
+		"sm_project_business_days" : null,
+		"md_project_business_days" : null,
+		"lg_project_business_days" : null,
+		"qa_business_days": null
+	},
+	{
+		"id" : 10,
+		"order" : 10,
+		"label" : "consumer signs contract",
+		"action_role" : "consumer",
+		"next_step" : 12,
+		"sm_project_business_days" : null,
+		"md_project_business_days" : null,
+		"lg_project_business_days" : null,
+		"qa_business_days": null
+	},
+	{
+		"id" : 11,
+		"order" : 11,
+		"label" : "contractor signs contract",
+		"action_role" : "contractor",
+		"next_step" : 12,
+		"sm_project_business_days" : null,
+		"md_project_business_days" : null,
+		"lg_project_business_days" : null,
+		"qa_business_days": null
+	},
+	{
+		"id" : 12,
+		"order" : 12,
+		"label" : "project starts",
+		"action_role" : "contractor",
+		"next_step" : null,
+		"sm_project_business_days" : null,
+		"md_project_business_days" : null,
+		"lg_project_business_days" : null,
+		"qa_business_days": null
+	},
+	{
+		"id" : 13,
+		"order" : 13,
+		"label" : "consumer did not receive initial bids",
+		"action_role" : "consumer",
+		"next_step" : null,
+		"sm_project_business_days" : null,
+		"md_project_business_days" : null,
+		"lg_project_business_days" : null,
+		"qa_business_days": null
+	},
+	{
+		"id" : 14,
+		"order" : 14,
+		"label" : "consumer did not receive final bids",
+		"action_role" : "consumer",
+		"next_step" : null,
+		"sm_project_business_days" : null,
+		"md_project_business_days" : null,
+		"lg_project_business_days" : null,
+		"qa_business_days": null
+	}
+]
