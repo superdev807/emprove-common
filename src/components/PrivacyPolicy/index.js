@@ -223,4 +223,3 @@ const PrivacyPolicy = props => {
 };
 
 export default PrivacyPolicy;
-export { PrivacyPolicy }; // for testing

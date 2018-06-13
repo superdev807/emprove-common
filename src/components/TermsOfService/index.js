@@ -684,4 +684,3 @@ const TermsOfService = props => {
 };
 
 export default TermsOfService;
-export { TermsOfService };

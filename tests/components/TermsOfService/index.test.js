@@ -25,7 +25,7 @@ describe('TermsOfService', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-      <StaticRouter>
+      <StaticRouter context={{}}>
         <TermsOfService />
       </StaticRouter>,
       div
