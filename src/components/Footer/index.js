@@ -3,15 +3,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import BrowseCatalogLinks from './BrowseCatalogLinks';
-import CompanyLinks from './CompanyLinks';
-import FooterCopyright from './FooterCopyright';
-import HowToUse from './HowToUse';
-import ServiceAreas from './ServiceAreas';
-import SocialMediaLinks from './SocialMediaLinks';
+import BrowseCatalogLinks from './components/BrowseCatalogLinks';
+import CompanyLinks from './components/CompanyLinks';
+import FooterCopyright from './components/FooterCopyright';
+import HowToUse from './components/HowToUse';
+import ServiceAreas from './components/ServiceAreas';
+import SocialMediaLinks from './components/SocialMediaLinks';
 import './styles.scss';
 
-const Footer = (props) => {
+const Footer = props => {
   return (
     <footer className="site-footer">
       <section className="footer-index">

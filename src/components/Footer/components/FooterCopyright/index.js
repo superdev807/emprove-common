@@ -1,13 +1,13 @@
 import React from 'react';
 
-import Logo from '~/components/Logo';
+import Logo from '../../../Logo';
 import './styles.scss';
 
-const FooterCopyright = (props) => {
+const FooterCopyright = props => {
   return (
     <div className="footer-copyright">
       <div className="footer-copyright__logo">
-        <div className="footer-copyright__logo-overline"></div>
+        <div className="footer-copyright__logo-overline" />
         <Logo />
       </div>
       <div className="footer-copyright__copyright-declaration">

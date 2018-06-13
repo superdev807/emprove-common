@@ -1,6 +1,6 @@
 import React from 'react';
 
-import IconFacebook from '~/icons/IconFacebookLetter';
+import IconFacebookLetter from '~/icons/IconFacebookLetter';
 import IconTwitter from '~/icons/IconTwitter';
 import IconLinkedIn from '~/icons/IconLinkedIn';
 import IconInstagram from '~/icons/IconInstagram';
@@ -10,7 +10,7 @@ const SocialMediaLinks = (props) => {
   return (
     <div className="social-media-links">
       <a href="https://www.facebook.com/emproveit/" target="_blank" rel="noopener noreferrer">
-        <IconFacebook className="social-media-links__icon" />
+        <IconFacebookLetter className="social-media-links__icon" />
       </a>
       <a href="https://twitter.com/emprove_it" target="_blank" rel="noopener noreferrer">
         <IconTwitter className="social-media-links__icon" />
