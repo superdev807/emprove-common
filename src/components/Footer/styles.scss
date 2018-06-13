@@ -1,9 +1,13 @@
 @import 'variables';
 
-.emprove-footer {
+.footer-index {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
+  @media screen and (min-width: 600px) {
+    align-items: stretch;
+  }
 
   @media screen and (min-width: 1000px) {
     flex-direction: row;
@@ -11,7 +15,7 @@
   }
 }
 
-.emprove-footer-grouped-sections {
+.footer-index__grouped-sections {
   display: flex;
   flex-direction: column;
 
@@ -31,7 +35,7 @@
   }
 }
 
-.emprove-footer-section {
+.footer-index__section {
   margin-bottom: $spacing-unit * 4;
 
   @media screen and (min-width: 600px) {
@@ -39,9 +43,23 @@
   }
 }
 
-.footer-column-name {
+.footer-index__section-name {
   text-transform: uppercase;
   font-size: .875rem;
   font-weight: 500;
   margin-bottom: $spacing-unit * 2;
+}
+
+.footer-copyright-and-social {
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 600px) {
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__copyright {
+      order: -1;
+    }
+  }
 }

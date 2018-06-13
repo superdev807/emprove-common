@@ -3,35 +3,47 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import CompanyLinks from '../CompanyLinks';
 import BrowseCatalogLinks from '../BrowseCatalogLinks';
-import ServiceAreas from '../ServiceAreas';
+import CompanyLinks from '../CompanyLinks';
+import FooterCopyright from '../FooterCopyright';
 import HowToUse from '../HowToUse';
+import ServiceAreas from '../ServiceAreas';
+import SocialMediaLinks from '../SocialMediaLinks';
 import './styles.scss';
 
 const Footer = (props) => {
   return (
-    <footer className="emprove-footer">
-      <div className="emprove-footer-grouped-sections">
-        <div className="emprove-footer-section">
-          <div className="footer-column-name">Company</div>
-          <CompanyLinks />
+    <footer className="site-footer">
+      <section className="footer-index">
+        <div className="footer-index__grouped-sections">
+          <div className="footer-index__section">
+            <div className="footer-index__section-name">Company</div>
+            <CompanyLinks />
+          </div>
+          <div className="footer-index__section">
+            <div className="footer-index__section-name">Browse Catalog</div>
+            <BrowseCatalogLinks />
+          </div>
         </div>
-        <div className="emprove-footer-section">
-          <div className="footer-column-name">Browse Catalog</div>
-          <BrowseCatalogLinks />
+        <div className="footer-index__grouped-sections">
+          <div className="footer-index__section">
+            <div className="footer-index__section-name">Service Areas</div>
+            <ServiceAreas />
+          </div>
+          <div className="footer-index__section">
+            <div className="footer-index__section-name">How to Use Emprove</div>
+            <HowToUse />
+          </div>
         </div>
-      </div>
-      <div className="emprove-footer-grouped-sections">
-        <div className="emprove-footer-section">
-          <div className="footer-column-name">Service Areas</div>
-          <ServiceAreas />
+      </section>
+      <section className="footer-copyright-and-social">
+        <div className="footer-copyright-and-social___social-media-links">
+          <SocialMediaLinks />
         </div>
-        <div className="emprove-footer-section">
-          <div className="footer-column-name">How to Use Emprove</div>
-          <HowToUse />
+        <div className="footer-copyright-and-social__copyright">
+          <FooterCopyright />
         </div>
-      </div>
+      </section>
     </footer>
   );
 };
