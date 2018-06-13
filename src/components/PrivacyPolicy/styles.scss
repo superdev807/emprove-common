@@ -1,0 +1,11 @@
+.privacy-policy-content {
+	&--paragraph {
+		margin: 0;
+		color: #888;
+		text-align: 'justify';
+	}
+	&--list {
+		list-style-type: 'circle';
+		padding: '0vh 5vh';
+	}
+}
