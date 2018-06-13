@@ -4,11 +4,9 @@ import { Link } from 'react-router-dom';
 import FooterList from '../FooterList';
 
 const companyLinks = [
-  <Link to="https://emproveit.com/about-us">About Emprove, Inc.</Link>,
+  <Link to="about-us">About Emprove, Inc.</Link>,
   <a href="https://emproveit.com/blog" target="_blank" rel="noopener noreferrer">Blog</a>,
   <a href="mailto:contact@emproveit.com">Contact Us</a>,
-  <Link to="#">Sign In</Link>,
-  <Link to="#">Register</Link>,
   /* <Link to="#">Our Team</Link>,
   <Link to="#">Investors</Link>,
   <Link to="#">Press & Media</Link>, */
