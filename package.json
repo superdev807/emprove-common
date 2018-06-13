@@ -5,9 +5,9 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "rm -rf lib/ && babel ./src --out-dir ./lib --copy-files",
-    "build:watch": "npm run build -- --watch",
+    "build:watch": "concurrently \"npm run build -- --watch\" \"onchange '**/*.js' -e 'lib' -- prettier --write {{changed}}\" ",
     "test": "jest --config jest.config.js tests/",
-    "test:watch": "npm test -- --watch"
+    "test:watch": "concurrently \"npm test -- --watch\" \"onchange '**/*.js' -e 'lib' -- prettier --write {{changed}}\" "
   },
   "author": "Emprove Inc",
   "license": "UNLICENSED",
@@ -17,12 +17,16 @@
     "@material-ui/icons": "^1.1.0",
     "prop-types": "^15.6.0",
     "classnames": "^2.2.5",
+    "moment": "^2.22.2",
+    "moment-business-days": "^1.0.6",
     "react": "16.3.0",
+    "react-datetime": "^2.14.0",
     "react-dom": "16.3.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
-    "redux-modal": "^1.7.0"
+    "redux-modal": "^1.7.0",
+    "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
     "@material-ui/core": "^1.2.0",
@@ -34,16 +38,22 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "classnames": "^2.2.5",
+    "concurrently": "^3.5.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^23.1.0",
+    "moment": "^2.22.2",
+    "moment-business-days": "^1.0.6",
+    "onchange": "^4.0.0",
     "prop-types": "^15.6.0",
     "react": "16.3.0",
+    "react-datetime": "^2.14.0",
     "react-dom": "16.3.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "redux-modal": "^1.7.0",
-    "regenerator-runtime": "^0.11.1"
+    "regenerator-runtime": "^0.11.1",
+    "react-router-dom": "^4.2.2"
   }
 }
