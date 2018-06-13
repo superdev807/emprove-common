@@ -55,7 +55,7 @@ describe('timeline functions', () => {
 
       // need different expected value for different test timezones.
       const utcOffsetHours = -1 * utcOffset / 60;
-      const rawHour = utcOffsetHours >= 6 ? utcOffsetHours - 6 : 24-utcOffsetHours;
+      const rawHour = utcOffsetHours >= 6 ? utcOffsetHours - 6 :  24 - (6 - utcOffsetHours);
       const hour = rawHour < 10 ? `0${rawHour}` : `${rawHour}`;
       const expectedSubmitProposalsDueDate = utcOffsetHours > 6 ? `2018-07-20T${hour}:00:00.000Z` : `2018-07-19T${hour}:00:00.000Z`
       const expectedSiteVisitDueDate = utcOffsetHours > 6 ? `2018-07-28T${hour}:00:00.000Z` : `2018-07-27T${hour}:00:00.000Z`
