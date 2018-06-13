@@ -3,12 +3,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import BrowseCatalogLinks from '../BrowseCatalogLinks';
-import CompanyLinks from '../CompanyLinks';
-import FooterCopyright from '../FooterCopyright';
-import HowToUse from '../HowToUse';
-import ServiceAreas from '../ServiceAreas';
-import SocialMediaLinks from '../SocialMediaLinks';
+import BrowseCatalogLinks from './BrowseCatalogLinks';
+import CompanyLinks from './CompanyLinks';
+import FooterCopyright from './FooterCopyright';
+import HowToUse from './HowToUse';
+import ServiceAreas from './ServiceAreas';
+import SocialMediaLinks from './SocialMediaLinks';
 import './styles.scss';
 
 const Footer = (props) => {
