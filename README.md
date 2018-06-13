@@ -108,3 +108,21 @@ For projects that use this package, make sure to update the branch number in the
 ```
 "emprove-common": "git+ssh/.../emprove-common.git#0.0.2"
 ```
+
+### Testing
+
+We use [Jest](https://facebook.github.io/jest/) as the test framework. In addition, we use [Enzyme](http://airbnb.io/enzyme/) to test React components.
+
+Place the tests under the `tests/` directory, following the same structure as the `src/` directory. Test files must have a `.test.js` suffix. For example, given the file `index.js`, the test file should be named `index.test.js`.
+
+You can run the tests using:
+
+```sh
+npm test
+```
+
+To have the tests continually run on the background, use:
+
+```sh
+npm test:watch
+```
