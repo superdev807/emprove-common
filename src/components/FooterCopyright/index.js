@@ -1,0 +1,20 @@
+import React from 'react';
+
+import Logo from '~/components/Logo';
+import './styles.scss';
+
+const FooterCopyright = (props) => {
+  return (
+    <div className="footer-copyright">
+      <div className="footer-copyright__logo">
+        <div className="footer-copyright__logo-overline"></div>
+        <Logo />
+      </div>
+      <div className="footer-copyright__copyright-declaration">
+        COPYRIGHT © 2018 <strong>EMPROVE, INC.</strong> ALL RIGHTS RESERVED.
+      </div>
+    </div>
+  );
+};
+
+export default FooterCopyright;

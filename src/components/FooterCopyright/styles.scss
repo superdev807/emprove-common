@@ -1,0 +1,16 @@
+@import 'variables';
+
+.footer-copyright {
+  &__logo-overline {
+    border: 3px solid $primary;
+    width: 32px;
+  }
+
+  &__logo {
+    align-self: center;
+  }
+
+  &__copyright-declaration {
+    font-size: .75rem;
+  }
+}
