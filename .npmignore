@@ -1,1 +1,6 @@
 src/
+tests/
+mocks/
+.github/
+jest.config.js
+setupTests.js
