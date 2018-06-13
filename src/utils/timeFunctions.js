@@ -18,8 +18,8 @@ export const formatUtcDate = (isoDateString, format = 'L') => moment.utc(isoDate
 
 export const localDateToUTC = date => {
   if (date) {
-    const now = moment();
-    return moment(date)
+    const now = moment().utc();
+    return moment.utc(date)
       .set({ hour: now.hours(), minute: now.minutes(), second: now.seconds(), millisecond: 0 })
       .toISOString();
   } else {

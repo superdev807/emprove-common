@@ -21,7 +21,7 @@ describe('timeline functions', () => {
   });
 
   describe('localDateToUTC', () => {
-    it('should convert local date time to utc date/time with current time in ISO format', () => {
+    it('should convert local date/time to utc date/time with current time in ISO format', () => {
       expect(localDateToUTC(momentTime)).toBe(`2018-06-13T${(now.utc().format('HH:mm:ss'))}.000Z`);
     })
   });
