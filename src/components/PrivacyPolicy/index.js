@@ -5,7 +5,7 @@ import './styles.scss';
 const PrivacyPolicy = props => {
   return (
     <div>
-      <div className="privacy-policy-content--paragraph">
+      <div className="privacy-policy-content__paragraph">
         <span>Last Updated: January 10, 2018 </span>
         <br />
         <br />
@@ -18,7 +18,7 @@ const PrivacyPolicy = props => {
         <br />
         <b>Information We Collect on the Service:</b> <br />
         <br />
-        <ul className="privacy-policy-content--list">
+        <ul className="privacy-policy-content__list">
           <li>
             <b>User-provided Information.</b> When you use the Service, we may collect information about you, including your name, email
             address, mailing address, mobile phone number, credit card or other billing information, your date of birth, geographic area, or
@@ -69,7 +69,7 @@ const PrivacyPolicy = props => {
         <b>How We Use the Information We Collect</b> We use information we collect on the Service in a variety of ways in providing the
         Service and operating our business, including the following: <br />
         <br />
-        <ul className="privacy-policy-content--list">
+        <ul className="privacy-policy-content__list">
           <li>
             We use the information that we collect on the Service to operate, maintain, enhance and provide all features of the Service, to
             provide services and information that you request, to respond to comments and questions and otherwise to provide support to
@@ -100,7 +100,7 @@ const PrivacyPolicy = props => {
         <b>When We Disclose Information. </b> Except as described in this Policy, we will not disclose information about you that we collect
         on the Service to third parties without your consent. We may disclose information to third parties if you consent to us doing so, as
         well as in the following circumstances: <br />
-        <ul className="privacy-policy-content--list">
+        <ul className="privacy-policy-content__list">
           <br />
           <li>
             Any information that you voluntarily choose to include in a publicly accessible area of the Service will be available to anyone

@@ -5,7 +5,7 @@ import './styles.scss';
 
 const TermsOfService = props => {
   return (
-    <div className="terms-content--paragraph">
+    <div className="terms-content__paragraph">
       Last Updated: May 29, 2018 <br />
       <br />
       Welcome, and thank you for your interest in Emprove, Inc. (“<strong>Emprove</strong>,” “<strong>we</strong>,” or “<strong>us</strong>”)
@@ -14,7 +14,7 @@ const TermsOfService = props => {
       Emprove regarding your use of the Service.
       <br />
       <br />
-      <span className="terms-content--paragraph">PLEASE READ THE FOLLOWING TERMS CAREFULLY.</span>
+      <span className="terms-content__paragraph">PLEASE READ THE FOLLOWING TERMS CAREFULLY.</span>
       <br />
       <strong>BY CLICKING “I ACCEPT,” OR BY DOWNLOADING, INSTALLING, OR OTHERWISE ACCESSING OR USING THE SERVICE</strong> YOU AGREE THAT YOU
       HAVE READ AND UNDERSTOOD, AND, AS A CONDITION TO YOUR USE OF THE SERVICE, YOU AGREE TO BE BOUND BY, THE FOLLOWING TERMS AND
@@ -60,7 +60,7 @@ const TermsOfService = props => {
       will have an opportunity to review and accept the fees that you will be charged. All fees are in U.S. Dollars and are non-refundable
       <br />
       <br />
-      <ul className="terms-content--unordered-list">
+      <ul className="terms-content__unordered-list">
         <li>
           <strong>4.1 Price.</strong> Emprove reserves the right to determine pricing for the Service. Emprove will make reasonable efforts
           to keep pricing information published on the website up to date. We encourage you to check our website periodically for current
@@ -112,7 +112,7 @@ const TermsOfService = props => {
       <strong>5. Licenses.</strong>
       <br />
       <br />
-      <ul className="terms-content--unordered-list">
+      <ul className="terms-content__unordered-list">
         <li>
           <strong>5.1 Limited License. </strong>Subject to your complete and ongoing compliance with these Terms, Emprove grants you a
           limited, non-exclusive, non-transferable, non-sublicensable, revocable license to access and use the Service and, to the extent we
@@ -148,7 +148,7 @@ const TermsOfService = props => {
       <strong>7. Third Party Terms </strong>
       <br />
       <br />
-      <ul className="terms-content--unordered-list">
+      <ul className="terms-content__unordered-list">
         <li>
           <strong>7.1 Third Party Services and Linked Websites. </strong>Emprove may provide tools through the Service that enable you to
           export information, including User Content, to third party services, including through features that allow you to link your
@@ -174,7 +174,7 @@ const TermsOfService = props => {
       <strong>8. User Content</strong>
       <br />
       <br />
-      <ul className="terms-content--unordered-list">
+      <ul className="terms-content__unordered-list">
         <li>
           <strong>8.1 User Content Generally. </strong>Certain features of the Service may permit users to upload content to the Service,
           including messages, reviews, photos, video, images, folders, data, text, and other types of works (“<strong>User Content</strong>”)
@@ -204,7 +204,7 @@ const TermsOfService = props => {
           providing User Content via the Service, you affirm, represent, and warrant that:
           <br />
           <br />
-          <ul className="terms-content--unordered-list">
+          <ul className="terms-content__unordered-list">
             <li>
               a. you are the creator and owner of the User Content, or have the necessary licenses, rights, consents, and permissions to
               authorize Emprove and users of the Service to use and distribute your User Content as necessary to exercise the licenses
@@ -256,7 +256,7 @@ const TermsOfService = props => {
       <strong>9. Prohibited Conduct. </strong>BY USING THE SERVICE YOU AGREE NOT TO:
       <br />
       <br />
-      <ul className="terms-content--unordered-list">
+      <ul className="terms-content__unordered-list">
         <li>
           a. use the Service for any illegal purpose or in violation of any local, state, national, or international law;
           <br />
@@ -324,7 +324,7 @@ const TermsOfService = props => {
       <strong>10. Digital Millennium Copyright Act </strong>
       <br />
       <br />
-      <ul className="terms-content--unordered-list">
+      <ul className="terms-content__unordered-list">
         <li>
           <strong>10.1 DMCA Notification. </strong>
           We comply with the provisions of the Digital Millennium Copyright Act applicable to Internet service providers (17 U.S.C. §512, as
@@ -405,7 +405,7 @@ const TermsOfService = props => {
       <strong>12. Term, Termination and Modification of the Service</strong>
       <br />
       <br />
-      <ul className="terms-content--unordered-list">
+      <ul className="terms-content__unordered-list">
         <li>
           <strong>12.1 Term. </strong>These Terms are effective beginning when you accept the Terms or first download, install, access, or
           use the Service, and ending when terminated as described in Section 12.2.
@@ -516,7 +516,7 @@ const TermsOfService = props => {
       <strong>18. Dispute Resolution and Arbitration </strong>
       <br />
       <br />
-      <ul className="terms-content--unordered-list">
+      <ul className="terms-content__unordered-list">
         <li>
           <strong>18.1 Generally. </strong>In the interest of resolving disputes between you and Emprove in the most expedient and cost
           effective manner, and except as described in Section 18.2, you and Emprove agree that every dispute arising in connection with
@@ -543,7 +543,7 @@ const TermsOfService = props => {
           <strong>18.3 Arbitrator. </strong>Any arbitration between you and Emprove will be settled under the Federal Arbitration Act and
           administered by the American Arbitration Association (“<strong>AAA</strong>”) under its Consumer Arbitration Rules (collectively,
           “<strong>AAA Rules</strong>”) as modified by these Terms. The AAA Rules and filing forms are available online at{' '}
-          <a rel="noopener noreferrer" target="_blank" href="https://www.adr.org/" className="terms-content--link">
+          <a rel="noopener noreferrer" target="_blank" href="https://www.adr.org/" className="terms-content__link">
             www.adr.org
           </a>, by calling the AAA at 1-800-778-7879, or by contacting Emprove. The arbitrator has exclusive authority to resolve any
           dispute relating to the interpretation, applicability, or enforceability of this binding arbitration agreement.
@@ -611,7 +611,7 @@ const TermsOfService = props => {
       <strong>19. Miscellaneous</strong>
       <br />
       <br />
-      <ul className="terms-content--unordered-list">
+      <ul className="terms-content__unordered-list">
         <li>
           <strong>19.1 General Terms. </strong>These Terms, together with the Privacy Policy and any other agreements expressly incorporated
           by reference into these Terms, are the entire and exclusive understanding and agreement between you and Emprove regarding your use
@@ -638,7 +638,7 @@ const TermsOfService = props => {
         <li>
           <strong>19.3 Privacy Policy. </strong>
           Please read the{' '}
-          <Link to="/privacy" rel="noopener noreferrer" target="_blank" className="terms-content--link">
+          <Link to="/privacy" rel="noopener noreferrer" target="_blank" className="terms-content__link">
             Emprove Privacy Policy
           </Link>{' '}
           carefully for information relating to our collection, use, storage, disclosure of your personal information. The Emprove Privacy
@@ -665,7 +665,7 @@ const TermsOfService = props => {
         <li>
           <strong>19.6 Contact Information. </strong>The Service is offered by Emprove, Inc., located at 10150 Covington Cross Drive, Las
           Vegas, NV 89144-6567. You may contact us by sending correspondence via Emprove’s Help Center
-          <a href="https://help.emproveit.com/" rel="noopener noreferrer" target="_blank" className="terms-content--link">
+          <a href="https://help.emproveit.com/" rel="noopener noreferrer" target="_blank" className="terms-content__link">
             {' '}
             https://help.emproveit.com/
           </a>. You can access a copy of these terms by clicking here
@@ -673,7 +673,7 @@ const TermsOfService = props => {
             href="https://s3-us-west-1.amazonaws.com/emprove-public-container/TOS.pdf"
             rel="noopener noreferrer"
             target="_blank"
-            className="terms-content--link">
+            className="terms-content__link">
             {' '}
             https://emproveit.com/TOS.pdf{' '}
           </a>
