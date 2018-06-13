@@ -22,7 +22,7 @@ describe('DatePickerField', () => {
       meta: {},
       label: '',
       disableDatePast: null,
-    }
+    };
     component = shallow(<DatePickerField {...props} />);
     mounted = mount(<DatePickerField {...props} />);
   });
@@ -49,7 +49,7 @@ describe('DatePickerField', () => {
 
     expect(disablePast(moment('2018-06-02', 'YYYY-MM-DD'))).toBe(false);
     expect(disablePast(moment('2018-06-22', 'YYYY-MM-DD'))).toBe(true);
-  })
+  });
 
   it('should disable dates before disableDatePast if time provided in moment object', () => {
     component.setProps({disableDatePast: moment('2018-06-05', 'YYYY-MM-DD')});
@@ -57,12 +57,12 @@ describe('DatePickerField', () => {
 
     expect(disablePast(moment('2018-06-02', 'YYYY-MM-DD'))).toBe(false);
     expect(disablePast(moment('2018-06-22', 'YYYY-MM-DD'))).toBe(true);
-  })
+  });
 
   it('should render MUI input component with the input value', () => {
     mounted.setProps({input: {value: moment('2018-08-22')}});
     
     const muiInput = mounted.find('WithStyles(Input)');
-    expect(muiInput.prop('value')).toBe('08/22/2018')
-  })
+    expect(muiInput.prop('value')).toBe('08/22/2018');
+  });
 })
