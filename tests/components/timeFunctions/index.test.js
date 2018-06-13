@@ -7,7 +7,8 @@ describe('timeline functions', () => {
   const utcDateTime = '2018-07-05 18:00:00';
   const utcDateTimeWithZeroTime = '2018-07-05 00:00:00';
   const onlyDate = '07/02/2018';
-  const momentTime = moment('2018-06-12T18:36:49', 'YYYY-MM-DDTHH:mm:ss');
+  const momentTime = moment('2018-06-12T18:30:00', 'YYYY-MM-DDTHH:mm:ss');
+  const utcOffset = moment().utcOffset();
   const now = moment();
 
   describe('formatUtcDate', () => {
@@ -21,8 +22,11 @@ describe('timeline functions', () => {
   });
 
   describe('localDateToUTC', () => {
+    // need different expected value for different test timezones.
+    const expected = utcOffset < -330 ? `2018-06-13T${(now.utc().format('HH:mm:ss'))}.000Z` : `2018-06-12T${(now.utc().format('HH:mm:ss'))}.000Z`
+
     it('should convert local date/time to utc date/time with current time in ISO format', () => {
-      expect(localDateToUTC(momentTime)).toBe(`2018-06-13T${(now.utc().format('HH:mm:ss'))}.000Z`);
+      expect(localDateToUTC(momentTime)).toBe(expected);
     });
   });
 
@@ -34,8 +38,13 @@ describe('timeline functions', () => {
   });
 
   describe('strToDate', () => {
+    // need different expected value for different test timezones.
+    const utcOffsetHours = -1 * utcOffset / 60;
+    const hour = utcOffsetHours < 10 ? `0${utcOffsetHours}` : `${utcOffsetHours}`;
+    const expected = `2018-07-05T${hour}:00:00.000Z`;
+
     it('should drop the time and return moment object with the date and 0 time', () => {
-      expect(strToDate(utcDateTime).toJSON()).toBe('2018-07-05T07:00:00.000Z');
+      expect(strToDate(utcDateTime).toJSON()).toBe(expected);
     });
   });
 
@@ -44,11 +53,20 @@ describe('timeline functions', () => {
     it('should return 5 project timeline dates given a rfpSentDueDate', () => {
       const timeLine = calculateProjectTimeline(utcDateTime);
 
+      // need different expected value for different test timezones.
+      const utcOffsetHours = -1 * utcOffset / 60;
+      const rawHour = utcOffsetHours >= 6 ? utcOffsetHours - 6 : 24-utcOffsetHours;
+      const hour = rawHour < 10 ? `0${rawHour}` : `${rawHour}`;
+      const expectedSubmitProposalsDueDate = utcOffsetHours > 6 ? `2018-07-20T${hour}:00:00.000Z` : `2018-07-19T${hour}:00:00.000Z`
+      const expectedSiteVisitDueDate = utcOffsetHours > 6 ? `2018-07-28T${hour}:00:00.000Z` : `2018-07-27T${hour}:00:00.000Z`
+      const expectedFinalBidDueDate = utcOffsetHours > 6 ? `2018-08-02T${hour}:00:00.000Z` : `2018-08-01T${hour}:00:00.000Z`
+      const expectedAwardDate = utcOffsetHours > 6 ? `2018-08-04T${hour}:00:00.000Z` : `2018-08-03T${hour}:00:00.000Z`
+
       expect(timeLine.rfpSentDueDate).toBe('2018-07-05 18:00:00');
-      expect(timeLine.submitProposalsDueDate.toJSON()).toBe('2018-07-20T01:00:00.000Z');
-      expect(timeLine.siteVisitDueDate.toJSON()).toBe('2018-07-28T01:00:00.000Z');
-      expect(timeLine.finalBidDueDate.toJSON()).toBe('2018-08-02T01:00:00.000Z');
-      expect(timeLine.awardDate.toJSON()).toBe('2018-08-04T01:00:00.000Z');
+      expect(timeLine.submitProposalsDueDate.toJSON()).toBe(expectedSubmitProposalsDueDate);
+      expect(timeLine.siteVisitDueDate.toJSON()).toBe(expectedSiteVisitDueDate);
+      expect(timeLine.finalBidDueDate.toJSON()).toBe(expectedFinalBidDueDate);
+      expect(timeLine.awardDate.toJSON()).toBe(expectedAwardDate);
     });
   });
   
