@@ -4,7 +4,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import { createShallow } from '@material-ui/core/test-utils';
-import renderer from 'react-test-renderer';
 import { StaticRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 
