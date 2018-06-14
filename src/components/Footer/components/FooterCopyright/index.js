@@ -3,12 +3,14 @@ import React from 'react';
 import Logo from '../../../Logo';
 import './styles.scss';
 
-const FooterCopyright = props => {
+const FooterCopyright = (props) => {
   return (
     <div className="footer-copyright">
-      <div className="footer-copyright__logo">
-        <div className="footer-copyright__logo-overline" />
-        <Logo />
+      <div className="footer-copyright__logo-container">
+        <div className="footer-copyright__logo">
+          <div className="footer-copyright__logo-overline"></div>
+          <Logo />
+        </div>
       </div>
       <div className="footer-copyright__copyright-declaration">
         COPYRIGHT © 2018 <strong>EMPROVE, INC.</strong> ALL RIGHTS RESERVED.

@@ -3,7 +3,7 @@
 .footer-index {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 
   @media screen and (min-width: 600px) {
     align-items: stretch;
@@ -53,11 +53,16 @@
 .footer-copyright-and-social {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  padding-bottom: 120px;
 
   @media screen and (min-width: 600px) {
     flex-direction: row;
     justify-content: space-between;
+
+    &___social-media-links {
+      display: flex;
+      align-items: flex-end;
+    }
 
     &__copyright {
       order: -1;
