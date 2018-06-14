@@ -1,0 +1,28 @@
+@import 'variables';
+
+.footer-heading {
+  text-align: center;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  color: $icon-color;
+  padding-left: 2vw;
+  padding-right: 2vh;
+
+  &__text {
+    &--highlighted {
+      color: $primary;
+    }
+
+    &--emphasized {
+      color: $body-color;
+    }
+  }
+
+  @media screen and (min-width: 600px) {
+    font-size: 1.35rem;
+  }
+
+  @media screen and (min-width: 1000px) {
+    font-size: 1.5rem;
+  }
+}
