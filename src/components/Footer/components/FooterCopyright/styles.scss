@@ -23,5 +23,13 @@
   &__copyright-declaration {
     font-size: .75rem;
     text-align: center;
+
+    a {
+      color: $body-color;
+
+      &:hover {
+        color: $primary;
+      }
+    }
   }
 }

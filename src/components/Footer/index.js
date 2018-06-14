@@ -13,7 +13,7 @@ import './styles.scss';
 
 const Footer = props => {
   return (
-    <footer className="site-footer">
+    <footer>
       <section className="footer-index">
         <div className="footer-index__grouped-sections">
           <div className="footer-index__section">

@@ -13,7 +13,7 @@ const FooterCopyright = (props) => {
         </div>
       </div>
       <div className="footer-copyright__copyright-declaration">
-        COPYRIGHT © 2018 <strong>EMPROVE, INC.</strong> ALL RIGHTS RESERVED.
+        COPYRIGHT © 2018 <a href="/"><strong>EMPROVE, INC.</strong></a> ALL RIGHTS RESERVED.
       </div>
     </div>
   );

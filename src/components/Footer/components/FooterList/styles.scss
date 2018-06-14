@@ -13,7 +13,8 @@
       color: $body-color;
 
       &:hover {
-        text-decoration: underline;
+        text-decoration: none;
+        color: $primary;
       }
     }
   }
