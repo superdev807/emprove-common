@@ -1,3 +1,5 @@
+'use strict';
+
 import React from 'react';
 import { shallow } from 'enzyme';
 
@@ -15,7 +17,7 @@ describe('Footer component', () => {
   });
 
   test('should include browse catalog links section', () => {
-    expect(component.find('CompanyLinks').length).toBe(1);
+    expect(component.find('BrowseCatalogLinks').length).toBe(1);
   });
 
   test('should include service areas section', () => {
