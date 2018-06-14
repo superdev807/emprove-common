@@ -1,0 +1,35 @@
+@import 'variables';
+
+.footer-copyright {
+  &__logo-overline {
+    border: 3px solid $primary;
+    width: 32px;
+  }
+
+  &__logo-container {
+    text-align: center;
+    margin-bottom: $spacing-unit;
+    margin-top: $spacing-unit;
+
+    @media screen and (min-width: 600px) {
+      text-align: left;
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+  }
+
+  &__copyright-declaration {
+    font-size: .75rem;
+    text-align: center;
+
+    a {
+      color: $body-color;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@import 'variables';
+
+.social-media-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // margin-top: 5vh;
+
+  &__icon {
+    margin: 1vh;
+    cursor: pointer;
+    color: $body-color;
+  }
+}
