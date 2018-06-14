@@ -1,9 +1,9 @@
 import React from 'react';
 
-import IconFacebookLetter from '~/icons/IconFacebookLetter';
-import IconTwitter from '~/icons/IconTwitter';
-import IconLinkedIn from '~/icons/IconLinkedIn';
-import IconInstagram from '~/icons/IconInstagram';
+import IconFacebookLetter from '../../../../icons/IconFacebookLetter';
+import IconTwitter from '../../../../icons/IconTwitter';
+import IconLinkedIn from '../../../../icons/IconLinkedIn';
+import IconInstagram from '../../../../icons/IconInstagram';
 import './styles.scss';
 
 const SocialMediaLinks = (props) => {

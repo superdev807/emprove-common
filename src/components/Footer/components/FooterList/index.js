@@ -8,7 +8,7 @@ import './styles.scss';
 const FooterList = (props) => {
   return (
     <ul className={cx('footer-list', props.className)}>
-      {props.items.map(item => <li className="footer-list__item">{item}</li>)}
+      {props.items.map((item, index) => <li key={index} className="footer-list__item">{item}</li>)}
     </ul>
   );
 };
