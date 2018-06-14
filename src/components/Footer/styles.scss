@@ -1,15 +1,18 @@
 @import 'variables';
 
+$tablet-breakpoint: 600px;
+$desktop-breakpoint: 1000px;
+
 .footer-index {
   display: flex;
   flex-direction: column;
   align-items: space-between;
 
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: $tablet-breakpoint) {
     align-items: stretch;
   }
 
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: $desktop-breakpoint) {
     flex-direction: row;
     justify-content: space-around;
   }
@@ -20,7 +23,7 @@
   flex-direction: column;
   flex: 1;
 
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: $tablet-breakpoint) {
     flex-direction: row;
     justify-content: space-between;
 
@@ -31,7 +34,7 @@
     }
   }
 
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: $desktop-breakpoint) {
     margin-bottom: 0;
   }
 }
@@ -39,12 +42,12 @@
 .footer-index__section {
   margin-bottom: $spacing-unit * 4;
 
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: $tablet-breakpoint) {
     flex: 1;
     margin-bottom: 0;
   }
 
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: $desktop-breakpoint) {
     flex: none;
     margin-right: auto;
 
@@ -66,7 +69,7 @@
   flex-direction: column;
   padding-bottom: 120px;
 
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: $tablet-breakpoint) {
     flex-direction: row;
     justify-content: space-between;
 
