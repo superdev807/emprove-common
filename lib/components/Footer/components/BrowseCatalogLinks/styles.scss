@@ -1,0 +1,16 @@
+.browse-catalog-links {
+  display: flex;
+
+  &__section {
+    margin-left: 24px;
+    margin-right: 24px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
