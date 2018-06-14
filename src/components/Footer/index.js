@@ -30,7 +30,7 @@ const Footer = props => {
             <div className="footer-index__section-name">Service Areas</div>
             <ServiceAreas />
           </div>
-          <div className="footer-index__section">
+          <div className="footer-index__section footer-index__section--no-right-margin">
             <div className="footer-index__section-name">How to Use Emprove</div>
             <HowToUse />
           </div>
