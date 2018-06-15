@@ -5,7 +5,7 @@ import React from 'react';
 const AboutUsHero = (props) => {
   return (
     <section>
-      AboutUsHero
+      Home Improvement Renewed
     </section>
   );
 };
