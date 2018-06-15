@@ -28,7 +28,7 @@ const PressAndMedia = (props) => {
       <div>Press & Media</div>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis, tellus non aliquam gravida.</p>
       {articles.map(article => (
-        <PressArticle key={article} article={article} />
+        <PressArticle key={article.id} article={article} />
       ))}
     </section>
   );
