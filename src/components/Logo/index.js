@@ -6,8 +6,16 @@ import cx from 'classnames';
 import { Link } from 'react-router-dom';
 import './styles.scss';
 
-const Logo = ({ className, shortened }) => {
-  const imageFilename = shortened ? 'ic_e_logo.svg' : 'emprove_logo.svg';
+
+
+const Logo = ({ className, shortened, contractor }) => {
+  let imageFilename = 'emprove_logo.svg';
+  if (shortened) {
+    imageFilename = 'ic_e_logo.svg';
+  }
+  else if (contractor) {
+    imageFilename = 'emprove_pro_beta_logo.svg';
+  }
 
   return (
     <Link to="/" className={cx('logo', className)}>
@@ -21,11 +29,13 @@ const Logo = ({ className, shortened }) => {
 };
 
 Logo.propTypes = {
-  shortened: PropTypes.bool
+  shortened: PropTypes.bool,
+  contractor: PropTypes.bool
 };
 
 Logo.defaultProps = {
-  shortened: false
+  shortened: false,
+  contractor: false,
 };
 
 export default Logo;

@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Logo from '../../../Logo';
 import './styles.scss';
@@ -11,7 +12,7 @@ const FooterCopyright = (props) => {
       <div className="footer-copyright__logo-container">
         <div className="footer-copyright__logo">
           <div className="footer-copyright__logo-overline"></div>
-          <Logo />
+          <Logo contractor={props.contractor} />
         </div>
       </div>
       <div className="footer-copyright__copyright-declaration">
@@ -19,6 +20,14 @@ const FooterCopyright = (props) => {
       </div>
     </div>
   );
+};
+
+FooterCopyright.propTypes = {
+  contractor: PropTypes.bool,
+};
+
+FooterCopyright.defaultProps = {
+  contractor: false,
 };
 
 export default FooterCopyright;

@@ -1,9 +1,10 @@
 'use strict'
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import FooterCopyright from './components/FooterCopyright';
-import SocialMediaLinks from './components/SocialMediaLinks';
+import FooterCopyright from '../FooterCopyright';
+import SocialMediaLinks from '../SocialMediaLinks';
 import './styles.scss';
 
 const FooterCopyrightAndSocial = (props) => {
@@ -13,10 +14,18 @@ const FooterCopyrightAndSocial = (props) => {
         <SocialMediaLinks />
       </div>
       <div className="footer-copyright-and-social__copyright">
-        <FooterCopyright />
+        <FooterCopyright contractor={props.contractor} />
       </div>
     </section>
   );
+};
+
+FooterCopyrightAndSocial.propTypes = {
+  contractor: PropTypes.bool,
+};
+
+FooterCopyrightAndSocial.defaultProps = {
+  contractor: false,
 };
 
 export default FooterCopyrightAndSocial;
