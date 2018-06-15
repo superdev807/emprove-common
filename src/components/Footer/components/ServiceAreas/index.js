@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import FooterList from '../FooterList';
 import './styles.scss';
@@ -33,7 +34,7 @@ const renderServiceAreaColumns = (serviceAreas) => {
       <FooterList className="service-area-column" items={serviceAreasSecondHalf} />
     </div>
   );
-}
+};
 
 const ServiceAreas = (props) => {
   if (props.splitColumns) {
@@ -43,6 +44,14 @@ const ServiceAreas = (props) => {
   return (
     <FooterList items={serviceAreas} />
   );
+};
+
+ServiceAreas.propTypes = {
+  splitColumns: PropTypes.bool,
+};
+
+ServiceAreas.defaultProps = {
+  splitColumns: false,
 };
 
 export default ServiceAreas;
