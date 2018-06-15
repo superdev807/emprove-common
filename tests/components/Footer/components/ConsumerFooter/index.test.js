@@ -3,13 +3,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Footer from '../../../src/components/Footer';
+import ConsumerFooter from '../../../../../src/components/Footer/components/ConsumerFooter';
 
-describe('Footer component', () => {
+describe('ConsumerFooter component', () => {
   let component;
 
   beforeEach(() => {
-    component = shallow(<Footer />);
+    component = shallow(<ConsumerFooter />);
   });
 
   test('should include company links section', () => {
@@ -28,11 +28,7 @@ describe('Footer component', () => {
     expect(component.find('HowToUse').length).toBe(1);
   });
 
-  test('should include social media links section', () => {
-    expect(component.find('SocialMediaLinks').length).toBe(1);
-  });
-
-  test('should include footer copyright section', () => {
-    expect(component.find('FooterCopyright').length).toBe(1);
+  test('should include footer copyright & social media links component', () => {
+    expect(component.find('FooterCopyrightAndSocial').length).toBe(1);
   });
 });
