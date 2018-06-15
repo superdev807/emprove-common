@@ -1,0 +1,44 @@
+@import 'variables';
+
+$tablet-breakpoint: 600px;
+$desktop-breakpoint: 1000px;
+
+.contractor-footer-index {
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: $tablet-breakpoint) {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  @media screen and (min-width: $desktop-breakpoint) {
+  }
+}
+
+.contractor-footer-index__section {
+  margin-bottom: $spacing-unit * 4;
+
+  @media screen and (min-width: $tablet-breakpoint) {
+    flex: 1;
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: $desktop-breakpoint) {
+  }
+
+  &--negative-left-margin {
+    margin-left: 0;
+
+    @media screen and (min-width: $tablet-breakpoint) {
+      margin-left: -32px;
+    }
+  }
+}
+
+.contractor-footer-index__section-name {
+  text-transform: uppercase;
+  font-size: .875rem;
+  font-weight: 500;
+  margin-bottom: $spacing-unit * 2;
+}

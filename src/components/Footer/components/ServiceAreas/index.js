@@ -21,7 +21,7 @@ const serviceAreas = [
   'Boulder City',
 ];
 
-const renderServiceAreaColumns = ({ serviceAreas }) => {
+const renderServiceAreaColumns = (serviceAreas) => {
   const middleIndex = serviceAreas.length / 2;
   const serviceAreasFirstHalf = serviceAreas.slice(0, middleIndex);
   const serviceAreasSecondHalf = serviceAreas.slice(middleIndex);
@@ -37,7 +37,7 @@ const renderServiceAreaColumns = ({ serviceAreas }) => {
 
 const ServiceAreas = (props) => {
   if (props.splitColumns) {
-    return renderServiceAreaColumns(props);
+    return renderServiceAreaColumns(serviceAreas);
   }
 
   return (
