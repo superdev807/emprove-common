@@ -11,91 +11,91 @@ const teamMembers = [
     id: 1,
     name: 'James Noel',
     position: 'CEO',
-    dreamSpace: 'Contemporary General Living',
+    dreamSpace: 'Contemporary Premium Family Room',
     homeAreaId: HomeArea.GENERAL_LIVING,
     description: 'Construction executive with 15+ years delivering large & highly refined projects on the contractor and owner sides.',
     photoKey: '',
-    dreamSpaceImageKey: '',
+    dreamSpaceImageKey: '01698_E_cimage.jpg',
   },
   {
     id: 2,
     name: 'Linda Lee',
     position: 'COO',
-    dreamSpace: 'Transitional Master Bedroom',
-    homeAreaId: HomeArea.MASTER_BEDROOM,
+    dreamSpace: 'Contemporary Luxurious Master Bath',
+    homeAreaId: HomeArea.MASTER_BATHROOM,
     description: 'Sofware executive with expertise in growing 0-$500MM businesses. Built large machine-learning personalization products.',
     photoKey: '',
-    dreamSpaceImageKey: '',
+    dreamSpaceImageKey: '00043_E_cimage.jpg',
   },
   {
     id: 3,
     name: 'Andrew Pascal',
     position: 'Chairman',
-    dreamSpace: 'Modern Master Bathroom',
+    dreamSpace: 'Contemporary High-End Master Bath',
     homeAreaId: HomeArea.MASTER_BATHROOM,
     description: 'An accomplished leader who has founded & built businesses in the digital casino & leisure entertainment industries.',
     photoKey: '',
-    dreamSpaceImageKey: '',
+    dreamSpaceImageKey: '00016_E_cimage.jpg',
   },
   {
     id: 4,
     name: 'Ervi Bongso',
     position: 'Principal Engineer',
-    dreamSpace: 'Rustic Guest Bedroom',
-    homeAreaId: HomeArea.GUEST_BEDROOM,
+    dreamSpace: 'Rustic Tiny House',
+    homeAreaId: HomeArea.GENERAL_LIVING,
     description: null,
     photoKey: '',
-    dreamSpaceImageKey: '',
+    dreamSpaceImageKey: '02369_E_cimage.jpg',
   },
   {
     id: 5,
     name: 'Tonson Back',
     position: 'UI/UX Artist',
-    dreamSpace: 'Transitional Kitchen',
-    homeAreaId: HomeArea.KITCHEN,
+    dreamSpace: 'Industrial Upgraded Living Area',
+    homeAreaId: HomeArea.GENERAL_LIVING,
     description: null,
     photoKey: '',
-    dreamSpaceImageKey: '',
+    dreamSpaceImageKey: '01990_E_cimage.jpg',
   },
   {
     id: 6,
     name: 'Mike Gonzales',
     position: 'Market Launcher',
-    dreamSpace: 'Country Kitchen',
-    homeAreaId: HomeArea.KITCHEN,
+    dreamSpace: 'Contemporary Open Living Area',
+    homeAreaId: HomeArea.GENERAL_LIVING,
     description: null,
     photoKey: '',
-    dreamSpaceImageKey: '',
+    dreamSpaceImageKey: '01762_E_cimage.jpeg',
   },
   {
     id: 7,
     name: 'JoAnne McCauley',
     position: 'Market Launcher',
-    dreamSpace: 'Craftsman Powder Room',
-    homeAreaId: HomeArea.POWDER_ROOM,
+    dreamSpace: 'Contemporary Luxurious Bedroom',
+    homeAreaId: HomeArea.MASTER_BEDROOM,
     description: null,
     photoKey: '',
-    dreamSpaceImageKey: '',
+    dreamSpaceImageKey: '00889_E_cimage.jpg',
   },
   {
     id: 8,
     name: 'Domini Noel',
     position: 'Business Intelligence',
-    dreamSpace: 'Traditional Master Bathroom',
-    homeAreaId: HomeArea.MASTER_BATHROOM,
+    dreamSpace: 'Traditional High-End Kitchen',
+    homeAreaId: HomeArea.KITCHEN,
     description: null,
     photoKey: '',
-    dreamSpaceImageKey: '',
+    dreamSpaceImageKey: '01844_E_cimage.jpg',
   },
   {
     id: 9,
     name: 'Kiwook Kwon',
     position: 'Engineer',
-    dreamSpace: 'Industrial General Living',
-    homeAreaId: HomeArea.GENERAL_LIVING,
+    dreamSpace: 'Rustic Upgraded Bathroom',
+    homeAreaId: HomeArea.MASTER_BATHROOM,
     description: null,
     photoKey: '',
-    dreamSpaceImageKey: '',
+    dreamSpaceImageKey: '00599_E_cimage.jpg',
   },
   {
     id: 10,
@@ -105,20 +105,29 @@ const teamMembers = [
     homeAreaId: HomeArea.MASTER_BATHROOM,
     description: null,
     photoKey: '',
-    dreamSpaceImageKey: '',
+    dreamSpaceImageKey: '00504_E_cimage.jpg',
   },
 ];
 
 const TheTeam = (props) => {
+  const members = teamMembers.map(teamMember => {
+    const memberWithPhotoUrl = {
+      ...teamMember,
+      photoUrl: `/images/${teamMember.photoKey}`
+    };
+
+    return (
+      <div key={teamMember.id} className="the-team__team-member">
+        <TeamMember member={memberWithPhotoUrl} />
+      </div>
+    );
+  });
+
   return (
     <section className="the-team">
       <div className="the-team__title">Meet the Team</div>
       <div className="the-team__members">
-        {teamMembers.map(teamMember => (
-          <div key={teamMember.id} className="the-team__team-member">
-            <TeamMember member={teamMember} />
-          </div>
-        ))}
+        {members}
       </div>
     </section>
   );
