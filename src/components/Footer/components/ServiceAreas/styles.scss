@@ -1,0 +1,11 @@
+.service-area-split-columns {
+  display: flex;
+}
+
+.service-area-column-separator {
+  min-width: 32px;
+}
+
+.service-area-column {
+  flex: 2;
+}
