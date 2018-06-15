@@ -1,0 +1,21 @@
+$tablet-breakpoint: 600px;
+
+.footer-copyright-and-social {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 120px;
+
+  @media screen and (min-width: $tablet-breakpoint) {
+    flex-direction: row;
+    justify-content: space-between;
+
+    &___social-media-links {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    &__copyright {
+      order: -1;
+    }
+  }
+}
