@@ -4,6 +4,7 @@ import React from 'react';
 
 import TeamMember from './TeamMember';
 import { HomeArea } from '../../../../utils/enums';
+import './styles.scss';
 
 const teamMembers = [
   {
@@ -77,7 +78,7 @@ const teamMembers = [
     dreamSpaceImageKey: '',
   },
   {
-    id: 7,
+    id: 8,
     name: 'Domini Noel',
     position: 'Business Intelligence',
     dreamSpace: 'Traditional Master Bathroom',
@@ -87,7 +88,7 @@ const teamMembers = [
     dreamSpaceImageKey: '',
   },
   {
-    id: 7,
+    id: 9,
     name: 'Kiwook Kwon',
     position: 'Engineer',
     dreamSpace: 'Industrial General Living',
@@ -97,7 +98,7 @@ const teamMembers = [
     dreamSpaceImageKey: '',
   },
   {
-    id: 7,
+    id: 10,
     name: 'Renan Martins',
     position: 'Engineer',
     dreamSpace: 'Modern Zen Master Bath',
@@ -110,9 +111,15 @@ const teamMembers = [
 
 const TheTeam = (props) => {
   return (
-    <section>
-      <div>Meet the Team</div>
-      {teamMembers.map(teamMember => (<TeamMember key={teamMember.id} member={teamMember} />))}
+    <section className="the-team">
+      <div className="the-team__title">Meet the Team</div>
+      <div className="the-team__members">
+        {teamMembers.map(teamMember => (
+          <div key={teamMember.id} className="the-team__team-member">
+            <TeamMember member={teamMember} />
+          </div>
+        ))}
+      </div>
     </section>
   );
 };
