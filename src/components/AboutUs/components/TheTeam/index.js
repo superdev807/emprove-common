@@ -14,7 +14,7 @@ const teamMembers = [
     dreamSpace: 'Contemporary Premium Family Room',
     homeAreaId: HomeArea.GENERAL_LIVING,
     description: 'Construction executive with 15+ years delivering large & highly refined projects on the contractor and owner sides.',
-    photoKey: '',
+    photoKey: 'james_400x400.jpg',
     dreamSpaceImageKey: '01698_E_cimage.jpg',
   },
   {
@@ -24,7 +24,7 @@ const teamMembers = [
     dreamSpace: 'Contemporary Luxurious Master Bath',
     homeAreaId: HomeArea.MASTER_BATHROOM,
     description: 'Sofware executive with expertise in growing 0-$500MM businesses. Built large machine-learning personalization products.',
-    photoKey: '',
+    photoKey: 'linda_400x400.jpg',
     dreamSpaceImageKey: '00043_E_cimage.jpg',
   },
   {
@@ -34,7 +34,7 @@ const teamMembers = [
     dreamSpace: 'Contemporary High-End Master Bath',
     homeAreaId: HomeArea.MASTER_BATHROOM,
     description: 'An accomplished leader who has founded & built businesses in the digital casino & leisure entertainment industries.',
-    photoKey: '',
+    photoKey: 'andrew_400x400.jpg',
     dreamSpaceImageKey: '00016_E_cimage.jpg',
   },
   {
@@ -44,7 +44,7 @@ const teamMembers = [
     dreamSpace: 'Rustic Tiny House',
     homeAreaId: HomeArea.GENERAL_LIVING,
     description: null,
-    photoKey: '',
+    photoKey: 'ervi_400x400.jpg',
     dreamSpaceImageKey: '02369_E_cimage.jpg',
   },
   {
@@ -54,7 +54,7 @@ const teamMembers = [
     dreamSpace: 'Industrial Upgraded Living Area',
     homeAreaId: HomeArea.GENERAL_LIVING,
     description: null,
-    photoKey: '',
+    photoKey: 'tonson_400x400.jpg',
     dreamSpaceImageKey: '01990_E_cimage.jpg',
   },
   {
@@ -64,7 +64,7 @@ const teamMembers = [
     dreamSpace: 'Contemporary Open Living Area',
     homeAreaId: HomeArea.GENERAL_LIVING,
     description: null,
-    photoKey: '',
+    photoKey: 'mike_400x400.jpg',
     dreamSpaceImageKey: '01762_E_cimage.jpeg',
   },
   {
@@ -74,7 +74,7 @@ const teamMembers = [
     dreamSpace: 'Contemporary Luxurious Bedroom',
     homeAreaId: HomeArea.MASTER_BEDROOM,
     description: null,
-    photoKey: '',
+    photoKey: 'joanne_400x400.jpg',
     dreamSpaceImageKey: '00889_E_cimage.jpg',
   },
   {
@@ -84,7 +84,7 @@ const teamMembers = [
     dreamSpace: 'Traditional High-End Kitchen',
     homeAreaId: HomeArea.KITCHEN,
     description: null,
-    photoKey: '',
+    photoKey: 'domini_400x400.jpg',
     dreamSpaceImageKey: '01844_E_cimage.jpg',
   },
   {
@@ -94,7 +94,7 @@ const teamMembers = [
     dreamSpace: 'Rustic Upgraded Bathroom',
     homeAreaId: HomeArea.MASTER_BATHROOM,
     description: null,
-    photoKey: '',
+    photoKey: 'kiwook_400x400.jpg',
     dreamSpaceImageKey: '00599_E_cimage.jpg',
   },
   {
@@ -104,7 +104,7 @@ const teamMembers = [
     dreamSpace: 'Modern Zen Master Bath',
     homeAreaId: HomeArea.MASTER_BATHROOM,
     description: null,
-    photoKey: '',
+    photoKey: 'renan_400x400.jpg',
     dreamSpaceImageKey: '00504_E_cimage.jpg',
   },
 ];
@@ -113,7 +113,7 @@ const TheTeam = (props) => {
   const members = teamMembers.map(teamMember => {
     const memberWithPhotoUrl = {
       ...teamMember,
-      photoUrl: `/images/${teamMember.photoKey}`
+      photoUrl: `/images/team/${teamMember.photoKey}`
     };
 
     return (

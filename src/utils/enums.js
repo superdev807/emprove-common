@@ -33,11 +33,20 @@ export const RfpStatus = {
 };
 
 export const HomeArea = {
+  BACKYARD: 3,
   GUEST_BATHROOM: 6,
   MASTER_BATHROOM: 8,
   POWDER_ROOM: 9,
   GUEST_BEDROOM: 10,
   MASTER_BEDROOM: 11,
+  DECK: 15,
+  DEN: 16,
+  FOYER: 21,
   KITCHEN: 27,
+  KITCHENETTE: 28,
+  LIVING_ROOM: 31,
+  LOFT: 32,
+  OFFICE: 35,
+  PATIO: 37,
   GENERAL_LIVING: 43
 };
