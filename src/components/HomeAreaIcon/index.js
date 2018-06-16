@@ -23,55 +23,55 @@ import { HomeArea } from '../../utils/enums';
 
 class HomeAreaIcon extends Component {
   render() {
-    const { homeAreaId } = this.props;
+    const { homeAreaId, ...otherProps } = this.props;
 
     if (homeAreaId == HomeArea.BACKYARD) {
-      return <IconBackyard />;
+      return <IconBackyard {...otherProps} />;
     }
     if (homeAreaId == HomeArea.GUEST_BATHROOM) {
-      return <IconGuestBathroom />;
+      return <IconGuestBathroom {...otherProps} />;
     }
     if (homeAreaId == HomeArea.MASTER_BATHROOM) {
-      return <IconMasterBathroom />;
+      return <IconMasterBathroom {...otherProps} />;
     }
     if (homeAreaId == HomeArea.POWDER_ROOM) {
-      return <IconPowderRoom />;
+      return <IconPowderRoom {...otherProps} />;
     }
     if (homeAreaId == HomeArea.GUEST_BEDROOM) {
-      return <IconGuestBedroom />;
+      return <IconGuestBedroom {...otherProps} />;
     }
     if (homeAreaId == HomeArea.MASTER_BEDROOM) {
-      return <IconMasterBedroom />;
+      return <IconMasterBedroom {...otherProps} />;
     }
     if (homeAreaId == HomeArea.DECK) {
-      return <IconDeck />;
+      return <IconDeck {...otherProps} />;
     }
     if (homeAreaId == HomeArea.DEN) {
-      return <IconDen />;
+      return <IconDen {...otherProps} />;
     }
     if (homeAreaId == HomeArea.FOYER) {
-      return <IconFoyer />;
+      return <IconFoyer {...otherProps} />;
     }
     if (homeAreaId == HomeArea.KITCHEN) {
-      return <IconKitchen />;
+      return <IconKitchen {...otherProps} />;
     }
     if (homeAreaId == HomeArea.KITCHENETTE) {
-      return <IconKitchenette />;
+      return <IconKitchenette {...otherProps} />;
     }
     if (homeAreaId == HomeArea.LIVING_ROOM) {
-      return <IconLivingRoom />;
+      return <IconLivingRoom {...otherProps} />;
     }
     if (homeAreaId == HomeArea.LOFT) {
-      return <IconLoft />;
+      return <IconLoft {...otherProps} />;
     }
     if (homeAreaId == HomeArea.OFFICE) {
-      return <IconOffice />;
+      return <IconOffice {...otherProps} />;
     }
     if (homeAreaId == HomeArea.PATIO) {
-      return <IconPatio />;
+      return <IconPatio {...otherProps} />;
     }
     if (homeAreaId == HomeArea.GENERAL_LIVING) {
-      return <IconGeneralLiving />;
+      return <IconGeneralLiving {...otherProps} />;
     }
 
     return <div>error {homeAreaId}</div>;
