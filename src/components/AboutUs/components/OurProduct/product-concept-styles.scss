@@ -1,0 +1,40 @@
+.product-concept {
+  font-size: 1rem;
+  padding: 1rem 2rem;
+
+  &__icon {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  &__name {
+    margin-bottom: 2rem;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+
+    strong {
+      font-weight: 600;
+    }
+
+    &:after {
+      border-top: 5px solid #ff9e3c;
+      bottom: -0.5rem;
+      content: '';
+      display: inline-block;
+      left: 45%;
+      position: absolute;
+      width: 10%;
+
+      @media screen and (min-width: 600px) {
+        left: 42.5%;
+        width: 15%;
+      }
+    }
+  }
+
+  &__description {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+}
