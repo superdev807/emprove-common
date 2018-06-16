@@ -1,6 +1,13 @@
 .the-team {
   &__title {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-transform: uppercase;
 
+    strong {
+      font-weight: 1000;
+    }
   }
 
   &__members {

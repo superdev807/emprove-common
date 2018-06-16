@@ -125,7 +125,7 @@ const TheTeam = (props) => {
 
   return (
     <section className="the-team">
-      <div className="the-team__title">Meet the Team</div>
+      <div className="the-team__title">Meet <strong>the Team</strong></div>
       <div className="the-team__members">
         {members}
       </div>
