@@ -4,7 +4,20 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 describe('Icon components', () => {
-  const iconComponentNames = ['IconFacebook', 'IconFacebookLetter', 'IconInstagram', 'IconLinkedIn', 'IconTwitter'];
+  const iconComponentNames = [
+    'IconFacebook',
+    'IconFacebookLetter',
+    'IconGeneralLiving',
+    'IconGuestBathroom',
+    'IconGuestBedroom',
+    'IconInstagram',
+    'IconKitchen',
+    'IconLinkedIn',
+    'IconMasterBathroom',
+    'IconMasterBedroom',
+    'IconPowderRoom',
+    'IconTwitter'
+  ];
 
   it('should include an SvgIcon for each icon component', () => {
     iconComponentNames.forEach(iconComponentName => {
