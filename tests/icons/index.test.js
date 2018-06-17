@@ -8,6 +8,7 @@ describe('Icon components', () => {
     'IconBackyard',
     'IconDeck',
     'IconDen',
+    'IconDreamIt',
     'IconFacebook',
     'IconFacebookLetter',
     'IconFoyer',
