@@ -1,0 +1,43 @@
+.the-team {
+  &__title {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+
+    strong {
+      font-weight: 1000;
+    }
+  }
+
+  &__members {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    @media screen and (min-width: 600px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    @media screen and (min-width: 1400px) {
+    }
+  }
+
+  &__team-member {
+    width: 100%;
+    margin-bottom: 3rem;
+
+    @media screen and (min-width: 600px) {
+      width: 50%;
+    }
+
+    @media screen and (min-width: 1000px) {
+      width: 33.3333%;
+    }
+
+    @media screen and (min-width: 1400px) {
+      width: 25%;
+    }
+  }
+}

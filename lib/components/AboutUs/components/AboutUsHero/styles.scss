@@ -1,0 +1,42 @@
+@import 'variables';
+
+.about-us-hero {
+  align-items: center;
+  background-image: url('/images/home_improvement_renewed.jpg');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  height: 40vh;
+  justify-content: center;
+  text-align: center;
+
+  @media screen and (min-width: 600px) {
+    height: 400px;
+  }
+
+  @media screen and (min-width: 1400px) {
+    background-position: 50% 15%;
+  }
+
+  &__title {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 1;
+    position: relative;
+
+    strong {
+      font-weight: 1000;
+    }
+
+    &:after {
+      border-top: 5px solid #ff9e3c;
+      bottom: -1rem;
+      content: '';
+      display: inline-block;
+      left: 32.5%;
+      position: absolute;
+      width: 35%;
+    }
+  }
+}
