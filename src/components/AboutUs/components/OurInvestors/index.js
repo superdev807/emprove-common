@@ -8,14 +8,17 @@ import './styles.scss';
 const investors = [
   {
     id: 1,
+    name: '',
     imageKey: 'ic_investor_01.svg'
   },
   {
     id: 2,
+    name: '',
     imageKey: 'ic_investor_02.svg'
   },
   {
     id: 3,
+    name: '',
     imageKey: 'ic_investor_01.svg'
   },
 ];

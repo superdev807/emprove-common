@@ -7,7 +7,7 @@ import './investor-styles.scss';
 
 const Investor = (props) => {
   return (
-    <img className="investor-image" src={props.investor.imageUrl} />
+    <img className="investor-image" src={props.investor.imageUrl} alt={props.investor.name} />
   );
 };
 
