@@ -10,7 +10,9 @@ describe('HomeAreaIcon component', () => {
   let props;
 
   beforeEach(() => {
-    props = {};
+    props = {
+      homeAreaId: 0
+    };
     component = shallow(<HomeAreaIcon {...props} />);
   });
 
