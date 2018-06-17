@@ -16,9 +16,9 @@ const StaticLayout = (props) => {
 };
 
 StaticLayout.propTypes = {
-  children: PropTypes.func,
-  footer: PropTypes.func,
-  header: PropTypes.func,
+  children: PropTypes.node,
+  footer: PropTypes.element,
+  header: PropTypes.element,
 };
 
 export default StaticLayout;
