@@ -1,6 +1,8 @@
 'use strict';
 
 import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
 
 import CompanyLinks from '../CompanyLinks';
 import FooterCopyrightAndSocial from '../FooterCopyrightAndSocial';
@@ -11,7 +13,7 @@ import './styles.scss';
 
 const ContractorFooter = props => {
   return (
-    <footer>
+    <footer className={cx(props.className)}>
       <section className="contractor-footer-index">
         <div className="contractor-footer-index__section">
           <div className="contractor-footer-index__section-name">Company</div>
@@ -32,6 +34,10 @@ const ContractorFooter = props => {
       <FooterCopyrightAndSocial contractor />
     </footer>
   );
+};
+
+ContractorFooter.propTypes = {
+  className: PropTypes.string
 };
 
 export default ContractorFooter;
