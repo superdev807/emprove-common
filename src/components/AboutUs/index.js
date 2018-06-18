@@ -11,15 +11,19 @@ import OurProduct from './components/OurProduct';
 import OurInvestors from './components/OurInvestors';
 import PressAndMedia from './components/PressAndMedia';
 import TheTeam from './components/TheTeam';
+import Container from '~/components/Container';
+import './styles.scss';
 
 const AboutUs = (props) => {
   return (
     <main className={cx(props.className)}>
       <AboutUsHero />
-      <AboutTheCompany />
-      <TheTeam />
-      <Divider />
-      <OurProduct />
+      <Container>
+        <AboutTheCompany className="about-us__about-the-company" />
+        <TheTeam className="about-us__the-team"/>
+        <Divider />
+        <OurProduct />
+      </Container>
       {/* <OurInvestors /> */}
       {/* <PressAndMedia /> */}
     </main>
