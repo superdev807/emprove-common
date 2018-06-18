@@ -1,6 +1,8 @@
 'use strict';
 
 import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
 
 import TeamMember from './TeamMember';
 import { HomeArea } from '../../../../utils/enums';
@@ -144,13 +146,17 @@ const TheTeam = (props) => {
   });
 
   return (
-    <section className="the-team">
+    <section className={cx('the-team', props.className)}>
       <div className="the-team__title">Meet <strong>the Team</strong></div>
       <div className="the-team__members">
         {members}
       </div>
     </section>
   );
+};
+
+TheTeam.propTypes = {
+  className: PropTypes.string
 };
 
 export default TheTeam;
