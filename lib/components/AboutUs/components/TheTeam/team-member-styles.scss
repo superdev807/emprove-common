@@ -26,10 +26,10 @@
     position: absolute;
     transform: translateX(100vw);
 
-    @media screen and (min-width: 1400px) {
-      position: relative;
-      transform: translateX(0);
-    }
+    // @media screen and (min-width: 1700px) {
+    //   position: relative;
+    //   transform: translateX(0);
+    // }
   }
 
   &__home-area-icon-container {
