@@ -6,9 +6,22 @@ import DateTime from 'react-datetime';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
+import MaskedInput from 'react-text-mask';
 import PropTypes from 'prop-types';
 
 import './style.scss';
+
+const DateMask = ({ inputRef, ...otherProps }) => {
+  return (
+    <MaskedInput
+      ref={inputRef}
+      {...otherProps}
+      mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
+      guide
+      placeholderChar={'\u2000'}
+    />
+  );
+};
 
 class DatePickerField extends Component {
   static propTypes = {
@@ -37,9 +50,10 @@ class DatePickerField extends Component {
     () => {
       props.onChange({ target: { value: '' } });
     };
+
     return (
       <div>
-        <Input {...inputProps} type="text" />
+        <Input {...inputProps} inputComponent={DateMask} placeholder="MM/DD/YYYY" type="text" />
       </div>
     );
   };
@@ -67,12 +81,14 @@ class DatePickerField extends Component {
       helperText,
       errorClassName,
       hideErrorText,
-      disableDatePast
+      disableDatePast,
+      viewDate
     } = this.props;
 
-    const inputDate = input.value
-      ? moment.isMoment(input.value) ? input.value.format('MM/DD/YYYY') : moment(input.value, 'YYYY-MM-DD').format('MM/DD/YYYY')
-      : moment().format('MM/DD/YYYY');
+    const inputDate =
+      input.value !== ''
+        ? moment.isMoment(input.value) ? input.value.format('MM/DD/YYYY') : moment(input.value, 'YYYY-MM-DD').format('MM/DD/YYYY')
+        : null;
 
     return (
       <FormControl className={className} error={touched && !!error} fullWidth={fullWidth}>
@@ -82,7 +98,7 @@ class DatePickerField extends Component {
           renderInput={this.renderInput}
           className={datePickerClassName}
           value={inputDate}
-          viewDate={inputDate}
+          viewDate={viewDate ? viewDate : inputDate}
           onChange={this.handleChange}
           timeFormat={timeFormat ? timeFormat : false}
           closeOnSelect={true}
@@ -95,4 +111,4 @@ class DatePickerField extends Component {
 }
 
 export default DatePickerField;
-export { DatePickerField } //for testing
+export { DatePickerField }; //for testing
