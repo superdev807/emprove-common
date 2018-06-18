@@ -44,7 +44,7 @@ class TeamMember extends React.Component {
         <div className="team-member__dream-space">{member.dreamSpace}</div>
         <div className="team-member__home-area-icon-container">
           <IconButton>
-            <HomeAreaIcon className="team-member__home-area-icon" homeAreaId={member.homeAreaId} />
+            <HomeAreaIcon className="team-member__home-area-icon" homeAreaId={member.homeAreaId} titleAccess={member.dreamSpace} />
           </IconButton>
         </div>
         {member.description && (
