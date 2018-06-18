@@ -5,6 +5,7 @@
   line-height: 1.4rem;
   text-align: center;
   padding: 1rem;
+  position: relative;
 
   &__photo {
     margin-bottom: 1rem;
@@ -48,5 +49,33 @@
     color: $icon-color;
     height: 36px;
     width: 36px;
+  }
+
+  &__overlay {
+    font-size: .8rem;
+    margin: 0 10%;
+    padding: 1rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(#fff6de, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .5s ease-out;
+    pointer-events: none;
+
+    @media screen and (min-width: 1000px) {
+      font-size: inherit;
+    }
+
+    &--shown {
+      opacity: 1;
+    }
   }
 }
