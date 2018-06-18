@@ -1,0 +1,9 @@
+@import 'variables';
+@import 'mixins';
+
+.container {
+  @include make-container();
+  &--boxed {
+    @include make-container-max-widths();
+  }
+}
