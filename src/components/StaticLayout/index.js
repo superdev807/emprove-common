@@ -3,6 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Divider from '@material-ui/core/Divider';
+import Container from '~/components/Container';
 
 import './styles.scss';
 
@@ -12,7 +13,9 @@ const StaticLayout = (props) => {
       {props.header}
       {props.children}
       {props.withoutFooterDivider ? null : <Divider />}
-      {props.footer}
+      <Container>
+        {props.footer}
+      </Container>
     </div>
   );
 };
