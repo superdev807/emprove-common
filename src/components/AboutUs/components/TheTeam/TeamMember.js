@@ -2,6 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import IconButton from '@material-ui/core/IconButton';
 
 import HomeAreaIcon from '../../../HomeAreaIcon';
 import TeamMemberPhoto from './TeamMemberPhoto';
@@ -15,9 +16,13 @@ const TeamMember = (props) => {
       </div>
       <div>{props.member.name}</div>
       <div className="team-member__position">{props.member.position}</div>
-      <div>My dream space is</div>
+      <div>My dream space,</div>
       <div className="team-member__dream-space">{props.member.dreamSpace}</div>
-      <HomeAreaIcon className="team-member__home-area-icon" homeAreaId={props.member.homeAreaId} />
+      <div className="team-member__home-area-icon-container">
+        <IconButton>
+          <HomeAreaIcon className="team-member__home-area-icon" homeAreaId={props.member.homeAreaId} />
+        </IconButton>
+      </div>
     </div>
   );
 };

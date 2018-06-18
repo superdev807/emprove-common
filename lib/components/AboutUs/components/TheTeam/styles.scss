@@ -12,12 +12,11 @@
 
   &__members {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: stretch;
+    flex-wrap: wrap;
 
     @media screen and (min-width: 600px) {
-      flex-direction: row;
-      flex-wrap: wrap;
     }
 
     @media screen and (min-width: 1400px) {
@@ -25,19 +24,17 @@
   }
 
   &__team-member {
-    width: 100%;
+    width: 50%;
     margin-bottom: 3rem;
 
     @media screen and (min-width: 600px) {
-      width: 50%;
-    }
-
-    @media screen and (min-width: 1000px) {
       width: 33.3333%;
     }
 
+    @media screen and (min-width: 1000px) {
+    }
+
     @media screen and (min-width: 1400px) {
-      width: 25%;
     }
   }
 }

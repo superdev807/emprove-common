@@ -3,6 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import Divider from '@material-ui/core/Divider';
 
 import AboutUsHero from './components/AboutUsHero';
 import AboutTheCompany from './components/AboutTheCompany';
@@ -17,9 +18,10 @@ const AboutUs = (props) => {
       <AboutUsHero />
       <AboutTheCompany />
       <TheTeam />
+      <Divider />
       <OurProduct />
-      <OurInvestors />
-      <PressAndMedia />
+      {/* <OurInvestors /> */}
+      {/* <PressAndMedia /> */}
     </main>
   );
 };
