@@ -6,7 +6,7 @@
 import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
-import './style.scss';
+import './styles.scss';
 
 const Container = ({ className, fluid, children }) => (
   <div className={cx('container', { 'container--boxed': !fluid }, className)}>{children}</div>
