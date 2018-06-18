@@ -11,7 +11,7 @@ import OurProduct from './components/OurProduct';
 import OurInvestors from './components/OurInvestors';
 import PressAndMedia from './components/PressAndMedia';
 import TheTeam from './components/TheTeam';
-import Container from '~/components/Container';
+import Container from '../Container';
 import './styles.scss';
 
 const AboutUs = (props) => {

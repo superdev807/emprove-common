@@ -3,7 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Divider from '@material-ui/core/Divider';
-import Container from '~/components/Container';
+import Container from '../Container';
 
 import './styles.scss';
 
