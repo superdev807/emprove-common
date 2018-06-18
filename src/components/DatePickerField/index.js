@@ -95,4 +95,4 @@ class DatePickerField extends Component {
 }
 
 export default DatePickerField;
-export { DatePickerField } //for testing
+export { DatePickerField }; //for testing
