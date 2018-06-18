@@ -1,6 +1,8 @@
 'use strict'
 
 import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
 
 import BrowseCatalogLinks from '../BrowseCatalogLinks';
 import CompanyLinks from '../CompanyLinks';
@@ -11,7 +13,7 @@ import './styles.scss';
 
 const ConsumerFooter = props => {
   return (
-    <footer>
+    <footer className={cx(props.className)}>
       <section className="consumer-footer-index">
         <div className="consumer-footer-index__grouped-sections">
           <div className="consumer-footer-index__section">
@@ -37,6 +39,10 @@ const ConsumerFooter = props => {
       <FooterCopyrightAndSocial />
     </footer>
   );
+};
+
+ConsumerFooter.propTypes = {
+  className: PropTypes.string
 };
 
 export default ConsumerFooter;
