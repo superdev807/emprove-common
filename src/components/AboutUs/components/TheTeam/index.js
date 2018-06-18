@@ -107,6 +107,26 @@ const teamMembers = [
     photoKey: 'renan_400x400.jpg',
     dreamSpaceImageKey: '00504_E_cimage.jpg',
   },
+  {
+    id: 11,
+    name: 'Sousuke Tanaka',
+    position: 'Engineer',
+    dreamSpace: 'Master Bedroom',
+    homeAreaId: HomeArea.MASTER_BEDROOM,
+    description: null,
+    photoKey: 'sousuke_400x400.jpg',
+    dreamSpaceImageKey: '00234_E_cimage.jpg',
+  },
+  {
+    id: 12,
+    name: 'Leo Esaki',
+    position: 'Engineer',
+    dreamSpace: 'General Living',
+    homeAreaId: HomeArea.GENERAL_LIVING,
+    description: null,
+    photoKey: 'leo_400x400.jpg',
+    dreamSpaceImageKey: '01946_E_cimage.jpg',
+  },
 ];
 
 const TheTeam = (props) => {
