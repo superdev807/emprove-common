@@ -1,9 +1,25 @@
 .about-us {
   &__about-the-company {
-    padding: 3rem 0;
+    padding: 3rem 1rem;
+
+    @media screen and (min-width: 600px) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    @media screen and (min-width: 1000px) {
+      width: 1000px;
+      margin: auto;
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
   }
 
   &__the-team {
+    padding: 3rem 0;
+  }
+
+  &__our-product {
     padding: 3rem 0;
   }
 }

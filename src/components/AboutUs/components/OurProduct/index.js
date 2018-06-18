@@ -1,6 +1,8 @@
 'use strict';
 
 import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
 
 import ProductConcept from './ProductConcept';
 import IconBidIt from '../../../../icons/IconBidIt';
@@ -31,13 +33,17 @@ const productConcepts = [
 
 const OurProduct = (props) => {
   return (
-    <section className="our-product">
+    <section className={cx('our-product', props.className)}>
       <div className="our-product__title">Our <strong>Product</strong></div>
       <div className="our-product__concepts">
         {productConcepts.map(concept => <ProductConcept key={concept.id} className="our-product__concept" concept={concept} />)}
       </div>
     </section>
   );
+};
+
+OurProduct.propTypes = {
+  className: PropTypes.string
 };
 
 export default OurProduct;
