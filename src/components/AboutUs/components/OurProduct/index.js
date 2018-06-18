@@ -3,8 +3,8 @@
 import React from 'react';
 
 import ProductConcept from './ProductConcept';
-import IconBidIt from '~/icons/IconBidIt';
-import IconCostIt from '~/icons/IconCostIt';
+import IconBidIt from '../../../../icons/IconBidIt';
+import IconCostIt from '../../../../icons/IconCostIt';
 import IconDreamIt from '../../../../icons/IconDreamIt';
 import './styles.scss';
 

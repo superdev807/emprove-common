@@ -6,6 +6,8 @@ import { shallow } from 'enzyme';
 describe('Icon components', () => {
   const iconComponentNames = [
     'IconBackyard',
+    'IconBidIt',
+    'IconCostIt',
     'IconDeck',
     'IconDen',
     'IconDreamIt',
