@@ -12,7 +12,7 @@ const StaticLayout = (props) => {
     <div className="static-layout">
       {props.header}
       {props.children}
-      {props.withoutFooterDivider ? null : <Divider />}
+      {props.withoutFooterDivider ? null : <Divider className="static-layout__footer-divider" />}
       <Container>
         {props.footer}
       </Container>
