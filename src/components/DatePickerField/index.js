@@ -85,7 +85,6 @@ class DatePickerField extends Component {
       viewDate
     } = this.props;
 
-    console.log('input', input);
     const inputDate =
       input.value !== ''
         ? moment.isMoment(input.value) ? input.value.format('MM/DD/YYYY') : moment(input.value, 'YYYY-MM-DD').format('MM/DD/YYYY')
