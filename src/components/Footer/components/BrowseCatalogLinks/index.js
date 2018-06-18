@@ -21,7 +21,7 @@ const homeAreas = [
 // TODO: use values from metaData
 const homeStyles = [
   'BY STYLE',
-  <Link to="#">Comtemporary</Link>,
+  <Link to="#">Contemporary</Link>,
   <Link to="#">Country</Link>,
   <Link to="#">Craftsman</Link>,
   <Link to="#">Industrial</Link>,
