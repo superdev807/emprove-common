@@ -139,6 +139,16 @@ const teamMembers = [
     photoKey: 'juan_400x400.jpg',
     dreamSpaceImageKey: '00009_E_cimage.jpg',
   },
+  {
+    id: 14,
+    name: 'Vooha Nallamoth',
+    position: 'Quality Assurance',
+    dreamSpace: 'General Living',
+    homeAreaId: HomeArea.GENERAL_LIVING,
+    description: null,
+    photoKey: 'vooha_400x400.jpg',
+    dreamSpaceImageKey: '02021_E_cimage.jpg',
+  },
 ];
 
 const TheTeam = (props) => {
