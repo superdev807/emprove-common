@@ -133,11 +133,11 @@ const teamMembers = [
     id: 13,
     name: 'Juan Ortiz',
     position: 'Engineer',
-    dreamSpace: '',
-    homeAreaId: HomeArea.GENERAL_LIVING,
+    dreamSpace: 'Contemporary Luxurious Kitchen',
+    homeAreaId: HomeArea.KITCHEN,
     description: null,
-    photoKey: 'juan_400x400.jpg',
-    dreamSpaceImageKey: '01946_E_cimage.jpg',
+    photoKey: 'ju an_400x400.jpg',
+    dreamSpaceImageKey: '00009_E_cimage.jpg',
   },
 ];
 
