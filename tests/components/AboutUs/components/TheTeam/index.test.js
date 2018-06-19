@@ -29,7 +29,7 @@ describe('TheTeam component', () => {
       'Sousuke Tanaka',
       'Leo Esaki',
       'Juan Ortiz',
-      'Vooha Nallamoth',
+      'Vooha Nallamoth'
     ];
 
     const teamMembers = component.find('TeamMember');
@@ -39,6 +39,6 @@ describe('TheTeam component', () => {
       } catch (error) {
         throw new Error(`${error.message}\n  (member name: ${member})`);
       }
-    })
+    });
   });
 });
