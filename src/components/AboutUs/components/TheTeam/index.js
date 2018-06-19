@@ -136,7 +136,7 @@ const teamMembers = [
     dreamSpace: 'Contemporary Luxurious Kitchen',
     homeAreaId: HomeArea.KITCHEN,
     description: null,
-    photoKey: 'ju an_400x400.jpg',
+    photoKey: 'juan_400x400.jpg',
     dreamSpaceImageKey: '00009_E_cimage.jpg',
   },
 ];
