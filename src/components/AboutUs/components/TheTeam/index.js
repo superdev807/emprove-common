@@ -129,6 +129,16 @@ const teamMembers = [
     photoKey: 'leo_400x400.jpg',
     dreamSpaceImageKey: '01946_E_cimage.jpg',
   },
+  {
+    id: 13,
+    name: 'Juan Ortiz',
+    position: 'Engineer',
+    dreamSpace: '',
+    homeAreaId: HomeArea.GENERAL_LIVING,
+    description: null,
+    photoKey: 'juan_400x400.jpg',
+    dreamSpaceImageKey: '01946_E_cimage.jpg',
+  },
 ];
 
 const TheTeam = (props) => {

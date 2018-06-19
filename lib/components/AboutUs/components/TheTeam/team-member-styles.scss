@@ -21,15 +21,6 @@
     margin-bottom: 1rem;
     text-transform: uppercase;
     white-space: nowrap;
-
-    // move it off screen, but still show it in the DOM
-    position: absolute;
-    transform: translateX(100vw);
-
-    // @media screen and (min-width: 1700px) {
-    //   position: relative;
-    //   transform: translateX(0);
-    // }
   }
 
   &__home-area-icon-container {

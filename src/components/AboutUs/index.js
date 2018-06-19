@@ -21,7 +21,7 @@ const AboutUs = (props) => {
       <Container>
         <AboutTheCompany className="about-us__about-the-company" />
         <TheTeam className="about-us__the-team"/>
-        <Divider />
+        <Divider className="about-us__divider" />
         <OurProduct className="about-us__our-product" />
       </Container>
       {/* <OurInvestors /> */}
