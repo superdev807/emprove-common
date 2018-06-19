@@ -1,0 +1,40 @@
+.the-team {
+  &__title {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+
+    strong {
+      font-weight: 1000;
+    }
+  }
+
+  &__members {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: 600px) {
+    }
+
+    @media screen and (min-width: 1400px) {
+    }
+  }
+
+  &__team-member {
+    width: 50%;
+    margin-bottom: 3rem;
+
+    @media screen and (min-width: 600px) {
+      width: 33.3333%;
+    }
+
+    @media screen and (min-width: 1000px) {
+    }
+
+    @media screen and (min-width: 1400px) {
+    }
+  }
+}

@@ -1,0 +1,8 @@
+.static-layout {
+  height: 100vh;
+  overflow-x: auto;
+
+  &__footer-divider {
+    margin: 3rem 0;
+  }
+}

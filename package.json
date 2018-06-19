@@ -13,8 +13,8 @@
   "license": "UNLICENSED",
   "private": true,
   "peerDependencies": {
-    "@material-ui/core": "^1.2.0",
-    "@material-ui/icons": "^1.1.0",
+    "@material-ui/core": "1.2.0",
+    "@material-ui/icons": "1.1.0",
     "prop-types": "^15.6.0",
     "classnames": "^2.2.5",
     "moment": "^2.22.2",
@@ -29,8 +29,8 @@
     "redux-modal": "^1.7.0"
   },
   "devDependencies": {
-    "@material-ui/core": "^1.2.0",
-    "@material-ui/icons": "^1.1.0",
+    "@material-ui/core": "1.2.0",
+    "@material-ui/icons": "1.1.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-jest": "^23.0.1",

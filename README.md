@@ -1,4 +1,4 @@
-# EmproveIt
+# EmproveIt [![CircleCI](https://circleci.com/gh/EmproveIt/emprove-common.svg?style=svg&circle-token=99d090d940d5ee6734723ff566d174ee5f977b71)](https://circleci.com/gh/EmproveIt/emprove-common)
 
 ## TL;DR for Development
 
