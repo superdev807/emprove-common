@@ -28,7 +28,8 @@ describe('TheTeam component', () => {
       'Renan Martins',
       'Sousuke Tanaka',
       'Leo Esaki',
-      'Juan Ortiz'
+      'Juan Ortiz',
+      'Vooha Nallamoth'
     ];
 
     const teamMembers = component.find('TeamMember');
