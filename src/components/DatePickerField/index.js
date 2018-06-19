@@ -6,22 +6,9 @@ import DateTime from 'react-datetime';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
-import MaskedInput from 'react-text-mask';
 import PropTypes from 'prop-types';
 
 import './style.scss';
-
-const DateMask = ({ inputRef, ...otherProps }) => {
-  return (
-    <MaskedInput
-      ref={inputRef}
-      {...otherProps}
-      mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
-      guide
-      placeholderChar={'\u2000'}
-    />
-  );
-};
 
 class DatePickerField extends Component {
   static propTypes = {
@@ -40,7 +27,7 @@ class DatePickerField extends Component {
     if (typeof date === 'string') {
       input.onChange(input.value);
     } else {
-      input.onChange && input.onChange(date.utc());
+      input.onChange && input.onChange(date);
     }
   };
 
@@ -50,10 +37,9 @@ class DatePickerField extends Component {
     () => {
       props.onChange({ target: { value: '' } });
     };
-
     return (
       <div>
-        <Input {...inputProps} inputComponent={DateMask} placeholder="MM/DD/YYYY" type="text" />
+        <Input {...inputProps} type="text" />
       </div>
     );
   };
