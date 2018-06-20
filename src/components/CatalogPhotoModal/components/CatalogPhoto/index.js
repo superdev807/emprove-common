@@ -8,10 +8,15 @@ import './styles.scss';
 
 const CatalogPhoto = (props) => {
   console.log('CatalogPhoto props', props);
+  let src = process.env.IMGIX_CATALOG_IMAGES_HOST + props.imageKey;
+  if (!props.imageKey) {
+    src = '/images/catalog_photo_placeholder.svg';
+  }
+
   return (
     <img
       className={cx('catalog-photo', props.className)}
-      src={process.env.IMGIX_CATALOG_IMAGES_HOST + props.imageKey}
+      src={src}
       alt={props.alt}
     />
   );
