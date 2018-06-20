@@ -43,8 +43,8 @@ class TeamMember extends React.Component {
         <div>My dream space:</div>
         {/* <div className="team-member__dream-space">{member.dreamSpace}</div> */}
         <div className="team-member__home-area-icon-container">
-          <IconButton>
-            <HomeAreaIcon className="team-member__home-area-icon" homeAreaId={member.homeAreaId} titleAccess={member.dreamSpace} />
+          <IconButton onClick={this.props.onHomeAreaClick}>
+            <HomeAreaIcon className="team-member__home-area-icon" homeAreaId={member.dreamSpace.homeAreaId} titleAccess={member.dreamSpace.name} />
           </IconButton>
         </div>
         {member.description && (
@@ -58,7 +58,8 @@ class TeamMember extends React.Component {
 }
 
 TeamMember.propTypes = {
-  member: PropTypes.object.isRequired
+  member: PropTypes.object.isRequired,
+  onHomeAreaClick: PropTypes.func.isRequired
 };
 
 export default TeamMember;
