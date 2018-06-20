@@ -24,9 +24,9 @@ const CatalogPhotoModal = (props) => {
   }
 
   return (
-    <Modal open={true || props.open}>
-      <div style={getModalStyle()} className="catalog-photo-modal">
-        <CatalogPhoto imageKey={props.image.imageKey} alt={props.image.name} />
+    <Modal open={true || props.open} onClose={props.onClose}>
+      <div className="catalog-photo-modal">
+        <CatalogPhoto className="catalog-photo-modal__catalog-photo" imageKey={props.image.imageKey} alt={props.image.name} />
       </div>
     </Modal>
   );

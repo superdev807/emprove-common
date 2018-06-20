@@ -1,7 +1,15 @@
 .catalog-photo-modal {
   position: absolute;
-  width: 100%;
-  max-width: 80%;
   background-color: #fff;
   // box-shadow: ;
+  max-height: 80vh;
+  max-width: 80vw;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+
+  &__catalog-photo {
+    max-height: 80vh;
+    max-width: 80vw;
+  }
 }

@@ -208,6 +208,10 @@ class TheTeam extends React.Component {
     this.setState({ selectedDreamSpace: dreamSpace })
   }
 
+  handleCatalogPhotoModalClose = () => {
+    this.setState({ selectedDreamSpace: null })
+  }
+
   getTeamMembers() {
     return teamMembers.map(teamMember => {
       const memberWithPhotoUrl = {
@@ -230,7 +234,7 @@ class TheTeam extends React.Component {
         <div className="the-team__members">
           {this.getTeamMembers()}
         </div>
-        <CatalogPhotoModal image={this.state.selectedDreamSpace} open={true} />
+        <CatalogPhotoModal image={this.state.selectedDreamSpace} open={this.state.selectedDreamSpace !== null} onClose={this.handleCatalogPhotoModalClose} />
       </section>
     );
   }
