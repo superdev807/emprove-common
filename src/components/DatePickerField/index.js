@@ -23,12 +23,15 @@ class DatePickerField extends Component {
   };
 
   handleChange = date => {
-    const { input } = this.props;
+    const { input, toggleDateWidget } = this.props;
+
     if (typeof date === 'string') {
-      input.onChange(input.value);
+      input.onChange(date);
     } else {
       input.onChange && input.onChange(date);
     }
+
+    toggleDateWidget();
   };
 
   renderInput = props => {
@@ -39,7 +42,7 @@ class DatePickerField extends Component {
     };
     return (
       <div>
-        <Input {...inputProps} type="text" />
+        <Input {...inputProps} type="text" placeholder="MM/DD/YYYY" />
       </div>
     );
   };
@@ -68,11 +71,13 @@ class DatePickerField extends Component {
       errorClassName,
       hideErrorText,
       disableDatePast,
-      viewDate
+      viewDate,
+      open,
+      closeDateWidget
     } = this.props;
 
     const inputDate =
-      input.value !== ''
+      input.value !== 'Invalid date'
         ? moment.isMoment(input.value) ? input.value.format('MM/DD/YYYY') : moment(input.value, 'YYYY-MM-DD').format('MM/DD/YYYY')
         : null;
 
@@ -89,6 +94,9 @@ class DatePickerField extends Component {
           timeFormat={timeFormat ? timeFormat : false}
           closeOnSelect={true}
           isValidDate={disableDatePast && this.disablePast} //if disableDatePast is given, dates before that date become unavailable
+          onViewModeChange={this.handleViewModeChange}
+          open={open}
+          onBlur={closeDateWidget}
         />
         {!hideErrorText && touched && error && <FormHelperText className={errorClassName}>{error}</FormHelperText>}
       </FormControl>
