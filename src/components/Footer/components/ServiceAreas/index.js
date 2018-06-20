@@ -12,7 +12,7 @@ const serviceAreas = [
   'Las Vegas',
   'Sunrise Manor',
   'Winchester',
-  'Summerlin South',
+  'Summerlin',
   'Spring Valley',
   'Whitney',
   'Paradise',
