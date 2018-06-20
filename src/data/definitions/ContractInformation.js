@@ -27,13 +27,13 @@ const paymentType = {
       id: 1,
       name: 'A Bi-Weekly payment type',
       definition:
-        'is where the contractor submits an invoice for the work it performed during each 2-week time period. Homeowner then makes payment per the Payment Term.'
+        'Where the contractor submits an invoice for the work it performed during each 2-week time period. Homeowner then makes payment per the Payment Term.'
     },
     {
       id: 2,
-      name: 'A Monthly payment type is',
+      name: 'A Monthly payment type',
       definition:
-        'where the contractor submits a monthly invoice for the work it performed during each month. Homeowner then makes payment per the Payment Term.'
+        'Where the contractor submits a monthly invoice for the work it performed during each month. Homeowner then makes payment per the Payment Term.'
     },
     {
       id: 3,
