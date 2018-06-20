@@ -15,7 +15,8 @@ const teamMembers = [
     name: 'James Noel',
     position: 'CEO',
     dreamSpace: {
-      name: 'Contemporary General Living',
+      style: 'Contemporary',
+      homeArea: 'General Living',
       quality: 'Upgraded',
       homeAreaId: HomeArea.GENERAL_LIVING,
       imageKey: '01698_E_cimage.jpg',
@@ -28,7 +29,8 @@ const teamMembers = [
     name: 'Linda Lee',
     position: 'COO',
     dreamSpace: {
-      name: 'Contemporary Master Bathroom',
+      style: 'Contemporary',
+      homeArea: 'Master Bathroom',
       quality: 'Luxurious',
       homeAreaId: HomeArea.MASTER_BATHROOM,
       imageKey: '00043_E_cimage.jpg',
@@ -41,8 +43,9 @@ const teamMembers = [
     name: 'Andrew Pascal',
     position: 'Chairman',
     dreamSpace: {
-      name: 'Contemporary Master Bathroom',
-      quality: 'High-Ends',
+      style: 'Contemporary',
+      homeArea: 'Master Bathroom',
+      quality: 'High-End',
       homeAreaId: HomeArea.MASTER_BATHROOM,
       imageKey: '00016_E_cimage.jpg',
     },
@@ -54,7 +57,8 @@ const teamMembers = [
     name: 'Ervi Bongso',
     position: 'Principal Engineer',
     dreamSpace: {
-      name: 'Rustic General Living',
+      style: 'Rustic',
+      homeArea: 'General Living',
       quality: 'Best Value',
       homeAreaId: HomeArea.GENERAL_LIVING,
       imageKey: '02369_E_cimage.jpg',
@@ -67,7 +71,8 @@ const teamMembers = [
     name: 'Tonson Back',
     position: 'UI/UX Artist',
     dreamSpace: {
-      name: 'Industrial General Living',
+      style: 'Industrial',
+      homeArea: 'General Living',
       quality: 'Upgraded',
       homeAreaId: HomeArea.GENERAL_LIVING,
       imageKey: '01990_E_cimage.jpg',
@@ -80,7 +85,8 @@ const teamMembers = [
     name: 'Mike Gonzales',
     position: 'Market Launcher',
     dreamSpace: {
-      name: 'Contemporary General Living',
+      style: 'Contemporary',
+      homeArea: 'General Living',
       quality: 'High-End',
       homeAreaId: HomeArea.GENERAL_LIVING,
       imageKey: '01762_E_cimage.jpeg',
@@ -93,7 +99,8 @@ const teamMembers = [
     name: 'JoAnne McCauley',
     position: 'Market Launcher',
     dreamSpace: {
-      name: 'Contemporary Master Bedroom',
+      style: 'Contemporary',
+      homeArea: 'Master Bedroom',
       quality: 'Luxurious',
       homeAreaId: HomeArea.MASTER_BEDROOM,
       imageKey: '00889_E_cimage.jpg',
@@ -106,7 +113,8 @@ const teamMembers = [
     name: 'Domini Noel',
     position: 'Business Intelligence',
     dreamSpace: {
-      name: 'Traditional Kitchen',
+      style: 'Traditional',
+      homeArea: 'Kitchen',
       quality: 'High-End',
       homeAreaId: HomeArea.KITCHEN,
       imageKey: '01844_E_cimage.jpg',
@@ -119,7 +127,8 @@ const teamMembers = [
     name: 'Kiwook Kwon',
     position: 'Engineer',
     dreamSpace: {
-      name: 'Rustic Master Bathroom',
+      style: 'Rustic',
+      homeArea: 'Master Bathroom',
       quality: 'Upgraded',
       homeAreaId: HomeArea.MASTER_BATHROOM,
       imageKey: '00599_E_cimage.jpg',
@@ -132,7 +141,8 @@ const teamMembers = [
     name: 'Renan Martins',
     position: 'Engineer',
     dreamSpace: {
-      name: 'Modern Master Bathroom',
+      style: 'Modern',
+      homeArea: 'Master Bathroom',
       quality: 'Luxurious',
       homeAreaId: HomeArea.MASTER_BATHROOM,
       imageKey: '00504_E_cimage.jpg',
@@ -145,7 +155,8 @@ const teamMembers = [
     name: 'Sousuke Tanaka',
     position: 'Engineer',
     dreamSpace: {
-      name: 'Contemporary Master Bedroom',
+      style: 'Contemporary',
+      homeArea: 'Master Bedroom',
       quality: 'High-End',
       homeAreaId: HomeArea.MASTER_BEDROOM,
       imageKey: '00234_E_cimage.jpg',
@@ -158,7 +169,8 @@ const teamMembers = [
     name: 'Leo Esaki',
     position: 'Engineer',
     dreamSpace: {
-      name: 'Traditional General Living',
+      style: 'Traditional',
+      homeArea: 'General Living',
       quality: 'Upgraded',
       homeAreaId: HomeArea.GENERAL_LIVING,
       imageKey: '01946_E_cimage.jpg',
@@ -171,7 +183,8 @@ const teamMembers = [
     name: 'Juan Ortiz',
     position: 'Engineer',
     dreamSpace: {
-      name: 'Contemporary Kitchen',
+      style: 'Contemporary',
+      homeArea: 'Kitchen',
       quality: 'Luxurious',
       homeAreaId: HomeArea.KITCHEN,
       imageKey: '00009_E_cimage.jpg',
@@ -184,7 +197,8 @@ const teamMembers = [
     name: 'Vooha Nallamoth',
     position: 'Quality Assurance',
     dreamSpace: {
-      name: 'Traditional General Living',
+      style: 'Traditional',
+      homeArea: 'General Living',
       quality: 'Upgraded',
       homeAreaId: HomeArea.GENERAL_LIVING,
       imageKey: '02021_E_cimage.jpg',
