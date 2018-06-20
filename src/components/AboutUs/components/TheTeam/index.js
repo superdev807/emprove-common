@@ -213,7 +213,7 @@ class TheTeam extends React.Component {
     super(props);
 
     this.state = {
-      selectedDreamSpace: null
+      selectedDreamSpace: undefined
     };
   }
 
@@ -223,7 +223,7 @@ class TheTeam extends React.Component {
   }
 
   handleCatalogPhotoModalClose = () => {
-    this.setState({ selectedDreamSpace: null })
+    this.setState({ selectedDreamSpace: undefined })
   }
 
   getTeamMembers() {
