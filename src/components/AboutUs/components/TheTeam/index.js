@@ -218,7 +218,6 @@ class TheTeam extends React.Component {
   }
 
   handleHomeAreaClick = dreamSpace => () => {
-    console.log('handleHomeAreaClick', dreamSpace);
     this.setState({ selectedDreamSpace: dreamSpace })
   }
 
@@ -248,7 +247,7 @@ class TheTeam extends React.Component {
         <div className="the-team__members">
           {this.getTeamMembers()}
         </div>
-        <CatalogPhotoModal image={this.state.selectedDreamSpace} open={this.state.selectedDreamSpace !== null} onClose={this.handleCatalogPhotoModalClose} />
+        <CatalogPhotoModal image={this.state.selectedDreamSpace} open={this.state.selectedDreamSpace !== undefined} onClose={this.handleCatalogPhotoModalClose} />
       </section>
     );
   }
