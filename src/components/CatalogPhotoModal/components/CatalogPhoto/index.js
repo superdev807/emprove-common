@@ -11,7 +11,7 @@ const CatalogPhoto = (props) => {
 
   return (
     <img
-      className={cx('catalog-photo', { 'catalog-photo--loading': props.loading }, props.className)}
+      className={cx('catalog-photo', props.className)}
       src={src}
       alt={props.alt}
     />

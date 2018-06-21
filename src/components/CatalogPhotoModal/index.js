@@ -47,10 +47,10 @@ class CatalogPhotoModal extends React.Component {
     const imageName = `${image.style} ${image.homeArea}`;
 
     return (
-      <Modal open={this.props.open} onClose={this.props.onClose}>
+      <Modal disableAutoFocus open={this.props.open} onClose={this.props.onClose}>
         <div className="catalog-photo-modal">
             <CatalogPhoto
-              className={cx('catalog-photo-modal__catalog-photo', 'catalog-photo-modal__catalog-photo--loading')}
+              className={cx('catalog-photo-modal__catalog-photo', { 'catalog-photo-modal__catalog-photo--loading': this.state.loading })}
               imageUrl={process.env.IMGIX_CATALOG_IMAGES_HOST + image.imageKey}
               alt={imageName}
               loading={this.state.loading}
@@ -64,7 +64,8 @@ class CatalogPhotoModal extends React.Component {
             />
             <CloseButton className="catalog-photo-modal__close-button" onClick={this.props.onClose} />
             <DreamItLink browseFilter={imageName.toLowerCase().replace(/ /g, '-')} disabled={this.state.loading} />
-            {this.state.error && <span className="catalog-photo-modal__error-message">{this.state.error}</span>}
+            {this.state.loading && <span className="catalog-photo-modal__message">{this.state.loading}</span>}
+            {this.state.error && <span className="catalog-photo-modal__message--error">{this.state.error}</span>}
           </div>
       </Modal>
     );
