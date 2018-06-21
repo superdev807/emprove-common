@@ -141,7 +141,7 @@ const teamMembers = [
   },
   {
     id: 14,
-    name: 'Vooha Nallamoth',
+    name: 'Vooha Nallamothu',
     position: 'Quality Assurance',
     dreamSpace: 'General Living',
     homeAreaId: HomeArea.GENERAL_LIVING,
