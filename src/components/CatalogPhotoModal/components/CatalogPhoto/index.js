@@ -7,15 +7,11 @@ import cx from 'classnames';
 import './styles.scss';
 
 const CatalogPhoto = (props) => {
-  console.log('CatalogPhoto props', props);
-  let src = process.env.IMGIX_CATALOG_IMAGES_HOST + props.imageKey;
-  if (!props.imageKey) {
-    src = '/images/catalog_photo_placeholder.svg';
-  }
+  let src = props.loading ? '/images/catalog_photo_placeholder.svg' : props.imageUrl;
 
   return (
     <img
-      className={cx('catalog-photo', props.className)}
+      className={cx('catalog-photo', { 'catalog-photo--loading': props.loading }, props.className)}
       src={src}
       alt={props.alt}
     />
@@ -25,7 +21,8 @@ const CatalogPhoto = (props) => {
 CatalogPhoto.propTypes = {
   alt: PropTypes.string.isRequired,
   className: PropTypes.string,
-  imageKey: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string.isRequired,
+  loading: PropTypes.bool
 };
 
 export default CatalogPhoto;
