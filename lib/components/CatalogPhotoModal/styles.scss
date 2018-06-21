@@ -19,6 +19,11 @@
   &__catalog-photo {
     max-height: 80vh;
     max-width: 80vw;
+
+    &--loading {
+      min-width: 80vw;
+      min-height: 80vh;
+    }
   }
 
   &__catalog-photo-header {
@@ -30,5 +35,11 @@
 
   &__close-button {
     color: #fff;
+  }
+
+  &__error-message {
+    color: #f34336;
+    font-size: 1.5rem;
+    position: absolute;
   }
 }

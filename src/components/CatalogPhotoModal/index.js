@@ -1,6 +1,8 @@
 'use strict';
 
 import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
 import Modal from '@material-ui/core/Modal';
 
 import CloseButton from './components/CloseButton';
@@ -9,54 +11,76 @@ import CatalogPhotoHeader from './components/CatalogPhotoHeader';
 import DreamItLink from './components/DreamItLink';
 import './styles.scss';
 
-function getModalStyle() {
-  const top = 50;
-  const left = 50;
+class CatalogPhotoModal extends React.Component {
+  constructor(props) {
+    super(props);
 
-  return {
-    top: `${top}%`,
-    left: `${left}%`,
-    transform: `translate(-${top}%, -${left}%)`,
-  };
-}
+    this.state = {
+      loading: true,
+      error: null
+    };
+  }
 
-const CatalogPhotoModal = (props) => {
-  console.log('CatalogPhotoModal', props);
-  // if (!props.image) {
-  //   return null;
-  // }
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.image !== prevProps.image) {
+      if (this.props.image.imageKey === '') {
+        this.setState({ loading: true });
+      }
+      else {
+        const image = new Image();
+        image.src = process.env.IMGIX_CATALOG_IMAGES_HOST + this.props.image.imageKey;
+        image.addEventListener('load', () => {
+          this.setState({ loading: false });
+        });
+        image.addEventListener('error', () => {
+          this.setState({
+            loading: false,
+            error: 'Could not load image. Please close the dialog and try again.'
+          });
+        });
+      }
+    }
+  }
 
-  const imageName = `${props.image.style} ${props.image.homeArea}`;
+  render() {
+    const { image } = this.props;
+    const imageName = `${image.style} ${image.homeArea}`;
 
-  // <div className="catalog-photo-modal__catalog-photo-container">
-  return (
-    <Modal open={true || props.open} onClose={props.onClose}>
-      <div className="catalog-photo-modal">
-          <CatalogPhoto
-            className="catalog-photo-modal__catalog-photo"
-            imageKey={props.image.imageKey}
-            alt={imageName}
-          />
-          <CatalogPhotoHeader
-            className="catalog-photo-modal__catalog-photo-header"
-            designStyle={props.image.style}
-            homeArea={props.image.homeArea}
-            qualityStandard={props.image.quality}
-          />
-          <CloseButton className="catalog-photo-modal__close-button" onClick={props.onClose} />
-          <DreamItLink browseFilter={imageName.toLowerCase().replace(/ /g, '-')} />
-        </div>
-    </Modal>
-  );
-// </div>
+    return (
+      <Modal open={this.props.open} onClose={this.props.onClose}>
+        <div className="catalog-photo-modal">
+            <CatalogPhoto
+              className={cx('catalog-photo-modal__catalog-photo', 'catalog-photo-modal__catalog-photo--loading')}
+              imageUrl={process.env.IMGIX_CATALOG_IMAGES_HOST + image.imageKey}
+              alt={imageName}
+              loading={this.state.loading}
+            />
+            <CatalogPhotoHeader
+              className="catalog-photo-modal__catalog-photo-header"
+              designStyle={image.style}
+              homeArea={image.homeArea}
+              qualityStandard={image.quality}
+              loading={this.state.loading}
+            />
+            <CloseButton className="catalog-photo-modal__close-button" onClick={this.props.onClose} />
+            <DreamItLink browseFilter={imageName.toLowerCase().replace(/ /g, '-')} disabled={this.state.loading} />
+            {this.state.error && <span className="catalog-photo-modal__error-message">{this.state.error}</span>}
+          </div>
+      </Modal>
+    );
+  }
+};
+
+CatalogPhotoModal.propTypes = {
+  image: PropTypes.object
 };
 
 CatalogPhotoModal.defaultProps = {
   image: {
     imageKey: '',
-    style: 'Loading',
+    style: '',
     homeArea: '',
-    quality: 'We will show you the image soon'
+    quality: ''
   }
 };
 
