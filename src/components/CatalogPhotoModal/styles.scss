@@ -12,11 +12,16 @@
   align-items: center;
   outline: none; // remove the blue outline that appears on focus
 
+  &--error {
+    min-height: 50vh;
+    min-width: 50vw;
+  }
+
   &__catalog-photo {
     max-height: 80vh;
     max-width: 80vw;
     opacity: 1;
-    transition: all .5s ease;
+    transition: all .3s ease;
 
     &--loading {
       min-width: 50vw;

@@ -24,7 +24,7 @@ class CatalogPhotoModal extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     if (this.props.image !== prevProps.image) {
       if (this.props.image.imageKey === '') {
-        this.setState({ loading: true });
+        this.setState({ loading: true, error: null });
       }
       else {
         const image = new Image();
@@ -48,7 +48,7 @@ class CatalogPhotoModal extends React.Component {
 
     return (
       <Modal disableAutoFocus open={this.props.open} onClose={this.props.onClose}>
-        <div className="catalog-photo-modal">
+        <div className={cx('catalog-photo-modal', { "catalog-photo-modal--error": this.state.error })}>
             <CatalogPhoto
               className={cx('catalog-photo-modal__catalog-photo', { 'catalog-photo-modal__catalog-photo--loading': this.state.loading })}
               imageUrl={process.env.IMGIX_CATALOG_IMAGES_HOST + image.imageKey}
