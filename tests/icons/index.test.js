@@ -7,6 +7,7 @@ describe('Icon components', () => {
   const iconComponentNames = [
     'IconBackyard',
     'IconBidIt',
+    'IconBlog',
     'IconCostIt',
     'IconDeck',
     'IconDen',
