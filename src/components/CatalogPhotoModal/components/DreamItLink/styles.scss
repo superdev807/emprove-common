@@ -8,6 +8,10 @@
   display: flex;
   align-items: center;
 
+  &--disabled {
+    pointer-events: none;
+  }
+
   &__icon {
     color: #fff;
   }
