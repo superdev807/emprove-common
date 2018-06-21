@@ -194,7 +194,7 @@ const teamMembers = [
   },
   {
     id: 14,
-    name: 'Vooha Nallamoth',
+    name: 'Vooha Nallamothu',
     position: 'Quality Assurance',
     dreamSpace: {
       style: 'Traditional',

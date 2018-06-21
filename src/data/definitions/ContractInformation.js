@@ -27,13 +27,13 @@ const paymentType = {
       id: 1,
       name: 'A Bi-Weekly payment type',
       definition:
-        'is where the contractor submits an invoice for the work it performed during each 2-week time period. Homeowner then makes payment per the Payment Term.'
+        'Where the contractor submits an invoice for the work it performed during each 2-week time period. Homeowner then makes payment per the Payment Term.'
     },
     {
       id: 2,
-      name: 'A Monthly payment type is',
+      name: 'A Monthly payment type',
       definition:
-        'where the contractor submits a monthly invoice for the work it performed during each month. Homeowner then makes payment per the Payment Term.'
+        'Where the contractor submits a monthly invoice for the work it performed during each month. Homeowner then makes payment per the Payment Term.'
     },
     {
       id: 3,
@@ -53,7 +53,8 @@ const paymentTerm = {
 const retention = {
   title: 'RETENTION',
   body: [
-    'The amount of money that is retained by the Homeowner from the total amount otherwise due to the contractor for work performed. Retention serves as security for the Homeowner, to ensure there are funds available at the end of the project that can be used to complete or correct the work, if necessary. If the contractor achieves full completion of the project, the retention is then released to the contractor.'
+    'The amount of money that is retained by the Homeowner from the total amount otherwise due to the contractor for work performed. Retention serves as security for the Homeowner, to ensure there are funds available at the end of the project that can be used to complete or correct the work, if necessary. When the contractor achieves full satisfactory completion of the project, the retention is then released to the contractor.',
+    'The maximum amount of retention permitted varies from state to state, with most states permitting a maximum of 10% or 5%. Check your state legislative website for further details.'
   ],
   terms: []
 };

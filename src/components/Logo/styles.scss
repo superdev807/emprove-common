@@ -14,7 +14,7 @@
     width: auto;
     margin: 0;
 
-    &--shortened {
+    &--shortened, &--beta {
       height: $logo-height;
     }
   }

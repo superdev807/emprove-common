@@ -19,7 +19,7 @@ const productConcepts = [
   },
   {
     id: 2,
-    name: <span><strong>Cost</strong> It</span>,
+    name: <span><strong>Cost</strong> It!</span>,
     description: 'Emprove’s proprietary data engine generates a comprehensive scope and cost estimate for the project.  Each scope element can be tailored to accommodate various project scales or budget constraints.',
     icon: <IconCostIt />,
   },
