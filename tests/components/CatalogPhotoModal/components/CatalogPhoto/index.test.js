@@ -19,6 +19,6 @@ describe('CatalogPhoto component', () => {
 
   test('should display an image whose src and alt are defined by props', () => {
     expect(component.prop('src')).toBe(props.imageUrl);
-    expect(component.prop('src')).toBe(props.alt);
+    expect(component.prop('alt')).toBe(props.alt);
   });
 });
