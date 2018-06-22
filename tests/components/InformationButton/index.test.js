@@ -30,6 +30,6 @@ describe('InformationButton', () => {
   });
 
   it('should display an information icon', () => {
-    expect(component.find('pure(InfoOutline)').length).toBe(1);
+    expect(component.find('IconInfo').length).toBe(1);
   })
 });

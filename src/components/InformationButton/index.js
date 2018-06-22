@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import IconButton from '@material-ui/core/IconButton';
-import IconInfoOutline from '@material-ui/icons/InfoOutline';
+import IconInfo from '../../icons/IconInfo';
 import { connect } from 'react-redux';
 import { show as showModal } from 'redux-modal';
 
@@ -21,7 +21,7 @@ class InformationButton extends Component {
         className={cx('information-button', { 'information-button--size-16': this.props.size === 16 }, this.props.className)}
         onClick={this.handleClick}
       >
-        <IconInfoOutline
+        <IconInfo
           className={cx({ 'information-button--size-16': this.props.size === 16 })}
         />
       </IconButton>
