@@ -18,6 +18,7 @@ describe('Icon components', () => {
     'IconGeneralLiving',
     'IconGuestBathroom',
     'IconGuestBedroom',
+    'IconInfo',
     'IconInstagram',
     'IconKitchen',
     'IconKitchenette',
