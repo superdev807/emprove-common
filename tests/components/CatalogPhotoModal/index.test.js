@@ -32,7 +32,8 @@ describe('CatalogPhotoModal component', () => {
 
   beforeEach(() => {
     props = {
-      image: undefined
+      image: undefined,
+      fromContractor: undefined,
     };
     component = shallow(<CatalogPhotoModal {...props} />);
   });
@@ -86,6 +87,14 @@ describe('CatalogPhotoModal component', () => {
 
     expect(component.find('DreamItLink').length).toBe(1);
     expect(component.find('DreamItLink').prop('browseFilter')).toBe('modern-master-bedroom');
+  });
+
+  it('should display a link to `dream it` that takes user to consumer site from contractor site if given fromContractor prop', () => {
+    component.setProps({ fromContractor: true });
+    expect(component.find('DreamItLink').prop('fromContractor')).toBe(true);
+
+    component.setProps({ fromContractor: false });
+    expect(component.find('DreamItLink').prop('fromContractor')).toBe(false);
   });
 
   it('should display an error message if failed to load image', () => {
