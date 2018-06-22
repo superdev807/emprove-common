@@ -1,0 +1,52 @@
+.catalog-photo-modal {
+  position: absolute;
+  background-color: #fff;
+  max-height: 80vh;
+  max-width: 80vw;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  outline: none; // remove the blue outline that appears on focus
+
+  &--error {
+    min-height: 50vh;
+    min-width: 50vw;
+  }
+
+  &__catalog-photo {
+    max-height: 80vh;
+    max-width: 80vw;
+    opacity: 1;
+    transition: all .3s ease;
+
+    &--loading {
+      min-width: 50vw;
+      min-height: 50vh;
+      opacity: 0;
+    }
+  }
+
+  &__catalog-photo-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  &__close-button {
+    color: #fff;
+  }
+
+  &__message {
+    font-size: 1.5rem;
+    position: absolute;
+
+    &--error {
+      color: #f34336;
+    }
+  }
+}
