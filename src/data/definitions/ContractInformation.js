@@ -39,7 +39,7 @@ const paymentType = {
       id: 3,
       name: 'A Milestone-Based payment',
       definition:
-        'sets out various work completion milestones, that once reached, entitles the contractor to payment of an associated pre-determined amount. Homeowner then makes payment per the Payment Term.'
+        'Sets out various work completion milestones, that once reached, entitles the contractor to payment of an associated pre-determined amount. Homeowner then makes payment per the Payment Term.'
     }
   ]
 };
