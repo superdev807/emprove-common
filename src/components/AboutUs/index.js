@@ -20,7 +20,7 @@ const AboutUs = (props) => {
       <AboutUsHero />
       <Container>
         <AboutTheCompany className="about-us__about-the-company" />
-        <TheTeam className="about-us__the-team"/>
+        <TheTeam className="about-us__the-team" fromContractor={props.fromContractor} />
         <Divider className="about-us__divider" />
         <OurProduct className="about-us__our-product" />
       </Container>
@@ -31,7 +31,12 @@ const AboutUs = (props) => {
 };
 
 AboutUs.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  fromContractor: PropTypes.bool
+};
+
+AboutUs.defaultProps = {
+  fromContractor: false
 };
 
 export default AboutUs;

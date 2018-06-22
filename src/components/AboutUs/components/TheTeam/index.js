@@ -247,14 +247,19 @@ class TheTeam extends React.Component {
         <div className="the-team__members">
           {this.getTeamMembers()}
         </div>
-        <CatalogPhotoModal image={this.state.selectedDreamSpace} open={this.state.selectedDreamSpace !== undefined} onClose={this.handleCatalogPhotoModalClose} />
+        <CatalogPhotoModal image={this.state.selectedDreamSpace} open={this.state.selectedDreamSpace !== undefined} onClose={this.handleCatalogPhotoModalClose} fromContractor={this.props.fromContractor} />
       </section>
     );
   }
 }
 
 TheTeam.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  fromContractor: PropTypes.bool
+};
+
+TheTeam.defaultProps = {
+  fromContractor: false
 };
 
 export default TheTeam;
