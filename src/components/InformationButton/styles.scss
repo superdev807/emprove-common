@@ -1,6 +1,9 @@
+@import 'variables';
+
 .information-button {
   width: 24px;
   height: 24px;
+  color: $icon-color;
 
   &--size-16 {
     width: 16px;
