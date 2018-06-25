@@ -12,6 +12,11 @@
   align-items: center;
   outline: none; // remove the blue outline that appears on focus
 
+  &--loading {
+    min-width: 50vw;
+    min-height: 50vh;
+  }
+
   &--error {
     min-height: 50vh;
     min-width: 50vw;
@@ -21,11 +26,9 @@
     max-height: 80vh;
     max-width: 80vw;
     opacity: 1;
-    transition: all .3s ease;
+    transition: all .5s ease;
 
     &--loading {
-      min-width: 50vw;
-      min-height: 50vh;
       opacity: 0;
     }
   }

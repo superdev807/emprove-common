@@ -7,12 +7,10 @@ import cx from 'classnames';
 import './styles.scss';
 
 const CatalogPhoto = (props) => {
-  let src = props.loading ? '/images/catalog_photo_placeholder.svg' : props.imageUrl;
-
   return (
     <img
       className={cx('catalog-photo', props.className)}
-      src={src}
+      src={props.imageUrl}
       alt={props.alt}
     />
   );
@@ -21,8 +19,7 @@ const CatalogPhoto = (props) => {
 CatalogPhoto.propTypes = {
   alt: PropTypes.string.isRequired,
   className: PropTypes.string,
-  imageUrl: PropTypes.string.isRequired,
-  loading: PropTypes.bool
+  imageUrl: PropTypes.string.isRequired
 };
 
 export default CatalogPhoto;
