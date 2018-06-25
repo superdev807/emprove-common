@@ -63,13 +63,20 @@ describe('CatalogPhotoModal component', () => {
     expect(component.find('CatalogPhoto').prop('imageUrl')).toBe(IMGIX_CATALOG_IMAGES_HOST + imageFixture.imageKey);
   });
 
-  it('should display a CatalogPhotoHeader', () => {
+  it('should display a CatalogPhotoHeader if image is no longer loading', () => {
     component.setProps({ image: imageFixture });
+    component.setState({ loading: false });
 
     expect(component.find('CatalogPhotoHeader').length).toBe(1);
     expect(component.find('CatalogPhotoHeader').prop('designStyle')).toBe(imageFixture.style);
     expect(component.find('CatalogPhotoHeader').prop('homeArea')).toBe(imageFixture.homeArea);
     expect(component.find('CatalogPhotoHeader').prop('qualityStandard')).toBe(imageFixture.quality);
+  });
+
+  it('should display a loading indicator while image is loading', () => {
+    component.setState({ loading: true });
+
+    expect(component.find('WithStyles(LoadingIndicator)').length).toBe(1);
   });
 
   it('should display a X button to close the modal', () => {
