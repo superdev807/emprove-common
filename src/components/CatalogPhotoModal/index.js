@@ -57,7 +57,6 @@ class CatalogPhotoModal extends React.Component {
             className={cx('catalog-photo-modal__catalog-photo', { 'catalog-photo-modal__catalog-photo--loading': this.state.loading })}
             imageUrl={process.env.IMGIX_CATALOG_IMAGES_HOST + image.imageKey}
             alt={imageName}
-            loading={this.state.loading}
           />
           {this.state.loading ? <LoadingIndicator /> : (
             <CatalogPhotoHeader

@@ -7,7 +7,6 @@ import cx from 'classnames';
 import './styles.scss';
 
 const CatalogPhoto = (props) => {
-  console.log('catalog photo', props.imageUrl);
   return (
     <img
       className={cx('catalog-photo', props.className)}
@@ -20,8 +19,7 @@ const CatalogPhoto = (props) => {
 CatalogPhoto.propTypes = {
   alt: PropTypes.string.isRequired,
   className: PropTypes.string,
-  imageUrl: PropTypes.string.isRequired,
-  loading: PropTypes.bool
+  imageUrl: PropTypes.string.isRequired
 };
 
 export default CatalogPhoto;

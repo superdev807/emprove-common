@@ -29,8 +29,6 @@
     transition: all .5s ease;
 
     &--loading {
-      min-width: 50vw;
-      min-height: 50vh;
       opacity: 0;
     }
   }
