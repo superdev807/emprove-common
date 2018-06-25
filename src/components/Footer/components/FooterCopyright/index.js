@@ -12,7 +12,7 @@ const FooterCopyright = (props) => {
       <div className="footer-copyright__logo-container">
         <div className="footer-copyright__logo">
           <div className="footer-copyright__logo-overline"></div>
-          <Logo contractor={props.contractor} />
+          <Logo contractor={props.contractor} version="beta" />
         </div>
       </div>
       <div className="footer-copyright__copyright-declaration">
