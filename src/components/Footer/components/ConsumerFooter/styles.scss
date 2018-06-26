@@ -4,68 +4,69 @@ $tablet-breakpoint: 600px;
 $desktop-breakpoint: 1000px;
 
 .consumer-footer {
-  background: white;
+  background: #ffffff;
   margin-top: 40px;
   padding: 32px 32px 0px;
+}
 
-    &-index {
-      display: flex;
-      flex-direction: column;
-    align-items: space-between;
+.consumer-footer-index {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+
+  @media screen and (min-width: $tablet-breakpoint) {
+    align-items: stretch;
+  }
+
+  @media screen and (min-width: $desktop-breakpoint) {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  &__grouped-sections {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 
     @media screen and (min-width: $tablet-breakpoint) {
-      align-items: stretch;
+      flex-direction: row;
+      justify-content: space-between;
+
+      margin-bottom: $spacing-unit * 4;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 
     @media screen and (min-width: $desktop-breakpoint) {
-      flex-direction: row;
-      justify-content: space-around;
-    }
-
-    &__grouped-sections {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-
-      @media screen and (min-width: $tablet-breakpoint) {
-        flex-direction: row;
-        justify-content: space-between;
-
-        margin-bottom: $spacing-unit * 4;
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
-
-      @media screen and (min-width: $desktop-breakpoint) {
-        margin-bottom: 0;
-      }
-    }
-
-    &__section {
-      margin-bottom: $spacing-unit * 4;
-
-      @media screen and (min-width: $tablet-breakpoint) {
-        flex: 1;
-        margin-bottom: 0;
-      }
-
-      @media screen and (min-width: $desktop-breakpoint) {
-        flex: none;
-        margin-right: auto;
-
-        &--no-right-margin {
-          margin-right: 0;
-        }
-      }
-    }
-
-    &__section-name {
-      text-transform: uppercase;
-      font-size: .875rem;
-      font-weight: 500;
-      margin-bottom: $spacing-unit * 2;
+      margin-bottom: 0;
     }
   }
+
+  &__section {
+    margin-bottom: $spacing-unit * 4;
+
+    @media screen and (min-width: $tablet-breakpoint) {
+      flex: 1;
+      margin-bottom: 0;
+    }
+
+    @media screen and (min-width: $desktop-breakpoint) {
+      flex: none;
+      margin-right: auto;
+
+      &--no-right-margin {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__section-name {
+    text-transform: uppercase;
+    font-size: .875rem;
+    font-weight: 500;
+    margin-bottom: $spacing-unit * 2;
+  }
 }
+
