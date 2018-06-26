@@ -77,7 +77,7 @@ class DatePickerField extends Component {
     } = this.props;
 
     const inputDate =
-      input.value !== 'Invalid date'
+      input.value !== 'Invalid date' && input.value !== ''
         ? moment.isMoment(input.value) ? input.value.format('MM/DD/YYYY') : moment(input.value, 'YYYY-MM-DD').format('MM/DD/YYYY')
         : null;
 
