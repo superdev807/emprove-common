@@ -3,6 +3,12 @@
 $tablet-breakpoint: 600px;
 $desktop-breakpoint: 1000px;
 
+.consumer-footer {
+  background: #ffffff;
+  margin-top: 40px;
+  padding: 32px 32px 0px;
+}
+
 .consumer-footer-index {
   display: flex;
   flex-direction: column;
@@ -63,3 +69,4 @@ $desktop-breakpoint: 1000px;
     margin-bottom: $spacing-unit * 2;
   }
 }
+
