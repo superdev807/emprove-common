@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import IconDreamIt from '../../../../icons/IconDreamIt';
 import './styles.scss';
 
-const DreamItLink = (props) => {
+const DreamItLink = props => {
   const path = `/browse/${props.browseFilter}`;
   let TheLink;
   const linkProps = {};
@@ -17,8 +17,7 @@ const DreamItLink = (props) => {
     linkProps.href = process.env.CONSUMER_DOMAIN + path;
     linkProps.target = '_blank';
     linkProps.rel = 'noopener noreferrer';
-  }
-  else {
+  } else {
     TheLink = Link;
     linkProps.to = path;
   }
@@ -37,7 +36,7 @@ DreamItLink.propTypes = {
   browseFilter: PropTypes.string,
   disabled: PropTypes.bool,
   fromContractor: PropTypes.bool
-}
+};
 
 DreamItLink.defaultProps = {
   browseFilter: 'any-home',
