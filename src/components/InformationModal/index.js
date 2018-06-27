@@ -63,12 +63,12 @@ const InformationModal = props => {
   });
 
   return (
-    <Dialog open={props.show} onClose={props.handleHide}>
+    <Dialog classes={{ paper: 'information-modal' }} open={props.show} onClose={props.handleHide}>
       <IconButton className="information-modal-close-button" onClick={props.handleHide}>
         <IconClose />
       </IconButton>
       <DialogTitle>{props.title}</DialogTitle>
-      <DialogContent>
+      <DialogContent className="information-modal__content">
         {props.body.map((paragraph, index) => (
           <Typography key={index} className="information-modal-body-paragraph">
             {paragraph}
