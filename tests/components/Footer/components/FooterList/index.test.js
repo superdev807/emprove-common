@@ -3,7 +3,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import FooterList from '../../../../../src/components/Footer/components/FooterList';
+import FooterList from '~/components/Footer/components/FooterList';
 
 describe('FooterList component', () => {
   let component;

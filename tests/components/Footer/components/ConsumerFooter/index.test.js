@@ -3,7 +3,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import ConsumerFooter from '../../../../../src/components/Footer/components/ConsumerFooter';
+import ConsumerFooter from '~/components/Footer/components/ConsumerFooter';
 
 describe('ConsumerFooter component', () => {
   let component;

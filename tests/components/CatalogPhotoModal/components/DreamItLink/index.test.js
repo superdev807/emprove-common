@@ -3,7 +3,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import DreamItLink from '../../../../../src/components/CatalogPhotoModal/components/DreamItLink';
+import DreamItLink from '~/components/CatalogPhotoModal/components/DreamItLink';
 
 describe('DreamItLink component', () => {
   let component;

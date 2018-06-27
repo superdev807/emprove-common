@@ -3,7 +3,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import CatalogPhoto from '../../../../../src/components/CatalogPhotoModal/components/CatalogPhoto';
+import CatalogPhoto from '~/components/CatalogPhotoModal/components/CatalogPhoto';
 
 describe('CatalogPhoto component', () => {
   let component;

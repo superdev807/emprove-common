@@ -3,7 +3,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import FooterCopyrightAndSocial from '../../../../../src/components/Footer/components/FooterCopyrightAndSocial';
+import FooterCopyrightAndSocial from '~/components/Footer/components/FooterCopyrightAndSocial';
 
 describe('FooterCopyrightAndSocial component', () => {
   let component;

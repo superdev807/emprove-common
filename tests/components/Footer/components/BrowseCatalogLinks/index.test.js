@@ -3,7 +3,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import BrowseCatalogLinks from '../../../../../src/components/Footer/components/BrowseCatalogLinks';
+import BrowseCatalogLinks from '~/components/Footer/components/BrowseCatalogLinks';
 
 describe('BrowseCatalogLinks component', () => {
   let component;
