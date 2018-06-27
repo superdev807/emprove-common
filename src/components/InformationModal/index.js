@@ -19,7 +19,7 @@ const InformationDefinition = props => {
   }
 
   return (
-    <Typography className={cx("information-definition", { 'information-definition--undefined': definition === '' })}>
+    <Typography className={cx('information-definition', { 'information-definition--undefined': definition === '' })}>
       <strong>• {props.term.name}</strong>
       {definition}
     </Typography>
@@ -29,11 +29,7 @@ const InformationDefinition = props => {
 const InformationImage = props => {
   let imageDescription = '';
   if (props.image.description) {
-    imageDescription = (
-      <Typography className="information-image__description">
-        {props.image.description}
-      </Typography>
-    );
+    imageDescription = <Typography className="information-image__description">{props.image.description}</Typography>;
   }
 
   return (
@@ -55,13 +51,13 @@ const InformationImage = props => {
 const InformationModal = props => {
   const images = props.images.map(image => {
     const displayHeight = image.height && image.height < 400 ? image.height : 400;
-    const displayWidth = (image.width / image.height) * displayHeight;
-    const imageWithUrl = ({
+    const displayWidth = image.width / image.height * displayHeight;
+    const imageWithUrl = {
       ...image,
       url: process.env.IMGIX_PUBLIC_IMAGES_HOST + image.filename + '?h=' + displayHeight,
       displayWidth,
       displayHeight
-    });
+    };
 
     return <InformationImage key={image.id} image={imageWithUrl} />;
   });
@@ -89,7 +85,7 @@ InformationModal.propTypes = {
   title: PropTypes.string.isRequired,
   body: PropTypes.arrayOf(PropTypes.string).isRequired,
   terms: PropTypes.arrayOf(PropTypes.object).isRequired,
-  images: PropTypes.arrayOf(PropTypes.object),
+  images: PropTypes.arrayOf(PropTypes.object)
 };
 
 InformationModal.defaultProps = {
