@@ -19,11 +19,8 @@ class InformationButton extends Component {
     return (
       <IconButton
         className={cx('information-button', { 'information-button--size-16': this.props.size === 16 }, this.props.className)}
-        onClick={this.handleClick}
-      >
-        <IconInfo
-          className={cx({ 'information-button--size-16': this.props.size === 16 }, this.props.iconClass)}
-        />
+        onClick={this.handleClick}>
+        <IconInfo className={cx({ 'information-button--size-16': this.props.size === 16 }, this.props.iconClass)} />
       </IconButton>
     );
   }
@@ -33,11 +30,11 @@ InformationButton.propTypes = {
   information: PropTypes.object.isRequired,
   size: PropTypes.oneOf([16]),
   className: PropTypes.string,
-  iconClass: PropTypes.string,
+  iconClass: PropTypes.string
 };
 
 const actions = {
-  showModal,
+  showModal
 };
 
 export default connect(null, actions)(InformationButton);
