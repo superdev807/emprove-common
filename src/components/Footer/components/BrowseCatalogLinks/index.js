@@ -15,7 +15,7 @@ const homeAreas = [
   <Link to="browse/any-guest-bedroom">Guest Bedroom</Link>,
   <Link to="browse/any-master-bedroom">Master Bedroom</Link>,
   <Link to="browse/any-kitchen">Kitchen</Link>,
-  <Link to="browse/any-general-living">General Living</Link>,
+  <Link to="browse/any-general-living">General Living</Link>
 ];
 
 // TODO: use values from metaData
@@ -28,10 +28,10 @@ const homeStyles = [
   <Link to="browse/modern-homes">Modern</Link>,
   <Link to="browse/rustic-homes">Rustic</Link>,
   <Link to="browse/traditional-homes">Traditional</Link>,
-  <Link to="browse/transitional-homes">Transitional</Link>,
+  <Link to="browse/transitional-homes">Transitional</Link>
 ];
 
-const BrowseCatalogLinks = (props) => {
+const BrowseCatalogLinks = props => {
   return (
     <div className="browse-catalog-links">
       <FooterList className="browse-catalog-links__section" items={homeAreas} />
