@@ -42,7 +42,7 @@ const InformationImage = props => {
       <div className="information-image__image-container">
         <img
           className="information-image__image"
-        src={props.image.url}
+          src={props.image.url}
           alt="Information Image"
           width={props.image.displayWidth}
           height={props.image.displayHeight}
