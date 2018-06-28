@@ -3,7 +3,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import TheTeam from '../../../../../src/components/AboutUs/components/TheTeam';
+import TheTeam from '~/components/AboutUs/components/TheTeam';
 
 describe('TheTeam component', () => {
   let component;

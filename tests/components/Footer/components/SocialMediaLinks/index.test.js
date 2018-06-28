@@ -3,7 +3,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import SocialMediaLinks from '../../../../../src/components/Footer/components/SocialMediaLinks';
+import SocialMediaLinks from '~/components/Footer/components/SocialMediaLinks';
 
 describe('SocialMediaLinks component', () => {
   let component;

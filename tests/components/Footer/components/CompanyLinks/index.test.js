@@ -3,7 +3,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import CompanyLinks from '../../../../../src/components/Footer/components/CompanyLinks';
+import CompanyLinks from '~/components/Footer/components/CompanyLinks';
 
 describe('CompanyLinks component', () => {
   let component;

@@ -3,7 +3,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import ContractorFooter from '../../../../../src/components/Footer/components/ContractorFooter';
+import ContractorFooter from '~/components/Footer/components/ContractorFooter';
 
 describe('ContractorFooter component', () => {
   let component;
