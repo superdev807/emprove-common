@@ -7,7 +7,8 @@
     "build": "rm -rf lib/ && babel ./src --out-dir ./lib --copy-files",
     "build:watch": "concurrently \"npm run build -- --watch\" \"onchange '**/*.js' -e 'lib' -- prettier --write {{changed}}\" ",
     "test": "jest --config jest.config.js tests/",
-    "test:watch": "concurrently \"npm test -- --watch\" \"onchange '**/*.js' -e 'lib' -- prettier --write {{changed}}\" "
+    "test:watch": "concurrently \"npm test -- --watch\" \"onchange '**/*.js' -e 'lib' -- prettier --write {{changed}}\" ",
+    "lint": "eslint"
   },
   "author": "Emprove Inc",
   "license": "UNLICENSED",

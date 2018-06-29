@@ -8,9 +8,10 @@ module.exports = {
   globals: {
     process: true,
   },
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaFeatures: {
-      experimentalObjectRestSpread: true,
+      ecmaVersion: 2018,
       jsx: true
     },
     sourceType: 'module'
@@ -21,6 +22,7 @@ module.exports = {
     'linebreak-style': ['error', 'unix'],
     'no-unused-vars': ['error', { args: 'none' }],
     quotes: ['error', 'single'],
+    'react/prop-types': 1,
     'react/sort-comp': 1,
     semi: ['error', 'always']
   }
