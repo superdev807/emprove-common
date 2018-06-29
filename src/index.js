@@ -1,6 +1,7 @@
 'use strict';
 
 export { default as AboutUs } from './components/AboutUs';
+export { default as CheckboxField } from './components/CheckboxField';
 export { default as ConsumerFooter } from './components/Footer/components/ConsumerFooter';
 export { default as ContractorFooter } from './components/Footer/components/ContractorFooter';
 export { default as DatePickerField } from './components/DatePickerField';
