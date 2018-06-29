@@ -55,5 +55,8 @@
     "redux": "^3.7.2",
     "redux-modal": "^1.7.0",
     "regenerator-runtime": "^0.11.1"
+  },
+  "dependencies": {
+    "react-number-format": "^3.4.2"
   }
 }
