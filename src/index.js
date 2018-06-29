@@ -6,6 +6,7 @@ export { default as ContractorFooter } from './components/Footer/components/Cont
 export { default as DatePickerField } from './components/DatePickerField';
 export { default as InformationButton } from './components/InformationButton';
 export { default as InformationModal } from './components/InformationModal';
+export { default as InputField } from './components/InputField';
 export { default as Logo } from './components/Logo';
 export { default as PasswordField } from './components/PasswordField';
 export { default as PrivacyPolicy } from './components/PrivacyPolicy';
