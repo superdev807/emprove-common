@@ -126,3 +126,31 @@ To have the tests continually run on the background, use:
 ```sh
 npm test:watch
 ```
+
+### Linting
+
+You can use [ESLint](https://eslint.org/) to analyze the code and make sure you are following a consistent style, didn't forget to use variables, etc.
+
+You can either lint the codebase manually using the `eslint` command or you can use a text editor plugin that does that automatically as you go through your code.
+
+The set of rules is defined in the root `.eslintrc.js` file. Additional files might be created under different directories to change the parsing parameters. For example, the files in the `tests` directory uses global variables that are defined by the test framework. Without specifiying an environment setting in the `.eslintrc.js` file, it would throw an error saying variables like `describe` and `test` were never defined.
+
+You can add/remove/change rules as you wish, to conform to the standards of the project. Add the rule name to the `rules` property of the `.eslintrc` file, the value being the new setting.
+
+#### Manual Lint
+
+For this project, run:
+
+```
+npm run lint
+```
+
+#### Text Editor Plugin
+
+Find the linter / eslint plugin for your favorite text editor.
+
+Some examples:
+
+* Atom: https://github.com/AtomLinter/linter-eslint
+* Sublime: https://github.com/SublimeLinter/SublimeLinter-eslint
+* VSCode: https://github.com/Microsoft/vscode-eslint
