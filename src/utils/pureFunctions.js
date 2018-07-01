@@ -1,6 +1,7 @@
 'use strict';
 
 import fp from 'lodash/fp';
+import isEqual from 'lodash';
 
 export const capitalize = str => (typeof str === 'string' && str.length > 0 ? str.charAt(0).toUpperCase() + str.slice(1) : str);
 
@@ -29,19 +30,6 @@ export const secureWebsiteUrl = website => {
   } else {
     return website;
   }
-};
-
-export const getParameterByNameFormUrl = (name, url) => {
-  name = name.replace(/[\[\]]/g, '\\$&');
-  const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-    results = regex.exec(url);
-  if (!results) {
-    return null;
-  }
-  if (!results[2]) {
-    return '';
-  }
-  return decodeURIComponent(results[2].replace(/\+/g, ' '));
 };
 
 export const formatAddress = ({ address1, address2, city, state, zip }, separator = ', ') =>
