@@ -17,7 +17,7 @@ import { Manager, Target, Popper } from 'react-popper';
 import { withStyles } from '@material-ui/core/styles';
 
 import styles, { validatorTextStyles } from './styles';
-import { passwordValidator } from '~/utils/validators';
+import { passwordValidator } from '../../utils/validators';
 
 export const ValidationText = withStyles(validatorTextStyles)(({ children, classes, success }) => (
   <Typography variant="caption" gutterBottom className={cx({ [classes.success]: success, [classes.fail]: !success })}>
