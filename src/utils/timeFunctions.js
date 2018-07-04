@@ -6,6 +6,17 @@ import timeline from '../data/rfp_timeline.json';
 
 const dateFormat = 'YYYY-MM-DD';
 
+/* 
+ * moment does not like MM/DD/YYYY format because it's not RFC 2822 or ISO format
+ * make sure the date passed in is in MM/DD/YYYY format
+ */
+export const convertDateFormat = date => {
+  if (!date || date.length < 10) {
+    return null;
+  }
+  return `${date.slice(6, 10)}-${date.slice(0, 5).replace('/', '-')}`;
+};
+
 export const strToday = () => {
   return moment().format(dateFormat);
 };
@@ -15,11 +26,11 @@ export const strToday = () => {
  */
 export const formatUtcDate = (isoDateString, format = 'L') => moment.utc(isoDateString).format(format);
 
-
 export const localDateToUTC = date => {
   if (date) {
     const now = moment().utc();
-    return moment.utc(date)
+    return moment
+      .utc(date)
       .set({ hour: now.hours(), minute: now.minutes(), second: now.seconds(), millisecond: 0 })
       .toISOString();
   } else {
@@ -29,10 +40,11 @@ export const localDateToUTC = date => {
 
 export const utcDateWithZeroTime = date => {
   if (date) {
-    let dateOnly = date instanceof moment ? date.format('MM/DD/YYYY') : date;
-    return moment.utc(dateOnly)
-    .set({ hour: 0, minute: 0, second: 0, millisecond: 0 })
-    .toISOString();
+    let dateOnly = date instanceof moment ? date.format(dateFormat) : moment(convertDateFormat(date), dateFormat);
+    return moment
+      .utc(dateOnly)
+      .set({ hour: 0, minute: 0, second: 0, millisecond: 0 })
+      .toISOString();
   } else {
     return null;
   }
