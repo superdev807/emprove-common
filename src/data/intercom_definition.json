@@ -1,208 +1,246 @@
 [
   {
     "id": 1,
-    "title":
-      "No, Emprove provides a Cost Estimate for projects homeowners create and tailor on our site. While the project cost estimate we produce is well-informed and an accurate depiction of what the project should generally cost, the homeowner’s actual cost will be what they agree on with their selected contractor upon the conclusion of their comprehensive and transparent Bid Process",
-    "path": "/faq-s/does-emprove-sell-building-products-materials",
+    "title": "General Contractor",
+    "path": "/definitions/general-contractor",
     "timestamp": "2018-07-05 10:00:00",
     "author": "James Noel"
   },
   {
     "id": 2,
-    "title": "Yes, our Project Cost Estimate considers Material & Labor Costs, Overhead & Profit, and Contingency.",
-    "path": "/faq-s/does-emprove-sell-building-products-materials",
+    "title": "Subcontractor",
+    "path": "/definitions/subcontractor",
     "timestamp": "2018-07-05 10:00:00",
     "author": "James Noel"
   },
   {
     "id": 3,
-    "title":
-      "No they don't.  Emprove administers the bid process between the homeowner and contractor, but we do not hire contractors on behalf of homeowners.  Homeowners make an informed contractor selection upon reviewing the bid results then hires their selected contractor directly.",
-    "path": "/faq-s/do-contractors-work-for-emprove",
+    "title": "Bid Process",
+    "path": "/definitions/bid-process",
     "timestamp": "2018-07-05 10:00:00",
     "author": "James Noel"
   },
   {
     "id": 4,
-    "title":
-      "Yes!  After initial bid submissions, homeowners will Shortlist 1 to 3 contractors to conduct a site visit.  The purpose of the site visit is for each shortlisted contractor to assess the actual project site conditions and either confirm or revise their initial bid submission.",
-    "path": "/faq-s/will-the-contractor-have-an-opportunity-to-conduct-a-site-visit-of-the-project",
+    "title": "Bid",
+    "path": "/definitions/bid",
     "timestamp": "2018-07-05 10:00:00",
     "author": "James Noel"
   },
   {
     "id": 5,
-    "title": "Our objective is to obtain 3-5 contractor bids for each project.",
-    "path": "/faq-s/how-many-contractors-bid-each-project",
+    "title": "Material & Labor Costs",
+    "path": "/definitions/material-labor-costs",
     "timestamp": "2018-07-05 10:00:00",
     "author": "James Noel"
   },
   {
     "id": 6,
-    "title":
-      "The Project Cost Estimate is produced by Emprove’s proprietary data engine which is informed by deep construction experience and comprehensive industry cost surveys, and has the capability of adjusting estimates to specific conditions of every local market across the US. While the project cost estimate we produce is well-informed and an accurate depiction of what the project should generally cost, the homeowner’s actual cost will be what they agree on with their selected contractor upon the conclusion of their comprehensive and transparent Bid Process.",
-    "path": "/faq-s/what-is-the-origin-of-the-project-cost-estimate",
+    "title": "Project Cost Estimate",
+    "path": "/definitions/project-cost-estimate",
     "timestamp": "2018-07-05 10:00:00",
     "author": "James Noel"
   },
   {
     "id": 7,
-    "title":
-      "No, Emprove does not yet have an app, but may in the future. At present, homeowners and contractors can connect at www.emproveit.com. ",
-    "path": "/faq-s/does-emprove-have-an-app",
+    "title": "Shortlist",
+    "path": "/definitions/shortlist",
     "timestamp": "2018-07-05 10:00:00",
     "author": "James Noel"
   },
   {
     "id": 8,
-    "title":
-      "The Emprove platform can currently support a wide range of types and scales for non-structural interior home improvement projects; from plumbing fixture replacements, to wall repainting, to full renovations. Our capacity to support exterior improvements are coming soon.",
-    "path": "/faq-s/what-types-of-home-improvement-services-can-you-get-done-using-emprove",
+    "title": "Material Grade",
+    "path": "/definitions/material-grade",
     "timestamp": "2018-07-05 10:00:00",
     "author": "James Noel"
   },
   {
     "id": 9,
-    "title": "Emprove is led by James Noel, CEO; Linda Lee, COO; and Andrew Pascal, chairman. ",
-    "path": "/faq-s/who-is-the-emprove-leadership-team",
+    "title": "OH&P",
+    "path": "/definitions/ohp",
     "timestamp": "2018-07-05 10:00:00",
     "author": "James Noel"
   },
   {
     "id": 10,
-    "title":
-      "<span>For Homeowners:</span><ul><li>Step 1 - Dream It! Homeowners can explore and dream up home improvements with purpose and precision. The platform learns homeowner objectives and design sensibilities and guides them to personalize a Styleboard, which is then translated into an actionable plan.</li><li>Step 2 - Cost It! Get instant and comprehensive project cost estimates for your project that are uniquely tailored to your design preferences, budget parameters, and location.</li><li>Step 3- Bid It! Sit back while Emprove sends a detailed request-for-proposal (RFP) package to multiple qualified contractors. They submit their best price and you pick the one who presents you the best value.</li><li>Step 4- Build It! The contractor builds your project.</li></ul><span>For Contractors:</span><ul><li>Step 1- Without having to pay any lead fees, contractors receive an invitation to submit a bid in response to an emailed RFP package for a real project that has been matched to their profile.</li><li>Step 2- Upon accepting the invitation to bid, the contractor is provided access to the online bidding platform where they can review the full RFP package and efficiently submit their bid</li><li>Step 3- Shortlisted contractors from the initial bid submission conduct a site visit with the homeowner to confirm bid assumptions and update their proposal if necessary.</li><li>Step 4- Successfully complete the project.</li></ul>",
-    "path": "/faq-s/how-does-emprove-work",
+    "title": "Request for Proposal",
+    "path": "/definitions/request-for-proposal",
     "timestamp": "2018-07-05 10:00:00",
     "author": "James Noel"
   },
   {
     "id": 11,
-    "title": "Emprove has offices and stakeholders in Las Vegas and Silicon Valley",
-    "path": "/faq-s/where-is-emprove-based",
+    "title": "RFP",
+    "path": "/definitions/rfp",
     "timestamp": "2018-07-05 10:00:00",
     "author": "James Noel"
   },
   {
     "id": 12,
-    "title":
-      "Emprove was founded to meet an unmet need in the $260 billion home improvement market. The home improvement market needs transparency. The current process is broken. Consumers are often uneducated about and intimidated by home improvement; they need a process that demystifies the costs of their dream projects and that intuitively helps them engage responsibly with contractors. On the flip side, contractors are frustrated with wasting valuable time inefficiently chasing work and engaging with uneducated consumers who aren’t quite ready to advance their project. ",
-    "path": "/faq-s/what-problems-does-emprove-solve",
+    "title": "Contingency",
+    "path": "/definitions/contingency",
     "timestamp": "2018-07-05 10:00:00",
     "author": "James Noel"
   },
   {
     "id": 13,
-    "title": "Emprove incorporated in June 2017.",
-    "path": "/faq-s/when-was-emprove-founded",
+    "title": "Profit",
+    "path": "/definitions/profit",
     "timestamp": "2018-07-05 10:00:00",
     "author": "James Noel"
   },
   {
     "id": 14,
-    "title": "Emprove raised $3.3 million in seed capital as of February 2018. Its lead investor is DCM Ventures out of Silicon Valley.",
-    "path": "/faq-s/does-emprove-have-vc-funding",
+    "title": "Overhead",
+    "path": "/definitions/overhead",
     "timestamp": "2018-07-05 10:00:00",
     "author": "James Noel"
   },
   {
     "id": 15,
-    "title":
-      "Yes! If Emprove is not yet fully operational in your region (i.e. there is not a network of contractors in your region on the platform), you can still use Emprove to create your project and develop an RFP that you can administer. Since we can’t offer you the full value proposition, the cost is just $10. ",
-    "path": "/faq-s/i-dont-live-in-las-vegas-can-i-still-use-emprove",
+    "title": "Overhead & Profit",
+    "path": "/overhead-profit",
     "timestamp": "2018-07-05 10:00:00",
     "author": "James Noel"
   },
   {
     "id": 16,
-    "title":
-      "Emprove is a technology platform where consumers and contractors engage with one another on a mutually informed and transparent basis, providing clarity and market efficiency for both parties. We empower consumers with interactive scope definition tools and dynamic cost estimates to initiate their projects with confidence. We service contractors by providing a free and efficient platform to submit cost proposals for projects that are well-defined, vetted and ready to go! ",
-    "path": "/faq-s/what-is-emprove",
+    "title": "Overall Quality",
+    "path": "/definitions/overall-quality",
     "timestamp": "2018-07-05 10:00:00",
     "author": "James Noel"
   },
   {
     "id": 17,
-    "title": "Pending Emprove’s success and growth in Arizona and California in Q1 2019, Emprove plans to expand nationally. ",
-    "path": "/faq-s/will-emprove-expand-beyond-the-southwest",
+    "title": "Project Scope",
+    "path": "/definitions/project-scope",
     "timestamp": "2018-07-05 10:00:00",
     "author": "James Noel"
   },
   {
     "id": 18,
-    "title":
-      "Most of our competitors serve to connect homeowners who are contemplating a project with contractors who are qualified to complete it.  As career construction industry professionals, our perspective guides us on our principal belief that projects have a far greater probability of success when both parties are comprehensively and equally informed regarding project expectations. It is not enough to simply connect an uneducated consumer with a supremely informed capable contractor and hope for the best. Emprove focuses on empowering the homeowner to more confidently and responsibly engage with the contractor community. The outcome of informing homeowners will be a better performing market where contractors thrive in greater clarity and efficiency. ",
-    "path": "/faq-s/how-are-you-different-from-your-competitors",
+    "title": "Styleboard",
+    "path": "/definitions/styleboard",
     "timestamp": "2018-07-05 10:00:00",
     "author": "James Noel"
   },
   {
     "id": 19,
-    "title":
-      "Las Vegas is the ideal place to launch Emprove as it has re-established itself as one of the most dynamic real-estate markets in the country.  This strength is being stimulated by renewed job creation and population growth that made it the fastest growing city for decades.  These conditions are driving the real-estate market and generating ripe conditions for home improvement projects.",
-    "path": "/faq-s/why-are-you-launching-in-las-vegas",
+    "title": "Owner Selected Items",
+    "path": "/definitions/owner-selected-items",
     "timestamp": "2018-07-05 10:00:00",
     "author": "James Noel"
   },
   {
     "id": 20,
-    "title": "Emprove is launching in Las Vegas in June 2018, with plans to expand to California and Arizona in early 2019.",
-    "path": "/faq-s/what-citiesregions-does-emprove-service",
+    "title": "OSI",
+    "path": "/definitions/osi",
     "timestamp": "2018-07-05 10:00:00",
     "author": "James Noel"
   },
   {
     "id": 21,
-    "title":
-      "In the event that a dispute arises and the parties are not able to work it out through discussion, each state provides for unique rights and remedies that can be sought. Therefore the aggrieved party should seek professional legal advice by a licensed attorney in their area to explore their particular situation. Generally speaking, however, the contract governs the relationship between the parties, and the failure of either party to abide by its terms can constitute a breach of the contract, which is actionable in court.",
-    "path": "/faq-s/my-contractor-didnt-follow-through-with-the-project-as-scoped-what-should-i-do",
+    "title": "Maximum Ceiling Height",
+    "path": "/definitions/maximum-ceiling-height",
     "timestamp": "2018-07-05 10:00:00",
     "author": "James Noel"
   },
   {
     "id": 22,
-    "title":
-      "Generally, it is not prudent in any industry for a party to sign a legally binding contract without professional legal advice, particularly if drafted by their counter-party.  These situations can often lead to a scenario where the contract used is unfair, and the interests of the receiving party are not adequately represented. While Emprove does not provide professional legal advice and does not eliminate the need to seek the advice of a legal professional, Emprove does share a sample contract that reflects terms and conditions that are generally accepted by the industry to be appropriate for both homeowners and contractors. ",
-    "path": "/faq-s/my-contractor-provided-me-with-a-contract-is-that-sufficient",
+    "title": "Wall Perimeter Length",
+    "path": "/definitions/wall-perimeter-length",
     "timestamp": "2018-07-05 10:00:00",
     "author": "James Noel"
   },
   {
     "id": 23,
-    "title":
-      "If a ratings dispute occurs between a contractor and homeowner, Emprove will facilitate the opportunity for the contractor to address the issue directly with the homeowner. ",
-    "path": "/faq-s/how-does-emprove-handle-ratings-disputes-from-contractors",
+    "title": "Floor Area",
+    "path": "/definitions/floor-area",
     "timestamp": "2018-07-05 10:00:00",
     "author": "James Noel"
   },
   {
     "id": 24,
-    "title": "Yes. Contractors will have the opportunity to rate their experience working with homeowners as well. ",
-    "path": "/faq-s/can-contractors-review-home-owners",
+    "title": "Binding Arbitration",
+    "path": "/definitions/binding-arbitration",
     "timestamp": "2018-07-05 10:00:00",
     "author": "James Noel"
   },
   {
     "id": 25,
-    "title":
-      "Yes. Contractors on Emprove will already have a baseline rating based on existing reviews on major industry review platforms and once a project is completed, homeowners can review their contractor directly through Emprove. ",
-    "path": "/faq-s/can-homeowners-review-contractors",
+    "title": "Litigation",
+    "path": "/definitions/litigation",
     "timestamp": "2018-07-05 10:00:00",
     "author": "James Noel"
   },
   {
     "id": 26,
-    "title":
-      "Emprove does not mandate that contractors be licensed. However, Emprove will inform consumers which contractors are licensed with the State of Nevada so they can be informed with such information as they select their contractor. ",
-    "path": "/faq-s/are-all-emprove-contractors-licensed",
+    "title": "Dispute Resolution",
+    "path": "/definitions/dispute-resolution",
     "timestamp": "2018-07-05 10:00:00",
     "author": "James Noel"
   },
   {
     "id": 27,
-    "title":
-      "<span>For Las Vegas homeowners</span><p>Homeowners dream, scope, and estimate the cost of their projects at Emprove for free. Then for $20, Emprove delivers the RFP and administers the bid process. Once a contractor is selected, Emprove fully refunds the $20 to homeowners. </p><span>For homeowners outside of Las Vegas</span><p>Homeowners dream, scope, and estimate the cost of their projects at Emprove for free. Then for $10, Emprove delivers the RFP which the homeowner can use to administer a bid process.</p><span>For contractors</span><p>Contractors pay no lead fees and can submit unlimited bids for free. Contractors pay a project success fee only when they are awarded the job dependent on project cost:</p><ul><li>$49 success fee - project cost of $0 - $1,000 </li><li>$199 success fee - project cost of $1,001 - $2,500</li><li>$249 success fee - project cost of $2,501 - $5,000</li><li>$499 success fee - project cost of $5,000+</li></ul>",
-    "path": "/faq-s/how-much-does-it-cost-to-use-emprove",
+    "title": "Retention",
+    "path": "/definitions/retention",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 28,
+    "title": "Payment Term",
+    "path": "/definitions/payment-term",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 29,
+    "title": "Milestone-Based Payment",
+    "path": "/definitions/milestone-based-payment",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 30,
+    "title": "Monthly Payment",
+    "path": "/definitions/monthly-payment",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 31,
+    "title": "Bi-Weekly Payment",
+    "path": "/definitions/bi-weekly-payment",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 32,
+    "title": "Payment Types",
+    "path": "/definitions/payment-types",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 33,
+    "title": "Time and Material (T&M) Agreement",
+    "path": "/definitions/time-and-material-tm-agreement",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 34,
+    "title": "Lump-Sum Agreement",
+    "path": "/definitions/lump-sum-agreement",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 35,
+    "title": "Contract Types",
+    "path": "/definitions/contract-types",
     "timestamp": "2018-07-05 10:00:00",
     "author": "James Noel"
   }
