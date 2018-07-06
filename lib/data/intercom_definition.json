@@ -1,0 +1,247 @@
+[
+  {
+    "id": 1,
+    "title": "General Contractor",
+    "path": "/definitions/general-contractor",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 2,
+    "title": "Subcontractor",
+    "path": "/definitions/subcontractor",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 3,
+    "title": "Bid Process",
+    "path": "/definitions/bid-process",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 4,
+    "title": "Bid",
+    "path": "/definitions/bid",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 5,
+    "title": "Material & Labor Costs",
+    "path": "/definitions/material-labor-costs",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 6,
+    "title": "Project Cost Estimate",
+    "path": "/definitions/project-cost-estimate",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 7,
+    "title": "Shortlist",
+    "path": "/definitions/shortlist",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 8,
+    "title": "Material Grade",
+    "path": "/definitions/material-grade",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 9,
+    "title": "OH&P",
+    "path": "/definitions/ohp",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 10,
+    "title": "Request for Proposal",
+    "path": "/definitions/request-for-proposal",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 11,
+    "title": "RFP",
+    "path": "/definitions/rfp",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 12,
+    "title": "Contingency",
+    "path": "/definitions/contingency",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 13,
+    "title": "Profit",
+    "path": "/definitions/profit",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 14,
+    "title": "Overhead",
+    "path": "/definitions/overhead",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 15,
+    "title": "Overhead & Profit",
+    "path": "/overhead-profit",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 16,
+    "title": "Overall Quality",
+    "path": "/definitions/overall-quality",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 17,
+    "title": "Project Scope",
+    "path": "/definitions/project-scope",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 18,
+    "title": "Styleboard",
+    "path": "/definitions/styleboard",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 19,
+    "title": "Owner Selected Items",
+    "path": "/definitions/owner-selected-items",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 20,
+    "title": "OSI",
+    "path": "/definitions/osi",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 21,
+    "title": "Maximum Ceiling Height",
+    "path": "/definitions/maximum-ceiling-height",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 22,
+    "title": "Wall Perimeter Length",
+    "path": "/definitions/wall-perimeter-length",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 23,
+    "title": "Floor Area",
+    "path": "/definitions/floor-area",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 24,
+    "title": "Binding Arbitration",
+    "path": "/definitions/binding-arbitration",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 25,
+    "title": "Litigation",
+    "path": "/definitions/litigation",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 26,
+    "title": "Dispute Resolution",
+    "path": "/definitions/dispute-resolution",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 27,
+    "title": "Retention",
+    "path": "/definitions/retention",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 28,
+    "title": "Payment Term",
+    "path": "/definitions/payment-term",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 29,
+    "title": "Milestone-Based Payment",
+    "path": "/definitions/milestone-based-payment",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 30,
+    "title": "Monthly Payment",
+    "path": "/definitions/monthly-payment",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 31,
+    "title": "Bi-Weekly Payment",
+    "path": "/definitions/bi-weekly-payment",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 32,
+    "title": "Payment Types",
+    "path": "/definitions/payment-types",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 33,
+    "title": "Time and Material (T&M) Agreement",
+    "path": "/definitions/time-and-material-tm-agreement",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 34,
+    "title": "Lump-Sum Agreement",
+    "path": "/definitions/lump-sum-agreement",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  },
+  {
+    "id": 35,
+    "title": "Contract Types",
+    "path": "/definitions/contract-types",
+    "timestamp": "2018-07-05 10:00:00",
+    "author": "James Noel"
+  }
+]
