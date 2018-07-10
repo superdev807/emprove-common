@@ -12,6 +12,8 @@ const CatalogPhoto = (props) => {
       className={cx('catalog-photo', props.className)}
       src={props.imageUrl}
       alt={props.alt}
+      onLoad={props.onLoad}
+      onError={props.onError}
     />
   );
 };
@@ -19,7 +21,9 @@ const CatalogPhoto = (props) => {
 CatalogPhoto.propTypes = {
   alt: PropTypes.string.isRequired,
   className: PropTypes.string,
-  imageUrl: PropTypes.string.isRequired
+  imageUrl: PropTypes.string.isRequired,
+  onError: PropTypes.func,
+  onLoad: PropTypes.func
 };
 
 export default CatalogPhoto;
