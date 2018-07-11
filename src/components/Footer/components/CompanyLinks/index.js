@@ -15,9 +15,7 @@ const companyLinks = [
   <a href="https://angel.co/emproveit/jobs" target="_blank" rel="noopener noreferrer">
     Careers
   </a>,
-  <a href="https://help.emproveit.com" target="_blank" rel="noopener noreferrer">
-    Help Center
-  </a>,
+  <Link to="info-center">Help Center</Link>,
   <a href="https://emproveit.com/privacy" target="_blank" rel="noopener noreferrer">
     Privacy Policy
   </a>,

@@ -30,13 +30,17 @@ const COST_ESTIMATE = {
 
 const MATERIAL_AND_LABOR = {
   title: 'MATERIAL & LABOR ESTIMATES',
-  body: ['The actual costs incurred by the contractor to purchase the material needed for a project plus the actual costs of expended labor to complete the project'],
+  body: [
+    'The actual costs incurred by the contractor to purchase the material needed for a project plus the actual costs of expended labor to complete the project'
+  ],
   terms: []
 };
 
 const OVERHEAD_AND_PROFIT = {
   title: 'OVERHEAD & PROFIT',
-  body: ['Often abbreviated as OH&P and usually calculated by applying a percentage to the total material and labor cost of the work, the total Overhead & Profit amount is the sum of its two components:'],
+  body: [
+    'Often abbreviated as OH&P and usually calculated by applying a percentage to the total material and labor cost of the work, the total Overhead & Profit amount is the sum of its two components:'
+  ],
   terms: [
     {
       id: 1,
@@ -47,9 +51,8 @@ const OVERHEAD_AND_PROFIT = {
     {
       id: 2,
       name: 'Profit',
-      definition:
-        "A company's financial gain associated with the project."
-    },
+      definition: "A company's financial gain associated with the project."
+    }
   ]
 };
 
@@ -62,11 +65,53 @@ const CONTINGENCY = {
   terms: []
 };
 
+const PROFIT = {
+  title: 'PROFIT',
+  body: ["A company's financial gain associated with the project."],
+  images: [],
+  terms: []
+};
+
+const OVERHEAD = {
+  title: 'OVERHEAD',
+  body: [
+    "A company's general operating expenses necessary for it to conduct business, such as their facilities, equipment, and administration costs."
+  ],
+  images: [],
+  terms: []
+};
+
+const OVERHEAD_PROFIT = {
+  title: 'OVERHEAD & PROFIT',
+  body: [
+    'Often abbreviated as OH&P and usually calculated by applying a percentage to the total material and labor cost of the work, the total Overhead & Profit amount is the sum of its two components:'
+  ],
+  terms: [
+    {
+      id: 1,
+      name:
+        "Overhead: A company's general operating expenses necessary for it to conduct business, such as their facilities, equipment, and administration costs.",
+      definition: null
+    },
+    {
+      id: 2,
+      name: "Profit: A company's financial gain associated with the project.",
+      definition: null
+    }
+  ],
+  extraParagraph: [
+    "Emprove's proprietary data engine includes Subcontractor Overhead & Profit in its provision for Material & Labor Costs.  General Contractor Overhead & Profit are provided for separately in the Project Cost Estimate."
+  ]
+};
+
 const CostEstimateInformation = {
   COST_ESTIMATE,
   MATERIAL_AND_LABOR,
   OVERHEAD_AND_PROFIT,
   CONTINGENCY,
+  PROFIT,
+  OVERHEAD,
+  OVERHEAD_PROFIT
 };
 
 export default CostEstimateInformation;

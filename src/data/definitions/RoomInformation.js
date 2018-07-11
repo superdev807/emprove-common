@@ -27,7 +27,9 @@ const FLOOR_AREA = {
 
 const WALL_PERIMETER = {
   title: 'WALL PERIMETER LENGTH',
-  body: ['The total length (in feet) of all walls in the room including wall bump-outs, returns, doorways, and cased-openings. Do not subtract the length of windows, doors, fireplaces, mirrors, or wall-mounted cabinetry.'],
+  body: [
+    'The total length (in feet) of all walls in the room including wall bump-outs, returns, doorways, and cased-openings. Do not subtract the length of windows, doors, fireplaces, mirrors, or wall-mounted cabinetry.'
+  ],
   terms: []
 };
 
@@ -37,10 +39,20 @@ const MAXIMUM_CEILING_HEIGHT = {
   terms: []
 };
 
+const WALL_PERIMETER_LENGTH = {
+  title: 'WALL PERIMETER LENGTH',
+  body: [
+    'The total length (in feet) of all walls in the room including wall bump-outs, returns, doorways, and cased-openings.  Do not subtract the length of windows, doors, fireplaces, mirrors, or wall-mounted cabinetry.'
+  ],
+  terms: [],
+  images: []
+};
+
 const RoomInformation = {
   FLOOR_AREA,
   WALL_PERIMETER,
   MAXIMUM_CEILING_HEIGHT,
+  WALL_PERIMETER_LENGTH
 };
 
 export default RoomInformation;

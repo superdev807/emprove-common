@@ -6,6 +6,18 @@ const PROJECT_SCOPE = {
     'The extent of work to be undertaken for a project. Typically, the greater the Project Scope the greater the project cost.',
     'Emprove defines a set of baseline Project Scope packages for homeowners to select from and customize.'
   ],
+  images: [
+    {
+      id: 1,
+      filename: 'project_scope_light_renovation.png',
+      description: ''
+    },
+    {
+      id: 2,
+      filename: 'project_scope_custom_light_renovation.png',
+      description: ''
+    }
+  ],
   terms: []
 };
 
@@ -40,22 +52,48 @@ const OVERALL_QUALITY = {
       id: 5,
       name: 'Best Value',
       definition: null
-    },
+    }
   ],
   images: [
     {
       id: 1,
       filename: 'overall_quality.png',
-      description: 'Most homeowners will have a "Practical" quality rating, with more than half of all homeowners having either "Best Value" or "Practical" ratings.  Below is our expected distribution of homeowners by overall quality rating:',
+      description:
+        'Most homeowners will have a "Practical" quality rating, with more than half of all homeowners having either "Best Value" or "Practical" ratings.  Below is our expected distribution of homeowners by overall quality rating:',
       width: 2392,
       height: 1070
     }
   ]
 };
 
+const PROJECT_COST_ESTIMATE = {
+  title: 'PROJECT COST ESTIMATE',
+  body: [
+    'An estimation of costs given a set of scope of work, quality, and quantity assumptions for a particular project, usually comprised of the following components:'
+  ],
+  terms: [
+    {
+      id: 1,
+      name: 'Material & Labor Costs; plus',
+      definition: null
+    },
+    {
+      id: 2,
+      name: 'Overhead & Profit; plus',
+      definition: null
+    },
+    {
+      id: 3,
+      name: 'Contingency',
+      definition: null
+    }
+  ]
+};
+
 const ProjectInformation = {
   PROJECT_SCOPE,
-  OVERALL_QUALITY
+  OVERALL_QUALITY,
+  PROJECT_COST_ESTIMATE
 };
 
 export default ProjectInformation;
