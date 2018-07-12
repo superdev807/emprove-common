@@ -51,9 +51,10 @@ const MATERIAL_GRADE = {
 
 const MATERIAL_LABOR_COSTS = {
   title: 'MATERIAL & LABOR COSTS',
+  hasMarkdown: true,
   body: [
     'The actual costs incurred by the installing contractor to purchase the material needed for a project plus the actual costs of expended labor to complete the project.',
-    "Emprove's proprietary data engine includes Subcontractor Overhead & Profit in its provision for material & labor costs.  General Contractor Overhead & Profit are not included and are provided for separately in the Project Cost Estimate."
+    "Emprove's proprietary data engine includes [Subcontractor](/info-center/definitions/subcontractor) [Overhead & Profit](/info-center/definitions/overhead-profit) in its provision for material & labor costs.  [General Contractor](/info-center/definitions/general-contractor) Overhead & Profit are not included and are provided for separately in the [Project Cost Estimate](/info-center/definitions/project-cost-estimate)."
   ],
   images: [],
   terms: []

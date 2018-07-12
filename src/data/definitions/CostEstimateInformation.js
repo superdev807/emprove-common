@@ -38,6 +38,7 @@ const MATERIAL_AND_LABOR = {
 
 const OVERHEAD_AND_PROFIT = {
   title: 'OVERHEAD & PROFIT',
+  hasMarkdown: true,
   body: [
     'Often abbreviated as OH&P and usually calculated by applying a percentage to the total material and labor cost of the work, the total Overhead & Profit amount is the sum of its two components:'
   ],
@@ -53,14 +54,18 @@ const OVERHEAD_AND_PROFIT = {
       name: 'Profit',
       definition: "A company's financial gain associated with the project."
     }
+  ],
+  extraParagraph: [
+    "Emprove's proprietary data engine includes [Subcontractor](/info-center/definitions/subcontractor) Overhead & Profit in its provision for [Material & Labor Costs](info-center/definitions/material-labor-costs).  [General Contractor](/info-center/definitions/general-contractor) Overhead & Profit are provided for separately in the [Project Cost Estimate](/info-center/definitions/project-cost-estimate)."
   ]
 };
 
 const CONTINGENCY = {
   title: 'CONTINGENCY',
+  hasMarkdown: true,
   body: [
     'A budgeted allowance calculated to cover the cost of items or work which are not known at the time of the cost estimate but which, statistically, might occur.',
-    'In the case of a Lump Sum Agreement, contingency is generally not included in the contractor’s price, rather is held aside by the homeowner in addition to the contractor’s price.'
+    'In the case of a [Lump Sum Agreement](/info-center/definitions/lump-sum-agreement), contingency is generally not included in the contractor’s price, rather is held aside by the homeowner in addition to the contractor’s price.'
   ],
   terms: []
 };

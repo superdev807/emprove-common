@@ -82,9 +82,10 @@ const disputeResolution = {
 
 const generalContractor = {
   title: 'GENERAL CONTRACTOR',
+  hasMarkdown: true,
   body: [
     'The contractor ultimately responsible to the homeowner for the successful completion of larger projects.  They are typically responsible to provide all material, tools, equipment, labor, site activity coordination, and supervision necessary to complete the project.',
-    'General Contractors often hire Subcontractors to perform specific components of the work.'
+    'General Contractors often hire [Subcontractors](/info-center/definitions/subcontractor) to perform specific components of the work.'
   ],
   terms: []
 };
@@ -109,8 +110,9 @@ const LITIGATION = {
 
 const MILESTONE_BASED_PAYMENT = {
   title: 'MILESTONE-BASED PAYMENT',
+  hasMarkdown: true,
   body: [
-    'Sets out various work completion milestones, that once reached, entitles the contractor to payment of an associated pre-determined amount.  Homeowner then makes payment per the Payment Term.'
+    'Sets out various work completion milestones, that once reached, entitles the contractor to payment of an associated pre-determined amount.  Homeowner then makes payment per the [Payment Term](/info-center/definitions/payment-term).'
   ],
   terms: [],
   images: []
@@ -118,8 +120,9 @@ const MILESTONE_BASED_PAYMENT = {
 
 const MONTHLY_PAYMENT = {
   title: 'MONTHLY PAYMENT',
+  hasMarkdown: true,
   body: [
-    'Where the contractor submits a monthly invoice for the work it performed during each month. Homeowner then makes payment per the Payment Term. '
+    'Where the contractor submits a monthly invoice for the work it performed during each month. Homeowner then makes payment per the [Payment Term](/info-center/definitions/payment-term). '
   ],
   terms: [],
   images: []
@@ -127,8 +130,9 @@ const MONTHLY_PAYMENT = {
 
 const BI_WEEKLY_PAYMENT = {
   title: 'BI-WEEKLY PAYMENT',
+  hasMarkdown: true,
   body: [
-    'Where the contractor submits an invoice for the work it performed during each 2-week time period. Homeowner then makes payment per the Payment Term.'
+    'Where the contractor submits an invoice for the work it performed during each 2-week time period. Homeowner then makes payment per the [Payment Term](/info-center/definitions/payment-term).'
   ],
   terms: [],
   images: []

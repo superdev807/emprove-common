@@ -74,17 +74,20 @@ const PROJECT_COST_ESTIMATE = {
   terms: [
     {
       id: 1,
-      name: 'Material & Labor Costs; plus',
+      hasMarkdown: true,
+      name: '- [Material & Labor Costs](/info-center/definitions/material-labor-costs); plus',
       definition: null
     },
     {
       id: 2,
-      name: 'Overhead & Profit; plus',
+      hasMarkdown: true,
+      name: '- [Overhead & Profit](/info-center/definitions/overhead-profit); plus',
       definition: null
     },
     {
       id: 3,
-      name: 'Contingency',
+      hasMarkdown: true,
+      name: '- [Contingency](/info-center/definitions/contingency)',
       definition: null
     }
   ]

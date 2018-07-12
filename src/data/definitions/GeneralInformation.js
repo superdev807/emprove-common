@@ -3,7 +3,8 @@
 const OHP = {
   title: 'OH&P',
   isMayus: true,
-  body: ['Overhead & Profit'],
+  hasMarkdown: true,
+  body: ['[Overhead & Profit](/info-center/definitions/overhead-profit)'],
   images: [],
   terms: []
 };
@@ -11,7 +12,8 @@ const OHP = {
 const RFP = {
   title: 'RFP',
   isMayus: true,
-  body: ['Request for Proposal'],
+  hasMarkdown: true,
+  body: ['[Request for Proposal](/info-center/definitions/request-for-proposal)'],
   images: [],
   terms: []
 };
@@ -123,7 +125,8 @@ const OWNER_SELECTED_ITEMS = {
 const OSI = {
   title: 'OSI',
   isMayus: true,
-  body: ['Owner Selected Items'],
+  hasMarkdown: true,
+  body: ['[Owner Selected Items](/info-center/definitions/owner-selected-items)'],
   terms: [],
   images: []
 };

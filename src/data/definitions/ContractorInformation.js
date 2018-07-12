@@ -2,8 +2,9 @@
 
 const SUBCONTRACTOR = {
   title: 'SUBCONTRACTOR',
+  hasMarkdown: true,
   body: [
-    'A specialty trade contractor, often employed by a General Contractor, who is responsible to perform specific components of a broader project.',
+    'A specialty trade contractor, often employed by a [General Contractor](/info-center/definitions/general-contractor), who is responsible to perform specific components of a broader project.',
     'Homeowners who are inexperienced in managing construction projects are not typically advised to employ subcontractors directly for larger projects that require multiple subcontractors.'
   ],
   terms: [],
