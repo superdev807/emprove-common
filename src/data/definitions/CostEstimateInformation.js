@@ -88,6 +88,7 @@ const OVERHEAD = {
 
 const OVERHEAD_PROFIT = {
   title: 'Overhead & Profit',
+  hasMarkdown: true,
   body: [
     'Often abbreviated as OH&P and usually calculated by applying a percentage to the total material and labor cost of the work, the total Overhead & Profit amount is the sum of its two components:'
   ],
@@ -105,7 +106,7 @@ const OVERHEAD_PROFIT = {
     }
   ],
   extraParagraph: [
-    "Emprove's proprietary data engine includes Subcontractor Overhead & Profit in its provision for Material & Labor Costs.  General Contractor Overhead & Profit are provided for separately in the Project Cost Estimate."
+    "Emprove's proprietary data engine includes [Subcontractor](/info-center/definitions/subcontractor) [Overhead & Profit](/info-center/definitions/overhead-profit) in its provision for [Material & Labor Costs](/info-center/definitions/material-labor-costs).  [General Contractor](/info-center/definitions/general-contractor) Overhead & Profit are provided for separately in the [Project Cost Estimate](/info-center/definitions/project-cost-estimate)."
   ]
 };
 
