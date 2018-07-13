@@ -1,7 +1,7 @@
 'use strict';
 
 const SUBCONTRACTOR = {
-  title: 'SUBCONTRACTOR',
+  title: 'Subcontractor',
   hasMarkdown: true,
   body: [
     'A specialty trade contractor, often employed by a [General Contractor](/info-center/definitions/general-contractor), who is responsible to perform specific components of a broader project.',
@@ -12,7 +12,7 @@ const SUBCONTRACTOR = {
 };
 
 const SHORTLIST = {
-  title: 'SHORTLIST',
+  title: 'Shortlist',
   body: [
     'To select a smaller number of contractor candidates based on their initial bid submissions.',
     'A Shortlisted contractor is among the few who have been selected to progress onto the second stage of the bid process and conduct a site visit.'

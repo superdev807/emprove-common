@@ -1,7 +1,7 @@
 'use strict';
 
 const PROJECT_SCOPE = {
-  title: 'PROJECT SCOPE',
+  title: 'Project Scope',
   body: [
     'The extent of work to be undertaken for a project. Typically, the greater the Project Scope the greater the project cost.',
     'Emprove defines a set of baseline Project Scope packages for homeowners to select from and customize.'
@@ -22,7 +22,7 @@ const PROJECT_SCOPE = {
 };
 
 const OVERALL_QUALITY = {
-  title: 'OVERALL QUALITY',
+  title: 'Overall Quality',
   body: [
     "The baseline project quality rating that is used by Emprove's proprietary cost estimate engine to deliver the initial project cost estimate.  The homeowner can then change and refine the quality standards initially assigned for each specific scope item.",
     'The different overall quality ratings defined by Emprove, in order of highest to lowest quality are:'
@@ -67,7 +67,7 @@ const OVERALL_QUALITY = {
 };
 
 const PROJECT_COST_ESTIMATE = {
-  title: 'PROJECT COST ESTIMATE',
+  title: 'Project Cost Estimate',
   body: [
     'An estimation of costs given a set of scope of work, quality, and quantity assumptions for a particular project, usually comprised of the following components:'
   ],

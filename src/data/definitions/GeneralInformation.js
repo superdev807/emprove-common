@@ -2,7 +2,6 @@
 
 const OHP = {
   title: 'OH&P',
-  isMayus: true,
   hasMarkdown: true,
   body: ['[Overhead & Profit](/info-center/definitions/overhead-profit)'],
   images: [],
@@ -11,7 +10,6 @@ const OHP = {
 
 const RFP = {
   title: 'RFP',
-  isMayus: true,
   hasMarkdown: true,
   body: ['[Request for Proposal](/info-center/definitions/request-for-proposal)'],
   images: [],
@@ -19,7 +17,7 @@ const RFP = {
 };
 
 const OWNER_SELECTED_ITEMS = {
-  title: 'OWNER SELECTED ITEMS',
+  title: 'Owner Selected Items',
   body: [
     'Items purchased by the Contractor which will require the Homeowners selection or approval.  The cost of OSI’s shall be included in the total price.'
   ],
@@ -124,7 +122,6 @@ const OWNER_SELECTED_ITEMS = {
 
 const OSI = {
   title: 'OSI',
-  isMayus: true,
   hasMarkdown: true,
   body: ['[Owner Selected Items](/info-center/definitions/owner-selected-items)'],
   terms: [],

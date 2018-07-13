@@ -1,7 +1,7 @@
 'use strict';
 
 const BID = {
-  title: 'BID',
+  title: 'Bid',
   hasMarkdown: true,
   body: [
     'A contractor offer of a price to provide requested services, as described by an [RFP](/info-center/definitions/request-for-proposal).'
@@ -11,7 +11,7 @@ const BID = {
 };
 
 const REQUEST_FOR_PROPOSAL = {
-  title: 'REQUEST FOR PROPOSAL',
+  title: 'Request For Proposal',
   body: [
     'A document prepared for the purpose of soliciting competitive contractor bids which comprehensively specifies the work a homeowner would like to get done as part of their project. Often abbreviated as RFP.',
     'A properly drafted RFP helps to ensure that each bidding contractor considers the full extent of work required for the project.'
@@ -21,7 +21,7 @@ const REQUEST_FOR_PROPOSAL = {
 };
 
 const BID_PROCESS = {
-  title: 'BID PROCESS',
+  title: 'Bid Process',
   hasMarkdown: true,
   body: [
     'An organized set of steps uniquely defined by Emprove with the objective to allow the homeowner to comprehensively convey the scope of their project, efficiently solicit competitive [Bids](/info-center/definitions/bid) from qualified contractors, and ultimately select their contractor with confidence and transparency.  The steps are generally as follows:'

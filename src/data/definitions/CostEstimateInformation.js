@@ -1,7 +1,7 @@
 'use strict';
 
 const COST_ESTIMATE = {
-  title: 'COST ESTIMATE',
+  title: 'Cost Estimate',
   body: [
     'An estimate of costs produced by Emprove’s proprietary data engine which is informed by deep construction experience and is adjusted for local market conditions. While the cost estimate is well-informed and an accurate depiction of what the project should generally cost, the homeowner’s actual cost will be what they agree with their selected contractors on upon the conclusion of their comprehensive and transparent RFP bid process.',
     'A cost estimate is usually comprised of the following components:'
@@ -29,7 +29,7 @@ const COST_ESTIMATE = {
 };
 
 const MATERIAL_AND_LABOR = {
-  title: 'MATERIAL & LABOR ESTIMATES',
+  title: 'Material & Labor Estimates',
   body: [
     'The actual costs incurred by the contractor to purchase the material needed for a project plus the actual costs of expended labor to complete the project'
   ],
@@ -37,7 +37,7 @@ const MATERIAL_AND_LABOR = {
 };
 
 const OVERHEAD_AND_PROFIT = {
-  title: 'OVERHEAD & PROFIT',
+  title: 'Overhead & Profit',
   hasMarkdown: true,
   body: [
     'Often abbreviated as OH&P and usually calculated by applying a percentage to the total material and labor cost of the work, the total Overhead & Profit amount is the sum of its two components:'
@@ -61,7 +61,7 @@ const OVERHEAD_AND_PROFIT = {
 };
 
 const CONTINGENCY = {
-  title: 'CONTINGENCY',
+  title: 'Contingency',
   hasMarkdown: true,
   body: [
     'A budgeted allowance calculated to cover the cost of items or work which are not known at the time of the cost estimate but which, statistically, might occur.',
@@ -71,14 +71,14 @@ const CONTINGENCY = {
 };
 
 const PROFIT = {
-  title: 'PROFIT',
+  title: 'Profit',
   body: ["A company's financial gain associated with the project."],
   images: [],
   terms: []
 };
 
 const OVERHEAD = {
-  title: 'OVERHEAD',
+  title: 'Overhead',
   body: [
     "A company's general operating expenses necessary for it to conduct business, such as their facilities, equipment, and administration costs."
   ],
@@ -87,7 +87,7 @@ const OVERHEAD = {
 };
 
 const OVERHEAD_PROFIT = {
-  title: 'OVERHEAD & PROFIT',
+  title: 'Overhead & Profit',
   body: [
     'Often abbreviated as OH&P and usually calculated by applying a percentage to the total material and labor cost of the work, the total Overhead & Profit amount is the sum of its two components:'
   ],

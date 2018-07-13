@@ -1,7 +1,7 @@
 'use strict';
 
 const DOES_EMPROVE_SELL_BUILDING_PRODUCTS_MATERIALS = {
-  title: 'DOES EMPROVE SELL BUILDING PRODUCTS & MATERIALS',
+  title: 'Does Emprove sell building products & materials?',
   hasMarkdown: true,
   body: [
     'No, Emprove provides a [Cost Estimate](/info-center/definitions/project-cost-estimate) for projects homeowners create and tailor on our site. While the project cost estimate we produce is well-informed and an accurate depiction of what the project should generally cost, the homeowner’s actual cost will be what they agree on with their selected contractor upon the conclusion of their comprehensive and transparent [Bid Process](/info-center/definitions/bid-process)'
@@ -9,7 +9,7 @@ const DOES_EMPROVE_SELL_BUILDING_PRODUCTS_MATERIALS = {
 };
 
 const DOES_EMPROVES_COST_ESTIMATES_INCLUDE_LABOR = {
-  title: "DOES EMPROVE'S COST ESTIMATES INCLUDE LABOR?",
+  title: "Does Emprove's cost estimates include labor?",
   hasMarkdown: true,
   body: [
     'Yes, our [Project Cost Estimate](/info-center/definitions/project-cost-estimate) considers [Material & Labor Costs](/info-center/definitions/material-labor-costs), [Overhead & Profit](/info-center/definitions/overhead-profit), and [Contingency](/info-center/definitions/contingency).'
@@ -17,14 +17,14 @@ const DOES_EMPROVES_COST_ESTIMATES_INCLUDE_LABOR = {
 };
 
 const DO_CONTRACTORS_WORK_FOR_EMPROVE = {
-  title: 'DO CONTRACTORS WORK FOR EMPROVE?',
+  title: 'Do contractors work for emprove?',
   body: [
     "No they don't.  Emprove administers the bid process between the homeowner and contractor, but we do not hire contractors on behalf of homeowners.  Homeowners make an informed contractor selection upon reviewing the bid results then hires their selected contractor directly."
   ]
 };
 
 const WILL_THE_CONTRACTOR_HAVE_AN_OPPORTUNITY_TO_CONDUCT_A_SITE_VISIT_OF_THE_PROJECT = {
-  title: 'WILL THE CONTRACTOR HAVE AN OPPORTUNITY TO CONDUCT A SITE VISIT OF THE PROJECT?',
+  title: 'Will the contractor have an opportunity to conduct a site visit of the project?',
   hasMarkdown: true,
   body: [
     'Yes!  After initial bid submissions, homeowners will [Shortlist](/info-center/definitions/shortlist) 1 to 3 contractors to conduct a site visit.  The purpose of the site visit is for each shortlisted contractor to assess the actual project site conditions and either confirm or revise their initial bid submission.'
@@ -32,13 +32,13 @@ const WILL_THE_CONTRACTOR_HAVE_AN_OPPORTUNITY_TO_CONDUCT_A_SITE_VISIT_OF_THE_PRO
 };
 
 const HOW_MANY_CONTRACTORS_BID_EACH_PROJECT = {
-  title: 'HOW MANY CONTRACTORS BID EACH PROJECT?',
+  title: 'How many contractors bid each project?',
   hasMarkdown: true,
   body: ['Our objective is to obtain 3-5 contractor [bids](/info-center/definitions/bid) for each project. ']
 };
 
 const WHAT_IS_THE_ORIGIN_OF_THE_PROJECT_COST_ESTIMATE = {
-  title: 'WHAT IS THE ORIGIN OF THE PROJECT COST ESTIMATE?',
+  title: 'What is the origin of the project cost estimate?',
   hasMarkdown: true,
   body: [
     'The [Project Cost Estimate](/info-center/definitions/project-cost-estimate) is produced by Emprove’s proprietary data engine which is informed by deep construction experience and comprehensive industry cost surveys, and has the capability of adjusting estimates to specific conditions of every local market across the US. While the project cost estimate we produce is well-informed and an accurate depiction of what the project should generally cost, the homeowner’s actual cost will be what they agree on with their selected contractor upon the conclusion of their comprehensive and transparent [Bid Process](/info-center/definitions/bid-process). '
@@ -46,7 +46,7 @@ const WHAT_IS_THE_ORIGIN_OF_THE_PROJECT_COST_ESTIMATE = {
 };
 
 const DOES_EMPROVE_HAVE_AN_APP = {
-  title: 'DOES EMPROVE HAVE AN APP?',
+  title: 'Does emprove have an app?',
   hasMarkdown: true,
   body: [
     'No, Emprove does not yet have an app, but may in the future. At present, homeowners and contractors can connect at [www.emproveit.com.](https://emproveit.com/) '
@@ -54,19 +54,19 @@ const DOES_EMPROVE_HAVE_AN_APP = {
 };
 
 const WHAT_TYPES_OF_HOME_IMPROVEMENT_SERVICES_CAN_YOU_GET_DONE_USING_EMPROVE = {
-  title: 'WHAT TYPES OF HOME IMPROVEMENT SERVICES CAN YOU GET DONE USING EMPROVE? ',
+  title: 'What types of home improvement services can you get done using Emprove?',
   body: [
     'The Emprove platform can currently support a wide range of types and scales for non-structural interior home improvement projects; from plumbing fixture replacements, to wall repainting, to full renovations. Our capacity to support exterior improvements are coming soon.'
   ]
 };
 
 const WHO_IS_THE_EMPROVE_LEADERSHIP_TEAM = {
-  title: 'WHO IS THE EMPROVE LEADERSHIP TEAM? ',
+  title: 'Who is the Emprove leadership team?',
   body: ['Emprove is led by James Noel, CEO; Linda Lee, COO; and Andrew Pascal, chairman.']
 };
 
 const HOW_DOES_EMPROVE_WORK = {
-  title: 'HOW DOES EMPROVE WORK?',
+  title: 'How does Emprove work?',
   body: [],
   hasManyTerms: true,
   terms: [
@@ -132,107 +132,107 @@ const HOW_DOES_EMPROVE_WORK = {
 };
 
 const WHERE_IS_EMPROVE_BASED = {
-  title: 'WHERE IS EMPROVE BASED?',
+  title: 'Where is Emprove based?',
   body: ['Emprove has offices and stakeholders in Las Vegas and Silicon Valley']
 };
 
 const WHAT_PROBLEMS_DOES_EMPROVE_SOLVE = {
-  title: 'WHAT PROBLEMS DOES EMPROVE SOLVE?',
+  title: 'What problems does Emprove solve?',
   body: [
     'Emprove was founded to meet an unmet need in the $260 billion home improvement market. The home improvement market needs transparency. The current process is broken. Consumers are often uneducated about and intimidated by home improvement; they need a process that demystifies the costs of their dream projects and that intuitively helps them engage responsibly with contractors. On the flip side, contractors are frustrated with wasting valuable time inefficiently chasing work and engaging with uneducated consumers who aren’t quite ready to advance their project. '
   ]
 };
 
 const WHEN_WAS_EMPROVE_FOUNDED = {
-  title: 'WHEN WAS EMPROVE FOUNDED?',
+  title: 'When was Emprove founded?',
   body: ['Emprove incorporated in June 2017.']
 };
 
 const DOES_EMPROVE_HAVE_VC_FUNDING = {
-  title: 'DOES EMPROVE HAVE VC FUNDING?',
+  title: 'Does Emprove have VC funding?',
   body: ['Emprove raised $3.3 million in seed capital as of February 2018. Its lead investor is DCM Ventures out of Silicon Valley.']
 };
 
 const I_DONT_LIVE_IN_LAS_VEGAS_CAN_I_STILL_USE_EMPROVE = {
-  title: "I DON'T LIVE IN LAS VEGAS. CAN I STILL USE EMPROVE?",
+  title: "I don't live in Las Vegas. Can I still use Emprove?",
   body: [
     'Yes! If Emprove is not yet fully operational in your region (i.e. there is not a network of contractors in your region on the platform), you can still use Emprove to create your project and develop an RFP that you can administer. Since we can’t offer you the full value proposition, the cost is just $10. '
   ]
 };
 
 const WHAT_IS_EMPROVE = {
-  title: 'WHAT IS EMPROVE?',
+  title: 'What is Emprove?',
   body: [
     'Emprove is a technology platform where consumers and contractors engage with one another on a mutually informed and transparent basis, providing clarity and market efficiency for both parties. We empower consumers with interactive scope definition tools and dynamic cost estimates to initiate their projects with confidence. We service contractors by providing a free and efficient platform to submit cost proposals for projects that are well-defined, vetted and ready to go! '
   ]
 };
 
 const WILL_EMPROVE_EXPAND_BEYOND_THE_SOUTHWEST = {
-  title: 'WILL EMPROVE EXPAND BEYOND THE SOUTHWEST',
+  title: 'Will Emprove expand beyond the Southwest',
   body: ['Pending Emprove’s success and growth in Arizona and California in Q1 2019, Emprove plans to expand nationally. ']
 };
 
 const HOW_ARE_YOU_DIFFERENT_FROM_YOUR_COMPETITORS = {
-  title: 'HOW ARE YOU DIFFERENT FROM YOUR COMPETITORS',
+  title: 'How are you different from your competitors?',
   body: [
     'Most of our competitors serve to connect homeowners who are contemplating a project with contractors who are qualified to complete it.  As career construction industry professionals, our perspective guides us on our principal belief that projects have a far greater probability of success when both parties are comprehensively and equally informed regarding project expectations. It is not enough to simply connect an uneducated consumer with a supremely informed capable contractor and hope for the best. Emprove focuses on empowering the homeowner to more confidently and responsibly engage with the contractor community. The outcome of informing homeowners will be a better performing market where contractors thrive in greater clarity and efficiency. '
   ]
 };
 
 const WHY_ARE_YOU_LAUNCHING_IN_LAS_VEGAS = {
-  title: 'WHY ARE YOU LAUNCHING IN LAS VEGAS?',
+  title: 'Why are you launching in Las Vegas?',
   body: [
     'Las Vegas is the ideal place to launch Emprove as it has re-established itself as one of the most dynamic real-estate markets in the country.  This strength is being stimulated by renewed job creation and population growth that made it the fastest growing city for decades.  These conditions are driving the real-estate market and generating ripe conditions for home improvement projects.'
   ]
 };
 
 const WHAT_CITIESREGIONS_DOES_EMPROVE_SERVICE = {
-  title: 'WHAT CITIES/REGIONS DOES EMPROVE SERVICE?',
+  title: 'What cities/regions does Emprove service?',
   body: ['Emprove is launching in Las Vegas in June 2018, with plans to expand to California and Arizona in early 2019.']
 };
 
 const MY_CONTRACTOR_DIDNT_FOLLOW_THROUGH_WITH_THE_PROJECT_AS_SCOPED_WHAT_SHOULD_I_DO = {
-  title: "MY CONTRACTOR DIDN'T FOLLOW THROUGH WITH THE PROJECT AS SCOPED. WHAT SHOULD I DO?",
+  title: "My contractor didn't follow through with the project as scoped. What should I do?",
   body: [
     'In the event that a dispute arises and the parties are not able to work it out through discussion, each state provides for unique rights and remedies that can be sought. Therefore the aggrieved party should seek professional legal advice by a licensed attorney in their area to explore their particular situation. Generally speaking, however, the contract governs the relationship between the parties, and the failure of either party to abide by its terms can constitute a breach of the contract, which is actionable in court.'
   ]
 };
 
 const MY_CONTRACTOR_PROVIDED_ME_WITH_A_CONTRACT_IS_THAT_SUFFICIENT = {
-  title: 'MY CONTRACTOR PROVIDED ME WITH A CONTRACT. IS THAT SUFFICIENT?',
+  title: 'My contractors provided me with a contract. Is that sufficient?',
   body: [
     'Generally, it is not prudent in any industry for a party to sign a legally binding contract without professional legal advice, particularly if drafted by their counter-party.  These situations can often lead to a scenario where the contract used is unfair, and the interests of the receiving party are not adequately represented. While Emprove does not provide professional legal advice and does not eliminate the need to seek the advice of a legal professional, Emprove does share a sample contract that reflects terms and conditions that are generally accepted by the industry to be appropriate for both homeowners and contractors. '
   ]
 };
 
 const HOW_DOES_EMPROVE_HANDLE_RATINGS_DISPUTES_FROM_CONTRACTORS = {
-  title: 'HOW DOES EMPROVE HANDLE RATINGS DISPUTES FROM CONTRACTORS?',
+  title: 'How does Emprove handle ratings disputes from contractors?',
   body: [
     'If a ratings dispute occurs between a contractor and homeowner, Emprove will facilitate the opportunity for the contractor to address the issue directly with the homeowner. '
   ]
 };
 
 const CAN_CONTRACTORS_REVIEW_HOME_OWNERS = {
-  title: 'CAN CONTRACTORS REVIEW HOME OWNERS?',
+  title: 'Can contractors review homeowners?',
   body: ['Yes. Contractors will have the opportunity to rate their experience working with homeowners as well. ']
 };
 
 const CAN_HOMEOWNERS_REVIEW_CONTRACTORS = {
-  title: 'CAN HOMEOWNERS REVIEW CONTRACTORS?',
+  title: 'Can homeowners review contractors?',
   body: [
     'Yes. Contractors on Emprove will already have a baseline rating based on existing reviews on major industry review platforms and once a project is completed, homeowners can review their contractor directly through Emprove. '
   ]
 };
 
 const ARE_ALL_EMPROVE_CONTRACTORS_LICENSED = {
-  title: 'ARE ALL EMPROVE CONTRACTORS LICENSED?',
+  title: 'Are all Emprove contractors licensed?',
   body: [
     'Emprove does not mandate that contractors be licensed. However, Emprove will inform consumers which contractors are licensed with the State of Nevada so they can be informed with such information as they select their contractor. '
   ]
 };
 
 const HOW_MUCH_DOES_IT_COST_TO_USE_EMPROVE = {
-  title: 'HOW MUCH DOES IT COST TO USE EMPROVE?',
+  title: 'How much does it cost to use Emprove?',
   hasMarkdown: true,
   body: [
     '** _For Las Vegas homeowners_ **',

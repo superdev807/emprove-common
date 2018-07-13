@@ -1,7 +1,7 @@
 'use strict';
 
 const MATERIAL_GRADE = {
-  title: 'MATERIAL GRADE',
+  title: 'Material Grade',
   body: [
     'Identifies the quality and cost of a specific item relative to its full range available in the market.',
     "Emprove has defined the following material grades that allow homeowners to precisely tune where they'd like to focus their budget:"
@@ -50,7 +50,7 @@ const MATERIAL_GRADE = {
 };
 
 const MATERIAL_LABOR_COSTS = {
-  title: 'MATERIAL & LABOR COSTS',
+  title: 'Material & Labor Costs',
   hasMarkdown: true,
   body: [
     'The actual costs incurred by the installing contractor to purchase the material needed for a project plus the actual costs of expended labor to complete the project.',
