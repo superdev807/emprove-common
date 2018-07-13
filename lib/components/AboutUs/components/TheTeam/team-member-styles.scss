@@ -66,6 +66,7 @@
     opacity: 0;
     transition: opacity .5s ease-out;
     pointer-events: none;
+    max-width: 100%; // to fix overflow issue with IE
 
     @media screen and (min-width: 1000px) {
       border-radius: 50%;
@@ -84,5 +85,9 @@
     &--shown {
       opacity: 1;
     }
+  }
+
+  &__description {
+    max-width: 100%; // to fix overflow issue with IE
   }
 }

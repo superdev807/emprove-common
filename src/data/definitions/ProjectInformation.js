@@ -10,12 +10,12 @@ const PROJECT_SCOPE = {
     {
       id: 1,
       filename: 'project_scope_light_renovation.png',
-      description: ''
+      description: null
     },
     {
       id: 2,
       filename: 'project_scope_custom_light_renovation.png',
-      description: ''
+      description: null
     }
   ],
   terms: []

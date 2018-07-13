@@ -30,6 +30,7 @@ describe('Icon components', () => {
     'IconOffice',
     'IconPatio',
     'IconPowderRoom',
+    'IconQuestionMark',
     'IconTwitter'
   ];
 

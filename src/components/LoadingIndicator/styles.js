@@ -12,5 +12,9 @@ export default theme => ({
     alignItems: 'center',
     justifyContent: 'center',
     zIndex: 1
+  },
+  fixedOverlay: {
+    position: 'fixed',
+    zIndex: 999
   }
 });
