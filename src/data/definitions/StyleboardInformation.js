@@ -1,7 +1,7 @@
 'use strict';
 
 const STYLEBOARD = {
-  title: 'STYLEBOARD',
+  title: 'Styleboard',
   body: [
     'A Styleboard is a composed set of reference images that collectively convey the design style you would like to achieve for a particular space or project.',
     'Developing a Styleboard helps the homeowner reconcile all the various styles and materials that they like across each major scope element (such as: flooring, countertops, cabinets, lighting, etc.) for a particular space. It will help the homeowner to visually describe their end product expectations to their contractor.'
