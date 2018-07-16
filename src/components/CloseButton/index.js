@@ -6,11 +6,11 @@ import cx from 'classnames';
 import IconButton from '@material-ui/core/IconButton';
 import IconClose from '@material-ui/icons/Close';
 
-import './styles.scss'
+import './styles.scss';
 
 const CloseButton = (props) => {
   return (
-    <IconButton className={cx('catalog-photo-modal-close-button', props.className)} onClick={props.onClick}>
+    <IconButton className={cx('close-button', props.className)} onClick={props.onClick}>
       <IconClose />
     </IconButton>
   );
