@@ -3,7 +3,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import CloseButton from '~/components/CatalogPhotoModal/components/CloseButton';
+import CloseButton from '~/components/CloseButton';
 
 describe('CloseButton component', () => {
   let component;

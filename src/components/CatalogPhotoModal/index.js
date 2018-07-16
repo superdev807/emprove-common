@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Modal from '@material-ui/core/Modal';
 
-import CloseButton from './components/CloseButton';
+import CloseButton from '../CloseButton';
 import CatalogPhoto from './components/CatalogPhoto';
 import CatalogPhotoHeader from './components/CatalogPhotoHeader';
 import DreamItLink from './components/DreamItLink';
