@@ -3,6 +3,8 @@
 .information-modal {
   @media screen and (max-width: 700px) {
     // make dialog full screen on mobile
+    border-radius: 0;
+    box-shadow: none;
     height: 100%;
     margin: 0;
     max-height: 100vh;
