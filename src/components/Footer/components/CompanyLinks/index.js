@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 import FooterList from '../FooterList';
 
 const companyLinks = [
-  <Link to="/about-us">About Emprove, Inc.</Link>,
-  <Link to="/blog">Blog</Link>,
+  <a href="https://emproveit.com/about-emprove" target="_blank" rel="noopener noreferrer">About Emprove, Inc.</a>,
+  <a href="https://emproveit.com/blog" target="_blank" rel="noopener noreferrer">Blog</a>,
   <a href="mailto:contact@emproveit.com">Contact Us</a>,
   /* <Link to="#">Our Team</Link>,
   <Link to="#">Investors</Link>,
@@ -15,7 +15,7 @@ const companyLinks = [
   <a href="https://angel.co/emproveit/jobs" target="_blank" rel="noopener noreferrer">
     Careers
   </a>,
-  <Link to="/info-center">Help Center</Link>,
+  <a href="https://emproveit.com/info-center" target="_blank" rel="noopener noreferrer">Help Center</a>,
   <a href="https://emproveit.com/privacy" target="_blank" rel="noopener noreferrer">
     Privacy Policy
   </a>,
