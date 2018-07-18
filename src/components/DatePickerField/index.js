@@ -1,6 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react';
+import cx from 'classnames';
 import moment from 'moment';
 import DateTime from 'react-datetime';
 import FormHelperText from '@material-ui/core/FormHelperText';
@@ -73,13 +74,15 @@ class DatePickerField extends Component {
       disableDatePast,
       viewDate,
       open,
-      closeDateWidget
+      closeDateWidget,
+      alignment // left or right
     } = this.props;
 
     const inputDate =
       input.value !== 'Invalid date' && input.value !== ''
         ? moment.isMoment(input.value) ? input.value.format('MM/DD/YYYY') : moment(input.value, 'YYYY-MM-DD').format('MM/DD/YYYY')
         : null;
+    const datePickerAlignment = alignment || 'left';
 
     return (
       <FormControl className={className} error={touched && !!error} fullWidth={fullWidth}>
@@ -87,7 +90,7 @@ class DatePickerField extends Component {
         {helperText && <FormHelperText>{helperText}</FormHelperText>}
         <DateTime
           renderInput={this.renderInput}
-          className={datePickerClassName}
+          className={cx(datePickerClassName, datePickerAlignment)}
           value={inputDate}
           viewDate={viewDate ? viewDate : inputDate}
           onChange={this.handleChange}
