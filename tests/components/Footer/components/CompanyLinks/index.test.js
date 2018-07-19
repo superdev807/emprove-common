@@ -13,11 +13,11 @@ describe('CompanyLinks component', () => {
   });
 
   test('should display link to about emprove', () => {
-    expect(component.find('FooterList').prop('items')[0].props.href).toBe('https://emproveit.com/about-emprove');
+    expect(component.find('FooterList').prop('items')[0].props.href).toEqual(expect.stringContaining('/about-emprove'));
   });
 
   test('should display link to blog', () => {
-    expect(component.find('FooterList').prop('items')[1].props.href).toBe('https://emproveit.com/blog');
+    expect(component.find('FooterList').prop('items')[1].props.href).toEqual(expect.stringContaining('/blog'));
   });
 
   test('should display link to contact us', () => {
@@ -29,14 +29,14 @@ describe('CompanyLinks component', () => {
   });
 
   test('should display link to help center', () => {
-    expect(component.find('FooterList').prop('items')[4].props.href).toBe('https://emproveit.com/info-center');
+    expect(component.find('FooterList').prop('items')[4].props.href).toEqual(expect.stringContaining('/info-center'));
   });
 
   test('should display link to privacy', () => {
-    expect(component.find('FooterList').prop('items')[5].props.href).toBe('https://emproveit.com/privacy');
+    expect(component.find('FooterList').prop('items')[5].props.href).toEqual(expect.stringContaining('/privacy'));
   });
 
   test('should display link to terms', () => {
-    expect(component.find('FooterList').prop('items')[6].props.href).toBe('https://emproveit.com/terms');
+    expect(component.find('FooterList').prop('items')[6].props.href).toEqual(expect.stringContaining('/terms'));
   });
 });
