@@ -12,7 +12,7 @@ import CostItPartial from './components/CostItPartial';
 import DreamItPartial from './components/DreamItPartial';
 import ForProfessionals from './components/ForProfessionals';
 // import OurProduct from './components/OurProduct';
-import OurInvestors from './components/OurInvestors';
+// import OurInvestors from './components/OurInvestors';
 import PressAndMedia from './components/PressAndMedia';
 import TheTeam from './components/TheTeam';
 import TipsAndIdeas from './components/TipsAndIdeas';
@@ -64,6 +64,10 @@ class AboutUs extends Component {
     }
   }
 
+  handleStart = () => {
+    this.props.history.push('/browse');
+  }
+
   render() {
     const domain = window.location.protocol + '//' + window.location.host + '/';
     const actionText = 'Start Now';
@@ -79,12 +83,12 @@ class AboutUs extends Component {
         <Container>
           <AboutTheCompany className="about-us__about-the-company" />
           <div id="tab" style={{ height: '20vh' }} />
-          <DreamItPartial domain={domain} onStep={this.state.sectionIndex >= SectionIndex.DREAM_IT} actionText={actionText} action={() => null || this.handleStart} />
+          <DreamItPartial domain={domain} onStep={this.state.sectionIndex >= SectionIndex.DREAM_IT} actionText={actionText} action={this.handleStart} />
           <div id="tab1" style={{ height: '20vh' }} />
-          <CostItPartial domain={domain} onStep={this.state.sectionIndex >= SectionIndex.COST_IT} actionText={actionText} action={() => null || this.handleStart} />
+          <CostItPartial domain={domain} onStep={this.state.sectionIndex >= SectionIndex.COST_IT} actionText={actionText} action={this.handleStart} />
           <div style={{ height: '13vh' }} />
           <div id="tab2" style={{ height: '20vh' }} />
-          <BidItPartial domain={domain} onStep={this.state.sectionIndex >= SectionIndex.BID_IT} actionText={actionText} action={() => null || this.handleStart} />
+          <BidItPartial domain={domain} onStep={this.state.sectionIndex >= SectionIndex.BID_IT} actionText={actionText} action={this.handleStart} />
         </Container>
         <div id="tab5">
           <ForProfessionals onStep={'on' || true || onStepBottom} onClick={() => null || this.goPro} />
