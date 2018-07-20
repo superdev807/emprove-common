@@ -15,6 +15,17 @@ describe('PasswordField', () => {
   let component;
   let wrapper;
 
+  //This is necessary because we started getting the following warning:
+  //UnhandledPromiseRejectionWarning: TypeError: document.createRange is not a function
+  global.document.createRange = () => ({
+    setStart: () => {},
+    setEnd: () => {},
+    commonAncestorContainer: {
+      nodeName: 'BODY',
+      ownerDocument: document
+    }
+  });
+
   beforeEach(() => {
     props = {
       classes: {},
