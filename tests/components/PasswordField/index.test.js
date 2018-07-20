@@ -33,6 +33,8 @@ describe('PasswordField', () => {
       meta: {},
       label: ''
     };
+    //The "mount" below is giving the UnhandledPromiseRejectionWarning: TypeError: document.createRange is not a function.
+    //So, a fix is added above.
     wrapper = mount(<PasswordField {...props} />);
   });
 
