@@ -10,7 +10,7 @@ import './style.scss';
 class BidItPartial extends Component {
   static propTypes = {
     domain: PropTypes.string,
-    onStep: PropTypes.string,
+    onStep: PropTypes.bool,
     actionText: PropTypes.string,
     action: PropTypes.func
   };
@@ -37,7 +37,7 @@ class BidItPartial extends Component {
                 className="bidItStep2Inner"
                 style={{ backgroundImage: 'url(' + domain + 'images/bidItStep2.png)' }}
                 title="Turn your project dream into a comprehensive request-for-proposal package for contractors to bid!">
-                <div className="bidItStepNumber" className="bidItStepNumber">
+                <div className="bidItStepNumber">
                   2
                 </div>
               </div>

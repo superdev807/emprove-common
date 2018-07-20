@@ -1,6 +1,6 @@
 'use strict';
 
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Divider from '@material-ui/core/Divider';
@@ -19,66 +19,99 @@ import TipsAndIdeas from './components/TipsAndIdeas';
 import Container from '../Container';
 import './styles.scss';
 
-const AboutUs = (props) => {
-  const domain = window.location.protocol + '//' + window.location.host + '/';
-  const actionText = 'Start Now';
-  //
-  // let onStep2 = '';
-  // if (this.state.tabIndex >= 2) {
-  //   onStep2 = 'on';
-  // }
-  //
-  // let onStep1 = '';
-  // if (this.state.tabIndex >= 1) {
-  //   onStep1 = 'on';
-  // }
-  //
-  // let onStep0 = '';
-  // if (this.state.onDreamIt) {
-  //   onStep0 = 'on';
-  // }
-  // let onStepBottom = '';
-  // if (this.state.tabIndex >= 4) {
-  //   onStepBottom = 'on';
-  // }
-
-  return (
-    <main className={cx(props.className)}>
-      <AboutUsHero />
-      <Container>
-        <AboutTheCompany className="about-us__about-the-company" />
-        <DreamItPartial domain={domain} onStep={true || onStep0} actionText={actionText} action={() => null || this.handleStart} />
-        {/* <div id="tab1" style={{ height: '20vh' }} /> */}
-        <CostItPartial domain={domain} onStep={true || onStep1} actionText={actionText} action={() => null || this.handleStart} />
-        {/* <div style={{ height: '13vh' }} /> */}
-        {/* <div id="tab2" style={{ height: '20vh' }} /> */}
-        <BidItPartial domain={domain} onStep={true || onStep2} actionText={actionText} action={() => null || this.handleStart} />
-      </Container>
-      <div id="tab5">
-        <ForProfessionals onStep={'on' || true || onStepBottom} onClick={() => null || this.goPro} />
-      </div>
-      <Divider className="about-us__divider" />
-      <Container>
-        <div id="tab3">
-          <TipsAndIdeas />
-        </div>
-      </Container>
-      <Divider className="about-us__divider" />
-      <Container>
-        <TheTeam className="about-us__the-team" fromContractor={props.fromContractor} />
-      </Container>
-      <Divider className="about-us__divider" />
-      <Container>
-        <div id="tab4">
-          <PressAndMedia />
-        </div>
-        {/* <OurProduct className="about-us__our-product" /> */}
-      </Container>
-      {/* <OurInvestors /> */}
-      {/* <PressAndMedia /> */}
-    </main>
-  );
+const SectionIndex = {
+  DREAM_IT: 3,
+  COST_IT: 4,
+  BID_IT: 5
 };
+
+class AboutUs extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      sectionIndex: -1
+    };
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll = (event) => {
+    let sectionIndex = -1;
+    const innerHeight = window.innerHeight * 0.75;
+
+    const dreamIt = document.getElementById('dreamIt');
+    if (dreamIt && dreamIt.getBoundingClientRect().top < innerHeight) {
+      sectionIndex = SectionIndex.DREAM_IT;
+    }
+    const costIt = document.getElementById('costIt');
+    if (costIt && costIt.getBoundingClientRect().top < innerHeight) {
+      sectionIndex = SectionIndex.COST_IT;
+    }
+    const bidIt = document.getElementById('bidIt');
+    if (bidIt && bidIt.getBoundingClientRect().top < innerHeight) {
+      sectionIndex = SectionIndex.BID_IT;
+    }
+
+    if (this.state.sectionIndex !== sectionIndex) {
+      this.setState({ sectionIndex });
+    }
+  }
+
+  render() {
+    const domain = window.location.protocol + '//' + window.location.host + '/';
+    const actionText = 'Start Now';
+
+    // let onStepBottom = '';
+    // if (this.state.tabIndex >= 4) {
+    //   onStepBottom = 'on';
+    // }
+
+    return (
+      <main className={cx(this.props.className)}>
+        <AboutUsHero />
+        <Container>
+          <AboutTheCompany className="about-us__about-the-company" />
+          <div id="tab" style={{ height: '20vh' }} />
+          <DreamItPartial domain={domain} onStep={this.state.sectionIndex >= SectionIndex.DREAM_IT} actionText={actionText} action={() => null || this.handleStart} />
+          <div id="tab1" style={{ height: '20vh' }} />
+          <CostItPartial domain={domain} onStep={this.state.sectionIndex >= SectionIndex.COST_IT} actionText={actionText} action={() => null || this.handleStart} />
+          <div style={{ height: '13vh' }} />
+          <div id="tab2" style={{ height: '20vh' }} />
+          <BidItPartial domain={domain} onStep={this.state.sectionIndex >= SectionIndex.BID_IT} actionText={actionText} action={() => null || this.handleStart} />
+        </Container>
+        <div id="tab5">
+          <ForProfessionals onStep={'on' || true || onStepBottom} onClick={() => null || this.goPro} />
+        </div>
+        <Divider className="about-us__divider" />
+        <Container>
+          <div id="tab3">
+            <TipsAndIdeas />
+          </div>
+        </Container>
+        <Divider className="about-us__divider" />
+        <Container>
+          <TheTeam className="about-us__the-team" fromContractor={this.props.fromContractor} />
+        </Container>
+        <Divider className="about-us__divider" />
+        <Container>
+          <div id="tab4">
+            <PressAndMedia />
+          </div>
+          {/* <OurProduct className="about-us__our-product" /> */}
+        </Container>
+        {/* <OurInvestors /> */}
+        {/* <PressAndMedia /> */}
+      </main>
+    );
+  }
+}
 
 AboutUs.propTypes = {
   className: PropTypes.string,

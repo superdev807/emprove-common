@@ -10,7 +10,7 @@ import './style.scss';
 class DreamItPartial extends Component {
   static propTypes = {
     domain: PropTypes.string,
-    onStep: PropTypes.string,
+    onStep: PropTypes.bool,
     actionText: PropTypes.string,
     action: PropTypes.func
   };
