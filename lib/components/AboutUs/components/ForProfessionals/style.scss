@@ -1,0 +1,147 @@
+@import 'variables';
+@import 'mixins';
+
+.forProfessionalsContent {
+  background-image: url('/images/for_professionals_image_crop.jpg');
+  height: 37vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  color: #444;
+  display: flex;
+  flex-direction: column;
+}
+
+.contractorBox {
+  max-width: 80vw;
+  margin: auto;
+}
+
+.forProfessionalsContainer {
+  height: auto;
+  font-size: 3.5vw;
+  text-align: center;
+  padding: 10vh 0;
+}
+
+.forProfessionalsContentTitle {
+  font-size: 110%;
+  font-weight: 300;
+  padding-bottom: 1.4vh;
+  transition: all ease .1s;
+  transition-delay: .25s;
+  color: #fff;
+}
+
+.orangeLine {
+  background-color: #ff9e3c;
+  width: 8.2vw;
+  height: 3px;
+  margin: auto;
+  position: relative;
+}
+
+.contractorTextStyle {
+  font-size: 200%;
+  padding-top: 2vh;
+  margin-bottom: 2vh;
+  font-weight: 200;
+  color: #fff;
+}
+
+.contractorButtonContainer {
+  width: 50%;
+  height: 7%;
+  margin: auto;
+  font-size: 77%
+  span {
+    font-size: 100%;
+  }
+}
+
+.forProfessionalsHeaderContainer {
+  padding-top: 7.6vh;
+  color: #444;
+  font-size: 170%;
+}
+
+.forProfessionalsFirstTitleBoxStyle {
+  position: relative;
+  left: 50%;
+  margin-left: -39.8vw;
+  display: flex;
+  flex-direction: row;
+  padding-top: 4.4vh;
+  font-size: 100%;
+  width: 80vw
+}
+
+.forProfessionalsTitleBoxStyle {
+  position: relative;
+  left: 50%;
+  margin-left: -39.8vw;
+  display: flex;
+  flex-direction: row;
+  padding-top: 2vh;
+  font-size: 100%;
+  width: 80vw
+}
+
+#contractorText
+.forProfessionalsHeader {
+  transition: opacity 1s ease, top .5s ease-out;
+}
+
+.forProfessionalsTitle {
+  opacity: 0;
+  position: relative;
+  left: 3vh;
+  transition: opacity 1s ease-out, left .5s ease-out;
+}
+
+.forProfessionalsTitle {
+  margin: 0;
+}
+
+#forProfessionalsTextsBox.on div .forProfessionalsHeader {
+  opacity: 1;
+  top: 0;
+}
+
+#forProfessionalsTextsBox.on .forProfessionalsTitleBox .forProfessionalsTitle {
+  opacity: 1;
+  left: 0;
+}
+
+#contractorText, #contractorButton {
+  opacity: 0;
+  position: relative;
+  top: 3vh;
+  transition: opacity 1s ease-out, top .5s ease-out;
+}
+
+#contractorText, .forProfessionalsTitle {
+  transition-delay: 0.25s;
+}
+
+#contractorButton {
+  transition-delay: 0.5s;
+}
+
+#contractorBox.on #contractorText,
+#contractorBox.on #contractorButton {
+  opacity: 1;
+  top: 0;
+}
+
+@include media ('>sm') {
+  .forProfessionalsContent {
+    font-size: 2vh;
+  }
+  .contractorButtonContainer {
+    max-width: 165px;
+  }
+  #forProfessionalsTextsBox {
+    font-size: 2vh;
+  }
+}
