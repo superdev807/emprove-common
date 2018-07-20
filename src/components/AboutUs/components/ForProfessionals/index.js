@@ -12,14 +12,14 @@ class ForProfessionals extends Component {
     super();
   }
   render() {
-    const { onStep, classes } = this.props;
+    const { onStep, classes, id } = this.props;
     return (
-      <div className="forProfessionalsContainer">
+      <div id={id} className="forProfessionalsContainer">
         <div
           id="forProfessionals"
           className="forProfessionalsContent"
           title="A free platform for contractors to efficiently bid for projects that are well-defined and vetted!">
-          <div id="contractorBox" className={cx(onStep, 'contractorBox')}>
+          <div id="contractorBox" className={cx({ on: onStep }, 'contractorBox')}>
             <div className="forProfessionalsContentTitle">
               FOR <b>PROFESSIONALS</b>
             </div>
@@ -38,7 +38,7 @@ class ForProfessionals extends Component {
         </div>
 
         <div style={{ maxWidth: '85vw', margin: 'auto' }}>
-          <div id="forProfessionalsTextsBox" className={onStep} style={{ position: 'relative' }}>
+          <div id="forProfessionalsTextsBox" className={onStep ? 'on' : undefined} style={{ position: 'relative' }}>
             <div className="forProfessionalsHeaderContainer">
               <p className="forProfessionalsHeader">
                 <b>BID</b> TO THE <b>MOST QUALIFIED</b> CONSUMER IN THE MARKET <b>FOR FREE</b>
@@ -86,7 +86,7 @@ class ForProfessionals extends Component {
 }
 
 ForProfessionals.propTypes = {
-  onStep: PropTypes.string.isRequired,
+  onStep: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired
 };
 

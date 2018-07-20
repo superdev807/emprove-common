@@ -22,7 +22,8 @@ import './styles.scss';
 const SectionIndex = {
   DREAM_IT: 3,
   COST_IT: 4,
-  BID_IT: 5
+  BID_IT: 5,
+  FOR_PROFESSIONALS: 6
 };
 
 class AboutUs extends Component {
@@ -58,6 +59,10 @@ class AboutUs extends Component {
     if (bidIt && bidIt.getBoundingClientRect().top < innerHeight) {
       sectionIndex = SectionIndex.BID_IT;
     }
+    const forProfessionals = document.getElementById('about-us-for-professionals-section');
+    if (forProfessionals && forProfessionals.getBoundingClientRect().top < innerHeight) {
+      sectionIndex = SectionIndex.FOR_PROFESSIONALS;
+    }
 
     if (this.state.sectionIndex !== sectionIndex) {
       this.setState({ sectionIndex });
@@ -72,11 +77,6 @@ class AboutUs extends Component {
     const domain = window.location.protocol + '//' + window.location.host + '/';
     const actionText = 'Start Now';
 
-    // let onStepBottom = '';
-    // if (this.state.tabIndex >= 4) {
-    //   onStepBottom = 'on';
-    // }
-
     return (
       <main className={cx(this.props.className)}>
         <AboutUsHero />
@@ -90,9 +90,7 @@ class AboutUs extends Component {
           <div id="tab2" style={{ height: '20vh' }} />
           <BidItPartial domain={domain} onStep={this.state.sectionIndex >= SectionIndex.BID_IT} actionText={actionText} action={this.handleStart} />
         </Container>
-        <div id="tab5">
-          <ForProfessionals onStep={'on' || true || onStepBottom} onClick={() => null || this.goPro} />
-        </div>
+        <ForProfessionals id="about-us-for-professionals-section" onStep={this.state.sectionIndex >= SectionIndex.FOR_PROFESSIONALS} onClick={() => null || this.goPro} />
         <Divider className="about-us__divider" />
         <Container>
           <div id="tab3">
