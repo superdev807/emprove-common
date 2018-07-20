@@ -6,6 +6,22 @@ import { shallow } from 'enzyme';
 import CompanyLinks from '~/components/Footer/components/CompanyLinks';
 
 describe('CompanyLinks component', () => {
+  const originalProcess = global.process;
+  const CONSUMER_DOMAIN = 'http://somewhere.com';
+
+  beforeAll(() => {
+    global.process = {
+      ...global.process,
+      env: {
+        CONSUMER_DOMAIN
+      }
+    };
+  });
+
+  afterAll(() => {
+    global.process = originalProcess;
+  });
+
   let component;
 
   beforeEach(() => {
@@ -13,11 +29,12 @@ describe('CompanyLinks component', () => {
   });
 
   test('should display link to about emprove', () => {
-    expect(component.find('FooterList').prop('items')[0].props.href).toEqual(expect.stringContaining('/about-emprove'));
+    //Different footer in about-emprove for each application
+    expect(component.find('FooterList').prop('items')[0].props.href).toBe('/about-emprove');
   });
 
   test('should display link to blog', () => {
-    expect(component.find('FooterList').prop('items')[1].props.href).toEqual(expect.stringContaining('/blog'));
+    expect(component.find('FooterList').prop('items')[1].props.href).toBe(CONSUMER_DOMAIN + '/blog');
   });
 
   test('should display link to contact us', () => {
@@ -29,14 +46,14 @@ describe('CompanyLinks component', () => {
   });
 
   test('should display link to help center', () => {
-    expect(component.find('FooterList').prop('items')[4].props.href).toEqual(expect.stringContaining('/info-center'));
+    expect(component.find('FooterList').prop('items')[4].props.href).toBe(CONSUMER_DOMAIN + '/info-center');
   });
 
   test('should display link to privacy', () => {
-    expect(component.find('FooterList').prop('items')[5].props.href).toEqual(expect.stringContaining('/privacy'));
+    expect(component.find('FooterList').prop('items')[5].props.href).toBe(CONSUMER_DOMAIN + '/privacy');
   });
 
   test('should display link to terms', () => {
-    expect(component.find('FooterList').prop('items')[6].props.href).toEqual(expect.stringContaining('/terms'));
+    expect(component.find('FooterList').prop('items')[6].props.href).toEqual(CONSUMER_DOMAIN + '/terms');
   });
 });
