@@ -54,6 +54,6 @@ describe('CompanyLinks component', () => {
   });
 
   test('should display link to terms', () => {
-    expect(component.find('FooterList').prop('items')[6].props.href).toEqual(CONSUMER_DOMAIN + '/terms');
+    expect(component.find('FooterList').prop('items')[6].props.href).toBe(CONSUMER_DOMAIN + '/terms');
   });
 });

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import FooterList from '../FooterList';
 
 //This is converted into a function because the test couldn't inject process.env.CONSUMER_DOMAIN at runtime.
-const companyLinks = () => {
+const getCompanyLinks = () => {
   return [
     <a href="/about-emprove">About Emprove, Inc.</a>,
     <a href={process.env.CONSUMER_DOMAIN + "/blog"} target="_blank" rel="noopener noreferrer">Blog</a>,
@@ -28,7 +28,7 @@ const companyLinks = () => {
 };
 
 const CompanyLinks = props => {
-  return <FooterList items={companyLinks()} />;
+  return <FooterList items={getCompanyLinks()} />;
 };
 
 export default CompanyLinks;
