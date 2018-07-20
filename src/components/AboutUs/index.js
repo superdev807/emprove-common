@@ -18,6 +18,7 @@ import TheTeam from './components/TheTeam';
 import TipsAndIdeas from './components/TipsAndIdeas';
 import Container from '../Container';
 import './styles.scss';
+import './partial-styles.scss';
 
 const SectionIndex = {
   DREAM_IT: 3,
@@ -83,10 +84,9 @@ class AboutUs extends Component {
 
     return (
       <main className={cx(this.props.className)}>
-        <AboutUsHero />
+        <AboutUsHero onPlayClick={this.props.onPlayClick} />
         <Container>
           <AboutTheCompany className="about-us__about-the-company" />
-          <div id="tab" style={{ height: '20vh' }} />
           <DreamItPartial domain={domain} onStep={this.state.sectionIndex >= SectionIndex.DREAM_IT} actionText={actionText} action={this.handleStart} />
           <div id="tab1" style={{ height: '20vh' }} />
           <CostItPartial domain={domain} onStep={this.state.sectionIndex >= SectionIndex.COST_IT} actionText={actionText} action={this.handleStart} />
@@ -94,11 +94,11 @@ class AboutUs extends Component {
           <div id="tab2" style={{ height: '20vh' }} />
           <BidItPartial domain={domain} onStep={this.state.sectionIndex >= SectionIndex.BID_IT} actionText={actionText} action={this.handleStart} />
         </Container>
-        <ForProfessionals id="about-us-for-professionals-section" onStep={this.state.sectionIndex >= SectionIndex.FOR_PROFESSIONALS} onClick={this.handleProStart} />
+        <ForProfessionals id="about-us-for-professionals-section" className="about-us__for-professionals" onStep={this.state.sectionIndex >= SectionIndex.FOR_PROFESSIONALS} onClick={this.handleProStart} />
         <Divider className="about-us__divider" />
         <Container>
           <div id="tab3">
-            <TipsAndIdeas />
+            <TipsAndIdeas className="about-us__tips-and-ideas" />
           </div>
         </Container>
         <Divider className="about-us__divider" />
@@ -108,7 +108,7 @@ class AboutUs extends Component {
         <Divider className="about-us__divider" />
         <Container>
           <div id="tab4">
-            <PressAndMedia />
+            <PressAndMedia className="about-us__press-and-media" />
           </div>
           {/* <OurProduct className="about-us__our-product" /> */}
         </Container>

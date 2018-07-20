@@ -40,3 +40,26 @@
     }
   }
 }
+
+.about-us-hero-watch-how-it-works {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+
+  &__icon {
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    font-size: 1.8rem;
+
+    strong {
+      font-weight: 500;
+    }
+  }
+}

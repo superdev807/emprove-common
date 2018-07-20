@@ -8,6 +8,10 @@
     color: $primary;
   }
 
+  &__down-text {
+    cursor: pointer;
+  }
+
   &__down-icon-button {
     cursor: pointer;
     color: $primary;

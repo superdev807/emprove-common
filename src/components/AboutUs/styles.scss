@@ -16,14 +16,26 @@
   }
 
   &__the-team {
-    padding: 3rem 0;
+    padding: 3rem 0 0;
   }
 
   &__divider {
-    margin: 2rem 0;
+    margin: 0;
   }
 
   &__our-product {
+    padding: 3rem 0;
+  }
+
+  &__tips-and-ideas {
+    padding: 3rem 0;
+  }
+
+  &__press-and-media {
+    padding: 3rem 0 0;
+  }
+
+  &__for-professionals {
     padding: 3rem 0;
   }
 }

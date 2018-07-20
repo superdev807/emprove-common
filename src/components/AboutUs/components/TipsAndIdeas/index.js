@@ -18,12 +18,13 @@ class TipsAndIdeas extends Component {
 
     return (
       <PostsSectionLayout
+        className={this.props.className}
         description="Get Ideas and Advice for Your Home Improvement Projects"
         title={title}
         posts={posts}
         isLink
         linkRoute="/blog"
-        linkText="View all tips and ideas"
+        linkText="view all tips and ideas"
       />
     );
   }

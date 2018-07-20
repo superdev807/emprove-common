@@ -1,6 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 import { Link } from 'react-router-dom';
@@ -10,6 +11,7 @@ import './style.scss';
 
 class PostSectionLayout extends Component {
   static propTypes = {
+    className: PropTypes.string,
     posts: PropTypes.array,
     title: PropTypes.object,
     description: PropTypes.string,
@@ -41,7 +43,7 @@ class PostSectionLayout extends Component {
     const { title, posts, linkRoute, description, isLink, linkText } = this.props;
 
     return (
-      <div className="posts-section" ref={container => (this.container = container)}>
+      <div className={cx('posts-section', this.props.className)} ref={container => (this.container = container)}>
         <div className="posts-section__title">{title}</div>
 
         <div>{description}</div>

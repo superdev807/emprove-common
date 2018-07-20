@@ -15,6 +15,7 @@ const INITIAL_POSTS_TO_SHOW = 3;
 
 class PressAndMedia extends Component {
   static propTypes = {
+    className: PropTypes.string,
     posts: PropTypes.array
   };
 
@@ -51,7 +52,7 @@ class PressAndMedia extends Component {
     const { posts } = this.props;
     const linkText = (
       <div className="press-media__link-box">
-        View all press & media{' '}
+        <span className="press-media__down-text" onClick={this.handleScrollDownClick}>view all press & media{' '}</span>
         <IconButton className="press-media__down-icon-button" onClick={this.handleScrollDownClick}>
           {scrollOpened ? <IconScrollUp /> : <IconScrollDown />}
         </IconButton>
@@ -68,6 +69,7 @@ class PressAndMedia extends Component {
 
     return (
       <PostsSectionLayout
+        className={this.props.className}
         linkRoute="/blog"
         description=""
         linkText={linkText}

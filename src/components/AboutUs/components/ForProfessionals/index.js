@@ -12,9 +12,9 @@ class ForProfessionals extends Component {
     super();
   }
   render() {
-    const { onStep, classes, id } = this.props;
+    const { onStep, className, classes, id } = this.props;
     return (
-      <div id={id} className="forProfessionalsContainer">
+      <div id={id} className={cx('forProfessionalsContainer', className)}>
         <div
           id="forProfessionals"
           className="forProfessionalsContent"
