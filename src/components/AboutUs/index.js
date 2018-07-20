@@ -73,6 +73,10 @@ class AboutUs extends Component {
     this.props.history.push('/browse');
   }
 
+  handleProStart = () => {
+    this.props.history.push('/pro');
+  }
+
   render() {
     const domain = window.location.protocol + '//' + window.location.host + '/';
     const actionText = 'Start Now';
@@ -90,7 +94,7 @@ class AboutUs extends Component {
           <div id="tab2" style={{ height: '20vh' }} />
           <BidItPartial domain={domain} onStep={this.state.sectionIndex >= SectionIndex.BID_IT} actionText={actionText} action={this.handleStart} />
         </Container>
-        <ForProfessionals id="about-us-for-professionals-section" onStep={this.state.sectionIndex >= SectionIndex.FOR_PROFESSIONALS} onClick={() => null || this.goPro} />
+        <ForProfessionals id="about-us-for-professionals-section" onStep={this.state.sectionIndex >= SectionIndex.FOR_PROFESSIONALS} onClick={this.handleProStart} />
         <Divider className="about-us__divider" />
         <Container>
           <div id="tab3">
