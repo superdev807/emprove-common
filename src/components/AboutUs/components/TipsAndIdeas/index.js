@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 
-import withPosts from '~/hocs/withPosts';
+import withPosts from '../../../../hocs/withPosts';
 import PostsSectionLayout from '../PostsSectionLayout';
 
 class TipsAndIdeas extends Component {

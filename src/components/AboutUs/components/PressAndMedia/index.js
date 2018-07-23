@@ -8,7 +8,7 @@ import IconScrollDown from '@material-ui/icons/KeyboardArrowDown';
 import IconScrollUp from '@material-ui/icons/KeyboardArrowUp';
 
 import PostsSectionLayout from '../PostsSectionLayout';
-import withPosts from '~/hocs/withPosts';
+import withPosts from '../../../../hocs/withPosts';
 import './style.scss';
 
 const INITIAL_POSTS_TO_SHOW = 3;

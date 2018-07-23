@@ -4,7 +4,7 @@ import React from 'react';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
 
-import { decodeSpecialCharacters } from '../../../../utils/pureFunctions';
+import { decodeSpecialCharacters } from '../../utils/pureFunctions';
 import './style.scss';
 
 const BlogPost = ({ post }) => {

@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 import { Link } from 'react-router-dom';
 
-import BlogPost from '~/components/BlogPost';
+import BlogPost from '../../../BlogPost';
 import './style.scss';
 
 class PostSectionLayout extends Component {
