@@ -1,0 +1,139 @@
+@import 'variables';
+@import 'mixins';
+
+.bidIt {
+  width: 37%;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  top: 14vw;
+  transform: translateY(-50%);
+  font-size: 100%;
+  color: #444;
+}
+
+.bidItTitle {
+  font-size: 200%;
+  padding-bottom: 2vh;
+  opacity: 0;
+  position: relative;
+  top: 3vh;
+  transition: opacity 1s ease, top .5s ease-out;
+}
+
+.bidItImages {
+  width: 41%;
+  height: 37vw;
+  margin-right: 10%;
+  margin-left: 7%;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  @include media ('<=sm') {
+    width: auto;
+    margin-left: 0;
+    height: 46vh;
+    display: block;
+    margin-right: 0;
+  }
+}
+
+.bidItCircle {
+  border: .5vw solid #ff9e3c;
+  border-radius: 50%;
+  width: 30vw;
+  height: 30vw;
+  position: relative;
+  display: inline-block;
+
+  @include media ('<=sm') {
+    border: 0.8vw solid #ff9e3c;
+    width: 60vw;
+    height: 60vw;
+  }
+}
+
+.bidItStep1, .bidItStep2, .bidItStep3 {
+  border: .3vh solid #ff9e3c;
+  border-radius: 50%;
+  width: 12vw;
+  height: 12vw;
+  position: absolute;
+  transform-origin: 121% 121%;
+  top: 0;
+  left: 0;
+  transform: rotate(-55deg);
+  transition: transform ease-in-out 1s;
+  background-color: #ff9e3c;
+
+  @include media ('<=sm') {
+    width: 25vw;
+    height: 25vw;
+  }
+}
+
+.bidItStep1.onStep {
+  transform: rotate(-55deg);
+}
+
+.bidItStep2.onStep {
+  transform: rotate(43deg);
+}
+
+.bidItStep3.onStep {
+  transform: rotate(144deg);
+}
+
+.bidItStep1Inner {
+  transform: rotate(55deg);
+}
+
+.bidItStep2Inner {
+  transform: rotate(-43deg);
+}
+
+.bidItStep3Inner {
+  transform: rotate(-144deg);
+}
+
+.bidItStep1Inner, .bidItStep2Inner, .bidItStep3Inner {
+  height: 100%;
+  background-size: cover;
+}
+
+.bidItStepNumber {
+  background: #FFF;
+  border-radius: 50%;
+  width: 2.75vh;
+  height: 2.75vh;
+  line-height: 2.75vh;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  box-shadow: 0px 2px 4px #888;
+  font-size: 2vh;
+  text-align: center;
+  color: gray;
+  font-weight: 400;
+  font-size: 80%;
+  transform: translate(-50%, 50%);
+}
+
+.bidItBody, .bidItButton {
+  opacity: 0;
+  position: relative;
+  top: 3vh;
+  transition: opacity 1s ease-out, top .5s ease-out;
+}
+
+.bidItBody {
+  transition-delay: 0.25s;
+}
+
+.bidIt.onStep {
+  .bidItTitle, .bidItBody, .bidItButton {
+    opacity: 1;
+    top: 0;
+  }
+}

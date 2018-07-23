@@ -1,0 +1,70 @@
+@import 'variables';
+@import 'mixins';
+
+.dreamIt {
+  width: 37%;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  top: 16vw;
+  transform: translateY(-50%);
+  font-size: 100%;
+  color: #444;
+}
+
+.dreamItTitle {
+  font-size: 200%;
+  padding-bottom: 2vh;
+  opacity: 0;
+  position: relative;
+  top: 3vh;
+  transition: opacity 0.5s ease-out, top 0.5s ease-out;
+}
+
+.dreamItBody, .dreamItButton {
+  opacity: 0;
+  position: relative;
+  top: 3vh;
+  transition: opacity 0.5s ease-out, top 0.5s ease-out;
+  transition-delay: 0.25s;
+}
+
+.dreamItBody {
+  transition-delay: 0.25s;
+}
+
+.dreamItButton {
+  transition-delay: 0.5s;
+}
+
+.dreamIt.onStep .dreamItTitle,
+.dreamIt.onStep .dreamItBody,
+.dreamIt.onStep .dreamItButton {
+  opacity: 1;
+  top: 0;
+}
+
+.monitor {
+  position: relative;
+  padding-bottom: 50%;
+  width: 50%;
+  height: 0;
+  margin-right: 8%;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  @include media ('<=sm') {
+    width: 85%;
+    padding-bottom: 85%;
+    margin-right: 0px;
+  }
+}
+
+.monitorContent {
+  position: absolute;
+  top: -18%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

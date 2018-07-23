@@ -1,0 +1,33 @@
+@import 'variables';
+@import 'mixins';
+
+.partial__button {
+  transition-delay: 0.5s;
+}
+
+.partial {
+  &__button-start-now {
+    width: 50%;
+    padding: 8px 8px;
+  }
+}
+
+@include media ('<=sm') {
+  .partial {
+    &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    &__description {
+      text-align: center;
+      width: 75%;
+      transform: none;
+      top: 0px;
+    }
+    &__button-start-now {
+      margin: 5vh auto 0;
+      width: 60% !important;
+    }
+  }
+}
