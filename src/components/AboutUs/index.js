@@ -113,7 +113,6 @@ class AboutUs extends Component {
           {/* <OurProduct className="about-us__our-product" /> */}
         </Container>
         {/* <OurInvestors /> */}
-        {/* <PressAndMedia /> */}
       </main>
     );
   }
