@@ -27,20 +27,18 @@ class CatalogPhotoModal extends React.Component {
       if (this.props.image.imageKey === '') {
         this.setState({ loading: true, error: null });
       }
-      else {
-        const image = new Image();
-        image.src = process.env.IMGIX_CATALOG_IMAGES_HOST + this.props.image.imageKey;
-        image.addEventListener('load', () => {
-          this.setState({ loading: false });
-        });
-        image.addEventListener('error', () => {
-          this.setState({
-            loading: false,
-            error: 'Could not load image. Please close the dialog and try again.'
-          });
-        });
-      }
     }
+  }
+
+  handleImageLoad = () => {
+    this.setState({ loading: false });
+  }
+
+  handleImageError = () => {
+    this.setState({
+      loading: false,
+      error: 'Could not load image. Please close the dialog and try again.'
+    });
   }
 
   render() {
@@ -57,6 +55,8 @@ class CatalogPhotoModal extends React.Component {
             className={cx('catalog-photo-modal__catalog-photo', { 'catalog-photo-modal__catalog-photo--loading': this.state.loading })}
             imageUrl={process.env.IMGIX_CATALOG_IMAGES_HOST + image.imageKey}
             alt={imageName}
+            onLoad={this.handleImageLoad}
+            onError={this.handleImageError}
           />
           {this.state.loading ? <LoadingIndicator /> : (
             <CatalogPhotoHeader
