@@ -88,3 +88,9 @@ export const propsChanged = (propKeys, props, nextProps, deepCompare = false) =>
   }
   return false;
 };
+
+export const decodeSpecialCharacters = str => {
+  return str.replace(/&#(\d+);/g, (match, dec) => {
+    return String.fromCharCode(dec);
+  });
+};

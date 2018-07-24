@@ -1,0 +1,39 @@
+@import 'variables';
+@import 'mixins';
+
+.post-item {
+  text-align: left;
+
+  &__image {
+    width: 100%;
+  }
+
+  &__title {
+    padding: 2vh 0 1vh;
+    text-transform: uppercase;
+  }
+
+  &__date {
+    font-size: 75%;
+  }
+
+  &__excerpt {
+    font-size: 90%;
+    padding: 1vh 0;
+
+    .read-more-link {
+      display: none;
+    }
+  }
+
+  &__read-story {
+    color: $primary;
+    font-size: 75%;
+    text-decoration: underline;
+    text-decoration-color: $primary;
+  }
+
+  &__link-wrapper {
+    color: $body-color;
+  }
+}

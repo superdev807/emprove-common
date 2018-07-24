@@ -1,40 +1,89 @@
 'use strict';
 
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-import PressArticle from './PressArticle';
-import './styles.scss';
+import IconButton from '@material-ui/core/IconButton';
+import IconScrollDown from '@material-ui/icons/KeyboardArrowDown';
+import IconScrollUp from '@material-ui/icons/KeyboardArrowUp';
 
-const articles = [
-  {
-    id: 1,
-    title: 'Vivamus in tortor',
-    snippet: 'In quis justo non diam consectetur consectetur nec faucibus eros. Aliquam augue magna, gravida in fringilla id, tempus sed lectus. Etiam pharetra consequat est sit amet cursus.',
-  },
-  {
-    id: 2,
-    title: 'Nulla dapibus ex',
-    snippet: 'Nam vitae risus in turpis aliquam congue ac vel odio. Quisque vel nisi sodales, dignissim felis nec, efficitur ex. In hac habitasse platea dictumst.',
-  },
-  {
-    id: 3,
-    title: 'Fusce maximus mi',
-    snippet: 'Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec eu lectus posuere, lacinia libero nec, mattis massa. Curabitur fringilla tristique vehicula.',
-  },
-];
+import PostsSectionLayout from '../PostsSectionLayout';
+import withPosts from '../../../../hocs/withPosts';
+import './style.scss';
 
-const PressAndMedia = (props) => {
-  return (
-    <section className="press-and-media">
-      <div className="press-and-media__title">Press & <strong>Media</strong></div>
-      <p className="press-and-media__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis, tellus non aliquam gravida.</p>
-      <div className="press-and-media__articles">
-        {articles.map(article => (
-          <PressArticle className="press-and-media__article" key={article.id} article={article} />
-        ))}
+const INITIAL_POSTS_TO_SHOW = 3;
+
+class PressAndMedia extends Component {
+  static propTypes = {
+    className: PropTypes.string,
+    posts: PropTypes.array
+  };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      postsToShow: 3,
+      scrollOpened: false
+    };
+  }
+
+  getPosts() {
+    const { posts } = this.props;
+    const { postsToShow } = this.state;
+
+    if (postsToShow) {
+      return posts.slice(0, postsToShow);
+    }
+    return posts;
+  }
+
+  handleScrollDownClick = event => {
+    this.setState({ scrollOpened: !this.state.scrollOpened }, () => {
+      if (this.state.scrollOpened) {
+        this.setState({ postsToShow: null });
+      } else {
+        this.setState({ postsToShow: INITIAL_POSTS_TO_SHOW });
+      }
+    });
+  };
+
+  render() {
+    const { postsToShow, scrollOpened } = this.state;
+    const { posts } = this.props;
+    const linkText = (
+      <div className="press-media__link-box">
+        <span className="press-media__down-text" onClick={this.handleScrollDownClick}>view all press & media{' '}</span>
+        <IconButton className="press-media__down-icon-button" onClick={this.handleScrollDownClick}>
+          {scrollOpened ? <IconScrollUp /> : <IconScrollDown />}
+        </IconButton>
       </div>
-    </section>
-  );
-};
+    );
+    const title = (
+      <div>
+        PRESS&nbsp;
+        <span>&</span>
+        &nbsp;
+        <b>MEDIA</b>
+      </div>
+    );
 
-export default PressAndMedia;
+    return (
+      <PostsSectionLayout
+        className={this.props.className}
+        linkRoute="/blog"
+        description=""
+        linkText={linkText}
+        title={title}
+        posts={this.getPosts()}
+        postsToShow={postsToShow}
+      />
+    );
+  }
+}
+
+export default withPosts({
+  params: {
+    category: 'press-and-media',
+    fields: 'ID,title,URL,author,featured_image,excerpt,date'
+  }
+})(PressAndMedia);

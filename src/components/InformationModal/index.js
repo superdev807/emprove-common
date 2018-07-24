@@ -38,7 +38,7 @@ const InformationImage = props => {
       <div className="information-image__image-container">
         <img
           className="information-image__image"
-        src={props.image.url}
+          src={props.image.url}
           alt="Information Image"
           width={props.image.displayWidth}
           height={props.image.displayHeight}
@@ -67,7 +67,7 @@ const InformationModal = props => {
       <IconButton className="information-modal-close-button" onClick={props.handleHide}>
         <IconClose />
       </IconButton>
-      <DialogTitle>{props.title}</DialogTitle>
+      <DialogTitle className="information-modal__title">{props.title}</DialogTitle>
       <DialogContent className="information-modal__content">
         {props.body.map((paragraph, index) => (
           <Typography key={index} className="information-modal-body-paragraph">

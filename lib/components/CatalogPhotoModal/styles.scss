@@ -42,6 +42,9 @@
 
   &__close-button {
     color: #fff;
+    position: absolute;
+    top: -48px;
+    right: -48px;
   }
 
   &__message {

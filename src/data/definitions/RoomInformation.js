@@ -1,7 +1,7 @@
 'use strict';
 
 const FLOOR_AREA = {
-  title: 'FLOOR AREA',
+  title: 'Floor Area',
   body: ['The size of the room floor space measured in square feet, calculated for this purpose by:'],
   terms: [
     {
@@ -26,21 +26,33 @@ const FLOOR_AREA = {
 };
 
 const WALL_PERIMETER = {
-  title: 'WALL PERIMETER LENGTH',
-  body: ['The total length (in feet) of all walls in the room including wall bump-outs, returns, doorways, and cased-openings. Do not subtract the length of windows, doors, fireplaces, mirrors, or wall-mounted cabinetry.'],
+  title: 'Wall Perimeter Length',
+  body: [
+    'The total length (in feet) of all walls in the room including wall bump-outs, returns, doorways, and cased-openings. Do not subtract the length of windows, doors, fireplaces, mirrors, or wall-mounted cabinetry.'
+  ],
   terms: []
 };
 
 const MAXIMUM_CEILING_HEIGHT = {
-  title: 'MAXIMUM CEILING HEIGHT',
+  title: 'Maximum Ceiling Height',
   body: ['The dimension between the floor and the highest point of your ceiling.'],
   terms: []
+};
+
+const WALL_PERIMETER_LENGTH = {
+  title: 'Wall Perimeter Length',
+  body: [
+    'The total length (in feet) of all walls in the room including wall bump-outs, returns, doorways, and cased-openings.  Do not subtract the length of windows, doors, fireplaces, mirrors, or wall-mounted cabinetry.'
+  ],
+  terms: [],
+  images: []
 };
 
 const RoomInformation = {
   FLOOR_AREA,
   WALL_PERIMETER,
   MAXIMUM_CEILING_HEIGHT,
+  WALL_PERIMETER_LENGTH
 };
 
 export default RoomInformation;

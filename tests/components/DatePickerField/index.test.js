@@ -84,4 +84,21 @@ describe('DatePickerField', () => {
     const muiInput = mounted.find('WithStyles(Input)');
     expect(muiInput.prop('value')).toBe('08/22/2018');
   });
+
+  it('should have left class if alignment is not provided', () => {
+    const classes = component
+      .children()
+      .at(0)
+      .prop('className');
+    expect(classes.indexOf('left') !== -1).toBe(true);
+  });  
+
+  it('should have right class if right alignment is provided', () => {
+    component.setProps({ alignment: 'right' });
+    const classes = component
+      .children()
+      .at(0)
+      .prop('className');
+    expect(classes.indexOf('right') !== -1).toBe(true);
+  });
 });

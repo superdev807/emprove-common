@@ -5,12 +5,15 @@ import { shallow } from 'enzyme';
 
 describe('Icon components', () => {
   const iconComponentNames = [
+    'IconBack',
     'IconBackyard',
     'IconBidIt',
     'IconBlog',
+    'IconCircleQuestionMark',
     'IconCostIt',
     'IconDeck',
     'IconDen',
+    'IconDownloadRfp',
     'IconDreamIt',
     'IconFacebook',
     'IconFacebookLetter',
@@ -30,6 +33,8 @@ describe('Icon components', () => {
     'IconOffice',
     'IconPatio',
     'IconPowderRoom',
+    'IconQuestionMark',
+    'IconSitePhotos',
     'IconTwitter'
   ];
 
