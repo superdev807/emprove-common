@@ -30,11 +30,11 @@ class CatalogPhotoModal extends React.Component {
     }
   }
 
-  handleImageLoad() {
+  handleImageLoad = () => {
     this.setState({ loading: false });
   }
 
-  handleImageError() {
+  handleImageError = () => {
     this.setState({
       loading: false,
       error: 'Could not load image. Please close the dialog and try again.'
