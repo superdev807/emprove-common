@@ -6,16 +6,13 @@ import cx from 'classnames';
 import { Link } from 'react-router-dom';
 import './styles.scss';
 
-
-
 const Logo = ({ className, shortened, contractor, version }) => {
   const isBeta = version === 'beta';
 
   let imageFilename = isBeta ? 'emprove_beta_logo.svg' : 'emprove_logo.svg';
   if (shortened) {
     imageFilename = 'ic_e_logo.svg';
-  }
-  else if (contractor) {
+  } else if (contractor) {
     imageFilename = isBeta ? 'emprove_pro_beta_logo.svg' : 'emprove_pro_logo.svg';
   }
 
