@@ -23,6 +23,7 @@ describe('Icon components', () => {
     'IconGuestBedroom',
     'IconInfo',
     'IconInstagram',
+    'IconInstantEstimate',
     'IconKitchen',
     'IconKitchenette',
     'IconLinkedIn',
