@@ -8,27 +8,12 @@ import get from 'lodash/get';
 import Input from '@material-ui/core/Input';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import InputLabel from '@material-ui/core/InputLabel';
-import NumberFormat from 'react-number-format';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
 import styles from './styles';
 import { propsChanged } from '~/utils/pureFunctions';
-
-const NumberFormatCustom = ({ inputRef, onChange, ...other }) => (
-  <NumberFormat
-    {...other}
-    ref={inputRef}
-    onValueChange={values => {
-      onChange({
-        target: {
-          value: values.value
-        }
-      });
-    }}
-    thousandSeparator
-  />
-);
+import { NumberFormatCustom } from '../../utils/numberFunctions';
 
 class CurrencyInputField extends Component {
   static propTypes = {
