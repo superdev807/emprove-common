@@ -84,6 +84,6 @@ class PressAndMedia extends Component {
 export default withPosts({
   params: {
     category: 'press-and-media',
-    fields: 'ID,title,URL,author,featured_image,excerpt,date'
+    fields: 'ID,slug,title,URL,author,featured_image,excerpt,date'
   }
 })(PressAndMedia);
