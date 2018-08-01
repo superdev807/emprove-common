@@ -72,5 +72,8 @@
     "redux-modal": "^1.7.0",
     "regenerator-runtime": "^0.11.1",
     "reselect": "^3.0.1"
+  },
+  "dependencies": {
+    "moment-timezone": "^0.5.21"
   }
 }
