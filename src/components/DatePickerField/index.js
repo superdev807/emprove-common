@@ -32,7 +32,7 @@ class DatePickerField extends Component {
       input.onChange && input.onChange(date);
     }
 
-    toggleDateWidget();
+    toggleDateWidget && toggleDateWidget();
   };
 
   renderInput = props => {
