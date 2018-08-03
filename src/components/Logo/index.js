@@ -16,8 +16,13 @@ const Logo = ({ className, shortened, contractor, version }) => {
     imageFilename = isBeta ? 'emprove_pro_beta_logo.svg' : 'emprove_pro_logo.svg';
   }
 
+  let destinationLink = '/';
+  if(!contractor) {
+    destinationLink = '/browse';
+  }
+
   return (
-    <Link to="/" className={cx('logo', className)}>
+    <Link to={destinationLink} className={cx('logo', className)}>
       <img
         className={cx('logo__image', { 'logo__image--shortened': shortened, 'logo__image--beta': !shortened && isBeta })}
         src={`/images/${imageFilename}`}
