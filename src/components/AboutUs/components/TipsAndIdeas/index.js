@@ -34,6 +34,6 @@ export default withPosts({
   params: {
     number: 3,
     category: 'featured-on-site',
-    fields: 'ID,title,URL,author,featured_image,excerpt,date'
+    fields: 'ID,slug,title,URL,author,featured_image,excerpt,date'
   }
 })(TipsAndIdeas);

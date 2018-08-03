@@ -2,6 +2,7 @@
 
 import business from 'moment-business-days';
 import moment from 'moment';
+import momenttz from 'moment-timezone';
 import timeline from '../data/rfp_timeline.json';
 
 const dateFormat = 'YYYY-MM-DD';
@@ -107,4 +108,8 @@ export const getMaximumWeek = (start, end) => {
   const daysDiff = moment(end).diff(moment(start), 'days');
   const weeksDiff = Math.round(daysDiff / 7) + 1;
   return weeksDiff;
+};
+
+export const getTimezone = () => {
+  return momenttz.tz.guess();
 };
