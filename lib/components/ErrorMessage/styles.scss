@@ -1,0 +1,27 @@
+.error-message {
+  color: #f34336;
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem;
+
+  &--floating {
+    background-color: #ffffff;
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    min-width: calc(375px - 2rem);
+
+    @media screen and (max-width: 375px) {
+      min-width: 0;
+      width: calc(100% - 2rem);
+    }
+  }
+
+  &__try-again-button {
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
