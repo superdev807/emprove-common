@@ -71,9 +71,7 @@ const InformationModal = props => {
       <DialogTitle className="information-modal__title">{props.title}</DialogTitle>
       <DialogContent className="information-modal__content">
         {props.body.map((paragraph, index) => (
-          <Typography key={index} className="information-modal-body-paragraph">
-            <ReactMarkdown key={index} source={paragraph} />
-          </Typography>
+          <ReactMarkdown key={index} source={paragraph} className="information-modal-body-paragraph" />
         ))}
         {props.terms.map(term => <InformationDefinition key={term.id} term={term} />)}
         {images}
