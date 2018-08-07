@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 import { connectModal } from 'redux-modal';
@@ -71,7 +72,7 @@ const InformationModal = props => {
       <DialogContent className="information-modal__content">
         {props.body.map((paragraph, index) => (
           <Typography key={index} className="information-modal-body-paragraph">
-            {paragraph}
+            <ReactMarkdown key={index} source={paragraph} />
           </Typography>
         ))}
         {props.terms.map(term => <InformationDefinition key={term.id} term={term} />)}
