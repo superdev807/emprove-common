@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import { shallow } from 'enzyme';
 import { createShallow } from '@material-ui/core/test-utils';
 
@@ -59,9 +60,9 @@ describe('InformationModal', () => {
     component.setProps({ body: ['p1', 'p2', 'p3'] });
 
     const paragraphs = component.find('WithStyles(DialogContent) WithStyles(Typography)').children();
-    expect(paragraphs.at(0).text()).toBe('p1');
-    expect(paragraphs.at(1).text()).toBe('p2');
-    expect(paragraphs.at(2).text()).toBe('p3');
+    expect(paragraphs.at(0).find('ReactMarkdown').prop('source')).toBe('p1');
+    expect(paragraphs.at(1).find('ReactMarkdown').prop('source')).toBe('p2');
+    expect(paragraphs.at(2).find('ReactMarkdown').prop('source')).toBe('p3');
   })
 
   it('should display a definition for each term', () => {
