@@ -59,7 +59,7 @@ describe('InformationModal', () => {
   it('should display a list of paragraphs for the body', () => {
     component.setProps({ body: ['p1', 'p2', 'p3'] });
 
-    const paragraphs = component.find('WithStyles(DialogContent) WithStyles(Typography)').children();
+    const paragraphs = component.find('WithStyles(DialogContent)').children();
     expect(paragraphs.at(0).find('ReactMarkdown').prop('source')).toBe('p1');
     expect(paragraphs.at(1).find('ReactMarkdown').prop('source')).toBe('p2');
     expect(paragraphs.at(2).find('ReactMarkdown').prop('source')).toBe('p3');
