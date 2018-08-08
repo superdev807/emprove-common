@@ -15,6 +15,7 @@ describe('Icon components', () => {
     'IconDen',
     'IconDownloadRfp',
     'IconDreamIt',
+    'IconEOutline',
     'IconFacebook',
     'IconFacebookLetter',
     'IconFoyer',
