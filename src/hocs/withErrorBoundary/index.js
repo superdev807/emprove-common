@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 
-import { trackJsErrorReporter } from '../../../src/hocs/withErrorBoundary/services/errorReporter';
+import { trackJsErrorReporter } from './services/errorReporter.js';
 import FallbackView from './components/FallbackView';
 
 const withErrorBoundary = ({ componentName, customErrorReportService, customFallbackView, fallbackHeader }) => WrappedComponent => {

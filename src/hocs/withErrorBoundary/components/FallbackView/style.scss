@@ -25,7 +25,7 @@
   &__heading {
     font-size: 4em;
     font-weight: 500;
-    margin: 4vh auto 0;
+    margin: 6vh auto 0;
     color: $primary;
     @include media ('<=sm') {
       font-size: 3.5em;
