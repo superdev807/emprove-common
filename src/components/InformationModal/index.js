@@ -27,6 +27,14 @@ const InformationDefinition = props => {
   );
 };
 
+const LinkRenderer = props => {
+  return (
+    <a href={props.href} target="_blank" rel="noopener noreferrer">
+      {props.children}
+    </a>
+  );
+};
+
 const InformationImage = props => {
   let imageDescription = '';
   if (props.image.description) {
@@ -71,9 +79,12 @@ const InformationModal = props => {
       <DialogTitle className="information-modal__title">{props.title}</DialogTitle>
       <DialogContent className="information-modal__content">
         {props.body.map((paragraph, index) => (
-          <Typography key={index} className="information-modal-body-paragraph">
-            <ReactMarkdown key={index} source={paragraph} />
-          </Typography>
+          <ReactMarkdown
+            key={index}
+            source={paragraph}
+            className="information-modal-body-paragraph"
+            renderers={props.hasLink ? { link: LinkRenderer } : {}}
+          />
         ))}
         {props.terms.map(term => <InformationDefinition key={term.id} term={term} />)}
         {images}

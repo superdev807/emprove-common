@@ -83,6 +83,7 @@ const disputeResolution = {
 const generalContractor = {
   title: 'General Contractor',
   hasMarkdown: true,
+  hasLink: true,
   body: [
     'The contractor ultimately responsible to the homeowner for the successful completion of larger projects.  They are typically responsible to provide all material, tools, equipment, labor, site activity coordination, and supervision necessary to complete the project.',
     'General Contractors often hire [Subcontractors](/info-center/definitions/subcontractor) to perform specific components of the work.'

@@ -63,6 +63,7 @@ const OVERHEAD_AND_PROFIT = {
 const CONTINGENCY = {
   title: 'Contingency',
   hasMarkdown: true,
+  hasLink: true,
   body: [
     'A budgeted allowance calculated to cover the cost of items or work which are not known at the time of the cost estimate but which, statistically, might occur.',
     'In the case of a [Lump Sum Agreement](/info-center/definitions/lump-sum-agreement), contingency is generally not included in the contractor’s price, rather is held aside by the homeowner in addition to the contractor’s price.'
