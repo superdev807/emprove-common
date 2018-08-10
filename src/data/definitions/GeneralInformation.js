@@ -3,6 +3,7 @@
 const OHP = {
   title: 'OH&P',
   hasMarkdown: true,
+  hasLink: true,
   body: ['[Overhead & Profit](/info-center/definitions/overhead-profit)'],
   images: [],
   terms: []
@@ -11,6 +12,7 @@ const OHP = {
 const RFP = {
   title: 'RFP',
   hasMarkdown: true,
+  hasLink: true,
   body: ['[Request for Proposal](/info-center/definitions/request-for-proposal)'],
   images: [],
   terms: []
@@ -123,6 +125,7 @@ const OWNER_SELECTED_ITEMS = {
 const OSI = {
   title: 'OSI',
   hasMarkdown: true,
+  hasLink: true,
   body: ['[Owner Selected Items](/info-center/definitions/owner-selected-items)'],
   terms: [],
   images: []

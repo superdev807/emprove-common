@@ -3,6 +3,7 @@
 const BID = {
   title: 'Bid',
   hasMarkdown: true,
+  hasLink: true,
   body: [
     'A contractor offer of a price to provide requested services, as described by an [RFP](/info-center/definitions/request-for-proposal).'
   ],

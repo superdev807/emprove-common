@@ -63,6 +63,16 @@ const InformationModal = props => {
     return <InformationImage key={image.id} image={imageWithUrl} />;
   });
 
+  const linkRenderer = props => {
+    if (props) {
+      return (
+        <a href={props.href} target="_blank" rel="noopener noreferrer">
+          {props.children}
+        </a>
+      );
+    }
+  };
+
   return (
     <Dialog classes={{ paper: 'information-modal' }} open={props.show} onClose={props.handleHide}>
       <IconButton className="information-modal-close-button" onClick={props.handleHide}>
@@ -71,7 +81,12 @@ const InformationModal = props => {
       <DialogTitle className="information-modal__title">{props.title}</DialogTitle>
       <DialogContent className="information-modal__content">
         {props.body.map((paragraph, index) => (
-          <ReactMarkdown key={index} source={paragraph} className="information-modal-body-paragraph" />
+          <ReactMarkdown
+            key={index}
+            source={paragraph}
+            className="information-modal-body-paragraph"
+            renderers={props.hasLink ? { link: linkRenderer } : {}}
+          />
         ))}
         {props.terms.map(term => <InformationDefinition key={term.id} term={term} />)}
         {images}
