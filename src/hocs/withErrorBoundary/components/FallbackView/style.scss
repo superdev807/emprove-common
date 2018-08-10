@@ -1,0 +1,96 @@
+@import 'variables';
+@import 'mixins';
+
+.fallback-view {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(100% + 40px);
+  height: 100%;
+  margin: 0 -20px;
+  background: #FFF;
+  overflow: auto;
+
+  &__container {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 300px;
+    font-weight: 300;
+    color: #444;
+    text-align: center;
+  }
+  
+  &__heading {
+    font-size: 4em;
+    font-weight: 500;
+    margin: 6vh auto 0;
+    color: $primary;
+    @include media ('<=sm') {
+      font-size: 3.5em;
+      margin: 2vh auto 0;
+    }
+  }
+
+  &__subheading {
+    margin: 1vh 0 1vh;
+    font-size: 1.2em;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  &__character {
+    height: 30vh;
+    margin: auto auto;
+    @include media ('<=sm') {
+      height: 26vh;
+    }
+    &-left {
+      display: block
+    }
+    &-right {
+      display: block;
+      // to account for different height of the pics
+      margin-top: 2.5vh;
+    }
+  }
+
+  &__error-code {
+    margin: 2vh auto 1vh;
+    font-weight: 500;
+    font-size: 1.2em;
+  }
+
+  &__message {
+    font-size: 1em;
+  }
+
+  &__links {
+    height: 0.8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5em;
+    @include media ('<=sm') {
+      margin-top: 2.5em;
+    }
+  }
+
+  &__link {
+    font-size: 0.8em;
+    margin: 0 1em;
+    color: $primary;
+    font-weight: 400;
+    cursor: pointer;
+  }
+
+  &__vertical-bar {
+    height: 80%;
+    width: 1px;
+    background: #777
+  }
+}
