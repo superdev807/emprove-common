@@ -35,7 +35,7 @@ class BlogPost extends Component {
         </Link>
         <div className="post-item__date">{moment(post.date).format('MMMM DD, YYYY')}</div>
         <div className="post-item__excerpt" dangerouslySetInnerHTML={{ __html: post.excerpt }} />
-        <Link className="post-item__link-wrapper" to={{ pathname: `/${postType}/${this.getURL()}`, state: { reload: false } }}>
+        <Link className="post-item__read-story" to={{ pathname: `/${postType}/${this.getURL()}`, state: { reload: false } }}>
           <b>READ THE FULL STORY</b>
         </Link>
       </div>
