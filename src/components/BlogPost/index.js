@@ -9,6 +9,10 @@ import { decodeSpecialCharacters } from '../../utils/pureFunctions';
 import './style.scss';
 
 class BlogPost extends Component {
+  static defaultProps = {
+    postType: 'blog'
+  };
+
   static propTypes = {
     post: PropTypes.any,
     postType: PropTypes.oneOf(['blog', 'press-and-media'])
