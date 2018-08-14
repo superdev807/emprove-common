@@ -8,16 +8,21 @@ import { withStyles } from '@material-ui/core/styles';
 
 import styles from './styles';
 
-const LoadingIndicator = ({ classes, className, opacity, fixed }) => (
+const LoadingIndicator = ({ classes, className, opacity, fixed, size }) => (
   <div className={cx(classes.refreshOverlay, { [classes.fixedOverlay]: fixed })} style={opacity !== undefined ? { backgroundColor: `rgba(255, 255, 255, ${opacity})` } : {}}>
-    <CircularProgress size={70} thickness={5} />
+    <CircularProgress size={size} thickness={5} />
   </div>
 );
 
 LoadingIndicator.propTypes = {
   className: PropTypes.string,
   classes: PropTypes.object.isRequired,
-  opacity: PropTypes.number
+  opacity: PropTypes.number,
+  size: PropTypes.number
+};
+
+LoadingIndicator.defaultProps = {
+  size: 70
 };
 
 export default withStyles(styles)(LoadingIndicator);
