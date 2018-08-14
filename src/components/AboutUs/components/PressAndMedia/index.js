@@ -22,8 +22,7 @@ class PressAndMedia extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      postsToShow: 3,
-      scrollOpened: false
+      postsToShow: 3
     };
   }
 
@@ -37,27 +36,10 @@ class PressAndMedia extends Component {
     return posts;
   }
 
-  handleScrollDownClick = event => {
-    this.setState({ scrollOpened: !this.state.scrollOpened }, () => {
-      if (this.state.scrollOpened) {
-        this.setState({ postsToShow: null });
-      } else {
-        this.setState({ postsToShow: INITIAL_POSTS_TO_SHOW });
-      }
-    });
-  };
-
   render() {
-    const { postsToShow, scrollOpened } = this.state;
+    const { postsToShow } = this.state;
     const { posts } = this.props;
-    const linkText = (
-      <div className="press-media__link-box">
-        <span className="press-media__down-text" onClick={this.handleScrollDownClick}>view all press & media{' '}</span>
-        <IconButton className="press-media__down-icon-button" onClick={this.handleScrollDownClick}>
-          {scrollOpened ? <IconScrollUp /> : <IconScrollDown />}
-        </IconButton>
-      </div>
-    );
+
     const title = (
       <div>
         PRESS&nbsp;
@@ -70,11 +52,13 @@ class PressAndMedia extends Component {
     return (
       <PostsSectionLayout
         className={this.props.className}
-        linkRoute="/blog"
+        linkRoute="/press-and-media"
         description=""
-        linkText={linkText}
+        linkText="view all press and media"
         title={title}
+        isLink
         posts={this.getPosts()}
+        postType="press-and-media"
         postsToShow={postsToShow}
       />
     );
