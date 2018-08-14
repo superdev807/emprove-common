@@ -24,6 +24,7 @@ class TipsAndIdeas extends Component {
         posts={posts}
         isLink
         linkRoute="/blog"
+        postType="blog"
         linkText="view all tips and ideas"
       />
     );
