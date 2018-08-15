@@ -21,6 +21,9 @@
 
   &-body-paragraph {
     margin-bottom: 30px;
+    line-height: 1.3rem;
+    font-size: 1rem;
+    font-weight: 200;
   }
 
   &-close-button {
@@ -32,6 +35,9 @@
 
 .information-definition {
   margin-bottom: 30px;
+  font-size: 1rem;
+  font-weight: 200;
+  line-height: 1.3rem;
 
   &:last-child {
     margin-bottom: 0;
