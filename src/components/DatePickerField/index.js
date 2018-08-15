@@ -7,6 +7,7 @@ import DateTime from 'react-datetime';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
 import PropTypes from 'prop-types';
 
 import './style.scss';
