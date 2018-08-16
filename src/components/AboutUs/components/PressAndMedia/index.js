@@ -38,7 +38,7 @@ class PressAndMedia extends Component {
 
   render() {
     const { postsToShow } = this.state;
-    const { posts } = this.props;
+    const { posts, fromContractor } = this.props;
 
     const title = (
       <div>
@@ -53,6 +53,7 @@ class PressAndMedia extends Component {
       <PostsSectionLayout
         className={this.props.className}
         linkRoute="/press-and-media"
+        fromContractor={fromContractor}
         description=""
         linkText="view all press and media"
         title={title}

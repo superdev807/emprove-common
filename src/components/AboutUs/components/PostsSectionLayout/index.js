@@ -23,7 +23,7 @@ class PostSectionLayout extends Component {
   };
 
   renderPosts(posts) {
-    const { postsToShow, postType } = this.props;
+    const { postsToShow, postType, fromContractor } = this.props;
     return (
       <CSSTransitionGroup
         component="div"
@@ -33,15 +33,38 @@ class PostSectionLayout extends Component {
         transitionLeaveTimeout={300}>
         {posts.map((post, index) => (
           <div key={index} className="posts-section__item">
-            <BlogPost postType={postType} post={post} />
+            <BlogPost postType={postType} post={post} fromContractor={fromContractor} />
           </div>
         ))}
       </CSSTransitionGroup>
     );
   }
 
+  renderLink() {
+    const { isLink, fromContractor, linkRoute, linkText } = this.props;
+
+    if (fromContractor) {
+      if (isLink) {
+        return (
+          <a href={process.env.CONSUMER_DOMAIN + linkRoute} className="posts-section__link-view-all">
+            {linkText}
+          </a>
+        );
+      }
+    } else {
+      if (isLink) {
+        return (
+          <Link to={linkRoute} className="posts-section__link-view-all">
+            {linkText}
+          </Link>
+        );
+      }
+    }
+    return linkText;
+  }
+
   render() {
-    const { title, posts, linkRoute, description, isLink, linkText } = this.props;
+    const { title, posts, description } = this.props;
 
     return (
       <div className={cx('posts-section', this.props.className)} ref={container => (this.container = container)}>
@@ -50,15 +73,7 @@ class PostSectionLayout extends Component {
         <div>{description}</div>
         {this.renderPosts(posts)}
 
-        <div className="posts-section__link-container">
-          {isLink ? (
-            <Link to={linkRoute} className="posts-section__link-view-all">
-              {linkText}
-            </Link>
-          ) : (
-            linkText
-          )}
-        </div>
+        <div className="posts-section__link-container">{this.renderLink()}</div>
       </div>
     );
   }
