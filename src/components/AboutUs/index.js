@@ -71,11 +71,23 @@ class AboutUs extends Component {
   };
 
   handleStart = () => {
-    this.props.history.push('/browse');
+    const { history, fromContractor } = this.props;
+
+    if (fromContractor) {
+      window.location.replace(process.env.CONSUMER_DOMAIN);
+    } else {
+      history.push('/browse');
+    }
   };
 
   handleProStart = () => {
-    this.props.history.push('/pro');
+    const { history, fromContractor } = this.props;
+
+    if (fromContractor) {
+      history.push('/');
+    } else {
+      history.push('/pro');
+    }
   };
 
   render() {
