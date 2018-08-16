@@ -33,8 +33,7 @@ const withErrorBoundary = ({ componentName, customErrorReportService, customFall
 
     render() {
       const FallbackComponent = customFallbackView || FallbackView;
-      //only show the header if the header is supposed to be hidden for mobile and it's mobile
-      const header = fallbackHeader ? (this.props.hideHeaderForMobile === true && this.state.isMobile ? fallbackHeader : null) : null;
+      const header = fallbackHeader ? fallbackHeader : null;
       if (this.state.hasError) {
         const { error, errorInfo } = this.state;
         return <FallbackComponent {...this.props} error={error} errorInfo={errorInfo} header={header} isMobile={this.state.isMobile} />;

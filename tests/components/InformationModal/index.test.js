@@ -19,7 +19,7 @@ describe('InformationModal', () => {
   beforeEach(() => {
     // Fake mapStateToProps
     const state = {
-      show: false,
+      show: false
     };
     // Fake mapDispatchToProps
     const dispatch = {
@@ -53,17 +53,37 @@ describe('InformationModal', () => {
     const title = 'Modal Title';
     component.setProps({ title });
 
-    expect(component.find('WithStyles(DialogTitle)').children().text()).toBe(title);
+    expect(
+      component
+        .find('WithStyles(DialogTitle)')
+        .children()
+        .text()
+    ).toBe(title);
   });
 
   it('should display a list of paragraphs for the body', () => {
     component.setProps({ body: ['p1', 'p2', 'p3'] });
 
     const paragraphs = component.find('WithStyles(DialogContent)').children();
-    expect(paragraphs.at(0).find('ReactMarkdown').prop('source')).toBe('p1');
-    expect(paragraphs.at(1).find('ReactMarkdown').prop('source')).toBe('p2');
-    expect(paragraphs.at(2).find('ReactMarkdown').prop('source')).toBe('p3');
-  })
+    expect(
+      paragraphs
+        .at(0)
+        .find('ReactMarkdown')
+        .prop('source')
+    ).toBe('p1');
+    expect(
+      paragraphs
+        .at(1)
+        .find('ReactMarkdown')
+        .prop('source')
+    ).toBe('p2');
+    expect(
+      paragraphs
+        .at(2)
+        .find('ReactMarkdown')
+        .prop('source')
+    ).toBe('p3');
+  });
 
   it('should display a definition for each term', () => {
     const terms = [{ id: 1 }, { id: 2 }, { id: 3 }];
@@ -76,11 +96,7 @@ describe('InformationModal', () => {
   });
 
   it('should display an InformationImage for each specified images', () => {
-    const images = [
-      { id: 1, filename: 'image1.png' },
-      { id: 2, filename: 'image2.png' },
-      { id: 3, filename: 'image3.png' }
-    ];
+    const images = [{ id: 1, filename: 'image1.png' }, { id: 2, filename: 'image2.png' }, { id: 3, filename: 'image3.png' }];
     component.setProps({ images });
 
     const informationImages = component.find('WithStyles(DialogContent) InformationImage');
