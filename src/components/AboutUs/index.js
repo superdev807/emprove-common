@@ -152,8 +152,7 @@ class AboutUs extends Component {
 
 AboutUs.propTypes = {
   className: PropTypes.string,
-  fromContractor: PropTypes.bool,
-  consumerURL: PropTypes.string
+  fromContractor: PropTypes.bool
 };
 
 AboutUs.defaultProps = {
