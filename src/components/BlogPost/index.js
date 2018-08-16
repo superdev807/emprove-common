@@ -15,33 +15,36 @@ class BlogPost extends Component {
 
   static propTypes = {
     post: PropTypes.any,
-    postType: PropTypes.oneOf(['blog', 'press-and-media'])
+    postType: PropTypes.oneOf(['blog', 'press-and-media']),
+    fromContractor: PropTypes.bool
   };
   getURL() {
-    const { post } = this.props;
+    const { post, postType, fromContractor } = this.props;
 
     let url = '';
     if (post && post.URL) {
-      url = `${post.ID}/${post.slug}`;
+      if (fromContractor) {
+        return (url = `${process.env.CONSUMER_DOMAIN}/${postType}/${post.ID}/${post.slug}`);
+      }
+      return (url = `/${postType}/${post.ID}/${post.slug}`);
     }
-    return url;
   }
   render() {
-    const { post, postType } = this.props;
+    const { post } = this.props;
 
     return (
       <div className="post-item">
-        <Link className="post-item__link-wrapper" to={{ pathname: `/${postType}/${this.getURL()}`, state: { reload: false } }}>
+        <a className="post-item__link-wrapper" href={this.getURL()}>
           <img className="post-item__image" src={post.featured_image} />
           <div className="post-item__title">
             <b>{decodeSpecialCharacters(post.title)}</b>
           </div>
-        </Link>
+        </a>
         <div className="post-item__date">{moment(post.date).format('MMMM DD, YYYY')}</div>
         <div className="post-item__excerpt" dangerouslySetInnerHTML={{ __html: post.excerpt }} />
-        <Link className="post-item__read-story" to={{ pathname: `/${postType}/${this.getURL()}`, state: { reload: false } }}>
+        <a className="post-item__read-story" href={this.getURL()}>
           <b>READ THE FULL STORY</b>
-        </Link>
+        </a>
       </div>
     );
   }

@@ -44,7 +44,7 @@ class AboutUs extends Component {
     window.removeEventListener('scroll', this.handleScroll);
   }
 
-  handleScroll = (event) => {
+  handleScroll = event => {
     let sectionIndex = -1;
     const innerHeight = window.innerHeight * 0.75;
 
@@ -68,15 +68,27 @@ class AboutUs extends Component {
     if (this.state.sectionIndex !== sectionIndex) {
       this.setState({ sectionIndex });
     }
-  }
+  };
 
   handleStart = () => {
-    this.props.history.push('/browse');
-  }
+    const { history, fromContractor } = this.props;
+
+    if (fromContractor) {
+      window.location.replace(process.env.CONSUMER_DOMAIN);
+    } else {
+      history.push('/browse');
+    }
+  };
 
   handleProStart = () => {
-    this.props.history.push('/pro');
-  }
+    const { history, fromContractor } = this.props;
+
+    if (fromContractor) {
+      history.push('/');
+    } else {
+      history.push('/pro');
+    }
+  };
 
   render() {
     const domain = window.location.protocol + '//' + window.location.host + '/';
@@ -87,18 +99,38 @@ class AboutUs extends Component {
         <AboutUsHero onPlayClick={this.props.onPlayClick} />
         <Container>
           <AboutTheCompany className="about-us__about-the-company" />
-          <DreamItPartial domain={domain} onStep={this.state.sectionIndex >= SectionIndex.DREAM_IT} actionText={actionText} action={this.handleStart} />
+          <DreamItPartial
+            domain={domain}
+            onStep={this.state.sectionIndex >= SectionIndex.DREAM_IT}
+            actionText={actionText}
+            action={this.handleStart}
+          />
           <div id="tab1" style={{ height: '20vh' }} />
-          <CostItPartial domain={domain} onStep={this.state.sectionIndex >= SectionIndex.COST_IT} actionText={actionText} action={this.handleStart} />
+          <CostItPartial
+            domain={domain}
+            onStep={this.state.sectionIndex >= SectionIndex.COST_IT}
+            actionText={actionText}
+            action={this.handleStart}
+          />
           <div style={{ height: '13vh' }} />
           <div id="tab2" style={{ height: '20vh' }} />
-          <BidItPartial domain={domain} onStep={this.state.sectionIndex >= SectionIndex.BID_IT} actionText={actionText} action={this.handleStart} />
+          <BidItPartial
+            domain={domain}
+            onStep={this.state.sectionIndex >= SectionIndex.BID_IT}
+            actionText={actionText}
+            action={this.handleStart}
+          />
         </Container>
-        <ForProfessionals id="about-us-for-professionals-section" className="about-us__for-professionals" onStep={this.state.sectionIndex >= SectionIndex.FOR_PROFESSIONALS} onClick={this.handleProStart} />
+        <ForProfessionals
+          id="about-us-for-professionals-section"
+          className="about-us__for-professionals"
+          onStep={this.state.sectionIndex >= SectionIndex.FOR_PROFESSIONALS}
+          onClick={this.handleProStart}
+        />
         <Divider className="about-us__divider" />
         <Container>
           <div id="tab3">
-            <TipsAndIdeas className="about-us__tips-and-ideas" />
+            <TipsAndIdeas className="about-us__tips-and-ideas" fromContractor={this.props.fromContractor} />
           </div>
         </Container>
         <Divider className="about-us__divider" />
@@ -108,7 +140,7 @@ class AboutUs extends Component {
         <Divider className="about-us__divider" />
         <Container>
           <div id="tab4">
-            <PressAndMedia className="about-us__press-and-media" />
+            <PressAndMedia className="about-us__press-and-media" fromContractor={this.props.fromContractor} />
           </div>
           {/* <OurProduct className="about-us__our-product" /> */}
         </Container>

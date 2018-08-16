@@ -1,0 +1,34 @@
+@import 'variables';
+@import 'mixins';
+
+#video {
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.responsiveVideoBackground {
+  background-color: rgba(0, 0, 0, 0.5);
+
+  @include media ('<=sm', 'portrait') {
+    height: 22vh;
+    width: 39vh;
+  }
+
+  @include media ('>sm', '<=md', 'portrait') {
+    height: 39vh;
+  }
+
+  @include media ('<=sm', 'landscape') {
+    height: 22vh;
+    width: 51vh;
+  }
+
+  @include media ('>sm', '<=md', 'landscape') {
+    height: 51vh;
+  }
+}
