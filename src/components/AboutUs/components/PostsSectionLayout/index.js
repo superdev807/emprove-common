@@ -18,11 +18,12 @@ class PostSectionLayout extends Component {
     linkText: PropTypes.any,
     linkRoute: PropTypes.string,
     isLink: PropTypes.bool,
-    postsToShow: PropTypes.number
+    postsToShow: PropTypes.number,
+    postType: PropTypes.oneOf(['blog', 'press-and-media'])
   };
 
   renderPosts(posts) {
-    const { postsToShow } = this.props;
+    const { postsToShow, postType } = this.props;
     return (
       <CSSTransitionGroup
         component="div"
@@ -32,7 +33,7 @@ class PostSectionLayout extends Component {
         transitionLeaveTimeout={300}>
         {posts.map((post, index) => (
           <div key={index} className="posts-section__item">
-            <BlogPost post={post} />
+            <BlogPost postType={postType} post={post} />
           </div>
         ))}
       </CSSTransitionGroup>
