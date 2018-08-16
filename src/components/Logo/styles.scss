@@ -6,15 +6,15 @@
   line-height: 0;
   color: $primary;
   text-align: left;
+  height: 32px;
+
+  &--shortened, &--beta {
+    height: 48px;
+  }
 
   &__image {
-    max-height: $logo-height;
-    height: 32px;
+    height: 100%;
     width: auto;
     margin: 0;
-
-    &--shortened, &--beta {
-      height: $logo-height;
-    }
   }
 }
