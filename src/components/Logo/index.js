@@ -6,7 +6,7 @@ import cx from 'classnames';
 import { Link } from 'react-router-dom';
 import './styles.scss';
 
-const Logo = ({ className, shortened, contractor, version }) => {
+const Logo = ({ className, imageClass, shortened, contractor, version }) => {
   const isBeta = version === 'beta';
 
   let imageFilename = isBeta ? 'emprove_beta_logo.svg' : 'emprove_logo.svg';
@@ -22,9 +22,9 @@ const Logo = ({ className, shortened, contractor, version }) => {
   }
 
   return (
-    <Link to={destinationLink} className={cx('logo', className)}>
+    <Link to={destinationLink} className={cx('logo', { 'logo__image--shortened': shortened, 'logo__image--beta': !shortened && isBeta }, className)}>
       <img
-        className={cx('logo__image', { 'logo__image--shortened': shortened, 'logo__image--beta': !shortened && isBeta })}
+        className={cx('logo__image', imageClass)}
         src={`/images/${imageFilename}`}
         alt="Emprove | Home Improvement Renewed"
       />
@@ -34,7 +34,9 @@ const Logo = ({ className, shortened, contractor, version }) => {
 
 Logo.propTypes = {
   shortened: PropTypes.bool,
+  className: PropTypes.string,
   contractor: PropTypes.bool,
+  imageClass: PropTypes.string,
   version: PropTypes.string
 };
 
