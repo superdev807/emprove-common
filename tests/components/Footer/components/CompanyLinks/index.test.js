@@ -30,7 +30,7 @@ describe('CompanyLinks component', () => {
 
   test('should display link to about emprove', () => {
     //Different footer in about-emprove for each application
-    expect(component.find('FooterList').prop('items')[0].props.href).toBe('/about-emprove');
+    expect(component.find('FooterList').prop('items')[0].props.href).toBe(CONSUMER_DOMAIN + '/about-emprove');
   });
 
   test('should display link to blog', () => {
