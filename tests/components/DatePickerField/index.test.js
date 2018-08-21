@@ -36,14 +36,12 @@ describe('DatePickerField', () => {
     ).toBe(true);
   });
 
-  it('should display the date in MM/DD/YYYY format', () => {
-    component.setProps({ input: { value: '2018-08-22' } });
-
+  it('should display default value in MM/DD/YYYY format', () => {
     expect(
       component
         .children()
         .at(0)
-        .prop('value')
+        .prop('defaultValue')
     ).toBe('08/22/2018');
   });
 
