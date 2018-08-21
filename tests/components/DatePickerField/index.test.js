@@ -91,7 +91,7 @@ describe('DatePickerField', () => {
       .at(0)
       .prop('className');
     expect(classes.indexOf('left') !== -1).toBe(true);
-  });  
+  });
 
   it('should have right class if right alignment is provided', () => {
     component.setProps({ alignment: 'right' });
