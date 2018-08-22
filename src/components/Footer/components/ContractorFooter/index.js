@@ -11,6 +11,9 @@ import ServiceAreas from '../ServiceAreas';
 import WorkWithUs from '../WorkWithUs';
 import './styles.scss';
 
+const SERVICE_AREAS = 'service_areas';
+const COMING_SOON = 'coming_soon';
+
 const ContractorFooter = props => {
   return (
     <footer className={cx(props.className)}>
@@ -20,8 +23,14 @@ const ContractorFooter = props => {
           <CompanyLinks />
         </div>
         <div className="contractor-footer-index__section contractor-footer-index__section--negative-left-margin">
-          <div className="contractor-footer-index__section-name">Service Areas</div>
-          <ServiceAreas splitColumns />
+          <div className="contractor-footer-index__section-item">
+            <div className="contractor-footer-index__section-name">Service Areas</div>
+            <ServiceAreas columnType={SERVICE_AREAS} />
+          </div>
+          <div className="contractor-footer-index__section-item">
+            <div className="contractor-footer-index__section-name">Coming Soon</div>
+            <ServiceAreas columnType={COMING_SOON} />
+          </div>
         </div>
         <div className="contractor-footer-index__section contractor-footer-index__section--no-right-margin">
           <div className="contractor-footer-index__section-name">Why work with us?</div>

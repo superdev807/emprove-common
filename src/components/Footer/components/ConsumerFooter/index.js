@@ -30,11 +30,11 @@ const ConsumerFooter = props => {
         </div>
         <div className="consumer-footer-index__grouped-sections">
           <div className="consumer-footer-index__section">
-            <div className="consumer-footer-index__section-box">
+            <div className="consumer-footer-index__section-item">
               <div className="consumer-footer-index__section-name">Service Areas</div>
               <ServiceAreas columnType={SERVICE_AREAS} />
             </div>
-            <div className="consumer-footer-index__section-box">
+            <div className="consumer-footer-index__section-item">
               <div className="consumer-footer-index__section-name">Coming Soon</div>
               <ServiceAreas columnType={COMING_SOON} />
             </div>
