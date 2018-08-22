@@ -8,9 +8,22 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
+import MaskedInput from 'react-text-mask';
 import PropTypes from 'prop-types';
 
 import './style.scss';
+
+const DateMask = ({ inputRef, ...otherProps }) => {
+  return (
+    <MaskedInput
+      ref={inputRef}
+      {...otherProps}
+      mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
+      guide
+      placeholderChar={'\u2000'}
+    />
+  );
+};
 
 class DatePickerField extends Component {
   static propTypes = {
@@ -25,26 +38,21 @@ class DatePickerField extends Component {
   };
 
   handleChange = date => {
-    const { input, toggleDateWidget } = this.props;
-
-    if (typeof date === 'string') {
-      input.onChange(date);
-    } else {
-      input.onChange && input.onChange(date);
+    const { input, closeDateWidget } = this.props;
+    input.onChange && input.onChange(date);
+    //close the widget when the date var becomes a date. when the var is not a date, it's a string.
+    if (typeof date !== 'string') {
+      closeDateWidget && closeDateWidget();
     }
-
-    toggleDateWidget && toggleDateWidget();
   };
 
   renderInput = props => {
-    const { datePickerInputText } = this.props;
+    const { datePickerInputText, placeholder } = this.props;
     const inputProps = { ...props, className: datePickerInputText ? datePickerInputText : 'datePickerInputText' };
-    () => {
-      props.onChange({ target: { value: '' } });
-    };
+
     return (
       <div>
-        <Input {...inputProps} type="text" placeholder="MM/DD/YYYY" />
+        <Input {...inputProps} type="text" placeholder={placeholder} inputComponent={DateMask} />
       </div>
     );
   };
@@ -82,7 +90,7 @@ class DatePickerField extends Component {
     const inputDate =
       input.value !== 'Invalid date' && input.value !== ''
         ? moment.isMoment(input.value) ? input.value.format('MM/DD/YYYY') : moment(input.value, 'YYYY-MM-DD').format('MM/DD/YYYY')
-        : null;
+        : input.value;
     const datePickerAlignment = alignment || 'left';
 
     return (
@@ -92,8 +100,8 @@ class DatePickerField extends Component {
         <DateTime
           renderInput={this.renderInput}
           className={cx(datePickerClassName, datePickerAlignment)}
-          value={inputDate}
-          viewDate={viewDate ? viewDate : inputDate}
+          defaultValue={inputDate}
+          viewDate={viewDate && viewDate !== 'Invalid date' ? viewDate : inputDate !== '' ? inputDate : new Date()} // determines the calendar month to display
           onChange={this.handleChange}
           timeFormat={timeFormat ? timeFormat : false}
           closeOnSelect={true}
