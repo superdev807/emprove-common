@@ -6,23 +6,14 @@ import PropTypes from 'prop-types';
 import FooterList from '../FooterList';
 import './styles.scss';
 
-const serviceAreas = [
-  'North Las Vegas',
-  'Nellis AFB',
-  'Las Vegas',
-  'Sunrise Manor',
-  'Winchester',
-  'Summerlin',
-  'Spring Valley',
-  'Whitney',
-  'Paradise',
-  'Blue Diamond',
-  'Enterprise',
-  'Henderson',
-  'Boulder City',
-];
+const serviceAreas = ['Greater Las Vegas, NV', 'Greater Phoenix, AZ'];
 
-const renderServiceAreaColumns = (serviceAreas) => {
+const comingSoonAreas = ['Greater Los Angeles, CA', 'Greater San Diego, CA'];
+
+const SERVICE_AREAS = 'service_areas';
+const COMING_SOON = 'coming_soon';
+
+const renderServiceAreaColumns = serviceAreas => {
   const middleIndex = serviceAreas.length / 2;
   const serviceAreasFirstHalf = serviceAreas.slice(0, middleIndex);
   const serviceAreasSecondHalf = serviceAreas.slice(middleIndex);
@@ -36,22 +27,35 @@ const renderServiceAreaColumns = (serviceAreas) => {
   );
 };
 
-const ServiceAreas = (props) => {
-  if (props.splitColumns) {
-    return renderServiceAreaColumns(serviceAreas);
+const ServiceAreas = props => {
+  let areas;
+
+  switch (props.columnType) {
+    case SERVICE_AREAS:
+      areas = serviceAreas;
+      break;
+    case COMING_SOON:
+      areas = comingSoonAreas;
+      break;
+    default:
+      areas = '';
   }
 
-  return (
-    <FooterList items={serviceAreas} />
-  );
+  if (props.splitColumns) {
+    return renderServiceAreaColumns(areas);
+  }
+
+  return <FooterList items={areas} />;
 };
 
 ServiceAreas.propTypes = {
   splitColumns: PropTypes.bool,
+  columnType: PropTypes.oneOf([SERVICE_AREAS, COMING_SOON])
 };
 
 ServiceAreas.defaultProps = {
   splitColumns: false,
+  columnType: SERVICE_AREAS
 };
 
 export default ServiceAreas;
