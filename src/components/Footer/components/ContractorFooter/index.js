@@ -9,6 +9,8 @@ import FooterCopyrightAndSocial from '../FooterCopyrightAndSocial';
 import GrowWithUs from '../GrowWithUs';
 import ServiceAreas from '../ServiceAreas';
 import WorkWithUs from '../WorkWithUs';
+import * as areas from '../../../../data/serviceAreas';
+
 import './styles.scss';
 
 const ContractorFooter = props => {
@@ -22,11 +24,11 @@ const ContractorFooter = props => {
         <div className="contractor-footer-index__section contractor-footer-index__section--negative-left-margin">
           <div className="contractor-footer-index__section-item">
             <div className="contractor-footer-index__section-name">Service Areas</div>
-            <ServiceAreas areas={['Greater Las Vegas, NV', 'Greater Phoenix, AZ']} />
+            <ServiceAreas areas={areas.serviceAreas} />
           </div>
           <div className="contractor-footer-index__section-item">
             <div className="contractor-footer-index__section-name">Coming Soon</div>
-            <ServiceAreas areas={['Greater Los Angeles, CA', 'Greater San Diego, CA']} />
+            <ServiceAreas areas={areas.comingSoonAreas} />
           </div>
         </div>
         <div className="contractor-footer-index__section contractor-footer-index__section--no-right-margin">

@@ -9,6 +9,8 @@ import CompanyLinks from '../CompanyLinks';
 import FooterCopyrightAndSocial from '../FooterCopyrightAndSocial';
 import HowToUse from '../HowToUse';
 import ServiceAreas from '../ServiceAreas';
+import * as areas from '../../../../data/serviceAreas';
+
 import './styles.scss';
 
 const ConsumerFooter = props => {
@@ -29,11 +31,11 @@ const ConsumerFooter = props => {
           <div className="consumer-footer-index__section">
             <div className="consumer-footer-index__section-item">
               <div className="consumer-footer-index__section-name">Service Areas</div>
-              <ServiceAreas areas={['Greater Las Vegas, NV', 'Greater Phoenix, AZ']} />
+              <ServiceAreas areas={areas.serviceAreas} />
             </div>
             <div className="consumer-footer-index__section-item">
               <div className="consumer-footer-index__section-name">Coming Soon</div>
-              <ServiceAreas areas={['Greater Los Angeles, CA', 'Greater San Diego, CA']} />
+              <ServiceAreas areas={areas.comingSoonAreas} />
             </div>
           </div>
           <div className="consumer-footer-index__section consumer-footer-index__section--no-right-margin">
