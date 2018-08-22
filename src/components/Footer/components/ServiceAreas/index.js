@@ -6,23 +6,7 @@ import PropTypes from 'prop-types';
 import FooterList from '../FooterList';
 import './styles.scss';
 
-const serviceAreas = [
-  'North Las Vegas',
-  'Nellis AFB',
-  'Las Vegas',
-  'Sunrise Manor',
-  'Winchester',
-  'Summerlin',
-  'Spring Valley',
-  'Whitney',
-  'Paradise',
-  'Blue Diamond',
-  'Enterprise',
-  'Henderson',
-  'Boulder City',
-];
-
-const renderServiceAreaColumns = (serviceAreas) => {
+const renderServiceAreaColumns = serviceAreas => {
   const middleIndex = serviceAreas.length / 2;
   const serviceAreasFirstHalf = serviceAreas.slice(0, middleIndex);
   const serviceAreasSecondHalf = serviceAreas.slice(middleIndex);
@@ -36,22 +20,21 @@ const renderServiceAreaColumns = (serviceAreas) => {
   );
 };
 
-const ServiceAreas = (props) => {
+const ServiceAreas = props => {
   if (props.splitColumns) {
-    return renderServiceAreaColumns(serviceAreas);
+    return renderServiceAreaColumns(props.areas);
   }
 
-  return (
-    <FooterList items={serviceAreas} />
-  );
+  return <FooterList items={props.areas} />;
 };
 
 ServiceAreas.propTypes = {
   splitColumns: PropTypes.bool,
+  areas: PropTypes.array
 };
 
 ServiceAreas.defaultProps = {
-  splitColumns: false,
+  splitColumns: false
 };
 
 export default ServiceAreas;
