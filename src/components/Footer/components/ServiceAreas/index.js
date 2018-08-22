@@ -6,13 +6,6 @@ import PropTypes from 'prop-types';
 import FooterList from '../FooterList';
 import './styles.scss';
 
-const serviceAreas = ['Greater Las Vegas, NV', 'Greater Phoenix, AZ'];
-
-const comingSoonAreas = ['Greater Los Angeles, CA', 'Greater San Diego, CA'];
-
-const SERVICE_AREAS = 'service_areas';
-const COMING_SOON = 'coming_soon';
-
 const renderServiceAreaColumns = serviceAreas => {
   const middleIndex = serviceAreas.length / 2;
   const serviceAreasFirstHalf = serviceAreas.slice(0, middleIndex);
@@ -28,34 +21,20 @@ const renderServiceAreaColumns = serviceAreas => {
 };
 
 const ServiceAreas = props => {
-  let areas;
-
-  switch (props.columnType) {
-    case SERVICE_AREAS:
-      areas = serviceAreas;
-      break;
-    case COMING_SOON:
-      areas = comingSoonAreas;
-      break;
-    default:
-      areas = '';
-  }
-
   if (props.splitColumns) {
-    return renderServiceAreaColumns(areas);
+    return renderServiceAreaColumns(props.areas);
   }
 
-  return <FooterList items={areas} />;
+  return <FooterList items={props.areas} />;
 };
 
 ServiceAreas.propTypes = {
   splitColumns: PropTypes.bool,
-  columnType: PropTypes.oneOf([SERVICE_AREAS, COMING_SOON])
+  areas: PropTypes.array
 };
 
 ServiceAreas.defaultProps = {
-  splitColumns: false,
-  columnType: SERVICE_AREAS
+  splitColumns: false
 };
 
 export default ServiceAreas;
