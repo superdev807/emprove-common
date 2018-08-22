@@ -70,7 +70,7 @@ DropdownField.propTypes = {
   meta: PropTypes.object.isRequired,
   options: PropTypes.array.isRequired,
   overrideClasses: PropTypes.object,
-  placeholder: PropTypes.object
+  placeholder: PropTypes.string
 };
 
 export { DropdownField };
