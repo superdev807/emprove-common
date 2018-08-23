@@ -667,10 +667,10 @@ const TermsOfService = props => {
         <li>
           <strong>19.6 Contact Information. </strong>The Service is offered by Emprove, Inc., located at 10150 Covington Cross Drive, Las
           Vegas, NV 89144-6567. You may contact us by sending correspondence via Emprove’s Help Center
-          <a href="https://help.emproveit.com/" rel="noopener noreferrer" target="_blank" className="terms-content__link">
+          <Link to="/info-center" rel="noopener noreferrer" target="_blank" className="terms-content__link">
             {' '}
-            https://help.emproveit.com/
-          </a>. You can access a copy of these terms by clicking here
+            https://emproveit.com/info-center
+          </Link>. You can access a copy of these terms by clicking here
           <a
             href="https://s3-us-west-1.amazonaws.com/emprove-public-container/TOS.pdf"
             rel="noopener noreferrer"
