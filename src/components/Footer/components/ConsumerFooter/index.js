@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -9,6 +9,8 @@ import CompanyLinks from '../CompanyLinks';
 import FooterCopyrightAndSocial from '../FooterCopyrightAndSocial';
 import HowToUse from '../HowToUse';
 import ServiceAreas from '../ServiceAreas';
+import * as areas from '../../../../data/serviceAreas';
+
 import './styles.scss';
 
 const ConsumerFooter = props => {
@@ -27,8 +29,14 @@ const ConsumerFooter = props => {
         </div>
         <div className="consumer-footer-index__grouped-sections">
           <div className="consumer-footer-index__section">
-            <div className="consumer-footer-index__section-name">Service Areas</div>
-            <ServiceAreas />
+            <div className="consumer-footer-index__section-item">
+              <div className="consumer-footer-index__section-name">Service Areas</div>
+              <ServiceAreas areas={areas.serviceAreas} />
+            </div>
+            <div className="consumer-footer-index__section-item">
+              <div className="consumer-footer-index__section-name">Coming Soon</div>
+              <ServiceAreas areas={areas.comingSoonAreas} />
+            </div>
           </div>
           <div className="consumer-footer-index__section consumer-footer-index__section--no-right-margin">
             <div className="consumer-footer-index__section-name">How to Use Emprove</div>

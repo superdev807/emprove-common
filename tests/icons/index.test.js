@@ -44,6 +44,7 @@ describe('Icon components', () => {
     'IconPieChart',
     'IconPowderRoom',
     'IconQuestionMark',
+    'IconSearch',
     'IconSitePhotos',
     'IconTwitter'
   ];

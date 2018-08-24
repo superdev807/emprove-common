@@ -17,7 +17,7 @@ describe('ContractorFooter component', () => {
   });
 
   test('should include service areas section', () => {
-    expect(component.find('ServiceAreas').length).toBe(1);
+    expect(component.find('ServiceAreas').length).toBe(2);
   });
 
   test('should include work with us section', () => {

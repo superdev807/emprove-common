@@ -9,6 +9,8 @@ import FooterCopyrightAndSocial from '../FooterCopyrightAndSocial';
 import GrowWithUs from '../GrowWithUs';
 import ServiceAreas from '../ServiceAreas';
 import WorkWithUs from '../WorkWithUs';
+import * as areas from '../../../../data/serviceAreas';
+
 import './styles.scss';
 
 const ContractorFooter = props => {
@@ -20,8 +22,14 @@ const ContractorFooter = props => {
           <CompanyLinks />
         </div>
         <div className="contractor-footer-index__section contractor-footer-index__section--negative-left-margin">
-          <div className="contractor-footer-index__section-name">Service Areas</div>
-          <ServiceAreas splitColumns />
+          <div className="contractor-footer-index__section-item">
+            <div className="contractor-footer-index__section-name">Service Areas</div>
+            <ServiceAreas areas={areas.serviceAreas} />
+          </div>
+          <div className="contractor-footer-index__section-item">
+            <div className="contractor-footer-index__section-name">Coming Soon</div>
+            <ServiceAreas areas={areas.comingSoonAreas} />
+          </div>
         </div>
         <div className="contractor-footer-index__section contractor-footer-index__section--no-right-margin">
           <div className="contractor-footer-index__section-name">Why work with us?</div>
