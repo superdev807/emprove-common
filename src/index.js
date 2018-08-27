@@ -14,6 +14,7 @@ export { default as Logo } from './components/Logo';
 export { default as PasswordField } from './components/PasswordField';
 export { default as PrivacyPolicy } from './components/PrivacyPolicy';
 export { default as StaticLayout } from './components/StaticLayout';
+export { default as SwitchField } from './components/SwitchField';
 export { default as TermsOfService } from './components/TermsOfService';
-export { default as ZipCodeField } from './components/ZipCodeField';
 export { default as VideoModal } from './components/VideoModal';
+export { default as ZipCodeField } from './components/ZipCodeField';
