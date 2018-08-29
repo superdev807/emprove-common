@@ -23,7 +23,7 @@ const InformationDefinition = props => {
 
   return (
     <Typography className={cx('information-definition', { 'information-definition--undefined': definition === '' })}>
-      <strong>• {props.term.name}</strong>
+      <strong>● {props.term.name}</strong>
       {definition}
     </Typography>
   );
