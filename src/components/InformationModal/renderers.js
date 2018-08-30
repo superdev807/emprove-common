@@ -9,6 +9,5 @@ export const LinkRenderer = props => {
 };
 
 export const RawRenderer = props => {
-  console.log('ParagraphRenderer', props);
   return props.children;
 };
