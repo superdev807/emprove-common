@@ -22,8 +22,9 @@ const HelpLinkButton = (props) => {
 
 HelpLinkButton.propTypes = {
   className: PropTypes.string,
-  margin: PropTypes.string,
-  size: PropTypes.number,
+  margin: PropTypes.oneOf(['left']),
+  path: PropTypes.string.isRequired,
+  size: PropTypes.oneOf([16]),
 };
 
 export default HelpLinkButton;
