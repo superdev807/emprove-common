@@ -46,7 +46,7 @@ describe('CompanyLinks component', () => {
   });
 
   test('should display link to help center', () => {
-    expect(component.find('FooterList').prop('items')[4].props.href).toBe(CONSUMER_DOMAIN + '/info-center');
+    expect(component.find('FooterList').prop('items')[4].props.href).toBe('https://help.emproveit.com/');
   });
 
   test('should display link to privacy', () => {
