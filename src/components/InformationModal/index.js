@@ -123,7 +123,7 @@ class InformationModal extends Component {
           return paragraph.items ? this.renderUnorderedList(paragraph.items) : '';
         }
       }
-    })
+    });
   }
 
   renderImages() {
@@ -151,7 +151,8 @@ InformationModal.propTypes = {
   title: PropTypes.string.isRequired,
   body: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.object])).isRequired,
   terms: PropTypes.arrayOf(PropTypes.object),
-  images: PropTypes.arrayOf(PropTypes.object)
+  images: PropTypes.arrayOf(PropTypes.object),
+  hasLink: PropTypes.bool
 };
 
 InformationModal.defaultProps = {

@@ -1,5 +1,6 @@
 const CONTRACTOR_BID_PROCESS_OVERVIEW = {
   title: 'Contractor Bid Process Overview',
+  hasLink: true,
   body: [
     'At Emprove, contractors provide cost proposals to homeowners for projects that are well-defined and ready to go. There are **no lead fees** associated with submitting proposals. Contractors provide a preliminary proposal that is **subject to a project site inspection**. Proposals are adjusted, if needed, and finalized after the inspection. ',
     'Below is a detailed overview of the process:',
@@ -30,7 +31,7 @@ const CONTRACTOR_BID_PROCESS_OVERVIEW = {
     {
       type: 'unordered-list',
       items: [
-        '[Step 1:  Price](http://help.emproveit.com/how-to-guides/contractor-bid-step-1-price)',
+        '[Step 1: Price](http://help.emproveit.com/how-to-guides/contractor-bid-step-1-price)',
         '[Step 2: Timing](http://help.emproveit.com/how-to-guides/contractor-bid-step-2-timing)',
         '[Step 3: Site Info](http://help.emproveit.com/how-to-guides/contractor-bid-step-3-site-info)',
         '[Step 4: Terms & Conditions](http://help.emproveit.com/how-to-guides/contractor-bid-step-4-terms-conditions)'
