@@ -1,3 +1,5 @@
+'use strict';
+
 const CONTRACTOR_BID_PROCESS_OVERVIEW = {
   title: 'Contractor Bid Process Overview',
   hasLink: true,
@@ -31,10 +33,10 @@ const CONTRACTOR_BID_PROCESS_OVERVIEW = {
     {
       type: 'unordered-list',
       items: [
-        '[Step 1: Price](http://help.emproveit.com/how-to-guides/contractor-bid-step-1-price)',
-        '[Step 2: Timing](http://help.emproveit.com/how-to-guides/contractor-bid-step-2-timing)',
-        '[Step 3: Site Info](http://help.emproveit.com/how-to-guides/contractor-bid-step-3-site-info)',
-        '[Step 4: Terms & Conditions](http://help.emproveit.com/how-to-guides/contractor-bid-step-4-terms-conditions)'
+        `[Step 1: Price](${process.env.HELP_DOMAIN}/how-to-guides/contractor-bid-step-1-price)`,
+        `[Step 2: Timing](${process.env.HELP_DOMAIN}/how-to-guides/contractor-bid-step-2-timing)`,
+        `[Step 3: Site Info](${process.env.HELP_DOMAIN}/how-to-guides/contractor-bid-step-3-site-info)`,
+        `[Step 4: Terms & Conditions](${process.env.HELP_DOMAIN}/how-to-guides/contractor-bid-step-4-terms-conditions)`
       ]
     },
     '9\\.  Upon completing the initial bid process, the contractor will submit its preliminary bid to the homeowner, which is contingent upon a project site inspection and associated bid adjustment. There are no costs associated with the preliminary bid submission, it is completely free to submit.',
