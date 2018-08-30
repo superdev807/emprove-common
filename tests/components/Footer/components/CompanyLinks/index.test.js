@@ -8,14 +8,14 @@ import CompanyLinks from '~/components/Footer/components/CompanyLinks';
 describe('CompanyLinks component', () => {
   const originalProcess = global.process;
   const CONSUMER_DOMAIN = 'http://somewhere.com';
-  const HELP_CENTER_DOMAIN = 'http://helpdomain.com';
+  const HELP_DOMAIN = 'http://helpdomain.com';
 
   beforeAll(() => {
     global.process = {
       ...global.process,
       env: {
         CONSUMER_DOMAIN,
-        HELP_CENTER_DOMAIN
+        HELP_DOMAIN
       }
     };
   });
@@ -48,7 +48,7 @@ describe('CompanyLinks component', () => {
   });
 
   test('should display link to help center', () => {
-    expect(component.find('FooterList').prop('items')[4].props.href).toBe(HELP_CENTER_DOMAIN);
+    expect(component.find('FooterList').prop('items')[4].props.href).toBe(HELP_DOMAIN);
   });
 
   test('should display link to privacy', () => {

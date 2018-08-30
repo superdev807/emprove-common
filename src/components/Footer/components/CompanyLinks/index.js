@@ -19,7 +19,7 @@ const getCompanyLinks = () => {
     <a href="https://angel.co/emproveit/jobs" target="_blank" rel="noopener noreferrer">
       Careers
     </a>,
-    <a href={process.env.HELP_CENTER_DOMAIN} target="_blank" rel="noopener noreferrer">
+    <a href={process.env.HELP_DOMAIN} target="_blank" rel="noopener noreferrer">
       Help Center
     </a>,
     <a href={process.env.CONSUMER_DOMAIN + '/privacy'} target="_blank" rel="noopener noreferrer">
