@@ -48,7 +48,9 @@ describe('Icon components', () => {
     'IconQuestionMark',
     'IconSearch',
     'IconSitePhotos',
-    'IconTwitter'
+    'IconSubmitted',
+    'IconTwitter',
+    'IconWriteDescription'
   ];
 
   it('should include an SvgIcon for each icon component', () => {
