@@ -10,6 +10,8 @@ describe('Icon components', () => {
     'IconBidIt',
     'IconBlankPriceTag',
     'IconBlog',
+    'IconCircleArrowDown',
+    'IconCircleArrowUp',
     'IconCircleQuestionMark',
     'IconCostIt',
     'IconDeck',
