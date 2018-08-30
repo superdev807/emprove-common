@@ -31,7 +31,9 @@ export class InputField extends Component {
     hideErrorText: PropTypes.bool,
     rightAligned: PropTypes.bool,
     rows: PropTypes.number,
-    rowsMax: PropTypes.number
+    rowsMax: PropTypes.number,
+    startAdornment: PropTypes.object,
+    endAdornment: PropTypes.object
   };
 
   handleFocus = event => {
@@ -68,6 +70,8 @@ export class InputField extends Component {
       rightAligned,
       rows,
       rowsMax,
+      startAdornment,
+      endAdornment,
       meta: { touched, error }
     } = this.props;
 
@@ -95,6 +99,8 @@ export class InputField extends Component {
           }}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
+          startAdornment={startAdornment}
+          endAdornment={endAdornment}
         />
         {!hideErrorText && touched && error && <FormHelperText>{error}</FormHelperText>}
       </FormControl>
