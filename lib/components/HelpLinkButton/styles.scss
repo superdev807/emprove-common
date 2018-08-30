@@ -1,0 +1,13 @@
+.help-link-button {
+  height: 24px;
+  width: 24px;
+
+  &--size-16 {
+    height: 16px;
+    width: 16px;
+  }
+
+  &--left-margin {
+    margin-left: 3px;
+  }
+}
