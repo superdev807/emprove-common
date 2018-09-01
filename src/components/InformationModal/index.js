@@ -34,6 +34,11 @@ const InformationImage = props => {
   if (props.image.description) {
     imageDescription = <Typography className="information-image__description">{props.image.description}</Typography>;
   }
+  const dimensions = {};
+  if (props.image.displayWidth && props.image.displayHeight) {
+    dimensions.width = props.image.displayWidth;
+    dimensions.height = props.image.displayHeight;
+  }
 
   return (
     <div className="information-image">
@@ -43,8 +48,7 @@ const InformationImage = props => {
           className="information-image__image"
           src={props.image.url}
           alt="Information Image"
-          width={props.image.displayWidth}
-          height={props.image.displayHeight}
+          {...dimensions}
         />
       </div>
     </div>
@@ -86,9 +90,10 @@ class InformationModal extends Component {
     return <InformationImage key={image.id} image={imageWithUrl} />;
   }
 
-  renderParagraph(paragraph) {
+  renderParagraph(paragraph, key) {
     return (
       <ReactMarkdown
+        key={key}
         className="information-modal-body-paragraph"
         source={paragraph}
         renderers={this.state.renderers}
@@ -96,13 +101,14 @@ class InformationModal extends Component {
     );
   }
 
-  renderUnorderedList(items) {
+  renderUnorderedList(items, key) {
     const formattedText = items.reduce((text, item) => {
       return text + '* ' + item + '\n';
     }, '');
 
     return (
       <ReactMarkdown
+        key={key}
         source={formattedText}
         className="information-modal__unordered-list"
         renderers={this.state.renderers}
@@ -113,14 +119,14 @@ class InformationModal extends Component {
   renderBody() {
     return this.props.body.map((paragraph, index) => {
       if (typeof paragraph === 'string') {
-        return this.renderParagraph(paragraph);
+        return this.renderParagraph(paragraph, index);
       }
       else if (typeof paragraph === 'object') {
         if (paragraph.type === 'image') {
-          return this.renderImage(paragraph);
+          return this.renderImage(paragraph, index);
         }
         else if (paragraph.type === 'unordered-list') {
-          return paragraph.items ? this.renderUnorderedList(paragraph.items) : '';
+          return paragraph.items ? this.renderUnorderedList(paragraph.items, index) : '';
         }
       }
     });
