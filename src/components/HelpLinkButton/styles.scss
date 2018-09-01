@@ -1,3 +1,6 @@
+@import 'variables';
+@import 'common-mixins';
+
 .help-link-button {
   height: 24px;
   width: 24px;
@@ -9,5 +12,13 @@
 
   &--left-margin {
     margin-left: 3px;
+  }
+
+  &--blink {
+    @include blinking-with-color(5, $primary);
+  }
+
+  &--highlighted {
+    color: $primary;
   }
 }
