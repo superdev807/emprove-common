@@ -16,31 +16,30 @@ const CONTRACT_TYPE = {
       definition:
         'In this form of agreement, the contractor charges the Homeowner for the cost of materials it purchases and the labor cost (based on agreed hourly rates) it expends to perform the work. In addition, this form allows the contractor and Homeowner to opt for a not-to-exceed (“NTE”), which would be the maximum amount the contractor could charge the Homeowner for the work.'
     }
-  ],
-  boldTermNames: false
+  ]
 };
 
 const PAYMENT_TYPE = {
   title: 'Payment Types',
-  body: [],
+  body: ['The different payment types are:'],
   terms: [
     {
       id: 1,
-      name: null,
+      name: 'A Bi-Weekly payment type',
       definition:
-        'A Bi-Weekly payment type is where the contractor submits an invoice for the work it performed during each 2-week time period. Homeowner then makes payment per the Payment Term.'
+        'Where the contractor submits an invoice for the work it performed during each 2-week time period. Homeowner then makes payment per the Payment Term.'
     },
     {
       id: 2,
-      name: null,
+      name: 'A Monthly payment type',
       definition:
-        'A Monthly payment type is where the contractor submits a monthly invoice for the work it performed during each month. Homeowner then makes payment per the Payment Term.'
+        'Where the contractor submits a monthly invoice for the work it performed during each month. Homeowner then makes payment per the Payment Term.'
     },
     {
       id: 3,
-      name: null,
+      name: 'A Milestone-Based payment',
       definition:
-        'A Milestone-Based payment sets out various work completion milestones, that once reached, entitles the contractor to payment of an associated pre-determined amount. Homeowner then makes payment per the Payment Term.'
+        'Sets out various work completion milestones, that once reached, entitles the contractor to payment of an associated pre-determined amount. Homeowner then makes payment per the Payment Term.'
     }
   ]
 };
@@ -140,6 +139,32 @@ const BI_WEEKLY_PAYMENT = {
   images: []
 };
 
+const PAYMENT_TYPES = {
+  title: 'Payment Types',
+  body: [],
+  terms: [
+    {
+      id: 1,
+      name:
+        'A Bi-Weekly payment type is where the contractor submits an invoice for the work it performed during each 2-week time period. Homeowner then makes payment per the Payment Term. ',
+      definition: null
+    },
+    {
+      id: 2,
+      name:
+        'A Monthly payment type is where the contractor submits a monthly invoice for the work it performed during each month. Homeowner then makes payment per the Payment Term. ',
+      definition: null
+    },
+    {
+      id: 3,
+      name:
+        'A Milestone-Based payment sets out various work completion milestones, that once reached, entitles the contractor to payment of an associated pre-determined amount.  Homeowner then makes payment per the Payment Term.',
+      definition: null
+    }
+  ],
+  images: []
+};
+
 const TIME_AND_MATERIAL_TM_AGREEMENT = {
   title: 'Time and Material (T&M) Agreement',
   body: [
@@ -158,6 +183,25 @@ const LUMP_SUM_AGREEMENT = {
   terms: []
 };
 
+const CONTRACT_TYPES = {
+  title: 'Contract Types',
+  body: ['The two most commonly used contract types in the industry are:'],
+  terms: [
+    {
+      id: 1,
+      name:
+        'Lump-Sum Agreement:  In this form of agreement, the contractor agrees to perform the work for an agreed fixed price. Exceptions to that fixed price include costs of Owner Selected Items (OSI) in excess of the agreed OSI allowance, and the cost of work performed beyond the extent of the original scope.  The value of these exceptions would be added to the initial fixed price via Change Order.',
+      definition: null
+    },
+    {
+      id: 2,
+      name:
+        'Time and Material (T&M) Agreement:  In this form of agreement, the contractor charges the Homeowner for the cost of materials it purchases and the labor cost (based on agreed hourly rates) it expends to perform the work. In addition, this form allows the contractor and Homeowner to opt for a not-to-exceed (“NTE”), which would be the maximum amount the contractor could charge the Homeowner for the work.',
+      definition: null
+    }
+  ]
+};
+
 const ContractInformation = {
   CONTRACT_TYPE,
   PAYMENT_TERM,
@@ -170,8 +214,10 @@ const ContractInformation = {
   MILESTONE_BASED_PAYMENT,
   MONTHLY_PAYMENT,
   BI_WEEKLY_PAYMENT,
+  PAYMENT_TYPES,
   TIME_AND_MATERIAL_TM_AGREEMENT,
   LUMP_SUM_AGREEMENT,
+  CONTRACT_TYPES
 };
 
 export default ContractInformation;
