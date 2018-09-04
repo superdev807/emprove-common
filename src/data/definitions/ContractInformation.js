@@ -1,7 +1,7 @@
 'use strict';
 
-const contractType = {
-  title: 'Contract Type',
+const CONTRACT_TYPE = {
+  title: 'Contract Types',
   body: ['The two most commonly used contract types in the industry are:'],
   terms: [
     {
@@ -19,8 +19,8 @@ const contractType = {
   ]
 };
 
-const paymentType = {
-  title: 'Payment Type',
+const PAYMENT_TYPE = {
+  title: 'Payment Types',
   body: ['The different payment types are:'],
   terms: [
     {
@@ -44,13 +44,13 @@ const paymentType = {
   ]
 };
 
-const paymentTerm = {
+const PAYMENT_TERM = {
   title: 'Payment Term',
   body: ['The amount of time the Homeowner has to pay the contractor’s invoice after receipt.'],
   terms: []
 };
 
-const retention = {
+const RETENTION = {
   title: 'Retention',
   body: [
     'The amount of money that is retained by the Homeowner from the total amount otherwise due to the contractor for work performed. Retention serves as security for the Homeowner, to ensure there are funds available at the end of the project that can be used to complete or correct the work, if necessary. When the contractor achieves full satisfactory completion of the project, the retention is then released to the contractor.',
@@ -59,7 +59,7 @@ const retention = {
   terms: []
 };
 
-const disputeResolution = {
+const DISPUTE_RESOLUTION = {
   title: 'Dispute Resolution',
   body: [
     'The method in which the Homeowner and Contractor agree to resolve any disputes that may arise during the project, per the following:'
@@ -80,7 +80,7 @@ const disputeResolution = {
   ]
 };
 
-const generalContractor = {
+const GENERAL_CONTRACTOR = {
   title: 'General Contractor',
   hasMarkdown: true,
   hasLink: true,
@@ -203,12 +203,12 @@ const CONTRACT_TYPES = {
 };
 
 const ContractInformation = {
-  CONTRACT_TYPE: contractType,
-  PAYMENT_TERM: paymentTerm,
-  PAYMENT_TYPE: paymentType,
-  RETENTION: retention,
-  DISPUTE_RESOLUTION: disputeResolution,
-  GENERAL_CONTRACTOR: generalContractor,
+  CONTRACT_TYPE,
+  PAYMENT_TERM,
+  PAYMENT_TYPE,
+  RETENTION,
+  DISPUTE_RESOLUTION,
+  GENERAL_CONTRACTOR,
   BINDING_ARBITRATION,
   LITIGATION,
   MILESTONE_BASED_PAYMENT,

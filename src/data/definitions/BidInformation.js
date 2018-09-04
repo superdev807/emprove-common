@@ -36,7 +36,7 @@ const BID_PROCESS = {
     {
       id: 2,
       hasMarkdown: true,
-      name: '⋅⋅* Homeowner creates a [Styleboard](/info-center/definitions/styleboard) for their project;',
+      name: 'Homeowner creates a [Styleboard](/info-center/definitions/styleboard) for their project;',
       definition: null
     },
     {
@@ -48,7 +48,7 @@ const BID_PROCESS = {
       id: 4,
       hasMarkdown: true,
       name:
-        "⋅⋅* Emprove prepares a comprehensive [RFP](/info-center/definitions/request-for-proposal) package for the homeowner's project;",
+        "Emprove prepares a comprehensive [RFP](/info-center/definitions/request-for-proposal) package for the homeowner's project;",
       definition: null
     },
     {
@@ -70,7 +70,7 @@ const BID_PROCESS = {
       id: 8,
       hasMarkdown: true,
       name:
-        '⋅⋅* Based on their review of the comparative summary the homeowner [Shortlists](/info-center/definitions/shortlist) 1 to 3 contractors to conduct a site visit of their project;',
+        'Based on their review of the comparative summary the homeowner [Shortlists](/info-center/definitions/shortlist) 1 to 3 contractors to conduct a site visit of their project;',
       definition: null
     },
     {

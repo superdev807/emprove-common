@@ -16,14 +16,23 @@ import { LinkRenderer, RawRenderer } from './renderers';
 import './styles.scss';
 
 const InformationDefinition = props => {
+  let name;
+  if (props.term.name) {
+    name = <strong>{props.term.name}</strong>;
+    if (props.boldName === false) {
+      name = props.term.name;
+    }
+  }
   let definition = '';
   if (props.term.definition) {
-    definition = `: ${props.term.definition}`;
+    const prefix = props.term.name ? ':' : '';
+    definition = prefix + ` ${props.term.definition}`;
   }
 
   return (
     <Typography className={cx('information-definition', { 'information-definition--undefined': definition === '' })}>
-      <strong>● {props.term.name}</strong>
+      ●&nbsp;
+      {name}
       {definition}
     </Typography>
   );
@@ -145,7 +154,7 @@ class InformationModal extends Component {
         <DialogTitle className="information-modal__title">{this.props.title}</DialogTitle>
         <DialogContent className="information-modal__content">
           {this.renderBody()}
-          {this.props.terms && this.props.terms.map(term => <InformationDefinition key={term.id} term={term} />)}
+          {this.props.terms && this.props.terms.map(term => <InformationDefinition key={term.id} term={term} boldName={this.props.boldTermNames} />)}
           {this.renderImages()}
         </DialogContent>
       </Dialog>
@@ -154,6 +163,7 @@ class InformationModal extends Component {
 }
 
 InformationModal.propTypes = {
+  boldTermNames: PropTypes.bool,
   title: PropTypes.string.isRequired,
   body: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.object])).isRequired,
   terms: PropTypes.arrayOf(PropTypes.object),
@@ -162,7 +172,8 @@ InformationModal.propTypes = {
 };
 
 InformationModal.defaultProps = {
-  images: []
+  boldTermNames: true,
+  images: [],
 };
 
 export default connectModal({ name: 'informationModal' })(InformationModal);
