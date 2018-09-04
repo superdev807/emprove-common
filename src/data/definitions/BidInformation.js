@@ -30,58 +30,56 @@ const BID_PROCESS = {
   terms: [
     {
       id: 1,
-      name: 'Homeowner browses our Dream It! look-book for project design inspiration;',
-      definition: null
+      name: null,
+      definition: 'Homeowner browses our Dream It! look-book for project design inspiration;'
     },
     {
       id: 2,
       hasMarkdown: true,
-      name: '⋅⋅* Homeowner creates a [Styleboard](/info-center/definitions/styleboard) for their project;',
-      definition: null
+      name: null,
+      definition: 'Homeowner creates a [Styleboard](/info-center/definitions/styleboard) for their project;'
     },
     {
       id: 3,
-      name: 'Homeowner leverages our Cost It! tools to refine and conclude its project scope of work;',
-      definition: null
+      name: null,
+      definition: 'Homeowner leverages our Cost It! tools to refine and conclude its project scope of work;'
     },
     {
       id: 4,
       hasMarkdown: true,
-      name:
-        "⋅⋅* Emprove prepares a comprehensive [RFP](/info-center/definitions/request-for-proposal) package for the homeowner's project;",
-      definition: null
+      name: null,
+      definition: "Emprove prepares a comprehensive [RFP](/info-center/definitions/request-for-proposal) package for the homeowner's project;"
     },
     {
       id: 5,
-      name: 'Emprove sends the RFP to multiple contractors and solicits their bids;',
-      definition: null
+      name: null,
+      definition: 'Emprove sends the RFP to multiple contractors and solicits their bids;'
     },
     {
       id: 6,
-      name: 'Contractors submit their bids to Emprove;',
-      definition: null
+      name: null,
+      definition: 'Contractors submit their bids to Emprove;'
     },
     {
       id: 7,
-      name: 'Emprove compiles the bids and prepares a side-by-side comparative summary for homeowner review;',
-      definition: null
+      name: null,
+      definition: 'Emprove compiles the bids and prepares a side-by-side comparative summary for homeowner review;'
     },
     {
       id: 8,
       hasMarkdown: true,
-      name:
-        '⋅⋅* Based on their review of the comparative summary the homeowner [Shortlists](/info-center/definitions/shortlist) 1 to 3 contractors to conduct a site visit of their project;',
-      definition: null
+      name: null,
+      definition: 'Based on their review of the comparative summary the homeowner [Shortlists](/info-center/definitions/shortlist) 1 to 3 contractors to conduct a site visit of their project;'
     },
     {
       id: 9,
-      name: 'Shortlisted contractors conduct site visits and either revise or confirm their initial bid submissions;',
-      definition: null
+      name: null,
+      definition: 'Shortlisted contractors conduct site visits and either revise or confirm their initial bid submissions;'
     },
     {
       id: 10,
-      name: 'Homeowner makes a confident and transparent decision on which contractor to hire based on final bid submissions. ',
-      definition: null
+      name: null,
+      definition: 'Homeowner makes a confident and transparent decision on which contractor to hire based on final bid submissions. '
     }
   ],
   images: []
