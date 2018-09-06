@@ -46,9 +46,10 @@
   animation-play-state: running;
 }
 
-@mixin blinking-with-color($iteration-count, $color) {
+@mixin blinking-with-color($iteration-count, $color, $delay: 0s) {
   @include fadeInWithColor($color);
   animation-name: fadeInWithColor;
+  animation-delay: $delay;
   animation-duration: 0.2s;
   animation-timing-function: linear;
   animation-iteration-count: $iteration-count;

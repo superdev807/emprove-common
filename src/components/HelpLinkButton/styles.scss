@@ -10,12 +10,21 @@
     width: 16px;
   }
 
+  &--size-32 {
+    height: 32px;
+    width: 32px;
+  }
+
   &--left-margin {
     margin-left: 3px;
   }
 
+  &--right-margin-16 {
+    margin-right: 16px;
+  }
+
   &--blink {
-    @include blinking-with-color(5, $primary);
+    @include blinking-with-color(5, $primary, 1s);
   }
 
   &--highlighted {
