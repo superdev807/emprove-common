@@ -77,6 +77,7 @@ export { default as IconFacebook } from './IconFacebook';
 export { default as IconFacebookLetter } from './IconFacebookLetter';
 export { default as IconFavorite } from './IconFavorite';
 export { default as IconFavoriteBorder } from './IconFavoriteBorder';
+export { default as IconFileDownload } from './IconFileDownload';
 export { default as IconFoyer } from './IconFoyer';
 export { default as IconGeneralLiving } from './IconGeneralLiving';
 export { default as IconGenericHomeOwner } from './IconGenericHomeOwner';
