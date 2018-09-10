@@ -10,7 +10,7 @@ export { default as IconAddComment } from './IconAddComment';
 export { default as IconAddPhotos } from './IconAddPhotos';
 export { default as IconAddPlus } from './IconAddPlus';
 export { default as IconAddress } from './IconAddress';
-export { default as IconAddYourPhoto } from './IconAddYourPhoto';
+// export { default as IconAddYourPhoto } from './IconAddYourPhoto'; duplicate of IconCamera + not being used
 export { default as IconArrowDropdown } from './IconArrowDropdown';
 export { default as IconArrowHorizontal } from './IconArrowHorizontal';
 export { default as IconArrowVertical } from './IconArrowVertical';
@@ -86,12 +86,12 @@ export { default as IconLoft } from './IconLoft';
 export { default as IconMasterBathroom } from './IconMasterBathroom';
 export { default as IconMasterBedroom } from './IconMasterBedroom';
 export { default as IconMaterials } from './IconMaterials';
-export { default as IconMoreHoriz } from './IconMoreHoriz'; //not being used
+// export { default as IconMoreHoriz } from './IconMoreHoriz'; duplicate of IconMoreInfo + not being used
 export { default as IconMoreInfo } from './IconMoreInfo';
 export { default as IconMyAccountSettings } from './IconMyAccountSettings';
 export { default as IconMyProfile } from './IconMyProfile';
 export { default as IconMyProject } from './IconMyProject';
-export { default as IconMyProperties } from './IconMyProperties';
+// export { default as IconMyProperties } from './IconMyProperties'; IconProperty duplicate
 export { default as IconNewPassword } from './IconNewPassword';
 export { default as IconNextArrow } from './IconNextArrow';
 export { default as IconNote } from './IconNote';
@@ -118,7 +118,7 @@ export { default as IconRadioButtonOutline } from './IconRadioButtonOutline';
 export { default as IconRadioButtonSelected } from './IconRadioButtonSelected';
 export { default as IconRatings } from './IconRatings';
 export { default as IconRfp } from './IconRfp';
-// // export { default as IconRFPStepper } from './IconRFPStepper';
+// export { default as IconRFPStepper } from './IconRFPStepper';
 export { default as IconSave } from './IconSave';
 export { default as IconSavedProject } from './IconSavedProject';
 export { default as IconScrollDownBox } from './IconScrollDownBox';
@@ -146,4 +146,4 @@ export { default as IconWriteDescription } from './IconWriteDescription';
 export { default as IconWriteReview } from './IconWriteReview';
 export { default as IconWrittenComments } from './IconWrittenComments';
 export { default as IconYearEstablished } from './IconYearEstablished';
-export { default as IconYourProperty } from './IconYourProperty';
+// export { default as IconYourProperty } from './IconYourProperty'; duplicate of IconProperty

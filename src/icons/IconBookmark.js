@@ -3,7 +3,7 @@
 import React from 'react';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
-const IconAccountCircle = props => (
+const IconBookmark = props => (
   <SvgIcon x="0px" y="0px" width="24" height="24" viewBox="0 0 24 24" {...props}>
     <path d="M0,0h24v24H0V0z" fill="none" />
     <path
@@ -20,4 +20,4 @@ const IconAccountCircle = props => (
   </SvgIcon>
 );
 
-export default IconAccountCircle;
+export default IconBookmark;
