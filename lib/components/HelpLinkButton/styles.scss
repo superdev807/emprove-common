@@ -24,7 +24,7 @@
   }
 
   &--blink {
-    @include blinking-with-color(5, $primary, 1s);
+    @include blinking-with-color(5, $primary);
   }
 
   &--highlighted {

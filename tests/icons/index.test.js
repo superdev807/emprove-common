@@ -2,59 +2,10 @@
 
 import React from 'react';
 import { shallow } from 'enzyme';
+import * as allIcons from '~/icons';
 
 describe('Icon components', () => {
-  const iconComponentNames = [
-    'IconBack',
-    'IconBackyard',
-    'IconBidIt',
-    'IconBlankPriceTag',
-    'IconBlog',
-    'IconCircleArrowDown',
-    'IconCircleArrowUp',
-    'IconCircleQuestionMark',
-    'IconCostIt',
-    'IconDeck',
-    'IconDen',
-    'IconDownloadRfp',
-    'IconDreamIt',
-    'IconEOutline',
-    'IconFacebook',
-    'IconFacebookLetter',
-    'IconFileDownload',
-    'IconFoyer',
-    'IconGeneralLiving',
-    'IconGuestBathroom',
-    'IconGuestBedroom',
-    'IconHandSwipeLeftRight',
-    'IconHandSwipeTransparent',
-    'IconHandSwipeUpDown',
-    'IconInfo',
-    'IconInstagram',
-    'IconInstantEstimate',
-    'IconKitchen',
-    'IconKitchenette',
-    'IconLinkedIn',
-    'IconListView',
-    'IconLivingRoom',
-    'IconLoft',
-    'IconMasterBathroom',
-    'IconMasterBedroom',
-    'IconMyAccountSettings',
-    'IconMyProfile',
-    'IconMyProperties',
-    'IconOffice',
-    'IconPatio',
-    'IconPieChart',
-    'IconPowderRoom',
-    'IconPriceTag',
-    'IconQuestionMark',
-    'IconSearch',
-    'IconSitePhotos',
-    'IconSubmitted',
-    'IconTwitter',
-    'IconWriteDescription'
-  ];
+  const iconComponentNames = Object.keys(allIcons);
 
   it('should include an SvgIcon for each icon component', () => {
     iconComponentNames.forEach(iconComponentName => {
