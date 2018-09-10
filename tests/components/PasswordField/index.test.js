@@ -40,12 +40,12 @@ describe('PasswordField', () => {
 
   it('should render dropdown popper on focus', () => {
     wrapper.setState({ meterOpen: true });
-    expect(wrapper.find(Fade).prop('in')).toBe(true);
+    expect(wrapper.find(Fade).length).toBe(1);
   });
 
   it('should render dropdown popper on blur', () => {
     wrapper.setState({ meterOpen: false });
-    expect(wrapper.find(Fade).prop('in')).toBe(false);
+    expect(wrapper.find(Fade).length).toBe(0);
   });
 
   it('should render value correctly', () => {
@@ -57,12 +57,14 @@ describe('PasswordField', () => {
   it('should render error message correctly', () => {
     const errorMessage = 'Password is too weak';
     wrapper.setProps({ meta: { touched: true, error: errorMessage } });
+    wrapper.setState({ meterOpen: true });
     const helperTexts = wrapper.find(FormHelperText);
     expect(helperTexts.last().prop('children')).toBe(errorMessage);
   });
 
   it('should render error icon if password length is less than 8', () => {
     wrapper.setProps({ input: { value: 'test' } });
+    wrapper.setState({ meterOpen: true });
     const validationText = wrapper.find(ValidationText).at(0);
     expect(validationText.find(IconClose).length).toBe(1);
     expect(validationText.find(IconCheck).length).toBe(0);
@@ -70,6 +72,7 @@ describe('PasswordField', () => {
 
   it('should render checkmark icon if password length is not less than 8', () => {
     wrapper.setProps({ input: { value: 'password' } });
+    wrapper.setState({ meterOpen: true });
     const validationText = wrapper.find(ValidationText).at(0);
     expect(validationText.find(IconClose).length).toBe(0);
     expect(validationText.find(IconCheck).length).toBe(1);
@@ -77,6 +80,7 @@ describe('PasswordField', () => {
 
   it('should render error icon if password does not contain alphabets', () => {
     wrapper.setProps({ input: { value: '123' } });
+    wrapper.setState({ meterOpen: true });
     const validationText = wrapper.find(ValidationText).at(1);
     expect(validationText.find(IconClose).length).toBe(1);
     expect(validationText.find(IconCheck).length).toBe(0);
@@ -84,6 +88,7 @@ describe('PasswordField', () => {
 
   it('should render checkmark icon if password contains at least one alphabet', () => {
     wrapper.setProps({ input: { value: 'test' } });
+    wrapper.setState({ meterOpen: true });
     const validationText = wrapper.find(ValidationText).at(1);
     expect(validationText.find(IconClose).length).toBe(0);
     expect(validationText.find(IconCheck).length).toBe(1);
@@ -91,6 +96,7 @@ describe('PasswordField', () => {
 
   it('should render error icon if password does not contain number', () => {
     wrapper.setProps({ input: { value: 'test' } });
+    wrapper.setState({ meterOpen: true });
     const validationText = wrapper.find(ValidationText).at(2);
     expect(validationText.find(IconClose).length).toBe(1);
     expect(validationText.find(IconCheck).length).toBe(0);
@@ -98,6 +104,7 @@ describe('PasswordField', () => {
 
   it('should render checkmark icon if password contains at least one number', () => {
     wrapper.setProps({ input: { value: 'test1' } });
+    wrapper.setState({ meterOpen: true });
     const validationText = wrapper.find(ValidationText).at(2);
     expect(validationText.find(IconClose).length).toBe(0);
     expect(validationText.find(IconCheck).length).toBe(1);
@@ -105,6 +112,7 @@ describe('PasswordField', () => {
 
   it('should render error icon if password does not contain any special characters', () => {
     wrapper.setProps({ input: { value: 'test' } });
+    wrapper.setState({ meterOpen: true });
     const validationText = wrapper.find(ValidationText).at(3);
     expect(validationText.find(IconClose).length).toBe(1);
     expect(validationText.find(IconCheck).length).toBe(0);
@@ -112,6 +120,7 @@ describe('PasswordField', () => {
 
   it('should render checkmark icon if password contains at least one special character', () => {
     wrapper.setProps({ input: { value: 'test#' } });
+    wrapper.setState({ meterOpen: true });
     const validationText = wrapper.find(ValidationText).at(3);
     expect(validationText.find(IconClose).length).toBe(0);
     expect(validationText.find(IconCheck).length).toBe(1);

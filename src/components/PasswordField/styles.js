@@ -13,7 +13,9 @@ export default theme => ({
     color: theme.palette.text.primary
   },
   paper: {
-    padding: theme.spacing.unit
+    padding: theme.spacing.unit,
+    position: 'relative',
+    zIndex: 1
   },
   popperClose: {
     zIndex: theme.zIndex.tooltip,
