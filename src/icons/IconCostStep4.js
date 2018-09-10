@@ -3,7 +3,7 @@
 import React from 'react';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
-const IconCostStep1 = props => (
+const IconCostStep4 = props => (
   <SvgIcon x="0px" y="0px" viewBox="0 0 52 52" {...props}>
     <path d="M26 4.3C14 4.3 4.3 14 4.3 26S14 47.7 26 47.7 47.7 38 47.7 26 38 4.3 26 4.3z" />
     <path fill="none" d="M0 0h52v52H0V0z" />
@@ -19,4 +19,4 @@ const IconCostStep1 = props => (
   </SvgIcon>
 );
 
-export default IconCostStep1;
+export default IconCostStep4;
