@@ -13,7 +13,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import PropTypes from 'prop-types';
-import { Manager, Target, Popper } from 'react-popper';
+import Popper from '@material-ui/core/Popper';
 import { withStyles } from '@material-ui/core/styles';
 
 import styles, { validatorTextStyles } from './styles';
@@ -101,47 +101,47 @@ export class PasswordField extends Component {
     const hasMinLengthChars = passwordValidator.hasMinLengthChars(input.value || '');
 
     return (
-      <Manager>
-        <Target>
-          <FormControl className={className} error={touched && !!error} fullWidth={fullWidth}>
-            {label && <InputLabel>{label}</InputLabel>}
-            {helperText && <FormHelperText className={classes.formHelperText}>{helperText}</FormHelperText>}
-            <Input
-              {...input}
-              type={type}
-              placeholder={placeholder}
-              multiline={multiline}
-              className={cx(classes.input, inputClassName)}
-              disabled={disabled}
-              rows={rows}
-              rowsMax={rowsMax}
-              inputProps={{
-                min,
-                max,
-                ...inputProps,
-                className: cx({
-                  [get(inputProps, 'className')]: Boolean(get(inputProps, 'className')),
-                  'text-right': Boolean(rightAligned)
-                })
-              }}
-              inputRef={inputRef}
-              onFocus={this.handleFocus}
-              onBlur={this.handleBlur}
-            />
-            {!hideErrorText && touched && error && <FormHelperText>{error}</FormHelperText>}
-          </FormControl>
-        </Target>
-        <Popper placement="bottom-start" eventsEnabled={meterOpen} className={classes.popperClose}>
-          <Fade in={meterOpen}>
-            <Paper role="tooltip" aria-hidden={!meterOpen} elevation={5} className={classes.paper}>
-              <ValidationText success={hasMinLengthChars}>At least 8 characters</ValidationText>
-              <ValidationText success={hasLetters}>At least 1 letter (a, b, c, ...)</ValidationText>
-              <ValidationText success={hasNumbers}>At least 1 number (1, 2, 3, ...)</ValidationText>
-              <ValidationText success={hasSpecialChars}>At least special character ($, @, %, ...)</ValidationText>
-            </Paper>
-          </Fade>
+      <div>
+        <FormControl className={className} error={touched && !!error} fullWidth={fullWidth}>
+          {label && <InputLabel>{label}</InputLabel>}
+          {helperText && <FormHelperText className={classes.formHelperText}>{helperText}</FormHelperText>}
+          <Input
+            {...input}
+            type={type}
+            placeholder={placeholder}
+            multiline={multiline}
+            className={cx(classes.input, inputClassName)}
+            disabled={disabled}
+            rows={rows}
+            rowsMax={rowsMax}
+            inputProps={{
+              min,
+              max,
+              ...inputProps,
+              className: cx({
+                [get(inputProps, 'className')]: Boolean(get(inputProps, 'className')),
+                'text-right': Boolean(rightAligned)
+              })
+            }}
+            inputRef={inputRef}
+            onFocus={this.handleFocus}
+            onBlur={this.handleBlur}
+          />
+          {!hideErrorText && touched && error && <FormHelperText>{error}</FormHelperText>}
+        </FormControl>
+        <Popper open={meterOpen} transition disablePortal>
+          {({ TransitionProps, placement }) => (
+            <Fade {...TransitionProps}>
+              <Paper aria-hidden={!meterOpen} elevation={5} className={classes.paper}>
+                <ValidationText success={hasMinLengthChars}>At least 8 characters</ValidationText>
+                <ValidationText success={hasLetters}>At least 1 letter (a, b, c, ...)</ValidationText>
+                <ValidationText success={hasNumbers}>At least 1 number (1, 2, 3, ...)</ValidationText>
+                <ValidationText success={hasSpecialChars}>At least special character ($, @, %, ...)</ValidationText>
+              </Paper>
+            </Fade>
+          )}
         </Popper>
-      </Manager>
+      </div>
     );
   }
 }
