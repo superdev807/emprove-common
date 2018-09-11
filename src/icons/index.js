@@ -196,3 +196,10 @@ export { default as IconWrittenComments } from './IconWrittenComments';
 export { default as IconYearEstablished } from './IconYearEstablished';
 // export { default as IconYourProperty } from './IconYourProperty'; duplicate of IconProperty
 export { default as IconSend } from './IconSend';
+export { default as IconAddBox } from './IconAddBox';
+export { default as IconCopy } from './IconCopy';
+export { default as IconFolder } from './IconFolder';
+export { default as IconHome } from './IconHome';
+export { default as IconIndeterminateCheckBox } from './IconIndeterminateCheckBox';
+export { default as IconArrowDown } from './IconArrowDown';
+export { default as IconThumbUp } from './IconThumbUp';
