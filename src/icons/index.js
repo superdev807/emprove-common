@@ -195,3 +195,4 @@ export { default as IconWriteReview } from './IconWriteReview';
 export { default as IconWrittenComments } from './IconWrittenComments';
 export { default as IconYearEstablished } from './IconYearEstablished';
 // export { default as IconYourProperty } from './IconYourProperty'; duplicate of IconProperty
+export { default as IconSend } from './IconSend';
