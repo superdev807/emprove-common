@@ -44,13 +44,14 @@ const ConsumerFooter = props => {
           </div>
         </div>
       </section>
-      <FooterCopyrightAndSocial />
+      <FooterCopyrightAndSocial topContent={props.copyrightTopContent} />
     </footer>
   );
 };
 
 ConsumerFooter.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  copyrightTopContent: PropTypes.node
 };
 
 export default ConsumerFooter;
