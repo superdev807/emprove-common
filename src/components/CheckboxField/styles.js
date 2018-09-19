@@ -7,9 +7,12 @@ export const checkboxStyles = theme => ({
   }
 });
 
-export const labelStyles = theme => ({
-  root: {
+export const styles = theme => ({
+  rootLabel: {
     marginLeft: -8,
     maxWidth: '100%' // to fix IE label overflow issue
+  },
+  redLabel: {
+    color: theme.palette.error.main
   }
 });
