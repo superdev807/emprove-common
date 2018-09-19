@@ -1,0 +1,78 @@
+@import 'variables';
+
+.project-scope-field {
+
+  &__option {
+    display: inline-block;
+    width: 50%;
+
+    &-box {
+      text-align: center;
+      border: 1px solid #848484;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &.selected {
+        border-color: #ff9e3c;
+
+        .project-scale__option {
+
+          &-text--title {
+            color: #ff9e3c;
+          }
+
+          &-bottom {
+            border-top: 1px solid #ffe1c7;
+          }
+        }
+      }
+    }
+
+    &-bar {
+      margin: 40px 0 20px;
+    }
+
+    &-top {
+      padding: 20px;
+    }
+
+    &-bottom {
+      height: 36px;
+    }
+  }
+
+  &__text {
+    line-height: 1.2em;
+
+    &--help {
+      font-size: 12px;
+    }
+  }
+
+  &__charts {
+    display: flex;
+    padding: 20px;
+    margin-top: 20px;
+    justify-content: space-between;
+  }
+
+  &__chart {
+    display: flex;
+    align-items: center;
+
+    &-box {
+      width: 18px;
+      height: 18px;
+      margin-right: 8px;
+      background-color: #f5f5f5;
+
+      &.refinish {
+        background-color: #ffe1c7;
+      }
+
+      &.replace {
+        background-color: $primary;
+      }
+    }
+  }
+}

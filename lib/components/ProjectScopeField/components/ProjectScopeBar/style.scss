@@ -1,0 +1,23 @@
+@import 'variables';
+
+.project-scope-bar {
+  text-align: left;
+  height: 24px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  border: 1px solid #848484;
+
+  &__segment {
+    height: 100%;
+    display: inline-block;
+    
+    &--refinish {
+      background-color: #ffe1c7;
+    }
+
+    &--replace {
+      background-color: #ff9e3c;
+    }
+  }
+}
