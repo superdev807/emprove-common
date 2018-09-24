@@ -87,6 +87,7 @@ export { default as IconGuestBedroom } from './IconGuestBedroom';
 export { default as IconHandSwipeLeftRight } from './IconHandSwipeLeftRight';
 export { default as IconHandSwipeTransparent } from './IconHandSwipeTransparent';
 export { default as IconHandSwipeUpDown } from './IconHandSwipeUpDown';
+export { default as IconHandTouch } from './IconHandTouch';
 export { default as IconHeartWithCircle } from './IconHeartWithCircle';
 export { default as IconHelp } from './IconHelp';
 export { default as IconHomeOwner } from './IconHomeOwner';
