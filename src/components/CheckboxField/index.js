@@ -9,15 +9,14 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormLabel from '@material-ui/core/FormLabel';
 import { withStyles } from '@material-ui/core/styles';
 
-import { checkboxStyles, labelStyles } from './styles';
+import { checkboxStyles, styles } from './styles';
 
-const ControlLabel = withStyles(labelStyles)(FormControlLabel);
 const Checkbox = withStyles(checkboxStyles)(MuiCheckbox);
 
-const CheckboxField = ({ className, disabled, input, label, meta: { touched, error } }) => (
+const CheckboxField = ({ className, classes, disabled, hideErrorText, input, label, meta: { touched, error } }) => (
   <FormControl className={className} error={touched && !!error}>
     {label ? (
-      <ControlLabel
+      <FormControlLabel
         control={
           <Checkbox
             name={input.name}
@@ -29,6 +28,10 @@ const CheckboxField = ({ className, disabled, input, label, meta: { touched, err
           />
         }
         label={label}
+        classes={{
+          root: classes.rootLabel,
+          label: hideErrorText && touched && error ? classes.redLabel : undefined
+        }}
       />
     ) : (
       <Checkbox
@@ -40,8 +43,8 @@ const CheckboxField = ({ className, disabled, input, label, meta: { touched, err
         onBlur={input.onBlur}
       />
     )}
-    {touched && error && <FormHelperText style={{ marginTop: 0 }}>{error}</FormHelperText>}
+    {!hideErrorText && touched && error && <FormHelperText style={{ marginTop: 0 }}>{error}</FormHelperText>}
   </FormControl>
 );
 
-export default CheckboxField;
+export default withStyles(styles)(CheckboxField);

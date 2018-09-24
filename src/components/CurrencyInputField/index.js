@@ -66,7 +66,8 @@ class CurrencyInputField extends Component {
 
   handleChange = event => {
     const { input } = this.props;
-    input.onChange(event.target.value);
+    const { value } = event.target;
+    input.onChange(value ? Number(value) : value);
   };
 
   handleRef = ref => {
