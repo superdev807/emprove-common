@@ -59,52 +59,40 @@ const chartOptions = [
 
 class ProjectScopeField extends Component {
   handleChange = value => () => {
-    const { input } = this.props;
-    input.onChange(value);
-  };
-
-  onSelect = value => () => {
     const { onSelect } = this.props;
     onSelect && onSelect(value);
-  }
+  };
 
   render() {
-    const { input, meta: { error }, className } = this.props;
+    const { meta: { error }, className } = this.props;
 
     return (
       <div className={cx("project-scope-field", { [className]: Boolean(className) })}>
         <Grid container spacing={24}>
-          {options.map((option, index) => {
-            const isSelected = option.value === input.value;
-            const isDisabled = input.value !== null && !isSelected;
-
-            return (
-              <Grid key={index} item className="project-scope-field__option">
-                <div className={cx('project-scope-field__option-box', { selected: isSelected, disabled: isDisabled })} onClick={this.handleChange(option.value)}>
-                  <div className="project-scope-field__option-top">
-                    <Typography className="project-scope-field__text project-scope-field__text--title" variant="body2">
-                      {option.label}
-                    </Typography>
-                    <ProjectScopeBar
-                      className="project-scope-field__option-bar"
-                      refinish={option.barValues.refinish}
-                      replace={option.barValues.replace}
-                    />
-                    <Typography className="project-scope-field__text project-scope-field__text--help" variant="body1">
-                      {option.text}
-                    </Typography>
-                  </div>
-                  <div className="project-scope-field__option-bottom">
-                    {isSelected && (
-                      <Button className="project-scope-field__option-button" color="primary" fullWidth variant="contained" onClick={this.onSelect(option.value)}>
-                        Select
-                      </Button>
-                    )}
-                  </div>
+          {options.map((option, index) => (
+            <Grid key={index} item className="project-scope-field__option">
+              <div className="project-scope-field__option-box">
+                <div className="project-scope-field__option-top">
+                  <Typography className="project-scope-field__text project-scope-field__text--title" variant="body2">
+                    {option.label}
+                  </Typography>
+                  <ProjectScopeBar
+                    className="project-scope-field__option-bar"
+                    refinish={option.barValues.refinish}
+                    replace={option.barValues.replace}
+                  />
+                  <Typography className="project-scope-field__text project-scope-field__text--help" variant="body1">
+                    {option.text}
+                  </Typography>
                 </div>
-              </Grid>
-            );
-          })}
+                <div className="project-scope-field__option-bottom">
+                  <Button className="project-scope-field__option-button" color="primary" fullWidth variant="contained" onClick={this.handleChange(option.value)}>
+                    Select
+                  </Button>
+                </div>
+              </div>
+            </Grid>
+          ))}
         </Grid>
         <div className="project-scope-field__charts">
           {chartOptions.map((option, index) => (
