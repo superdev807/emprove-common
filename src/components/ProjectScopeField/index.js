@@ -59,10 +59,14 @@ const chartOptions = [
 
 class ProjectScopeField extends Component {
   handleChange = value => () => {
-    const { input, onSelect } = this.props;
+    const { input } = this.props;
     input.onChange(value);
-    onSelect && onSelect(value);
   };
+
+  onSelect = value => () => {
+    const { onSelect } = this.props;
+    onSelect && onSelect(value);
+  }
 
   render() {
     const { input, meta: { error }, className } = this.props;
@@ -72,10 +76,11 @@ class ProjectScopeField extends Component {
         <Grid container spacing={24}>
           {options.map((option, index) => {
             const isSelected = option.value === input.value;
+            const isDisabled = input.value !== null && !isSelected;
 
             return (
               <Grid key={index} item className="project-scope-field__option">
-                <div className={cx('project-scope-field__option-box', { selected: isSelected })} onClick={this.handleChange(option.value)}>
+                <div className={cx('project-scope-field__option-box', { selected: isSelected, disabled: isDisabled })} onClick={this.handleChange(option.value)}>
                   <div className="project-scope-field__option-top">
                     <Typography className="project-scope-field__text project-scope-field__text--title" variant="body2">
                       {option.label}
@@ -91,8 +96,8 @@ class ProjectScopeField extends Component {
                   </div>
                   <div className="project-scope-field__option-bottom">
                     {isSelected && (
-                      <Button className="project-scope-field__option-button" color="primary" fullWidth>
-                        CUSTOMIZE
+                      <Button className="project-scope-field__option-button" color="primary" fullWidth variant="contained" onClick={this.onSelect(option.value)}>
+                        Select
                       </Button>
                     )}
                   </div>

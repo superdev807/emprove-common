@@ -11,10 +11,13 @@
       border: 1px solid #848484;
       border-radius: 4px;
       cursor: pointer;
+      display: flex;
+      flex-direction: column;
 
       &.selected {
         border-color: #ff9e3c;
-
+        box-shadow: 2px 2px 6px $bg-color2;
+        
         .project-scale__option {
 
           &-text--title {
@@ -26,26 +29,38 @@
           }
         }
       }
+
+      &.disabled {
+        opacity: 0.7;
+      }
     }
 
     &-bar {
-      margin: 40px 0 20px;
+      margin: 20px 0;
+      height: 14px;
+      border: none;
     }
 
     &-top {
       padding: 20px;
+      flex: 1;
     }
 
     &-bottom {
-      height: 36px;
     }
+  }
+
+  &__option-button {
+    text-transform: uppercase;
+    font-weight: 1000;
+    letter-spacing: 0.1rem;
   }
 
   &__text {
     line-height: 1.2em;
 
     &--help {
-      font-size: 12px;
+      font-size: 11px;
     }
   }
 
@@ -61,9 +76,9 @@
     align-items: center;
 
     &-box {
-      width: 18px;
-      height: 18px;
-      margin-right: 8px;
+      width: 14px;
+      height: 14px;
+      margin-right: 5px;
       background-color: #f5f5f5;
 
       &.refinish {
