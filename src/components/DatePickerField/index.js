@@ -76,7 +76,7 @@ class DatePickerField extends Component {
 
   handleInputRef = ref => {
     const { inputRef } = this.props;
-    inputRef && inputRef(ref.inputElement);
+    inputRef && ref && inputRef(ref.inputElement);
   };
 
   renderInput = props => {
@@ -146,10 +146,9 @@ class DatePickerField extends Component {
             timeFormat={timeFormat ? timeFormat : false}
             closeOnSelect
             isValidDate={disableDatePast && this.disablePast} //if disableDatePast is given, dates before that date become unavailable
-            onViewModeChange={this.handleViewModeChange}
             open={open}
           />
-          <IconCalendar className={classes.icon} onClick={this.toggleDateWidget} />
+          <IconCalendar className={classes.icon} />
         </div>
         {!hideErrorText && touched && error && <FormHelperText className={errorClassName}>{error}</FormHelperText>}
       </FormControl>

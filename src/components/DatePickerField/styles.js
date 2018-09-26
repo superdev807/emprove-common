@@ -7,7 +7,7 @@ export default theme => ({
   },
   icon: {
     position: 'absolute',
-    cursor: 'pointer',
+    pointerEvents: 'none',
     right: 0,
     top: 3
   }
