@@ -5,7 +5,7 @@ import FooterList from '../FooterList';
 
 const workWithUsReasons = [
   'We have the Most Qualified Consumers',
-  'You Can Bid Free and Efficently'
+  'You Can Price Free and Efficently'
 ];
 
 const WorkWithUs = (props) => {
