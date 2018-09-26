@@ -1,3 +1,5 @@
+'use strict';
+
 import React from 'react';
 import cx from 'classnames';
 import CalendarContainer from 'react-datetime/src/CalendarContainer';
