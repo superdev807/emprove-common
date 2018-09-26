@@ -2,8 +2,10 @@
   position: relative;
 }
 .rdtPicker {
-  display: none;
-  position: absolute;
+  display: block;
+  position: static;
+}
+.rdtPicker {
   width: 210px;
   padding: 4px;
   margin-top: 1px;
@@ -224,7 +226,5 @@ td.rdtYear:hover {
 }
 
 .datePickerInputText {
-  font-size: 14px !important;
-  font-weight: 400;
   width: 100%;
 }
