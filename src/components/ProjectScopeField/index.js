@@ -71,7 +71,7 @@ class ProjectScopeField extends Component {
         <Grid container spacing={24}>
           {options.map((option, index) => (
             <Grid key={index} item className="project-scope-field__option">
-              <div className="project-scope-field__option-box">
+              <div className="project-scope-field__option-box" onClick={this.handleChange(option.value)}>
                 <div className="project-scope-field__option-top">
                   <Typography className="project-scope-field__text project-scope-field__text--title" variant="body2">
                     {option.label}
@@ -86,7 +86,7 @@ class ProjectScopeField extends Component {
                   </Typography>
                 </div>
                 <div className="project-scope-field__option-bottom">
-                  <Button className="project-scope-field__option-button" color="primary" fullWidth variant="contained" onClick={this.handleChange(option.value)}>
+                  <Button className="project-scope-field__option-button" color="primary" fullWidth variant="contained">
                     Select
                   </Button>
                 </div>
