@@ -16,7 +16,10 @@
       opacity: 0.7;
 
       .project-scope-field__option-button {
-        display: none;
+        color: $primary;
+        background: $bg-color1;
+        box-shadow: none;
+        border-top: 1px solid $border-color;
       }
 
       &:hover {
@@ -25,7 +28,9 @@
         box-shadow: 2px 2px 6px $bg-color2;
 
         .project-scope-field__option-button {
-          display: block;
+          background: $primary;
+          color: $bg-color1;
+          border-top: none;
         }
 
         .project-scale__option {
