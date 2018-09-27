@@ -39,11 +39,10 @@ class CostItPartial extends Component {
         </div>
         <div id="costIt" className={cx('partial__description', 'costIt', { onStep })}>
           <div id="costItTitle" className="costItTitle">
-            <b>COST</b> IT<span style={{ color: '#ff9e3c', fontWeight: 'bold' }}>!</span>
+            <b>PLAN</b> IT<span style={{ color: '#ff9e3c', fontWeight: 'bold' }}>!</span>
           </div>
           <div id="costItBody" className="costItBody">
-            Get instant and comprehensive project <b>cost estimates</b> for your project that are uniquely <b>tailored</b> to your design
-            preferences, budget parameters, and location!
+            Create a project plan as Emprove provides an instant and comprehensive <b>cost estimate</b> that is uniquely <b>tailored</b> to your design preferences, budget parameters and location!
           </div>
 
           <div id="costItButton" className="partial__button">

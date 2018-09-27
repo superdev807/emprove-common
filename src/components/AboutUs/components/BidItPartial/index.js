@@ -55,11 +55,10 @@ class BidItPartial extends Component {
         </div>
         <div id="bidIt" className={cx('partial__description', 'bidIt', { onStep })}>
           <div id="bidItTitle" className="bidItTitle">
-            <b>BID</b> IT<span style={{ color: '#ff9e3c', fontWeight: 'bold' }}>!</span>
+            <b>PRICE</b> IT<span style={{ color: '#ff9e3c', fontWeight: 'bold' }}>!</span>
           </div>
           <div id="bidItBody" className="bidItBody">
-            Sit back, while we create a detailed <b>Request for Proposal</b> package to multiple qualified contractors. They submit their
-            best price and you pick the one who presents the <b>best value!</b>
+            Sit back, while we create a detailed <b>Project Brief</b> and send it to multiple qualified contractors for pricing. They submit their best price and you pick the one who presents the <b>best value</b>!
           </div>
           <div id="bidItButton" className="partial__button">
             {actionText && (
