@@ -129,7 +129,15 @@ export class PasswordField extends Component {
           />
           {!hideErrorText && touched && error && <FormHelperText>{error}</FormHelperText>}
         </FormControl>
-        <Popper open={meterOpen} transition disablePortal>
+        <Popper
+          open={meterOpen &&
+            !(hasMinLengthChars &&
+              hasLetters &&
+              hasNumbers &&
+              hasSpecialChars)
+          }
+          transition disablePortal
+        >
           {({ TransitionProps, placement }) => (
             <Fade {...TransitionProps}>
               <Paper aria-hidden={!meterOpen} elevation={5} className={classes.paper}>
