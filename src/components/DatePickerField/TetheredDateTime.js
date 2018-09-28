@@ -5,6 +5,7 @@ import cx from 'classnames';
 import CalendarContainer from 'react-datetime/src/CalendarContainer';
 import DateTime from 'react-datetime';
 import Fade from '@material-ui/core/Fade';
+import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
 
 import './datetime.scss';
@@ -12,7 +13,9 @@ import './datetime.scss';
 export default class TetheredDateTime extends DateTime {
   handleFocus = event => {
     this.setState({ anchorEl: event.target });
-    this.openCalendar(event);
+    if (!this.state.open) {
+      this.openCalendar(event);
+    }
   };
 
   render() {
@@ -26,6 +29,7 @@ export default class TetheredDateTime extends DateTime {
         key: 'i',
         type: 'text',
         onFocus: this.handleFocus,
+        onMouseDown: this.handleFocus,
         onChange: this.onInputChange,
         onKeyDown: this.onInputKey,
         value: this.state.inputValue,
@@ -39,12 +43,12 @@ export default class TetheredDateTime extends DateTime {
     return (
       <div className={className}>
         {input}
-        <Popper open={open} anchorEl={anchorEl} placement="bottom-start" transition>
+        <Popper open={open} anchorEl={anchorEl} placement="bottom-start" transition className="rdtPopper">
           {({ TransitionProps }) => (
             <Fade {...TransitionProps} timeout={50}>
-              <div className="rdtPicker">
+              <Paper className="rdtPicker" elevation={3}>
                 <CalendarContainer view={currentView} viewProps={this.getComponentProps()} onClickOutside={this.handleClickOutside} />
-              </div>
+              </Paper>
             </Fade>
           )}
         </Popper>
