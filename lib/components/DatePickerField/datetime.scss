@@ -1,16 +1,15 @@
 .rdt {
   position: relative;
 }
+.rdtPopper {
+  z-index: 100 !important;
+}
 .rdtPicker {
-  display: none;
-  position: absolute;
+  display: block;
+  position: static;
   width: 210px;
   padding: 4px;
   margin-top: 1px;
-  z-index: 100 !important;
-  background: rgb(255, 255, 255);
-  box-shadow: 0 1px 3px rgba(0,0,0,.1);
-  border: 1px solid #f9f9f9;
 }
 .rdt.left .rdtPicker {
   left: 0;
@@ -224,7 +223,5 @@ td.rdtYear:hover {
 }
 
 .datePickerInputText {
-  font-size: 14px !important;
-  font-weight: 400;
   width: 100%;
 }

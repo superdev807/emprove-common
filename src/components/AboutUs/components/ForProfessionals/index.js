@@ -43,12 +43,12 @@ class ForProfessionals extends Component {
           <div id="forProfessionalsTextsBox" className={onStep ? 'on' : undefined} style={{ position: 'relative' }}>
             <div className="forProfessionalsHeaderContainer">
               <p className="forProfessionalsHeader">
-                <b>BID</b> TO THE <b>MOST QUALIFIED</b> CONSUMER IN THE MARKET <b>FOR FREE</b>
+                <b>PRICE</b> TO THE <b>MOST QUALIFIED</b> CONSUMER IN THE MARKET <b>FOR FREE</b>
               </p>
             </div>
             <div className="forProfessionalsFirstTitleBoxStyle">
               <div className="forProfessionalsTitleBox" style={{ flex: 1, textAlign: 'right' }}>
-                <p className="forProfessionalsTitle">Request for Proposals emailed directly to your inbox </p>
+                <p className="forProfessionalsTitle">Project pricing briefs emailed directly to your inbox </p>
               </div>
               <div style={{ margin: 'auto 2vw' }}>
                 <img src="./images/arrows-right.png" />
