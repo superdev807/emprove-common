@@ -25,23 +25,17 @@ describe('DatePickerField', () => {
   });
 
   it('should have closeOnSelect set to true', () => {
-    expect(
-      component.find(DateTime).prop('closeOnSelect')
-    ).toBe(true);
+    expect(component.find(DateTime).prop('closeOnSelect')).toBe(true);
   });
 
   it('should display default value in MM/DD/YYYY format', () => {
-    expect(
-      component.find(DateTime).prop('defaultValue')
-    ).toBe('08/22/2018');
+    expect(component.find(DateTime).prop('defaultValue')).toBe('08/22/2018');
   });
 
   it('should have viewDate set to input value provided', () => {
     component.setProps({ input: { value: '2018-08-22' } });
 
-    expect(
-      component.find(DateTime).prop('viewDate')
-    ).toBe('08/22/2018');
+    expect(component.find(DateTime).prop('viewDate')).toBe('08/22/2018');
   });
 
   it('should disable dates before disableDatePast', () => {
