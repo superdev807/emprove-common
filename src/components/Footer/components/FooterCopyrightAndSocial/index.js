@@ -7,7 +7,7 @@ import FooterCopyright from '../FooterCopyright';
 import SocialMediaLinks from '../SocialMediaLinks';
 import './styles.scss';
 
-const FooterCopyrightAndSocial = (props) => {
+const FooterCopyrightAndSocial = props => {
   return (
     <Fragment>
       {props.topContent}
@@ -25,11 +25,11 @@ const FooterCopyrightAndSocial = (props) => {
 
 FooterCopyrightAndSocial.propTypes = {
   contractor: PropTypes.bool,
-  topContent: PropTypes.node,
+  topContent: PropTypes.node
 };
 
 FooterCopyrightAndSocial.defaultProps = {
-  contractor: false,
+  contractor: false
 };
 
 export default FooterCopyrightAndSocial;
