@@ -43,7 +43,7 @@ class FallbackView extends Component {
               </div>
             )}
             {!isMobile && <div className="fallback-view__vertical-bar" />}
-            <a className="fallback-view__link" href="mailto:contact@emproveit.com">
+            <a className="fallback-view__link" href="mailto:support@emproveit.com">
               Contact Us
             </a>
             <div className="fallback-view__vertical-bar" />
