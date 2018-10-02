@@ -128,6 +128,7 @@ export { default as IconPhone } from './IconPhone';
 export { default as IconPhotosAdded } from './IconPhotosAdded';
 export { default as IconPieChart } from './IconPieChart';
 export { default as IconPlanAgreement } from './IconPlanAgreement';
+export { default as IconPlane } from './IconPlane';
 export { default as IconPowderRoom } from './IconPowderRoom';
 export { default as IconPreference } from './IconPreference';
 export { default as IconPrevArrow } from './IconPrevArrow';
