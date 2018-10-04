@@ -47,7 +47,7 @@ const options = [
     ),
     value: 4,
     barValues: { refinish: 0, replace: 100 },
-    text: 'Make it precisely yours by moving a wall or two, and relocating plubing'
+    text: 'Make it precisely yours by moving a wall or two, and relocating plumbing'
   }
 ];
 
