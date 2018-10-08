@@ -40,7 +40,7 @@ describe('CompanyLinks component', () => {
   });
 
   test('should display link to contact us', () => {
-    expect(component.find('FooterList').prop('items')[2].props.href).toBe('mailto:support@emproveit.com');
+    expect(component.find('FooterList').prop('items')[2].props.href).toBe('mailto:contact@emproveit.com');
   });
 
   test('should display link to careers', () => {
