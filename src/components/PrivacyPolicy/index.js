@@ -155,13 +155,13 @@ const PrivacyPolicy = props => {
         You may, of course, decline to share certain information with us, in which case we may not be able to provide to you some of the
         features and functionality of the Service. You may update, correct, or delete your account information and preferences at any time
         by accessing your account preferences page on the Service. If you wish to access or amend any other personal information we hold
-        about you, you may contact us at support@emproveit.com. Please note that while any changes you make will be reflected in active user
+        about you, you may contact us at contact@emproveit.com. Please note that while any changes you make will be reflected in active user
         databases within a reasonable period of time, we may retain all information you submit for backups, archiving, prevention of fraud
         and abuse, analytics, satisfaction of legal obligations, or where we otherwise reasonably believe that we have a legitimate reason
         to do so. <br />
         <br />
         If you receive commercial email from us, you may unsubscribe at any time by following the instructions contained within the email.
-        You may also opt out from receiving commercial email from us by sending your request to us by email at support@emproveit.com or by
+        You may also opt out from receiving commercial email from us by sending your request to us by email at contact@emproveit.com or by
         writing to us at the address given at the end of this policy. We may allow you to view and modify settings relating to the nature
         and frequency of promotional communications that you receive from us in user account functionality on the Service. <br />
         <br />
@@ -210,11 +210,11 @@ const PrivacyPolicy = props => {
         <b>Your California Privacy Rights</b> <br />
         <br />Residents of California have the right to request a disclosure describing what types of personal information we have shared
         with third parties for their direct marketing purposes, and with whom we have shared it, during the preceding calendar year. You may
-        request a copy of that disclosure by contacting us at support@emproveit.com. <br />
+        request a copy of that disclosure by contacting us at contact@emproveit.com. <br />
         <br />
         <b>How to Contact Us</b> <br />
         <br />Please contact us with any questions or comments about this Policy, information we have collected or otherwise obtained about
-        you, our use and disclosure practices, or your consent choices by email at support@emproveit.com. <br />
+        you, our use and disclosure practices, or your consent choices by email at contact@emproveit.com. <br />
         <br />
         Emprove, Inc. <br />
         257 Mrytle Road <br />

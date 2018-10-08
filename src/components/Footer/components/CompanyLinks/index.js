@@ -12,7 +12,7 @@ const getCompanyLinks = () => {
     <a href={process.env.CONSUMER_DOMAIN + '/blog'} target="_blank" rel="noopener noreferrer">
       Blog
     </a>,
-    <a href="mailto:support@emproveit.com">Contact Us</a>,
+    <a href="mailto:contact@emproveit.com">Contact Us</a>,
     /* <Link to="#">Our Team</Link>,
     <Link to="#">Investors</Link>,
     <Link to="#">Press & Media</Link>, */
