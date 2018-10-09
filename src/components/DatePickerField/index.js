@@ -40,38 +40,14 @@ class DatePickerField extends Component {
     datePickerInputText: PropTypes.string
   };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      open: false
-    };
-  }
-
-  toggleDateWidget = () => {
-    this.setState({
-      open: !this.state.open
-    });
-  };
-
-  closeDateWidget = () => {
-    this.setState({
-      open: false
-    });
-  };
-
   handleChange = date => {
     const { input } = this.props;
     input.onChange && input.onChange(date);
-    //close the widget when the date var becomes a date. when the var is not a date, it's a string.
-    if (typeof date !== 'string') {
-      this.closeDateWidget();
-    }
   };
 
   handleBlur = date => {
     const { input } = this.props;
     input.onBlur && input.onBlur(date);
-    this.closeDateWidget();
   };
 
   handleInputRef = ref => {
@@ -124,7 +100,6 @@ class DatePickerField extends Component {
       viewDate,
       alignment // left or right
     } = this.props;
-    const { open } = this.state;
 
     const inputDate =
       input.value !== 'Invalid date' && input.value !== ''
@@ -146,7 +121,6 @@ class DatePickerField extends Component {
             timeFormat={timeFormat ? timeFormat : false}
             closeOnSelect
             isValidDate={disableDatePast && this.disablePast} //if disableDatePast is given, dates before that date become unavailable
-            open={open}
           />
           <IconCalendar className={classes.icon} />
         </div>
