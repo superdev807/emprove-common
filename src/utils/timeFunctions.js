@@ -63,7 +63,7 @@ export const strToDate = str => {
   return null;
 };
 
-export const calculateTimelineForSubmitProposalsDueDate = (submitProposalsDueDate, businessDays) => {
+export const calculateTimelineFromSubmitProposalsDueDate = (submitProposalsDueDate, businessDays) => {
   const businessDaysToUse = process.env.IN_TEST_MODE === 'true' ? 'qa_business_days' : 'md_project_business_days';
 
   submitProposalsDueDate = business(submitProposalsDueDate).businessAdd(businessDays && businessDays > 0 ? businessDays : 0);
@@ -74,7 +74,7 @@ export const calculateTimelineForSubmitProposalsDueDate = (submitProposalsDueDat
   return { submitProposalsDueDate, siteVisitDueDate, finalBidDueDate, awardDate };
 };
 
-export const calculateTimelineForSiteVisitDueDate = (siteVisitDueDate, businessDays) => {
+export const calculateTimelineFromSiteVisitDueDate = (siteVisitDueDate, businessDays) => {
   const businessDaysToUse = process.env.IN_TEST_MODE === 'true' ? 'qa_business_days' : 'md_project_business_days';
 
   siteVisitDueDate = business(siteVisitDueDate).businessAdd(businessDays && businessDays > 0 ? businessDays : 0);
@@ -85,7 +85,7 @@ export const calculateTimelineForSiteVisitDueDate = (siteVisitDueDate, businessD
   return { siteVisitDueDate, finalBidDueDate, awardDate };
 };
 
-export const calculateTimelineForFinalBidDueDate = (finalBidDueDate, businessDays) => {
+export const calculateTimelineFromFinalBidDueDate = (finalBidDueDate, businessDays) => {
   const businessDaysToUse = process.env.IN_TEST_MODE === 'true' ? 'qa_business_days' : 'md_project_business_days';
 
   finalBidDueDate = business(finalBidDueDate).businessAdd(businessDays && businessDays > 0 ? businessDays : 0);
