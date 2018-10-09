@@ -35,6 +35,7 @@ export { default as IconBrowseMore } from './IconBrowseMore';
 export { default as IconBudget } from './IconBudget';
 export { default as IconCalculator } from './IconCalculator';
 export { default as IconCalendar } from './IconCalendar';
+export { default as IconCalendarPlus } from './IconCalendarPlus';
 export { default as IconCamera } from './IconCamera';
 export { default as IconCircleArrowDown } from './IconCircleArrowDown';
 export { default as IconCircleArrowUp } from './IconCircleArrowUp';
