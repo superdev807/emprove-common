@@ -7,7 +7,7 @@ import timeline from '../data/rfp_timeline.json';
 
 const dateFormat = 'YYYY-MM-DD';
 
-/* 
+/*
  * moment does not like MM/DD/YYYY format because it's not RFC 2822 or ISO format
  * make sure the date passed in is in MM/DD/YYYY format
  */
@@ -61,6 +61,37 @@ export const strToDate = str => {
     }
   }
   return null;
+};
+
+export const calculateTimelineFromSubmitProposalsDueDate = (submitProposalsDueDate, businessDays) => {
+  const businessDaysToUse = process.env.IN_TEST_MODE === 'true' ? 'qa_business_days' : 'md_project_business_days';
+
+  submitProposalsDueDate = business(submitProposalsDueDate).businessAdd(businessDays && businessDays > 0 ? businessDays : 0);
+  const siteVisitDueDate = submitProposalsDueDate.businessAdd(timeline[4][businessDaysToUse] + timeline[5][businessDaysToUse]);
+  const finalBidDueDate = business(siteVisitDueDate).businessAdd(timeline[6][businessDaysToUse]);
+  const awardDate = business(finalBidDueDate).businessAdd(timeline[7][businessDaysToUse]);
+
+  return { submitProposalsDueDate, siteVisitDueDate, finalBidDueDate, awardDate };
+};
+
+export const calculateTimelineFromSiteVisitDueDate = (siteVisitDueDate, businessDays) => {
+  const businessDaysToUse = process.env.IN_TEST_MODE === 'true' ? 'qa_business_days' : 'md_project_business_days';
+
+  siteVisitDueDate = business(siteVisitDueDate).businessAdd(businessDays && businessDays > 0 ? businessDays : 0);
+
+  const finalBidDueDate = business(siteVisitDueDate).businessAdd(timeline[6][businessDaysToUse]);
+  const awardDate = business(finalBidDueDate).businessAdd(timeline[7][businessDaysToUse]);
+
+  return { siteVisitDueDate, finalBidDueDate, awardDate };
+};
+
+export const calculateTimelineFromFinalBidDueDate = (finalBidDueDate, businessDays) => {
+  const businessDaysToUse = process.env.IN_TEST_MODE === 'true' ? 'qa_business_days' : 'md_project_business_days';
+
+  finalBidDueDate = business(finalBidDueDate).businessAdd(businessDays && businessDays > 0 ? businessDays : 0);
+  const awardDate = business(finalBidDueDate).businessAdd(timeline[7][businessDaysToUse]);
+
+  return { finalBidDueDate, awardDate };
 };
 
 export const calculateProjectTimeline = rfpSentDueDate => {
