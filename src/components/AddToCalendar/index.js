@@ -28,7 +28,7 @@ class AddToCalendar extends Component {
     className: PropTypes.string,
     event: PropTypes.object.isRequired,
     disablePortal: PropTypes.bool,
-    iconAppearance: PropTypes.bool,
+    iconAppearance: PropTypes.bool
   };
 
   static defaultProps = {
@@ -62,17 +62,15 @@ class AddToCalendar extends Component {
     this.handleClose();
   };
 
-  handleOnlineCalendarClick = (calendarType) => {
+  handleOnlineCalendarClick = calendarType => {
     const anchor = document.createElement('a');
 
     let generateCalendarUrl;
     if (calendarType === OnlineCalendar.GOOGLE) {
       generateCalendarUrl = generateGoogleCalendarUrl;
-    }
-    else if (calendarType === OnlineCalendar.YAHOO) {
+    } else if (calendarType === OnlineCalendar.YAHOO) {
       generateCalendarUrl = generateYahooCalendarUrl;
-    }
-    else {
+    } else {
       generateCalendarUrl = null;
     }
     anchor.href = generateCalendarUrl ? generateCalendarUrl(this.props.event) : '#';
@@ -81,19 +79,19 @@ class AddToCalendar extends Component {
     anchor.click();
 
     this.handleClose();
-  }
+  };
 
   handleGoogleCalendarClick = () => {
     this.handleOnlineCalendarClick(OnlineCalendar.GOOGLE);
-  }
+  };
 
   handleYahooCalendarClick = () => {
     this.handleOnlineCalendarClick(OnlineCalendar.YAHOO);
-  }
+  };
 
-  getButtonRef = (node) => {
+  getButtonRef = node => {
     this.anchorEl = node;
-  }
+  };
 
   renderTriggerButton() {
     const buttonProps = {
@@ -116,9 +114,7 @@ class AddToCalendar extends Component {
       buttonProps.variant = 'raised';
     }
 
-    return (
-      <Button {...buttonProps}>Add to Calendar</Button>
-    );
+    return <Button {...buttonProps}>Add to Calendar</Button>;
   }
 
   render() {
@@ -135,7 +131,7 @@ class AddToCalendar extends Component {
             <Grow
               id="add-to-calendar-menu-list-grow"
               {...TransitionProps}
-              style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom'}}>
+              style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}>
               <Paper>
                 <ClickAwayListener onClickAway={this.handleClose}>
                   <MenuList className="add-to-calendar__menu-list">
