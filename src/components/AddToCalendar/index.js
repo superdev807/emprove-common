@@ -13,8 +13,14 @@ import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
 
 import IconCalendarPlus from '../../icons/IconCalendarPlus';
+import { downloadiCalendar, generateGoogleCalendarUrl, generateYahooCalendarUrl } from '../../utils/calendarFunctions';
 
 import './styles.scss';
+
+const OnlineCalendar = {
+  GOOGLE: 'google',
+  YAHOO: 'yahoo'
+};
 
 class AddToCalendar extends Component {
   static propTypes = {
@@ -43,41 +49,46 @@ class AddToCalendar extends Component {
     this.setState({
       open: !this.state.open
     });
-  }
-
-  handleOpen = () => {
-    this.setState({
-      open: true
-    });
-  }
+  };
 
   handleClose = () => {
     this.setState({
       open: false
     });
+  };
+
+  handleiCalendarClick = () => {
+    downloadiCalendar(this.props.event);
+    this.handleClose();
+  };
+
+  handleOnlineCalendarClick = (calendarType) => {
+    const anchor = document.createElement('a');
+
+    let generateCalendarUrl;
+    if (calendarType === OnlineCalendar.GOOGLE) {
+      generateCalendarUrl = generateGoogleCalendarUrl;
+    }
+    else if (calendarType === OnlineCalendar.YAHOO) {
+      generateCalendarUrl = generateYahooCalendarUrl;
+    }
+    else {
+      generateCalendarUrl = null;
+    }
+    anchor.href = generateCalendarUrl ? generateCalendarUrl(this.props.event) : '#';
+    anchor.target = '_blank';
+    anchor.rel = 'noopener noreferrer';
+    anchor.click();
+
+    this.handleClose();
   }
 
-  formatText(text) {
-    // .replace(/ /g, '+')
-    return encodeURIComponent(text);
+  handleGoogleCalendarClick = () => {
+    this.handleOnlineCalendarClick(OnlineCalendar.GOOGLE);
   }
 
-  formatDate(date) {
-    // 2018-09-28T18:44:38.000Z
-    return date.replace(/-|:|\.\d\d\d/g, '');
-  }
-
-  getGoogleCalendarLink() {
-    // [ ] convert ' ' to '+'
-    const { event } = this.props;
-
-    let url = 'https://calendar.google.com/calendar/r/eventedit';
-    url += `?text=${this.formatText(event.title)}`;
-    url += `&dates=${this.formatDate(event.start)}/${this.formatDate(event.end)}`;
-    url += `&details=${this.formatText(event.details)}`;
-    url += `&location=${this.formatText(event.location)}`;
-
-    return url;
+  handleYahooCalendarClick = () => {
+    this.handleOnlineCalendarClick(OnlineCalendar.YAHOO);
   }
 
   getButtonRef = (node) => {
@@ -100,6 +111,9 @@ class AddToCalendar extends Component {
           <IconCalendarPlus className="add-to-calendar__icon" />
         </IconButton>
       );
+    } else {
+      buttonProps.color = 'primary';
+      buttonProps.variant = 'raised';
     }
 
     return (
@@ -111,17 +125,29 @@ class AddToCalendar extends Component {
     return (
       <div className={cx('add-to-calendar', this.props.className)}>
         {this.renderTriggerButton()}
-        <Popper className={cx('add-to-calendar__popper', this.props.classes.popper)} open={this.state.open} anchorEl={this.anchorEl} transition disablePortal={this.props.disablePortal}>
+        <Popper
+          className={cx('add-to-calendar__popper', this.props.classes.popper)}
+          open={this.state.open}
+          anchorEl={this.anchorEl}
+          transition
+          disablePortal={this.props.disablePortal}>
           {({ TransitionProps, placement }) => (
-            <Grow id="add-to-calendar-menu-list-grow" {...TransitionProps} style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom'}}>
+            <Grow
+              id="add-to-calendar-menu-list-grow"
+              {...TransitionProps}
+              style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom'}}>
               <Paper>
                 <ClickAwayListener onClickAway={this.handleClose}>
                   <MenuList className="add-to-calendar__menu-list">
-                    <MenuItem className="add-to-calendar__menu-item">iCalendar</MenuItem>
-                    <MenuItem className="add-to-calendar__menu-item" component="a"  href={this.getGoogleCalendarLink()} target="_blank" rel="noopener noreferrer">
+                    <MenuItem className="add-to-calendar__menu-item" onClick={this.handleiCalendarClick}>
+                      Download iCalendar Event
+                    </MenuItem>
+                    <MenuItem className="add-to-calendar__menu-item" onClick={this.handleGoogleCalendarClick}>
                       Add to Google Calendar
                     </MenuItem>
-                    <MenuItem className="add-to-calendar__menu-item">Add to Outlook Calendar</MenuItem>
+                    <MenuItem className="add-to-calendar__menu-item" onClick={this.handleYahooCalendarClick}>
+                      Add to Yahoo Calendar
+                    </MenuItem>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>
