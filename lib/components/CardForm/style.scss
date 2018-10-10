@@ -1,0 +1,21 @@
+@import 'variables';
+
+.card-form {
+  &__input {
+    padding: $spacing-unit;
+    border-bottom: 1px solid $bottom-line-color;
+    margin-bottom: $spacing-unit * 3;
+
+    &.StripeElement--focus {
+      border-bottom-color: $primary;
+    }
+
+    &.StripeElement--invalid {
+      border-bottom-color: $danger-color;
+    }
+  }
+
+  &__error {
+    margin-bottom: $spacing-unit * 2;
+  }
+}
