@@ -26,7 +26,7 @@ export const downloadiCalendar = event => {
 };
 
 export const generateGoogleCalendarUrl = event => {
-  let url = 'https://calendar.google.com/calendar/r/eventedit';
+  let url = process.env.GOOGLE_CALENDAR_URL || 'https://calendar.google.com/calendar/r/eventedit';
   url += `?text=${formatEventText(event.title)}`;
   url += `&dates=${formatEventDate(event.start)}/${formatEventDate(event.end)}`;
   url += `&details=${formatEventText(event.details)}`;
@@ -36,7 +36,7 @@ export const generateGoogleCalendarUrl = event => {
 };
 
 export const generateYahooCalendarUrl = event => {
-  let url = 'https://calendar.yahoo.com/';
+  let url = process.env.YAHOO_CALENDAR_URL || 'https://calendar.yahoo.com/';
   url += '?v=60&view=d&type=20';
   url += `&title=${formatEventText(event.title)}`;
   url += `&st=${formatEventDate(event.start)}`;
