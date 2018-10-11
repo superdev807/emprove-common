@@ -1,11 +1,11 @@
 'use strict';
 
-const formatEventDate = date => {
+export const formatEventDate = date => {
   // Remove punctuation from a date string like 2018-09-28T18:44:38.000Z
   return date.replace(/-|:|\.\d\d\d/g, '');
 };
 
-const formatEventText = text => {
+export const formatEventText = text => {
   return encodeURIComponent(text);
 };
 
@@ -40,7 +40,8 @@ export const generateYahooCalendarUrl = event => {
   url += '?v=60&view=d&type=20';
   url += `&title=${formatEventText(event.title)}`;
   url += `&st=${formatEventDate(event.start)}`;
-  url += `&dur=0030&desc=${formatEventText(event.details)}`;
+  url += '&dur=0030';
+  url += `&desc=${formatEventText(event.details)}`;
   url += `&in_loc=${formatEventText(event.location)}`;
   url += '&uid=&guccounter=1';
 
