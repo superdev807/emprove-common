@@ -1,0 +1,21 @@
+.add-to-calendar {
+  &__icon {
+    color: #ff9e3c;
+  }
+
+  &__icon-button {
+    height: 36px;
+    width: 36px;
+  }
+
+  &__menu-list {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &__menu-item {
+    height: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
