@@ -98,7 +98,7 @@ class ProjectScopeField extends Component {
           {chartOptions.map((option, index) => (
             <div key={index} className="project-scope-field__chart">
               <div className={`project-scope-field__chart-box ${option.value}`} />
-              <Typography className="project-scope-field__text project-scope-field__text--help" variant="body1">
+              <Typography className="project-scope-field__text project-scope-field__text--chart" variant="body1">
                 {option.label}
               </Typography>
             </div>
