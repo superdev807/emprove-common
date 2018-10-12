@@ -48,8 +48,8 @@
     }
 
     &-bar {
-      margin: 20px 0;
-      height: 14px;
+      margin: 12px 0;
+      height: 20px;
       border: none;
     }
 
@@ -74,6 +74,11 @@
 
     &--help {
       font-size: 11px;
+    }
+
+    &--chart {
+      font-size: 12px;
+      font-weight: 500;
     }
   }
 
