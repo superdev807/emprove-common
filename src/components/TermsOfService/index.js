@@ -35,12 +35,12 @@ const TermsOfService = props => {
       <br />
       <strong>1. Emprove Service Overview.</strong> Emprove provides a platform where people seeking contractors for home improvement and
       renovation projects (“<strong>Homeowners</strong>”) can submit information to the Service and generate a detailed scope of work,
-      project cost estimate (“<strong>Estimate</strong>”) and a request for proposal (“<strong>RFP</strong>”). The Estimate is not an offer
-      by us to provide construction services, nor is it a guaruntee of ultimate project costs. The RFP is provided for the purpose of
-      soliciting bid proposals (“<strong>Bid Proposal</strong>”) from contractors (“<strong>Contractors</strong>”) (collectively, Homeowners
-      and Contractors are referred to herein as “<strong>Users</strong>”). Any decision by a Contractor to submit a Bid Proposal in response
-      to an RFP, by a Homeowner to accept a Bid Proposal, or by a User to enter into an agreement for a Contractor’s services upon
-      acceptance of a Bid Proposal is made in such User’s sole discretion.
+      project cost estimate (“<strong>Estimate</strong>”) and a pricing brief proposal (“<strong>brief</strong>”). The Estimate is not an
+      offer by us to provide construction services, nor is it a guaruntee of ultimate project costs. The brief is provided for the purpose
+      of soliciting pricing proposals (“<strong>Pricing Proposal</strong>”) from contractors (“<strong>Contractors</strong>”) (collectively,
+      Homeowners and Contractors are referred to herein as “<strong>Users</strong>”). Any decision by a Contractor to submit a Pricing
+      Proposal in response to a brief, by a Homeowner to accept a Pricing Proposal, or by a User to enter into an agreement for a
+      Contractor’s services upon acceptance of a Pricing Proposal is made in such User’s sole discretion.
       <br />
       <br />
       <strong>2. Eligibility.</strong> You must be at least 18 years old to use the Service. By agreeing to these Terms, you represent and
@@ -74,10 +74,10 @@ const TermsOfService = props => {
           <br />
         </li>
         <li>
-          <strong>4.2 Success Fee.</strong> If a Homeowner decides to accept a bid from a Contractor in response to an RFP, the Contractor
-          will be required to pay a fee (the “<strong>Success Fee</strong>”) in order to be connected with the Homeowner through the
-          Service. Contracting with or engaging another User of the Service for services similar to those included in any Estimate, RFP or
-          Bid Proposal without paying the Success Fee is strictly prohibited.
+          <strong>4.2 Success Fee.</strong> If a Homeowner decides to accept a price from a Contractor in response to a brief, the
+          Contractor will be required to pay a fee (the “<strong>Success Fee</strong>”) in order to be connected with the Homeowner through
+          the Service. Contracting with or engaging another User of the Service for services similar to those included in any Estimate,
+          Brief or Pricing Proposal without paying the Success Fee is strictly prohibited.
           <br />
           <br />
         </li>
@@ -92,11 +92,12 @@ const TermsOfService = props => {
         <li>
           <strong>4.4 Refunds.</strong> Except for the refunds described in this Section 4.4, all charges are non-refundable. If a Homeowner
           selects a Contractor for a project through the Service and the Contractor pays the Success Fee, Emprove, in its sole discretion,
-          may refund all or a portion of the fees paid to Emprove by the Homeowner to publish the applicable RFP that resulted in the
-          accepted proposal, as may be specified in the program materials at the time of RFP submission (“<strong>Eligible Refunds</strong>”).
-          Eligible Refunds will be refunded to the payment method used to make the original purchase, and may take up to 10 business days to
-          process following payment of the Success Fee. Homeowners will not be eligible for a refund if the Contractor does not pay the
-          Success Fee.
+          may refund all or a portion of the fees paid to Emprove by the Homeowner to publish the applicable brief that resulted in the
+          accepted proposal, as may be specified in the program materials at the time of brief submission (“<strong>
+            Eligible Refunds
+          </strong>”). Eligible Refunds will be refunded to the payment method used to make the original purchase, and may take up to 10
+          business days to process following payment of the Success Fee. Homeowners will not be eligible for a refund if the Contractor does
+          not pay the Success Fee.
           <br />
           <br />
         </li>
@@ -298,14 +299,14 @@ const TermsOfService = props => {
           <br />
         </li>
         <li>
-          g. take any action designed to influence or manipulate the Service or any RFP, response (including applicable pricing), or result
-          associated therewith, including shill bidding, false or misleading submissions, or other similar conduct;
+          g. take any action designed to influence or manipulate the Service or any Brief, response (including applicable pricing), or
+          result associated therewith, including shill pricing, false or misleading submissions, or other similar conduct;
           <br />
           <br />
         </li>
         <li>
-          h. contract with or solicit to contract any other User for services described in or substantially related to an Estimate, RFP, or
-          Bid Proposal without paying the Success Fee, or contact any other User in any manner intended to bypass or avoid payment of
+          h. contract with or solicit to contract any other User for services described in or substantially related to an Estimate, Brief,
+          or Pricing Proposal without paying the Success Fee, or contact any other User in any manner intended to bypass or avoid payment of
           applicable fees on the Service;
           <br />
           <br />
@@ -456,7 +457,7 @@ const TermsOfService = props => {
       management activities. Emprove is not responsible for the conduct of any of its Users. You agree to use common sense and independent
       judgement in all interactions with Users or other third parties, such as in choosing the nature and extent of information to share,
       communications you engage in outside the Service, and the manner and circumstances in which you may arrange to meet in person, and
-      your process for evaluating the bids you may receive and the associated underlying information (including references, licensing
+      your process for evaluating the pricings you may receive and the associated underlying information (including references, licensing
       information, and the like). Any such interactions, including any transactions you may consummate with any Contractors, are solely
       between you and the applicable third party.
       <br />
