@@ -64,10 +64,10 @@ class ProjectScopeField extends Component {
   };
 
   render() {
-    const { meta: { error }, className } = this.props;
+    const { meta: { error }, className, showFreeFormOption } = this.props;
 
     return (
-      <div className={cx("project-scope-field", { [className]: Boolean(className) })}>
+      <div className={cx('project-scope-field', { [className]: Boolean(className) })}>
         <Grid container spacing={24}>
           {options.map((option, index) => (
             <Grid key={index} item className="project-scope-field__option">
@@ -94,11 +94,18 @@ class ProjectScopeField extends Component {
             </Grid>
           ))}
         </Grid>
+        {showFreeFormOption && (
+          <div className="projet-scope-field__free-form">
+            <Typography className="project-scope-field__free-form-text" variant="body1" onClick={this.handleChange(6)}>
+              Or, describe a simple project yourself
+            </Typography>
+          </div>
+        )}
         <div className="project-scope-field__charts">
           {chartOptions.map((option, index) => (
             <div key={index} className="project-scope-field__chart">
               <div className={`project-scope-field__chart-box ${option.value}`} />
-              <Typography className="project-scope-field__text project-scope-field__text--chart" variant="body1">
+              <Typography className="project-scope-field__text project-scope-field__text--help" variant="body1">
                 {option.label}
               </Typography>
             </div>
