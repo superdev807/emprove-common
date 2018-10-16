@@ -10,15 +10,32 @@
   flex-direction: column;
   opacity: 0.7;
 
-  &:hover {
+  &--opaque {
     opacity: 1;
-    border-color: #ff9e3c;
-    box-shadow: 2px 2px 6px $bg-color2;
   }
+
+  &--no-cursor {
+    cursor: auto;
+  }
+
+  &--highlight-on-hover {
+    &:hover {
+      opacity: 1;
+      border-color: #ff9e3c;
+      box-shadow: 2px 2px 6px $bg-color2;
+    }
+  }
+
 
   &__option-top {
     padding: 20px;
     flex: 1;
+
+    &--centered {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 
   &__option-bar {
