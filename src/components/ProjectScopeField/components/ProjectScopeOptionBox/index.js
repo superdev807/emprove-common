@@ -10,7 +10,7 @@ import ProjectScopeBar from '../ProjectScopeBar';
 import './styles.scss';
 
 class ProjectScopeOptionBox extends Component {
-  static PropTypes = {
+  static propTypes = {
     className: PropTypes.string,
     id: PropTypes.string,
     onClick: PropTypes.func,
