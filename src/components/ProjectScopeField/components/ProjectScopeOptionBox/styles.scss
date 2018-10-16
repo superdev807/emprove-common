@@ -29,10 +29,6 @@
 
   &__option-bottom {
     height: 36px;
-
-    #{$gp}:hover & {
-      border-top: 1px solid #ffe1c7;
-    }
   }
 
   &__option-button {
@@ -54,12 +50,6 @@
 
   &__text {
     line-height: 1.2em;
-
-    &--title {
-      #{$gp}:hover & {
-        color: #ff9e3c;
-      }
-    }
 
     &--help {
       font-size: 11px;
