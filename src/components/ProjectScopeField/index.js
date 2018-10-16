@@ -1,10 +1,9 @@
 'use strict';
 
 import React, { Component, Fragment } from 'react';
-import Button from '@material-ui/core/Button';
 import cx from 'classnames';
 import Grid from '@material-ui/core/Grid';
-import ProjectScopeBar from './components/ProjectScopeBar';
+import ProjectScopeOptionBox from './components/ProjectScopeOptionBox';
 import Typography from '@material-ui/core/Typography';
 import './style.scss';
 
@@ -71,26 +70,10 @@ class ProjectScopeField extends Component {
         <Grid container spacing={24}>
           {options.map((option, index) => (
             <Grid key={index} item className="project-scope-field__option">
-              <div className="project-scope-field__option-box" onClick={this.handleChange(option.value)}>
-                <div className="project-scope-field__option-top">
-                  <Typography className="project-scope-field__text project-scope-field__text--title" variant="body2">
-                    {option.label}
-                  </Typography>
-                  <ProjectScopeBar
-                    className="project-scope-field__option-bar"
-                    refinish={option.barValues.refinish}
-                    replace={option.barValues.replace}
-                  />
-                  <Typography className="project-scope-field__text project-scope-field__text--help" variant="body1">
-                    {option.text}
-                  </Typography>
-                </div>
-                <div className="project-scope-field__option-bottom">
-                  <Button className="project-scope-field__option-button" color="primary" fullWidth variant="contained">
-                    Select
-                  </Button>
-                </div>
-              </div>
+              <ProjectScopeOptionBox
+                onClick={this.handleChange(option.value)}
+                option={option}
+              />
             </Grid>
           ))}
         </Grid>
