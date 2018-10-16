@@ -29,6 +29,10 @@ describe('ProjectScopeOptionBox component', () => {
     component = shallow(<ProjectScopeOptionBox {...props} />);
   });
 
+  test('should take an onClick event handler from props', () => {
+    expect(component.prop('onClick')).toBe(props.onClick);
+  });
+
   test('should display the option label', () => {
     const label = 'Some label goes here';
     component.setProps({
@@ -80,5 +84,17 @@ describe('ProjectScopeOptionBox component', () => {
     expect(button.prop('color')).toBe('primary');
     expect(button.prop('fullWidth')).toBe(true);
     expect(button.prop('variant')).toBe('contained');
+  });
+
+  test('should allow a className passed by the parent', () => {
+    component.setProps({ className: 'some-parent__project-scope-option-box' });
+
+    expect(component.prop('className')).toBe('project-scope-option-box some-parent__project-scope-option-box');
+  });
+
+  test('should allow an id passed by the parent', () => {
+    component.setProps({ id: 'some-parent__project-scope-option-box' });
+
+    expect(component.prop('id')).toBe('some-parent__project-scope-option-box');
   });
 });
