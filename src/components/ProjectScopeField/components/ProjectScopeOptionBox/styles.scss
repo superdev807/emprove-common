@@ -1,0 +1,68 @@
+@import 'variables';
+
+.project-scope-option-box {
+  $gp: &;
+  text-align: center;
+  border: 1px solid #848484;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  opacity: 0.7;
+
+  &:hover {
+    opacity: 1;
+    border-color: #ff9e3c;
+    box-shadow: 2px 2px 6px $bg-color2;
+  }
+
+  &__option-top {
+    padding: 20px;
+    flex: 1;
+  }
+
+  &__option-bar {
+    margin: 12px 0;
+    height: 20px;
+    border: none;
+  }
+
+  &__option-bottom {
+    height: 36px;
+
+    #{$gp}:hover & {
+      border-top: 1px solid #ffe1c7;
+    }
+  }
+
+  &__option-button {
+    text-transform: uppercase;
+    font-weight: 1000;
+    letter-spacing: 0.1rem;
+
+    color: $primary;
+    background: $bg-color1;
+    box-shadow: none;
+    border-top: 1px solid $border-color;
+
+    #{$gp}:hover & {
+      background: $primary;
+      color: $bg-color1;
+      border-top: none;
+    }
+  }
+
+  &__text {
+    line-height: 1.2em;
+
+    &--title {
+      #{$gp}:hover & {
+        color: #ff9e3c;
+      }
+    }
+
+    &--help {
+      font-size: 11px;
+    }
+  }
+}
