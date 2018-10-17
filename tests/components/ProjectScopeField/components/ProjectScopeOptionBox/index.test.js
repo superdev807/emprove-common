@@ -86,10 +86,16 @@ describe('ProjectScopeOptionBox component', () => {
     expect(button.prop('variant')).toBe('contained');
   });
 
-  test('should allow a className passed by the parent', () => {
-    component.setProps({ className: 'some-parent__project-scope-option-box' });
+  test('should not show a select button if given showSelectButton prop with false value', () => {
+    component.setProps({ showSelectButton: false });
 
-    expect(component.prop('className')).toBe('project-scope-option-box some-parent__project-scope-option-box');
+    expect(component.find('WithStyles(Button)').length).toBe(0);
+  });
+
+  test('should allow a className passed by the parent', () => {
+    component.setProps({ className: 'some-parent-name__project-scope-option-box' });
+
+    expect(component.prop('className')).toMatch('some-parent-name__project-scope-option-box');
   });
 
   test('should allow an id passed by the parent', () => {
