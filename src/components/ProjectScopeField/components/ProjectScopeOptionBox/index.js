@@ -12,17 +12,38 @@ import './styles.scss';
 class ProjectScopeOptionBox extends Component {
   static propTypes = {
     className: PropTypes.string,
+    highlightOnHover: PropTypes.bool,
     id: PropTypes.string,
     onClick: PropTypes.func,
-    option: PropTypes.object.isRequired
+    opaque: PropTypes.bool,
+    option: PropTypes.object.isRequired,
+    showSelectButton: PropTypes.bool
+  };
+
+  static defaultProps = {
+    highlightOnHover: true,
+    opaque: false,
+    showSelectButton: true
   };
 
   render() {
-    const { option } = this.props;
+    const { onClick, option, showSelectButton } = this.props;
 
     return (
-      <div id={this.props.id} className={cx('project-scope-option-box', this.props.className)} onClick={this.props.onClick}>
-        <div className="project-scope-option-box__option-top">
+      <div
+        id={this.props.id}
+        className={cx(
+          'project-scope-option-box',
+          {
+            'project-scope-option-box--opaque': this.props.opaque,
+            'project-scope-option-box--no-cursor': !onClick,
+            'project-scope-option-box--highlight-on-hover': this.props.highlightOnHover
+          },
+          this.props.className
+        )}
+        onClick={onClick}>
+        <div
+          className={cx('project-scope-option-box__option-top', { 'project-scope-option-box__option-top--centered': !showSelectButton })}>
           <Typography className="project-scope-option-box__text project-scope-option-box__text--title" variant="body2">
             {option.label}
           </Typography>
@@ -35,11 +56,13 @@ class ProjectScopeOptionBox extends Component {
             {option.text}
           </Typography>
         </div>
-        <div className="project-scope-option-box__option-bottom">
-          <Button className="project-scope-option-box__option-button" color="primary" fullWidth variant="contained">
-            Select
-          </Button>
-        </div>
+        {showSelectButton && (
+          <div className="project-scope-option-box__option-bottom">
+            <Button className="project-scope-option-box__option-button" color="primary" fullWidth variant="contained">
+              Select
+            </Button>
+          </div>
+        )}
       </div>
     );
   }
