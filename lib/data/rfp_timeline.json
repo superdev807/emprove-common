@@ -61,7 +61,7 @@
 		"action_role" : "contractor",
 		"next_step" : 7,
 		"sm_project_business_days" : 3,
-		"md_project_business_days" : 3,
+		"md_project_business_days" : 5,
 		"lg_project_business_days" : 4,
 		"qa_business_days": 0
 	},
