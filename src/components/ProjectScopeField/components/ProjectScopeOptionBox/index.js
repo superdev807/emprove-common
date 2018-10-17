@@ -32,11 +32,15 @@ class ProjectScopeOptionBox extends Component {
     return (
       <div
         id={this.props.id}
-        className={cx('project-scope-option-box', {
-          'project-scope-option-box--opaque': this.props.opaque,
-          'project-scope-option-box--no-cursor': !onClick,
-          'project-scope-option-box--highlight-on-hover': this.props.highlightOnHover
-        })}
+        className={cx(
+          'project-scope-option-box',
+          {
+            'project-scope-option-box--opaque': this.props.opaque,
+            'project-scope-option-box--no-cursor': !onClick,
+            'project-scope-option-box--highlight-on-hover': this.props.highlightOnHover
+          },
+          this.props.className
+        )}
         onClick={onClick}>
         <div
           className={cx('project-scope-option-box__option-top', { 'project-scope-option-box__option-top--centered': !showSelectButton })}>
