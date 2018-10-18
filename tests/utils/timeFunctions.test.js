@@ -71,7 +71,7 @@ describe('timeline functions', () => {
       const hour = rawHour < 10 ? `0${rawHour}` : `${rawHour}`;
       const expectedSubmitProposalsDueDate = utcOffsetHours > 6 ? `2018-07-17T${hour}:00:00.000Z` : `2018-07-16T${hour}:00:00.000Z`;
       const expectedSiteVisitDueDate = utcOffsetHours > 6 ? `2018-07-27T${hour}:00:00.000Z` : `2018-07-26T${hour}:00:00.000Z`;
-      const expectedFinalBidDueDate = utcOffsetHours > 6 ? `2018-08-01T${hour}:00:00.000Z` : `2018-08-02T${hour}:00:00.000Z`;
+      const expectedFinalBidDueDate = utcOffsetHours > 6 ? `2018-08-01T${hour}:00:00.000Z` : `2018-07-31T${hour}:00:00.000Z`;
       const expectedAwardDate = utcOffsetHours > 6 ? `2018-08-03T${hour}:00:00.000Z` : `2018-08-02T${hour}:00:00.000Z`;
 
       expect(timeLine.rfpSentDueDate).toBe('2018-07-05 18:00:00');
