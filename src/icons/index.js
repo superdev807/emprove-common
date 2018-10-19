@@ -136,6 +136,7 @@ export { default as IconPlane } from './IconPlane';
 export { default as IconPowderRoom } from './IconPowderRoom';
 export { default as IconPreference } from './IconPreference';
 export { default as IconPrevArrow } from './IconPrevArrow';
+export { default as IconPreview } from './IconPreview';
 export { default as IconPriceTag } from './IconPriceTag';
 export { default as IconProfile } from './IconProfile';
 export { default as IconProject } from './IconProject';
