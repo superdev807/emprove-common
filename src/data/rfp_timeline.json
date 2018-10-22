@@ -83,7 +83,7 @@
 		"action_role" : "consumer",
 		"next_step" : 10,
 		"sm_project_business_days" : 2,
-		"md_project_business_days" : 2,
+		"md_project_business_days" : 3,
 		"lg_project_business_days" : 3,
 		"qa_business_days": 1
 	},
