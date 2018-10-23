@@ -33,7 +33,6 @@ class ProjectScopeField extends Component {
   render() {
     const { meta: { error }, className, showFreeFormOption } = this.props;
 
-    console.log({ showFreeFormOption });
     return (
       <div className={cx('project-scope-field', { [className]: Boolean(className) })}>
         <Grid container spacing={24}>
