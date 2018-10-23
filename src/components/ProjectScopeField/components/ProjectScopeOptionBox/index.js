@@ -27,7 +27,7 @@ class ProjectScopeOptionBox extends Component {
   };
 
   render() {
-    const { onClick, option, showSelectButton } = this.props;
+    const { onClick, option, showSelectButton, isMobile } = this.props;
 
     return (
       <div
@@ -43,12 +43,15 @@ class ProjectScopeOptionBox extends Component {
         )}
         onClick={onClick}>
         <div
-          className={cx('project-scope-option-box__option-top', { 'project-scope-option-box__option-top--centered': !showSelectButton })}>
+          className={cx('project-scope-option-box__option-top', {
+            'project-scope-option-box__option-top--centered': !showSelectButton,
+            'project-scope-option-box__option-top--mobile': isMobile
+          })}>
           <Typography className="project-scope-option-box__text project-scope-option-box__text--title" variant="body2">
             {option.label}
           </Typography>
           <ProjectScopeBar
-            className="project-scope-option-box__option-bar"
+            className={cx('project-scope-option-box__option-bar', { 'project-scope-option-box__option-bar--mobile': isMobile })}
             refinish={option.barValues.refinish}
             replace={option.barValues.replace}
           />
@@ -57,8 +60,12 @@ class ProjectScopeOptionBox extends Component {
           </Typography>
         </div>
         {showSelectButton && (
-          <div className="project-scope-option-box__option-bottom">
-            <Button className="project-scope-option-box__option-button" color="primary" fullWidth variant="contained">
+          <div className={cx('project-scope-option-box__option-bottom', { 'project-scope-option-box__option-bottom--mobile': isMobile })}>
+            <Button
+              className={cx('project-scope-option-box__option-button', { 'project-scope-option-box__option-button--mobile': isMobile })}
+              color="primary"
+              fullWidth
+              variant="contained">
               Select
             </Button>
           </div>
