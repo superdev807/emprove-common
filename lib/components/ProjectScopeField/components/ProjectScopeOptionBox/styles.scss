@@ -35,16 +35,29 @@
       flex-direction: column;
       justify-content: center;
     }
+
+    &--mobile {
+      padding: 8px 12px 12px;
+    }
   }
 
   &__option-bar {
     margin: 12px 0;
     height: 20px;
     border: none;
+
+    &--mobile {
+      margin: 6px 0;
+      height: $spacing-unit * 2
+    }
   }
 
   &__option-bottom {
     height: 36px;
+
+    &--mobile {
+      height: 30px;
+    }
   }
 
   &__option-button {
@@ -61,6 +74,11 @@
       background: $primary;
       color: $bg-color1;
       border-top: none;
+    }
+
+    &--mobile {
+      padding: 5px 16px;
+      min-height: 30px;
     }
   }
 

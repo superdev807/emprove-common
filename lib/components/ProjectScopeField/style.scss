@@ -17,8 +17,7 @@
 
   &__charts {
     display: flex;
-    padding: 20px;
-    margin-top: 20px;
+    margin-top: $spacing-unit * 2.5;
     justify-content: space-between;
   }
 
@@ -40,5 +39,9 @@
         background-color: $primary;
       }
     }
+  }
+
+  &__free-form-text {
+    margin: $spacing-unit * 1.5 0;
   }
 }

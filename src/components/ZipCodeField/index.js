@@ -31,7 +31,8 @@ export class ZipCodeField extends Component {
       placeholder,
       type,
       hideErrorText,
-      endAdornment
+      endAdornment,
+      inputProps
     } = this.props;
 
     return (
@@ -46,6 +47,9 @@ export class ZipCodeField extends Component {
           disabled={disabled}
           inputComponent={ZipCodeMask}
           endAdornment={endAdornment}
+          inputProps={{
+            ...inputProps
+          }}
         />
         {!hideErrorText && touched && error && <FormHelperText>{error}</FormHelperText>}
       </FormControl>

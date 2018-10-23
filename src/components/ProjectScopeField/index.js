@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import cx from 'classnames';
 import Grid from '@material-ui/core/Grid';
+import MobileDetect from 'mobile-detect';
 import ProjectScopeOptionBox from './components/ProjectScopeOptionBox';
 import Typography from '@material-ui/core/Typography';
 import options from './projectScopeOptions';
@@ -10,11 +11,20 @@ import './style.scss';
 
 const chartOptions = [
   { value: 'refinish', label: 'Refinish' },
-  { value: 'replace', label: 'New or Replace' },
+  { value: 'replace', label: 'New / Replace' },
   { value: 'keep', label: 'Keep Existing' }
 ];
 
 class ProjectScopeField extends Component {
+  constructor(props) {
+    super(props);
+
+    const md = new MobileDetect(window.navigator.userAgent);
+    this.state = {
+      isMobile: Boolean(md.phone())
+    };
+  }
+
   handleChange = value => () => {
     const { onSelect } = this.props;
     onSelect && onSelect(value);
@@ -28,7 +38,7 @@ class ProjectScopeField extends Component {
         <Grid container spacing={24}>
           {options.map((option, index) => (
             <Grid key={index} item className="project-scope-field__option">
-              <ProjectScopeOptionBox onClick={this.handleChange(option.value)} option={option} />
+              <ProjectScopeOptionBox onClick={this.handleChange(option.value)} option={option} isMobile={this.state.isMobile} />
             </Grid>
           ))}
         </Grid>
