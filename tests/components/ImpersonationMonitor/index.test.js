@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import { shallow } from 'enzyme';
 
@@ -10,6 +11,11 @@ describe('ImpersonationMonitor component', () => {
   let component;
   const realDateNow = Date.now.bind(global.Date);
   const mockedNow = 1539951580;
+  const props = {
+    tokenExp: mockedNow + 60 * 30,
+    onExit: jest.fn(),
+    impersonator: { email: 'admin@example.com' }
+  };
 
   beforeAll(() => {
     const dateNowStub = jest.fn(() => mockedNow * 1000);
@@ -21,10 +27,6 @@ describe('ImpersonationMonitor component', () => {
   });
 
   beforeEach(() => {
-    let props = {
-      tokenExp: mockedNow + 60 * 30,
-      impersonator: { email: 'admin@example.com' }
-    };
     component = shallow(<ImpersonationMonitor {...props} />);
   });
 
@@ -53,5 +55,10 @@ describe('ImpersonationMonitor component', () => {
     expect(component.name()).toEqual(null);
     component.setProps({ impersonator: undefined });
     expect(component.name()).toEqual(null);
+  });
+
+  test('should trigger close action when Exit button is clicked', () => {
+    shallow(component.dive().prop('action')[0]).prop('onClick')();
+    expect(props.onExit).toHaveBeenCalled();
   });
 });

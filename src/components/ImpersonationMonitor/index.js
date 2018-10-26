@@ -15,8 +15,9 @@ const getTimeLeft = exp => moment.duration(moment(exp ? exp * 1000 : undefined).
 
 class ImpersonationMonitor extends Component {
   static propTypes = {
+    impersonator: PropTypes.object,
+    onExit: PropTypes.func,
     tokenExp: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    impersonator: PropTypes.object
   };
 
   constructor(props) {
@@ -60,12 +61,8 @@ class ImpersonationMonitor extends Component {
     }
   };
 
-  handleClose = () => {
-    window.close();
-  };
-
   render() {
-    const { impersonator } = this.props;
+    const { impersonator, onExit } = this.props;
     const { timeLeft } = this.state;
 
     return impersonator ? (
@@ -78,7 +75,7 @@ class ImpersonationMonitor extends Component {
           </span>
         }
         action={[
-          <Button key="close" color="inherit" onClick={this.handleClose}>
+          <Button key="close" color="inherit" onClick={onExit}>
             Exit
           </Button>
         ]}
