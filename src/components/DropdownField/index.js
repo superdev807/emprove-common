@@ -62,6 +62,7 @@ DropdownField.propTypes = {
   classes: PropTypes.object.isRequired,
   className: PropTypes.string,
   disabled: PropTypes.bool,
+  disableUnderline: PropTypes.bool,
   fullWidth: PropTypes.bool,
   helperText: PropTypes.string,
   helperTextClassName: PropTypes.string,
