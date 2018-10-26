@@ -17,6 +17,7 @@ const DropdownField = ({
   className,
   classes,
   disabled,
+  disableUnderline,
   fullWidth,
   helperText,
   helperTextClassName,
@@ -37,6 +38,7 @@ const DropdownField = ({
       value={input.value}
       className={cx(classes.select, inputClassName)}
       displayEmpty={!!placeholder}
+      disableUnderline={disableUnderline}
       classes={overrideClasses}>
       {placeholder && <MenuItem value="">{placeholder}</MenuItem>}
       {options &&
@@ -60,6 +62,7 @@ DropdownField.propTypes = {
   classes: PropTypes.object.isRequired,
   className: PropTypes.string,
   disabled: PropTypes.bool,
+  disableUnderline: PropTypes.bool,
   fullWidth: PropTypes.bool,
   helperText: PropTypes.string,
   helperTextClassName: PropTypes.string,
