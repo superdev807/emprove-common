@@ -60,7 +60,7 @@ export const generateiCalendar = event => {
     `DTEND:${formatEventDate(event.end)}\n` +
     `SUMMARY:${event.title}\n` +
     `LOCATION:${event.location}\n` +
-    `DESCRIPTION:${event.details}\n` +
+    `DESCRIPTION:${event.details.replace(/\n/g, '\\n')}\n` +
     'END:VEVENT\n' +
     'END:VCALENDAR\n'
   );
