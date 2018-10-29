@@ -11,7 +11,7 @@ export const formatEventText = text => {
 
 export const downloadiCalendar = event => {
   const fileData = generateiCalendar(event);
-  const blob = new Blob([fileData], { type: 'application/octet-stream' });
+  const blob = new Blob([fileData], { type: 'text/calendar' });
   const filename = 'emproveSiteVisit.ics';
 
   if (window.navigator && window.navigator.msSaveOrOpenBlob) {
@@ -20,7 +20,9 @@ export const downloadiCalendar = event => {
     const anchor = document.createElement('a');
     anchor.href = window.URL.createObjectURL(blob);
     anchor.download = filename;
+    document.body.appendChild(anchor);
     anchor.click();
+    document.body.removeChild(anchor);
     window.URL.revokeObjectURL(anchor.href);
   }
 };
@@ -48,9 +50,7 @@ export const generateYahooCalendarUrl = event => {
   return url;
 };
 
-export const generateiCalendar = event => {
-  const rightNow = new Date().toISOString();
-
+export const generateiCalendar = (event, rightNow = new Date().toISOString()) => {
   return (
     'BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:https://www.emproveit.com\n' +
     'BEGIN:VEVENT\n' +
@@ -60,7 +60,7 @@ export const generateiCalendar = event => {
     `DTEND:${formatEventDate(event.end)}\n` +
     `SUMMARY:${event.title}\n` +
     `LOCATION:${event.location}\n` +
-    `DESCRIPTION:${event.details}\n` +
+    `DESCRIPTION:${event.details.replace(/\n/g, '\\n')}\n` +
     'END:VEVENT\n' +
     'END:VCALENDAR\n'
   );

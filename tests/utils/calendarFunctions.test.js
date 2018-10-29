@@ -114,28 +114,30 @@ describe('calendarFunctions module', () => {
     test('should generate a multiline string with text for a iCalendar .ics file', () => {
       const event = {
         title: 'Site Visit (Builders Co.)',
-        details: 'We will be making a visit to evaluate your project.\nOur contact is 123-456-7898',
+        details: 'We will be making a visit to evaluate your project.\nOur contact is 123-456-7898\nLooking forward to assessing your project!',
         location: '123 Some Where, Some City, ST 12345',
         start: '2018-12-21T08:30:00.000Z',
         end: '2018-12-21T09:00:00.000Z'
       };
-      const text = generateiCalendar(event).split('\n');
+      const rightNow = '2018-10-22T21:16:11.290Z';
+      const text = generateiCalendar(event, rightNow).split('\n');
 
       expect(text[0]).toBe('BEGIN:VCALENDAR');
       expect(text[1]).toBe('VERSION:2.0');
       expect(text[2]).toBe('PRODID:https://www.emproveit.com');
       expect(text[3]).toBe('BEGIN:VEVENT');
-      expect(text[4]).toMatch(/^UID:http:\/\/www.emproveit.com\/event\/\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d.\d\d\dZ$/);
-      expect(text[5]).toMatch(/^DTSTAMP:\d\d\d\d\d\d\d\dT\d\d\d\d\d\dZ$/);
+      expect(text[4]).toBe(`UID:http://www.emproveit.com/event/${rightNow}`);
+      expect(text[5]).toBe('DTSTAMP:20181022T211611Z');
       expect(text[6]).toBe('DTSTART:20181221T083000Z');
       expect(text[7]).toBe('DTEND:20181221T090000Z');
       expect(text[8]).toBe(`SUMMARY:${event.title}`);
       expect(text[9]).toBe(`LOCATION:${event.location}`);
-      expect(text[10]).toBe('DESCRIPTION:We will be making a visit to evaluate your project.');
-      expect(text[11]).toBe('Our contact is 123-456-7898');
-      expect(text[12]).toBe('END:VEVENT');
-      expect(text[13]).toBe('END:VCALENDAR');
-      expect(text[14]).toBe('');
+      // newline characters \n in description should appear literally (\\n) so
+      // multiline text works when importing into calendar software:
+      expect(text[10]).toBe('DESCRIPTION:We will be making a visit to evaluate your project.\\nOur contact is 123-456-7898\\nLooking forward to assessing your project!');
+      expect(text[11]).toBe('END:VEVENT');
+      expect(text[12]).toBe('END:VCALENDAR');
+      expect(text[13]).toBe('');
     });
   });
 });
