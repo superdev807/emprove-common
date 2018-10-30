@@ -53,9 +53,11 @@ class ImpersonationMonitor extends Component {
   }
 
   handleTimer = () => {
+    const { onExit } = this.props;
     const timeLeft = getTimeLeft(this.props.tokenExp);
     if (timeLeft.asSeconds() <= 0) {
-      this.handleClose();
+      clearInterval(this.timer);
+      onExit && onExit();
     } else {
       this.setState({ timeLeft: timeLeft.humanize() });
     }
