@@ -49,7 +49,7 @@ class CostItPartial extends Component {
             {actionText && (
               <Button
                 className="partial__button-start-now"
-                variant="raised"
+                variant="contained"
                 color="primary"
                 onClick={action}
                 style={{ display: 'block', marginTop: '5vh' }}>

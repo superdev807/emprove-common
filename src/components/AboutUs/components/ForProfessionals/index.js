@@ -31,7 +31,7 @@ class ForProfessionals extends Component {
             </div>
             <div>
               <div id="contractorButton" className="contractorButtonContainer">
-                <Button variant="raised" color="primary" onClick={this.props.onClick} fullWidth className={classes.contractorButtonStyle}>
+                <Button variant="contained" color="primary" onClick={this.props.onClick} fullWidth className={classes.contractorButtonStyle}>
                   LEARN MORE
                 </Button>
               </div>
