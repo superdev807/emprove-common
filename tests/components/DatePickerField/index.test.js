@@ -24,7 +24,7 @@ describe('DatePickerField', () => {
     mounted = mount(<DatePickerField {...props} />);
   });
 
-  it.only('should have closeOnSelect set to true', () => {
+  it('should have closeOnSelect set to true', () => {
     expect(component.find(DateTime).prop('closeOnSelect')).toBe(true);
   });
 
