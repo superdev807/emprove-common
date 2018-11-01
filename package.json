@@ -27,6 +27,7 @@
     "react": "16.4.2",
     "react-datetime": "^2.14.0",
     "react-dom": "16.4.2",
+    "react-jss": "^8.6.1",
     "react-number-format": "^3.4.2",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
@@ -71,6 +72,7 @@
     "react": "16.4.2",
     "react-datetime": "^2.14.0",
     "react-dom": "16.4.2",
+    "react-jss": "^8.6.1",
     "react-markdown": "^3.3.4",
     "react-number-format": "^3.4.2",
     "react-redux": "^5.0.6",
@@ -83,8 +85,5 @@
     "redux-modal": "^1.7.0",
     "regenerator-runtime": "^0.12.1",
     "reselect": "^3.0.1"
-  },
-  "dependencies": {
-    "react-jss": "^8.6.1"
   }
 }
