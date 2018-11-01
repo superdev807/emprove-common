@@ -91,7 +91,7 @@ class CardForm extends Component {
             {error}
           </Typography>
         )}
-        <Button variant="raised" fullWidth type="submit" color="primary" disabled={tokenCreating || disabled}>
+        <Button variant="contained" fullWidth type="submit" color="primary" disabled={tokenCreating || disabled}>
           Confirm
         </Button>
       </form>
