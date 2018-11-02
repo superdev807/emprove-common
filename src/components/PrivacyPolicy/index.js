@@ -8,7 +8,7 @@ const PrivacyPolicy = props => {
   return (
     <div>
       <div className="privacy-policy-content__paragraph">
-        <span>Last Updated: January 10, 2018 </span>
+        <span>Last Updated: November 2, 2018 </span>
         <br />
         <br />
         This Privacy Policy (“<b>Policy</b>”) describes the manner in which Emprove, Inc. (“<b>Emprove</b>”, “<b>we</b>,” or “<b>us</b>”)
