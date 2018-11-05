@@ -8,7 +8,6 @@ import { getDeviceType } from './helpers';
 import { detectDevice } from '../../redux/modules/device';
 import { isMobileSelector, isTabletSelector } from '../../redux/selectors';
 
-
 class DeviceDetector extends Component {
   componentDidMount() {
     this.setDeviceType();
@@ -22,7 +21,7 @@ class DeviceDetector extends Component {
   setDeviceType = () => {
     const { isMobile, isTablet } = getDeviceType();
     this.props.detectDevice({ isMobile, isTablet });
-  }
+  };
 
   render() {
     return this.props.children;
@@ -40,7 +39,10 @@ const action = {
 
 DeviceDetector.propTypes = {
   children: PropTypes.element,
-  detectDevice: PropTypes.function.isRequired
+  detectDevice: PropTypes.func.isRequired
 };
 
-export default connect(selector, action)(DeviceDetector);
+export default connect(
+  selector,
+  action
+)(DeviceDetector);
