@@ -47,7 +47,6 @@ const action = {
 };
 
 DeviceDetector.propTypes = {
-  children: PropTypes.element,
   detectDevice: PropTypes.func.isRequired
 };
 
