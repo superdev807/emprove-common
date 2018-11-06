@@ -2,8 +2,7 @@
 
 import MobileDetect from 'mobile-detect';
 
-const md = new MobileDetect(window.navigator.userAgent);
-
-export const getDeviceType = () => {
+export const getDeviceType = userAgent => {
+  const md = new MobileDetect(userAgent);
   return { isMobile: Boolean(md.mobile()), isTablet: Boolean(md.tablet()) };
 };

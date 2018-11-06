@@ -1,14 +1,21 @@
 'use strict';
 
 import React, { Component } from 'react';
+import debounce from 'lodash/debounce';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+
 import { getDeviceType } from './helpers';
 import { detectDevice } from '../../redux/modules/device';
 import { isMobileSelector, isTabletSelector } from '../../redux/selectors';
 
 class DeviceDetector extends Component {
+  constructor(props) {
+    super(props);
+    this.setDeviceType = debounce(this.setDeviceType, 200, { trailing: true });
+  }
+
   componentDidMount() {
     this.setDeviceType();
     window.addEventListener('resize', this.setDeviceType);
@@ -19,8 +26,10 @@ class DeviceDetector extends Component {
   }
 
   setDeviceType = () => {
-    const { isMobile, isTablet } = getDeviceType();
-    this.props.detectDevice({ isMobile, isTablet });
+    const { isMobile, isTablet } = getDeviceType(window.navigator.userAgent);
+    if (isMobile !== this.props.isMobile || isTablet !== this.props.isTablet) {
+      this.props.detectDevice({ isMobile, isTablet });
+    }
   };
 
   render() {
