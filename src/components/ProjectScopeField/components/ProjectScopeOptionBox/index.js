@@ -29,7 +29,7 @@ class ProjectScopeOptionBox extends Component {
 
   handleClickDetail = event => {
     const { onClickDetail, option } = this.props;
-    onClickDetail(event, option.value);
+    onClickDetail && onClickDetail(event, option.value);
   };
 
   render() {
