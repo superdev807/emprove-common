@@ -17,7 +17,9 @@ describe('ProjectScopeOptionBox component', () => {
       },
       label: (
         <Fragment>
-          UPGRADE<br />FINISHES
+          UPGRADE
+          <br />
+          FINISHES
         </Fragment>
       ),
       text: 'A facelift for your space, with new hard surfaces and a repaint'
