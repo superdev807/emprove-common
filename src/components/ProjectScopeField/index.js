@@ -31,14 +31,24 @@ class ProjectScopeField extends Component {
   };
 
   render() {
-    const { meta: { error }, className, showFreeFormOption } = this.props;
+    const {
+      meta: { error },
+      className,
+      showFreeFormOption,
+      onClickDetail
+    } = this.props;
 
     return (
       <div className={cx('project-scope-field', { [className]: Boolean(className) })}>
         <Grid container spacing={24}>
           {options.map((option, index) => (
             <Grid key={index} item className="project-scope-field__option">
-              <ProjectScopeOptionBox onClick={this.handleChange(option.value)} option={option} isMobile={this.state.isMobile} />
+              <ProjectScopeOptionBox
+                onClick={this.handleChange(option.value)}
+                onClickDetail={onClickDetail}
+                option={option}
+                isMobile={this.state.isMobile}
+              />
             </Grid>
           ))}
         </Grid>

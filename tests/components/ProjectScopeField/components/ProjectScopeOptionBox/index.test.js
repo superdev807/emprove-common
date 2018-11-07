@@ -17,7 +17,9 @@ describe('ProjectScopeOptionBox component', () => {
       },
       label: (
         <Fragment>
-          UPGRADE<br />FINISHES
+          UPGRADE
+          <br />
+          FINISHES
         </Fragment>
       ),
       text: 'A facelift for your space, with new hard surfaces and a repaint'
@@ -51,13 +53,14 @@ describe('ProjectScopeOptionBox component', () => {
     ).toBe(label);
   });
 
-  test('should display a ProjectScopeBar for the option barValues', () => {
-    const projectScopeBar = component.find('ProjectScopeBar');
+  // ProjectScopeBar no longer used
+  // test('should display a ProjectScopeBar for the option barValues', () => {
+  //   const projectScopeBar = component.find('ProjectScopeBar');
 
-    expect(projectScopeBar.length).toBe(1);
-    expect(projectScopeBar.prop('refinish')).toBe(props.option.barValues.refinish);
-    expect(projectScopeBar.prop('replace')).toBe(props.option.barValues.replace);
-  });
+  //   expect(projectScopeBar.length).toBe(1);
+  //   expect(projectScopeBar.prop('refinish')).toBe(props.option.barValues.refinish);
+  //   expect(projectScopeBar.prop('replace')).toBe(props.option.barValues.replace);
+  // });
 
   test('should display the option text', () => {
     const text = 'Something something something';
@@ -70,8 +73,8 @@ describe('ProjectScopeOptionBox component', () => {
 
     expect(
       component
-        .find('.project-scope-option-box__text')
-        .at(1)
+        .find('.project-scope-option-box__text--help')
+        .at(0)
         .children()
         .text()
     ).toBe(text);

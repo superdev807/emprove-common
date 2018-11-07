@@ -15,6 +15,7 @@ class ProjectScopeOptionBox extends Component {
     highlightOnHover: PropTypes.bool,
     id: PropTypes.string,
     onClick: PropTypes.func,
+    onClickScopeDetail: PropTypes.func,
     opaque: PropTypes.bool,
     option: PropTypes.object.isRequired,
     showSelectButton: PropTypes.bool
@@ -24,6 +25,11 @@ class ProjectScopeOptionBox extends Component {
     highlightOnHover: true,
     opaque: false,
     showSelectButton: true
+  };
+
+  handleClickDetail = event => {
+    const { onClickDetail, option } = this.props;
+    onClickDetail && onClickDetail(event, option.value);
   };
 
   render() {
@@ -50,11 +56,12 @@ class ProjectScopeOptionBox extends Component {
           <Typography className="project-scope-option-box__text project-scope-option-box__text--title" variant="body2">
             {option.label}
           </Typography>
-          <ProjectScopeBar
-            className={cx('project-scope-option-box__option-bar', { 'project-scope-option-box__option-bar--mobile': isMobile })}
-            refinish={option.barValues.refinish}
-            replace={option.barValues.replace}
-          />
+          <Typography
+            className="project-scope-option-box__text project-scope-option-box__text--link"
+            variant="body2"
+            onClick={this.handleClickDetail}>
+            what's included
+          </Typography>
           <Typography className="project-scope-option-box__text project-scope-option-box__text--help" variant="body1">
             {option.text}
           </Typography>
