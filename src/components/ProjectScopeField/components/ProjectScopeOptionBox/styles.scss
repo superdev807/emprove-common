@@ -78,7 +78,7 @@
     }
 
     &--mobile {
-      padding: 5px 16px;
+      padding: 4px 16px;
       min-height: 30px;
     }
   }
@@ -88,6 +88,12 @@
 
     &--help {
       font-size: 11px;
+    }
+
+    &--link {
+      text-decoration: underline;
+      font-size: 11px;
+      padding: $spacing-unit;
     }
   }
 }
