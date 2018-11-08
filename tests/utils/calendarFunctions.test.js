@@ -91,7 +91,15 @@ describe('calendarFunctions module', () => {
       expect(url).toMatch('&st=20181221T083000Z');
     });
 
-    test('should generate a url including the `dur` query parameter with the event duration, formatted like HHMM', () => {
+    test('should generate a url including the `dur` query parameter with the event duration, formatted like HHMM, defaulting to 0100, one hour', () => {
+      expect(url).toMatch('&dur=0100');
+    });
+
+    test('should allow the `dur` query parameter in the url to be changed by the event `duration` property that is formatted like HHMM', () => {
+      url = generateYahooCalendarUrl({
+        ...event,
+        duration: '0030' // 30 min
+      });
       expect(url).toMatch('&dur=0030');
     });
 
