@@ -42,7 +42,7 @@ export const generateYahooCalendarUrl = event => {
   url += '?v=60&view=d&type=20';
   url += `&title=${formatEventText(event.title)}`;
   url += `&st=${formatEventDate(event.start)}`;
-  url += '&dur=0030';
+  url += `&dur=${event.duration || '0100'}`;
   url += `&desc=${formatEventText(event.details)}`;
   url += `&in_loc=${formatEventText(event.location)}`;
   url += '&uid=&guccounter=1';
