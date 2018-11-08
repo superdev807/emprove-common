@@ -141,6 +141,29 @@ export const getMaximumWeek = (start, end) => {
   return weeksDiff;
 };
 
+/*
+ * Get local timezone from browser
+ */
 export const getTimezone = () => {
   return momenttz.tz.guess();
 };
+
+/*
+ * Converts the ISO timezone name into shorter format. e.g. from `America/Los_Angeles` to `PST`
+ */
+export const toShortTimezone = timezone =>
+  momenttz()
+    .tz(timezone)
+    .format('z');
+
+/*
+ * Converts the date string or moment date into ISO date string in 'YYYY-MM-DD' format and specified timezone
+ */
+export const toISODateStr = (date, timezone) =>
+  date
+    ? timezone
+      ? momenttz(date)
+          .tz(timezone)
+          .format(dateFormat)
+      : moment(date).format(dateFormat)
+    : date;

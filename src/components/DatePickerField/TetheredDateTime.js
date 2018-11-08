@@ -3,6 +3,7 @@
 import React from 'react';
 import cx from 'classnames';
 import CalendarContainer from 'react-datetime/src/CalendarContainer';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import DateTime from 'react-datetime';
 import Fade from '@material-ui/core/Fade';
 import Paper from '@material-ui/core/Paper';
@@ -15,6 +16,13 @@ export default class TetheredDateTime extends DateTime {
     this.setState({ anchorEl: event.target });
     if (!this.state.open) {
       this.openCalendar(event);
+    }
+  };
+
+  handleClickAway = e => {
+    const { anchorEl } = this.state;
+    if (anchorEl !== e.target) {
+      this.handleClickOutside();
     }
   };
 
@@ -46,9 +54,11 @@ export default class TetheredDateTime extends DateTime {
         <Popper open={open} anchorEl={anchorEl} placement="bottom-start" transition className="rdtPopper">
           {({ TransitionProps }) => (
             <Fade {...TransitionProps} timeout={50}>
-              <Paper className="rdtPicker" elevation={3}>
-                <CalendarContainer view={currentView} viewProps={this.getComponentProps()} onClickOutside={this.handleClickOutside} />
-              </Paper>
+              <ClickAwayListener onClickAway={this.handleClickAway}>
+                <Paper className="rdtPicker" elevation={3}>
+                  <CalendarContainer view={currentView} viewProps={this.getComponentProps()} />
+                </Paper>
+              </ClickAwayListener>
             </Fade>
           )}
         </Popper>

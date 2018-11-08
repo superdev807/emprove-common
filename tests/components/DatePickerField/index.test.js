@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import { shallow, mount } from 'enzyme';
 
 import { DatePickerField } from '../../../src/components/DatePickerField';
@@ -18,6 +18,7 @@ describe('DatePickerField', () => {
       meta: {},
       label: '',
       classes: {},
+      timezone: 'America/Los_Angeles',
       disableDatePast: null
     };
     component = shallow(<DatePickerField {...props} />);
@@ -29,13 +30,23 @@ describe('DatePickerField', () => {
   });
 
   it('should display default value in MM/DD/YYYY format', () => {
-    expect(component.find(DateTime).prop('defaultValue')).toBe('08/22/2018');
+    expect(
+      component
+        .find(DateTime)
+        .prop('value')
+        .isSame(moment.tz('2018-08-22', 'YYYY-MM-DD', 'America/Los_Angeles'))
+    ).toBe(true);
   });
 
   it('should have viewDate set to input value provided', () => {
     component.setProps({ input: { value: '2018-08-22' } });
 
-    expect(component.find(DateTime).prop('viewDate')).toBe('08/22/2018');
+    expect(
+      component
+        .find(DateTime)
+        .prop('viewDate')
+        .isSame(moment.tz('2018-08-22', 'YYYY-MM-DD', 'America/Los_Angeles'))
+    ).toBe(true);
   });
 
   it('should disable dates before disableDatePast', () => {
