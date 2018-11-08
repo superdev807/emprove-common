@@ -159,11 +159,14 @@ export const toShortTimezone = timezone =>
 /*
  * Converts the date string or moment date into ISO date string in 'YYYY-MM-DD' format and specified timezone
  */
-export const toISODateStr = (date, timezone) =>
-  date
-    ? timezone
+export const toISODateStr = (date, timezone) => {
+  if (date) {
+    return timezone
       ? momenttz(date)
           .tz(timezone)
           .format(dateFormat)
-      : moment(date).format(dateFormat)
-    : date;
+      : moment(date).format(dateFormat);
+  } else {
+    return date;
+  }
+};

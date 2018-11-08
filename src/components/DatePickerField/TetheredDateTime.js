@@ -19,9 +19,9 @@ export default class TetheredDateTime extends DateTime {
     }
   };
 
-  handleClickAway = e => {
+  handleClickAway = event => {
     const { anchorEl } = this.state;
-    if (anchorEl !== e.target) {
+    if (anchorEl !== event.target) {
       this.handleClickOutside();
     }
   };
