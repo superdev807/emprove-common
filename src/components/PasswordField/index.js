@@ -76,6 +76,7 @@ export class PasswordField extends Component {
       className,
       classes,
       disabled,
+      endAdornment,
       fullWidth,
       helperText,
       input,
@@ -123,21 +124,14 @@ export class PasswordField extends Component {
                 'text-right': Boolean(rightAligned)
               })
             }}
+            endAdornment={endAdornment}
             inputRef={inputRef}
             onFocus={this.handleFocus}
             onBlur={this.handleBlur}
           />
           {!hideErrorText && touched && error && <FormHelperText>{error}</FormHelperText>}
         </FormControl>
-        <Popper
-          open={meterOpen &&
-            !(hasMinLengthChars &&
-              hasLetters &&
-              hasNumbers &&
-              hasSpecialChars)
-          }
-          transition disablePortal
-        >
+        <Popper open={meterOpen && !(hasMinLengthChars && hasLetters && hasNumbers && hasSpecialChars)} transition disablePortal>
           {({ TransitionProps, placement }) => (
             <Fade {...TransitionProps}>
               <Paper aria-hidden={!meterOpen} elevation={5} className={classes.paper}>
