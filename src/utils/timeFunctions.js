@@ -144,7 +144,7 @@ export const getMaximumWeek = (start, end) => {
 /*
  * Get local timezone from browser
  */
-export const getTimezone = () => {
+export const getLocalTimezone = () => {
   return momenttz.tz.guess();
 };
 
