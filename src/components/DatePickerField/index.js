@@ -9,6 +9,7 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import MaskedInput from 'react-text-mask';
 import PropTypes from 'prop-types';
+import TextField from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core/styles';
 
 import DateTime from './TetheredDateTime';
@@ -56,10 +57,23 @@ class DatePickerField extends Component {
   };
 
   renderInput = props => {
-    const { datePickerInputText, input, inputRef, label, placeholder } = this.props;
+    const { classes, datePickerInputText, helperText, input, inputRef, label, placeholder, variant } = this.props;
     const inputProps = { ...props, className: datePickerInputText ? datePickerInputText : 'datePickerInputText' };
 
-    return (
+    return variant === 'outlined' ? (
+      <div>
+        <TextField
+          {...inputProps}
+          inputRef={this.handleInputRef}
+          type="text"
+          placeholder={label && !input.value ? undefined : placeholder}
+          label={helperText}
+          variant="outlined"
+          InputProps={{ inputComponent: DateMask, classes: { input: classes.input } }}
+          InputLabelProps={{ classes: { outlined: classes.inputLabel } }}
+        />
+      </div>
+    ) : (
       <div>
         <Input
           {...inputProps}
@@ -98,7 +112,8 @@ class DatePickerField extends Component {
       hideErrorText,
       disableDatePast,
       viewDate,
-      alignment // left or right
+      alignment, // left or right
+      variant
     } = this.props;
 
     const inputDate =
@@ -109,7 +124,7 @@ class DatePickerField extends Component {
     return (
       <FormControl className={className} error={touched && !!error} fullWidth={fullWidth}>
         {label && <InputLabel shrink={!!input.value || undefined}>{label}</InputLabel>}
-        {helperText && <FormHelperText>{helperText}</FormHelperText>}
+        {helperText && variant !== 'outlined' && <FormHelperText>{helperText}</FormHelperText>}
         <div className={classes.inputWrapper}>
           <DateTime
             renderInput={this.renderInput}
@@ -122,7 +137,11 @@ class DatePickerField extends Component {
             closeOnSelect
             isValidDate={disableDatePast && this.disablePast} //if disableDatePast is given, dates before that date become unavailable
           />
-          <IconCalendar className={classes.icon} />
+          {variant === 'outlined' ? (
+            <IconCalendar className={classes.icon} />
+          ) : (
+            <IconCalendar className={cx(classes.icon, classes.originIcon)} />
+          )}
         </div>
         {!hideErrorText && touched && error && <FormHelperText className={errorClassName}>{error}</FormHelperText>}
       </FormControl>
