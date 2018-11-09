@@ -9,6 +9,7 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import MaskedInput from 'react-text-mask';
 import PropTypes from 'prop-types';
+import TextField from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core/styles';
 
 import DateTime from './TetheredDateTime';
@@ -56,17 +57,20 @@ class DatePickerField extends Component {
   };
 
   renderInput = props => {
-    const { datePickerInputText, input, inputRef, label, placeholder } = this.props;
+    const { classes, datePickerInputText, helperText, input, inputRef, label, placeholder } = this.props;
     const inputProps = { ...props, className: datePickerInputText ? datePickerInputText : 'datePickerInputText' };
 
     return (
       <div>
-        <Input
+        <TextField
           {...inputProps}
           inputRef={this.handleInputRef}
           type="text"
           placeholder={label && !input.value ? undefined : placeholder}
-          inputComponent={DateMask}
+          label={helperText}
+          variant="outlined"
+          InputProps={{ inputComponent: DateMask, classes: { input: classes.input } }}
+          InputLabelProps={{ classes: { outlined: classes.inputLabel } }}
         />
       </div>
     );
@@ -109,7 +113,6 @@ class DatePickerField extends Component {
     return (
       <FormControl className={className} error={touched && !!error} fullWidth={fullWidth}>
         {label && <InputLabel shrink={!!input.value || undefined}>{label}</InputLabel>}
-        {helperText && <FormHelperText>{helperText}</FormHelperText>}
         <div className={classes.inputWrapper}>
           <DateTime
             renderInput={this.renderInput}

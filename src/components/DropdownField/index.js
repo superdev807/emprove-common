@@ -8,7 +8,7 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import PropTypes from 'prop-types';
-import Select from '@material-ui/core/Select';
+import TextField from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core/styles';
 
 import styles from './styles';
@@ -32,14 +32,19 @@ const DropdownField = ({
 }) => (
   <FormControl className={className} error={touched && !!error} fullWidth={fullWidth}>
     {helperText && <FormHelperText className={helperTextClassName}>{helperText}</FormHelperText>}
-    {label && <InputLabel>{label}</InputLabel>}
-    <Select
+    <TextField
+      select
+      label={label}
       onChange={input.onBlur}
       value={input.value}
-      className={cx(classes.select, inputClassName)}
-      displayEmpty={!!placeholder}
-      disableUnderline={disableUnderline}
-      classes={overrideClasses}>
+      className={inputClassName}
+      classes={overrideClasses}
+      variant="outlined"
+      SelectProps={{
+        classes: {
+          selectMenu: classes.select
+        }
+      }}>
       {placeholder && <MenuItem value="">{placeholder}</MenuItem>}
       {options &&
         options.map((option, index) => {
@@ -53,7 +58,7 @@ const DropdownField = ({
             </MenuItem>
           );
         })}
-    </Select>
+    </TextField>
     {touched && error && <FormHelperText>{error}</FormHelperText>}
   </FormControl>
 );
