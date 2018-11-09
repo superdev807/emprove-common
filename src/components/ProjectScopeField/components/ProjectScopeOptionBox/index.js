@@ -56,12 +56,13 @@ class ProjectScopeOptionBox extends Component {
           <Typography className="project-scope-option-box__text project-scope-option-box__text--title" variant="body2">
             {option.label}
           </Typography>
-          <Typography
+          {/* hiding until v1.7.5 */}
+          {/* <Typography
             className="project-scope-option-box__text project-scope-option-box__text--link"
             variant="body2"
             onClick={this.handleClickDetail}>
             what's included
-          </Typography>
+          </Typography> */}
           <Typography className="project-scope-option-box__text project-scope-option-box__text--help" variant="body1">
             {option.text}
           </Typography>
