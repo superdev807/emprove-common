@@ -57,10 +57,10 @@ class DatePickerField extends Component {
   };
 
   renderInput = props => {
-    const { classes, datePickerInputText, helperText, input, inputRef, label, placeholder } = this.props;
+    const { classes, datePickerInputText, helperText, input, inputRef, label, placeholder, variant } = this.props;
     const inputProps = { ...props, className: datePickerInputText ? datePickerInputText : 'datePickerInputText' };
 
-    return (
+    return variant === 'outlined' ? (
       <div>
         <TextField
           {...inputProps}
@@ -71,6 +71,16 @@ class DatePickerField extends Component {
           variant="outlined"
           InputProps={{ inputComponent: DateMask, classes: { input: classes.input } }}
           InputLabelProps={{ classes: { outlined: classes.inputLabel } }}
+        />
+      </div>
+    ) : (
+      <div>
+        <Input
+          {...inputProps}
+          inputRef={this.handleInputRef}
+          type="text"
+          placeholder={label && !input.value ? undefined : placeholder}
+          inputComponent={DateMask}
         />
       </div>
     );
@@ -102,7 +112,8 @@ class DatePickerField extends Component {
       hideErrorText,
       disableDatePast,
       viewDate,
-      alignment // left or right
+      alignment, // left or right
+      variant
     } = this.props;
 
     const inputDate =
@@ -113,6 +124,7 @@ class DatePickerField extends Component {
     return (
       <FormControl className={className} error={touched && !!error} fullWidth={fullWidth}>
         {label && <InputLabel shrink={!!input.value || undefined}>{label}</InputLabel>}
+        {helperText && variant !== 'outlined' && <FormHelperText>{helperText}</FormHelperText>}
         <div className={classes.inputWrapper}>
           <DateTime
             renderInput={this.renderInput}
@@ -125,7 +137,11 @@ class DatePickerField extends Component {
             closeOnSelect
             isValidDate={disableDatePast && this.disablePast} //if disableDatePast is given, dates before that date become unavailable
           />
-          <IconCalendar className={classes.icon} />
+          {variant === 'outlined' ? (
+            <IconCalendar className={classes.icon} />
+          ) : (
+            <IconCalendar className={cx(classes.icon, classes.originIcon)} />
+          )}
         </div>
         {!hideErrorText && touched && error && <FormHelperText className={errorClassName}>{error}</FormHelperText>}
       </FormControl>

@@ -8,6 +8,7 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import PropTypes from 'prop-types';
+import Select from '@material-ui/core/Select';
 import TextField from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -28,40 +29,70 @@ const DropdownField = ({
   meta: { touched, error },
   options,
   overrideClasses,
-  placeholder
-}) => (
-  <FormControl className={className} error={touched && !!error} fullWidth={fullWidth}>
-    {helperText && <FormHelperText className={helperTextClassName}>{helperText}</FormHelperText>}
-    <TextField
-      select
-      label={label}
-      onChange={input.onBlur}
-      value={input.value}
-      className={inputClassName}
-      classes={overrideClasses}
-      variant="outlined"
-      SelectProps={{
-        classes: {
-          selectMenu: classes.select
-        }
-      }}>
-      {placeholder && <MenuItem value="">{placeholder}</MenuItem>}
-      {options &&
-        options.map((option, index) => {
-          return option.value ? (
-            <MenuItem key={option.value} className={menuItemClassName} value={option.value}>
-              {option.label}
-            </MenuItem>
-          ) : (
-            <MenuItem key={index} className={menuItemClassName} value={option}>
-              {option}
-            </MenuItem>
-          );
-        })}
-    </TextField>
-    {touched && error && <FormHelperText>{error}</FormHelperText>}
-  </FormControl>
-);
+  placeholder,
+  variant
+}) => {
+  return variant === 'outlined' ? (
+    <FormControl className={className} error={touched && !!error} fullWidth={fullWidth}>
+      {helperText && <FormHelperText className={helperTextClassName}>{helperText}</FormHelperText>}
+      <TextField
+        select
+        label={label}
+        onChange={input.onBlur}
+        value={input.value}
+        className={inputClassName}
+        classes={overrideClasses}
+        variant="outlined"
+        SelectProps={{
+          classes: {
+            selectMenu: classes.select
+          }
+        }}>
+        {placeholder && <MenuItem value="">{placeholder}</MenuItem>}
+        {options &&
+          options.map((option, index) => {
+            return option.value ? (
+              <MenuItem key={option.value} className={menuItemClassName} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ) : (
+              <MenuItem key={index} className={menuItemClassName} value={option}>
+                {option}
+              </MenuItem>
+            );
+          })}
+      </TextField>
+      {touched && error && <FormHelperText>{error}</FormHelperText>}
+    </FormControl>
+  ) : (
+    <FormControl className={className} error={touched && !!error} fullWidth={fullWidth}>
+      {helperText && <FormHelperText className={helperTextClassName}>{helperText}</FormHelperText>}
+      {label && <InputLabel>{label}</InputLabel>}
+      <Select
+        onChange={input.onBlur}
+        value={input.value}
+        className={cx(classes.originSelect, inputClassName)}
+        displayEmpty={!!placeholder}
+        disableUnderline={disableUnderline}
+        classes={overrideClasses}>
+        {placeholder && <MenuItem value="">{placeholder}</MenuItem>}
+        {options &&
+          options.map((option, index) => {
+            return option.value ? (
+              <MenuItem key={option.value} className={menuItemClassName} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ) : (
+              <MenuItem key={index} className={menuItemClassName} value={option}>
+                {option}
+              </MenuItem>
+            );
+          })}
+      </Select>
+      {touched && error && <FormHelperText>{error}</FormHelperText>}
+    </FormControl>
+  );
+};
 
 DropdownField.propTypes = {
   classes: PropTypes.object.isRequired,

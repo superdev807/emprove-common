@@ -18,5 +18,9 @@ export default theme => ({
   },
   inputLabel: {
     transform: 'translate(14px, 14px) scale(1)'
+  },
+  originIcon: {
+    right: 0,
+    top: 3
   }
 });
