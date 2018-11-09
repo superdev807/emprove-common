@@ -24,25 +24,27 @@ describe('ProjectScopeField', () => {
     expect(wrapper.find('.project-scope-field__option').length).toBe(4);
   });
 
-  it('should render free form option if showFreeFormOption prop is set to true', () => {
-    wrapper.setProps({ showFreeFormOption: false });
-    expect(wrapper.find('.projet-scope-field__free-form').exists()).toBe(false);
-    wrapper.setProps({ showFreeFormOption: true });
-    expect(wrapper.find('.projet-scope-field__free-form').exists()).toBe(true);
-  });
+  // hiding the following tests because we hid these in v1.7
 
-  it('should render three chart options', () => {
-    expect(wrapper.find('.project-scope-field__chart').length).toBe(3);
-  });
+  // it('should render free form option if showFreeFormOption prop is set to true', () => {
+  //   wrapper.setProps({ showFreeFormOption: false });
+  //   expect(wrapper.find('.projet-scope-field__free-form').exists()).toBe(false);
+  //   wrapper.setProps({ showFreeFormOption: true });
+  //   expect(wrapper.find('.projet-scope-field__free-form').exists()).toBe(true);
+  // });
 
-  it('should display label for chart options', () => {
-    expect(
-      wrapper
-        .find('.project-scope-field__charts')
-        .childAt(0)
-        .find('.project-scope-field__text--help')
-        .children()
-        .text()
-    ).toBe('Refinish'); // make sure this is te label for the first chartOptions
-  });
+  // it('should render three chart options', () => {
+  //   expect(wrapper.find('.project-scope-field__chart').length).toBe(3);
+  // });
+
+  // it('should display label for chart options', () => {
+  //   expect(
+  //     wrapper
+  //       .find('.project-scope-field__charts')
+  //       .childAt(0)
+  //       .find('.project-scope-field__text--help')
+  //       .children()
+  //       .text()
+  //   ).toBe('Refinish'); // make sure this is te label for the first chartOptions
+  // });
 });

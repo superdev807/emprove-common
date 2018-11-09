@@ -122,7 +122,8 @@ describe('calendarFunctions module', () => {
     test('should generate a multiline string with text for a iCalendar .ics file', () => {
       const event = {
         title: 'Site Visit (Builders Co.)',
-        details: 'We will be making a visit to evaluate your project.\nOur contact is 123-456-7898\nLooking forward to assessing your project!',
+        details:
+          'We will be making a visit to evaluate your project.\nOur contact is 123-456-7898\nLooking forward to assessing your project!',
         location: '123 Some Where, Some City, ST 12345',
         start: '2018-12-21T08:30:00.000Z',
         end: '2018-12-21T09:00:00.000Z'
@@ -142,7 +143,9 @@ describe('calendarFunctions module', () => {
       expect(text[9]).toBe(`LOCATION:${event.location}`);
       // newline characters \n in description should appear literally (\\n) so
       // multiline text works when importing into calendar software:
-      expect(text[10]).toBe('DESCRIPTION:We will be making a visit to evaluate your project.\\nOur contact is 123-456-7898\\nLooking forward to assessing your project!');
+      expect(text[10]).toBe(
+        'DESCRIPTION:We will be making a visit to evaluate your project.\\nOur contact is 123-456-7898\\nLooking forward to assessing your project!'
+      );
       expect(text[11]).toBe('END:VEVENT');
       expect(text[12]).toBe('END:VCALENDAR');
       expect(text[13]).toBe('');

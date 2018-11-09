@@ -31,12 +31,7 @@ class ProjectScopeField extends Component {
   };
 
   render() {
-    const {
-      meta: { error },
-      className,
-      showFreeFormOption,
-      onClickDetail
-    } = this.props;
+    const { meta: { error }, className, showFreeFormOption, onClickDetail } = this.props;
 
     return (
       <div className={cx('project-scope-field', { [className]: Boolean(className) })}>
@@ -52,7 +47,9 @@ class ProjectScopeField extends Component {
             </Grid>
           ))}
         </Grid>
-        {showFreeFormOption && (
+
+        {/* hiding for v1.7 */}
+        {/* {showFreeFormOption && (
           <div className="projet-scope-field__free-form">
             <Typography className="project-scope-field__free-form-text" variant="body1" onClick={this.handleChange(6)}>
               Or, describe a simple project yourself
@@ -68,7 +65,7 @@ class ProjectScopeField extends Component {
               </Typography>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     );
   }
