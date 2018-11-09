@@ -5,6 +5,9 @@ import fp from 'lodash/fp';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+import { IntlProvider } from 'react-intl';
+
+import intlConfig from '../../config/intlConfig';
 
 const addTimeZone = (intlConfig, timeZone) => {
   return {
@@ -23,24 +26,17 @@ const addTimeZone = (intlConfig, timeZone) => {
   };
 };
 
-const withTzConfig = timezoneSelector => WrappedComponent => {
-  class IntlProviderWrapper extends Component {
-    static propTypes = {
-      intlConfig: PropTypes.object,
-      timeZone: PropTypes.string
-    };
+const IntlProviderWrapper = ({ timeZone, ...props }) => {
+  return <IntlProvider {...props} key={timeZone} {...addTimeZone(intlConfig, timeZone)} />;
+};
 
-    render() {
-      const { intlConfig, timeZone, ...props } = this.props;
-      return <WrappedComponent {...props} key={timeZone} {...addTimeZone(intlConfig, timeZone)} />;
-    }
-  }
-
+const IntlProviderTz = ({ timezoneSelector, children }) => {
   const selector = createStructuredSelector({
     timeZone: timezoneSelector
   });
 
-  return connect(selector)(IntlProviderWrapper);
+  const IntlProviderConnected = connect(selector)(IntlProviderWrapper);
+  return <IntlProviderConnected>{children}</IntlProviderConnected>;
 };
 
-export default withTzConfig;
+export default IntlProviderTz;
