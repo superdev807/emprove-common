@@ -50,29 +50,38 @@ describe('timeline functions', () => {
   });
 
   describe('strToDate', () => {
-    // need different expected value for different test timezones.
-    const utcOffsetHours = -1 * utcOffset / 60;
-    const hour = utcOffsetHours < 10 ? `0${utcOffsetHours}` : `${utcOffsetHours}`;
-    const expected = `2018-07-05T${hour}:00:00.000Z`;
-
     it('should drop the time and return moment object with the date and 0 time', () => {
-      expect(strToDate(utcDateTime).toJSON()).toBe(expected);
+      // Beware! Two different dates might not be at the same time zone.
+      // e.g. One date might be at PDT for a couple of months, then later another
+      // date might be at PST, even if you are in the same place!
+      // So you cannot assume the same timezone for all dates.
+      const dateTime = '2018-07-05 18:00:00';
+      const utcOffset = new Date('2018-07-05').getTimezoneOffset();
+      // need different expected value for different test timezones.
+      const utcOffsetHours = utcOffset / 60;
+      const hour = utcOffsetHours < 10 ? `0${utcOffsetHours}` : `${utcOffsetHours}`;
+      const expected = `2018-07-05T${hour}:00:00.000Z`;
+
+      expect(strToDate(dateTime).toJSON()).toBe(expected);
     });
   });
 
   //The next two tests depend on the business days defined in rfp_timeline
   describe('calculateProjectTimeline', () => {
     it('should return 5 project timeline dates given a rfpSentDueDate', () => {
-      const timeLine = calculateProjectTimeline(utcDateTime);
-
       // need different expected value for different test timezones.
-      const utcOffsetHours = -1 * utcOffset / 60;
+      const utcDateTime = '2018-07-05 18:00:00';
+      const utcOffset = new Date('2018-07-05').getTimezoneOffset();
+      const utcOffsetHours = utcOffset / 60;
       const rawHour = utcOffsetHours >= 6 ? utcOffsetHours - 6 : 24 - (6 - utcOffsetHours);
       const hour = rawHour < 10 ? `0${rawHour}` : `${rawHour}`;
+
       const expectedSubmitProposalsDueDate = utcOffsetHours > 6 ? `2018-07-17T${hour}:00:00.000Z` : `2018-07-16T${hour}:00:00.000Z`;
       const expectedSiteVisitDueDate = utcOffsetHours > 6 ? `2018-07-27T${hour}:00:00.000Z` : `2018-07-26T${hour}:00:00.000Z`;
       const expectedFinalBidDueDate = utcOffsetHours > 6 ? `2018-08-01T${hour}:00:00.000Z` : `2018-07-31T${hour}:00:00.000Z`;
       const expectedAwardDate = utcOffsetHours > 6 ? `2018-08-04T${hour}:00:00.000Z` : `2018-08-03T${hour}:00:00.000Z`;
+
+      const timeLine = calculateProjectTimeline(utcDateTime);
 
       expect(timeLine.rfpSentDueDate).toBe('2018-07-05 18:00:00');
       expect(timeLine.submitProposalsDueDate.toJSON()).toBe(expectedSubmitProposalsDueDate);
