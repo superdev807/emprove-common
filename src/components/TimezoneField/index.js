@@ -19,10 +19,13 @@ import { withStyles } from '@material-ui/core/styles';
 
 import styles from './styles';
 
-const suggestions = moment.tz.names().map(timezone => ({
-  value: timezone,
-  label: timezone //.replace('/', ' - ').replace('_', ' ')
-}));
+const suggestions = moment.tz
+  .names()
+  .filter(timezone => /^(America|Asia|Europe|Australia|Africa|Pacific|Atlantic|Indian)/.test(timezone))
+  .map(timezone => ({
+    value: timezone,
+    label: timezone //.replace('/', ' - ').replace('_', ' ')
+  }));
 
 const renderInputComponent = inputProps => {
   const { classes, inputRef = () => {}, ref, ...other } = inputProps;

@@ -11,16 +11,24 @@ import {
   awardDateFromRfpSentDueDate,
   convertDateFormat,
   getMinimumWeek,
-  getMaximumWeek
+  getMaximumWeek,
+  toShortTimezone,
+  toISODateStr
 } from '~/utils/timeFunctions';
 
 describe('timeline functions', () => {
+  jest.mock('moment', () => () => ({ format: () => '2018–11–09T12:34:56+00:00' }));
+
   const utcDateTime = '2018-07-05 18:00:00';
   const utcDateTimeWithZeroTime = '2018-07-05 00:00:00';
   const onlyDate = '07/02/2018';
   const momentTime = moment('2018-06-12T18:30:00', 'YYYY-MM-DDTHH:mm:ss');
   const utcOffset = moment().utcOffset();
   const now = moment();
+
+  afterAll(() => {
+    jest.resetAllMocks();
+  });
 
   describe('formatUtcDate', () => {
     it('should convert utc date with any time to MM/DD/YYYY', () => {
@@ -101,6 +109,19 @@ describe('timeline functions', () => {
     it('should convert MM/DD/YYYY format to YYYY-MM-DD format', () => {
       expect(convertDateFormat(onlyDate)).toBe('2018-07-02');
       expect(convertDateFormat('09/22/19')).toBe(null);
+    });
+  });
+
+  describe('toShortTimezone', () => {
+    it('should return shorter form of timezone name', () => {
+      expect(toShortTimezone('America/Los_Angeles')).toBe('PST');
+    });
+  });
+
+  describe('toISODateStr', () => {
+    it('should return a date in `YYYY-MM-DD` format and specified timezone', () => {
+      expect(toISODateStr('2018-07-05 00:00:00.000Z', 'America/Los_Angeles')).toBe('2018-07-04');
+      expect(toISODateStr('2018-07-05 00:00:00.000Z', 'Asia/Tokyo')).toBe('2018-07-05');
     });
   });
 });

@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import cx from 'classnames';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
@@ -28,11 +28,18 @@ const DateMask = ({ inputRef, ...otherProps }) => {
   );
 };
 
+const convertTimezone = (date, timezone) =>
+  // date parameter in onChange of DateTime is always UTC time regardless of timezone.
+  // If timezone is specified, we need to make the date whose time is all set to zero in the specified timezone.
+  // (e.g. from YYYY-MM-DD 00:00:00 UTC to YYYY-MM-DD 00:00:00 PST, if timezone is PST)
+  moment.tz(moment(date).format('YYYY-MM-DD'), 'YYYY-MM-DD', timezone);
+
 class DatePickerField extends Component {
   static propTypes = {
     input: PropTypes.object,
     inputRef: PropTypes.func,
     className: PropTypes.string,
+    timezone: PropTypes.string,
     fullWidth: PropTypes.bool,
     hideErrorText: PropTypes.bool,
     label: PropTypes.string,
@@ -42,13 +49,13 @@ class DatePickerField extends Component {
   };
 
   handleChange = date => {
-    const { input } = this.props;
-    input.onChange && input.onChange(date);
+    const { input, timezone } = this.props;
+    input.onChange(timezone ? convertTimezone(date, timezone) : date);
   };
 
   handleBlur = date => {
-    const { input } = this.props;
-    input.onBlur && input.onBlur(date);
+    const { input, timezone } = this.props;
+    input.onBlur(timezone ? convertTimezone(date, timezone) : date);
   };
 
   handleInputRef = ref => {
@@ -104,6 +111,7 @@ class DatePickerField extends Component {
       className,
       datePickerClassName,
       timeFormat,
+      timezone,
       label,
       fullWidth,
       meta: { touched, error },
@@ -116,10 +124,7 @@ class DatePickerField extends Component {
       variant
     } = this.props;
 
-    const inputDate =
-      input.value !== 'Invalid date' && input.value !== ''
-        ? moment.isMoment(input.value) ? input.value.format('MM/DD/YYYY') : moment(input.value, 'YYYY-MM-DD').format('MM/DD/YYYY')
-        : input.value;
+    const inputDate = input.value !== 'Invalid date' && input.value !== '' ? moment.tz(input.value, timezone) : input.value;
 
     return (
       <FormControl className={className} error={touched && !!error} fullWidth={fullWidth}>
@@ -129,10 +134,12 @@ class DatePickerField extends Component {
           <DateTime
             renderInput={this.renderInput}
             className={datePickerClassName}
-            defaultValue={inputDate}
-            viewDate={viewDate && viewDate !== 'Invalid date' ? moment(viewDate, 'YYYY-MM-DD') : inputDate !== '' ? inputDate : new Date()} // determines the calendar month to display
+            value={inputDate}
+            viewDate={viewDate || inputDate} // determines the calendar month to display
             onChange={this.handleChange}
             onBlur={this.handleBlur}
+            dateFormat="MM/DD/YYYY"
+            displayTimeZone={timezone}
             timeFormat={timeFormat ? timeFormat : false}
             closeOnSelect
             isValidDate={disableDatePast && this.disablePast} //if disableDatePast is given, dates before that date become unavailable
