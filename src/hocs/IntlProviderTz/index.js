@@ -9,25 +9,8 @@ import { IntlProvider } from 'react-intl';
 
 import intlConfig from '../../config/intlConfig';
 
-const addTimeZone = (intlConfig, timeZone) => {
-  return {
-    ...intlConfig,
-    formats: {
-      ...intlConfig.formats,
-      date: fp.compose(
-        fp.mapValues(item => ({
-          ...item,
-          timeZone
-        })),
-        fp.defaultTo({}),
-        fp.get('formats.date')
-      )(intlConfig)
-    }
-  };
-};
-
 const IntlProviderWrapper = ({ timeZone, ...props }) => {
-  return <IntlProvider {...props} key={timeZone} {...addTimeZone(intlConfig, timeZone)} />;
+  return <IntlProvider {...props} key={timeZone} timeZone={timeZone} {...intlConfig} />;
 };
 
 const IntlProviderTz = ({ timezoneSelector, children }) => {
