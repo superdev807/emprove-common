@@ -20,6 +20,10 @@ export default {
         year: 'numeric',
         timeZoneName: 'short'
       },
+      time: {
+        hour: '2-digit',
+        minute: '2-digit'
+      },
       timeTz: {
         hour: '2-digit',
         minute: '2-digit',
