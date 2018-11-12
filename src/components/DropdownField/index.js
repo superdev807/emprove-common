@@ -32,6 +32,7 @@ const DropdownField = ({
   options,
   overrideClasses,
   placeholder,
+  selectOverride,
   variant
 }) => {
   return variant === 'outlined' ? (
@@ -47,6 +48,7 @@ const DropdownField = ({
         variant="outlined"
         SelectProps={{
           classes: {
+            ...selectOverride,
             selectMenu: classes.select
           }
         }}>
@@ -112,6 +114,7 @@ DropdownField.propTypes = {
   options: PropTypes.array.isRequired,
   overrideClasses: PropTypes.object,
   placeholder: PropTypes.string,
+  selectOverride: PropTypes.object,
   variant: PropTypes.string
 };
 
