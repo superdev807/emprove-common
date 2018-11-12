@@ -20,15 +20,6 @@ export default {
         year: 'numeric',
         timeZoneName: 'short'
       },
-      time: {
-        hour: '2-digit',
-        minute: '2-digit'
-      },
-      timeTz: {
-        hour: '2-digit',
-        minute: '2-digit',
-        timeZoneName: 'short'
-      },
       monthAndYear: {
         month: 'long',
         year: 'numeric'
@@ -75,6 +66,17 @@ export default {
       },
       shortWeekday: {
         weekday: 'short'
+      }
+    },
+    time: {
+      hourMinute: {
+        hour: '2-digit',
+        minute: '2-digit'
+      },
+      hourMinuteTz: {
+        hour: '2-digit',
+        minute: '2-digit',
+        timeZoneName: 'short'
       }
     },
     number: {
