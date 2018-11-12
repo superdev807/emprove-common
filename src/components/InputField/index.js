@@ -7,7 +7,10 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import get from 'lodash/get';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
 import PropTypes from 'prop-types';
+import ReactDOM from 'react-dom';
+
 import { withStyles } from '@material-ui/core/styles';
 
 import styles from './styles';
@@ -58,7 +61,9 @@ export class InputField extends Component {
       fullWidth,
       helperText,
       input,
+      inputClasses,
       inputClassName,
+      inputLabelProps,
       inputProps,
       label,
       max,
@@ -72,15 +77,29 @@ export class InputField extends Component {
       rowsMax,
       startAdornment,
       endAdornment,
+      variant,
       meta: { touched, error }
     } = this.props;
 
+    const outlined = variant === 'outlined';
+    const InputComponent = outlined ? OutlinedInput : Input;
+
     return (
-      <FormControl className={className} error={touched && !!error} fullWidth={fullWidth}>
-        {label && <InputLabel>{label}</InputLabel>}
+      <FormControl className={className} error={touched && !!error} fullWidth={fullWidth} variant={variant}>
+        {label && (
+          <InputLabel
+            // classeName={inputLabelClassName}
+            ref={ref => {
+              this.labelRef = ReactDOM.findDOMNode(ref);
+            }}
+            {...inputLabelProps}>
+            {label}
+          </InputLabel>
+        )}
         {helperText && <FormHelperText className={classes.formHelperText}>{helperText}</FormHelperText>}
-        <Input
+        <InputComponent
           {...input}
+          classes={inputClasses}
           type={type}
           placeholder={placeholder}
           multiline={multiline}
@@ -97,6 +116,7 @@ export class InputField extends Component {
               'text-right': Boolean(rightAligned)
             })
           }}
+          labelWidth={outlined && this.labelRef ? this.labelRef.offsetWidth : 0}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
           startAdornment={startAdornment}
