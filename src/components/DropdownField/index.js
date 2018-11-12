@@ -1,12 +1,14 @@
 'use strict';
 
-import React from 'react';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import cx from 'classnames';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
 import PropTypes from 'prop-types';
 import Select from '@material-ui/core/Select';
 import TextField from '@material-ui/core/TextField';
@@ -30,6 +32,7 @@ const DropdownField = ({
   options,
   overrideClasses,
   placeholder,
+  selectOverride,
   variant
 }) => {
   return variant === 'outlined' ? (
@@ -45,6 +48,7 @@ const DropdownField = ({
         variant="outlined"
         SelectProps={{
           classes: {
+            ...selectOverride,
             selectMenu: classes.select
           }
         }}>
@@ -109,7 +113,9 @@ DropdownField.propTypes = {
   meta: PropTypes.object.isRequired,
   options: PropTypes.array.isRequired,
   overrideClasses: PropTypes.object,
-  placeholder: PropTypes.string
+  placeholder: PropTypes.string,
+  selectOverride: PropTypes.object,
+  variant: PropTypes.string
 };
 
 export { DropdownField };

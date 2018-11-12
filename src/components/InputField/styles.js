@@ -2,7 +2,7 @@
 
 export default theme => ({
   input: {
-    color: theme.palette.text.primary,
+    color: theme.palette.primary.main,
     '&:before': {
       borderBottom: `1px solid ${theme.palette.bottomLine}`
     }
@@ -12,5 +12,8 @@ export default theme => ({
   },
   formHelperText: {
     whiteSpace: 'nowrap'
+  },
+  testInput: {
+    padding: '12px 14px'
   }
 });

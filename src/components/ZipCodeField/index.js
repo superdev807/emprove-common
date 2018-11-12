@@ -2,10 +2,12 @@
 
 import React, { Component } from 'react';
 import cx from 'classnames';
+import ReactDOM from 'react-dom';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
 import MaskedInput from 'react-text-mask';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -25,6 +27,7 @@ export class ZipCodeField extends Component {
       helperText,
       input,
       inputClassName,
+      inputLabelProps,
       label,
       labelClassName,
       meta: { touched, error },
@@ -32,20 +35,34 @@ export class ZipCodeField extends Component {
       type,
       hideErrorText,
       endAdornment,
-      inputProps
+      inputProps,
+      variant
     } = this.props;
 
+    const outlined = variant === 'outlined';
+    const InputComponent = outlined ? OutlinedInput : Input;
+
     return (
-      <FormControl className={className} error={touched && !!error} fullWidth={fullWidth}>
-        {label && <InputLabel className={labelClassName}>{label}</InputLabel>}
+      <FormControl className={className} error={touched && !!error} fullWidth={fullWidth} variant={variant}>
+        {label && (
+          <InputLabel
+            // classeName={inputLabelClassName}
+            ref={ref => {
+              this.labelRef = ReactDOM.findDOMNode(ref);
+            }}
+            {...inputLabelProps}>
+            {label}
+          </InputLabel>
+        )}
         {helperText && <FormHelperText>{helperText}</FormHelperText>}
-        <Input
+        <InputComponent
           {...input}
           type={type}
           className={cx(classes.zipCode, inputClassName)}
           placeholder={placeholder}
           disabled={disabled}
           inputComponent={ZipCodeMask}
+          labelWidth={outlined ? (this.labelRef ? this.labelRef.offsetWidth : 0) : undefined}
           endAdornment={endAdornment}
           inputProps={{
             ...inputProps
