@@ -63,10 +63,12 @@ export const strToDate = str => {
   return null;
 };
 
-export const calculateTimelineFromSubmitProposalsDueDate = (submitProposalsDueDate, businessDays) => {
+export const calculateTimelineFromSubmitProposalsDueDate = (submitProposalsDueDate, businessDays, timezone) => {
   const businessDaysToUse = process.env.IN_TEST_MODE === 'true' ? 'qa_business_days' : 'md_project_business_days';
 
-  submitProposalsDueDate = business(submitProposalsDueDate).businessAdd(businessDays && businessDays > 0 ? businessDays : 0);
+  submitProposalsDueDate = business(momenttz.tz(submitProposalsDueDate, timezone)).businessAdd(
+    businessDays && businessDays > 0 ? businessDays : 0
+  );
   const siteVisitDueDate = submitProposalsDueDate.businessAdd(timeline[4][businessDaysToUse] + timeline[5][businessDaysToUse]);
   const finalBidDueDate = business(siteVisitDueDate).businessAdd(timeline[6][businessDaysToUse]);
   const awardDate = business(finalBidDueDate).businessAdd(timeline[7][businessDaysToUse]);

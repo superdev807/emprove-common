@@ -77,6 +77,17 @@ export default {
         hour: '2-digit',
         minute: '2-digit',
         timeZoneName: 'short'
+      },
+      hourMinuteSecond: {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      },
+      hourMinuteSecondTz: {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        timeZoneName: 'short'
       }
     },
     number: {
