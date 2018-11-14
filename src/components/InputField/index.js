@@ -86,16 +86,6 @@ export class InputField extends Component {
 
     return (
       <FormControl className={className} error={touched && !!error} fullWidth={fullWidth} variant={variant}>
-        {label && (
-          <InputLabel
-            // classeName={inputLabelClassName}
-            ref={ref => {
-              this.labelRef = ReactDOM.findDOMNode(ref);
-            }}
-            {...inputLabelProps}>
-            {label}
-          </InputLabel>
-        )}
         {helperText && <FormHelperText className={classes.formHelperText}>{helperText}</FormHelperText>}
         <InputComponent
           {...input}
@@ -122,6 +112,17 @@ export class InputField extends Component {
           startAdornment={startAdornment}
           endAdornment={endAdornment}
         />
+        {/* moved InputLabel below InputComponent so that the label is placed on top of InputComponent for clicking*/}
+        {label && (
+          <InputLabel
+            // classeName={inputLabelClassName}
+            ref={ref => {
+              this.labelRef = ReactDOM.findDOMNode(ref);
+            }}
+            {...inputLabelProps}>
+            {label}
+          </InputLabel>
+        )}
         {!hideErrorText && touched && error && <FormHelperText>{error}</FormHelperText>}
       </FormControl>
     );
