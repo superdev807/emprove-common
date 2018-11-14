@@ -17,7 +17,7 @@ class ImpersonationMonitor extends Component {
   static propTypes = {
     impersonator: PropTypes.object,
     onExit: PropTypes.func,
-    tokenExp: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    tokenExp: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
   };
 
   constructor(props) {
@@ -69,7 +69,7 @@ class ImpersonationMonitor extends Component {
 
     return impersonator ? (
       <Snackbar
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
         open
         message={
           <span className="impersonation-monitor-text">
