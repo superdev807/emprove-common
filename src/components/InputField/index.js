@@ -25,7 +25,7 @@ export class InputField extends Component {
     input: PropTypes.object.isRequired,
     inputClassName: PropTypes.string,
     inputProps: PropTypes.object,
-    label: PropTypes.string,
+    label: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     max: PropTypes.number,
     min: PropTypes.number,
     multiline: PropTypes.bool,
