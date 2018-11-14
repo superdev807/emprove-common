@@ -10,7 +10,7 @@ import { IntlProvider } from 'react-intl';
 import intlConfig from '../../config/intlConfig';
 
 const IntlProviderWrapper = ({ timeZone, ...props }) => {
-  return <IntlProvider {...props} key={timeZone} timeZone={timeZone} {...intlConfig} />;
+  return <IntlProvider {...props} timeZone={timeZone} {...intlConfig} />;
 };
 
 const IntlProviderTz = ({ timezoneSelector, children }) => {
