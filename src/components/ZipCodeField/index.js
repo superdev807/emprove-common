@@ -50,6 +50,7 @@ export class ZipCodeField extends Component {
             ref={ref => {
               this.labelRef = ReactDOM.findDOMNode(ref);
             }}
+            shrink={outlined ? true : undefined}
             {...inputLabelProps}>
             {label}
           </InputLabel>
@@ -67,6 +68,7 @@ export class ZipCodeField extends Component {
           inputProps={{
             ...inputProps
           }}
+          notched={outlined ? true : undefined}
         />
         {!hideErrorText && touched && error && <FormHelperText>{error}</FormHelperText>}
       </FormControl>
