@@ -40,6 +40,7 @@ export class ZipCodeField extends Component {
       className,
       classes,
       disabled,
+      errorMessageClass,
       fullWidth,
       helperText,
       input,
@@ -90,7 +91,7 @@ export class ZipCodeField extends Component {
           }}
           {...moreProps}
         />
-        {!hideErrorText && touched && error && <FormHelperText>{error}</FormHelperText>}
+        {!hideErrorText && touched && error && <FormHelperText className={errorMessageClass}>{error}</FormHelperText>}
       </FormControl>
     );
   }
