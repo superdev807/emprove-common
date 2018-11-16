@@ -54,8 +54,8 @@ const teamMembers = [
   },
   {
     id: 15,
-    name: 'Rosemary',
-    position: '',
+    name: 'Rosemary Kuropat',
+    position: 'Brand and Marketing',
     dreamSpace: {
       style: 'Contemporary',
       homeArea: 'General Living',
