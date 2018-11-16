@@ -93,10 +93,33 @@ const PROJECT_COST_ESTIMATE = {
   ]
 };
 
+const GET_PRICING = {
+  title: 'Competitive Pricing',
+  body: [],
+  terms: [
+    {
+      id: 1,
+      name: '',
+      definition: 'We share your detailed project plan with at least three qualified contractors'
+    },
+    {
+      id: 2,
+      name: '',
+      definition: "You'll receive Pricing for your project within 7 business days"
+    },
+    {
+      id: 3,
+      name: '',
+      definition: 'Compare and choose the best contractor for you'
+    }
+  ]
+};
+
 const ProjectInformation = {
   PROJECT_SCOPE,
   OVERALL_QUALITY,
-  PROJECT_COST_ESTIMATE
+  PROJECT_COST_ESTIMATE,
+  GET_PRICING
 };
 
 export default ProjectInformation;
