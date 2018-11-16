@@ -19,6 +19,7 @@ describe('TheTeam component', () => {
       'James Noel',
       'Linda Lee',
       'Andrew Pascal',
+      'Rosemary Kuropat',
       'Ervi Bongso',
       'Tonson Back',
       'Mike Gonzales',

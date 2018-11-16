@@ -53,6 +53,20 @@ const teamMembers = [
     photoKey: 'andrew_400x400.jpg',
   },
   {
+    id: 15,
+    name: 'Rosemary Kuropat',
+    position: 'Brand and Marketing',
+    dreamSpace: {
+      style: 'Contemporary',
+      homeArea: 'General Living',
+      quality: 'Upgraded',
+      homeAreaId: HomeArea.GENERAL_LIVING,
+      imageKey: '00426_E_cimage.jpg',
+    },
+    description: 'Rosemary is a chronicler of culture, from street art to consumer trends, and a chronic connector of dots.',
+    photoKey: 'rosemary_400x400.jpg',
+  },
+  {
     id: 4,
     name: 'Ervi Bongso',
     position: 'Principal Engineer',
