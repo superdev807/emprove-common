@@ -67,6 +67,20 @@ const teamMembers = [
     photoKey: 'rosemary_400x400.jpg',
   },
   {
+    id: 16,
+    name: 'Evan Earnest',
+    position: 'Product',
+    dreamSpace: {
+      style: 'Contemporary',
+      homeArea: 'General Living',
+      quality: 'Upgraded',
+      homeAreaId: HomeArea.GENERAL_LIVING,
+      imageKey: '00426_E_cimage.jpg',
+    },
+    description: null,
+    photoKey: 'evan_400x400.jpg',
+  },
+  {
     id: 4,
     name: 'Ervi Bongso',
     position: 'Principal Engineer',
