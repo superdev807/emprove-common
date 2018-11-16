@@ -10,6 +10,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
+import { NumberMask } from '../../utils/mask';
 
 import { withStyles } from '@material-ui/core/styles';
 
@@ -60,12 +61,14 @@ export class InputField extends Component {
       disabled,
       fullWidth,
       helperText,
+      errorMessageClass,
       input,
       inputClasses,
       inputClassName,
       inputLabelProps,
       inputProps,
       label,
+      mask,
       max,
       min,
       multiline,
@@ -111,6 +114,7 @@ export class InputField extends Component {
           onBlur={this.handleBlur}
           startAdornment={startAdornment}
           endAdornment={endAdornment}
+          inputComponent={mask === 'plainNumber' ? NumberMask : undefined}
         />
         {/* moved InputLabel below InputComponent so that the label is placed on top of InputComponent for clicking*/}
         {label && (
@@ -123,7 +127,7 @@ export class InputField extends Component {
             {label}
           </InputLabel>
         )}
-        {!hideErrorText && touched && error && <FormHelperText>{error}</FormHelperText>}
+        {!hideErrorText && touched && error && <FormHelperText className={errorMessageClass}>{error}</FormHelperText>}
       </FormControl>
     );
   }
