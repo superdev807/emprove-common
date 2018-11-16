@@ -18,6 +18,23 @@ const ZipCodeMask = ({ inputRef, ...inputProps }) => (
 );
 
 export class ZipCodeField extends Component {
+  static defaultProps = {
+    inputLabelProps: {}
+  };
+
+  constructor(props) {
+    super(props);
+
+    this.labelRef = React.createRef();
+  }
+
+  componentDidMount() {
+    if (this.props.variant === 'outlined') {
+      this.labelNode = ReactDOM.findDOMNode(this.labelRef.current);
+      this.forceUpdate();
+    }
+  }
+
   render() {
     const {
       className,
@@ -41,16 +58,20 @@ export class ZipCodeField extends Component {
 
     const outlined = variant === 'outlined';
     const InputComponent = outlined ? OutlinedInput : Input;
+    const moreProps = {};
+    if (outlined) {
+      if (typeof inputLabelProps.shrink !== 'undefined') {
+        moreProps.notched = inputLabelProps.shrink;
+      }
+      moreProps.labelWidth = (this.labelNode && this.labelNode.offsetWidth) || 0;
+    }
 
     return (
       <FormControl className={className} error={touched && !!error} fullWidth={fullWidth} variant={variant}>
         {label && (
           <InputLabel
             // classeName={inputLabelClassName}
-            ref={ref => {
-              this.labelRef = ReactDOM.findDOMNode(ref);
-            }}
-            shrink={outlined ? true : undefined}
+            ref={this.labelRef}
             {...inputLabelProps}>
             {label}
           </InputLabel>
@@ -63,12 +84,11 @@ export class ZipCodeField extends Component {
           placeholder={placeholder}
           disabled={disabled}
           inputComponent={ZipCodeMask}
-          labelWidth={outlined ? (this.labelRef ? this.labelRef.offsetWidth : 0) : undefined}
           endAdornment={endAdornment}
           inputProps={{
             ...inputProps
           }}
-          notched={outlined ? true : undefined}
+          {...moreProps}
         />
         {!hideErrorText && touched && error && <FormHelperText>{error}</FormHelperText>}
       </FormControl>
