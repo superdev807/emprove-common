@@ -7,6 +7,7 @@ import { DETECT_DEVICE } from '../constants';
 
 const initialState = {
   isMobile: null,
+  isPhone: null,
   isTablet: null
 };
 
@@ -21,6 +22,7 @@ export default handleActions(
       return ({
         ...state,
         isMobile: payload.isMobile,
+        isPhone: payload.isPhone,
         isTablet: payload.isTablet
       });
     }
