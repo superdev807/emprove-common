@@ -26,6 +26,7 @@ const DropdownField = ({
   helperTextClassName,
   input,
   inputClassName,
+  inputLabelProps,
   label,
   menuItemClassName,
   meta: { touched, error },
@@ -46,6 +47,7 @@ const DropdownField = ({
         className={inputClassName}
         classes={overrideClasses}
         variant="outlined"
+        InputLabelProps={{...inputLabelProps}}
         SelectProps={{
           classes: {
             ...selectOverride,
@@ -108,6 +110,7 @@ DropdownField.propTypes = {
   helperTextClassName: PropTypes.string,
   input: PropTypes.object.isRequired,
   inputClassName: PropTypes.string,
+  inputLabelProps: PropTypes.object,
   label: PropTypes.string,
   menuItemClassName: PropTypes.string,
   meta: PropTypes.object.isRequired,
