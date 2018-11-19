@@ -13,7 +13,8 @@ import {
   getMinimumWeek,
   getMaximumWeek,
   toShortTimezone,
-  toISODateStr
+  toISODateStr,
+  getAllTimezones
 } from '~/utils/timeFunctions';
 
 describe('timeline functions', () => {
@@ -122,6 +123,15 @@ describe('timeline functions', () => {
     it('should return a date in `YYYY-MM-DD` format and specified timezone', () => {
       expect(toISODateStr('2018-07-05 00:00:00.000Z', 'America/Los_Angeles')).toBe('2018-07-04');
       expect(toISODateStr('2018-07-05 00:00:00.000Z', 'Asia/Tokyo')).toBe('2018-07-05');
+    });
+  });
+
+  describe('getAllTimezones', () => {
+    it('should return all timezones', () => {
+      const allTimezones = getAllTimezones();
+      expect(allTimezones).toContain('America/Los_Angeles');
+      expect(allTimezones).toContain('Asia/Tokyo');
+      expect(allTimezones).toContain('Asia/Calcutta');
     });
   });
 });

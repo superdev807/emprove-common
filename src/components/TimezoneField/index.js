@@ -15,17 +15,14 @@ import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import MenuItem from '@material-ui/core/MenuItem';
 import Popper from '@material-ui/core/Popper';
+import { getAllTimezones } from '../../utils/timeFunctions';
 import { withStyles } from '@material-ui/core/styles';
-
 import styles from './styles';
 
-const suggestions = moment.tz
-  .names()
-  .filter(timezone => /^(America|Asia|Europe|Australia|Africa|Pacific|Atlantic|Indian)/.test(timezone))
-  .map(timezone => ({
-    value: timezone,
-    label: timezone //.replace('/', ' - ').replace('_', ' ')
-  }));
+const suggestions = getAllTimezones().map(timezone => ({
+  value: timezone,
+  label: timezone //.replace('/', ' - ').replace('_', ' ')
+}));
 
 const renderInputComponent = inputProps => {
   const { classes, inputRef = () => {}, ref, ...other } = inputProps;
