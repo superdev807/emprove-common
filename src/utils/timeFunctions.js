@@ -172,3 +172,6 @@ export const toISODateStr = (date, timezone) => {
     return date;
   }
 };
+
+export const getAllTimezones = () =>
+  momenttz.tz.names().filter(timezone => /^(America|Asia|Europe|Australia|Africa|Pacific|Atlantic|Indian)/.test(timezone));
