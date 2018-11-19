@@ -33,7 +33,7 @@ describe('DatePickerField', () => {
     expect(
       component
         .find(DateTime)
-        .prop('value')
+        .prop('defaultValue')
         .isSame(moment.tz('2018-08-22', 'YYYY-MM-DD', 'America/Los_Angeles'))
     ).toBe(true);
   });

@@ -125,7 +125,7 @@ class DatePickerField extends Component {
     } = this.props;
 
     const inputDate = input.value !== 'Invalid date' && input.value !== '' ? moment.tz(input.value, timezone) : input.value;
-    const sanitizedViewDate = viewDate && viewDate !== 'Invalid date' ? moment.tz(viewDate, timezone) : (inputDate || undefined);
+    const sanitizedViewDate = viewDate && viewDate !== 'Invalid date' ? moment.tz(viewDate, timezone) : inputDate || undefined;
 
     return (
       <FormControl className={className} error={touched && !!error} fullWidth={fullWidth}>
@@ -135,7 +135,7 @@ class DatePickerField extends Component {
           <DateTime
             renderInput={this.renderInput}
             className={datePickerClassName}
-            value={inputDate}
+            defaultValue={inputDate}
             viewDate={sanitizedViewDate} // determines the calendar month to display
             onChange={this.handleChange}
             onBlur={this.handleBlur}
