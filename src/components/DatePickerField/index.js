@@ -94,14 +94,13 @@ class DatePickerField extends Component {
   };
 
   disablePast = current => {
-    const { disableDatePast } = this.props;
-
-    const disableMomentDate = disableDatePast
-      ? moment.isMoment(disableDatePast) ? disableDatePast : moment(disableDatePast, 'YYYY-MM-DD')
-      : moment();
-    const dayDiff = disableMomentDate.diff(moment(), 'd');
-    const disableDate = moment().add(dayDiff, 'd');
-    return current.isAfter(disableDate);
+    const { disableDatePast, timezone } = this.props;
+    if (disableDatePast) {
+      const disableDate = moment.tz(disableDatePast, timezone).startOf('day');
+      return current.isSameOrAfter(disableDate);
+    } else {
+      return true;
+    }
   };
 
   render() {
