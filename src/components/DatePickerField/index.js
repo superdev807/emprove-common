@@ -45,6 +45,7 @@ class DatePickerField extends Component {
     label: PropTypes.string,
     meta: PropTypes.object,
     disableDatePast: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    disableDateFuture: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     datePickerInputText: PropTypes.string
   };
 
@@ -93,15 +94,28 @@ class DatePickerField extends Component {
     );
   };
 
-  disablePast = current => {
-    const { disableDatePast } = this.props;
+  handleValidDatePast = current => {
+    const { disableDatePast, timezone } = this.props;
+    if (disableDatePast) {
+      const disableDate = moment.tz(disableDatePast, timezone).startOf('day');
+      return current.isSameOrAfter(disableDate);
+    } else {
+      return true;
+    }
+  };
 
-    const disableMomentDate = disableDatePast
-      ? moment.isMoment(disableDatePast) ? disableDatePast : moment(disableDatePast, 'YYYY-MM-DD')
-      : moment();
-    const dayDiff = disableMomentDate.diff(moment(), 'd');
-    const disableDate = moment().add(dayDiff, 'd');
-    return current.isAfter(disableDate);
+  handleValidDateFuture = current => {
+    const { disableDateFuture, timezone } = this.props;
+    if (disableDateFuture) {
+      const disableDate = moment.tz(disableDateFuture, timezone).endOf('day');
+      return current.isSameOrBefore(disableDate);
+    } else {
+      return true;
+    }
+  };
+
+  handleValidDate = current => {
+    return this.handleValidDatePast(current) && this.handleValidDateFuture(current);
   };
 
   render() {
@@ -143,7 +157,7 @@ class DatePickerField extends Component {
             displayTimeZone={timezone}
             timeFormat={timeFormat ? timeFormat : false}
             closeOnSelect
-            isValidDate={disableDatePast && this.disablePast} //if disableDatePast is given, dates before that date become unavailable
+            isValidDate={this.handleValidDate}
           />
           {variant === 'outlined' ? (
             <IconCalendar className={classes.icon} />
