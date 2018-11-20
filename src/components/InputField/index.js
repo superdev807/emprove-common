@@ -40,6 +40,23 @@ export class InputField extends Component {
     endAdornment: PropTypes.object
   };
 
+  static defaultProps = {
+    inputLabelProps: {}
+  };
+
+  constructor(props) {
+    super(props);
+
+    this.labelRef = React.createRef();
+  }
+
+  componentDidMount() {
+    if (this.props.variant === 'outlined') {
+      this.labelNode = ReactDOM.findDOMNode(this.labelRef.current);
+      this.forceUpdate();
+    }
+  }
+
   handleFocus = event => {
     const { input } = this.props;
     event.target.placeholder = '';
@@ -86,6 +103,13 @@ export class InputField extends Component {
 
     const outlined = variant === 'outlined';
     const InputComponent = outlined ? OutlinedInput : Input;
+    const moreProps = {};
+    if (outlined) {
+      if (typeof inputLabelProps.shrink !== 'undefined') {
+        moreProps.notched = inputLabelProps.shrink;
+      }
+      moreProps.labelWidth = (this.labelNode && this.labelNode.offsetWidth) || 0;
+    }
 
     return (
       <FormControl className={className} error={touched && !!error} fullWidth={fullWidth} variant={variant}>
@@ -109,20 +133,18 @@ export class InputField extends Component {
               'text-right': Boolean(rightAligned)
             })
           }}
-          labelWidth={outlined && this.labelRef ? this.labelRef.offsetWidth : 0}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
           startAdornment={startAdornment}
           endAdornment={endAdornment}
           inputComponent={mask === 'plainNumber' ? NumberMask : undefined}
+          {...moreProps}
         />
         {/* moved InputLabel below InputComponent so that the label is placed on top of InputComponent for clicking*/}
         {label && (
           <InputLabel
             // classeName={inputLabelClassName}
-            ref={ref => {
-              this.labelRef = ReactDOM.findDOMNode(ref);
-            }}
+            ref={this.labelRef}
             {...inputLabelProps}>
             {label}
           </InputLabel>
