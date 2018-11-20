@@ -8,7 +8,7 @@ import { createStructuredSelector } from 'reselect';
 
 import { getDeviceType } from './helpers';
 import { detectDevice } from '../../redux/modules/device';
-import { isMobileSelector, isTabletSelector } from '../../redux/selectors';
+import { isMobileSelector, isTabletSelector, isPhoneSelector } from '../../redux/selectors';
 
 class DeviceDetector extends Component {
   constructor(props) {
@@ -26,9 +26,9 @@ class DeviceDetector extends Component {
   }
 
   setDeviceType = () => {
-    const { isMobile, isTablet } = getDeviceType(window.navigator.userAgent);
-    if (isMobile !== this.props.isMobile || isTablet !== this.props.isTablet) {
-      this.props.detectDevice({ isMobile, isTablet });
+    const { isMobile, isTablet, isPhone } = getDeviceType(window.navigator.userAgent);
+    if (isMobile !== this.props.isMobile || isTablet !== this.props.isTablet || isPhone !== this.props.isPhone) {
+      this.props.detectDevice({ isMobile, isTablet, isPhone });
     }
   };
 
@@ -39,6 +39,7 @@ class DeviceDetector extends Component {
 
 const selector = createStructuredSelector({
   isMobile: isMobileSelector,
+  isPhone: isPhoneSelector,
   isTablet: isTabletSelector
 });
 
