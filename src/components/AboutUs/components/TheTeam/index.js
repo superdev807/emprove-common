@@ -75,7 +75,7 @@ const teamMembers = [
       homeArea: 'General Living',
       quality: 'Upgraded',
       homeAreaId: HomeArea.GENERAL_LIVING,
-      imageKey: '00426_E_cimage.jpg',
+      imageKey: '00666_E_cimage.jpg',
     },
     description: null,
     photoKey: 'evan_400x400.jpg',
