@@ -1,6 +1,6 @@
 'use strict';
 
-const PROJECT_SCOPE = {
+const PROJECT_SCALE = {
   title: 'Project Scope',
   body: [
     'The extent of work to be undertaken for a project. Typically, the greater the Project Scope the greater the project cost.',
@@ -9,12 +9,12 @@ const PROJECT_SCOPE = {
   images: [
     {
       id: 1,
-      filename: 'project_scope_light_renovation.png',
+      filename: 'project_scALE_light_renovation.png',
       description: null
     },
     {
       id: 2,
-      filename: 'project_scope_custom_light_renovation.png',
+      filename: 'project_scALE_custom_light_renovation.png',
       description: null
     }
   ],
@@ -116,7 +116,7 @@ const GET_PRICING = {
 };
 
 const ProjectInformation = {
-  PROJECT_SCOPE,
+  PROJECT_SCALE,
   OVERALL_QUALITY,
   PROJECT_COST_ESTIMATE,
   GET_PRICING
