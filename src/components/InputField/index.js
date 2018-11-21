@@ -125,8 +125,15 @@ export class InputField extends Component {
       maskingComponent = NumberFormatCustom;
     }
 
+    const labelContent = label && (
+      <InputLabel ref={this.labelRef} {...inputLabelProps}>
+        {label}
+      </InputLabel>
+    );
+
     return (
       <FormControl className={className} error={touched && !!error} fullWidth={fullWidth} variant={variant}>
+        {!outlined && labelContent}
         {helperText && <FormHelperText className={classes.formHelperText}>{helperText}</FormHelperText>}
         <InputComponent
           {...input}
@@ -155,15 +162,7 @@ export class InputField extends Component {
           inputComponent={maskingComponent}
           {...moreProps}
         />
-        {/* moved InputLabel below InputComponent so that the label is placed on top of InputComponent for clicking*/}
-        {label && (
-          <InputLabel
-            // classeName={inputLabelClassName}
-            ref={this.labelRef}
-            {...inputLabelProps}>
-            {label}
-          </InputLabel>
-        )}
+        {outlined && labelContent}
         {!hideErrorText && touched && error && <FormHelperText className={errorMessageClass}>{error}</FormHelperText>}
       </FormControl>
     );
