@@ -9,12 +9,12 @@ const PROJECT_SCALE = {
   images: [
     {
       id: 1,
-      filename: 'project_scale_light_renovation.png',
+      filename: 'project_scope_light_renovation.png',
       description: null
     },
     {
       id: 2,
-      filename: 'project_scale_custom_light_renovation.png',
+      filename: 'project_scope_custom_light_renovation.png',
       description: null
     }
   ],
