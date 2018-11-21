@@ -11,6 +11,7 @@ import OutlinedInput from '@material-ui/core/OutlinedInput';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { NumberMask } from '../../utils/mask';
+import { NumberFormatCustom } from '../../utils/numberFunctions'
 
 import { withStyles } from '@material-ui/core/styles';
 
@@ -70,6 +71,13 @@ export class InputField extends Component {
     }
     input.onBlur(event);
   };
+
+  handleChange = event => {
+    const { input } = this.props;
+    const { value } = event.target;
+    input.onChange(value ? Number(value) : value);
+  };
+
 
   render() {
     const {
@@ -135,9 +143,10 @@ export class InputField extends Component {
           }}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
+          onChange={this.handleChange}
           startAdornment={startAdornment}
           endAdornment={endAdornment}
-          inputComponent={mask === 'plainNumber' ? NumberMask : undefined}
+          inputComponent={mask === 'plainNumber' ? NumberMask : NumberFormatCustom}
           {...moreProps}
         />
         {/* moved InputLabel below InputComponent so that the label is placed on top of InputComponent for clicking*/}
