@@ -11,6 +11,7 @@ import './styles.scss';
 const HelpLinkButton = props => {
   return (
     <IconButton
+      id={props.id}
       className={cx(
         'help-link-button',
         {
@@ -40,6 +41,7 @@ HelpLinkButton.propTypes = {
   blink: PropTypes.bool,
   className: PropTypes.string,
   highlighted: PropTypes.bool,
+  id: PropTypes.string,
   margin: PropTypes.oneOf(['left', 'right-16']),
   path: PropTypes.string.isRequired,
   size: PropTypes.oneOf([16, 32])
