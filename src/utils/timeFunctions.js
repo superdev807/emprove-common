@@ -155,7 +155,7 @@ export const getLocalTimezone = () => {
  */
 export const toShortTimezone = timezone =>
   momenttz()
-    .tz(timezone)
+    .tz(timezone || getLocalTimezone())
     .format('z');
 
 /*
