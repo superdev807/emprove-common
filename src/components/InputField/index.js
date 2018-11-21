@@ -75,7 +75,7 @@ export class InputField extends Component {
   handleChange = event => {
     const { input } = this.props;
     const { value } = event.target;
-    input.onChange(value ? Number(value) : value);
+    input.onChange(value && !isNaN(value) ? Number(value) : value);
   };
 
   render() {
@@ -118,8 +118,22 @@ export class InputField extends Component {
       moreProps.labelWidth = (this.labelNode && this.labelNode.offsetWidth) || 0;
     }
 
+    let maskingComponent;
+    if (mask === 'plainNumber') {
+      maskingComponent = NumberMask;
+    } else if (mask === 'withThousandSeparator') {
+      maskingComponent = NumberFormatCustom;
+    }
+
+    const labelContent = label && (
+      <InputLabel ref={this.labelRef} {...inputLabelProps}>
+        {label}
+      </InputLabel>
+    );
+
     return (
       <FormControl className={className} error={touched && !!error} fullWidth={fullWidth} variant={variant}>
+        {!outlined && labelContent}
         {helperText && <FormHelperText className={classes.formHelperText}>{helperText}</FormHelperText>}
         <InputComponent
           {...input}
@@ -145,18 +159,10 @@ export class InputField extends Component {
           onChange={this.handleChange}
           startAdornment={startAdornment}
           endAdornment={endAdornment}
-          inputComponent={mask === 'plainNumber' ? NumberMask : NumberFormatCustom}
+          inputComponent={maskingComponent}
           {...moreProps}
         />
-        {/* moved InputLabel below InputComponent so that the label is placed on top of InputComponent for clicking*/}
-        {label && (
-          <InputLabel
-            // classeName={inputLabelClassName}
-            ref={this.labelRef}
-            {...inputLabelProps}>
-            {label}
-          </InputLabel>
-        )}
+        {outlined && labelContent}
         {!hideErrorText && touched && error && <FormHelperText className={errorMessageClass}>{error}</FormHelperText>}
       </FormControl>
     );
