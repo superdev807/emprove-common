@@ -11,7 +11,7 @@ import OutlinedInput from '@material-ui/core/OutlinedInput';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { NumberMask } from '../../utils/mask';
-import { NumberFormatCustom } from '../../utils/numberFunctions'
+import { NumberFormatCustom } from '../../utils/numberFunctions';
 
 import { withStyles } from '@material-ui/core/styles';
 
@@ -75,9 +75,8 @@ export class InputField extends Component {
   handleChange = event => {
     const { input } = this.props;
     const { value } = event.target;
-    input.onChange(value ? Number(value) : value);
+    input.onChange(value && !isNaN(value) ? Number(value) : value);
   };
-
 
   render() {
     const {
@@ -119,6 +118,13 @@ export class InputField extends Component {
       moreProps.labelWidth = (this.labelNode && this.labelNode.offsetWidth) || 0;
     }
 
+    let maskingComponent;
+    if (mask === 'plainNumber') {
+      maskingComponent = NumberMask;
+    } else if (mask === 'withThousandSeparator') {
+      maskingComponent = NumberFormatCustom;
+    }
+
     return (
       <FormControl className={className} error={touched && !!error} fullWidth={fullWidth} variant={variant}>
         {helperText && <FormHelperText className={classes.formHelperText}>{helperText}</FormHelperText>}
@@ -146,7 +152,7 @@ export class InputField extends Component {
           onChange={this.handleChange}
           startAdornment={startAdornment}
           endAdornment={endAdornment}
-          inputComponent={mask === 'plainNumber' ? NumberMask : NumberFormatCustom}
+          inputComponent={maskingComponent}
           {...moreProps}
         />
         {/* moved InputLabel below InputComponent so that the label is placed on top of InputComponent for clicking*/}
