@@ -1,7 +1,7 @@
 'use strict';
 
-const PROJECT_SCOPE = {
-  title: 'Project Scope',
+const PROJECT_SCALE = {
+  title: 'Project Scale',
   body: [
     'The extent of work to be undertaken for a project. Typically, the greater the Project Scope the greater the project cost.',
     'Emprove defines a set of baseline Project Scope packages for homeowners to select from and customize.'
@@ -116,7 +116,7 @@ const GET_PRICING = {
 };
 
 const ProjectInformation = {
-  PROJECT_SCOPE,
+  PROJECT_SCALE,
   OVERALL_QUALITY,
   PROJECT_COST_ESTIMATE,
   GET_PRICING
