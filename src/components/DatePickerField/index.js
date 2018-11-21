@@ -78,7 +78,9 @@ class DatePickerField extends Component {
           label={helperText}
           variant="outlined"
           InputProps={{ inputComponent: DateMask, classes: { input: classes.input } }}
-          InputLabelProps={{ classes: { outlined: classes.inputLabel } }}
+          InputLabelProps={{
+            shrink: true
+          }}
         />
       </div>
     ) : (
