@@ -11,7 +11,7 @@ import OutlinedInput from '@material-ui/core/OutlinedInput';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { NumberMask } from '../../utils/mask';
-import { NumberFormatCustom } from '../../utils/numberFunctions'
+import { NumberFormatCustom } from '../../utils/numberFunctions';
 
 import { withStyles } from '@material-ui/core/styles';
 
@@ -77,7 +77,6 @@ export class InputField extends Component {
     const { value } = event.target;
     input.onChange(value ? Number(value) : value);
   };
-
 
   render() {
     const {
