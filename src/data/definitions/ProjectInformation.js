@@ -1,7 +1,7 @@
 'use strict';
 
 const PROJECT_SCALE = {
-  title: 'Project Scope',
+  title: 'Project Scale',
   body: [
     'The extent of work to be undertaken for a project. Typically, the greater the Project Scope the greater the project cost.',
     'Emprove defines a set of baseline Project Scope packages for homeowners to select from and customize.'
@@ -9,12 +9,12 @@ const PROJECT_SCALE = {
   images: [
     {
       id: 1,
-      filename: 'project_scALE_light_renovation.png',
+      filename: 'project_scale_light_renovation.png',
       description: null
     },
     {
       id: 2,
-      filename: 'project_scALE_custom_light_renovation.png',
+      filename: 'project_scale_custom_light_renovation.png',
       description: null
     }
   ],
