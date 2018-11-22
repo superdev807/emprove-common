@@ -47,6 +47,7 @@ const DropdownField = ({
         className={inputClassName}
         classes={overrideClasses}
         variant="outlined"
+        InputProps={{ classes: { input: classes.input } }}
         InputLabelProps={{ ...inputLabelProps }}
         SelectProps={{
           classes: {
