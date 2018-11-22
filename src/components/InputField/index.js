@@ -75,7 +75,7 @@ export class InputField extends Component {
   handleChange = event => {
     const { input } = this.props;
     const { value } = event.target;
-    input.onChange(value && !isNaN(value) ? Number(value) : value);
+    input.onChange(value);
   };
 
   render() {
