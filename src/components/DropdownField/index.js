@@ -47,7 +47,7 @@ const DropdownField = ({
         className={inputClassName}
         classes={overrideClasses}
         variant="outlined"
-        InputLabelProps={{...inputLabelProps}}
+        InputLabelProps={{ ...inputLabelProps }}
         SelectProps={{
           classes: {
             ...selectOverride,
@@ -111,7 +111,7 @@ DropdownField.propTypes = {
   input: PropTypes.object.isRequired,
   inputClassName: PropTypes.string,
   inputLabelProps: PropTypes.object,
-  label: PropTypes.string,
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   menuItemClassName: PropTypes.string,
   meta: PropTypes.object.isRequired,
   options: PropTypes.array.isRequired,
