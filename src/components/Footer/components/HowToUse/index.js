@@ -6,16 +6,17 @@ import FooterList from '../FooterList';
 import './styles.scss';
 
 const instructions = [
-  <span className="how-to-use-subtitle">DREAM IT</span>,
-  'Get inspiration in our Photo Catalog',
+  <span className="how-to-use-subtitle">STYLE IT</span>,
+  'Be inspired by our PrettySmart™ photos',
   'Create Styleboards',
-  <span className="how-to-use-subtitle">PLAN IT</span>,
-  'Create a project plan',
-  'Get an instant cost estimate',
-  <span className="how-to-use-subtitle">PRICE IT</span>,
-  'Receive a detailed project pricing brief',
-  'Receive pricing from qualified contractors',
-  'Compare contractor proposals and make an informed selection'
+  <span className="how-to-use-subtitle">ESTIMATE IT</span>,
+  'Affordability assurance',
+  'Submit your project',
+  <span className="how-to-use-subtitle">GET IT DONE</span>,
+  'Receive a comprehensive Project Plan',
+  'Get preliminary pricing from qualified contractors',
+  'Compare proposals to make an well informed selection',
+  'Create a General Contractor work agreement'
 ];
 
 const HowToUse = (props) => {
