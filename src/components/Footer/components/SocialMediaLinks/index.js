@@ -17,7 +17,7 @@ const SocialMediaLinks = (props) => {
       <a href="https://twitter.com/emprove_it" target="_blank" rel="noopener noreferrer">
         <IconTwitter className="social-media-links__icon" />
       </a>
-      <a href="https://www.instagram.com/emprove_it/" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.instagram.com/emproveit/" target="_blank" rel="noopener noreferrer">
         <IconInstagram className="social-media-links__icon" />
       </a>
       <a href="https://www.linkedin.com/company/emprove-inc/" target="_blank" rel="noopener noreferrer">
