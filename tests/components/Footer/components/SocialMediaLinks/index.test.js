@@ -28,7 +28,7 @@ describe('SocialMediaLinks component', () => {
 
   test('should display an icon link to the Instagram profile', () => {
     expect(component.find('IconInstagram').length).toBe(1);
-    const a = component.find('a[href="https://www.instagram.com/emprove_it/"]');
+    const a = component.find('a[href="https://www.instagram.com/emproveit/"]');
     expect(a.prop('target')).toBe('_blank');
     expect(a.prop('rel')).toBe('noopener noreferrer');
   });

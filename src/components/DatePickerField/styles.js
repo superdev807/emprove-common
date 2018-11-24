@@ -14,10 +14,9 @@ export default theme => ({
     top: 6
   },
   input: {
-    padding: '12px 14px'
-  },
-  inputLabel: {
-    transform: 'translate(14px, 14px) scale(1)'
+    padding: '12px 14px',
+    fontSize: 12,
+    fontWeight: 400
   },
   originIcon: {
     right: 0,
