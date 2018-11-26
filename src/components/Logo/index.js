@@ -6,7 +6,7 @@ import cx from 'classnames';
 import { Link } from 'react-router-dom';
 import './styles.scss';
 
-const Logo = ({ className, imageClass, shortened, contractor, version }) => {
+const Logo = ({ className, destination, imageClass, shortened, contractor, version }) => {
   const isBeta = version === 'beta';
 
   let imageFilename = isBeta ? 'emprove_beta_logo.svg' : 'emprove_logo.svg';
@@ -16,13 +16,8 @@ const Logo = ({ className, imageClass, shortened, contractor, version }) => {
     imageFilename = isBeta ? 'emprove_pro_beta_logo.svg' : 'emprove_pro_logo.svg';
   }
 
-  let destinationLink = '/';
-  if(!contractor) {
-    destinationLink = '/browse';
-  }
-
   return (
-    <Link to={destinationLink} className={cx('logo', { 'logo__image--shortened': shortened, 'logo__image--beta': !shortened && isBeta }, className)}>
+    <Link to={destination} className={cx('logo', { 'logo__image--shortened': shortened, 'logo__image--beta': !shortened && isBeta }, className)}>
       <img
         className={cx('logo__image', imageClass)}
         src={`/images/${imageFilename}`}
@@ -33,6 +28,7 @@ const Logo = ({ className, imageClass, shortened, contractor, version }) => {
 };
 
 Logo.propTypes = {
+  destination: PropTypes.string,
   shortened: PropTypes.bool,
   className: PropTypes.string,
   contractor: PropTypes.bool,
@@ -41,6 +37,7 @@ Logo.propTypes = {
 };
 
 Logo.defaultProps = {
+  destination: '/',
   shortened: false,
   contractor: false,
   version: '1'
