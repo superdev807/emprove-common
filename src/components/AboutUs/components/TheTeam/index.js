@@ -58,9 +58,9 @@ const teamMembers = [
     position: 'Brand and Marketing',
     dreamSpace: {
       style: 'Contemporary',
-      homeArea: 'General Living',
+      homeArea: 'Kitchen',
       quality: 'Upgraded',
-      homeAreaId: HomeArea.GENERAL_LIVING,
+      homeAreaId: HomeArea.KITCHEN,
       imageKey: '00426_E_cimage.jpg',
     },
     description: 'Rosemary is a chronicler of culture, from street art to consumer trends, and a chronic connector of dots.',
@@ -72,9 +72,9 @@ const teamMembers = [
     position: 'Product',
     dreamSpace: {
       style: 'Contemporary',
-      homeArea: 'General Living',
+      homeArea: 'Kitchen',
       quality: 'Upgraded',
-      homeAreaId: HomeArea.GENERAL_LIVING,
+      homeAreaId: HomeArea.KITCHEN,
       imageKey: '00666_E_cimage.jpg',
     },
     description: null,
