@@ -40,11 +40,12 @@ class DreamItPartial extends Component {
         </div>
         <div id="dreamIt" className={cx('dreamIt', 'partial__description', { onStep })}>
           <div id="dreamItTitle" className="dreamItTitle">
-            <b>DREAM</b> IT<span style={{ color: '#ff9e3c', fontWeight: 'bold' }}>!</span>
+            STYLE IT
           </div>
           <div id="dreamItBody" className="dreamItBody">
-            Dream with <b>precision</b>! Sink into an intelligent and interactive design environment that learns your design sensibilities
-            and guides you to personalize your <b>Styleboard</b>!
+            Our photos aren't just pretty... they're PrettySmart™! As you select photos you like, they send costing information to our{' '}
+            <img src="/images/ic_e_logo_grey.svg" />
+            stimator, the most advanced budgeting tool in the residential design and construction industry.
           </div>
 
           <div id="dreamItButton" className="partial__button">

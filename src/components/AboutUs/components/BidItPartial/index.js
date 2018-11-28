@@ -55,10 +55,10 @@ class BidItPartial extends Component {
         </div>
         <div id="bidIt" className={cx('partial__description', 'bidIt', { onStep })}>
           <div id="bidItTitle" className="bidItTitle">
-            <b>PRICE</b> IT<span style={{ color: '#ff9e3c', fontWeight: 'bold' }}>!</span>
+            GET IT DONE
           </div>
           <div id="bidItBody" className="bidItBody">
-            Sit back, while we create a detailed <b>Project Brief</b> and send it to multiple qualified contractors for pricing. They submit their best price and you pick the one who presents the <b>best value</b>!
+            When you're comfortable with your project details and estimate, we'll send it to at least three qualified contractors in your area. Review their preliminary pricing and select the pros to meet. After a site visit, your contractor can nail down a price and we'll finalize the paperwork for you.
           </div>
           <div id="bidItButton" className="partial__button">
             {actionText && (

@@ -30,6 +30,12 @@
 
   .costItBody {
     transition-delay: 0.15s;
+
+    img {
+      display: inline-block;
+      height: 20px;
+      vertical-align: bottom;
+    }
   }
 
   .costIt.onStep .costItTitle,
