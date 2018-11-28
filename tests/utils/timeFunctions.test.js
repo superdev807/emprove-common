@@ -9,6 +9,7 @@ import {
   strToDate,
   calculateProjectTimeline,
   awardDateFromRfpSentDueDate,
+  getAwardDateFromRfpSentDueDate,
   convertDateFormat,
   getMinimumWeek,
   getMaximumWeek,
@@ -103,6 +104,17 @@ describe('timeline functions', () => {
   describe('awardDateFromRfpSentDueDate', () => {
     it('should return date in YYYY-MM-DD format', () => {
       expect(awardDateFromRfpSentDueDate(utcDateTime)).toBe('2018-08-03');
+    });
+  });
+
+  describe('getAwardDateFromRfpSentDueDate', () => {
+    it('should return rfpSentDueDate in moment type', () => {
+      let awardDate;
+      awardDate = getAwardDateFromRfpSentDueDate(utcDateTime, 'Asia/Tokyo');
+      expect(awardDate.isValid()).toBe(true);
+      expect(awardDate.toISOString(true)).toEqual('2018-08-06T00:00:00.000+09:00'); // Also checking business days here
+      awardDate = getAwardDateFromRfpSentDueDate(utcDateTime, 'America/Los_Angeles');
+      expect(awardDate.toISOString(true)).toEqual('2018-08-03T00:00:00.000-07:00');
     });
   });
 

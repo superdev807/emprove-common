@@ -120,6 +120,7 @@ export const calculateProjectTimeline = rfpSentDueDate => {
   };
 };
 
+// TODO: Remove it as well when old FinalizeRFP route is removed.
 export const awardDateFromRfpSentDueDate = strRfpSentDueDate => {
   const rfpSentDueDate = strRfpSentDueDate ? strToDate(strRfpSentDueDate) : moment();
   if (rfpSentDueDate) {
@@ -129,6 +130,16 @@ export const awardDateFromRfpSentDueDate = strRfpSentDueDate => {
   } else {
     return null;
   }
+};
+
+export const getAwardDateFromRfpSentDueDate = (rfpSentDueDate, timezone) => {
+  let rfpSentDueDateMoment = momenttz(rfpSentDueDate || undefined);
+  if (timezone) {
+    rfpSentDueDateMoment = rfpSentDueDateMoment.tz(timezone).startOf('day');
+  }
+  const projectTimeline = calculateProjectTimeline(rfpSentDueDateMoment);
+  const awardDate = projectTimeline.awardDate;
+  return awardDate;
 };
 
 export const getMinimumWeek = (start, end) => {
