@@ -39,10 +39,12 @@ class CostItPartial extends Component {
         </div>
         <div id="costIt" className={cx('partial__description', 'costIt', { onStep })}>
           <div id="costItTitle" className="costItTitle">
-            <b>PLAN</b> IT<span style={{ color: '#ff9e3c', fontWeight: 'bold' }}>!</span>
+            ESTIMATE IT
           </div>
           <div id="costItBody" className="costItBody">
-            Create a project plan as Emprove provides an instant and comprehensive <b>cost estimate</b> that is uniquely <b>tailored</b> to your design preferences, budget parameters and location!
+            Don't believe it? Our <img src="/images/ic_e_logo_grey.svg" />
+            stimator has real time pricing on virtually everything that goes into a home renovation... by zip code. If your first estimate isn't
+            what you expected, you can just adjust materials and scope and watch the numbers change.
           </div>
 
           <div id="costItButton" className="partial__button">
