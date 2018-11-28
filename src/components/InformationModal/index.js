@@ -147,7 +147,7 @@ class InformationModal extends Component {
 
   render() {
     return (
-      <Dialog classes={{ paper: 'information-modal' }} open={this.props.show} onClose={this.props.handleHide}>
+      <Dialog classes={{ paper: 'information-modal' }} open={this.props.show} onClose={this.props.handleHide} disableEnforceFocus={true}>
         <IconButton className="information-modal-close-button" onClick={this.props.handleHide}>
           <IconClose />
         </IconButton>
