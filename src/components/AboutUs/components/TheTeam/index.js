@@ -53,20 +53,6 @@ const teamMembers = [
     photoKey: 'andrew_400x400.jpg',
   },
   {
-    id: 15,
-    name: 'Rosemary Kuropat',
-    position: 'Brand and Marketing',
-    dreamSpace: {
-      style: 'Contemporary',
-      homeArea: 'Kitchen',
-      quality: 'Upgraded',
-      homeAreaId: HomeArea.KITCHEN,
-      imageKey: '00426_E_cimage.jpg',
-    },
-    description: 'Rosemary is a chronicler of culture, from street art to consumer trends, and a chronic connector of dots.',
-    photoKey: 'rosemary_400x400.jpg',
-  },
-  {
     id: 16,
     name: 'Evan Earnest',
     position: 'Product',
