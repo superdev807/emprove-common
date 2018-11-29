@@ -19,6 +19,7 @@ import styles from './styles';
 const DropdownField = ({
   className,
   classes,
+  capitalize,
   disabled,
   disableUnderline,
   fullWidth,
@@ -60,7 +61,7 @@ const DropdownField = ({
           options.map((option, index) => {
             return option.value ? (
               <MenuItem key={option.value} className={menuItemClassName} value={option.value}>
-                {option.label}
+                {capitalize ? option.label.toUpperCase() : option.label}
               </MenuItem>
             ) : (
               <MenuItem key={index} className={menuItemClassName} value={option}>
@@ -87,7 +88,7 @@ const DropdownField = ({
           options.map((option, index) => {
             return option.value ? (
               <MenuItem key={option.value} className={menuItemClassName} value={option.value}>
-                {option.label}
+                {capitalize ? option.label.toUpperCase() : option.label}
               </MenuItem>
             ) : (
               <MenuItem key={index} className={menuItemClassName} value={option}>
