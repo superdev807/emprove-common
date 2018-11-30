@@ -11,6 +11,8 @@ export default theme => ({
     position: 'absolute',
     zIndex: 1,
     right: '-50px',
+    width: '48px',
+    height: '48px',
     [theme.breakpoints.down('sm')]: {
       left: '-8px',
       top: '-6px'
