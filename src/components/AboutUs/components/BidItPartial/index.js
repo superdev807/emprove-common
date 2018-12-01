@@ -58,7 +58,7 @@ class BidItPartial extends Component {
             GET IT DONE
           </div>
           <div id="bidItBody" className="bidItBody">
-            When you're comfortable with your project details and estimate, we'll send it to at least three qualified contractors in your area. Review their preliminary pricing and select the pros to meet. After a site visit, your contractor can nail down a price and we'll finalize the paperwork for you.
+            When you're comfortable with your project details and estimate, we'll send it to at least three qualified contractors in your area. Review their preliminary pricing and select the pros to meet. After a site visit, your contractor can nail down a price.
           </div>
           <div id="bidItButton" className="partial__button">
             {actionText && (
