@@ -42,9 +42,8 @@ class CostItPartial extends Component {
             ESTIMATE IT
           </div>
           <div id="costItBody" className="costItBody">
-            Don't believe it? Our <img src="/images/ic_e_logo_grey.svg" />
-            stimator has real time pricing on virtually everything that goes into a home renovation... by zip code. If your first estimate isn't
-            what you expected, you can just adjust materials and scope and watch the numbers change.
+            Don't believe it? Our estimator has real time pricing on virtually everything that goes into a home renovation... by zip code.
+            If your first estimate isn't what you expected, you can just adjust materials and scope and watch the numbers change.
           </div>
 
           <div id="costItButton" className="partial__button">
