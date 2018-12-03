@@ -43,9 +43,8 @@ class DreamItPartial extends Component {
             STYLE IT
           </div>
           <div id="dreamItBody" className="dreamItBody">
-            Our photos aren't just pretty... they're PrettySmart™! As you select photos you like, they send costing information to our{' '}
-            <img src="/images/ic_e_logo_grey.svg" />
-            stimator, the most advanced budgeting tool in the residential design and construction industry.
+            Our photos aren't just pretty... they're PrettySmart! As you select photos you like, they send costing information to our{' '}
+            estimator, the most advanced budgeting tool in the residential design and construction industry.
           </div>
 
           <div id="dreamItButton" className="partial__button">
