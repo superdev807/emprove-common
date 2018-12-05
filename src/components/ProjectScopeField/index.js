@@ -36,16 +36,19 @@ class ProjectScopeField extends Component {
     return (
       <div className={cx('project-scope-field', { [className]: Boolean(className) })}>
         <Grid container spacing={24}>
-          {options.map((option, index) => (
-            <Grid key={index} item className="project-scope-field__option">
-              <ProjectScopeOptionBox
-                onClick={this.handleChange(option.value)}
-                onClickDetail={onClickDetail}
-                option={option}
-                isMobile={this.state.isMobile}
-              />
-            </Grid>
-          ))}
+          {options.map((option, index) => {
+            return (
+              <Grid key={index} item className="project-scope-field__option">
+                <ProjectScopeOptionBox
+                  id={`buttons_clicked_projectPackageSelect_${option.value}`}
+                  onClick={this.handleChange(option.value)}
+                  onClickDetail={onClickDetail}
+                  option={option}
+                  isMobile={this.state.isMobile}
+                />
+              </Grid>
+            )
+          })}
         </Grid>
 
         {/* hiding for v1.7 */}
