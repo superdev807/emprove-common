@@ -35,7 +35,7 @@ const teamMembers = [
       homeAreaId: HomeArea.MASTER_BATHROOM,
       imageKey: '00043_E_cimage.jpg',
     },
-    description: 'Sofware executive with expertise in growing 0-$500MM businesses. Built large machine-learning personalization products.',
+    description: 'Software executive with expertise in growing 0-$500MM businesses. Built large machine-learning personalization products.',
     photoKey: 'linda_400x400.jpg',
   },
   {
