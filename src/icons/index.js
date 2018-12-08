@@ -119,8 +119,10 @@ export { default as IconMyAccountSettings } from './IconMyAccountSettings';
 export { default as IconMyProfile } from './IconMyProfile';
 export { default as IconMyProject } from './IconMyProject';
 // export { default as IconMyProperties } from './IconMyProperties'; IconProperty duplicate
+export { default as IconNewBidAwards } from './IconNewBidAwards';
 export { default as IconNewBidRequest } from './IconNewBidRequest';
 export { default as IconNewPassword } from './IconNewPassword';
+export { default as IconNewSiteVisitInvites } from './IconNewSiteVisitInvites';
 export { default as IconNewStyle } from './IconNewStyle';
 export { default as IconNewStyleColors } from './IconNewStyleColors';
 export { default as IconNextArrow } from './IconNextArrow';
