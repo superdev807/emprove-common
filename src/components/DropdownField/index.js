@@ -43,6 +43,7 @@ const DropdownField = ({
       <TextField
         select
         label={label}
+        name={input.name}
         onChange={input.onBlur}
         value={input.value}
         className={inputClassName}
@@ -79,6 +80,7 @@ const DropdownField = ({
       <Select
         onChange={input.onBlur}
         value={input.value}
+        name={input.name}
         className={cx(classes.originSelect, inputClassName)}
         displayEmpty={!!placeholder}
         disableUnderline={disableUnderline}
