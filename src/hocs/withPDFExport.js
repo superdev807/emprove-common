@@ -6,7 +6,7 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { downloadRfpPdf, exportRfpPdf, downloadBidPdf, exportBidPdf } from '../redux/modules/pdf';
-import { exportStatusSelector } from '~/redux/selectors';
+import { exportStatusSelector } from '../redux/selectors';
 import { getLocalTimezone } from '../utils/timeFunctions';
 import { setSnackbar } from '../redux/modules/globalStatus';
 import { show as showModal } from 'redux-modal';
@@ -14,7 +14,7 @@ import { withRouter } from 'react-router';
 import { API_PENDING, API_SUCCESS } from '../redux/api/request';
 import { VIEW_PDF_KIND } from '../config/constants';
 
-export default WrappedComponent => {
+export default timezoneSelector => WrappedComponent => {
   class PDFExportWrapper extends Component {
     handleExportRfp = (exportRfpId = null, callback) => {
       const rfpId = exportRfpId || this.props.match.params.rfpId;
@@ -58,7 +58,7 @@ export default WrappedComponent => {
     };
 
     handleViewRfpBrief = (viewRfpId, callback, onClose) => {
-      const { exportRfpPdf, match, setSnackbar, showModal } = this.props;
+      const { exportRfpPdf, match, setSnackbar, showModal, timezone } = this.props;
       const rfpId = viewRfpId || match.params.rfpId;
 
       exportRfpPdf({
@@ -70,9 +70,11 @@ export default WrappedComponent => {
           showModal('pdfViewerModal', {
             pdfKind: VIEW_PDF_KIND.FULL_RFP,
             source: url,
+            type: 'rfp',
             fileName,
             rfpId,
-            onClose
+            onClose,
+            timezone
           });
           callback && callback(true);
         },
@@ -117,17 +119,20 @@ export default WrappedComponent => {
     };
 
     handleViewBidBrief = (viewBidId, callback, onClose) => {
-      const { exportBidPdf, match, setSnackbar, showModal } = this.props;
+      const { exportBidPdf, match, setSnackbar, showModal, timezone } = this.props;
       const bidId = viewBidId || match.params.bidId;
 
       exportBidPdf({
         id: bidId,
         success: ({ url, fileName }) => {
           showModal('pdfViewerModal', {
+            pdfKind: VIEW_PDF_KIND.FULL_RFP,
             source: url,
+            type: 'bid',
             fileName,
             bidId,
-            onClose
+            onClose,
+            timezone
           });
           callback && callback(true);
         },
@@ -174,7 +179,8 @@ export default WrappedComponent => {
   }
 
   const selector = createStructuredSelector({
-    exportStatus: exportStatusSelector
+    exportStatus: exportStatusSelector,
+    timezone: timezoneSelector
   });
 
   const actions = {

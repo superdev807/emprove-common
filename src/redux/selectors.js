@@ -13,3 +13,7 @@ export const isTabletSelector = fp.get('device.isTablet');
 
 /* global status */
 export const globalStatusSelector = fp.get('globalStatus');
+
+/* pdf status */
+export const exportStatusSelector = fp.get('pdf.status');
+export const sendPdfStatusSelector = fp.get('pdf.sendStatus');
