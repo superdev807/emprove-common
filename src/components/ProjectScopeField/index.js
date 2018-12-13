@@ -31,7 +31,12 @@ class ProjectScopeField extends Component {
   };
 
   render() {
-    const { meta: { error }, className, showFreeFormOption, onClickDetail } = this.props;
+    const {
+      meta: { error },
+      className,
+      showFreeFormOption,
+      onClickDetail
+    } = this.props;
 
     return (
       <div className={cx('project-scope-field', { [className]: Boolean(className) })}>
@@ -47,7 +52,7 @@ class ProjectScopeField extends Component {
                   isMobile={this.state.isMobile}
                 />
               </Grid>
-            )
+            );
           })}
         </Grid>
 
