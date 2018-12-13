@@ -2,10 +2,12 @@
 
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
+import Draggable from 'react-draggable';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import Snackbar from '@material-ui/core/Snackbar';
 import Typography from '@material-ui/core/Typography';
+import './style.scss';
 
 moment.relativeTimeThreshold('s', 59);
 moment.relativeTimeThreshold('ss', 0);
@@ -68,20 +70,22 @@ class ImpersonationMonitor extends Component {
     const { timeLeft } = this.state;
 
     return impersonator ? (
-      <Snackbar
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-        open
-        message={
-          <span className="impersonation-monitor-text">
-            Admin Mode ({impersonator.email}) Expires in {timeLeft}
-          </span>
-        }
-        action={[
-          <Button key="close" color="inherit" onClick={onExit}>
-            Exit
-          </Button>
-        ]}
-      />
+      <Draggable bounds="parent">
+        <Snackbar
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+          open
+          message={
+            <span className="impersonation-monitor-text">
+              Admin Mode ({impersonator.email}) Expires in {timeLeft}
+            </span>
+          }
+          action={[
+            <Button key="close" color="inherit" onClick={onExit}>
+              Exit
+            </Button>
+          ]}
+        />
+      </Draggable>
     ) : null;
   }
 }
