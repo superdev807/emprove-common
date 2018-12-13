@@ -7,7 +7,7 @@ import './styles.scss';
 
 const instructions = [
   <span className="how-to-use-subtitle">STYLE IT</span>,
-  'Be inspired by our PrettySmart™ photos',
+  'Be inspired by our PrettySmart photos',
   'Create Styleboards',
   <span className="how-to-use-subtitle">ESTIMATE IT</span>,
   'Affordability assurance',
