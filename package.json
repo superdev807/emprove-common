@@ -82,6 +82,7 @@
     "react-jss": "^8.6.1",
     "react-markdown": "^3.3.4",
     "react-number-format": "^3.4.2",
+    "react-pdf": "^3.0.5",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-stripe-elements": "^2.0.1",
