@@ -70,7 +70,7 @@ class PostSectionLayout extends Component {
       <div className={cx('posts-section', this.props.className)} ref={container => (this.container = container)}>
         <div className="posts-section__title">{title}</div>
 
-        <div>{description}</div>
+        <div className="posts-section__description">{description}</div>
         {this.renderPosts(posts)}
 
         <div className="posts-section__link-container">{this.renderLink()}</div>
