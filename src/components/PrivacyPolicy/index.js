@@ -184,11 +184,10 @@ const PrivacyPolicy = props => {
         parental consent.<br />
         <br />
         <b>Data Security</b> <br />
-        <br />information about you will not be accessed, viewed, disclosed, altered, or destroyed by breach of any of our physical,
-        technical, or managerial safeguards. <br />
-        We use certain physical, managerial, and technical safeguards that are designed to improve the integrity and security of information
-        that we collect and maintain. Please be aware that no security measures are perfect or impenetrable. We cannot and do not guarantee
-        that <br />
+        <br />We use certain physical, managerial, and technical safeguards that are designed to improve the integrity and security of
+        information that we collect and maintain. Please be aware that no security measures are perfect or impenetrable. We cannot and do
+        not guarantee that information about you will not be accessed, viewed, disclosed, altered, or destroyed by breach of any of our
+        physical, technical, or managerial safeguards.<br />
         <br />
         <b>International Visitors</b> <br />
         <br />The Service is hosted in the United States and is intended for visitors located within the United States. If you choose to use
