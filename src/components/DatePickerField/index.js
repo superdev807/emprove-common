@@ -56,7 +56,7 @@ class DatePickerField extends Component {
 
   handleBlur = date => {
     const { input, timezone } = this.props;
-    input.onBlur(date && timezone ? convertTimezone(date, timezone) : date);
+    input.onBlur(date && timezone ? convertTimezone(date, timezone) : input.value);
   };
 
   handleInputRef = ref => {
