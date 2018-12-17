@@ -7,7 +7,7 @@ import PostsSectionLayout from '../PostsSectionLayout';
 
 class TipsAndIdeas extends Component {
   render() {
-    const { posts, fromContractor } = this.props;
+    const { linkText, posts, fromContractor } = this.props;
     let title = (
       <div>
         TIPS&nbsp;
@@ -26,7 +26,7 @@ class TipsAndIdeas extends Component {
         isLink
         linkRoute="/blog"
         postType="blog"
-        linkText="view all tips and ideas"
+        linkText={linkText || 'view all tips and ideas'}
       />
     );
   }
