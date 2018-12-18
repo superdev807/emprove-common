@@ -3,10 +3,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-import ProjectScopeBar from '../ProjectScopeBar';
 import './styles.scss';
 
 class ProjectScopeOptionBox extends Component {
@@ -24,7 +24,8 @@ class ProjectScopeOptionBox extends Component {
   static defaultProps = {
     highlightOnHover: true,
     opaque: false,
-    showSelectButton: true
+    showSelectButton: true,
+    showScaleInfo: false
   };
 
   handleClickDetail = event => {
@@ -33,7 +34,7 @@ class ProjectScopeOptionBox extends Component {
   };
 
   render() {
-    const { onClick, option, showSelectButton, isMobile } = this.props;
+    const { onClick, option, showSelectButton, showScaleInfo, isMobile } = this.props;
 
     return (
       <div
@@ -56,13 +57,16 @@ class ProjectScopeOptionBox extends Component {
           <Typography className="project-scope-option-box__text project-scope-option-box__text--title" variant="body2">
             {option.label}
           </Typography>
-          {/* hiding until v1.7.5 */}
-          {/* <Typography
-            className="project-scope-option-box__text project-scope-option-box__text--link"
-            variant="body2"
-            onClick={this.handleClickDetail}>
-            what's included
-          </Typography> */}
+          {showScaleInfo && (
+            <div className="project-scope-option-box__text project-scope-option-box__text--link-container">
+              <Typography
+                className="project-scope-option-box__text project-scope-option-box__text--link"
+                variant="body2"
+                onClick={this.handleClickDetail}>
+                what's included
+              </Typography>
+            </div>
+          )}
           <Typography className="project-scope-option-box__text project-scope-option-box__text--help" variant="body1">
             {option.text}
           </Typography>
