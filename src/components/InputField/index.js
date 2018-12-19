@@ -29,8 +29,10 @@ export class InputField extends Component {
     inputProps: PropTypes.object,
     label: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     max: PropTypes.number,
+    meta: PropTypes.object.isRequired,
     min: PropTypes.number,
     multiline: PropTypes.bool,
+    onValidBlur: PropTypes.func,
     placeholder: PropTypes.string,
     type: PropTypes.string,
     hideErrorText: PropTypes.bool,
@@ -65,11 +67,12 @@ export class InputField extends Component {
   };
 
   handleBlur = event => {
-    const { input, placeholder } = this.props;
+    const { input, placeholder, meta, onValidBlur } = this.props;
     if (placeholder) {
       event.target.placeholder = placeholder;
     }
     input.onBlur(event);
+    onValidBlur && meta.valid && onValidBlur(event, input.value);
   };
 
   handleChange = event => {

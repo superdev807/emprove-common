@@ -28,6 +28,7 @@ class CurrencyInputField extends Component {
     inputClassName: PropTypes.string,
     label: PropTypes.string,
     meta: PropTypes.object.isRequired,
+    onValidBlur: PropTypes.func,
     placeholder: PropTypes.string,
     rightAligned: PropTypes.bool
   };
@@ -55,13 +56,14 @@ class CurrencyInputField extends Component {
     input.onFocus(input.value);
   };
 
-  handleBlur = () => {
-    const { input } = this.props;
+  handleBlur = event => {
+    const { input, meta, onValidBlur } = this.props;
 
     this.setState({
       focused: false
     });
     input.onBlur(input.value);
+    meta.valid && onValidBlur && onValidBlur(event, input.value);
   };
 
   handleChange = event => {
