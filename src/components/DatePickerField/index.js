@@ -36,17 +36,18 @@ const convertTimezone = (date, timezone) =>
 
 class DatePickerField extends Component {
   static propTypes = {
-    input: PropTypes.object,
-    inputRef: PropTypes.func,
     className: PropTypes.string,
-    timezone: PropTypes.string,
+    datePickerInputText: PropTypes.string,
+    disableDateFuture: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    disableDatePast: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     fullWidth: PropTypes.bool,
     hideErrorText: PropTypes.bool,
+    input: PropTypes.object,
+    inputRef: PropTypes.func,
     label: PropTypes.string,
     meta: PropTypes.object,
-    disableDatePast: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-    disableDateFuture: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-    datePickerInputText: PropTypes.string
+    onValidBlur: PropTypes.func,
+    timezone: PropTypes.string
   };
 
   handleChange = date => {
@@ -55,8 +56,10 @@ class DatePickerField extends Component {
   };
 
   handleBlur = date => {
-    const { input, timezone } = this.props;
-    input.onBlur(date && timezone ? convertTimezone(date, timezone) : input.value);
+    const { input, onValidBlur, timezone } = this.props;
+    const value = date && timezone ? convertTimezone(date, timezone) : date || input.value;
+    input.onBlur(value);
+    onValidBlur && meta.valid && onValidBlur(null, value);
   };
 
   handleInputRef = ref => {

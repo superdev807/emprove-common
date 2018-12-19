@@ -35,6 +35,12 @@ export class ZipCodeField extends Component {
     }
   }
 
+  handleBlur = event => {
+    const { input, meta, onValidBlur } = this.props;
+    input.onBlur(event);
+    onValidBlur && meta.valid && onValidBlur(event, input.value);
+  };
+
   render() {
     const {
       className,
@@ -80,6 +86,7 @@ export class ZipCodeField extends Component {
         {helperText && <FormHelperText>{helperText}</FormHelperText>}
         <InputComponent
           {...input}
+          onBlur={this.handleBlur}
           type={type}
           className={cx(classes.zipCode, inputClassName)}
           placeholder={placeholder}
