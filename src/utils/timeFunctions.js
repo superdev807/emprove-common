@@ -4,6 +4,7 @@ import business from 'moment-business-days';
 import moment from 'moment';
 import momenttz from 'moment-timezone';
 import timeline from '../data/rfp_timeline.json';
+import { PACIFIC_TIMEZONE } from '../config/constants';
 
 const dateFormat = 'YYYY-MM-DD';
 
@@ -96,6 +97,10 @@ export const calculateTimelineFromFinalBidDueDate = (finalBidDueDate, businessDa
   return { finalBidDueDate, awardDate };
 };
 
+export const correctDueDate = date =>
+  // Change to Pacific timezone rather than UTC to handle daylight saving time
+  momenttz.tz(date, PACIFIC_TIMEZONE).set({ hour: 17, minute: 0, second: 0, millisecond: 0 });
+
 export const calculateProjectTimeline = rfpSentDueDate => {
   if (!rfpSentDueDate) {
     rfpSentDueDate = moment();
@@ -103,13 +108,17 @@ export const calculateProjectTimeline = rfpSentDueDate => {
 
   const businessDaysToUse = process.env.IN_TEST_MODE === 'true' ? 'qa_business_days' : 'md_project_business_days';
 
-  const submitProposalsDueDate = business(rfpSentDueDate).businessAdd(timeline[2][businessDaysToUse] + timeline[3][businessDaysToUse]);
+  const submitProposalsDueDate = correctDueDate(
+    business(rfpSentDueDate).businessAdd(timeline[2][businessDaysToUse] + timeline[3][businessDaysToUse])
+  );
 
-  const siteVisitDueDate = business(submitProposalsDueDate).businessAdd(timeline[4][businessDaysToUse] + timeline[5][businessDaysToUse]);
+  const siteVisitDueDate = correctDueDate(
+    business(submitProposalsDueDate).businessAdd(timeline[4][businessDaysToUse] + timeline[5][businessDaysToUse])
+  );
 
-  const finalBidDueDate = business(siteVisitDueDate).businessAdd(timeline[6][businessDaysToUse]);
+  const finalBidDueDate = correctDueDate(business(siteVisitDueDate).businessAdd(timeline[6][businessDaysToUse]));
 
-  const awardDate = business(finalBidDueDate).businessAdd(timeline[7][businessDaysToUse]);
+  const awardDate = correctDueDate(business(finalBidDueDate).businessAdd(timeline[7][businessDaysToUse]));
 
   return {
     rfpSentDueDate,
