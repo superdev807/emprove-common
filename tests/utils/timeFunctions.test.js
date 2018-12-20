@@ -1,27 +1,27 @@
 'use strict';
 
 import moment from 'moment';
+import momenttz from 'moment-timezone';
 import {
-  strToday,
-  formatUtcDate,
-  localDateToUTC,
-  utcDateWithZeroTime,
-  strToDate,
   calculateProjectTimeline,
-  awardDateFromRfpSentDueDate,
-  getAwardDateFromRfpSentDueDate,
   convertDateFormat,
-  getMinimumWeek,
+  correctDueDate,
+  formatUtcDate,
+  getAllTimezones,
+  getAwardDateFromRfpSentDueDate,
   getMaximumWeek,
-  toShortTimezone,
+  getMinimumWeek,
+  localDateToUTC,
+  strToDate,
+  strToday,
   toISODateStr,
-  getAllTimezones
+  toShortTimezone,
 } from '~/utils/timeFunctions';
 
 describe('timeline functions', () => {
   jest.mock('moment', () => () => ({ format: () => '2018–11–09T12:34:56+00:00' }));
 
-  const utcDateTime = '2018-07-05 18:00:00';
+  const utcDateTime = '2018-07-05T18:00:00.000Z';
   const utcDateTimeWithZeroTime = '2018-07-05 00:00:00';
   const onlyDate = '07/02/2018';
   const momentTime = moment('2018-06-12T18:30:00', 'YYYY-MM-DDTHH:mm:ss');
@@ -45,17 +45,10 @@ describe('timeline functions', () => {
   describe('localDateToUTC', () => {
     // need different expected value for different test timezones.
     const expected =
-      utcOffset < -330 ? `2018-06-13T${now.utc().format('HH:mm:ss')}.000Z` : `2018-06-12T${now.utc().format('HH:mm:ss')}.000Z`;
+      utcOffset < -360 ? `2018-06-13T${now.utc().format('HH:mm:ss')}.000Z` : `2018-06-12T${now.utc().format('HH:mm:ss')}.000Z`;
 
     it('should convert local date/time to utc date/time with current time in ISO format', () => {
       expect(localDateToUTC(momentTime)).toBe(expected);
-    });
-  });
-
-  describe('utcDateWithZeroTime', () => {
-    it('should return UTC date/time with 0s for time in ISO format', () => {
-      expect(utcDateWithZeroTime(onlyDate)).toBe('2018-07-02T00:00:00.000Z');
-      expect(utcDateWithZeroTime(momentTime)).toBe('2018-06-12T00:00:00.000Z');
     });
   });
 
@@ -68,11 +61,22 @@ describe('timeline functions', () => {
       const dateTime = '2018-07-05 18:00:00';
       const utcOffset = new Date('2018-07-05').getTimezoneOffset();
       // need different expected value for different test timezones.
-      const utcOffsetHours = utcOffset / 60;
+      let utcOffsetHours = utcOffset / 60;
+      const day = 5 - (utcOffsetHours >= 0 ? 0 : 1);
+      utcOffsetHours = (utcOffsetHours + 24) % 24;
       const hour = utcOffsetHours < 10 ? `0${utcOffsetHours}` : `${utcOffsetHours}`;
-      const expected = `2018-07-05T${hour}:00:00.000Z`;
+      const expected = `2018-07-0${day}T${hour}:00:00.000Z`;
 
       expect(strToDate(dateTime).toJSON()).toBe(expected);
+    });
+  });
+
+  describe('correctDueDate', () => {
+    it('should return 17:00 PST equivalent moment object in UTC timezone', () => {
+      const dateTimeTokyo = momenttz.tz('2018-07-05 18:00:00', 'Asia/Tokyo');
+      expect(correctDueDate(dateTimeTokyo).toISOString()).toBe('2018-07-06T00:00:00.000Z');
+      const dateTimeLA = momenttz.tz('2018-07-05 18:00:00', 'America/Los_Angeles');
+      expect(correctDueDate(dateTimeLA).toISOString()).toBe('2018-07-06T00:00:00.000Z');
     });
   });
 
@@ -80,41 +84,46 @@ describe('timeline functions', () => {
   describe('calculateProjectTimeline', () => {
     it('should return 5 project timeline dates given a rfpSentDueDate', () => {
       // need different expected value for different test timezones.
-      const utcDateTime = '2018-07-05 18:00:00';
-      const utcOffset = new Date('2018-07-05').getTimezoneOffset();
-      const utcOffsetHours = utcOffset / 60;
-      const rawHour = utcOffsetHours >= 6 ? utcOffsetHours - 6 : 24 - (6 - utcOffsetHours);
-      const hour = rawHour < 10 ? `0${rawHour}` : `${rawHour}`;
-
-      const expectedSubmitProposalsDueDate = utcOffsetHours > 6 ? `2018-07-17T${hour}:00:00.000Z` : `2018-07-16T${hour}:00:00.000Z`;
-      const expectedSiteVisitDueDate = utcOffsetHours > 6 ? `2018-07-27T${hour}:00:00.000Z` : `2018-07-26T${hour}:00:00.000Z`;
-      const expectedFinalBidDueDate = utcOffsetHours > 6 ? `2018-08-01T${hour}:00:00.000Z` : `2018-07-31T${hour}:00:00.000Z`;
-      const expectedAwardDate = utcOffsetHours > 6 ? `2018-08-04T${hour}:00:00.000Z` : `2018-08-03T${hour}:00:00.000Z`;
-
       const timeLine = calculateProjectTimeline(utcDateTime);
 
-      expect(timeLine.rfpSentDueDate).toBe('2018-07-05 18:00:00');
-      expect(timeLine.submitProposalsDueDate.toJSON()).toBe(expectedSubmitProposalsDueDate);
-      expect(timeLine.siteVisitDueDate.toJSON()).toBe(expectedSiteVisitDueDate);
-      expect(timeLine.finalBidDueDate.toJSON()).toBe(expectedFinalBidDueDate);
-      expect(timeLine.awardDate.toJSON()).toBe(expectedAwardDate);
+      expect(timeLine.rfpSentDueDate).toBe(utcDateTime);
+      expect(timeLine.submitProposalsDueDate.toJSON()).toBe('2018-07-17T00:00:00.000Z');
+      expect(timeLine.siteVisitDueDate.toJSON()).toBe('2018-07-27T00:00:00.000Z');
+      expect(timeLine.finalBidDueDate.toJSON()).toBe('2018-08-01T00:00:00.000Z');
+      expect(timeLine.awardDate.toJSON()).toBe('2018-08-04T00:00:00.000Z');
     });
-  });
 
-  describe('awardDateFromRfpSentDueDate', () => {
-    it('should return date in YYYY-MM-DD format', () => {
-      expect(awardDateFromRfpSentDueDate(utcDateTime)).toBe('2018-08-03');
+    it('should return 5 project timeline dates given a rfpSentDueDate with daylight saving time considered', () => {
+      // need different expected value for different test timezones.
+      const utcDateTime = '2018-11-05T18:00:00.000Z';
+      const timeLine = calculateProjectTimeline(utcDateTime);
+
+      expect(timeLine.rfpSentDueDate).toBe(utcDateTime);
+      expect(timeLine.submitProposalsDueDate.toJSON()).toBe('2018-11-15T01:00:00.000Z');
+      expect(timeLine.siteVisitDueDate.toJSON()).toBe('2018-11-27T01:00:00.000Z');
+      expect(timeLine.finalBidDueDate.toJSON()).toBe('2018-11-30T01:00:00.000Z');
+      expect(timeLine.awardDate.toJSON()).toBe('2018-12-05T01:00:00.000Z');
     });
   });
 
   describe('getAwardDateFromRfpSentDueDate', () => {
-    it('should return rfpSentDueDate in moment type', () => {
+    it('should return awardDate from rfpSentDueDate in moment type', () => {
       let awardDate;
       awardDate = getAwardDateFromRfpSentDueDate(utcDateTime, 'Asia/Tokyo');
       expect(awardDate.isValid()).toBe(true);
-      expect(awardDate.toISOString(true)).toEqual('2018-08-06T00:00:00.000+09:00'); // Also checking business days here
+      expect(awardDate.toISOString()).toEqual('2018-08-04T00:00:00.000Z'); // Also checking business days here
       awardDate = getAwardDateFromRfpSentDueDate(utcDateTime, 'America/Los_Angeles');
-      expect(awardDate.toISOString(true)).toEqual('2018-08-03T00:00:00.000-07:00');
+      expect(awardDate.toISOString()).toEqual('2018-08-04T00:00:00.000Z');
+    });
+
+    it('should return awardDate from rfpSentDueDate in moment type with daylight saving time considered', () => {
+      const utcDateTime = '2018-11-05T18:00:00.000Z';
+      let awardDate;
+      awardDate = getAwardDateFromRfpSentDueDate(utcDateTime, 'Asia/Tokyo');
+      expect(awardDate.isValid()).toBe(true);
+      expect(awardDate.toISOString()).toEqual('2018-12-05T01:00:00.000Z'); // Also checking business days here
+      awardDate = getAwardDateFromRfpSentDueDate(utcDateTime, 'America/Los_Angeles');
+      expect(awardDate.toISOString()).toEqual('2018-12-05T01:00:00.000Z');
     });
   });
 

@@ -40,18 +40,6 @@ export const localDateToUTC = date => {
   }
 };
 
-export const utcDateWithZeroTime = date => {
-  if (date) {
-    let dateOnly = date instanceof moment ? date.format(dateFormat) : moment(convertDateFormat(date), dateFormat);
-    return moment
-      .utc(dateOnly)
-      .set({ hour: 0, minute: 0, second: 0, millisecond: 0 })
-      .toISOString();
-  } else {
-    return null;
-  }
-};
-
 // going to drop the time and make date a moment object
 // 2018-06-06 02:16:19 =>
 export const strToDate = str => {
@@ -129,23 +117,8 @@ export const calculateProjectTimeline = rfpSentDueDate => {
   };
 };
 
-// TODO: Remove it as well when old FinalizeRFP route is removed.
-export const awardDateFromRfpSentDueDate = strRfpSentDueDate => {
-  const rfpSentDueDate = strRfpSentDueDate ? strToDate(strRfpSentDueDate) : moment();
-  if (rfpSentDueDate) {
-    const projectTimeline = calculateProjectTimeline(rfpSentDueDate);
-    const awardDate = projectTimeline.awardDate;
-    return awardDate.format(dateFormat);
-  } else {
-    return null;
-  }
-};
-
 export const getAwardDateFromRfpSentDueDate = (rfpSentDueDate, timezone) => {
-  let rfpSentDueDateMoment = momenttz(rfpSentDueDate || undefined);
-  if (timezone) {
-    rfpSentDueDateMoment = rfpSentDueDateMoment.tz(timezone).startOf('day');
-  }
+  let rfpSentDueDateMoment = momenttz.tz(rfpSentDueDate || undefined, timezone);
   const projectTimeline = calculateProjectTimeline(rfpSentDueDateMoment);
   const awardDate = projectTimeline.awardDate;
   return awardDate;
