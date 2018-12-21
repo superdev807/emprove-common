@@ -30,11 +30,11 @@ class BlogPost extends Component {
     }
   }
   render() {
-    const { post } = this.props;
+    const { ids, post } = this.props;
 
     return (
       <div className="post-item">
-        <a className="post-item__link-wrapper" href={this.getURL()}>
+        <a id={ids.blogTitle} className="post-item__link-wrapper" href={this.getURL()}>
           <img className="post-item__image" src={post.featured_image} />
           <div className="post-item__title">
             <b>{decodeSpecialCharacters(post.title)}</b>
@@ -42,7 +42,7 @@ class BlogPost extends Component {
         </a>
         <div className="post-item__date">{moment(post.date).format('MMMM DD, YYYY')}</div>
         <div className="post-item__excerpt" dangerouslySetInnerHTML={{ __html: post.excerpt }} />
-        <a className="post-item__read-story" href={this.getURL()}>
+        <a id={ids.readFull} className="post-item__read-story" href={this.getURL()}>
           <b>READ THE FULL STORY</b>
         </a>
       </div>

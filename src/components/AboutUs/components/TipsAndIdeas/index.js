@@ -1,11 +1,20 @@
 'use strict';
 
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import withPosts from '../../../../hocs/withPosts';
 import PostsSectionLayout from '../PostsSectionLayout';
 
 class TipsAndIdeas extends Component {
+  static propTypes = {
+    ids: PropTypes.object
+  };
+
+  static defaultProps = {
+    ids: {}
+  };
+
   render() {
     const { linkText, posts, fromContractor } = this.props;
     let title = (
@@ -18,6 +27,7 @@ class TipsAndIdeas extends Component {
 
     return (
       <PostsSectionLayout
+        ids={this.props.ids}
         className={this.props.className}
         description="Get Ideas and Advice for Your Home Improvement Projects"
         title={title}
