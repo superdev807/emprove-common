@@ -25,6 +25,7 @@ class DropdownField extends Component {
     fullWidth: PropTypes.bool,
     helperText: PropTypes.string,
     helperTextClassName: PropTypes.string,
+    id: PropTypes.string,
     input: PropTypes.object.isRequired,
     inputClassName: PropTypes.string,
     inputLabelProps: PropTypes.object,
@@ -61,6 +62,7 @@ class DropdownField extends Component {
       fullWidth,
       helperText,
       helperTextClassName,
+      id,
       input,
       inputClassName,
       inputLabelProps,
@@ -74,7 +76,7 @@ class DropdownField extends Component {
       variant
     } = this.props;
     return variant === 'outlined' ? (
-      <FormControl className={className} error={touched && !!error} fullWidth={fullWidth}>
+      <FormControl id={id} className={className} error={touched && !!error} fullWidth={fullWidth}>
         {helperText && <FormHelperText className={helperTextClassName}>{helperText}</FormHelperText>}
         <TextField
           select
@@ -110,7 +112,7 @@ class DropdownField extends Component {
         {touched && error && <FormHelperText>{error}</FormHelperText>}
       </FormControl>
     ) : (
-      <FormControl className={className} error={touched && !!error} fullWidth={fullWidth}>
+      <FormControl id={id} className={className} error={touched && !!error} fullWidth={fullWidth}>
         {helperText && <FormHelperText className={helperTextClassName}>{helperText}</FormHelperText>}
         {label && <InputLabel>{label}</InputLabel>}
         <Select

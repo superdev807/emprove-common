@@ -49,6 +49,7 @@ export class ZipCodeField extends Component {
       errorMessageClass,
       fullWidth,
       helperText,
+      id,
       input,
       inputClassName,
       inputLabelProps,
@@ -74,7 +75,7 @@ export class ZipCodeField extends Component {
     }
 
     return (
-      <FormControl className={className} error={touched && !!error} fullWidth={fullWidth} variant={variant}>
+      <FormControl id={id} className={className} error={touched && !!error} fullWidth={fullWidth} variant={variant}>
         {label && (
           <InputLabel
             // classeName={inputLabelClassName}
