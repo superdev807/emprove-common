@@ -116,7 +116,7 @@ class PdfViewerModal extends Component {
               DOWNLOAD
             </Button>
           ) : null}
-          <IconButton id={pdfKind === VIEW_PDF_KIND.FULL_RFP ? 'buttons_closed_page_rfp​' : undefined} onClick={this.handleClose}>
+          <IconButton id={pdfKind === VIEW_PDF_KIND.FULL_RFP ? 'buttons_closed_page_rfp' : undefined} onClick={this.handleClose}>
             <IconClose className={classes.topIcon} />
           </IconButton>
         </DialogTitle>
