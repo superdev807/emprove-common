@@ -9,15 +9,18 @@ import { decodeSpecialCharacters } from '../../utils/pureFunctions';
 import './style.scss';
 
 class BlogPost extends Component {
-  static defaultProps = {
-    postType: 'blog'
-  };
-
   static propTypes = {
+    ids: PropTypes.object,
     post: PropTypes.any,
     postType: PropTypes.oneOf(['blog', 'press-and-media']),
     fromContractor: PropTypes.bool
   };
+
+  static defaultProps = {
+    ids: {},
+    postType: 'blog'
+  };
+
   getURL() {
     const { post, postType, fromContractor } = this.props;
 

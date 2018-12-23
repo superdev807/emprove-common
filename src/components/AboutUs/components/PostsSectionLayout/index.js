@@ -23,7 +23,7 @@ class PostSectionLayout extends Component {
     postType: PropTypes.oneOf(['blog', 'press-and-media'])
   };
 
-  static propTypes = {
+  static defaultProps = {
     ids: {}
   };
 
