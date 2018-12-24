@@ -12,6 +12,7 @@ import './style.scss';
 class PostSectionLayout extends Component {
   static propTypes = {
     className: PropTypes.string,
+    ids: PropTypes.object,
     posts: PropTypes.array,
     title: PropTypes.object,
     description: PropTypes.string,
@@ -22,8 +23,12 @@ class PostSectionLayout extends Component {
     postType: PropTypes.oneOf(['blog', 'press-and-media'])
   };
 
+  static defaultProps = {
+    ids: {}
+  };
+
   renderPosts(posts) {
-    const { postsToShow, postType, fromContractor } = this.props;
+    const { ids, postsToShow, postType, fromContractor } = this.props;
     return (
       <CSSTransitionGroup
         component="div"
@@ -33,7 +38,7 @@ class PostSectionLayout extends Component {
         transitionLeaveTimeout={300}>
         {posts.map((post, index) => (
           <div key={index} className="posts-section__item">
-            <BlogPost postType={postType} post={post} fromContractor={fromContractor} />
+            <BlogPost ids={{ blogTitle: `${ids.blogTitlePrefix}${index + 1}`, readFull: `${ids.readFullPrefix}${index + 1}` }} postType={postType} post={post} fromContractor={fromContractor} />
           </div>
         ))}
       </CSSTransitionGroup>
@@ -41,7 +46,7 @@ class PostSectionLayout extends Component {
   }
 
   renderLink() {
-    const { isLink, fromContractor, linkRoute, linkText } = this.props;
+    const { ids, isLink, fromContractor, linkRoute, linkText } = this.props;
 
     if (fromContractor) {
       if (isLink) {
@@ -54,7 +59,7 @@ class PostSectionLayout extends Component {
     } else {
       if (isLink) {
         return (
-          <Link to={linkRoute} className="posts-section__link-view-all">
+          <Link id={ids.seeMore} to={linkRoute} className="posts-section__link-view-all">
             {linkText}
           </Link>
         );
