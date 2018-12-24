@@ -82,27 +82,27 @@ describe('timeline functions', () => {
 
   //The next two tests depend on the business days defined in rfp_timeline
   describe('calculateProjectTimeline', () => {
-    it('should return 5 project timeline dates given a rfpSentDueDate', () => {
+    it('should return 10 project timeline dates given a rfpSentDueDate', () => {
       // need different expected value for different test timezones.
       const timeLine = calculateProjectTimeline(utcDateTime);
 
       expect(timeLine.rfpSentDueDate).toBe(utcDateTime);
       expect(timeLine.submitProposalsDueDate.toJSON()).toBe('2018-07-17T00:00:00.000Z');
-      expect(timeLine.siteVisitDueDate.toJSON()).toBe('2018-07-27T00:00:00.000Z');
-      expect(timeLine.finalBidDueDate.toJSON()).toBe('2018-08-01T00:00:00.000Z');
-      expect(timeLine.awardDate.toJSON()).toBe('2018-08-04T00:00:00.000Z');
+      expect(timeLine.siteVisitDueDate.toJSON()).toBe('2018-08-03T00:00:00.000Z');
+      expect(timeLine.finalBidDueDate.toJSON()).toBe('2018-08-08T00:00:00.000Z');
+      expect(timeLine.awardDate.toJSON()).toBe('2018-08-11T00:00:00.000Z');
     });
 
-    it('should return 5 project timeline dates given a rfpSentDueDate with daylight saving time considered', () => {
+    it('should return 10 project timeline dates given a rfpSentDueDate with daylight saving time considered', () => {
       // need different expected value for different test timezones.
       const utcDateTime = '2018-11-05T18:00:00.000Z';
       const timeLine = calculateProjectTimeline(utcDateTime);
 
       expect(timeLine.rfpSentDueDate).toBe(utcDateTime);
       expect(timeLine.submitProposalsDueDate.toJSON()).toBe('2018-11-15T01:00:00.000Z');
-      expect(timeLine.siteVisitDueDate.toJSON()).toBe('2018-11-27T01:00:00.000Z');
-      expect(timeLine.finalBidDueDate.toJSON()).toBe('2018-11-30T01:00:00.000Z');
-      expect(timeLine.awardDate.toJSON()).toBe('2018-12-05T01:00:00.000Z');
+      expect(timeLine.siteVisitDueDate.toJSON()).toBe('2018-12-04T01:00:00.000Z');
+      expect(timeLine.finalBidDueDate.toJSON()).toBe('2018-12-07T01:00:00.000Z');
+      expect(timeLine.awardDate.toJSON()).toBe('2018-12-12T01:00:00.000Z');
     });
   });
 
@@ -111,9 +111,9 @@ describe('timeline functions', () => {
       let awardDate;
       awardDate = getAwardDateFromRfpSentDueDate(utcDateTime, 'Asia/Tokyo');
       expect(awardDate.isValid()).toBe(true);
-      expect(awardDate.toISOString()).toEqual('2018-08-04T00:00:00.000Z'); // Also checking business days here
+      expect(awardDate.toISOString()).toEqual('2018-08-11T00:00:00.000Z'); // Also checking business days here
       awardDate = getAwardDateFromRfpSentDueDate(utcDateTime, 'America/Los_Angeles');
-      expect(awardDate.toISOString()).toEqual('2018-08-04T00:00:00.000Z');
+      expect(awardDate.toISOString()).toEqual('2018-08-11T00:00:00.000Z');
     });
 
     it('should return awardDate from rfpSentDueDate in moment type with daylight saving time considered', () => {
@@ -121,9 +121,9 @@ describe('timeline functions', () => {
       let awardDate;
       awardDate = getAwardDateFromRfpSentDueDate(utcDateTime, 'Asia/Tokyo');
       expect(awardDate.isValid()).toBe(true);
-      expect(awardDate.toISOString()).toEqual('2018-12-05T01:00:00.000Z'); // Also checking business days here
+      expect(awardDate.toISOString()).toEqual('2018-12-12T01:00:00.000Z'); // Also checking business days here
       awardDate = getAwardDateFromRfpSentDueDate(utcDateTime, 'America/Los_Angeles');
-      expect(awardDate.toISOString()).toEqual('2018-12-05T01:00:00.000Z');
+      expect(awardDate.toISOString()).toEqual('2018-12-12T01:00:00.000Z');
     });
   });
 
