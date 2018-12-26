@@ -1,5 +1,12 @@
 'use strict';
 
+const PROJECT_FEATURES = {
+  title: 'Project Features',
+  body: [
+    'These are the "big ticket" items that help shape the way your new space will look.'
+  ]
+};
+
 const PROJECT_SCALE = {
   title: 'Project Scale',
   body: [
@@ -116,6 +123,7 @@ const GET_PRICING = {
 };
 
 const ProjectInformation = {
+  PROJECT_FEATURES,
   PROJECT_SCALE,
   OVERALL_QUALITY,
   PROJECT_COST_ESTIMATE,
