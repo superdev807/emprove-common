@@ -45,6 +45,12 @@ export default {
         year: 'numeric',
         weekday: 'long'
       },
+      shortWeekdayDayMonthAndYear: {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+        weekday: 'short'
+      },
       dayMonAndYear: {
         day: 'numeric',
         month: 'short',
