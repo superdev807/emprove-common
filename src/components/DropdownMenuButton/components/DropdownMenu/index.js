@@ -40,14 +40,6 @@ class DropdownMenu extends Component {
     };
   }
 
-  toggleMenu = menuName => () => {
-    const showMenu = `show${menuName}`;
-
-    this.setState({
-      [showMenu]: !this.state[showMenu]
-    });
-  };
-
   renderDropdownMenu() {
     const { menuItems, onSelectMenuItem, selectedItems, shouldSelectObject, onClearAll, onClose } = this.props;
     return (
