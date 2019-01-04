@@ -1,0 +1,75 @@
+@import 'variables';
+
+.drop-down-menu {
+
+  &__item {
+    margin: 0px;
+    padding: 8px 12px;
+    min-height: 28px;
+
+    &-label {
+      font-size: 0.8em;
+
+      &--selected {
+        color: $primary;
+      }
+    }
+
+    &:first-of-type {
+      margin-top: 8px;
+    }
+
+    &:hover {
+      background-color: $very-light-gray;
+
+      & .drop-down-menu__item-label {
+        color: $primary;
+      }
+    }
+  }
+
+  &__checkbox {
+    padding: 4px;
+  }
+
+  &__menu {
+
+    &-close {
+      position: absolute;
+      right: 0;
+      padding: 8px;
+    }
+  }
+
+  &__items-container {
+    max-height: 400px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 52px;
+  }
+
+  &__footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  &__divider {
+    height: 1px;
+    background: $light-gray;
+  }
+
+  &__clear-btn {
+    font-size: 0.80em;
+    font-weight: 600;
+    padding: 10px 16px;
+    width: 100%;
+    background: #ffffff;
+
+    &:hover {
+      background: $very-light-gray;
+      color: $primary;
+    }
+  }
+}

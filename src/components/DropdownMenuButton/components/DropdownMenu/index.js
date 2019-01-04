@@ -1,25 +1,21 @@
 'use strict';
 
 import React, { Fragment, Component } from 'react';
+import Button from '@material-ui/core/Button';
+import Checkbox from '@material-ui/core/Checkbox';
+import CheckBoxIcon from '@material-ui/icons/CheckBox';
+import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import Collapse from '@material-ui/core/Collapse';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormGroup from '@material-ui/core/FormGroup';
+import IconButton from '@material-ui/core/IconButton';
+import IconClose from '@material-ui/icons/Close';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import Collapse from '@material-ui/core/Collapse';
-import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
-import MenuItem from '@material-ui/core/MenuItem';
-import MenuList from '@material-ui/core/MenuList';
-import IconClose from '@material-ui/icons/Close';
-import IconExpandLess from '@material-ui/icons/ExpandLess';
-import IconExpandMore from '@material-ui/icons/ExpandMore';
 import includes from 'lodash/includes';
-import FormControl from '@material-ui/core/FormControl';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
-import { Typography } from '@material-ui/core';
 
-// import './styles.scss';
+import './styles.scss';
 
 class DropdownMenu extends Component {
   static propTypes = {
@@ -57,25 +53,37 @@ class DropdownMenu extends Component {
     return (
       <ClickAwayListener onClickAway={onClose}>
         <FormGroup>
-          {menuItems.map(item => (
-            <FormControlLabel
-              key={item.id}
-              control={
-                <Checkbox
-                  checked={
-                    shouldSelectObject ? (selectedItems || []).some(ul3 => ul3.id === item.id) : includes(selectedItems || [], item.id)
+          <div className="drop-down-menu__items-container">
+            {menuItems.map(item => {
+              const selected = shouldSelectObject
+                ? (selectedItems || []).some(ul3 => ul3.id === item.id)
+                : includes(selectedItems || [], item.id);
+              return (
+                <FormControlLabel
+                  className="drop-down-menu__item"
+                  classes={{ label: cx('drop-down-menu__item-label', { 'drop-down-menu__item-label--selected': selected }) }}
+                  key={item.id}
+                  control={
+                    <Checkbox
+                      className="drop-down-menu__checkbox"
+                      checked={selected}
+                      onChange={shouldSelectObject ? onSelectMenuItem(item) : onSelectMenuItem(item.id)}
+                      icon={<CheckBoxOutlineBlankIcon fontSize="small" />}
+                      checkedIcon={<CheckBoxIcon color="primary" fontSize="small" />}
+                      value={`${item.id}`} //Checkbox wants value to be type string
+                    />
                   }
-                  onChange={shouldSelectObject ? onSelectMenuItem(item) : onSelectMenuItem(item.id)}
-                  value={`${item.id}`} //Checkbox wants value to be type string
+                  label={item.label}
                 />
-              }
-              label={item.label}
-            />
-          ))}
-          <div className="wook-menu-divider" />
-          <Typography className="wook-test-text" onClick={onClearAll}>
-            Clear All
-          </Typography>
+              );
+            })}
+          </div>
+          <div className="drop-down-menu__footer">
+            <div className="drop-down-menu__divider" />
+            <Button className="drop-down-menu__clear-btn" onClick={onClearAll}>
+              Clear All
+            </Button>
+          </div>
         </FormGroup>
       </ClickAwayListener>
     );

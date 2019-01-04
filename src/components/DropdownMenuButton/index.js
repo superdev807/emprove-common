@@ -1,35 +1,40 @@
 'use strict';
 
 import React, { Component, Fragment } from 'react';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
-import PropTypes from 'prop-types';
-import IconArrowDropdown from '../../icons/IconArrowDropdown';
-import xor from 'lodash/xor';
-
 import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import DropdownMenu from './components/DropdownMenu';
+import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
-import { withStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
+import xor from 'lodash/xor';
 
-// import styles from './styles';
+import DropdownMenu from './components/DropdownMenu';
+import IconArrowDropdown from '../../icons/IconArrowDropdown';
+
+import './styles.scss';
 
 class DropdownMenuButton extends Component {
   static propTypes = {
     buttonLabel: PropTypes.string,
+    className: PropTypes.string,
+    highlightActive: PropTypes.bool,
     menuItems: PropTypes.array,
     onClearAll: PropTypes.func,
     onSelectMenuItem: PropTypes.func.isRequired,
     selectedItems: PropTypes.array,
-    shouldSelectObject: PropTypes.bool
+    shouldCloseFilterMenu: PropTypes.bool,
+    shouldSelectObject: PropTypes.bool,
+    showArrow: PropTypes.bool
   };
 
   static defaultProps = {
     buttonLabel: '',
+    highlightActive: true,
     menuItems: [],
     selectedItems: [],
-    shouldSelectObject: false
+    shouldSelectObject: false,
+    showArrow: true
   };
 
   constructor(props) {
@@ -39,6 +44,12 @@ class DropdownMenuButton extends Component {
     };
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.shouldCloseFilterMenu && prevProps.shouldCloseFilterMenu !== this.props.shouldCloseFilterMenu) {
+      this.handleClose();
+    }
+  }
+
   handleClickButton = () => {
     this.setState({
       open: !this.state.open
@@ -46,7 +57,7 @@ class DropdownMenuButton extends Component {
   };
 
   handleClose = event => {
-    if (this.anchorEl.contains(event.target)) {
+    if (event && this.anchorEl.contains(event.target)) {
       return;
     }
 
@@ -62,26 +73,46 @@ class DropdownMenuButton extends Component {
 
   render() {
     const { open } = this.state;
-    const { buttonLabel, menuItems, onClearAll, selectedItems, shouldSelectObject } = this.props;
+    const {
+      buttonLabel,
+      className,
+      highlightActive,
+      menuItems,
+      onClearAll,
+      paperClass,
+      popperClass,
+      selectedItems,
+      showArrow,
+      shouldSelectObject
+    } = this.props;
 
-    const id = open ? 'drop-down-menu-button' : null;
+    const id = open ? 'drop-down-menu-btn' : null;
+    const active = highlightActive && selectedItems.length > 0;
 
     return (
       <Fragment>
         <Button
-          // id="drop-down-menu-button"
+          // id="drop-down-menu-btn"
           buttonRef={node => {
             this.anchorEl = node;
           }}
           aria-describedby={id}
           onClick={this.handleClickButton}
           aria-haspopup="true"
-          className="drop-down-menu-button__button">
-          {buttonLabel}
-          <IconArrowDropdown />
+          className={cx('drop-down-menu-btn__btn', { 'drop-down-menu-btn__btn--active': active }, className)}
+          variant="outlined">
+          <Typography className={cx('drop-down-menu-btn__btn-label', { 'drop-down-menu-btn__btn-label--active': active })}>
+            {buttonLabel}
+          </Typography>
+          {showArrow && <IconArrowDropdown />}
         </Button>
-        <Popper id={id} open={open} anchorEl={this.anchorEl} placement="bottom-start" className="estimate-menu">
-          <Paper>
+        <Popper
+          id={id}
+          open={open}
+          anchorEl={this.anchorEl}
+          placement="bottom-start"
+          className={cx('drop-down-menu-btn__popper', popperClass)}>
+          <Paper className={cx('drop-down-menu-btn__paper', paperClass)}>
             <DropdownMenu
               menuItems={menuItems}
               onClearAll={onClearAll}
