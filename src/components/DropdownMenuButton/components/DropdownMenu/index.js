@@ -13,12 +13,15 @@ import IconButton from '@material-ui/core/IconButton';
 import IconClose from '@material-ui/icons/Close';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import get from 'lodash/get';
 import includes from 'lodash/includes';
 
 import './styles.scss';
 
 class DropdownMenu extends Component {
   static propTypes = {
+    className: PropTypes.object,
+    disableClickAway: PropTypes.bool,
     menuItems: PropTypes.array,
     onSelectMenuItem: PropTypes.func.isRequired,
     shouldSelectObject: PropTypes.bool,
@@ -26,6 +29,8 @@ class DropdownMenu extends Component {
   };
 
   static defaultProps = {
+    className: {},
+    disableClickAway: false,
     menuItems: [],
     shouldSelectObject: false
   };
@@ -41,44 +46,47 @@ class DropdownMenu extends Component {
   }
 
   renderDropdownMenu() {
-    const { menuItems, onSelectMenuItem, selectedItems, shouldSelectObject, onClearAll, onClose } = this.props;
-    return (
-      <ClickAwayListener onClickAway={onClose}>
-        <FormGroup>
-          <div className="drop-down-menu__items-container">
-            {menuItems.map(item => {
-              const selected = shouldSelectObject
-                ? (selectedItems || []).some(ul3 => ul3.id === item.id)
-                : includes(selectedItems || [], item.id);
-              return (
-                <FormControlLabel
-                  className="drop-down-menu__item"
-                  classes={{ label: cx('drop-down-menu__item-label', { 'drop-down-menu__item-label--selected': selected }) }}
-                  key={item.id}
-                  control={
-                    <Checkbox
-                      className="drop-down-menu__checkbox"
-                      checked={selected}
-                      onChange={shouldSelectObject ? onSelectMenuItem(item) : onSelectMenuItem(item.id)}
-                      icon={<CheckBoxOutlineBlankIcon fontSize="small" />}
-                      checkedIcon={<CheckBoxIcon color="primary" fontSize="small" />}
-                      value={`${item.id}`} //Checkbox wants value to be type string
-                    />
-                  }
-                  label={item.label}
-                />
-              );
-            })}
-          </div>
+    const { className, disableClickAway, menuItems, onSelectMenuItem, selectedItems, shouldSelectObject, onClearAll, onClose } = this.props;
+
+    const menuContent = (
+      <FormGroup>
+        <div className={cx('drop-down-menu__items-container', get(className, 'itemsContainer'))}>
+          {menuItems.map(item => {
+            const selected = shouldSelectObject
+              ? (selectedItems || []).some(ul3 => ul3.id === item.id)
+              : includes(selectedItems || [], item.id);
+            return (
+              <FormControlLabel
+                className={cx('drop-down-menu__item', get(className, 'item'))}
+                classes={{ label: cx('drop-down-menu__item-label', { 'drop-down-menu__item-label--selected': selected }) }}
+                key={item.id}
+                control={
+                  <Checkbox
+                    className="drop-down-menu__checkbox"
+                    checked={selected}
+                    onChange={shouldSelectObject ? onSelectMenuItem(item) : onSelectMenuItem(item.id)}
+                    icon={<CheckBoxOutlineBlankIcon fontSize="small" />}
+                    checkedIcon={<CheckBoxIcon color="primary" fontSize="small" />}
+                    value={`${item.id}`} //Checkbox wants value to be type string
+                  />
+                }
+                label={item.label}
+              />
+            );
+          })}
+        </div>
+        {onClearAll && (
           <div className="drop-down-menu__footer">
             <div className="drop-down-menu__divider" />
             <Button className="drop-down-menu__clear-btn" onClick={onClearAll}>
               Clear All
             </Button>
           </div>
-        </FormGroup>
-      </ClickAwayListener>
+        )}
+      </FormGroup>
     );
+
+    return disableClickAway ? menuContent : <ClickAwayListener onClickAway={onClose}>{menuContent}</ClickAwayListener>;
   }
 
   render() {

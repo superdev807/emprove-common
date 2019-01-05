@@ -27,7 +27,8 @@
 
   &__paper {
     min-width: 220px;
-    min-height: 400px;
+    max-height: 400px;
+    height: calc(100vh - 320px);
   }
 
   &__popper {

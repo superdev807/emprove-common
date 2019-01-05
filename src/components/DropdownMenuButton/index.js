@@ -7,6 +7,7 @@ import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import get from 'lodash/get';
 import xor from 'lodash/xor';
 
 import DropdownMenu from './components/DropdownMenu';
@@ -17,7 +18,7 @@ import './styles.scss';
 class DropdownMenuButton extends Component {
   static propTypes = {
     buttonLabel: PropTypes.string,
-    className: PropTypes.string,
+    className: PropTypes.object,
     highlightActive: PropTypes.bool,
     menuItems: PropTypes.array,
     onClearAll: PropTypes.func,
@@ -30,6 +31,7 @@ class DropdownMenuButton extends Component {
 
   static defaultProps = {
     buttonLabel: '',
+    className: {},
     highlightActive: true,
     menuItems: [],
     selectedItems: [],
@@ -73,18 +75,7 @@ class DropdownMenuButton extends Component {
 
   render() {
     const { open } = this.state;
-    const {
-      buttonLabel,
-      className,
-      highlightActive,
-      menuItems,
-      onClearAll,
-      paperClass,
-      popperClass,
-      selectedItems,
-      showArrow,
-      shouldSelectObject
-    } = this.props;
+    const { buttonLabel, className, highlightActive, menuItems, onClearAll, selectedItems, showArrow, shouldSelectObject } = this.props;
 
     const id = open ? 'drop-down-menu-btn' : null;
     const active = highlightActive && selectedItems.length > 0;
@@ -99,7 +90,7 @@ class DropdownMenuButton extends Component {
           aria-describedby={id}
           onClick={this.handleClickButton}
           aria-haspopup="true"
-          className={cx('drop-down-menu-btn__btn', { 'drop-down-menu-btn__btn--active': active }, className)}
+          className={cx('drop-down-menu-btn__btn', { 'drop-down-menu-btn__btn--active': active }, get(className, 'button'))}
           variant="outlined">
           <Typography className={cx('drop-down-menu-btn__btn-label', { 'drop-down-menu-btn__btn-label--active': active })}>
             {buttonLabel}
@@ -111,8 +102,8 @@ class DropdownMenuButton extends Component {
           open={open}
           anchorEl={this.anchorEl}
           placement="bottom-start"
-          className={cx('drop-down-menu-btn__popper', popperClass)}>
-          <Paper className={cx('drop-down-menu-btn__paper', paperClass)}>
+          className={cx('drop-down-menu-btn__popper', get(className, 'popper'))}>
+          <Paper className={cx('drop-down-menu-btn__paper', get(className, 'paper'))}>
             <DropdownMenu
               menuItems={menuItems}
               onClearAll={onClearAll}
@@ -120,6 +111,7 @@ class DropdownMenuButton extends Component {
               onSelectMenuItem={this.handleSelectMenuItem}
               selectedItems={selectedItems}
               shouldSelectObject={shouldSelectObject}
+              className={className}
             />
           </Paper>
         </Popper>
