@@ -1,0 +1,37 @@
+@import 'variables';
+
+.drop-down-menu-btn {
+
+  &__btn {
+    padding: 6px 16px;
+    min-height: 28px;
+    margin: 4px 12px;
+
+    &--active {
+      border: 1px solid $primary;
+    }
+    
+    &-label {
+      font-size: 0.85em;
+      font-weight: 600;
+     
+      &--active {
+        color: $primary;
+      }
+    }
+
+    &:first-of-type {
+      margin: 4px 12px 4px 0;
+    }
+  }
+
+  &__paper {
+    min-width: 220px;
+    max-height: 400px;
+    height: calc(100vh - 320px);
+  }
+
+  &__popper {
+    z-index: 2;
+  }
+}
