@@ -171,6 +171,7 @@ export { default as IconRFPStep2 } from './IconRFPStep2';
 export { default as IconRFPStep3 } from './IconRFPStep3';
 export { default as IconRFPStep4 } from './IconRFPStep4';
 export { default as IconSave } from './IconSave';
+export { default as IconSnapPrice } from './IconSnapPrice';
 export { default as IconSavedProject } from './IconSavedProject';
 export { default as IconScrollDownBox } from './IconScrollDownBox';
 export { default as IconScrollUpBox } from './IconScrollUpBox';
