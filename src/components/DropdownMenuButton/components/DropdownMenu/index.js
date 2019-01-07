@@ -20,7 +20,7 @@ import './styles.scss';
 
 class DropdownMenu extends Component {
   static propTypes = {
-    className: PropTypes.object,
+    classes: PropTypes.object,
     disableClickAway: PropTypes.bool,
     menuItems: PropTypes.array,
     onSelectMenuItem: PropTypes.func.isRequired,
@@ -29,7 +29,7 @@ class DropdownMenu extends Component {
   };
 
   static defaultProps = {
-    className: {},
+    classes: {},
     disableClickAway: false,
     menuItems: [],
     shouldSelectObject: false
@@ -46,18 +46,18 @@ class DropdownMenu extends Component {
   }
 
   renderDropdownMenu() {
-    const { className, disableClickAway, menuItems, onSelectMenuItem, selectedItems, shouldSelectObject, onClearAll, onClose } = this.props;
+    const { classes, disableClickAway, menuItems, onSelectMenuItem, selectedItems, shouldSelectObject, onClearAll, onClose } = this.props;
 
     const menuContent = (
       <FormGroup>
-        <div className={cx('drop-down-menu__items-container', get(className, 'itemsContainer'))}>
+        <div className={cx('drop-down-menu__items-container', get(classes, 'itemsContainer'))}>
           {menuItems.map(item => {
             const selected = shouldSelectObject
               ? (selectedItems || []).some(ul3 => ul3.id === item.id)
               : includes(selectedItems || [], item.id);
             return (
               <FormControlLabel
-                className={cx('drop-down-menu__item', get(className, 'item'))}
+                className={cx('drop-down-menu__item', get(classes, 'item'))}
                 classes={{ label: cx('drop-down-menu__item-label', { 'drop-down-menu__item-label--selected': selected }) }}
                 key={item.id}
                 control={
