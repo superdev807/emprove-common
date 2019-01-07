@@ -20,6 +20,7 @@ class DropdownMenuButton extends Component {
     buttonLabel: PropTypes.string,
     classes: PropTypes.object,
     highlightActive: PropTypes.bool,
+    ids: PropTypes.object,
     menuItems: PropTypes.array,
     onClearAll: PropTypes.func,
     onSelectMenuItem: PropTypes.func.isRequired,
@@ -33,6 +34,7 @@ class DropdownMenuButton extends Component {
     buttonLabel: '',
     classes: {},
     highlightActive: true,
+    ids: {},
     menuItems: [],
     selectedItems: [],
     shouldSelectObject: false,
@@ -75,15 +77,15 @@ class DropdownMenuButton extends Component {
 
   render() {
     const { open } = this.state;
-    const { buttonLabel, classes, highlightActive, menuItems, onClearAll, selectedItems, showArrow, shouldSelectObject } = this.props;
+    const { buttonLabel, classes, highlightActive, ids, menuItems, onClearAll, selectedItems, showArrow, shouldSelectObject } = this.props;
 
-    const id = open ? 'drop-down-menu-content' : null;
+    const id = open ? ids.content : null;
     const active = highlightActive && selectedItems.length > 0;
 
     return (
       <Fragment>
         <Button
-          id="drop-down-menu-btn"
+          id={ids.button}
           buttonRef={node => {
             this.anchorEl = node;
           }}
