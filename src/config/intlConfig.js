@@ -133,6 +133,6 @@ export default {
   },
   messages: {
     'CONSUMER.LANDING_BANNER_TITLE': 'WE’VE EMPROVED THE<br /><strong>HOME RENOVATION</strong> EXPERIENCE',
-    'CONSUMER.LANDING_BANNER_TEXT': 'The style you want. The price you need. A process you can trust.',
+    'CONSUMER.LANDING_BANNER_TEXT': '<span>The style you want. The price you need.</span> <span>A process you can trust.</span>'
   }
 };
