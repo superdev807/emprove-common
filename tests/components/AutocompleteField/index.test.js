@@ -6,9 +6,9 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import { mount } from 'enzyme';
 
-import { TimezoneField } from '~/components/TimezoneField';
+import { AutocompleteField } from '~/components/AutocompleteField';
 
-describe('TimezoneField', () => {
+describe('AutocompleteField', () => {
   let props;
   let wrapper;
 
@@ -19,23 +19,23 @@ describe('TimezoneField', () => {
       meta: {},
       label: ''
     };
-    wrapper = mount(<TimezoneField {...props} />);
+    wrapper = mount(<AutocompleteField {...props} />);
   });
 
   it('should render label correctly', () => {
-    const label = 'Timezone';
-    wrapper.setProps({ label, input: { value: 'US/Pacific' } });
+    const label = 'Message IDs';
+    wrapper.setProps({ label, input: { value: 'TEST_VALUE' } });
     expect(wrapper.find(InputLabel).prop('children')).toBe(label);
   });
 
   it('should render value correctly', () => {
-    const value = 'US/Pacific';
+    const value = 'TEST_VALUE';
     wrapper.setProps({ input: { value } });
     expect(wrapper.find(Input).prop('value')).toBe(value);
   });
 
   it('should render error message correctly', () => {
-    const errorMessage = 'Timezone is incorrect.';
+    const errorMessage = 'Message can not be blank.';
     wrapper.setProps({ meta: { touched: true, error: errorMessage } });
     const helperTexts = wrapper.find(FormHelperText);
     expect(helperTexts.last().prop('children')).toBe(errorMessage);
