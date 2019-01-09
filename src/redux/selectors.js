@@ -13,6 +13,8 @@ export const isTabletSelector = fp.get('device.isTablet');
 
 /* global status */
 export const globalStatusSelector = fp.get('globalStatus');
+export const translationsSelector = fp.get('globalStatus.translations');
+export const translationsStatusSelector = fp.get('globalStatus.translationsStatus');
 
 /* pdf status */
 export const exportStatusSelector = fp.get('pdf.status');
