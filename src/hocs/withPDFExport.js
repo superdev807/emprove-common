@@ -57,7 +57,7 @@ export default timezoneSelector => WrappedComponent => {
       });
     };
 
-    handleViewRfpBrief = (viewRfpId, callback, onClose) => {
+    handleViewRfpBrief = (viewRfpId, callback, onClose, blocker) => {
       const { exportRfpPdf, match, setSnackbar, showModal, timezone } = this.props;
       const rfpId = viewRfpId || match.params.rfpId;
 
@@ -74,7 +74,8 @@ export default timezoneSelector => WrappedComponent => {
             fileName,
             rfpId,
             onClose,
-            timezone
+            timezone,
+            blocker
           });
           callback && callback(true);
         },
