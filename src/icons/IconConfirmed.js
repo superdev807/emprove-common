@@ -2,11 +2,10 @@
 
 import React from 'react';
 import SvgIcon from '@material-ui/core/SvgIcon';
-import get from 'lodash/get';
 
 const IconConfirmed = props => {
-  const primary = get(props, 'primary') || '#008000';
-  const secondary = get(props, 'secondary') || '#ffffff';
+  const primary = props.primary || '#008000';
+  const secondary = props.secondary || '#ffffff';
   return (
     <SvgIcon x="0px" y="0px" viewBox="0 0 24 24" {...props}>
       <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z" fill={primary} />
