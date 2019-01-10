@@ -48,7 +48,7 @@ class PdfViewerModal extends Component {
           timezone
         },
         success: () => {
-          setSnackbar({ message: 'Successfully sent!', variant: 'success' });
+          setSnackbar({ message: 'Successfully Sent to Your Email!', variant: 'success' });
         }
       });
     }
@@ -65,7 +65,7 @@ class PdfViewerModal extends Component {
           timezone
         },
         success: () => {
-          setSnackbar({ message: 'Successfully sent!', variant: 'success' });
+          setSnackbar({ message: 'Successfully Sent to Your Email!', variant: 'success' });
         }
       });
     }
