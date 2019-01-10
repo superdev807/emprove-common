@@ -5,6 +5,7 @@ export const GET_POST_BY_SLUG = 'emprove.common.GET_POST_BY_SLUG';
 
 export const DETECT_DEVICE = 'emprove.common.DETECT_DEVICE';
 
+export const LIST_TRANSLATIONS = 'emprove.common.LIST_TRANSLATIONS';
 export const RESET_SNACKBAR = 'emprove.common.RESET_SNACKBAR';
 export const SET_SNACKBAR = 'emprove.common.SET_SNACKBAR';
 export const TOGGLE_DRAWER = 'emprove.common.TOGGLE_DRAWER';
