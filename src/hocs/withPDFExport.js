@@ -47,7 +47,7 @@ export default timezoneSelector => WrappedComponent => {
           timezone: getLocalTimezone()
         },
         success: () => {
-          setSnackbar({ message: 'Successfully sent!', variant: 'success' });
+          setSnackbar({ message: 'Successfully Sent to Your Email!', variant: 'success' });
           callback && callback(true);
         },
         fail: error => {
@@ -108,7 +108,7 @@ export default timezoneSelector => WrappedComponent => {
       downloadBidPdf({
         id: bidId,
         success: () => {
-          setSnackbar({ message: 'Successfully sent!', variant: 'success' });
+          setSnackbar({ message: 'Successfully Sent to Your Email!', variant: 'success' });
           callback && callback(true);
         },
         fail: error => {
