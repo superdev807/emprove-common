@@ -70,6 +70,7 @@ export { default as IconDen } from './IconDen';
 export { default as IconDisclaimerInfo } from './IconDisclaimerInfo';
 export { default as IconDownloadRfp } from './IconDownloadRfp';
 export { default as IconDreamIt } from './IconDreamIt';
+export { default as IconDoubleArrowsDown } from './IconDoubleArrowsDown';
 export { default as IconEdit } from './IconEdit';
 export { default as IconEditProfile } from './IconEditProfile';
 export { default as IconEmail } from './IconEmail';
