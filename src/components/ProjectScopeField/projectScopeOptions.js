@@ -6,7 +6,7 @@ module.exports = [
   {
     label: (
       <Fragment>
-        REPAINT<br />ONLY
+        LIGHT<br />REFRESH
       </Fragment>
     ),
     value: 1,
