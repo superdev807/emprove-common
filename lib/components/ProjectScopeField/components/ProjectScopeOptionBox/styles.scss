@@ -19,12 +19,10 @@
     cursor: auto;
   }
 
-  &--highlight-on-hover {
-    &:hover {
-      opacity: 1;
-      border-color: #ff9e3c;
-      box-shadow: 2px 2px 6px $bg-color2;
-    }
+  &--highlight-on-hover:hover, &--selected {
+    opacity: 1;
+    border-color: #ff9e3c;
+    box-shadow: 2px 2px 6px $bg-color2;
   }
 
   &__option-top {
@@ -80,7 +78,7 @@
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
 
-    #{$gp}:hover & {
+    #{$gp}:hover &, #{$gp}--selected & {
       background: $primary;
       color: $bg-color1;
       border-top: none;

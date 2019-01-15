@@ -34,7 +34,7 @@ class ProjectScopeOptionBox extends Component {
   };
 
   render() {
-    const { onClick, option, showSelectButton, showScaleInfo, isMobile } = this.props;
+    const { onClick, option, showSelectButton, showScaleInfo, selected, isMobile } = this.props;
 
     return (
       <div
@@ -44,7 +44,8 @@ class ProjectScopeOptionBox extends Component {
           {
             'project-scope-option-box--opaque': this.props.opaque,
             'project-scope-option-box--no-cursor': !onClick,
-            'project-scope-option-box--highlight-on-hover': this.props.highlightOnHover
+            'project-scope-option-box--highlight-on-hover': this.props.highlightOnHover,
+            'project-scope-option-box--selected': selected
           },
           this.props.className
         )}
@@ -78,7 +79,7 @@ class ProjectScopeOptionBox extends Component {
               color="primary"
               fullWidth
               variant="contained">
-              Select
+              {selected ? 'Selected' : 'Select'}
             </Button>
           </div>
         )}
