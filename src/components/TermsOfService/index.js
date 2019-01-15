@@ -670,15 +670,7 @@ const TermsOfService = props => {
           Vegas, NV 89144-6567. You may contact us by sending correspondence via{' '}
           <a href={process.env.HELP_DOMAIN} rel="noopener noreferrer" target="_blank" className="terms-content__link">
             Emprove’s Help Center
-          </a>. You can access a copy of these terms by clicking here
-          <a
-            href="https://s3-us-west-1.amazonaws.com/emprove-public-container/TOS.pdf"
-            rel="noopener noreferrer"
-            target="_blank"
-            className="terms-content__link">
-            {' '}
-            https://emproveit.com/TOS.pdf{' '}
-          </a>
+          </a>.
         </li>
       </ul>
     </div>
