@@ -77,23 +77,26 @@ class PdfViewerModal extends Component {
     handleHide();
   };
 
-  handleDownloadPDF = () => {
+  handleDownloadPDF = async () => {
+    const { blocker, source } = this.props;
     let link = document.createElement('a');
-    const { source } = this.props;
-    if (source.indexOf('data:application/pdf;base64,') === -1) {
-      link.href = source;
-    } else {
-      const raw = atob(source.slice(28));
-      const rawLength = raw.length;
-      const array = new Uint8Array(rawLength);
 
-      for (let i = 0; i < rawLength; i++) {
-        array[i] = raw.charCodeAt(i);
+    if (!blocker || await blocker()) {
+      if (source.indexOf('data:application/pdf;base64,') === -1) {
+        link.href = source;
+      } else {
+        const raw = atob(source.slice(28));
+        const rawLength = raw.length;
+        const array = new Uint8Array(rawLength);
+
+        for (let i = 0; i < rawLength; i++) {
+          array[i] = raw.charCodeAt(i);
+        }
+        link.href = URL.createObjectURL(new Blob([array], { type: 'application/pdf' }));
       }
-      link.href = URL.createObjectURL(new Blob([array], { type: 'application/pdf' }));
+      link.download = this.props.fileName;
+      link.dispatchEvent(new MouseEvent('click'));
     }
-    link.download = this.props.fileName;
-    link.dispatchEvent(new MouseEvent('click'));
   };
 
   render() {
