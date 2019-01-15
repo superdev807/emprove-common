@@ -34,6 +34,7 @@ class ProjectScopeField extends Component {
     const {
       meta: { error },
       className,
+      input,
       showScaleInfo,
       onClickDetail
     } = this.props;
@@ -51,6 +52,7 @@ class ProjectScopeField extends Component {
                   option={option}
                   isMobile={this.state.isMobile}
                   showScaleInfo={showScaleInfo}
+                  selected={option.value === input.value}
                 />
               </Grid>
             );
