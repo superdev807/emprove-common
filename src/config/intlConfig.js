@@ -133,6 +133,7 @@ export default {
   },
   messages: {
     'CONSUMER.LANDING_BANNER_TITLE': 'WE’VE EMPROVED THE<br /><strong>HOME RENOVATION</strong> EXPERIENCE',
-    'CONSUMER.LANDING_BANNER_TEXT': '<span>The style you want. The price you need.</span> <span>A process you can trust.</span>'
+    'CONSUMER.LANDING_BANNER_TEXT': '<span>The style you want. The price you need.</span> <span>A process you can trust.</span>',
+    'CONSUMER.LANDING.GET_IT_DONE_TEXT': 'We send your project details to our pre-vetted network of contractors in your area. After an on-site visit, you and your contractor can finalize a price!'
   }
 };
