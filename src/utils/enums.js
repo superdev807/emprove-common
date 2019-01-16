@@ -1,13 +1,14 @@
 'use strict';
 
-export const UserAction = {
+export const UserAction = Object.freeze({
   KEEP_EXISTING: 1,
   REMOVE: 2,
   REPAINT_ONLY: 3,
   REPLACE: 4,
   NEW: 5,
-  NEW_AND_RELOCATE: 6
-};
+  NEW_AND_RELOCATE: 6,
+  NOT_APPLICABLE: 7,
+});
 
 export const ScopeAction = {
   NEW: 1,
