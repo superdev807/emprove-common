@@ -134,6 +134,7 @@ export default {
   messages: {
     'CONSUMER.LANDING_BANNER_TITLE': 'WE’VE EMPROVED THE<br /><strong>HOME RENOVATION</strong> EXPERIENCE',
     'CONSUMER.LANDING_BANNER_TEXT': '<span>The style you want. The price you need.</span> <span>A process you can trust.</span>',
-    'HOP.LANDING.WHAT_WE_DO.GET_IT_DONE.BODY': 'We send your project details to our pre-vetted network of contractors in your area. After an on-site visit, you and your contractor can finalize a price!'
+    'HOP.LANDING.WHAT_WE_DO.GET_IT_DONE.BODY': 'We send your project details to our pre-vetted network of contractors in your area. After an on-site visit, you and your contractor can finalize a price!',
+    'HOP.REGISTRATION.HEADER.TITLE.GET_PRICING': 'Sign up with Emprove to start the pricing process for your project',
   }
 };
