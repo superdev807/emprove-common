@@ -1,5 +1,20 @@
 @import 'variables';
 
+@mixin option-button {
+  height: 100%;
+  text-transform: uppercase;
+  font-weight: 999;
+  letter-spacing: 0.1rem;
+  color: $primary;
+  background: $bg-color1;
+  box-shadow: none;
+
+  &--mobile {
+    padding: 4px 16px;
+    min-height: 30px;
+  }
+}
+
 .project-scope-option-box {
   $gp: &;
   text-align: center;
@@ -89,43 +104,21 @@
   }
 
   &__option-button {
-    height: 100%;
-    text-transform: uppercase;
-    font-weight: 999;
-    letter-spacing: 0.1rem;
-    color: $primary;
-    background: $bg-color1;
-    box-shadow: none;
+    @include option-button;
 
     #{$gp}:hover & {
       background: $primary;
       color: $bg-color1;
       border-top: none;
     }
-
-    &--mobile {
-      padding: 4px 16px;
-      min-height: 30px;
-    }
   }
 
   &__include-button {
-    height: 100%;
-    text-transform: uppercase;
-    font-weight: 999;
-    letter-spacing: 0.1rem;
+    @include option-button;
     color: $primary !important;
-    background: $bg-color1;
-    box-shadow: none;
     border-top: 1px solid $border-color;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
-    font-size: 0.75rem;
-
-    &--mobile {
-      padding: 4px 16px;
-      min-height: 30px;
-    }
 
     &:hover {
       background: $very-light-gray;
