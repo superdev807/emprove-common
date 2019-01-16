@@ -1,5 +1,20 @@
 @import 'variables';
 
+@mixin option-button {
+  height: 100%;
+  text-transform: uppercase;
+  font-weight: 999;
+  letter-spacing: 0.1rem;
+  color: $primary;
+  background: $bg-color1;
+  box-shadow: none;
+
+  &--mobile {
+    padding: 4px 16px;
+    min-height: 30px;
+  }
+}
+
 .project-scope-option-box {
   $gp: &;
   text-align: center;
@@ -64,29 +79,47 @@
     &--mobile {
       height: 31px;
     }
+
+    #{$gp}__option-button {
+      border-top: 1px solid $border-color;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+  }
+
+  &__option-top-button {
+    height: 40px;
+
+    &--mobile {
+      height: 31px;
+    }
+
+    #{$gp}__option-button {
+      border-bottom: 1px solid $border-color;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
   }
 
   &__option-button {
-    height: 100%;
-    text-transform: uppercase;
-    font-weight: 999;
-    letter-spacing: 0.1rem;
-    color: $primary;
-    background: $bg-color1;
-    box-shadow: none;
-    border-top: 1px solid $border-color;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
+    @include option-button;
 
     #{$gp}:hover &, #{$gp}--selected & {
       background: $primary;
       color: $bg-color1;
       border-top: none;
     }
+  }
 
-    &--mobile {
-      padding: 4px 16px;
-      min-height: 30px;
+  &__include-button {
+    @include option-button;
+    color: $primary !important;
+    border-top: 1px solid $border-color;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+
+    &:hover {
+      background: $very-light-gray;
     }
   }
 
@@ -96,28 +129,6 @@
 
     &--help {
       font-size: 11px;
-    }
-
-    &--link {
-      font-weight: 600;
-      font-size: 12px;
-      color: $primary;
-      padding: 0;
-
-      &-container {
-        border-radius: 12px;
-        padding: 4px;
-        width: 140px;
-        margin: auto;
-
-        @media screen and (max-width: map-get($breakpoints, sm)) {
-          width: 120px;
-        }
-
-        &:hover {
-          background: $very-light-gray;
-        }
-      }
     }
   }
 }
