@@ -78,7 +78,7 @@ class DropdownMenu extends Component {
         {onClearAll && (
           <div className="drop-down-menu__footer">
             <div className="drop-down-menu__divider" />
-            <Button className="drop-down-menu__clear-btn" onClick={onClearAll}>
+            <Button className="drop-down-menu__clear-btn" onClick={() => onClearAll()}>
               Clear All
             </Button>
           </div>
