@@ -137,7 +137,7 @@ export default {
     'HOP.LANDING.WHAT_WE_DO.GET_IT_DONE.BODY':
       'We send your project details to our pre-vetted network of contractors in your area. After an on-site visit, you and your contractor can finalize a price!',
     'HOP.RFP.REGISTRATION.HEADER.TITLE.GET_PRICING': 'Sign up with Emprove to start the pricing process for your project',
-    'HOP.RFP.MISSING_LOGISTICS.HEADER_TEXT':
+    'HOP.RFP.MISSING_LOGISTICS.HEADER.TITLE':
       '<strong>STEP 2- Complete your project plan</strong> before downloading it or sharing it with contractors'
   }
 };
