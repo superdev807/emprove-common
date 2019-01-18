@@ -34,7 +34,7 @@ class ProjectScopeOptionBox extends Component {
   };
 
   render() {
-    const { onClick, option, showSelectButton, showScaleInfo, isMobile } = this.props;
+    const { onClick, option, showSelectButton, showScaleInfo, selected, isMobile } = this.props;
 
     return (
       <div
@@ -44,11 +44,23 @@ class ProjectScopeOptionBox extends Component {
           {
             'project-scope-option-box--opaque': this.props.opaque,
             'project-scope-option-box--no-cursor': !onClick,
-            'project-scope-option-box--highlight-on-hover': this.props.highlightOnHover
+            'project-scope-option-box--highlight-on-hover': this.props.highlightOnHover,
+            'project-scope-option-box--selected': selected
           },
           this.props.className
         )}
         onClick={onClick}>
+        {showScaleInfo && showSelectButton && (
+          <div className={cx('project-scope-option-box__option-top-button', { 'project-scope-option-box__option-top-button--mobile': isMobile })}>
+            <Button
+              className={cx('project-scope-option-box__option-button', { 'project-scope-option-box__option-button--mobile': isMobile })}
+              color="primary"
+              fullWidth
+              variant="contained">
+              Select
+            </Button>
+          </div>
+        )}
         <div
           className={cx('project-scope-option-box__option-top', {
             'project-scope-option-box__option-top--centered': !showSelectButton,
@@ -57,28 +69,30 @@ class ProjectScopeOptionBox extends Component {
           <Typography className="project-scope-option-box__text project-scope-option-box__text--title" variant="body2">
             {option.label}
           </Typography>
-          {showScaleInfo && (
-            <div className="project-scope-option-box__text project-scope-option-box__text--link-container">
-              <Typography
-                className="project-scope-option-box__text project-scope-option-box__text--link"
-                variant="body2"
-                onClick={this.handleClickDetail}>
-                what's included
-              </Typography>
-            </div>
-          )}
           <Typography className="project-scope-option-box__text project-scope-option-box__text--help" variant="body1">
             {option.text}
           </Typography>
         </div>
-        {showSelectButton && (
+        {!showScaleInfo && showSelectButton && (
           <div className={cx('project-scope-option-box__option-bottom', { 'project-scope-option-box__option-bottom--mobile': isMobile })}>
             <Button
               className={cx('project-scope-option-box__option-button', { 'project-scope-option-box__option-button--mobile': isMobile })}
               color="primary"
               fullWidth
               variant="contained">
-              Select
+              {selected ? 'Selected' : 'Select'}
+            </Button>
+          </div>
+        )}
+        {showScaleInfo && (
+          <div className={cx('project-scope-option-box__option-bottom', { 'project-scope-option-box__option-bottom--mobile': isMobile })}>
+            <Button
+              className={cx('project-scope-option-box__include-button', { 'project-scope-option-box__include-button--mobile': isMobile })}
+              color="primary"
+              fullWidth
+              onClick={this.handleClickDetail}
+              variant="contained">
+              What's included
             </Button>
           </div>
         )}
