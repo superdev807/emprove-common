@@ -74,11 +74,8 @@ class DropdownMenuButton extends Component {
     const { selectedItems, onSelectMenuItem, shouldSelectObject } = this.props;
     let updatedSelectedItems = [...selectedItems];
     if (shouldSelectObject) {
-      let foundIndex = -1;
-      selectedItems.find((item, index) => {
-        if (item.id === value.id) {
-          foundIndex = index;
-        }
+      const foundIndex = selectedItems.findIndex(item => {
+        return item.id === value.id;
       });
       if (foundIndex === -1) {
         updatedSelectedItems.push(value);
