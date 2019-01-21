@@ -71,8 +71,21 @@ class DropdownMenuButton extends Component {
   };
 
   handleSelectMenuItem = value => () => {
-    const { selectedItems, onSelectMenuItem } = this.props;
-    onSelectMenuItem(xor(selectedItems || [], [value]));
+    const { selectedItems, onSelectMenuItem, shouldSelectObject } = this.props;
+    let updatedSelectedItems = [...selectedItems];
+    if (shouldSelectObject) {
+      const foundIndex = selectedItems.findIndex(item => {
+        return item.id === value.id;
+      });
+      if (foundIndex === -1) {
+        updatedSelectedItems.push(value);
+      } else {
+        updatedSelectedItems.splice(foundIndex, 1);
+      }
+    } else {
+      updatedSelectedItems = xor(selectedItems || [], [value]);
+    }
+    onSelectMenuItem(updatedSelectedItems);
   };
 
   render() {
