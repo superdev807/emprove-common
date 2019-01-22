@@ -134,6 +134,57 @@ export default {
   messages: {
     'CONSUMER.LANDING_BANNER_TITLE': 'WE’VE EMPROVED THE<br /><strong>HOME RENOVATION</strong> EXPERIENCE',
     'CONSUMER.LANDING_BANNER_TEXT': '<span>The style you want. The price you need.</span> <span>A process you can trust.</span>',
-    'HOP.LANDING.WHAT_WE_DO.GET_IT_DONE.BODY': 'We send your project details to our pre-vetted network of contractors in your area. After an on-site visit, you and your contractor can finalize a price!'
+    'HOP.LANDING.WHAT_WE_DO.GET_IT_DONE.BODY':
+      'We send your project details to our pre-vetted network of contractors in your area. After an on-site visit, you and your contractor can finalize a price!',
+    'HOP.RFP.REGISTRATION.HEADER.TITLE.GET_PRICING': 'Sign up with Emprove to start the pricing process for your project',
+    'HOP.RFP.MISSING_LOGISTICS.HEADER.TITLE':
+      '<strong>STEP 2 - Complete your project plan</strong> before downloading it or sharing it with contractors',
+    'HOP.RFP.IN_MARKET_PAYWALL.HEADER':
+      '<strong>STEP 1 - ACTIVATE YOUR PROJECT</strong> to get qualified contractors to complete for your business',
+    'HOP.RFP.IN_MARKET_PAYWALL.ACTIVATION.HEADER': '<strong>$20 Refundable Activation Fee</strong>',
+    'HOP.RFP.IN_MARKET_PAYWALL.ACTIVATION.BODY':
+      'You pay $20 to purchase your plan and unlock the pricing process with qualified contractors. We will refund your money when you hire a contractor through Emprove.',
+    'HOP.RFP.IN_MARKET_PAYWALL.ACTIVATION.LINK': 'Learn more about our activation fee.',
+    'HOP.RFP.IN_MARKET_PAYWALL.CREDIT_DETAILS.HEADER': '<strong>Please enter your Credit Card Details</strong>',
+    'HOP.RFP.IN_MARKET_PAYWALL.CREDIT_DETAILS.SUB_HEADER': '<small>Upon pressing "CONFIRM" your card will be charged $20</small>',
+    'HOP.RFP.IN_MARKET_PAYWALL.SECURITY': 'This is a secure AES-256 Encrypted payment.',
+    'HOP.RFP.IN_MARKET_PAYWALL.CTA.TITLE': 'CONFIRM',
+    'HOP.RFP.OUT_MARKET_PAYWALL.HEADER':
+      '<strong>STEP 1 - ACTIVATE YOUR PROJECT</strong> to invite contractors to complete for your business',
+    'HOP.RFP.OUT_MARKET_PAYWALL.ACTIVATION.HEADER': '<strong>$20 Refundable Activation Fee</strong>',
+    'HOP.RFP.OUT_MARKET_PAYWALL.ACTIVATION.BODY':
+      'You pay $20 to purchase your plan and unlock the pricing process with contractors that you invite. We will refund your money when you hire a contractor through our pricing process.',
+    'HOP.RFP.OUT_MARKET_PAYWALL.ACTIVATION.LINK': 'Learn more about our activation fee.',
+    'HOP.RFP.OUT_MARKET_PAYWALL.CREDIT_DETAILS.HEADER': '<strong>Please enter your Credit Card Details</strong>',
+    'HOP.RFP.OUT_MARKET_PAYWALL.CREDIT_DETAILS.SUB_HEADER': '<small>Upon pressing "CONFIRM" your card will be charged $20</small>',
+    'HOP.RFP.OUT_MARKET_PAYWALL.SECURITY': 'This is a secure AES-256 Encrypted payment.',
+    'HOP.RFP.OUT_MARKET_PAYWALL.CTA.TITLE': 'CONFIRM',
+    'HOP.RFP.LOGISTICS.TERMS.CTA.TITLE': 'GO TO NEXT STEP',
+    'HOP.RFP.INVITE_CONTRACTOR.HEADER': 'Please add the contact information for the contractors you would like to price your project.',
+    'HOP.RFP.INVITE_CONTRACTOR.SUB_HEADER': 'You can invite up to 3 contractors',
+    'HOP.RFP.INVITE_CONTRACTOR.CTA.TITLE': 'SEND PLAN OUT FOR PRICING',
+    'HOP.VIEW_RFP_MODAL.CTA.VIEW_PLAN.TITLE': 'VIEW PLAN',
+    'HOP.VIEW_RFP_MODAL.CTA.DOWNLOAD.TITLE': 'DOWNLOAD',
+    'HOP.VIEW_RFP_MODAL.IN_MARKET.DESKTOP.CONGRATS': 'Congrats! Your project was sent to our network of licensed contractors.<br />We will be in contact with you by email in the next 7 business days.',
+    'HOP.VIEW_RFP_MODAL.IN_MARKET.MOBILE.CONGRATS': 'AWESOME, YOUR PROJECT WAS SENT TO OUR NETWORK OF <strong>LICENSED CONTRACTORS!</strong>',
+    'HOP.VIEW_RFP_MODAL.OUT_MARKET.DESKTOP.CONGRATS': 'Congrats! Your project was sent to the contractor(s) of your choice.<br />We will be in contact with you by email in the next 7 business days.',
+    'HOP.VIEW_RFP_MODAL.OUT_MARKET.MOBILE.CONGRATS': '<strong>Congrats!</strong> Your project was sent to the contractor(s) of your choice.',
+    'HOP.VIEW_RFP_MODAL.OUT_MARKET.INVITED_CONTRACTORS.TITLE': 'YOUR INVITED CONTRACTORS',
+    'HOP.VIEW_RFP_MODAL.MOBILE.CONTACT': 'We will be in contact with you by email in the next <strong>7 business days</strong>.',
+    'HOP.VIEW_RFP_MODAL.MOBILE.PROCESS.CTA.TITLE': 'HERE',
+    'HOP.VIEW_RFP_MODAL.MOBILE.PROCESS.BODY': 'is more info on the <strong>Process</strong>',
+    'HOP.RFP.SEND_PLAN.IN_MARKET.PRICING.HEADER': '<strong>STEP 3 - </strong>Send your {homeArea} PROJECT out for <strong>COMPETITIVE PRICING from QUALIFIED CONTRACTORS</strong>',
+    'HOP.RFP.SEND_PLAN.IN_MARKET.PRICING.BODY.CONTRACTORS': 'We share your project with at least <strong>3 qualified contractors</strong>',
+    'HOP.RFP.SEND_PLAN.IN_MARKET.PRICING.BODY.PRICING_INFO': 'You will receive pricing for your project within <strong>7 business days</strong>',
+    'HOP.RFP.SEND_PLAN.IN_MARKET.PRICING.BODY.PROCESS.CTA.TITLE': 'HERE',
+    'HOP.RFP.SEND_PLAN.IN_MARKET.PRICING.BODY.PROCESS.BODY': 'is more info on the <strong>Process</strong>',
+    'HOP.RFP.SEND_PLAN.IN_MARKET.CTA.TITLE': 'SEND PLAN OUT FOR PRICING',
+    'HOP.RFP.SEND_PLAN.OUT_MARKET.PRICING.HEADER': '<strong>STEP 3 - </strong>Invite contractors <strong>of your choice</strong> to price your detailed project plan',
+    'HOP.RFP.SEND_PLAN.OUT_MARKET.PRICING.BODY.CONTRACTORS': 'We will ask your contractor(s) to price your project',
+    'HOP.RFP.SEND_PLAN.OUT_MARKET.PRICING.BODY.PRICING_INFO': 'You\'ll receive and compare the project pricing information',
+    'HOP.RFP.SEND_PLAN.OUT_MARKET.PRICING.BODY.PROCESS': 'Our process helps ensure you get a fair project price',
+    'HOP.RFP.SEND_PLAN.OUT_MARKET.CTA.TITLE': 'INVITE CONTRACTORS',
+    'HOP.RFP.SEND_PLAN.NOT_READY.HEADER': 'NOT READY?<br /><strong>REVIEW/UPDATE</strong> YOUR PROJECT PLAN',
+    'HOP.RFP.SEND_PLAN.NOT_READY.BODY': 'We compiled a comprehensive plan to help contractors accurately quote your project.'
   }
 };

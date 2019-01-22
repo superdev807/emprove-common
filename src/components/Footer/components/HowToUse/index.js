@@ -15,7 +15,7 @@ const instructions = [
   <span className="how-to-use-subtitle">GET IT DONE</span>,
   'Receive a comprehensive Project Plan',
   'Get preliminary pricing from qualified contractors',
-  'Compare proposals to make an well informed selection',
+  'Compare proposals to make a well informed selection',
   'Create a General Contractor work agreement'
 ];
 
