@@ -185,6 +185,8 @@ export default {
     'HOP.RFP.SEND_PLAN.OUT_MARKET.PRICING.BODY.PROCESS': 'Our process helps ensure you get a fair project price',
     'HOP.RFP.SEND_PLAN.OUT_MARKET.CTA.TITLE': 'INVITE CONTRACTORS',
     'HOP.RFP.SEND_PLAN.NOT_READY.HEADER': 'NOT READY?<br /><strong>REVIEW/UPDATE</strong> YOUR PROJECT PLAN',
-    'HOP.RFP.SEND_PLAN.NOT_READY.BODY': 'We compiled a comprehensive plan to help contractors accurately quote your project.'
+    'HOP.RFP.SEND_PLAN.NOT_READY.BODY': 'We compiled a comprehensive plan to help contractors accurately quote your project.',
+    'HOP.RFP.PRICING_PROCESS.GET_PRICING_HEADER': 'LET EMPROVE DO THE LEG WORK TO <strong>SAVE YOU TIME AND MONEY</strong>',
+    'HOP.RFP.PRICING_PROCESS.DOWNLOAD.HEADER': 'ACTIVATE YOUR PROJECT TO <strong>DOWNLOAD YOUR PLAN</strong> ALONG WITH OTHER BENEFITS'
   }
 };
