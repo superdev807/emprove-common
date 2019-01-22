@@ -28,6 +28,7 @@ const CustomSnackbarContent = props => {
   return (
     <SnackbarContent
       className={cx(classes[variant], className)}
+      classes={{ action: classes.contentAction }}
       aria-describedby="client-snackbar"
       message={
         <span id="client-snackbar" className={classes.message}>
