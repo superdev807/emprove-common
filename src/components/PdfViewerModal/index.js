@@ -37,10 +37,10 @@ class PdfViewerModal extends Component {
     type: PropTypes.oneOf(['bid', 'rfp'])
   };
 
-  handleSendRfpPDF = () => {
-    const { fileName, rfpId, sendRfpPdf, setSnackbar, timezone } = this.props;
+  handleSendRfpPDF = async () => {
+    const { blocker, fileName, rfpId, sendRfpPdf, setSnackbar, timezone } = this.props;
 
-    if (rfpId) {
+    if (rfpId && (!blocker || await blocker())) {
       sendRfpPdf({
         id: rfpId,
         data: {
