@@ -25,7 +25,7 @@ class InformationButton extends Component {
         className={cx('information-button', `information-button--size-${size}`, className)}
         onClick={this.handleClick}>
         <Icon className={cx(`information-button--size-${size}`, iconClass, {'information-button--blink': blink})} />
-        {tooltip && tooltip}
+        {tooltip}
       </IconButton>
     );
   }
