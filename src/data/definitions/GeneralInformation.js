@@ -132,7 +132,7 @@ const OSI = {
 };
 
 const ACTIVATION_FEE = {
-  title: 'Emprove\'s $20 Refundable Activation Fee',
+  title: "Emprove's $20 Refundable Activation Fee",
   body: [
     'For a refundable $20 activation, you unlock the pricing process designed to help you get the best contractor for your project at a fair price. You pay the fee initially which helps to show contractors you are serious about your project. (They spend a significant amount of time pricing out your project plan). After you select a contractor through Emprove, we will refund your activation fee.'
   ]
