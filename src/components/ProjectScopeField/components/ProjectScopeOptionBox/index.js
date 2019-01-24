@@ -37,7 +37,7 @@ class ProjectScopeOptionBox extends Component {
     const { onClick, option, showSelectButton, showScaleInfo, selected, isMobile } = this.props;
 
     return (
-      <div className="project-scope-option-box--wrapper">
+      <div className="project-scope-option-box-wrapper">
         <div
           id={this.props.id}
           className={cx(
