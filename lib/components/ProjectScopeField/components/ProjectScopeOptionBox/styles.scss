@@ -2,7 +2,6 @@
 
 @mixin option-button {
   height: 100%;
-  text-transform: uppercase;
   font-weight: 999;
   letter-spacing: 0.1rem;
   color: $primary;
@@ -19,7 +18,8 @@
   $gp: &;
   text-align: center;
   border: 1px solid #848484;
-  border-radius: 4px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
   cursor: pointer;
   // display: flex;
   // flex-direction: column;
@@ -28,6 +28,11 @@
 
   &--opaque {
     opacity: 1;
+  }
+
+  &--wrapper {
+    display: flex;
+    flex-direction: column;
   }
 
   &--no-cursor {
@@ -74,10 +79,10 @@
   }
 
   &__option-bottom {
-    height: 40px;
+    height: 30px;
 
     &--mobile {
-      height: 31px;
+      height: 21px;
     }
 
     #{$gp}__option-button {
@@ -96,13 +101,12 @@
 
     #{$gp}__option-button {
       border-bottom: 1px solid $border-color;
-      border-bottom-left-radius: 4px;
-      border-bottom-right-radius: 4px;
     }
   }
 
   &__option-button {
     @include option-button;
+    text-transform: uppercase;
 
     #{$gp}:hover &, #{$gp}--selected & {
       background: $primary;
@@ -113,10 +117,20 @@
 
   &__include-button {
     @include option-button;
+    $border-with-opacity-color: #a9a9a9;
+
+    border-right: 1px solid $border-with-opacity-color;
+    border-bottom: 1px solid $border-with-opacity-color;
+    border-left: 1px solid $border-with-opacity-color;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+
+    letter-spacing: 0;
+    min-height: 25px;
+    font-size: 11px;
+    padding: 0;
+    text-transform: capitalize;
     color: $primary !important;
-    border-top: 1px solid $border-color;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
 
     &--mobile {
       padding: 4px;
