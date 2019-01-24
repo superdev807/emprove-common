@@ -32,7 +32,7 @@ describe('ProjectScopeOptionBox component', () => {
   });
 
   test('should take an onClick event handler from props', () => {
-    expect(component.prop('onClick')).toBe(props.onClick);
+    expect(component.children().prop('onClick')).toBe(props.onClick);
   });
 
   test('should display the option label', () => {
@@ -98,12 +98,12 @@ describe('ProjectScopeOptionBox component', () => {
   test('should allow a className passed by the parent', () => {
     component.setProps({ className: 'some-parent-name__project-scope-option-box' });
 
-    expect(component.prop('className')).toMatch('some-parent-name__project-scope-option-box');
+    expect(component.children().prop('className')).toMatch('some-parent-name__project-scope-option-box');
   });
 
   test('should allow an id passed by the parent', () => {
     component.setProps({ id: 'some-parent__project-scope-option-box' });
 
-    expect(component.prop('id')).toBe('some-parent__project-scope-option-box');
+    expect(component.children().prop('id')).toBe('some-parent__project-scope-option-box');
   });
 });
