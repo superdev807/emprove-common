@@ -50,17 +50,21 @@ class ProjectScopeOptionBox extends Component {
           this.props.className
         )}
         onClick={onClick}>
-        {showScaleInfo && showSelectButton && (
-          <div className={cx('project-scope-option-box__option-top-button', { 'project-scope-option-box__option-top-button--mobile': isMobile })}>
-            <Button
-              className={cx('project-scope-option-box__option-button', { 'project-scope-option-box__option-button--mobile': isMobile })}
-              color="primary"
-              fullWidth
-              variant="contained">
-              Select
-            </Button>
-          </div>
-        )}
+        {showScaleInfo &&
+          showSelectButton && (
+            <div
+              className={cx('project-scope-option-box__option-top-button', {
+                'project-scope-option-box__option-top-button--mobile': isMobile
+              })}>
+              <Button
+                className={cx('project-scope-option-box__option-button', { 'project-scope-option-box__option-button--mobile': isMobile })}
+                color="primary"
+                fullWidth
+                variant="contained">
+                Select
+              </Button>
+            </div>
+          )}
         <div
           className={cx('project-scope-option-box__option-top', {
             'project-scope-option-box__option-top--centered': !showSelectButton,
@@ -73,17 +77,18 @@ class ProjectScopeOptionBox extends Component {
             {option.text}
           </Typography>
         </div>
-        {!showScaleInfo && showSelectButton && (
-          <div className={cx('project-scope-option-box__option-bottom', { 'project-scope-option-box__option-bottom--mobile': isMobile })}>
-            <Button
-              className={cx('project-scope-option-box__option-button', { 'project-scope-option-box__option-button--mobile': isMobile })}
-              color="primary"
-              fullWidth
-              variant="contained">
-              {selected ? 'Selected' : 'Select'}
-            </Button>
-          </div>
-        )}
+        {!showScaleInfo &&
+          showSelectButton && (
+            <div className={cx('project-scope-option-box__option-bottom', { 'project-scope-option-box__option-bottom--mobile': isMobile })}>
+              <Button
+                className={cx('project-scope-option-box__option-button', { 'project-scope-option-box__option-button--mobile': isMobile })}
+                color="primary"
+                fullWidth
+                variant="contained">
+                {selected ? 'Selected' : 'Select'}
+              </Button>
+            </div>
+          )}
         {showScaleInfo && (
           <div className={cx('project-scope-option-box__option-bottom', { 'project-scope-option-box__option-bottom--mobile': isMobile })}>
             <Button
