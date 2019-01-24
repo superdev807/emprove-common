@@ -20,4 +20,14 @@
     width: 12px;
     height: 12px;
   }
+
+  &--blink {
+    animation: blinkAnimation 1s linear infinite;
+  }
+}
+
+@keyframes blinkAnimation {
+  50% {
+    opacity: 0;
+  }
 }

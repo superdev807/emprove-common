@@ -17,14 +17,15 @@ class InformationButton extends Component {
   };
 
   render() {
-    const { className, icon, iconClass, size } = this.props;
+    const { className, icon, iconClass, size, tooltip, blink } = this.props;
     const Icon = icon === 'help' ? IconHelpOutline : IconInfo;
 
     return (
       <IconButton
         className={cx('information-button', `information-button--size-${size}`, className)}
         onClick={this.handleClick}>
-        <Icon className={cx(`information-button--size-${size}`, iconClass)} />
+        <Icon className={cx(`information-button--size-${size}`, iconClass, {'information-button--blink': blink})} />
+        {tooltip}
       </IconButton>
     );
   }
@@ -35,7 +36,9 @@ InformationButton.propTypes = {
   size: PropTypes.number,
   className: PropTypes.string,
   icon: PropTypes.oneOf(['help', 'info']),
-  iconClass: PropTypes.string
+  iconClass: PropTypes.string,
+  tooltip: PropTypes.object,
+  blink: PropTypes.bool
 };
 
 InformationButton.defaultProps = {
