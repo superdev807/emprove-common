@@ -99,7 +99,8 @@ class ProjectScopeOptionBox extends Component {
               color="primary"
               fullWidth
               onClick={this.handleClickDetail}
-              variant="contained">
+              variant="contained"
+              classes={{ label: 'project-scope-option-box__include-button--no-capitalize' }}>
               What's included
             </Button>
           </div>

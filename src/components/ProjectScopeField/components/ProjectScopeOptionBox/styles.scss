@@ -129,12 +129,15 @@
     min-height: 25px;
     font-size: 11px;
     padding: 0;
-    text-transform: capitalize;
     color: $primary !important;
 
     &--mobile {
       padding: 4px;
       font-size: 60%;
+    }
+
+    &--no-capitalize {
+      text-transform: none;
     }
 
     &:hover {
