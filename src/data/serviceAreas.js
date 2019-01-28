@@ -12,5 +12,6 @@ export const comingSoonAreas = [
   'Greater Sacramento, CA',
   'Greater Austin, TX',
   'Greater Houston, TX',
-  'Greater Dallas, TX'
+  'Greater Dallas, TX',
+  'Greater San Antonio, TX'
 ];
