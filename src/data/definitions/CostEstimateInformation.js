@@ -98,13 +98,13 @@ const OVERHEAD_PROFIT = {
     {
       id: 1,
       name:
-        "Overhead: A company's general operating expenses necessary for it to conduct business, such as their facilities, equipment, and administration costs.",
-      definition: null
+        "Overhead",
+      definition: "A company's general operating expenses necessary for it to conduct business, such as their facilities, equipment, and administration costs."
     },
     {
       id: 2,
-      name: "Profit: A company's financial gain associated with the project.",
-      definition: null
+      name: "Profit",
+      definition: "A company's financial gain associated with the project."
     }
   ],
   extraParagraph: [
