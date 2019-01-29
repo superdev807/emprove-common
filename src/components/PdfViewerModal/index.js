@@ -27,6 +27,8 @@ import { setSnackbar } from '../../redux/modules/globalStatus';
 
 class PdfViewerModal extends Component {
   static propTypes = {
+    blocker: PropTypes.func,
+    disableDownload: PropTypes.bool,
     fileName: PropTypes.string,
     handleHide: PropTypes.func,
     isMobile: PropTypes.bool,
@@ -100,25 +102,27 @@ class PdfViewerModal extends Component {
   };
 
   render() {
-    const { classes, isMobile, pdfKind, sendStatus, source, show, type } = this.props;
+    const { classes, disableDownload, isMobile, pdfKind, sendStatus, source, show, type } = this.props;
 
     return (
       <Dialog open={show} fullScreen={isMobile} maxWidth={false} onClose={this.handleClose} className={classes.noMarginTop}>
         <DialogTitle className={classes.topIconBox}>
-          {!isMobile ? (
-            <IconButton onClick={this.handleDownloadPDF}>
-              <IconDownload className={classes.topIcon} />
-            </IconButton>
-          ) : pdfKind === VIEW_PDF_KIND.FULL_RFP ? (
-            <Button
-              id="buttons_downloaded_rfp"
-              className={classes.downloadButton}
-              color="primary"
-              variant="contained"
-              onClick={type === 'rfp' ? this.handleSendRfpPDF : this.handleSendBidPDF}>
-              DOWNLOAD
-            </Button>
-          ) : null}
+          {!disableDownload && (
+            !isMobile ? (
+              <IconButton onClick={this.handleDownloadPDF}>
+                <IconDownload className={classes.topIcon} />
+              </IconButton>
+            ) : pdfKind === VIEW_PDF_KIND.FULL_RFP ? (
+              <Button
+                id="buttons_downloaded_rfp"
+                className={classes.downloadButton}
+                color="primary"
+                variant="contained"
+                onClick={type === 'rfp' ? this.handleSendRfpPDF : this.handleSendBidPDF}>
+                DOWNLOAD
+              </Button>
+            ) : null)
+          }
           <IconButton id={pdfKind === VIEW_PDF_KIND.FULL_RFP ? 'buttons_closed_page_rfp' : undefined} onClick={this.handleClose}>
             <IconClose className={classes.topIcon} />
           </IconButton>
