@@ -166,5 +166,8 @@ export const toISODateStr = (date, timezone) => {
   }
 };
 
+/*
+ * Gets all timezone strings that are accepted by react-intl
+ */
 export const getAllTimezones = () =>
   momenttz.tz.names().filter(timezone => /^(America|Asia|Europe|Australia|Africa|Pacific|Atlantic|Indian)/.test(timezone));
