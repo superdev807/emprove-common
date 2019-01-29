@@ -132,6 +132,8 @@ export default {
     }
   },
   messages: {
+    'CP.LANDING.COST.TITLE': 'THE COST',
+    'CP.LANDING.COST.TEXT': 'Success Fee is an introductory flat rate of $99 once you\'re hired',
     'CONSUMER.LANDING_BANNER_TITLE': 'WE’VE EMPROVED THE<br /><strong>HOME RENOVATION</strong> EXPERIENCE',
     'CONSUMER.LANDING_BANNER_TEXT': '<span>The style you want. The price you need.</span> <span>A process you can trust.</span>',
     'HOP.LANDING.WHAT_WE_DO.GET_IT_DONE.BODY':
