@@ -134,13 +134,13 @@ export default {
   messages: {
     'CP.LANDING.COST.TITLE': 'THE COST',
     'CP.LANDING.COST.TEXT': 'Success Fee is an introductory flat rate of $99 once you\'re hired',
+    'HOP.BROWSE_MODAL.SNAPPRICE.REGISTRATION_PROMPT.CANCEL': 'Not yet, show my project first',
+    'HOP.BROWSE_MODAL.SNAPPRICE.REGISTRATION_PROMPT.CONFIRM': 'Yes, Sign me up!',
     'HOP.LANDING.BANNER.TITLE': 'WE’VE EMPROVED THE<br /><strong>HOME RENOVATION</strong> EXPERIENCE',
     'HOP.LANDING.BANNER.TEXT': '<span>The style you want. The price you need.</span> <span>A process you can trust.</span>',
     'HOP.LANDING.WHAT_WE_DO.GET_IT_DONE.BODY':
       'We send your project details to our pre-vetted network of contractors in your area. After an on-site visit, you and your contractor can finalize a price!',
     'HOP.RFP.REGISTRATION.HEADER.TITLE_SUFFIX.GET_PRICING': 'with Emprove<br />to start the pricing process for your project',
-    'HOP.BROWSE_MODAL.SNAPPRICE.REGISTRATION_PROMPT.CANCEL': 'Not yet, show my project first',
-    'HOP.BROWSE_MODAL.SNAPPRICE.REGISTRATION_PROMPT.CONFIRM': 'Yes, Sign me up!',
     'HOP.RFP.MISSING_LOGISTICS.HEADER.TITLE':
       '<strong>STEP 2 - Complete your project plan</strong> before downloading it or sharing it with contractors',
     'HOP.RFP.IN_MARKET_PAYWALL.HEADER':
