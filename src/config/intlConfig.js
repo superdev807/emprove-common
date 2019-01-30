@@ -134,6 +134,8 @@ export default {
   messages: {
     'CP.LANDING.COST.TITLE': 'THE COST',
     'CP.LANDING.COST.TEXT': 'Success Fee is an introductory flat rate of $99 once you\'re hired',
+    'HOP.BROWSE_MODAL.SNAPPRICE.REGISTRATION_PROMPT.CANCEL': 'Not yet, show my project first',
+    'HOP.BROWSE_MODAL.SNAPPRICE.REGISTRATION_PROMPT.CONFIRM': 'Yes, Sign me up!',
     'HOP.LANDING.BANNER.TITLE': 'WE’VE EMPROVED THE<br /><strong>HOME RENOVATION</strong> EXPERIENCE',
     'HOP.LANDING.BANNER.TEXT': '<span>The style you want. The price you need.</span> <span>A process you can trust.</span>',
     'HOP.LANDING.WHAT_WE_DO.GET_IT_DONE.BODY':
