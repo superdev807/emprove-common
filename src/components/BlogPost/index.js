@@ -13,7 +13,8 @@ class BlogPost extends Component {
     ids: PropTypes.object,
     post: PropTypes.any,
     postType: PropTypes.oneOf(['blog', 'press-and-media']),
-    fromContractor: PropTypes.bool
+    fromContractor: PropTypes.bool,
+    imageSize: PropTypes.string
   };
 
   static defaultProps = {
@@ -32,13 +33,19 @@ class BlogPost extends Component {
       return (url = `/${postType}/${post.ID}/${post.slug}`);
     }
   }
+
+  getFeaturedImage() {
+    const { imageSize, post } = this.props;
+    return post.featured_image + (imageSize ? imageSize : '');
+  }
+
   render() {
     const { ids, post } = this.props;
 
     return (
       <div className="post-item">
         <a id={ids.blogTitle} className="post-item__link-wrapper" href={this.getURL()}>
-          <img className="post-item__image" src={post.featured_image} />
+          <img className="post-item__image" src={this.getFeaturedImage()} />
           <div className="post-item__title">
             <b>{decodeSpecialCharacters(post.title)}</b>
           </div>
