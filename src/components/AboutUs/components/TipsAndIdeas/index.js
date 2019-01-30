@@ -8,7 +8,8 @@ import PostsSectionLayout from '../PostsSectionLayout';
 
 class TipsAndIdeas extends Component {
   static propTypes = {
-    ids: PropTypes.object
+    ids: PropTypes.object,
+    imageSize: PropTypes.string
   };
 
   static defaultProps = {
@@ -16,7 +17,7 @@ class TipsAndIdeas extends Component {
   };
 
   render() {
-    const { linkText, posts, fromContractor } = this.props;
+    const { linkText, posts, fromContractor, imageSize } = this.props;
     let title = (
       <div>
         TIPS&nbsp;
@@ -37,6 +38,7 @@ class TipsAndIdeas extends Component {
         linkRoute="/blog"
         postType="blog"
         linkText={linkText || 'view all tips and ideas'}
+        imageSize={imageSize}
       />
     );
   }

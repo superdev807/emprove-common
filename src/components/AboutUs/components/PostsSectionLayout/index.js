@@ -20,7 +20,8 @@ class PostSectionLayout extends Component {
     linkRoute: PropTypes.string,
     isLink: PropTypes.bool,
     postsToShow: PropTypes.number,
-    postType: PropTypes.oneOf(['blog', 'press-and-media'])
+    postType: PropTypes.oneOf(['blog', 'press-and-media']),
+    imageSize: PropTypes.string
   };
 
   static defaultProps = {
@@ -28,7 +29,7 @@ class PostSectionLayout extends Component {
   };
 
   renderPosts(posts) {
-    const { ids, postsToShow, postType, fromContractor } = this.props;
+    const { ids, postsToShow, postType, fromContractor, imageSize } = this.props;
     return (
       <CSSTransitionGroup
         component="div"
@@ -38,7 +39,13 @@ class PostSectionLayout extends Component {
         transitionLeaveTimeout={300}>
         {posts.map((post, index) => (
           <div key={index} className="posts-section__item">
-            <BlogPost ids={{ blogTitle: `${ids.blogTitlePrefix}${index + 1}`, readFull: `${ids.readFullPrefix}${index + 1}` }} postType={postType} post={post} fromContractor={fromContractor} />
+            <BlogPost
+              ids={{ blogTitle: `${ids.blogTitlePrefix}${index + 1}`, readFull: `${ids.readFullPrefix}${index + 1}` }}
+              postType={postType}
+              post={post}
+              fromContractor={fromContractor}
+              imageSize={imageSize}
+            />
           </div>
         ))}
       </CSSTransitionGroup>
