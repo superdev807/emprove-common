@@ -134,6 +134,7 @@ export default {
   messages: {
     'CP.LANDING.COST.TITLE': 'THE COST',
     'CP.LANDING.COST.TEXT': "Success Fee is an introductory flat rate of $99 once you're hired",
+    'HOP.BROWSE_MODAL.SNAPPRICE.INPUT_SECTION.SUBHEADER': 'Adjust the estimate inputs to fit your budget',
     'HOP.BROWSE_MODAL.SNAPPRICE.REGISTRATION_PROMPT.CANCEL': 'Not yet, show my project first',
     'HOP.BROWSE_MODAL.SNAPPRICE.REGISTRATION_PROMPT.CONFIRM': 'Yes, Sign me up!',
     'HOP.LANDING.BANNER.TITLE': 'WE’VE EMPROVED THE<br /><strong>HOME RENOVATION</strong> EXPERIENCE',
@@ -199,7 +200,6 @@ export default {
     'HOP.RFP.SEND_PLAN.NOT_READY.BODY': 'We compiled a comprehensive plan to help contractors accurately quote your project.',
     'HOP.RFP.PRICING_PROCESS.GET_PRICING_HEADER': 'LET EMPROVE DO THE LEG WORK TO <strong>SAVE YOU TIME AND MONEY</strong>',
     'HOP.RFP.PRICING_PROCESS.DOWNLOAD.HEADER': 'ACTIVATE YOUR PROJECT TO <strong>DOWNLOAD YOUR PLAN</strong> ALONG WITH OTHER BENEFITS',
-    'HOP.RFP.STYLE.IMAGE_RAIL.MATERIAL_DROPDOWN.TEXT': 'Change the material to achieve this style within your budget.',
-    'HOP.BROWSE_MODAL.INSTAPRICE.INPUT_SECTION.SUBHEADER': 'Adjust the estimate inputs to fit your budget'
+    'HOP.RFP.STYLE.IMAGE_RAIL.MATERIAL_DROPDOWN.TEXT': 'Change the material to achieve this style within your budget.'
   }
 };
