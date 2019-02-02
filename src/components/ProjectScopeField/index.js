@@ -39,6 +39,8 @@ class ProjectScopeField extends Component {
       onClickDetail
     } = this.props;
 
+    const inputValue = input ? input.value : '';
+
     return (
       <div className={cx('project-scope-field', { [className]: Boolean(className) })}>
         <Grid container spacing={24}>
@@ -52,7 +54,7 @@ class ProjectScopeField extends Component {
                   option={option}
                   isMobile={this.state.isMobile}
                   showScaleInfo={showScaleInfo}
-                  selected={option.value === input.value}
+                  selected={option.value === inputValue}
                 />
               </Grid>
             );
