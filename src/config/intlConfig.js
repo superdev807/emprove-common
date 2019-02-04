@@ -133,7 +133,9 @@ export default {
   },
   messages: {
     'CP.LANDING.COST.TITLE': 'THE COST',
-    'CP.LANDING.COST.TEXT': "Success Fee is an introductory flat rate of $99 once you're hired",
+    'CP.LANDING.COST.PRETEXT': 'Only pay a Success Fee after you are awarded the project!',
+    'CP.LANDING.COST.CLICK': 'Click here',
+    'CP.LANDING.COST.POSTTEXT': ' to view our Contractor Success Fee Schedule.',
     'HOP.BROWSE_MODAL.SNAPPRICE.INPUT_SECTION.SUBHEADER': 'Adjust the estimate inputs to fit your budget',
     'HOP.BROWSE_MODAL.SNAPPRICE.PANEL_FOOTER.TEXT': '<strong>Start a project inspired by this design</strong>',
     'HOP.BROWSE_MODAL.SNAPPRICE.REGISTRATION_PROMPT.CANCEL': 'Not yet, show my project first',
