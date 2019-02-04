@@ -15,6 +15,6 @@ export default theme => ({
   },
   fixedOverlay: {
     position: 'fixed',
-    zIndex: 999
+    zIndex: 9999
   }
 });
