@@ -141,7 +141,8 @@ export default {
     'HOP.LANDING.BANNER.TEXT1_DESKTOP': '<strong>Renovations</strong> Go Better when You Have A <strong>Plan</strong>',
     'HOP.LANDING.BANNER.TEXT2': 'WE TURN INSPIRING IMAGES INTO YOUR <strong>AFFORDABLE PROJECT PLAN.</strong>',
     'HOP.LANDING.BANNER.TEXT2_DESKTOP': 'WE TURN INSPIRING IMAGES INTO<br />YOUR <strong>AFFORDABLE PROJECT PLAN.</strong>',
-    'HOP.LANDING.WHAT_WE_DO.HEADING': 'As your <strong>Home Renovation Partner</strong>, we guide you through these <strong>3 easy steps:</strong>',
+    'HOP.LANDING.WHAT_WE_DO.HEADING':
+      'As your <strong>Home Renovation Partner</strong>, we guide you through these <strong>3 easy steps:</strong>',
     'HOP.LANDING.WHAT_WE_DO.GET_IT_DONE.BODY':
       'We send your project details to our pre-vetted network of contractors in your area. After an on-site visit, you and your contractor can finalize a price!',
     'HOP.RFP.REGISTRATION.HEADER.TITLE_SUFFIX.GET_PRICING': 'with Emprove<br />to start the pricing process for your project',
