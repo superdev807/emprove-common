@@ -197,6 +197,7 @@ export { default as IconStyleboard } from './IconStyleboard';
 export { default as IconStyleboardColors } from './IconStyleboardColors';
 export { default as IconSubmitted } from './IconSubmitted';
 export { default as IconSubmittedBids } from './IconSubmittedBids';
+export { default as IconSubscribeAlert } from './IconSubscribeAlert';
 export { default as IconSummary } from './IconSummary';
 export { default as IconTerms } from './IconTerms';
 export { default as IconTermsNote } from './IconTermsNote';
