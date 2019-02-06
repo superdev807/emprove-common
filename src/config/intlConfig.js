@@ -154,6 +154,7 @@ export default {
     'HOP.MATERIAL_OPTIONS.SIDE_BAR.ACTION.TITLE': '<small>+ Add more styles</small>',
     'HOP.LANDING.WHAT_WE_DO.HEADING':
       'As your <strong>Home Renovation Partner</strong>, we guide you through these <strong>3 easy steps:</strong>',
+    'HOP.RFP.CTA.GET_PRICING.BODY': 'Get pricing for your project from qualified licensed contractors.',
     'HOP.RFP.REGISTRATION.HEADER.TITLE_SUFFIX.GET_PRICING': 'with Emprove<br />to start the pricing process for your project',
     'HOP.RFP.MISSING_LOGISTICS.HEADER.TITLE':
       '<strong>STEP 2 - Complete your project plan</strong> before downloading it or sharing it with contractors',
@@ -181,7 +182,6 @@ export default {
     'HOP.RFP.INVITE_CONTRACTOR.HEADER': 'Please add the contact information for the contractors you would like to price your project.',
     'HOP.RFP.INVITE_CONTRACTOR.SUB_HEADER': 'You can invite up to 3 contractors',
     'HOP.RFP.INVITE_CONTRACTOR.CTA.TITLE': 'SEND PLAN OUT FOR PRICING',
-    'HOP.RFP.CTA.GET_PRICING.BODY': 'Get pricing for your project from qualified licensed contractors.',
     'HOP.VIEW_RFP_MODAL.CTA.VIEW_PLAN.TITLE': 'VIEW PLAN',
     'HOP.VIEW_RFP_MODAL.CTA.DOWNLOAD.TITLE': 'DOWNLOAD',
     'HOP.VIEW_RFP_MODAL.IN_MARKET.DESKTOP.CONGRATS':
