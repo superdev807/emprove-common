@@ -181,6 +181,7 @@ export default {
     'HOP.RFP.INVITE_CONTRACTOR.HEADER': 'Please add the contact information for the contractors you would like to price your project.',
     'HOP.RFP.INVITE_CONTRACTOR.SUB_HEADER': 'You can invite up to 3 contractors',
     'HOP.RFP.INVITE_CONTRACTOR.CTA.TITLE': 'SEND PLAN OUT FOR PRICING',
+    'HOP.RFP.CTA.GET_PRICING.BODY': 'Get pricing for your project from qualified licensed contractors.',
     'HOP.VIEW_RFP_MODAL.CTA.VIEW_PLAN.TITLE': 'VIEW PLAN',
     'HOP.VIEW_RFP_MODAL.CTA.DOWNLOAD.TITLE': 'DOWNLOAD',
     'HOP.VIEW_RFP_MODAL.IN_MARKET.DESKTOP.CONGRATS':
