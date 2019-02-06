@@ -40,6 +40,7 @@ export { default as IconCalendarPlus } from './IconCalendarPlus';
 export { default as IconCamera } from './IconCamera';
 export { default as IconCircleArrowDown } from './IconCircleArrowDown';
 export { default as IconCircleArrowUp } from './IconCircleArrowUp';
+export { default as IconCircleCheck } from './IconCircleCheck';
 export { default as IconCircleQuestionMark } from './IconCircleQuestionMark';
 export { default as IconClose } from './IconClose';
 export { default as IconComment } from './IconComment';
