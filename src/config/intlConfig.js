@@ -225,7 +225,7 @@ export default {
     'HOP.SIGNUP.HEADLINE': 'TO SAVE YOUR PROJECT AND TRACK<br />YOUR COMPREHENSIVE PLAN ON EMPROVE',
     'HOP.SUBSCRIBERS_LISTING_FULL_MODAL.TITLE': "OUR SUBSCRIBER'S LIST IS FULL",
     'HOP.SUBSCRIBERS_LISTING_FULL_MODAL.DESCRIPTION': "so you've been added to the waiting list.<br />We'll be in touch with you soon!",
-    'HOP.SUBSCRIBERS_LISTING_FULL_MODAL.TIP': 'If you like to price out and check our ideas catalog',
+    'HOP.SUBSCRIBERS_LISTING_FULL_MODAL.TIP': "Check our SnapPrice image catalog where you can see estimates for others' images",
     'HOP.SUBSCRIBERS_LISTING_FULL_MODAL.ACTION_LABEL': 'Browse Ideas',
     'HOP.RFP.REGISTRATION.HEADER.TITLE_SUFFIX.GET_PRICING': 'with Emprove<br />to start the pricing process for your project',
     'HOP.RFP.MISSING_LOGISTICS.HEADER.TITLE':
