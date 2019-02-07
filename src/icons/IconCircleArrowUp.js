@@ -4,7 +4,7 @@ import React from 'react';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
 const IconCircleArrowUp = props => (
-  <SvgIcon id="Layer_1" viewBox="0 0 24 24" {...props}>
+  <SvgIcon viewBox="0 0 24 24" {...props}>
     <path fill="none" d="M0 0h24v24H0z" />
     <circle cx={12} cy={12} r={10.286} fill="#fff" />
     <path
