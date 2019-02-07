@@ -4,7 +4,7 @@ import React from 'react';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
 const IconSubscribeAlert = props => (
-  <SvgIcon x="0px" y="0px" viewBox="0 0 24 24" {...props}>
+  <SvgIcon x="0px" y="0px" width="24" height="24" viewBox="0 0 24 24" {...props}>
     <path fill="none" d="M24,0L0,0l0,24h24V0z" />
     <path
       d="M17.499,15.033v-4.115c0-2.792-1.498-4.989-3.843-5.686V4.939c0-0.913-0.743-1.656-1.656-1.656
