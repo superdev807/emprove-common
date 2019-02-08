@@ -1,0 +1,26 @@
+@import 'variables';
+@import 'mixins';
+
+.slider-field {
+
+  &__labels {
+    padding-top: 24px;
+    position: absolute;
+    width: 100%;
+  }
+
+  &__label {
+    display: inline-block;
+    position: absolute;
+    transform: translateX(-50%);
+
+    @media screen and (min-width: map-get($breakpoints, sm)) {
+      max-width: 80px;
+    }
+
+    &-text {
+      text-align: center;
+      font-size: 0.75rem;
+    }
+  }
+}
