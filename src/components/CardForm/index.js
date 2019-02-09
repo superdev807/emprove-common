@@ -10,6 +10,7 @@ import { compose } from 'redux';
 import { CardCVCElement, CardExpiryElement, CardNumberElement, injectStripe } from 'react-stripe-elements';
 import { withTheme } from '@material-ui/core/styles';
 
+import LoadingIndicator from '../LoadingIndicator';
 import './style.scss';
 
 class CardForm extends Component {
@@ -17,7 +18,7 @@ class CardForm extends Component {
     disabled: PropTypes.bool,
     email: PropTypes.string.isRequired,
     onSubmit: PropTypes.func.isRequired,
-    stripe: PropTypes.object.isRequired,
+    stripe: PropTypes.object,
     theme: PropTypes.object.isRequired
   };
 
@@ -72,8 +73,12 @@ class CardForm extends Component {
   }
 
   render() {
-    const { classes, disabled } = this.props;
+    const { classes, disabled, stripe } = this.props;
     const { error, tokenCreating } = this.state;
+
+    if (stripe === null) {
+      return <LoadingIndicator />;
+    }
 
     return (
       <form onSubmit={this.handleSubmit} className="credit-card-form">
