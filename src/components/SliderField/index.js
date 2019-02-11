@@ -31,6 +31,7 @@ class SliderField extends Component {
 
   renderSliderLabels() {
     const { classes, options } = this.props;
+    const { value } = this.state;
 
     const labelPosition = 100 / (options.length - 1);
 
@@ -39,7 +40,9 @@ class SliderField extends Component {
         {options.map((item, index) => {
           return (
             <div key={item.id} className={cx('slider-field__label', classes.labelClassName)} style={{ left: `${index * labelPosition}%` }}>
-              <Typography className="slider-field__label-text">{item.description}</Typography>
+              <Typography className={cx('slider-field__label-text', { 'slider-field__label-text--selected': value === item.id })}>
+                {item.description}
+              </Typography>
             </div>
           );
         })}

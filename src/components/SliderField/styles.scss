@@ -21,6 +21,10 @@
     &-text {
       text-align: center;
       font-size: 0.75rem;
+
+      &--selected {
+        color: $primary
+      }
     }
   }
 }
