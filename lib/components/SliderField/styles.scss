@@ -3,6 +3,15 @@
 
 .slider-field {
 
+  &__track {
+    background-color: $light-gray;
+    height: 3px;
+
+    &-before {
+      background-color: $primary
+    }
+  }
+
   &__labels {
     padding-top: 24px;
     position: absolute;
@@ -13,6 +22,7 @@
     display: inline-block;
     position: absolute;
     transform: translateX(-50%);
+    cursor: pointer;
 
     @media screen and (min-width: map-get($breakpoints, sm)) {
       max-width: 80px;
@@ -25,6 +35,28 @@
       &--selected {
         color: $primary
       }
+    }
+  }
+
+  &__ticks {
+    position: absolute;
+    width: 100%;
+    top: -3px;
+    z-index: 1;
+  }
+
+  &__tick {
+    width: 3px;
+    height: 3px;
+    background-color: $primary;
+    position: absolute;
+    display: inline-block;
+    transform: translate(-50%, 50%);
+    border-radius: 50%;
+
+    &--passed {
+      background-color: $very-light-gray;
+      border: 0.1px solid $primary;
     }
   }
 }

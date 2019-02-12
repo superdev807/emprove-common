@@ -39,11 +39,36 @@ class SliderField extends Component {
       <div className={cx('slider-field__labels', classes.labelsClassName)}>
         {options.map((item, index) => {
           return (
-            <div key={item.id} className={cx('slider-field__label', classes.labelClassName)} style={{ left: `${index * labelPosition}%` }}>
+            <div
+              key={item.id}
+              className={cx('slider-field__label', classes.labelClassName)}
+              style={{ left: `${index * labelPosition}%` }}
+              onClick={() => this.handleChange(event, item.id)}>
               <Typography className={cx('slider-field__label-text', { 'slider-field__label-text--selected': value === item.id })}>
                 {item.description}
               </Typography>
             </div>
+          );
+        })}
+      </div>
+    );
+  }
+
+  renderTickMarks() {
+    const { classes, options } = this.props;
+    const { value } = this.state;
+
+    const tickPosition = 100 / (options.length - 1);
+
+    return (
+      <div className={cx('slider-field__ticks', classes.ticksClassName)}>
+        {options.map((item, index) => {
+          return (
+            <div
+              key={item.id}
+              className={cx('slider-field__tick', classes.tickClassName, { 'slider-field__tick--passed': value > item.id })}
+              style={{ left: `${index * tickPosition}%` }}
+            />
           );
         })}
       </div>
@@ -78,12 +103,13 @@ class SliderField extends Component {
   }
 
   render() {
-    const { className, classes, helpText, disabled, max, min, onDragEnd, onDragStart, step, sliderIcon, vertical } = this.props;
+    const { className, classes, helpText, disabled, max, min, onDragStart, step, sliderIcon, vertical, showLabels, showTicks } = this.props;
 
     return (
       <div className={cx('slider-field', className)}>
         {helpText && <Typography className={cx('slider-field__helpText', classes.helpTextClassName)} />}
         <Slider
+          classes={{ track: 'slider-field__track', trackBefore: 'slider-field__track-before' }}
           value={this.state.value}
           min={min}
           max={max}
@@ -95,7 +121,8 @@ class SliderField extends Component {
           disabled={disabled}
           vertical={vertical}
         />
-        {this.renderSliderLabels()}
+        {showTicks && this.renderTickMarks()}
+        {showLabels && this.renderSliderLabels()}
       </div>
     );
   }
@@ -105,11 +132,15 @@ SliderField.propTypes = {
   classes: PropTypes.object,
   label: PropTypes.string,
   onDragEnd: PropTypes.func,
-  onDragStart: PropTypes.func
+  onDragStart: PropTypes.func,
+  showLabels: PropTypes.bool,
+  showTicks: PropTypes.bool
 };
 
 SliderField.defaultProps = {
-  classes: {}
+  classes: {},
+  showLabels: true,
+  showTicks: true
 };
 
 export default SliderField;
