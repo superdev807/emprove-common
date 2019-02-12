@@ -12,7 +12,7 @@ import Paper from '@material-ui/core/Paper';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { Document, Page } from 'react-pdf';
+import { Document, Page } from 'react-pdf/dist/entry.webpack';
 import { isMobileSelector } from '../../redux/selectors';
 import { withStyles } from '@material-ui/core/styles';
 

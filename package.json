@@ -84,7 +84,7 @@
     "react-jss": "^8.6.1",
     "react-markdown": "^3.3.4",
     "react-number-format": "^3.4.2",
-    "react-pdf": "^3.0.5",
+    "react-pdf": "4.0.2",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-stripe-elements": "^2.0.1",
@@ -94,6 +94,7 @@
     "redux-actions": "^2.2.1",
     "redux-modal": "^1.7.0",
     "regenerator-runtime": "^0.12.1",
-    "reselect": "^3.0.1"
+    "reselect": "^3.0.1",
+    "webpack": "4.25.1"
   }
 }
