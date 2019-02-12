@@ -153,6 +153,13 @@ export default {
     'HOP.LANDING.BANNER.TEXT2': 'WE TURN INSPIRING IMAGES INTO YOUR <strong>AFFORDABLE PROJECT PLAN.</strong>',
     'HOP.LANDING.BANNER.TEXT2_DESKTOP': 'WE TURN INSPIRING IMAGES INTO<br />YOUR <strong>AFFORDABLE PROJECT PLAN.</strong>',
     'HOP.LANDING.BANNER.ACTION_BUTTON.TEXT': 'GET STARTED',
+    'HOP.LANDING.BANNER.VARIANT1.TEXT1': '<strong>Renovations</strong> go better when you have a <strong>PLAN</strong>',
+    'HOP.LANDING.BANNER.VARIANT1.TEXT2': 'Let us help you create one!',
+    'HOP.LANDING.BANNER.VARIANT1.TEXT3': 'start by telling us what do you want to renovate?',
+    'HOP.LANDING.BANNER.VARIANT1.ACTION_LABEL': 'GO',
+    'HOP.LANDING.BANNER.VARIANT2.TEXT1': 'We turn inspiring images into your <br /><strong>affordable project plan</strong>',
+    'HOP.LANDING.BANNER.VARIANT2.TEXT2': 'start by telling us what do you want to renovate?',
+    'HOP.LANDING.BANNER.VARIANT2.ACTION_LABEL': 'GO',
     'HOP.LANDING.HOW_IT_WORKS.STEP1.TITLE': 'STYLE IT',
     'HOP.LANDING.HOW_IT_WORKS.STEP1.BODY': 'Our smart photos show you renovation costs and how you can afford the look you want',
     'HOP.LANDING.HOW_IT_WORKS.STEP2.TITLE': 'ESTIMATE IT',
@@ -165,6 +172,76 @@ export default {
     'HOP.LANDING.WHAT_WE_DO.HEADING':
       'As your <strong>Home Renovation Partner</strong>, we guide you through these <strong>3 easy steps:</strong>',
     'HOP.RFP.CTA.GET_PRICING.BODY': 'Get pricing for your project from qualified licensed contractors.',
+    'HOP.LANDING_PRICING.START_YOUR_PROJECT': 'Start Your Project',
+    'HOP.LANDING_PRICING.HEADER.HOW_IT_WORKS': 'How It Works',
+    'HOP.LANDING_PRICING.HEADER.PRICING': 'Pricing',
+    'HOP.LANDING_PRICING.HEADER.EXAMPLE': 'Example',
+    'HOP.LANDING_PRICING.HERO.TITLE': '<strong>Home Renovation</strong><br /><span class="text-primary">MADE SIMPLE</span>',
+    'HOP.LANDING_PRICING.HERO.SUBTITLE': 'Achieve the renovation of your dreams.',
+    'HOP.LANDING_PRICING.HERO.DESCRIPTION':
+      'See how much your project should cost based on a line item specific plan that is built for your location and budget in <strong>under 24 hours</strong>.',
+    'HOP.LANDING_PRICING.HERO.TIP': 'ALL YOU NEED TO DO IS UPLOAD A PICTURE!',
+    'HOP.LANDING_PRICING.HOW_IT_WORKS.HEADING': 'HOW IT <strong>WORKS</strong>',
+    'HOP.LANDING_PRICING.HOW_IT_WORKS.ITEM1.HEADING': 'Share With Us<br />What You Want',
+    'HOP.LANDING_PRICING.HOW_IT_WORKS.ITEM1.DESCRIPTION': 'Upload a picture of your dream renovation and share your rough budget',
+    'HOP.LANDING_PRICING.HOW_IT_WORKS.ITEM2.HEADING': 'We Build Your<br />Plan & Estimate',
+    'HOP.LANDING_PRICING.HOW_IT_WORKS.ITEM2.DESCRIPTION':
+      'We itemize your pictures and build a bottoms up estimate for your project based on your location and budget',
+    'HOP.LANDING_PRICING.HOW_IT_WORKS.ITEM3.HEADING': 'Proceed with<br />Confidence',
+    'HOP.LANDING_PRICING.HOW_IT_WORKS.ITEM3.DESCRIPTION':
+      "In <strong>24 hours</strong>, you'll receive your plan and estimate to ensure you have the tools to achieve the renovation of your dreams. We can even help you get bids from qualified contractors.",
+    'HOP.LANDING_PRICING.WHY_EMPROVE.HEADING': 'WHY <strong class="text-primary">EMPROVE</strong>',
+    'HOP.LANDING_PRICING.WHY_EMPROVE.SECTION1.HEADING': 'Learn about The <strong>Potential Costs</strong><br />of your dream renovation',
+    'HOP.LANDING_PRICING.WHY_EMPROVE.SECTION1.QUESTION': 'EVER WONDER HOW MUCH<br />RENOVATIONS ACTUALLY COST',
+    'HOP.LANDING_PRICING.WHY_EMPROVE.SECTION1.DESCRIPTION':
+      'Us too. This is why we built the most sophisticated costing engine in the industry to help you not only understand the total bill, but the items that go into a successful renovation project.',
+    'HOP.LANDING_PRICING.WHY_EMPROVE.SECTION2.HEADING':
+      'Adjust your plan to <strong>fit your budget</strong><br /> and still achieve the <strong>look you want</strong>',
+    'HOP.LANDING_PRICING.WHY_EMPROVE.SECTION2.QUESTION': "THINK YOU CAN'T AFFORD<br />YOUR DREAM RENOVATION",
+    'HOP.LANDING_PRICING.WHY_EMPROVE.SECTION2.DESCRIPTION':
+      "Now you can. We built our tools to help show you multiple ways to achieve the look you want at different price points so you can weigh the tradeoffs, but don't have to compromise your budget.",
+    'HOP.LANDING_PRICING.WHY_EMPROVE.SECTION3.HEADING':
+      'Gain leverage as you start <strong>Pricing</strong><br />your project with <strong>Contractors</strong>',
+    'HOP.LANDING_PRICING.WHY_EMPROVE.SECTION3.QUESTION': 'HESITANT ABOUT WORKING<br />WITH CONTRACTORS',
+    'HOP.LANDING_PRICING.WHY_EMPROVE.SECTION3.DESCRIPTION':
+      'We exist to be your advocate and help you go into pricing conversations well informed. When you know what you want and how much it should cost, you have the leverage.',
+    'HOP.LANDING_PRICING.EXAMPLE_PROJECT.HEADING': 'EXAMPLE <strong class="text-primary">EMPROVE PROJECT</strong>',
+    'HOP.LANDING_PRICING.EXAMPLE_PROJECT.LEFT_TEXT':
+      'Our team of renovation experts tags your<br /> image with relevant features, materials and <br />quality levels.',
+    'HOP.LANDING_PRICING.EXAMPLE_PROJECT.RIGHT_TEXT': 'We then Build Your Comprehensive Project <br />Estimate And Plan',
+    'HOP.LANDING_PRICING.EXAMPLE_PROJECT.SEE_SAMPLE': 'See Sample Project Plan',
+    'HOP.LANDING_PRICING.EXAMPLE_PROJECT.STEPS.TITLE': '3 SIMPLE STEPS TO GET YOUR PROJECT ESTIMATE',
+    'HOP.LANDING_PRICING.EXAMPLE_PROJECT.STEPS.STEP1': 'Upload your image',
+    'HOP.LANDING_PRICING.EXAMPLE_PROJECT.STEPS.STEP2': 'We build your plan',
+    'HOP.LANDING_PRICING.EXAMPLE_PROJECT.STEPS.STEP3': 'You receive the Project Plan',
+    'HOP.LANDING_PRICING.PRICING.HEADING': 'PRICING',
+    'HOP.LANDING_PRICING.GUARANTEE.TEXT': 'Emprove guarantees your satisfaction <br />or get your money back',
+    'HOP.PRICING_PACKAGES.RECOMMENDED': 'RECOMMENDED',
+    'HOP.PRICING_PACKAGES.ACTION_LABEL': 'SELECT',
+    'HOP.PRICING_PACKAGES.PACKAGE1.TITLE': 'INSTANT ESTIMATE',
+    'HOP.PRICING_PACKAGES.PACKAGE1.PRICE': '$29.99',
+    'HOP.PRICING_PACKAGES.PACKAGE1.DESCRIPTION':
+      'Our team will generate a <strong>Single Estimate</strong> and <strong>Plan</strong> for you based off your dream renovation image',
+    'HOP.PRICING_PACKAGES.PACKAGE1.ITEMS':
+      'Emprove builds a comprehensive line item detail plan for your project\nEmprove estimates your project cost based on the details\n<strong>Unlimited Use of Emprove Project Planning Tool</strong> (to customize your project) and make revisions)\nEstimate and plan delivered in <strong>24 hours</strong>',
+    'HOP.PRICING_PACKAGES.PACKAGE2.TITLE': 'BUDGET OPTIMIZER',
+    'HOP.PRICING_PACKAGES.PACKAGE2.PRICE': '$59.99',
+    'HOP.PRICING_PACKAGES.PACKAGE2.DESCRIPTION':
+      'Our team will generate <strong>5 Different Estimates and Plans</strong> for your project based on tradeoffs around your budget',
+    'HOP.PRICING_PACKAGES.PACKAGE2.ITEMS':
+      'Everything included in the Instant Estimate Package\nEmprove builds <strong>5 different plans and estimates</strong> that provide you with tradeoffs around project features, quality and materials\nOngoing support from the Emprove team to help you with your project\n<strong>A $15 credit</strong> that can be applied to future renovation projects on Emprove',
+    'HOP.PRICING_PACKAGES.PACKAGE3.TITLE': 'FULL SERVICE',
+    'HOP.PRICING_PACKAGES.PACKAGE3.PRICE': '$99.99',
+    'HOP.PRICING_PACKAGES.PACKAGE3.DESCRIPTION':
+      'Not only will our team generate <strong>5 Different Estimates and Plans</strong> for your project, but we will also match your project to <strong>Qualified Contractors and run a Pricing Process</strong> to get your fair price.',
+    'HOP.PRICING_PACKAGES.PACKAGE3.ITEMS':
+      'Everything included in the Instant Estimate Package\nWe match your project with <strong>vetted qualified contractors\nWe contact contractors on your behalf and solicit their competitive price for your project\nWe share with you <strong>side by side</strong> contractor price comparison\nWe provide you with <strong>a Standard Contact Form</strong> for you to use with your contractor',
+    'HOP.SIGNUP.TITLE': 'SIGN UP',
+    'HOP.SIGNUP.HEADLINE': 'TO SAVE YOUR PROJECT AND TRACK<br />YOUR COMPREHENSIVE PLAN ON EMPROVE',
+    'HOP.SUBSCRIBERS_LISTING_FULL_MODAL.TITLE': "OUR SUBSCRIBER'S LIST IS FULL",
+    'HOP.SUBSCRIBERS_LISTING_FULL_MODAL.DESCRIPTION': "so you've been added to the waiting list.<br />We'll be in touch with you soon!",
+    'HOP.SUBSCRIBERS_LISTING_FULL_MODAL.TIP': "Check our SnapPrice image catalog where you can see estimates for others' images",
+    'HOP.SUBSCRIBERS_LISTING_FULL_MODAL.ACTION_LABEL': 'Browse Ideas',
     'HOP.RFP.REGISTRATION.HEADER.TITLE_SUFFIX.GET_PRICING': 'with Emprove<br />to start the pricing process for your project',
     'HOP.RFP.MISSING_LOGISTICS.HEADER.TITLE':
       '<strong>STEP 2 - Complete your project plan</strong> before downloading it or sharing it with contractors',
