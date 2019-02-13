@@ -44,7 +44,12 @@ class SliderField extends Component {
               className={cx('slider-field__label', classes.labelClassName)}
               style={{ left: `${index * labelPosition}%` }}
               onClick={() => this.handleChange(event, item.id)}>
-              <Typography className={cx('slider-field__label-text', { 'slider-field__label-text--selected': value === item.id })}>
+              <Typography
+                className={cx(
+                  'slider-field__label-text',
+                  { 'slider-field__label-text--selected': value === item.id },
+                  classes.labelTextClassName
+                )}>
                 {item.description}
               </Typography>
             </div>
