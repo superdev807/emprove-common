@@ -140,6 +140,16 @@ export default {
     'HOP.BROWSE_MODAL.SNAPPRICE.PANEL_FOOTER.TEXT': '<strong>Start a project inspired by this design</strong>',
     'HOP.BROWSE_MODAL.SNAPPRICE.REGISTRATION_PROMPT.CANCEL': 'Not yet, show my project first',
     'HOP.BROWSE_MODAL.SNAPPRICE.REGISTRATION_PROMPT.CONFIRM': 'Yes, Sign me up!',
+    'HOP.INSTANT_ESTIMATE.INPUT_SECTION.HEADER.TITLE': 'ADJUST YOUR INSTANT ESTIMATE',
+    'HOP.INSTANT_ESTIMATE.INPUT_SECTION.HEADER.SUBTITLE': 'Based on what you would like, we will show you the resulting cost!',
+    'HOP.INSTANT_ESTIMATE.INPUT_SECTION_FOOTER.BUTTON.TEXT': 'CUSTOMIZE THIS PROJECT',
+    'HOP.INSTANT_ESTIMATE.INPUT_SECTION_FOOTER.HEADER.TITLE': 'WANT TO <strong>FINE TUNE</strong> EVERY DETAIL?',
+    'HOP.INSTANT_ESTIMATE.INPUT_SECTION_FOOTER.HEADER.SUBTITLE':
+      'Turn this estimate into a detailed project plan that you can completely customize before sending it out for contractor quotes.',
+    'HOP.INSTANT_ESTIMATE.RESULT_SECTION_FOOTER.BUTTON.TEXT': 'GET QUOTES',
+    'HOP.INSTANT_ESTIMATE.RESULT_SECTION_FOOTER.HEADER.TITLE': 'READY TO <strong>GET QUOTES</strong> FROM CONTRACTORS?',
+    'HOP.INSTANT_ESTIMATE.RESULT_SECTION_FOOTER.HEADER.SUBTITLE':
+      'If this estimate fits your budget and roughly what you want included, then you are ready! You can always make tweaks later.',
     'HOP.LANDING.BANNER.TEXT1': '<strong>Renovations</strong> Go Better<br />When You Have A <strong>Plan</strong>',
     'HOP.LANDING.BANNER.TEXT1_DESKTOP': '<strong>Renovations</strong> Go Better when You Have A <strong>Plan</strong>',
     'HOP.LANDING.BANNER.TEXT2': 'WE TURN INSPIRING IMAGES INTO YOUR <strong>AFFORDABLE PROJECT PLAN.</strong>',
