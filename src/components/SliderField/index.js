@@ -20,12 +20,16 @@ class SliderField extends Component {
     this.debouncedHandleChange = debounce(this.debouncedHandleChange, 500);
   }
 
+  componentDidMount() {
+    const { initialValue } = this.props;
+    if (initialValue !== null || initialValue !== undefined) {
+      this.handleChange(null, initialValue);
+    }
+  }
+
   componentDidUpdate(prevProps) {
-    // sets the initial value
     if (prevProps.initialValue !== this.props.initialValue) {
-      this.setState({
-        value: this.props.initialValue
-      });
+      this.handleChange(null, this.props.initialValue);
     }
   }
 
