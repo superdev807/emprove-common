@@ -8,6 +8,7 @@ export const DETECT_DEVICE = 'emprove.common.DETECT_DEVICE';
 export const LIST_TRANSLATIONS = 'emprove.common.LIST_TRANSLATIONS';
 export const RESET_SNACKBAR = 'emprove.common.RESET_SNACKBAR';
 export const SET_SNACKBAR = 'emprove.common.SET_SNACKBAR';
+export const SET_LANDING_VISITED = 'emprove.common.SET_LANDING_VISITED';
 export const TOGGLE_DRAWER = 'emprove.common.TOGGLE_DRAWER';
 
 export const EXPORT_RFP_PDF = 'emprove.common.EXPORT_RFP_PDF';
