@@ -20,12 +20,16 @@ class SliderField extends Component {
     this.debouncedHandleChange = debounce(this.debouncedHandleChange, 500);
   }
 
+  componentDidMount() {
+    const { initialValue } = this.props;
+    if (initialValue !== null || initialValue !== undefined) {
+      this.handleChange(null, initialValue);
+    }
+  }
+
   componentDidUpdate(prevProps) {
-    // sets the initial value
     if (prevProps.initialValue !== this.props.initialValue) {
-      this.setState({
-        value: this.props.initialValue
-      });
+      this.handleChange(null, this.props.initialValue);
     }
   }
 
@@ -44,7 +48,12 @@ class SliderField extends Component {
               className={cx('slider-field__label', classes.labelClassName)}
               style={{ left: `${index * labelPosition}%` }}
               onClick={() => this.handleChange(event, item.id)}>
-              <Typography className={cx('slider-field__label-text', { 'slider-field__label-text--selected': value === item.id })}>
+              <Typography
+                className={cx(
+                  'slider-field__label-text',
+                  { 'slider-field__label-text--selected': value === item.id },
+                  classes.labelTextClassName
+                )}>
                 {item.description}
               </Typography>
             </div>

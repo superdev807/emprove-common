@@ -3,10 +3,11 @@
 import { createAction, handleActions } from 'redux-actions';
 
 import { API_PENDING, API_SUCCESS, API_FAIL, requestPending, requestSuccess, requestFail } from '../api/request';
-import { LIST_TRANSLATIONS, RESET_SNACKBAR, SET_SNACKBAR, TOGGLE_DRAWER } from '../constants';
+import { LIST_TRANSLATIONS, RESET_SNACKBAR, SET_SNACKBAR, SET_LANDING_VISITED, TOGGLE_DRAWER } from '../constants';
 
 const initialState = {
   drawerOpen: false,
+  landingVisited: false,
   snackbar: null,
   variant: 'success',
   translations: [],
@@ -18,6 +19,7 @@ export const resetSnackbar = createAction(RESET_SNACKBAR);
 export const setSnackbar = createAction(SET_SNACKBAR);
 export const toggleDrawer = createAction(TOGGLE_DRAWER);
 export const listTranslations = createAction(LIST_TRANSLATIONS);
+export const setLandingVisited = createAction(SET_LANDING_VISITED);
 
 /* Reducer */
 
@@ -39,6 +41,11 @@ export default handleActions(
     [TOGGLE_DRAWER]: (state, { payload }) => ({
       ...state,
       drawerOpen: typeof payload === 'boolean' ? payload : !state.drawerOpen
+    }),
+
+    [SET_LANDING_VISITED]: (state, { payload }) => ({
+      ...state,
+      landingVisited: true
     }),
 
     /* listTranslations actions */
