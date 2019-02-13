@@ -21,16 +21,9 @@ class SliderField extends Component {
   }
 
   componentDidMount() {
-    const { initialValue } = this.props;
-    if (initialValue !== null || initialValue !== undefined) {
-      this.handleChange(null, initialValue);
-    }
-  }
-
-  componentDidUpdate(prevProps) {
-    if (prevProps.initialValue !== this.props.initialValue) {
-      this.handleChange(null, this.props.initialValue);
-    }
+    this.setState({
+      value: this.props.input.value
+    });
   }
 
   renderSliderLabels() {
@@ -112,12 +105,27 @@ class SliderField extends Component {
   }
 
   render() {
-    const { className, classes, helpText, disabled, max, min, onDragStart, step, sliderIcon, vertical, showLabels, showTicks } = this.props;
+    const {
+      classes,
+      className,
+      disabled,
+      helpText,
+      input,
+      max,
+      min,
+      onDragStart,
+      showLabels,
+      showTicks,
+      sliderIcon,
+      step,
+      vertical
+    } = this.props;
 
     return (
       <div className={cx('slider-field', className)}>
         {helpText && <Typography className={cx('slider-field__helpText', classes.helpTextClassName)} />}
         <Slider
+          {...input}
           classes={{ track: 'slider-field__track', trackBefore: 'slider-field__track-before' }}
           value={this.state.value}
           min={min}
