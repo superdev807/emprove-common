@@ -22,15 +22,20 @@
     display: inline-block;
     position: absolute;
     transform: translateX(-50%);
+    max-width: 64px;
     cursor: pointer;
 
     @media screen and (min-width: map-get($breakpoints, sm)) {
-      max-width: 80px;
+      max-width: 72px;
     }
-
+    
     &-text {
       text-align: center;
-      font-size: 0.75rem;
+      font-size: 0.65rem;
+      
+      @media screen and (min-width: map-get($breakpoints, sm)) {
+        font-size: 0.75rem;
+      }
 
       &--selected {
         color: $primary
