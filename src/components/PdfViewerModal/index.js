@@ -42,7 +42,7 @@ class PdfViewerModal extends Component {
   handleSendRfpPDF = async () => {
     const { blocker, fileName, rfpId, sendRfpPdf, setSnackbar, timezone } = this.props;
 
-    if (rfpId && (!blocker || await blocker())) {
+    if (rfpId && (!blocker || (await blocker()))) {
       sendRfpPdf({
         id: rfpId,
         data: {
@@ -83,7 +83,7 @@ class PdfViewerModal extends Component {
     const { blocker, source } = this.props;
     let link = document.createElement('a');
 
-    if (!blocker || await blocker()) {
+    if (!blocker || (await blocker())) {
       if (source.indexOf('data:application/pdf;base64,') === -1) {
         link.href = source;
       } else {
@@ -105,10 +105,16 @@ class PdfViewerModal extends Component {
     const { classes, disableDownload, isMobile, pdfKind, sendStatus, source, show, type } = this.props;
 
     return (
-      <Dialog open={show} fullScreen={isMobile} maxWidth={false} onClose={this.handleClose} className={classes.noMarginTop}>
+      <Dialog
+        open={show}
+        fullScreen={isMobile}
+        maxWidth={false}
+        disableEnforceFocus
+        onClose={this.handleClose}
+        className={classes.noMarginTop}>
         <DialogTitle className={classes.topIconBox}>
-          {!disableDownload && (
-            !isMobile ? (
+          {!disableDownload &&
+            (!isMobile ? (
               <IconButton onClick={this.handleDownloadPDF}>
                 <IconDownload className={classes.topIcon} />
               </IconButton>
@@ -121,8 +127,7 @@ class PdfViewerModal extends Component {
                 onClick={type === 'rfp' ? this.handleSendRfpPDF : this.handleSendBidPDF}>
                 DOWNLOAD
               </Button>
-            ) : null)
-          }
+            ) : null)}
           <IconButton id={pdfKind === VIEW_PDF_KIND.FULL_RFP ? 'buttons_closed_page_rfp' : undefined} onClick={this.handleClose}>
             <IconClose className={classes.topIcon} />
           </IconButton>
