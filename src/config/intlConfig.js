@@ -152,7 +152,7 @@ export default {
       'If this estimate fits your budget and roughly what you want included, then you are ready! You can always make tweaks later.',
     'HOP.INSTANT_ESTIMATE.ACTION_FOOTER.TITLE': 'BUILD YOUR DREAM <strong>{homeArea}</strong> TODAY',
     'HOP.INSTANT_ESTIMATE.ACTION_FOOTER.SUBTITLE':
-      'If this estimate fits your budget and rougly what you want included, then you are ready! You can always make tweaks later.',
+      'If this estimate fits your budget and roughly what you want included, then you are ready! You can always make tweaks later.',
     'HOP.INSTANT_ESTIMATE.ACTION_FOOTER.CUSTOMIZE_BUTTON.TEXT': 'CUSTOMIZE PROJECT',
     'HOP.INSTANT_ESTIMATE.ACTION_FOOTER.QUOTES_BUTTON.TEXT': 'GET QUOTES NOW',
     'HOP.LANDING.BANNER.TEXT1': '<strong>Renovations</strong> Go Better<br />When You Have A <strong>Plan</strong>',
