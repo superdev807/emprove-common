@@ -3,6 +3,10 @@
 
 .slider-field {
 
+  &__root {
+    padding: 0.5rem 0;
+  }
+
   &__track {
     background-color: $light-gray;
     height: 3px;
@@ -13,7 +17,7 @@
   }
 
   &__labels {
-    padding-top: 24px;
+    padding-top: 0.75rem;;
     position: absolute;
     width: 100%;
   }
@@ -26,16 +30,20 @@
     cursor: pointer;
 
     @media screen and (min-width: map-get($breakpoints, sm)) {
-      max-width: 72px;
+      max-width: 68px;
     }
     
     &-text {
       text-align: center;
       font-size: 0.65rem;
       
-      @media screen and (min-width: map-get($breakpoints, sm)) {
+      @media screen and (min-width: 1050px) {
         font-size: 0.75rem;
       }
+
+      // @media screen and (min-width: map-get($breakpoints, sm)) and (max-width: 1050px) { 
+      //   font-size: 0.7rem;
+      // }
 
       &--selected {
         color: $primary
@@ -46,7 +54,7 @@
   &__ticks {
     position: absolute;
     width: 100%;
-    top: -3px;
+    top: 0.3rem;
     z-index: 1;
   }
 
