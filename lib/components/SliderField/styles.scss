@@ -30,16 +30,20 @@
     cursor: pointer;
 
     @media screen and (min-width: map-get($breakpoints, sm)) {
-      max-width: 72px;
+      max-width: 68px;
     }
     
     &-text {
       text-align: center;
       font-size: 0.65rem;
       
-      @media screen and (min-width: map-get($breakpoints, sm)) {
+      @media screen and (min-width: 1050px) {
         font-size: 0.75rem;
       }
+
+      // @media screen and (min-width: map-get($breakpoints, sm)) and (max-width: 1050px) { 
+      //   font-size: 0.7rem;
+      // }
 
       &--selected {
         color: $primary
