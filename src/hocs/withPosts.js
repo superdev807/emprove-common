@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import { getBlogPosts, getPostBySlug } from '../redux/modules/post';
-import { postsSelector, postSelector } from '../redux/selectors';
+import { postSelector, postsSelector } from '../redux/selectors';
 
 const withPosts = ({ isSinglePost, params }) => WrappedComponent => {
   class PostWrapper extends Component {
@@ -21,13 +21,6 @@ const withPosts = ({ isSinglePost, params }) => WrappedComponent => {
       getPostBySlug: PropTypes.func.isRequired
     };
 
-    constructor(props) {
-      super(props);
-      this.state = {
-        posts: []
-      };
-    }
-
     componentDidMount() {
       const { getBlogPosts, getPostBySlug, match } = this.props;
       let slug;
@@ -37,25 +30,19 @@ const withPosts = ({ isSinglePost, params }) => WrappedComponent => {
       }
 
       if (isSinglePost) {
-        getPostBySlug({
-          slug
-        });
+        getPostBySlug({ slug });
       } else {
-        getBlogPosts({
-          params,
-          success: response => {
-            this.setState({ posts: response });
-          }
-        });
+        getBlogPosts({ params });
       }
     }
     render() {
-      return <WrappedComponent {...this.props} {...this.state} />;
+      return <WrappedComponent {...this.props} />;
     }
   }
 
   const selector = createStructuredSelector({
-    post: postSelector
+    post: postSelector,
+    posts: postsSelector
   });
 
   const actions = {
