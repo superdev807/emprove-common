@@ -36,12 +36,9 @@ class SliderField extends Component {
       <div className={cx('slider-field__labels', classes.labelsClassName)}>
         {options.map((item, index) => {
           return (
-            <div
-              key={item.id}
-              className={cx('slider-field__label', classes.labelClassName)}
-              style={{ left: `${index * labelPosition}%` }}
-              onClick={() => this.handleChange(event, item.id)}>
+            <div key={item.id} className={cx('slider-field__label', classes.labelClassName)} style={{ left: `${index * labelPosition}%` }}>
               <Typography
+                onClick={() => this.handleChange(event, item.id)}
                 className={cx(
                   'slider-field__label-text',
                   { 'slider-field__label-text--selected': value === item.id },
@@ -126,7 +123,7 @@ class SliderField extends Component {
         {helpText && <Typography className={cx('slider-field__helpText', classes.helpTextClassName)} />}
         <Slider
           {...input}
-          classes={{ track: 'slider-field__track', trackBefore: 'slider-field__track-before' }}
+          classes={{ root: 'slider-field__root', track: 'slider-field__track', trackBefore: 'slider-field__track-before' }}
           value={this.state.value}
           min={min}
           max={max}
