@@ -18,3 +18,5 @@ export const EXPORT_BID_PDF = 'emprove.common.EXPORT_BID_PDF';
 export const DOWNLOAD_BID_PDF = 'emprove.common.DOWNLOAD_BID_PDF';
 export const SEND_BID_PDF = 'emprove.common.SEND_BID_PDF';
 export const EXPORT_CONTRACT_PDF = 'emprove.common.EXPORT_CONTRACT_PDF';
+
+export const SET_GLOBAL_PROPERTY = 'emprove.common.SET_GLOBAL_PROPERTY';
