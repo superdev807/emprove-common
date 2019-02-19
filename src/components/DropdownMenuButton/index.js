@@ -107,7 +107,8 @@ class DropdownMenuButton extends Component {
           aria-haspopup="true"
           className={cx('drop-down-menu-btn__btn', { 'drop-down-menu-btn__btn--active': active }, get(classes, 'button'))}
           variant="outlined">
-          <Typography className={cx('drop-down-menu-btn__btn-label', { 'drop-down-menu-btn__btn-label--active': active })}>
+          <Typography
+            className={cx('drop-down-menu-btn__btn-label', { 'drop-down-menu-btn__btn-label--active': active }, classes.buttonLabel)}>
             {buttonLabel}
           </Typography>
           {showArrow && <IconArrowDropdown />}
