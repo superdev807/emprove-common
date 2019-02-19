@@ -1,12 +1,20 @@
 @import 'variables';
+@import 'mixins';
 
 .drop-down-menu-btn {
 
   &__btn {
-    padding: 6px 16px;
+    padding: 4px 8px;
     min-height: 28px;
-    margin: 4px 12px;
-
+    margin: 4px 8px;
+    font-size: 0.75rem;
+    
+    @media screen and (min-width: map-get($breakpoints, sm)) {
+      padding: 6px 16px;
+      font-size: 0.85rem;
+      margin: 4px 12px;  
+    }
+    
     &--active {
       border: 1px solid $primary;
     }
@@ -21,7 +29,11 @@
     }
 
     &:first-of-type {
-      margin: 4px 12px 4px 0;
+      margin: 4px 8px 4px 0;
+
+      @media screen and (min-width: map-get($breakpoints, sm)) {
+        margin: 4px 12px 4px 0;
+      }
     }
   }
 
