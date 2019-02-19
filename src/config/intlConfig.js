@@ -150,6 +150,7 @@ export default {
     'HOP.INSTANT_ESTIMATE.RESULT_SECTION_FOOTER.HEADER.TITLE': 'READY TO <strong>GET QUOTES</strong> FROM CONTRACTORS?',
     'HOP.INSTANT_ESTIMATE.RESULT_SECTION_FOOTER.HEADER.SUBTITLE':
       'If this estimate fits your budget and roughly what you want included, then you are ready! You can always make tweaks later.',
+    'HOP.INSTANT_ESTIMATE.MOBILE.ACTION_FOOTER.TITLE': 'BUILD YOUR DREAM <strong>{homeArea}</strong>',
     'HOP.INSTANT_ESTIMATE.ACTION_FOOTER.TITLE': 'BUILD YOUR DREAM <strong>{homeArea}</strong> TODAY',
     'HOP.INSTANT_ESTIMATE.ACTION_FOOTER.SUBTITLE':
       'If this estimate fits your budget and roughly what you want included, then you are ready! You can always make tweaks later.',
