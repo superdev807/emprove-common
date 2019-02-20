@@ -55,9 +55,13 @@ class DropdownMenuButton extends Component {
   }
 
   handleClickButton = () => {
-    this.setState({
-      open: !this.state.open
-    });
+    const { useDrawer, onClick } = this.props;
+
+    onClick && onClick();
+    !useDrawer &&
+      this.setState({
+        open: !this.state.open
+      });
   };
 
   handleClose = event => {
