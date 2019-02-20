@@ -6,9 +6,9 @@ import { DETECT_DEVICE } from '../constants';
 /* Initial state */
 
 const initialState = {
-  isMobile: null,
-  isPhone: null,
-  isTablet: null
+  isMobile: false,
+  isPhone: false,
+  isTablet: false
 };
 
 /* Action creators */
@@ -18,14 +18,12 @@ export const detectDevice = createAction(DETECT_DEVICE);
 export default handleActions(
   {
     /* detectDevice actions */
-    [DETECT_DEVICE]: (state, { payload }) => {
-      return ({
-        ...state,
-        isMobile: payload.isMobile,
-        isPhone: payload.isPhone,
-        isTablet: payload.isTablet
-      });
-    }
+    [DETECT_DEVICE]: (state, { payload }) => ({
+      ...state,
+      isMobile: payload.isMobile,
+      isPhone: payload.isPhone,
+      isTablet: payload.isTablet
+    })
   },
   initialState
 );
