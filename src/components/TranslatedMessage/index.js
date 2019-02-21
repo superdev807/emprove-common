@@ -12,9 +12,12 @@ export default class TranslatedMessage extends React.PureComponent {
     return (
       <FormattedHTMLMessage {...this.props}>
         {message => {
-          const html = { __html: message };
-
-          return <Tag dangerouslySetInnerHTML={html} data-intl-id={process.env.NODE_ENV !== 'production' ? this.props.id : undefined} />;
+          return (
+            <Tag
+              dangerouslySetInnerHTML={{ __html: message }}
+              data-intl-id={process.env.NODE_ENV !== 'production' ? this.props.id : undefined}
+            />
+          );
         }}
       </FormattedHTMLMessage>
     );
