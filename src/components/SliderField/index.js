@@ -33,17 +33,13 @@ class SliderField extends Component {
     const labelPosition = 100 / (options.length - 1);
 
     return (
-      <div className={cx('slider-field__labels', classes.labelsClassName)}>
+      <div className={cx('slider-field__labels', classes.labels)}>
         {options.map((item, index) => {
           return (
-            <div key={item.id} className={cx('slider-field__label', classes.labelClassName)} style={{ left: `${index * labelPosition}%` }}>
+            <div key={item.id} className={cx('slider-field__label', classes.label)} style={{ left: `${index * labelPosition}%` }}>
               <Typography
                 onClick={() => this.handleChange(event, item.id)}
-                className={cx(
-                  'slider-field__label-text',
-                  { 'slider-field__label-text--selected': value === item.id },
-                  classes.labelTextClassName
-                )}>
+                className={cx('slider-field__label-text', { 'slider-field__label-text--selected': value === item.id }, classes.labelText)}>
                 {item.description}
               </Typography>
             </div>
@@ -60,12 +56,12 @@ class SliderField extends Component {
     const tickPosition = 100 / (options.length - 1);
 
     return (
-      <div className={cx('slider-field__ticks', classes.ticksClassName)}>
+      <div className={cx('slider-field__ticks', classes.ticks)}>
         {options.map((item, index) => {
           return (
             <div
               key={item.id}
-              className={cx('slider-field__tick', classes.tickClassName, { 'slider-field__tick--passed': value > item.id })}
+              className={cx('slider-field__tick', classes.tick, { 'slider-field__tick--passed': value > item.id })}
               style={{ left: `${index * tickPosition}%` }}
             />
           );
