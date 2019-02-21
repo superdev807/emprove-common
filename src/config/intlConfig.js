@@ -264,9 +264,9 @@ export default {
     'HOP.RFP.IN_MARKET_PAYWALL.CTA.TITLE': 'CONFIRM',
     'HOP.RFP.OUT_MARKET_PAYWALL.HEADER':
       '<strong>STEP 1 - ACTIVATE YOUR PROJECT</strong> to invite contractors to complete for your business',
-    'HOP.RFP.OUT_MARKET_PAYWALL.ACTIVATION.HEADER': '<strong>${amount} Refundable Activation Fee</strong>',
+    'HOP.RFP.OUT_MARKET_PAYWALL.ACTIVATION.HEADER': '<strong>${amount} Activation Fee</strong>',
     'HOP.RFP.OUT_MARKET_PAYWALL.ACTIVATION.BODY':
-      'You pay ${amount} to purchase your plan and unlock the pricing process with contractors that you invite. We will refund your money when you hire a contractor through our pricing process.',
+      'You pay ${amount} to purchase your plan and unlock the pricing process with qualified contractors',
     'HOP.RFP.OUT_MARKET_PAYWALL.ACTIVATION.LINK': 'LEARN MORE ABOUT OUR ACTIVATION FEE',
     'HOP.RFP.OUT_MARKET_PAYWALL.CREDIT_DETAILS.HEADER': '<strong>PLEASE ENTER YOUR CREDIT CARD DETAILS</strong>',
     'HOP.RFP.OUT_MARKET_PAYWALL.CREDIT_DETAILS.SUB_HEADER': '<small>Upon pressing "CONFIRM" your card will be charged ${amount}</small>',
