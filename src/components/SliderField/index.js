@@ -78,7 +78,7 @@ class SliderField extends Component {
   };
 
   debouncedHandleChange = (event, value) => {
-    this.props.onChange && this.props.onChange(event, this.getReturnValue(value));
+    this.props.input.onChange && this.props.input.onChange(value);
   };
 
   handleDragEnd = event => {
