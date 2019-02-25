@@ -31,20 +31,21 @@ const PROJECT_SCALE = {
 };
 
 const OVERALL_QUALITY = {
-  title: 'Overall Quality',
+  title: 'Project Quality',
   body: [
-    "The baseline project quality rating that is used by Emprove's proprietary cost estimate engine to deliver the initial project cost estimate.  The homeowner can then change and refine the quality standards initially assigned for each specific scope item.",
-    'The different overall quality ratings defined by Emprove, in order of highest to lowest quality are:'
+    'Project Quality is an overall rating made up of material quality, labor quality, and fit and finish quality.',
+    'Initially you we ask you to select your project’s overall quality rating for the purposes of cost estimation. Once you start a project, you can fine tune the quality rating for each of the features in your project.',
+    'There are five project quality ratings ranging from the least expensive “Best Value” to the most expensive “Luxurious”.'
   ],
   terms: [
     {
       id: 1,
-      name: 'Luxurious',
+      name: 'Best Value (Least Expensive)',
       definition: null
     },
     {
       id: 2,
-      name: 'High-End',
+      name: 'Practical (Most Common)',
       definition: null
     },
     {
@@ -54,12 +55,12 @@ const OVERALL_QUALITY = {
     },
     {
       id: 4,
-      name: 'Practical',
+      name: 'High-End',
       definition: null
     },
     {
       id: 5,
-      name: 'Best Value',
+      name: 'Luxurious (Most Expensive)',
       definition: null
     }
   ],
@@ -68,7 +69,7 @@ const OVERALL_QUALITY = {
       id: 1,
       filename: 'overall_quality.png',
       description:
-        'Most homeowners will have a "Practical" quality rating, with more than half of all homeowners having either "Best Value" or "Practical" ratings.  Below is our expected distribution of homeowners by overall quality rating:',
+        'Most renovation projects have a “Practical” quality rating, with more than half of all renovation projects having either “Practical” or “Best Value” Project Quality ratings.',
       width: 2392,
       height: 1070
     }
