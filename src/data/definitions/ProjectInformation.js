@@ -2,16 +2,18 @@
 
 const PROJECT_FEATURES = {
   title: 'Project Features',
-  body: [
-    'These are the "big ticket" items that help shape the way your new space will look.'
-  ]
+  body: ['These are the "big ticket" items that help shape the way your new space will look.']
 };
 
 const PROJECT_SCALE = {
   title: 'Project Scale',
   body: [
-    'The extent of work to be undertaken for a project. Typically, the greater the Project Scope the greater the project cost.',
-    'Emprove defines a set of baseline Project Scope packages for homeowners to select from and customize.'
+    'Project Scale defines the high-level amount of work to be undertaken for a project.',
+    'There are four scale packages to help you initially estimate your project’s costs. You can also update.',
+    'Light Refresh – “Freshen it up with a repaint, new flooring, and a few other upgrades”',
+    'Upgrade Finishes – “A facelift for your space, with new hard surfaces and a repaint”',
+    'Light Renovation – “A brand new look, keeping plumbing and walls where they are”',
+    'Full Renovation – “Make it precisely yours by moving a wall or two, and relocating plumbing”'
   ],
   images: [
     {
