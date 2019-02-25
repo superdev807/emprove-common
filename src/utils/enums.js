@@ -7,7 +7,7 @@ export const UserAction = Object.freeze({
   REPLACE: 4,
   NEW: 5,
   NEW_AND_RELOCATE: 6,
-  NOT_APPLICABLE: 7,
+  NOT_APPLICABLE: 7
 });
 
 export const ScopeAction = {
