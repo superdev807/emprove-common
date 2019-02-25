@@ -1,4 +1,7 @@
+'use strict';
+
 import React from 'react';
+import SvgIcon from '@material-ui/core/SvgIcon';
 
 const IconFeatureVanities = props => {
   const primary = props.primary || '#878787';

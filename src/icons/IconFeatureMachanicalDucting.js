@@ -3,7 +3,7 @@
 import React from 'react';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
-const IconFeatureMachaniconFeaturealDucting = props => {
+const IconFeatureMachanicalDucting = props => {
   const primary = props.primary || '#878787';
   const secondary = props.secondary || 'none';
   return (
@@ -18,4 +18,4 @@ const IconFeatureMachaniconFeaturealDucting = props => {
   );
 };
 
-export default IconFeatureMachaniconFeaturealDucting;
+export default IconFeatureMachanicalDucting;

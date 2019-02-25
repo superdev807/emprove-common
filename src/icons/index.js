@@ -87,10 +87,10 @@ export { default as IconFeatureBathroomAccessories } from './IconFeatureBathroom
 export { default as IconFeatureCabinets } from './IconFeatureCabinets';
 export { default as IconFeatureCasework } from './IconFeatureCasework';
 export { default as IconFeatureCeilingFinishes } from './IconFeatureCeilingFinishes';
-export { default as IconFeatureCommuniconFeatureationCabling } from './IconFeatureCommuniconFeatureationCabling';
+export { default as IconFeatureCommunicationCabling } from './IconFeatureCommunicationCabling';
 export { default as IconFeatureCountertops } from './IconFeatureCountertops';
-export { default as IconFeatureDeviconFeatureesAndTrims } from './IconFeatureDeviconFeatureesAndTrims';
-export { default as IconFeatureElectriconFeaturealWiring } from './IconFeatureElectriconFeaturealWiring';
+export { default as IconFeatureDevicesAndTrims } from './IconFeatureDevicesAndTrims';
+export { default as IconFeatureElectricalWiring } from './IconFeatureElectricalWiring';
 export { default as IconFeatureEquipment } from './IconFeatureEquipment';
 export { default as IconFeatureExteriorDoorsAndWindows } from './IconFeatureExteriorDoorsAndWindows';
 export { default as IconFeatureExteriorPaving } from './IconFeatureExteriorPaving';
@@ -104,8 +104,8 @@ export { default as IconFeatureInteriorWallConstruction } from './IconFeatureInt
 export { default as IconFeatureKitchenAppliances } from './IconFeatureKitchenAppliances';
 export { default as IconFeatureLandscaping } from './IconFeatureLandscaping';
 export { default as IconFeatureLighting } from './IconFeatureLighting';
-export { default as IconFeatureMachaniconFeaturealDucting } from './IconFeatureMachaniconFeaturealDucting';
-export { default as IconFeatureMachaniconFeaturealPiping } from './IconFeatureMachaniconFeaturealPiping';
+export { default as IconFeatureMachanicalDucting } from './IconFeatureMachanicalDucting';
+export { default as IconFeatureMachanicalPiping } from './IconFeatureMachanicalPiping';
 export { default as IconFeatureMolding } from './IconFeatureMolding';
 export { default as IconFeatureNew } from './IconFeatureNew';
 export { default as IconFeaturePlumbingFixtures } from './IconFeaturePlumbingFixtures';
