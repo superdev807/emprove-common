@@ -26,6 +26,12 @@ class SliderField extends Component {
     });
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.value !== this.state.value) {
+      this.prevValue = prevState.value;
+    }
+  }
+
   renderSliderLabels() {
     const { classes, options } = this.props;
     const { value } = this.state;
@@ -77,8 +83,17 @@ class SliderField extends Component {
     this.debouncedHandleChange(event, value);
   };
 
+  revertValue = () => {
+    this.setState({ value: this.prevValue });
+  };
+
   debouncedHandleChange = (event, value) => {
-    this.props.input.onChange && this.props.input.onChange(value);
+    const { onConfirmChange } = this.props;
+    if (onConfirmChange) {
+      onConfirmChange(value, () => this.props.input.onChange(value), this.revertValue);
+    } else {
+      this.props.input.onChange && this.props.input.onChange(value);
+    }
   };
 
   handleDragEnd = event => {
