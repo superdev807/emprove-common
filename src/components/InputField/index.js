@@ -10,7 +10,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
-import { NumberMask } from '../../utils/mask';
+import { NumberMask, PhoneNumberMask } from '../../utils/mask';
 import { NumberFormatCustom } from '../../utils/numberFunctions';
 
 import { withStyles } from '@material-ui/core/styles';
@@ -126,6 +126,8 @@ export class InputField extends Component {
       maskingComponent = NumberMask;
     } else if (mask === 'withThousandSeparator') {
       maskingComponent = NumberFormatCustom;
+    } else if (mask === 'phoneNumber') {
+      maskingComponent = PhoneNumberMask;
     }
 
     const labelContent = label && (
