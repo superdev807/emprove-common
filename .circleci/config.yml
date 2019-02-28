@@ -23,7 +23,7 @@ jobs:
           name: Git Tagging
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ] || [ "${CIRCLE_BRANCH}" == "0.0.1" ] || [ "${CIRCLE_BRANCH}" == "0.0.2" ] || [ "${CIRCLE_BRANCH}" == "0.0.3" ] || [ "${CIRCLE_BRANCH}" == "0.0.4" ] || [ "${CIRCLE_BRANCH}" == "0.0.5" ] || [ "${CIRCLE_BRANCH}" == "0.0.6" ] ||
-              [ "${CIRCLE_BRANCH}" == "0.0.7" ] || [ "${CIRCLE_BRANCH}" == "0.0.8" ] || [ "${CIRCLE_BRANCH}" == "0.0.9" ] || [ "${CIRCLE_BRANCH}" == "0.0.10" ] || [ "${CIRCLE_BRANCH}" == "0.0.11" ] || [ "${CIRCLE_BRANCH}" == "0.0.12" ] || [ "${CIRCLE_BRANCH}" == "0.0.13" ]; then
+              [ "${CIRCLE_BRANCH}" == "0.0.7" ] || [ "${CIRCLE_BRANCH}" == "0.0.8" ] || [ "${CIRCLE_BRANCH}" == "0.0.9" ] || [ "${CIRCLE_BRANCH}" == "0.0.10" ] || [ "${CIRCLE_BRANCH}" == "0.0.11" ] || [ "${CIRCLE_BRANCH}" == "0.0.12" ]; then
               git fetch --tags
               git tag ${CIRCLE_BRANCH}-`date +%F_%H-%M-%S`
               git push origin --tags
