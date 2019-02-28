@@ -1,6 +1,7 @@
 'use strict';
 
 import fp from 'lodash/fp';
+import { createSelector } from 'reselect';
 
 /* post */
 export const postsSelector = fp.get('post.posts');
@@ -10,6 +11,7 @@ export const postSelector = fp.get('post.post');
 export const isMobileSelector = fp.get('device.isMobile');
 export const isPhoneSelector = fp.get('device.isPhone');
 export const isTabletSelector = fp.get('device.isTablet');
+export const usingDesktopSelector = createSelector(isMobileSelector, isMobile => !isMobile);
 
 /* global status */
 export const globalStatusSelector = fp.get('globalStatus');
