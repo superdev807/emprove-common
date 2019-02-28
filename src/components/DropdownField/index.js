@@ -73,6 +73,7 @@ class DropdownField extends Component {
       overrideClasses,
       placeholder,
       selectOverride,
+      inputOverride,
       variant
     } = this.props;
     return variant === 'outlined' ? (
@@ -87,7 +88,7 @@ class DropdownField extends Component {
           className={inputClassName}
           classes={overrideClasses}
           variant="outlined"
-          InputProps={{ classes: { input: classes.input } }}
+          InputProps={{ classes: { ...inputOverride, input: classes.input } }}
           InputLabelProps={{ ...inputLabelProps }}
           SelectProps={{
             classes: {
