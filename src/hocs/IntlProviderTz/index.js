@@ -33,13 +33,10 @@ class IntlProviderWrapper extends Component {
   render() {
     const { withTranslation, timeZone, translations, translationsStatus, ...props } = this.props;
     if (withTranslation) {
-      const messages = {
-        ...intlConfig.messages,
-        ...translations.reduce((acc, item) => {
-          acc[item.msgId] = item.msgString;
-          return acc;
-        }, {})
-      };
+      const messages = translations.reduce((acc, item) => {
+        acc[item.msgId] = item.msgString;
+        return acc;
+      }, {});
       const isLoaded = [API_FAIL, API_SUCCESS].includes(translationsStatus);
       return isLoaded ? <IntlProvider {...props} {...intlConfig} timeZone={timeZone} messages={messages} /> : <LoadingIndicator />;
     } else {
