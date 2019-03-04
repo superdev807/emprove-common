@@ -21,6 +21,6 @@ describe('UserLevel2Icon component', () => {
       ul2Id: 99999999
     });
 
-    expect(component.html()).toBe('<div>N/A</div>');
+    expect(component.name()).toBe('IconCircleQuestionMark');
   });
 });
