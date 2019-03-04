@@ -72,14 +72,17 @@ const userLevel2 = {
   2150: IconUL2MachanicalDucting,
   2155: IconUL2Equipment,
   2160: IconUL2Landscaping,
-  2165: IconUL2ExteriorPaving,
-  undefined: <div>N/A</div>
+  2165: IconUL2ExteriorPaving
 };
 
 class UserLevel2Icon extends Component {
+  renderUnknown() {
+    return <div>N/A</div>;
+  }
+
   render() {
     const { ul2Id, ...otherProps } = this.props;
-    const IconComponent = userLevel2[ul2Id];
+    const IconComponent = userLevel2[ul2Id] || this.renderUnknown;
 
     return <IconComponent {...otherProps} />;
   }
