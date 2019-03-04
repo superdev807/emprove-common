@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import IconCircleQuestionMark from '../../icons/IconCircleQuestionMark';
 import IconUL2BathroomAccessories from '../../icons/IconUL2BathroomAccessories';
 import IconUL2Cabinets from '../../icons/IconUL2Cabinets';
 import IconUL2Casework from '../../icons/IconUL2Casework';
@@ -76,13 +77,9 @@ const userLevel2 = {
 };
 
 class UserLevel2Icon extends Component {
-  renderUnknown() {
-    return <div>N/A</div>;
-  }
-
   render() {
     const { ul2Id, ...otherProps } = this.props;
-    const IconComponent = userLevel2[ul2Id] || this.renderUnknown;
+    const IconComponent = userLevel2[ul2Id] || IconCircleQuestionMark;
 
     return <IconComponent {...otherProps} />;
   }
