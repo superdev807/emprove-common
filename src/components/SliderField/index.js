@@ -30,6 +30,11 @@ class SliderField extends Component {
     if (prevState.value !== this.state.value) {
       this.prevValue = prevState.value;
     }
+    if (prevState.value === this.state.value && this.state.value !== this.props.input.value) {
+      this.setState({
+        value: this.props.input.value
+      });
+    }
   }
 
   renderSliderLabels() {
