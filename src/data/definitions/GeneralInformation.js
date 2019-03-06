@@ -132,9 +132,9 @@ const OSI = {
 };
 
 const ACTIVATION_FEE = {
-  title: "Emprove's Activation Fee",
+  title: "Emprove's Fee",
   body: [
-    'Emprove’s activation fee unlocks the pricing process designed to help you get the best contractor for your project at a fair price. You pay the fee which helps to show contractors you are serious about your project. (They spend a significant amount of time pricing out your project plan).'
+    'Emprove’s fee unlocks the pricing process designed to help you get the best contractor for your project at a fair price. You pay the fee which helps to show contractors you are serious about your project. (They spend a significant amount of time pricing out your project plan).'
   ]
 };
 
