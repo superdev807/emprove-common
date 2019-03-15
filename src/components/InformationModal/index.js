@@ -105,6 +105,7 @@ class InformationModal extends Component {
         key={key}
         className="information-modal-body-paragraph"
         source={paragraph}
+        escapeHtml={false}
         renderers={this.state.renderers}
       />
     );
@@ -119,6 +120,7 @@ class InformationModal extends Component {
       <ReactMarkdown
         key={key}
         source={formattedText}
+        escapeHtml={false}
         className="information-modal__unordered-list"
         renderers={this.state.renderers}
       />
