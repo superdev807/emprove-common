@@ -15,7 +15,7 @@ import {
   strToDate,
   strToday,
   toISODateStr,
-  toShortTimezone,
+  toShortTimezone
 } from '~/utils/timeFunctions';
 
 describe('timeline functions', () => {
