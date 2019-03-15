@@ -7,6 +7,10 @@ import Snackbar from '@material-ui/core/Snackbar';
 import SnackbarContent from '../SnackbarContent';
 
 export default class LoadableLoading extends React.Component {
+  static defaultProps = {
+    indicatorFixed: true
+  };
+
   constructor(props) {
     super(props);
 
@@ -40,6 +44,6 @@ export default class LoadableLoading extends React.Component {
       return this.renderError();
     }
 
-    return <LoadingIndicator fixed />;
+    return <LoadingIndicator fixed={this.props.indicatorFixed} />;
   }
 }
