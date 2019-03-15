@@ -8,13 +8,16 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
-const Container = ({ className, fluid, children }) => (
-  <div className={cx('container', { 'container--boxed': !fluid }, className)}>{children}</div>
+const Container = ({ className, componentRef, fluid, children }) => (
+  <div ref={componentRef} className={cx('container', { 'container--boxed': !fluid }, className)}>
+    {children}
+  </div>
 );
 
 Container.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.node
+  children: PropTypes.node,
+  ref: PropTypes.node
 };
 
 export default Container;
