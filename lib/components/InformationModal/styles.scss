@@ -38,6 +38,7 @@
 
       li {
         margin-bottom: 1rem;
+        padding-left: 20px;
 
         &:last-child {
           margin-bottom: 0;
@@ -45,7 +46,9 @@
 
         &:before {
           content: '●';
-          padding-right: 0.5rem;
+          width: 20px;
+          margin-left: -20px;
+          display: inline-block;;
         }
       }
     }

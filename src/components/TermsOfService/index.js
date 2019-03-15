@@ -90,18 +90,6 @@ const TermsOfService = props => {
           <br />
         </li>
         <li>
-          <strong>4.4 Refunds.</strong> Except for the refunds described in this Section 4.4, all charges are non-refundable. If a Homeowner
-          selects a Contractor for a project through the Service and the Contractor pays the Success Fee, Emprove, in its sole discretion,
-          may refund all or a portion of the fees paid to Emprove by the Homeowner to publish the applicable brief that resulted in the
-          accepted proposal, as may be specified in the program materials at the time of brief submission (“<strong>
-            Eligible Refunds
-          </strong>”). Eligible Refunds will be refunded to the payment method used to make the original purchase, and may take up to 10
-          business days to process following payment of the Success Fee. Homeowners will not be eligible for a refund if the Contractor does
-          not pay the Success Fee.
-          <br />
-          <br />
-        </li>
-        <li>
           <strong>4.5 Delinquent Accounts.</strong> Emprove may suspend or terminate access to the Service, including fee-based portions of
           the Service, for any account for which any amount is due but unpaid, including any account fees that would have been payable as a
           Success Fee or other applicable fee if consummated on the Service. Any fees not paid when due will accrue interest at the rate of

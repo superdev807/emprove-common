@@ -15,7 +15,7 @@ import {
   strToDate,
   strToday,
   toISODateStr,
-  toShortTimezone,
+  toShortTimezone
 } from '~/utils/timeFunctions';
 
 describe('timeline functions', () => {
@@ -136,7 +136,7 @@ describe('timeline functions', () => {
 
   describe('toShortTimezone', () => {
     it('should return shorter form of timezone name', () => {
-      expect(toShortTimezone('America/Los_Angeles')).toBe('PST');
+      expect(['PDT', 'PST']).toContain(toShortTimezone('America/Los_Angeles'));
     });
   });
 
