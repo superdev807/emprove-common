@@ -7,6 +7,7 @@ import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 import { Link } from 'react-router-dom';
 
 import BlogPost from '../../../BlogPost';
+import LoadingIndicator from '../../../LoadingIndicator';
 import './style.scss';
 
 class PostSectionLayout extends Component {
@@ -37,17 +38,21 @@ class PostSectionLayout extends Component {
         transitionName="fade"
         transitionEnterTimeout={500}
         transitionLeaveTimeout={300}>
-        {posts.map((post, index) => (
-          <div key={index} className="posts-section__item">
-            <BlogPost
-              ids={{ blogTitle: `${ids.blogTitlePrefix}${index + 1}`, readFull: `${ids.readFullPrefix}${index + 1}` }}
-              postType={postType}
-              post={post}
-              fromContractor={fromContractor}
-              imageSize={imageSize}
-            />
-          </div>
-        ))}
+        {this.props.postsLoading ? (
+          <LoadingIndicator size={48} />
+        ) : (
+          posts.map((post, index) => (
+            <div key={index} className="posts-section__item">
+              <BlogPost
+                ids={{ blogTitle: `${ids.blogTitlePrefix}${index + 1}`, readFull: `${ids.readFullPrefix}${index + 1}` }}
+                postType={postType}
+                post={post}
+                fromContractor={fromContractor}
+                imageSize={imageSize}
+              />
+            </div>
+          ))
+        )}
       </CSSTransitionGroup>
     );
   }
