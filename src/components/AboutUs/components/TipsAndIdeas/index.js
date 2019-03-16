@@ -33,6 +33,7 @@ class TipsAndIdeas extends Component {
         description="Get Ideas and Advice for Your Home Improvement Projects"
         title={title}
         posts={posts}
+        postsLoading={this.props.postsLoading}
         fromContractor={fromContractor}
         isLink
         linkRoute="/blog"

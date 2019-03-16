@@ -40,6 +40,8 @@
     flex: 1;
     flex-wrap: wrap;
     margin-top: 4vh;
+    position: relative;
+
     @include media('<=sm') {
       flex-direction: column;
     }
