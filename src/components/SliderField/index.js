@@ -6,6 +6,7 @@ import Slider from '@material-ui/lab/Slider';
 import Typography from '@material-ui/core/Typography';
 import cx from 'classnames';
 import debounce from 'lodash/debounce';
+import get from 'lodash/get';
 
 import './styles.scss';
 
@@ -89,7 +90,7 @@ class SliderField extends Component {
   };
 
   revertValue = () => {
-    this.setState({ value: this.prevValue });
+    this.setState({ value: get(this.props, 'initialValue', this.prevValue) });
   };
 
   debouncedHandleChange = (event, value) => {
