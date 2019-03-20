@@ -7,7 +7,8 @@ import { postsSelector } from '../selectors';
 const filterPosts = (posts, categoryName, limit) => {
   const filteredPosts = [];
 
-  for (let i = 0; i < posts.length; i++) {
+  const postsLength = posts.length;
+  for (let i = 0; i < postsLength; i++) {
     const post = posts[i];
     if (post.categories[categoryName] != null) {
       filteredPosts.push(post);
