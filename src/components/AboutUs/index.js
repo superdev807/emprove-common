@@ -13,9 +13,9 @@ import DreamItPartial from './components/DreamItPartial';
 import ForProfessionals from './components/ForProfessionals';
 // import OurProduct from './components/OurProduct';
 // import OurInvestors from './components/OurInvestors';
-import PressAndMedia from './components/PressAndMedia';
+import PressAndMedia from './components/PressAndMedia/content';
 import TheTeam from './components/TheTeam';
-import TipsAndIdeas from './components/TipsAndIdeas';
+import TipsAndIdeas from './components/TipsAndIdeas/content';
 import Container from '../Container';
 import './styles.scss';
 import './partial-styles.scss';
@@ -130,7 +130,12 @@ class AboutUs extends Component {
         <Divider className="about-us__divider" />
         <Container>
           <div id="tab3">
-            <TipsAndIdeas className="about-us__tips-and-ideas" fromContractor={this.props.fromContractor} />
+            <TipsAndIdeas
+              className="about-us__tips-and-ideas"
+              fromContractor={this.props.fromContractor}
+              posts={this.props.tipsAndIdeasPosts}
+              postsLoading={this.props.postsLoading}
+            />
           </div>
         </Container>
         <Divider className="about-us__divider" />
@@ -140,7 +145,12 @@ class AboutUs extends Component {
         <Divider className="about-us__divider" />
         <Container>
           <div id="tab4">
-            <PressAndMedia className="about-us__press-and-media" fromContractor={this.props.fromContractor} />
+            <PressAndMedia
+              className="about-us__press-and-media"
+              fromContractor={this.props.fromContractor}
+              posts={this.props.pressAndMediaPosts}
+              postsLoading={this.props.postsLoading}
+            />
           </div>
           {/* <OurProduct className="about-us__our-product" /> */}
         </Container>
