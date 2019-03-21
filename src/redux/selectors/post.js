@@ -10,7 +10,7 @@ const filterPosts = (posts, categoryName, limit) => {
   const postsLength = posts.length;
   for (let i = 0; i < postsLength; i++) {
     const post = posts[i];
-    if (post.categories[categoryName] != null) {
+    if (post.categories && post.categories[categoryName] != null) {
       filteredPosts.push(post);
 
       if (limit != null && filteredPosts.length === limit) {
