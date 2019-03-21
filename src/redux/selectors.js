@@ -6,7 +6,8 @@ import { createSelector } from 'reselect';
 import { API_PENDING } from './api/request';
 
 /* post */
-export const postsLoadingSelector = fp.compose(postStatus => postStatus === API_PENDING, fp.get('post.postsStatus'));
+export const postLoadingSelector = fp.compose(postStatus => postStatus === API_PENDING, fp.get('post.postStatus'));
+export const postsLoadingSelector = fp.compose(postsStatus => postsStatus === API_PENDING, fp.get('post.postsStatus'));
 export const postsSelector = fp.get('post.posts');
 export const postSelector = fp.get('post.post');
 

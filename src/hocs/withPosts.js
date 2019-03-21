@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import { getBlogPosts, getPostBySlug } from '../redux/modules/post';
-import { postSelector, postsSelector, postsLoadingSelector } from '../redux/selectors';
+import { postSelector, postsSelector, postLoadingSelector, postsLoadingSelector } from '../redux/selectors';
 
 const withPosts = ({ isSinglePost, params }) => WrappedComponent => {
   class PostWrapper extends Component {
@@ -42,6 +42,7 @@ const withPosts = ({ isSinglePost, params }) => WrappedComponent => {
 
   const selector = createStructuredSelector({
     post: postSelector,
+    postLoading: postsLoadingSelector,
     posts: postsSelector,
     postsLoading: postsLoadingSelector
   });

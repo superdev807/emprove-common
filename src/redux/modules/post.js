@@ -10,6 +10,7 @@ import { GET_BLOG_POSTS, GET_POST_BY_SLUG } from '../constants';
 const initialState = {
   posts: [],
   post: null,
+  postStatus: 'INIT',
   postsStatus: 'INIT'
 };
 
@@ -43,18 +44,21 @@ export default handleActions(
 
     [requestPending(GET_POST_BY_SLUG)]: (state, { payload }) => ({
       ...state,
+      postStatus: API_PENDING,
       postsStatus: API_PENDING
     }),
 
     [requestSuccess(GET_POST_BY_SLUG)]: (state, { payload }) => ({
       ...state,
       post: payload,
+      postStatus: API_SUCCESS,
       postsStatus: API_SUCCESS
     }),
 
     [requestFail(GET_POST_BY_SLUG)]: (state, { payload }) => ({
       ...state,
       post: [],
+      postStatus: API_FAIL,
       postsStatus: API_FAIL
     })
   },
