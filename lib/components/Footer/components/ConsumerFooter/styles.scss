@@ -15,6 +15,7 @@ $desktop-breakpoint: 1000px;
 
   @media screen and (min-width: $tablet-breakpoint) {
     align-items: stretch;
+    flex-wrap: wrap;
   }
 
   @media screen and (min-width: $desktop-breakpoint) {
@@ -35,6 +36,20 @@ $desktop-breakpoint: 1000px;
 
       &:last-child {
         margin-bottom: 0;
+      }
+
+      &--first {
+        flex: 2;
+        min-width: 460px;
+      }
+
+      &--second {
+        min-width: 360px;
+      }
+
+      &--smaller {
+        min-width: 220px;
+        justify-content: flex-end;
       }
     }
 

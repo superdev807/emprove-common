@@ -1,0 +1,43 @@
+@import 'variables';
+
+.footer-service-area {
+  width: 100%;
+  position: relative;
+  padding: 0 1rem 0 2rem;
+  min-height: 300px;
+  max-width: 240px;
+  
+  &__map {
+    border: 1px solid $light-border-color;
+    width: 100%;
+    border: 1px solid $light-border-color;
+    position: relative;
+    margin-left: auto;
+
+    &-image {
+      width: 80%;
+      margin: 0 auto;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__description {
+    margin: 0.5rem 0;
+    text-align: right;
+
+    &-text {
+
+      &--orange {
+        color: $primary;
+      }
+    }
+  }
+
+  &__social-media-links {
+    position: absolute;
+    bottom: 0;
+    right: 1.5rem;
+  }
+}
