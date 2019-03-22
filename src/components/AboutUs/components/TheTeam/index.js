@@ -22,7 +22,8 @@ const teamMembers = [
       imageKey: '01698_E_cimage.jpg'
     },
     description: 'Construction executive with 15+ years delivering large & highly refined projects on the contractor and owner sides.',
-    photoKey: 'james_400x400.jpg'
+    photoKey: 'james_400x400.jpg',
+    linkedIn: 'https://www.linkedin.com/in/james-noel/'
   },
   {
     id: 2,
@@ -36,7 +37,8 @@ const teamMembers = [
       imageKey: '00043_E_cimage.jpg'
     },
     description: 'Software executive with expertise in growing 0-$500MM businesses. Built large machine-learning personalization products.',
-    photoKey: 'linda_400x400.jpg'
+    photoKey: 'linda_400x400.jpg',
+    linkedIn: 'https://www.linkedin.com/in/lindalee/'
   },
   {
     id: 3,
@@ -50,7 +52,8 @@ const teamMembers = [
       imageKey: '00016_E_cimage.jpg'
     },
     description: 'An accomplished leader who has founded & built businesses in the digital casino & leisure entertainment industries.',
-    photoKey: 'andrew_400x400.jpg'
+    photoKey: 'andrew_400x400.jpg',
+    linkedIn: 'https://www.linkedin.com/in/andrew-pascal-926aaa27/'
   },
   {
     id: 4,
