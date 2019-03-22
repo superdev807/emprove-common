@@ -56,20 +56,6 @@ const teamMembers = [
     linkedIn: 'https://www.linkedin.com/in/andrew-pascal-926aaa27/'
   },
   {
-    id: 16,
-    name: 'Evan Earnest',
-    position: 'Product',
-    dreamSpace: {
-      style: 'Contemporary',
-      homeArea: 'Kitchen',
-      quality: 'Upgraded',
-      homeAreaId: HomeArea.KITCHEN,
-      imageKey: '00666_E_cimage.jpg'
-    },
-    description: null,
-    photoKey: 'evan_400x400.jpg'
-  },
-  {
     id: 4,
     name: 'Ervi Bongso',
     position: 'Principal Engineer',
@@ -140,6 +126,20 @@ const teamMembers = [
     photoKey: 'domini_400x400.jpg'
   },
   {
+    id: 17,
+    name: 'Iris Sin',
+    position: 'Interior Design Intelligence',
+    dreamSpace: {
+      style: 'Rustic',
+      homeArea: 'Kitchen',
+      quality: 'High-End',
+      homeAreaId: HomeArea.KITCHEN,
+      imageKey: '02443_E_cimage.jpg'
+    },
+    description: null,
+    photoKey: 'iris_400x400.jpg'
+  },
+  {
     id: 9,
     name: 'Kiwook Kwon',
     position: 'Engineer',
@@ -180,48 +180,6 @@ const teamMembers = [
     },
     description: null,
     photoKey: 'sousuke_400x400.jpg'
-  },
-  {
-    id: 12,
-    name: 'Leo Esaki',
-    position: 'Engineer',
-    dreamSpace: {
-      style: 'Traditional',
-      homeArea: 'General Living',
-      quality: 'Upgraded',
-      homeAreaId: HomeArea.GENERAL_LIVING,
-      imageKey: '01946_E_cimage.jpg'
-    },
-    description: null,
-    photoKey: 'leo_400x400.jpg'
-  },
-  {
-    id: 13,
-    name: 'Juan Ortiz',
-    position: 'Engineer',
-    dreamSpace: {
-      style: 'Contemporary',
-      homeArea: 'Kitchen',
-      quality: 'Luxurious',
-      homeAreaId: HomeArea.KITCHEN,
-      imageKey: '00009_E_cimage.jpg'
-    },
-    description: null,
-    photoKey: 'juan_400x400.jpg'
-  },
-  {
-    id: 14,
-    name: 'Vooha Nallamothu',
-    position: 'Quality Assurance',
-    dreamSpace: {
-      style: 'Traditional',
-      homeArea: 'General Living',
-      quality: 'Upgraded',
-      homeAreaId: HomeArea.GENERAL_LIVING,
-      imageKey: '02021_E_cimage.jpg'
-    },
-    description: null,
-    photoKey: 'vooha_400x400.jpg'
   }
 ];
 
