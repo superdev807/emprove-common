@@ -1,11 +1,16 @@
 @import 'variables';
+@import 'mixins';
 
 .footer-service-area {
   width: 100%;
   position: relative;
-  padding: 0 1rem 0 2rem;
+  padding: 0 1rem 0 1rem;
   min-height: 300px;
   max-width: 240px;
+
+  @include media ('>sm') {
+    padding: 0 1rem 0 2rem;
+  }
   
   &__map {
     border: 1px solid $light-border-color;
@@ -25,7 +30,11 @@
 
   &__description {
     margin: 0.5rem 0;
-    text-align: right;
+    text-align: center;
+
+    @include media ('>sm') {
+      text-align: right;
+    }
 
     &-text {
 
@@ -38,6 +47,10 @@
   &__social-media-links {
     position: absolute;
     bottom: 0;
-    right: 1.5rem;
+    @include hcenter();
+
+    @include media ('>sm') {
+      right: 1.5rem;
+    }
   }
 }
