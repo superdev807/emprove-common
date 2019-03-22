@@ -19,18 +19,15 @@ describe('TheTeam component', () => {
       'James Noel',
       'Linda Lee',
       'Andrew Pascal',
-      'Evan Earnest',
       'Ervi Bongso',
       'Tonson Back',
       'Mike Gonzales',
       'JoAnne McCauley',
       'Domini Noel',
+      'Iris Sin',
       'Kiwook Kwon',
       'Renan Martins',
-      'Sousuke Tanaka',
-      'Leo Esaki',
-      'Juan Ortiz',
-      'Vooha Nallamothu'
+      'Sousuke Tanaka'
     ];
 
     const teamMembers = component.find('TeamMember');
