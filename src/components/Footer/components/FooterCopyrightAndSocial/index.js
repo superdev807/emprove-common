@@ -12,9 +12,11 @@ const FooterCopyrightAndSocial = props => {
     <Fragment>
       {props.topContent}
       <section className="footer-copyright-and-social">
-        <div className="footer-copyright-and-social___social-media-links">
-          <SocialMediaLinks />
-        </div>
+        {props.showSocial && (
+          <div className="footer-copyright-and-social___social-media-links">
+            <SocialMediaLinks />
+          </div>
+        )}
         <div className="footer-copyright-and-social__copyright">
           <FooterCopyright contractor={props.contractor} />
         </div>
