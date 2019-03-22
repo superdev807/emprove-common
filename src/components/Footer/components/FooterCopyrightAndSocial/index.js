@@ -27,11 +27,13 @@ const FooterCopyrightAndSocial = props => {
 
 FooterCopyrightAndSocial.propTypes = {
   contractor: PropTypes.bool,
+  showSocial: PropTypes.bool,
   topContent: PropTypes.node
 };
 
 FooterCopyrightAndSocial.defaultProps = {
-  contractor: false
+  contractor: false,
+  showSocial: true
 };
 
 export default FooterCopyrightAndSocial;

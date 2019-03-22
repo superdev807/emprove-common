@@ -21,7 +21,7 @@ describe('ConsumerFooter component', () => {
   });
 
   test('should include service areas section', () => {
-    expect(component.find('ServiceAreas').length).toBe(2);
+    expect(component.find('ServiceAreas').length).toBe(0);
   });
 
   test('should include how to use section', () => {
