@@ -49,6 +49,10 @@
     width: 36px;
   }
 
+  &__overlay-content {
+    position: relative;
+  }
+
   &__overlay {
     border-radius: 2px;
     font-size: .8rem;
@@ -67,19 +71,13 @@
     transition: opacity .5s ease-out;
     pointer-events: none;
     max-width: 100%; // to fix overflow issue with IE
+    z-index: 1;
 
     @media screen and (min-width: 1000px) {
       border-radius: 50%;
       font-size: inherit;
       margin: 0;
       width: auto;
-    }
-
-    &:after {
-      border-bottom: 6px solid $primary;
-      content: '';
-      display: block;
-      width: 36px;
     }
 
     &--shown {
@@ -89,5 +87,27 @@
 
   &__description {
     max-width: 100%; // to fix overflow issue with IE
+  }
+
+  &__bar {
+    position: absolute;
+    width: 36px;
+    height: 6px;
+    background: orange;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0.25rem 0;
+  }
+
+  &__linked-in {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -48px;
+    fill: #3681b9;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    pointer-events: visible;
   }
 }

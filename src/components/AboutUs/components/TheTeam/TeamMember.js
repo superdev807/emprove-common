@@ -6,6 +6,7 @@ import cx from 'classnames';
 import IconButton from '@material-ui/core/IconButton';
 
 import HomeAreaIcon from '../../../HomeAreaIcon';
+import IconLinkedIn from '../../../../icons/IconLinkedIn';
 import TeamMemberPhoto from './TeamMemberPhoto';
 import './team-member-styles.scss';
 
@@ -29,14 +30,9 @@ class TeamMember extends React.Component {
   render() {
     const { member } = this.props;
     return (
-      <div className="team-member">
+      <div className="team-member" onMouseLeave={this.handlePhotoMouseOut}>
         <div className="team-member__photo">
-          <TeamMemberPhoto
-            photoUrl={member.photoUrl}
-            photoAlt={member.name}
-            onMouseOver={this.handlePhotoMouseOver}
-            onMouseOut={this.handlePhotoMouseOut}
-          />
+          <TeamMemberPhoto photoUrl={member.photoUrl} photoAlt={member.name} onMouseOver={this.handlePhotoMouseOver} />
         </div>
         <div>{member.name}</div>
         <div className="team-member__position">{member.position}</div>
@@ -53,7 +49,15 @@ class TeamMember extends React.Component {
         </div>
         {member.description && (
           <div className={cx('team-member__overlay', { 'team-member__overlay--shown': this.state.showOverlay })}>
-            <div className="team-member__description">{member.description}</div>
+            <div className="team-member__overlay-content">
+              <div className="team-member__description">{member.description}</div>
+              <div className="team-member__bar" />
+              {member.linkedIn && (
+                <a href={member.linkedIn} target="_blank" rel="noopener noreferrer">
+                  <IconLinkedIn className="team-member__linked-in" />
+                </a>
+              )}
+            </div>
           </div>
         )}
       </div>
