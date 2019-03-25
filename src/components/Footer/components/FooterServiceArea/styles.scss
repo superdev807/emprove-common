@@ -50,7 +50,9 @@
     @include hcenter();
 
     @include media ('>sm') {
-      right: 1.5rem;
+      right: 1rem;
+      left: unset;
+      transform: none
     }
   }
 }
