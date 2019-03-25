@@ -15,8 +15,7 @@ const FooterServiceArea = props => {
       </div>
       <Typography className="footer-service-area__description">
         <span className="footer-service-area__description-text">
-          WE CURRENTLY SERVICE<br />
-          <span className="footer-service-area__description-text--orange">THE USA</span> NATIONWIDE
+          <span className="footer-service-area__description-text--orange">EMPROVE</span> IS NATIONWIDE
         </span>
       </Typography>
       <div className="footer-service-area__social-media-links">
