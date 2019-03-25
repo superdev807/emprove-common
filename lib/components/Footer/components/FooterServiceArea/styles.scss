@@ -4,12 +4,12 @@
 .footer-service-area {
   width: 100%;
   position: relative;
-  padding: 0 1rem 0 1rem;
+  padding: 0 1rem;
   min-height: 300px;
   max-width: 240px;
 
   @include media ('>sm') {
-    padding: 0 1rem 0 2rem;
+    padding: 0 1rem 0 0;
   }
   
   &__map {
@@ -20,7 +20,7 @@
     margin-left: auto;
 
     &-image {
-      width: 80%;
+      width: 75%;
       margin: 0 auto;
       position: relative;
       left: 50%;
