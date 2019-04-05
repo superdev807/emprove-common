@@ -55,7 +55,8 @@ export const parseQueryString = string =>
     JSON.parse,
     JSON.stringify,
     fp.reduce((acc, part) => {
-      const [name, value] = part.split('=');
+      let [name, ...values] = part.split('=');
+      const value = values.join('=');
       acc[name] = decodeURIComponent(value || '');
       return acc;
     }, {}),

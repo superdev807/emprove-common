@@ -11,6 +11,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import IconButton from '@material-ui/core/IconButton';
 import SnackbarContent from '@material-ui/core/SnackbarContent';
 import WarningIcon from '@material-ui/icons/Warning';
+import IconInvitationSent from '../../icons/IconInvitationSent';
 import { withStyles } from '@material-ui/core/styles';
 import styles from './styles';
 
@@ -18,7 +19,8 @@ const variantIcon = {
   success: CheckCircleIcon,
   warning: WarningIcon,
   error: ErrorIcon,
-  info: InfoIcon
+  info: InfoIcon,
+  invitation: IconInvitationSent
 };
 
 const CustomSnackbarContent = props => {
@@ -28,7 +30,7 @@ const CustomSnackbarContent = props => {
   return (
     <SnackbarContent
       className={cx(classes[variant], className)}
-      classes={{ action: classes.contentAction }}
+      classes={{ action: classes.contentAction, message: classes.contentMessage }}
       aria-describedby="client-snackbar"
       message={
         <span id="client-snackbar" className={classes.message}>
@@ -51,7 +53,7 @@ CustomSnackbarContent.propTypes = {
   className: PropTypes.string,
   message: PropTypes.node,
   onClose: PropTypes.func,
-  variant: PropTypes.oneOf(['success', 'warning', 'error', 'info']).isRequired
+  variant: PropTypes.oneOf(['success', 'warning', 'error', 'info', 'invitation']).isRequired
 };
 
 export default withStyles(styles)(CustomSnackbarContent);
