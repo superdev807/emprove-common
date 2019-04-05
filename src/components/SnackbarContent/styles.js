@@ -16,6 +16,9 @@ export default theme => ({
   warning: {
     backgroundColor: amber[700]
   },
+  invitation: {
+    backgroundColor: green[600]
+  },
   icon: {
     fontSize: 20
   },
@@ -26,6 +29,9 @@ export default theme => ({
   message: {
     display: 'flex',
     alignItems: 'center'
+  },
+  contentMessage: {
+    flex: 1
   },
   contentAction: {
     [theme.breakpoints.down('sm')]: {
