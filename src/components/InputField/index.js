@@ -31,6 +31,7 @@ export class InputField extends Component {
     max: PropTypes.number,
     meta: PropTypes.object.isRequired,
     min: PropTypes.number,
+    moveToFirstMaskPlaceholderOnFocus: PropTypes.bool,
     multiline: PropTypes.bool,
     onValidBlur: PropTypes.func,
     placeholder: PropTypes.string,
@@ -61,9 +62,19 @@ export class InputField extends Component {
   }
 
   handleFocus = event => {
+    const { target } = event;
     const { input } = this.props;
     event.target.placeholder = '';
     input.onFocus(event);
+
+    if (this.props.moveToFirstMaskPlaceholderOnFocus) {
+      setTimeout(() => {
+        const cursorPosition = target.value.indexOf('_');
+        if (cursorPosition !== -1) {
+          target.setSelectionRange(cursorPosition, cursorPosition);
+        }
+      }, 0);
+    }
   };
 
   handleBlur = event => {
