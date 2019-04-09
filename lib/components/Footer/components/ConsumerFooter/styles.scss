@@ -48,11 +48,17 @@ $desktop-breakpoint: 1000px;
 
     &--first {
       flex: 2;
-      min-width: 440px;
+
+      @media screen and (min-width: $desktop-breakpoint) {
+        min-width: 440px;
+      }
     }
 
     &--second {
-      min-width: 350px;
+
+      @media screen and (min-width: $desktop-breakpoint) {
+        min-width: 350px;
+      }
     }
 
     &--smaller {
