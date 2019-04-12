@@ -13,7 +13,7 @@ const FooterServiceArea = props => {
       <div className="footer-service-area__map">
         <img
           className="footer-service-area__map-image"
-          src={process.env.IMGIX_PUBLIC_IMAGES_HOST + 'consumer/new-landing/usa_map_graphic_24px.png'}
+          src={process.env.IMGIX_PUBLIC_IMAGES_HOST + 'consumer/new-landing/usa_map_graphic_24px.png?auto=format'}
         />
       </div>
       <Typography className="footer-service-area__description">
