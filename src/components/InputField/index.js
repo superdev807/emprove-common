@@ -94,6 +94,7 @@ export class InputField extends Component {
 
   render() {
     const {
+      autoFocus,
       className,
       classes,
       disabled,
@@ -176,6 +177,7 @@ export class InputField extends Component {
           startAdornment={startAdornment}
           endAdornment={endAdornment}
           inputComponent={maskingComponent}
+          autoFocus={autoFocus}
           {...moreProps}
         />
         {outlined && labelContent}

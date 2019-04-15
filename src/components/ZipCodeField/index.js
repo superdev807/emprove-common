@@ -52,6 +52,7 @@ export class ZipCodeField extends Component {
       id,
       input,
       inputClassName,
+      inputClasses,
       inputLabelProps,
       label,
       labelClassName,
@@ -90,6 +91,7 @@ export class ZipCodeField extends Component {
           onBlur={this.handleBlur}
           type={type}
           className={cx(classes.zipCode, inputClassName)}
+          classes={inputClasses}
           placeholder={placeholder}
           disabled={disabled}
           inputComponent={ZipCodeMask}
