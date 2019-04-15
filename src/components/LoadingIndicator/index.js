@@ -20,7 +20,7 @@ LoadingIndicator.propTypes = {
   className: PropTypes.string,
   classes: PropTypes.object.isRequired,
   opacity: PropTypes.number,
-  size: PropTypes.number,
+  size: PropTypes.oneOf([PropTypes.number, PropTypes.string]),
   positionStatic: PropTypes.bool
 };
 
