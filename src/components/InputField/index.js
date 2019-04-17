@@ -22,6 +22,7 @@ export class InputField extends Component {
     className: PropTypes.string,
     classes: PropTypes.object.isRequired,
     disabled: PropTypes.bool,
+    errorMessageClass: PropTypes.string,
     fullWidth: PropTypes.bool,
     helperText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     input: PropTypes.object.isRequired,
