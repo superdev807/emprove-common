@@ -22,6 +22,7 @@ class DropdownField extends Component {
     className: PropTypes.string,
     disabled: PropTypes.bool,
     disableUnderline: PropTypes.bool,
+    errorMessageClass: PropTypes.string,
     fullWidth: PropTypes.bool,
     helperText: PropTypes.string,
     helperTextClassName: PropTypes.string,
@@ -59,6 +60,7 @@ class DropdownField extends Component {
       capitalize,
       disabled,
       disableUnderline,
+      errorMessageClass,
       fullWidth,
       helperText,
       helperTextClassName,
@@ -110,7 +112,7 @@ class DropdownField extends Component {
               );
             })}
         </TextField>
-        {touched && error && <FormHelperText>{error}</FormHelperText>}
+        {touched && error && <FormHelperText className={errorMessageClass}>{error}</FormHelperText>}
       </FormControl>
     ) : (
       <FormControl id={id} className={className} error={touched && !!error} fullWidth={fullWidth}>
@@ -138,7 +140,7 @@ class DropdownField extends Component {
               );
             })}
         </Select>
-        {touched && error && <FormHelperText>{error}</FormHelperText>}
+        {touched && error && <FormHelperText className={errorMessageClass}>{error}</FormHelperText>}
       </FormControl>
     );
   }
