@@ -7,7 +7,9 @@ import './styles.scss';
 
 class ProjectScaleGraph extends Component {
   static propTypes = {
+    dataSets: PropTypes.arrayOf(PropTypes.object),
     grid: PropTypes.object,
+    mark: PropTypes.object,
     showVerticalGridLines: PropTypes.bool,
     showXAxis: PropTypes.bool,
     showYAxis: PropTypes.bool,
@@ -148,6 +150,7 @@ class ProjectScaleGraph extends Component {
 
       horizontalLines.push(
         <line
+          key={j}
           x1={this.state.margin.left}
           y1={y}
           x2={this.state.margin.left + this.state.grid.width}
@@ -164,11 +167,12 @@ class ProjectScaleGraph extends Component {
   renderVerticalLines() {
     return (
       <g className="project-scale-graph_vertical-grid-lines">
-        {this.props.dataSets[0].values.map(datum => {
+        {this.props.dataSets[0].values.map((datum, index) => {
           const x = this.mapRealXToGraphX(datum.xValue);
 
           return (
             <line
+              key={index}
               x1={x}
               y1={this.state.margin.top}
               x2={x}
@@ -192,7 +196,7 @@ class ProjectScaleGraph extends Component {
       const y = this.mapRealYToGraphY(value);
 
       yLabels.push(
-        <text x={this.state.margin.left} y={y} textAnchor="end" alignmentBaseline="middle">
+        <text key={j} x={this.state.margin.left} y={y} textAnchor="end" alignmentBaseline="middle">
           ${Math.round(value).toLocaleString('en-US')}
         </text>
       );
@@ -311,6 +315,7 @@ class ProjectScaleGraph extends Component {
 
         surfaces.push(
           <polyline
+            key={i}
             fill={data.areaColor}
             points={`${ax},${ay} ${ax},${grid.height + margin.top} ${bx},${grid.height + margin.top} ${bx},${by}`}
             strokeWidth="3"
