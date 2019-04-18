@@ -8,3 +8,5 @@ export const VIEW_PDF_KIND = {
   SAMPLE_CONTRACT: 'sample_contract',
   SAMPLE_FLYER: 'sample_flyer'
 };
+
+export const FIND_NEAR_CITY_START_RADIUS = 500; // miles

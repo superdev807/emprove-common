@@ -108,6 +108,7 @@
     "redux-modal": "^1.7.0",
     "regenerator-runtime": "^0.12.1",
     "reselect": "^3.0.1",
-    "webpack": "4.25.1"
+    "webpack": "4.25.1",
+    "zipcodes": "^8.0.0"
   }
 }
