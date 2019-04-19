@@ -1,0 +1,26 @@
+.project-scale-graph {
+  &__svg {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  &__x-labels {
+    font-size: 0.75em;
+    transform: translateY(16px);
+  }
+
+  &__y-labels {
+    font-size: 0.9em;
+    font-weight: 400;
+    transform: translateX(-16px);
+  }
+
+  &__plot-area {
+    opacity: 1;
+  }
+
+  &__plot-name {
+    transform-origin: bottom right;
+    font-size: 0.7em;
+  }
+}
