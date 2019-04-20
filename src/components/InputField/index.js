@@ -111,6 +111,7 @@ export class InputField extends Component {
       mask,
       max,
       min,
+      step,
       multiline,
       placeholder,
       type,
@@ -166,6 +167,7 @@ export class InputField extends Component {
           inputProps={{
             min,
             max,
+            step,
             ...inputProps,
             className: cx({
               [get(inputProps, 'className')]: Boolean(get(inputProps, 'className')),
