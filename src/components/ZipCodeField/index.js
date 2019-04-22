@@ -46,6 +46,7 @@ export class ZipCodeField extends Component {
       className,
       classes,
       disabled,
+      disableUnderline,
       errorMessageClass,
       fullWidth,
       helperText,
@@ -74,6 +75,7 @@ export class ZipCodeField extends Component {
       moreProps.labelWidth = (this.labelNode && this.labelNode.offsetWidth) || 0;
     }
 
+    console.log(this.props);
     return (
       <FormControl id={id} className={className} error={touched && !!error} fullWidth={fullWidth} variant={variant}>
         {label && (
@@ -94,6 +96,7 @@ export class ZipCodeField extends Component {
           disabled={disabled}
           inputComponent={ZipCodeMask}
           endAdornment={endAdornment}
+          disableUnderline={disableUnderline}
           inputProps={{
             ...inputProps
           }}
