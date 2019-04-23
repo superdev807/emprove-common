@@ -75,7 +75,6 @@ export class ZipCodeField extends Component {
       moreProps.labelWidth = (this.labelNode && this.labelNode.offsetWidth) || 0;
     }
 
-    console.log(this.props);
     return (
       <FormControl id={id} className={className} error={touched && !!error} fullWidth={fullWidth} variant={variant}>
         {label && (
