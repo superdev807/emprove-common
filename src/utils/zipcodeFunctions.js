@@ -17,6 +17,27 @@ export const getCityFromMetaData = (cityName, stateNameShort) => {
   return null;
 };
 
+export const getNearestCityWithinRadius = (passedZip, rad) => {
+  let zipcodes = radius(passedZip, rad);
+  zipcodes = zipcodes.filter(function(z) {
+    return z !== passedZip;
+  });
+  zipcodes.sort(function(a, b) {
+    return distance(passedZip, a) - distance(passedZip, b);
+  });
+  for (let zipcode of zipcodes) {
+    let location = lookup(zipcode);
+    if (location) {
+      let city = getCityFromMetaData(location.city, location.state);
+      if (city) {
+        city.zip = zipcode;
+        return city;
+      }
+    }
+  }
+  return null;
+};
+
 export const getNearestCityFromZipCode = passedZip => {
   let city = null;
   const location = lookup(passedZip);
