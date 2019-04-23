@@ -1,12 +1,14 @@
 'use strict';
 
 import React, { Component } from 'react';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 
 import './styles.scss';
 
 class ProjectScaleGraph extends Component {
   static propTypes = {
+    className: PropTypes.string,
     dataSets: PropTypes.arrayOf(PropTypes.object),
     grid: PropTypes.object,
     mark: PropTypes.object,
@@ -56,6 +58,15 @@ class ProjectScaleGraph extends Component {
   parseDataSet() {
     const { dataSets } = this.props;
 
+    if (dataSets.length === 0) {
+      return {
+        minX: 0,
+        maxX: 0,
+        minY: 0,
+        maxY: 0
+      };
+    }
+
     let minX = dataSets[0].values[0].xValue;
     let minY = dataSets[0].values[0].yValue;
     let maxX = dataSets[0].values[0].xValue;
@@ -93,6 +104,11 @@ class ProjectScaleGraph extends Component {
    */
   getMappedDataSets() {
     const { dataSets } = this.props;
+
+    if (dataSets.length === 0) {
+      return [];
+    }
+
     const mappedSets = new Array(this.props.dataSets.length);
 
     for (let i = 0; i < dataSets[0].values.length; i++) {
@@ -376,16 +392,20 @@ class ProjectScaleGraph extends Component {
 
   render() {
     return (
-      <div className="project-scale-graph">
-        <svg className="project-scale-graph__svg" viewBox={this.getSvgViewBox()}>
-          {this.renderGrid()}
-          {this.props.showYAxis && this.renderYAxis()}
-          {this.props.showXAxis && this.renderXAxis()}
-          {this.renderPlots()}
-          {this.renderXLabels()}
-          {this.renderYLabels()}
-          {this.renderMark()}
-        </svg>
+      <div className={cx('project-scale-graph', this.props.className)}>
+        {this.props.dataSets.length > 0 ? (
+          <svg className="project-scale-graph__svg" viewBox={this.getSvgViewBox()}>
+            {this.renderGrid()}
+            {this.props.showYAxis && this.renderYAxis()}
+            {this.props.showXAxis && this.renderXAxis()}
+            {this.renderPlots()}
+            {this.renderXLabels()}
+            {this.renderYLabels()}
+            {this.renderMark()}
+          </svg>
+        ) : (
+          <div>There are no data sets to make a plot</div>
+        )}
       </div>
     );
   }
