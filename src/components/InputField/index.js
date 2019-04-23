@@ -99,6 +99,7 @@ export class InputField extends Component {
       className,
       classes,
       disabled,
+      disableUnderline,
       fullWidth,
       helperText,
       errorMessageClass,
@@ -157,6 +158,7 @@ export class InputField extends Component {
         <InputComponent
           {...input}
           classes={inputClasses}
+          disableUnderline={disableUnderline}
           type={type}
           placeholder={placeholder}
           multiline={multiline}

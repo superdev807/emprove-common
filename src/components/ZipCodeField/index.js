@@ -46,6 +46,7 @@ export class ZipCodeField extends Component {
       className,
       classes,
       disabled,
+      disableUnderline,
       errorMessageClass,
       fullWidth,
       helperText,
@@ -96,6 +97,7 @@ export class ZipCodeField extends Component {
           disabled={disabled}
           inputComponent={ZipCodeMask}
           endAdornment={endAdornment}
+          disableUnderline={disableUnderline}
           inputProps={{
             ...inputProps
           }}
