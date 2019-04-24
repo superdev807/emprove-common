@@ -213,7 +213,7 @@ class ProjectScaleGraph extends Component {
 
       yLabels.push(
         <text key={j} x={this.state.margin.left} y={y} textAnchor="end" alignmentBaseline="middle">
-          ${Math.round(value).toLocaleString('en-US')}
+          ${(Math.round(value / 500) * 500).toLocaleString('en-US')}
         </text>
       );
     }
