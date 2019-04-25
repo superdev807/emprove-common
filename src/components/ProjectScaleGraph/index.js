@@ -11,6 +11,7 @@ class ProjectScaleGraph extends Component {
     className: PropTypes.string,
     dataSets: PropTypes.arrayOf(PropTypes.object),
     grid: PropTypes.object,
+    margin: PropTypes.object,
     mark: PropTypes.object,
     showVerticalGridLines: PropTypes.bool,
     showXAxis: PropTypes.bool,
@@ -20,6 +21,7 @@ class ProjectScaleGraph extends Component {
 
   static defaultProps = {
     grid: {},
+    margin: { top: 32, right: 32, bottom: 64, left: 112 },
     showVerticalGridLines: false,
     showXAxis: false,
     showYAxis: false,
@@ -36,8 +38,8 @@ class ProjectScaleGraph extends Component {
         horizontalLines: 9,
         ...props.grid
       },
+      margin: props.margin,
       mappedSets: [],
-      margin: { top: 32, right: 32, bottom: 64, left: 112 },
       processing: true,
       ...this.parseDataSet()
     };
