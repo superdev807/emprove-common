@@ -151,40 +151,45 @@ export class InputField extends Component {
       </InputLabel>
     );
 
+    const inputComponentProps = {
+      ...input,
+      classes: inputClasses,
+      type: type,
+      placeholder: placeholder,
+      multiline: multiline,
+      className: cx(classes.input, inputClassName),
+      disabled: disabled,
+      rows: rows,
+      rowsMax: rowsMax,
+      inputProps: {
+        min,
+        max,
+        step,
+        ...inputProps,
+        className: cx({
+          [get(inputProps, 'className')]: Boolean(get(inputProps, 'className')),
+          'text-right': Boolean(rightAligned)
+        })
+      },
+      onFocus: this.handleFocus,
+      onBlur: this.handleBlur,
+      onChange: this.handleChange,
+      startAdornment: startAdornment,
+      endAdornment: endAdornment,
+      inputComponent: maskingComponent,
+      autoFocus: autoFocus,
+      ...moreProps
+    };
+
+    if (!outlined) {
+      inputComponentProps.disableUnderline = disableUnderline;
+    }
+
     return (
       <FormControl className={className} error={touched && !!error} fullWidth={fullWidth} variant={variant}>
         {!outlined && labelContent}
         {helperText && <FormHelperText className={classes.formHelperText}>{helperText}</FormHelperText>}
-        <InputComponent
-          {...input}
-          classes={inputClasses}
-          disableUnderline={disableUnderline}
-          type={type}
-          placeholder={placeholder}
-          multiline={multiline}
-          className={cx(classes.input, inputClassName)}
-          disabled={disabled}
-          rows={rows}
-          rowsMax={rowsMax}
-          inputProps={{
-            min,
-            max,
-            step,
-            ...inputProps,
-            className: cx({
-              [get(inputProps, 'className')]: Boolean(get(inputProps, 'className')),
-              'text-right': Boolean(rightAligned)
-            })
-          }}
-          onFocus={this.handleFocus}
-          onBlur={this.handleBlur}
-          onChange={this.handleChange}
-          startAdornment={startAdornment}
-          endAdornment={endAdornment}
-          inputComponent={maskingComponent}
-          autoFocus={autoFocus}
-          {...moreProps}
-        />
+        <InputComponent {...inputComponentProps} />
         {outlined && labelContent}
         {!hideErrorText && touched && error && <FormHelperText className={errorMessageClass}>{error}</FormHelperText>}
       </FormControl>
