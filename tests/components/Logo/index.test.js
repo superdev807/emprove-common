@@ -22,6 +22,6 @@ describe('Logo component', () => {
   test('should render the shortened logo image if passed the shortened prop', () => {
     component.setProps({ shortened: true });
 
-    expect(component.find('img').prop('src')).toBe('/images/ic_e_logo.svg');
+    expect(component.find('img').prop('src')).toBe('/images/ic_e_logo.png');
   });
 });
