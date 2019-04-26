@@ -238,7 +238,7 @@ const HOW_MUCH_DOES_IT_COST_TO_USE_EMPROVE = {
     '** _For Homeowners_ **',
     'Turn your inspiration image into a project cost estimate. Emprove delivers the [Project Brief](/info-center/definitions/pricing-brief) and administers the pricing process where we do all the leg work in obtaining multiple contractor quotes on your behalf.',
     '** _For Contractors_ **',
-    'We do not charge lead fees to submit quotes for our project. You can submit unlimited quotes for free. You pay a project Success Fee only when your are awarded the job per the following Success Fee schedule:'
+    'We do not charge lead fees to submit quotes for our project. You can submit unlimited quotes for free. You pay a project Success Fee only when you are awarded the job per the following Success Fee schedule:'
   ],
   terms: [
     {
