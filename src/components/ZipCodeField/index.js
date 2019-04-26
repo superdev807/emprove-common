@@ -76,6 +76,26 @@ export class ZipCodeField extends Component {
       moreProps.labelWidth = (this.labelNode && this.labelNode.offsetWidth) || 0;
     }
 
+    const inputComponentProps = {
+      ...input,
+      onBlur: this.handleBlur,
+      type: type,
+      className: cx(classes.zipCode, inputClassName),
+      classes: inputClasses,
+      placeholder: placeholder,
+      disabled: disabled,
+      inputComponent: ZipCodeMask,
+      endAdornment: endAdornment,
+      inputProps: {
+        ...inputProps
+      },
+      ...moreProps
+    };
+
+    if (!outlined) {
+      inputComponentProps.disableUnderline = disableUnderline;
+    }
+
     return (
       <FormControl id={id} className={className} error={touched && !!error} fullWidth={fullWidth} variant={variant}>
         {label && (
@@ -87,22 +107,7 @@ export class ZipCodeField extends Component {
           </InputLabel>
         )}
         {helperText && <FormHelperText>{helperText}</FormHelperText>}
-        <InputComponent
-          {...input}
-          onBlur={this.handleBlur}
-          type={type}
-          className={cx(classes.zipCode, inputClassName)}
-          classes={inputClasses}
-          placeholder={placeholder}
-          disabled={disabled}
-          inputComponent={ZipCodeMask}
-          endAdornment={endAdornment}
-          disableUnderline={disableUnderline}
-          inputProps={{
-            ...inputProps
-          }}
-          {...moreProps}
-        />
+        <InputComponent {...inputComponentProps} />
         {!hideErrorText && touched && error && <FormHelperText className={errorMessageClass}>{error}</FormHelperText>}
       </FormControl>
     );

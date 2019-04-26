@@ -11,7 +11,7 @@ const Logo = ({ className, destination, imageClass, noLink, shortened, contracto
 
   let imageFilename = isBeta ? 'emprove_beta_logo.svg' : 'emprove_logo.svg';
   if (shortened) {
-    imageFilename = 'ic_e_logo.svg';
+    imageFilename = 'ic_e_logo.png';
   } else if (contractor) {
     imageFilename = isBeta ? 'emprove_pro_beta_logo.svg' : 'emprove_pro_logo.svg';
   }

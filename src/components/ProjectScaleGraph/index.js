@@ -385,7 +385,7 @@ class ProjectScaleGraph extends Component {
 
       return (
         <g className="project-scale-graph__mark">
-          <circle cx={cx} cy={cy} r="12" fill="#ff9e3c" />
+          <circle cx={cx} cy={cy} r="15" fill="#ff9e3c" />
           <circle cx={cx} cy={cy} r="5" fill="#ffffff" />
         </g>
       );
