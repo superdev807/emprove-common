@@ -154,20 +154,6 @@ const teamMembers = [
     photoKey: 'kiwook_400x400.jpg'
   },
   {
-    id: 10,
-    name: 'Renan Martins',
-    position: 'Engineer',
-    dreamSpace: {
-      style: 'Modern',
-      homeArea: 'Master Bathroom',
-      quality: 'Luxurious',
-      homeAreaId: HomeArea.MASTER_BATHROOM,
-      imageKey: '00504_E_cimage.jpg'
-    },
-    description: null,
-    photoKey: 'renan_400x400.jpg'
-  },
-  {
     id: 11,
     name: 'Sousuke Tanaka',
     position: 'Engineer',
