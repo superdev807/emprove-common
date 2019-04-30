@@ -26,7 +26,6 @@ describe('TheTeam component', () => {
       'Domini Noel',
       'Iris Sin',
       'Kiwook Kwon',
-      'Renan Martins',
       'Sousuke Tanaka'
     ];
 
