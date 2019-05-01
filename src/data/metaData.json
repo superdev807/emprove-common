@@ -1,0 +1,460 @@
+{
+  "designStyle":
+  [
+    {"id": 3 , "label":"Contemporary"},
+    {"id": 4 , "label":"Country"},
+    {"id": 5 , "label":"Craftsman"},
+    {"id": 8 , "label":"Industrial"},
+    {"id": 10, "label":"Modern"},
+    {"id": 11, "label":"Rustic"},
+    {"id": 15, "label":"Traditional"},
+    {"id": 16, "label":"Transitional"}
+  ],
+  "qualityStandard":
+  [
+    {"id": 5,"description":"Luxurious", "label": "Luxurious", "shortLabel": "Lux"},
+    {"id": 4,"description":"High-End", "label": "High-End", "shortLabel": "High End"},
+    {"id": 3,"description":"Upgraded", "label": "Upgraded", "shortLabel": "Upgraded"},
+    {"id": 2,"description":"Practical", "label": "Practical", "shortLabel": "Practical"},
+    {"id": 1,"description":"Best Value", "label": "Best Value", "shortLabel": "Best Value"}
+  ],
+  "materialGrade":
+  [
+    {"id": 1, "label": "Economy"},
+    {"id": 2, "label": "Economy+"},
+    {"id": 3, "label": "Standard"},
+    {"id": 4, "label": "Premium"},
+    {"id": 5, "label": "Premium+"},
+    {"id": 6, "label": "Luxury"}
+  ],
+  "homeAreasSqft":
+  {
+    "6": 60,
+    "8": 120,
+    "9": 30,
+    "10": 135,
+    "11": 250,
+    "27": 150,
+    "43": 300
+  },
+  "homeAreasWallLF":
+  {
+    "6": 30,
+    "8": 40,
+    "9": 20,
+    "10": 50,
+    "11": 65,
+    "27": 35,
+    "43": 55
+  },
+  "homeAreas":
+  [
+    {"id":6,"label":"Guest Bathroom"},
+    {"id":8,"label":"Master Bathroom"},
+    {"id":9,"label":"Powder Room"},
+    {"id":10,"label":"Guest Bedroom"},
+    {"id":11,"label":"Master Bedroom"},
+    {"id":27,"label":"Kitchen"},
+    {"id":43,"label":"General Living"}
+  ],
+  "homeAreaL2Attributes": {
+    "6":["Main Floor Finishes", "Wall Finishes", "Countertops",  "Plumbing Fixtures", "Secondary Floor Finishes", "Secondary Wall Finishes", "Lighting", "Cabinets & Casework"],
+    "8":["Main Floor Finishes", "Wall Finishes", "Countertops",  "Plumbing Fixtures", "Secondary Floor Finishes", "Secondary Wall Finishes", "Lighting", "Cabinets & Casework"],
+    "9":["Main Floor Finishes", "Wall Finishes", "Countertops",  "Plumbing Fixtures", "Secondary Floor Finishes", "Secondary Wall Finishes", "Lighting", "Cabinets & Casework"],
+    "10":["Main Floor Finishes", "Wall Finishes", "Secondary Wall Finishes", "Lighting", "Secondary Floor Finishes", "Ceiling Finishes", "Cabinets & Casework", "Fireplace"],
+    "11":["Main Floor Finishes", "Wall Finishes", "Secondary Wall Finishes", "Lighting", "Secondary Floor Finishes", "Ceiling Finishes", "Cabinets & Casework", "Fireplace"],
+    "27":["Main Floor Finishes", "Secondary Wall Finishes", "Countertops", "Cabinets & Casework", "Secondary Floor Finishes", "Wall Finishes", "Ceiling Finishes", "Lighting", "Plumbing Fixtures", "Kitchen Appliances"],
+    "43":["Main Floor Finishes", "Wall Finishes", "Secondary Wall Finishes", "Lighting", "Secondary Floor Finishes", "Ceiling Finishes", "Cabinets & Casework", "Fireplace"]
+  },
+  "homeAreaL3Attributes": {
+    "6":["Main Flooring", "Vanity", "Countertops", "Bathtubs", "Lavatory Faucets",  "Decorative Lights", "Accent Wall Finish", "Main Wall Finish"],
+    "8":["Main Flooring", "Vanity", "Countertops", "Bathtubs", "Lavatory Faucets",  "Decorative Lights", "Accent Wall Finish", "Main Wall Finish"],
+    "9":["Main Flooring", "Vanity", "Countertops", "Lavatory Sinks", "Lavatory Faucets",  "Decorative Lights", "Accent Wall Finish", "Main Wall Finish"],
+    "10":["Main Flooring", "Window Treatments", "Main Ceiling Finish", "Wall Base", "Door Hardware", "Decorative Lights", "Accent Wall Finish", "Main Wall Finish"],
+    "11":["Main Flooring", "Window Treatments", "Main Ceiling Finish", "Wall Base", "Door Hardware", "Decorative Lights", "Accent Wall Finish", "Main Wall Finish"],
+    "27":["Main Flooring", "Wall Cabinets", "Countertops", "Backsplash", "Kitchen Faucets",  "Decorative Lights", "Refrigerators", "Main Wall Finish"],
+    "43":["Main Flooring", "Window Treatments", "Main Ceiling Finish", "Wall Base", "Casework", "Decorative Lights", "Accent Wall Finish", "Main Wall Finish"]
+  },
+  "UL3AttributeMap": {
+    "Countertops":3235,
+    "Backsplash":3240,
+    "Kitchen Faucets":3345,
+    "Main Flooring":3095,
+    "Wall Cabinets":3215,
+    "Decorative Lights":3400,
+    "Refrigerators":3310,
+    "Main Wall Finish":3125,
+    "Bathtubs":3365,
+    "Lavatory Faucets":3360,
+    "Vanity":3230,
+    "Accent Wall Finish":3130,
+    "Lavatory Sinks":3355,
+    "Main Ceiling Finish":3140,
+    "Wall Base":3180,
+    "Door Hardware":3175,
+    "Window Treatments":3245,
+    "Casework":3220
+  },
+  "RelatedMaterialsByUL3": {
+    "Main Wall Finish": [{
+      "mats": ["Paint Latex", "Wall Cover", "Plaster"]
+    }, {
+      "mats": ["Ceramic", "Glass", "Stone", "Brick"]
+    }, {
+      "mats": ["Wood Panel", "Wall  Cover"]
+    }],
+    "Accent Wall Finish": [{
+      "mats": ["Paint Latex", "Wall Cover", "Plaster"]
+    }, {
+      "mats": ["Ceramic", "Glass", "Stone", "Brick"]
+    }, {
+      "mats": ["Wood Panel", "Wall Cover"]
+    }],
+    "Main Ceiling Finish": [{
+      "mats": ["Paint Latex", "Plaster"]
+    }, {
+      "mats": ["Acoustic Tile"]
+    }, {
+      "mats": ["Wood Panel"]
+    }],
+    "Main Flooring": [{
+      "mats": ["Carpet Olefin", "Carpet Polyester", "Carpet Nylon"]
+    }, {
+      "mats": ["Vinyl", "Laminate", "Ceramic", "Porcelain", "Engineered Wood", "Hardwood"]
+    }, {
+      "mats": ["Vinyl","Ceramic", "Porcelain", "Stone"]
+    }],
+    "Door Hardware": [{
+      "mats": ["Chrome", "Brass", "Bronze", "Nickel"]
+    }, {
+      "mats": ["Pewter"]
+    }],
+    "Wall Base": [{
+      "mats": ["MDF", "Paint-Grade Wood", "Hardwood"]
+    }, {
+      "mats": ["Ceramic", "Stone"]
+    }, {
+      "mats": ["Paint Latex", "Paint Oil-Based"]
+    }],
+    "Base Cabinets": [{
+      "mats": ["Particle Board", "MDF", "Plywood", "Hardwood"]
+    }, {
+      "mats": ["Paint Latex", "Paint Oil-Based"]
+    }],
+    "Wall Cabinets": [{
+      "mats": ["Particle Board", "MDF", "Plywood", "Hardwood"]
+    }, {
+      "mats": ["Paint Latex", "Paint Oil-Based"]
+    }],
+    "Casework": [{
+      "mats": ["Particle Board", "MDF", "Plywood", "Hardwood"]
+    }, {
+      "mats": ["Paint Latex", "Paint Oil-Based"]
+    }],
+    "Vanity": [{
+      "mats": ["Wood Veneer", "Hardwood"]
+    }, {
+      "mats": ["Paint Latex", "Paint Oil-Based"]
+    }],
+    "Countertops": [{
+      "mats": ["Laminate", "Composite", "Concrete", "Engineered Stone", "Stone"]
+    }, {
+      "mats": ["Wood"]
+    }, {
+      "mats": ["Ceramic"]
+    }],
+    "Backsplash": [{
+      "mats": ["Laminate", "Ceramic", "Glass", "Stone"]
+    }],
+    "Window Treatments": [{
+      "mats": ["Metal", "Fabric", "Vinyl", "Wood"]
+    }],
+    "Refrigerators": [{
+      "mats": ["White", "Black", "Slate", "Stainless Steel"]
+    }, {
+      "mats": ["Panel-Clad"]
+    }],
+    "Lavatory Sinks": [{
+      "mats": ["Porcelain", "Solid Surface", "Composite", "Stone"]
+    }, {
+      "mats": ["Cast Iron"]
+    }, {
+      "mats": ["Copper"]
+    }, {
+      "mats": ["Glass"]
+    }],
+    "Kitchen Faucets": [{
+      "mats": ["Chrome", "Brass", "Bronze", "Nickel"]
+    }],
+    "Lavatory Faucets": [{
+      "mats": ["Chrome", "Brass", "Bronze", "Nickel"]
+    }],
+    "Bathtubs": [{
+      "mats": ["Acrylic", "Porcelain", "Fiberglass", "Solid Surface", "Stone"]
+    }, {
+      "mats": ["Cast Iron"]
+    }],
+    "Decorative Lights": [{
+      "mats": ["Fluorescent", "Incandescent", "LED"]
+    }]
+  },
+  "projectScale":
+  [
+    {"id": 1, "description": "Light Refresh", "shortLabel": "Light Refresh"},
+    {"id": 2, "description": "Upgrade Finishes", "shortLabel": "Upgrade Finishes"},
+    {"id": 3, "description": "Light Renovation", "shortLabel": "Light Reno"},
+    {"id": 4, "description": "Full Renovation", "shortLabel": "Full Reno"},
+    {"id": 5, "description": "Small Job"},
+    {"id": 6, "description": "Free Form"}
+  ],
+  "reason":
+  [
+    {"id": "1", "title": "Failing", "label": "The existing state is failing"},
+    {"id": "2", "title": "Selling", "label": "Prepare to sell my home"},
+    {"id": "3", "title": "Fixing", "label": "The existing state isn't functional"},
+    {"id": "4", "title": "Upgrading", "label": "Time for an upgrade"}
+  ],
+  "homeBuiltWhen":
+  [
+    {"id": 1, "title": "After 2010", "label":"After 2010"},
+    {"id": 2, "title": "2000-2010", "label":"Between 2000 and 2010"},
+    {"id": 3, "title": "1990-2000", "label":"Between 1990 and 2000"},
+    {"id": 4, "title": "1980-1990", "label":"Between 1980 and 1990"},
+    {"id": 5, "title": "Before 1980", "label":"Before 1980"}
+  ],
+  "homeType":
+  [
+    {"id": 1, "title": "Detached", "label":"Detached single-fam home"},
+    {"id": 2, "title": "Semi-detached", "label":"Semi-detached home"},
+    {"id": 3, "title": "Attached single", "label":"Attached single-fam home"},
+    {"id": 4, "title": "Attached multi", "label":"Multi-fam home < 3 Levels"},
+    {"id": 5, "title": "Attached > 3 Levels", "label":"Multi-fam home > 3 Levels"}
+  ],
+  "usageType":
+  [
+    {"id":"1", "title": "Primary Home", "label":"Primary home"},
+    {"id":"2", "title": "Second Home", "label":"Second home"},
+    {"id":"3", "title": "Rental Home", "label":"Rental home"}
+  ],
+  "UL3CategoryDefaults": {
+    "Wall Cabinets": [
+      {"file":"none", "name": ".none", "defaultMat": "Hardwood",  "mat":["Particle Board", "MDF", "Plywood", "Hardwood"]},
+      {"file":"Cabinet", "name": "Particle Board", "defaultMat": "Particle Board", "mat":["Particle Board", "MDF", "Plywood", "Hardwood"]},
+      {"file":"MDF", "name": "MDF", "defaultMat": "MDF", "mat":["Particle Board", "MDF", "Plywood", "Hardwood"]},
+      {"file":"Plywood", "name": "Plywood", "defaultMat": "Plywood", "mat":["Particle Board", "MDF", "Plywood", "Hardwood"]},
+      {"file":"Hardwood", "name": "Hardwood", "defaultMat": "Hardwood", "mat":["Particle Board", "MDF", "Plywood", "Hardwood"]}
+    ],
+    "Window Treatments": [
+      {"file":"none", "name": ".none", "defaultMat": "Fabric", "mat":["Metal", "Fabric", "Vinyl", "Wood"]},
+      {"file":"Fabric", "name": "Fabric", "defaultMat": "Fabric", "mat":["Fabric"]},
+      {"file":"Vinyl", "name": "Vinyl", "defaultMat": "Vinyl", "mat":["Vinyl"]},
+      {"file":"Metal", "name": "Metal", "defaultMat": "Metal", "mat":["Metal"]},
+      {"file":"Wood", "name": "Wood", "defaultMat": "Wood", "mat":["Wood"]}
+    ],
+    "Wall Base": [
+      {"file":"none", "name": ".none", "defaultMat": "MDF", "mat":["MDF", "Paint-Grade Wood", "Hardwood"]},
+      {"file":"MDF", "name": "MDF", "defaultMat": "MDF", "mat":["MDF", "Paint-Grade Wood", "Hardwood"]},
+      {"file":"Hardwood", "name": "Hardwood", "defaultMat": "Hardwood", "mat":["MDF", "Paint-Grade Wood", "Hardwood"]},
+      {"file":"Ceramic", "name": "Ceramic", "defaultMat": "Ceramic", "mat":["Ceramic", "Stone"]},
+      {"file":"Stone", "name": "Stone", "defaultMat": "Stone", "mat":["Ceramic", "Stone"]}
+    ],
+    "Vanity": [
+      {"file":"none", "name": ".none", "defaultMat": "Hardwood", "mat":["Wood Veneer", "Hardwood"]},
+      {"file":"Vanity", "name": "Hardwood", "defaultMat": "Hardwood", "mat":["Wood Veneer", "Hardwood"]},
+      {"file":"WoodVeneer", "name": "Wood Veneer", "defaultMat": "Wood Veneer", "mat":["Wood Veneer", "Hardwood"]}
+    ],
+    "Main Ceiling Finish": [
+      {"file":"none", "name": ".none", "defaultMat": "Paint Latex", "mat":["Paint Latex", "Plaster", "Wood Panel"]},
+      {"file":"Painted", "name": "Painted", "defaultMat": "Paint Latex", "mat":["Paint Latex", "Plaster"]},
+      {"file":"Plaster", "name": "Plaster", "defaultMat": "Plaster", "mat":["Paint Latex", "Plaster"]},
+      {"file":"WoodPaneling", "name": "WoodPaneling", "defaultMat": "Wood Panel", "mat":["Wood Panel"]}
+    ],
+    "Lavatory Sinks": [
+      {"file":"none", "name": ".none", "defaultMat": "Porcelain", "mat":["Porcelain", "Solid Surface", "Composite", "Stone"]},
+      {"file":"LavatorySink", "name": "Porcelain", "defaultMat": "Porcelain", "mat":["Porcelain", "Solid Surface", "Composite", "Stone"]},
+      {"file":"Copper", "name": "Copper", "defaultMat": "Copper", "mat":["Copper"]},
+      {"file":"Stone", "name": "Stone", "defaultMat": "Stone", "mat":["Porcelain", "Solid Surface", "Composite", "Stone"]},
+      {"file":"Solid-Surface", "name": "Solid-Surface", "defaultMat": "Solid Surface", "mat":["Porcelain", "Solid Surface", "Composite", "Stone"]}
+    ],
+    "Lavatory Faucets": [
+      {"file":"none", "name": ".none", "defaultMat": "Chrome", "mat":["Chrome", "Brass", "Bronze", "Nickel"]},
+      {"file":"LavatoryFaucet", "name": "Chrome", "defaultMat": "Chrome", "mat":["Chrome", "Brass", "Bronze", "Nickel"]},
+      {"file":"Nickel", "name": "Nickel", "defaultMat": "Nickel", "mat":["Chrome", "Brass", "Bronze", "Nickel"]},
+      {"file":"Bronze", "name": "Bronze", "defaultMat": "Bronze", "mat":["Chrome", "Brass", "Bronze", "Nickel"]},
+      {"file":"Brass", "name": "Brass", "defaultMat": "Brass", "mat":["Chrome", "Brass", "Bronze", "Nickel"]}
+    ],
+    "Kitchen Faucets": [
+      {"file":"none", "name": ".none", "defaultMat": "Chrome", "mat":["Chrome", "Brass", "Bronze", "Nickel"]},
+      {"file":"KitchenFaucet", "name": "Nickel", "defaultMat": "Nickel", "mat":["Chrome", "Brass", "Bronze", "Nickel"]},
+      {"file":"Brass", "name": "Brass", "defaultMat": "Brass", "mat":["Chrome", "Brass", "Bronze", "Nickel"]},
+      {"file":"Bronze", "name": "Bronze", "defaultMat": "Bronze", "mat":["Chrome", "Brass", "Bronze", "Nickel"]},
+      {"file":"Chrome", "name": "Chrome", "defaultMat": "Chrome", "mat":["Chrome", "Brass", "Bronze", "Nickel"]}
+    ],
+    "Door Hardware": [
+      {"file":"none", "name": ".none", "defaultMat": "Chrome", "mat":["Chrome", "Brass", "Bronze", "Nickel"]},
+      {"file":"Chrome", "name": "Chrome", "defaultMat": "Chrome", "mat":["Chrome", "Brass", "Bronze", "Nickel"]},
+      {"file":"Brass", "name": "Brass", "defaultMat": "Brass", "mat":["Chrome", "Brass", "Bronze", "Nickel"]},
+      {"file":"Bronze", "name": "Bronze", "defaultMat": "Bronze", "mat":["Chrome", "Brass", "Bronze", "Nickel"]},
+      {"file":"Nickle", "name": "Nickel", "defaultMat": "Nickel", "mat":["Chrome", "Brass", "Bronze", "Nickel"]},
+      {"file":"Pewter", "name": "Pewter", "defaultMat": "Pewter", "mat":["Pewter"]}
+    ],
+    "Casework": [
+      {"file":"none", "name": ".none", "defaultMat": "MDF", "mat":["Particle Board", "MDF", "Plywood", "Hardwood"]},
+      {"file":"BuiltInCasework", "name": "Plywood", "defaultMat": "Plywood", "mat":["Particle Board", "MDF", "Plywood", "Hardwood"]},
+      {"file":"Hardwood", "name": "Hardwood", "defaultMat": "Hardwood", "mat":["Particle Board", "MDF", "Plywood", "Hardwood"]},
+      {"file":"MDF", "name": "MDF", "defaultMat": "MDF", "mat":["Particle Board", "MDF", "Plywood", "Hardwood"]}
+    ],
+    "Countertops": [
+      {"file": "none", "name": ".none", "defaultMat": "Laminate", "mat":["Laminate", "Ceramic", "Composite", "Engineered Stone", "Stone", "Wood"]},
+      {"file": "Composite", "name": "Composite", "defaultMat": "Composite", "mat": ["Laminate", "Ceramic", "Composite", "Engineered Stone", "Stone"]},
+      {"file": "EngineeredStone", "name": "Engineered Stone", "defaultMat": "Engineered Stone", "mat": ["Laminate", "Ceramic", "Composite", "Engineered Stone", "Stone"]},
+      {"file": "Granite", "name": "Stone", "defaultMat": "Stone", "mat": ["Laminate", "Ceramic", "Composite", "Engineered Stone", "Stone"]},
+      {"file": "Laminate", "name": "Laminate", "defaultMat": "Laminate", "mat": ["Laminate", "Ceramic", "Composite", "Engineered Stone", "Stone"]},
+      {"file": "Marble", "name": "Stone", "defaultMat": "Stone", "mat": ["Laminate", "Ceramic", "Composite", "Engineered Stone", "Stone"]},
+      {"file": "Tile", "name": "Ceramic", "defaultMat": "Ceramic", "mat": ["Laminate", "Ceramic", "Composite", "Engineered Stone", "Stone"]},
+      {"file": "Wood", "name": "Wood", "defaultMat": "Wood", "mat": ["Wood", "Laminate"]}
+    ],
+    "Refrigerators": [
+      {"file":"none", "name": ".none", "defaultMat": "White", "mat":["White", "Black", "Slate", "Stainless Steel"]},
+      {"file":"Refrigerator", "name": "Stainless Steel", "defaultMat": "Stainless Steel", "mat":["White", "Black", "Slate", "Stainless Steel"]},
+      {"file":"White", "name": "White", "defaultMat": "White", "mat":["White", "Black", "Slate", "Stainless Steel"]},
+      {"file":"Black", "name": "Black", "defaultMat": "Black", "mat":["White", "Black", "Slate", "Stainless Steel"]},
+      {"file":"Slate", "name": "Slate", "defaultMat": "Slate", "mat":["White", "Black", "Slate", "Stainless Steel"]},
+      {"file":"Panel-Clad", "name": "Panel-Clad", "defaultMat": "Panel-Clad", "mat":["Panel-Clad"]}
+    ],
+    "Decorative Lights": [
+      {"file":"none", "name": ".none", "defaultMat": "LED", "mat":["Fluorescent", "Incandescent", "LED"]},
+      {"file":"Incandescent", "name": "Incandescent", "defaultMat": "Incandescent", "mat":["Fluorescent", "Incandescent", "LED"]},
+      {"file":"Fluorescent", "name": "Fluorescent", "defaultMat": "Fluorescent", "mat":["Fluorescent", "Incandescent", "LED"]},
+      {"file":"LED2", "name": "LED", "defaultMat": "LED", "mat":["Fluorescent", "Incandescent", "LED"]}
+    ],
+    "Bathtubs": [
+      {"file":"none", "name": ".none", "defaultMat": "Porcelain", "mat":["Acrylic", "Porcelain", "Fiberglass", "Solid Surface", "Stone"]},
+      {"file":"Bathtub", "name": "Fiberglass", "defaultMat": "Fiberglass", "mat":["Acrylic", "Porcelain", "Fiberglass", "Solid Surface", "Stone"]},
+      {"file":"Acrylic", "name": "Acrylic", "defaultMat": "Acrylic", "mat":["Acrylic", "Porcelain", "Fiberglass", "Solid Surface", "Stone"]},
+      {"file":"Cast-Iron", "name": "Cast Iron", "defaultMat": "Cast Iron", "mat":["Cast Iron"]},
+      {"file":"Porcelain", "name": "Porcelain", "defaultMat": "Porcelain", "mat":["Acrylic", "Porcelain", "Fiberglass", "Solid Surface", "Stone"]},
+      {"file":"Solid-Surface", "name": "Solid Surface", "defaultMat": "Solid Surface", "mat":["Acrylic", "Porcelain", "Fiberglass", "Solid Surface", "Stone"]},
+      {"file":"Stone", "name": "Stone", "defaultMat": "Stone", "mat":["Acrylic", "Porcelain", "Fiberglass", "Solid Surface", "Stone"]}
+    ],
+    "Main Flooring": [
+      {"file":"none", "name": ".none", "defaultMat": "Ceramic", "mat": ["Vinyl", "Laminate", "Ceramic", "Porcelain", "Engineered Wood", "Hardwood", "Stone", "Carpet Olefin", "Carpet Polyester", "Carpet Nylon"]},
+      {"file": "Tile", "name": "Ceramic", "defaultMat": "Ceramic", "mat": ["Vinyl", "Ceramic", "Porcelain", "Stone"]},
+      {"file": "Marble", "name": "Stone", "defaultMat": "Stone", "mat": ["Vinyl", "Ceramic", "Porcelain", "Stone"]},
+      {"file": "Vinyl", "name": "Vinyl", "defaultMat": "Vinyl", "mat": ["Vinyl", "Ceramic", "Porcelain", "Stone"]},
+      {"file": "Wood", "name": "Hardwood", "defaultMat": "Hardwood", "mat": ["Vinyl", "Laminate", "Ceramic", "Porcelain", "Engineered Wood", "Hardwood"]}
+    ],
+    "Backsplash": [
+      {"file":"none", "name": ".none", "defaultMat": "Ceramic", "mat": ["Laminate", "Ceramic", "Glass", "Stone"]},
+      {"file": "GlassMosaicModern", "name": "Ceramic", "defaultMat": "Ceramic", "mat":["Ceramic", "Glass"]},
+      {"file": "GlassMosaic", "name": "Glass", "defaultMat": "Glass", "mat":["Ceramic", "Glass"]},
+      {"file": "Stone", "name": "Stone", "defaultMat": "Stone", "mat":["Ceramic", "Stone"]},
+      {"file": "Ceramic", "name": "Ceramic", "defaultMat": "Ceramic", "mat":["Laminate", "Ceramic", "Stone"]}
+    ],
+    "Accent Wall Finish": [
+      {"file":"none", "name": ".none", "defaultMat": "Wall Cover", "mat": ["Paint Latex", "Wall Cover", "Plaster", "Ceramic", "Glass", "Stone", "Brick"]},
+      {"file": "GlassMosaic", "name": "Glass", "defaultMat": "Glass", "mat":["Ceramic", "Glass", "Stone"]},
+      {"file": "Stone", "name": "Stone", "defaultMat": "Stone", "mat":["Ceramic", "Glass", "Stone"]},
+      {"file": "Ceramic", "name": "Ceramic", "defaultMat": "Ceramic", "mat":["Ceramic", "Glass", "Stone", "Wall Cover", "Brick"]},
+      {"file": "Wood", "name": "Wood Panel", "defaultMat": "Wood Panel", "mat":["Wood Panel", "Wall Cover"]},
+      {"file": "Paint_Latex", "name": "Paint Latex", "defaultMat": "Paint Latex", "mat":["Paint Latex"]},
+      {"file": "Wallcovering", "name": "Wallcovering", "defaultMat": "Wall Cover", "mat":["Paint Latex", "Wall Cover", "Plaster", "Wood Panel"]}
+    ],
+    "Main Wall Finish": [
+      {"file":"none", "name": ".none", "defaultMat": "Paint Latex", "mat":["Paint Latex", "Wall Cover", "Plaster", "Ceramic", "Stone", "Brick"]},
+      {"file":"Paint", "name": "Paint", "defaultMat": "Paint Latex", "mat":["Paint Latex", "Wall Cover", "Plaster"]},
+      {"file":"Paint3", "name": "Paint", "defaultMat": "Paint Latex", "mat":["Paint Latex", "Wall Cover", "Plaster"]},
+      {"file":"Plaster", "name": "Plaster", "defaultMat": "Plaster", "mat":["Paint Latex", "Wall Cover", "Plaster"]},
+      {"file": "Ceramic", "name": "Ceramic", "defaultMat": "Ceramic", "mat":["Ceramic", "Stone", "Wall Cover", "Brick"]},
+      {"file": "Stone", "name": "Stone", "defaultMat": "Stone", "mat":["Ceramic", "Stone"]},
+      {"file": "Wallcover", "name": "Wallcovering", "defaultMat": "Wall Cover", "mat":["Wall Cover"]},
+      {"file": "WoodPanel", "name": "Wood Paneling", "defaultMat": "Wood Panel", "mat":["Wood Panel", "Wall Cover"]}
+    ]
+  },
+  "workHours": [
+    {"value": "00:00:00", "label": "00 : 00 AM"},
+    {"value": "00:30:00", "label": "00 : 30 AM"},
+    {"value": "01:00:00", "label": "01 : 00 AM"},
+    {"value": "01:30:00", "label": "01 : 30 AM"},
+    {"value": "02:00:00", "label": "02 : 00 AM"},
+    {"value": "02:30:00", "label": "02 : 30 AM"},
+    {"value": "03:00:00", "label": "03 : 00 AM"},
+    {"value": "03:30:00", "label": "03 : 30 AM"},
+    {"value": "04:00:00", "label": "04 : 00 AM"},
+    {"value": "04:30:00", "label": "04 : 30 AM"},
+    {"value": "05:00:00", "label": "05 : 00 AM"},
+    {"value": "05:30:00", "label": "05 : 30 AM"},
+    {"value": "06:00:00", "label": "06 : 00 AM"},
+    {"value": "06:30:00", "label": "06 : 30 AM"},
+    {"value": "07:00:00", "label": "07 : 00 AM"},
+    {"value": "07:30:00", "label": "07 : 30 AM"},
+    {"value": "08:00:00", "label": "08 : 00 AM"},
+    {"value": "08:30:00", "label": "08 : 30 AM"},
+    {"value": "09:00:00", "label": "09 : 00 AM"},
+    {"value": "09:30:00", "label": "09 : 30 AM"},
+    {"value": "10:00:00", "label": "10 : 00 AM"},
+    {"value": "10:30:00", "label": "10 : 30 AM"},
+    {"value": "11:00:00", "label": "11 : 00 AM"},
+    {"value": "11:30:00", "label": "11 : 30 AM"},
+    {"value": "12:00:00", "label": "12 : 00 PM"},
+    {"value": "12:30:00", "label": "12 : 30 PM"},
+    {"value": "13:00:00", "label": "01 : 00 PM"},
+    {"value": "13:30:00", "label": "01 : 30 PM"},
+    {"value": "14:00:00", "label": "02 : 00 PM"},
+    {"value": "14:30:00", "label": "02 : 30 PM"},
+    {"value": "15:00:00", "label": "03 : 00 PM"},
+    {"value": "15:30:00", "label": "03 : 30 PM"},
+    {"value": "16:00:00", "label": "04 : 00 PM"},
+    {"value": "16:30:00", "label": "04 : 30 PM"},
+    {"value": "17:00:00", "label": "05 : 00 PM"},
+    {"value": "17:30:00", "label": "05 : 30 PM"},
+    {"value": "18:00:00", "label": "06 : 00 PM"},
+    {"value": "18:30:00", "label": "06 : 30 PM"},
+    {"value": "19:00:00", "label": "07 : 00 PM"},
+    {"value": "19:30:00", "label": "07 : 30 PM"},
+    {"value": "20:00:00", "label": "08 : 00 PM"},
+    {"value": "20:30:00", "label": "08 : 30 PM"},
+    {"value": "21:00:00", "label": "09 : 00 PM"},
+    {"value": "21:30:00", "label": "09 : 30 PM"},
+    {"value": "22:00:00", "label": "10 : 00 PM"},
+    {"value": "22:30:00", "label": "10 : 30 PM"},
+    {"value": "23:00:00", "label": "11 : 00 PM"},
+    {"value": "23:30:00", "label": "11 : 30 PM"}
+  ],
+  "contractType": [
+    "Lump-sum"
+  ],
+  "contractPaymentType": [
+    "Biweekly",
+    "Monthly",
+    "Milestone Based"
+  ],
+  "contractPaymentTerm": [
+    "7 Days",
+    "14 Days",
+    "30 Days"
+  ],
+  "contractRetention": [
+    "0%",
+    "1%",
+    "2%",
+    "3%",
+    "4%",
+    "5%",
+    "6%",
+    "7%",
+    "8%",
+    "9%",
+    "10%"
+  ],
+  "contractDisputeResolution": [
+    "Litigation",
+    "Binding Arbitration"
+  ],
+  "spaceLevel": [
+    {"id": 1, "description": "Ground"},
+    {"id": 2, "description": "2nd"},
+    {"id": 3, "description": "3rd"},
+    {"id": 4, "description": "4th+"}
+  ]
+}
