@@ -40,7 +40,7 @@ class PostsSectionLayout extends Component {
         <TransitionGroup component="div" className="posts-section__transition-div">
           {posts.map((post, index) => (
             <CSSTransition key={index} timeout={{ enter: 500, exit: 300 }}>
-              <div className="posts-section__item">
+              <div key={index} className="posts-section__item">
                 <BlogPost
                   ids={{ blogTitle: `${ids.blogTitlePrefix}${index + 1}`, readFull: `${ids.readFullPrefix}${index + 1}` }}
                   postType={postType}
