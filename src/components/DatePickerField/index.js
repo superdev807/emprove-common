@@ -19,7 +19,9 @@ import styles from './styles';
 const DateMask = ({ inputRef, ...otherProps }) => {
   return (
     <MaskedInput
-      ref={inputRef}
+      ref={ref => {
+        inputRef(ref ? ref.inputElement : null);
+      }}
       {...otherProps}
       mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
       guide

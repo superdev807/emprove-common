@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
-import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
+import { CSSTransitionGroup } from 'react-transition-group';
 import { Link } from 'react-router-dom';
 
 import BlogPost from '../../../BlogPost';

@@ -6,7 +6,9 @@ import NumberFormat from 'react-number-format';
 export const NumberFormatCustom = ({ inputRef, onChange, ...other }) => (
   <NumberFormat
     {...other}
-    ref={inputRef}
+    ref={ref => {
+      inputRef(ref ? ref.inputElement : null);
+    }}
     onValueChange={values => {
       onChange({
         target: {
