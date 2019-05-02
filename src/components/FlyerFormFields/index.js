@@ -93,6 +93,7 @@ class FlyerFormFields extends Component {
       snapPriceImage
     } = this.props;
     const { manualAddressEntry } = this.state;
+    const hasProperties = properties && properties.length > 0;
 
     return (
       <form
@@ -208,17 +209,21 @@ class FlyerFormFields extends Component {
                       errorMessageClass={classes.error}
                       inputClasses={{ input: classes.inputText }}
                     />
-                    <IconArrowDropdown className={classes.arrowIcon} onClick={event => this.handleToggleProperties(event, true)} />
+                    {hasProperties && (
+                      <IconArrowDropdown className={classes.arrowIcon} onClick={event => this.handleToggleProperties(event, true)} />
+                    )}
                   </div>
-                  <FlyerFormAddressField
-                    anchorEl={get(this.addressFieldRef, 'current')}
-                    open={this.state.showProperties}
-                    onClickProperty={this.handleClickProperty}
-                    onClickManualEntry={this.handleClickManualEntry}
-                    onClose={this.handleCloseProperties}
-                    properties={properties}
-                    placement="bottom-start"
-                  />
+                  {hasProperties && (
+                    <FlyerFormAddressField
+                      anchorEl={get(this.addressFieldRef, 'current')}
+                      open={this.state.showProperties}
+                      onClickProperty={this.handleClickProperty}
+                      onClickManualEntry={this.handleClickManualEntry}
+                      onClose={this.handleCloseProperties}
+                      properties={properties}
+                      placement="bottom-start"
+                    />
+                  )}
                 </Fragment>
                 <Grid container alignItems="center" spacing={16}>
                   <Grid item xs={4}>
@@ -368,7 +373,8 @@ class FlyerFormFields extends Component {
               onClick={handleSubmit(values =>
                 this.props.onSubmit({
                   ...values,
-                  preview: true
+                  preview: true,
+                  imageKey: values.imageKey || snapPriceImage.imageKey
                 })
               )}>
               Preview
