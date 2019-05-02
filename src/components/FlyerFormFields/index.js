@@ -25,7 +25,7 @@ import { validateEmail } from '../../utils/validators';
 import styles from './styles';
 
 const homeAreaOptions = metaData.homeAreas.map(homeArea => ({ value: homeArea.id, label: homeArea.label }));
-const scaleOptions = metaData.projectScale.map(scale => ({ value: scale.id, label: scale.description }));
+const scaleOptions = metaData.projectScale.slice(0, 4).map(scale => ({ value: scale.id, label: scale.description }));
 const qualityOptions = metaData.qualityStandard.map(quality => ({ value: quality.id, label: quality.label }));
 
 const isRequired = value => (!value ? 'This field is required' : undefined);
