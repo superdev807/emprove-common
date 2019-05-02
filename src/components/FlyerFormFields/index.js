@@ -1,15 +1,18 @@
 'use strict';
 
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import cx from 'classnames';
+import get from 'lodash/get';
 import { Field } from 'redux-form';
 import { withStyles } from '@material-ui/core/styles';
 
 import DropdownField from '../DropdownField';
+import FlyerFormAddressField from './components/FlyerFormAddressField';
+import IconArrowDropdown from '../../icons/IconArrowDropdown';
 import ImageField from '../ImageField';
 import InputField from '../InputField';
 import LoadingIndicator from '../LoadingIndicator';
@@ -29,11 +32,77 @@ const isRequired = value => (!value ? 'This field is required' : undefined);
 const isValidEmail = value => (value && !validateEmail(value) ? 'Invalid email address' : undefined);
 
 class FlyerFormFields extends Component {
+  constructor(props) {
+    super(props);
+
+    const properties = get(props, 'properties', []);
+
+    this.state = {
+      manualAddressEntry: properties.length === 0,
+      showProperties: false
+    };
+
+    this.addressFieldRef = React.createRef();
+  }
+
+  handleToggleProperties = (event, forceToggle) => {
+    event && event.stopPropagation();
+    if (!this.state.manualAddressEntry || forceToggle) {
+      this.setState({ showProperties: !this.state.showProperties });
+    }
+  };
+
+  handleClickProperty = property => {
+    this.setState(
+      {
+        manualAddressEntry: false,
+        showProperties: false
+      },
+      () => {
+        this.props.onSelectProperty(property);
+      }
+    );
+  };
+
+  handleClickManualEntry = () => {
+    this.setState(
+      {
+        manualAddressEntry: true,
+        showProperties: false
+      },
+      () => {
+        this.addressFieldRef.current.focus();
+      }
+    );
+  };
+
+  handleCloseProperties = () => {
+    this.setState({ showProperties: false });
+  };
+
   render() {
-    const { city, classes, handleSubmit, imageNames, onHomeAreaChange, onZipcodeChange, submitting } = this.props;
+    const {
+      city,
+      classes,
+      handleSubmit,
+      imageNames,
+      onHomeAreaChange,
+      onZipcodeChange,
+      properties,
+      submitting,
+      snapPriceImage
+    } = this.props;
+    const { manualAddressEntry } = this.state;
 
     return (
-      <form onSubmit={handleSubmit} className={classes.root}>
+      <form
+        onSubmit={handleSubmit(values =>
+          this.props.onSubmit({
+            ...values,
+            imageKey: snapPriceImage.imageKey
+          })
+        )}
+        className={classes.root}>
         <Grid container>
           <Grid item xs={4}>
             <Typography className={classes.label}>Flyer Name:</Typography>
@@ -121,61 +190,83 @@ class FlyerFormFields extends Component {
         <Divider className={classes.divider} />
 
         <Grid container spacing={16} justify="space-between">
-          <Grid item xs={7}>
-            <Typography className={classes.label}>Property address:</Typography>
-            <Field
-              name="property.address1"
-              type="text"
-              component={InputField}
-              fullWidth
-              validate={[isRequired]}
-              className={classes.field}
-              errorMessageClass={classes.error}
-            />
-            <Grid container alignItems="center" spacing={16}>
-              <Grid item xs={6}>
-                <Typography className={classes.label}>Zipcode:</Typography>
-                <Field
-                  name="property.zipcode"
-                  type="text"
-                  component={ZipCodeField}
-                  fullWidth
-                  validate={[isRequired]}
-                  className={classes.field}
-                  errorMessageClass={classes.error}
-                  onChange={onZipcodeChange}
-                />
-              </Grid>
-              <Grid item xs={6}>
-                <Typography className={classes.label} color="primary">
-                  {city && `${city.label}, ${city.stateNameShort}`}
-                </Typography>
-              </Grid>
-            </Grid>
+          <Grid item xs={8}>
             <Grid container spacing={16}>
-              <Grid item xs={6}>
-                <Typography className={classes.label}>Listing Price:</Typography>
-                <Field
-                  name="listingPrice"
-                  type="text"
-                  component={InputField}
-                  fullWidth
-                  validate={[isRequired]}
-                  className={classes.field}
-                  errorMessageClass={classes.error}
-                />
-              </Grid>
-              <Grid item xs={6}>
-                <Typography className={classes.label}>Home SQFT:</Typography>
-                <Field
-                  name="property.sqft"
-                  type="text"
-                  component={InputField}
-                  fullWidth
-                  validate={[isRequired]}
-                  className={classes.field}
-                  errorMessageClass={classes.error}
-                />
+              <Grid className={classes.withRelativePosition} item xs={12}>
+                <Typography className={classes.label}>Property address:</Typography>
+                <Fragment>
+                  <div className={classes.addressFieldContainer} ref={this.addressFieldRef} onClick={this.handleToggleProperties}>
+                    <Field
+                      ref="address1"
+                      withRef
+                      name="property.address1"
+                      type={manualAddressEntry ? 'text' : 'button'}
+                      component={InputField}
+                      fullWidth
+                      validate={[isRequired]}
+                      className={classes.field}
+                      errorMessageClass={classes.error}
+                      inputClasses={{ input: classes.inputText }}
+                    />
+                    <IconArrowDropdown className={classes.arrowIcon} onClick={event => this.handleToggleProperties(event, true)} />
+                  </div>
+                  <FlyerFormAddressField
+                    anchorEl={get(this.addressFieldRef, 'current')}
+                    open={this.state.showProperties}
+                    onClickProperty={this.handleClickProperty}
+                    onClickManualEntry={this.handleClickManualEntry}
+                    onClose={this.handleCloseProperties}
+                    properties={properties}
+                    placement="bottom-start"
+                  />
+                </Fragment>
+                <Grid container alignItems="center" spacing={16}>
+                  <Grid item xs={4}>
+                    <Typography className={classes.label}>Zipcode:</Typography>
+                    <div className={classes.withRelativePosition}>
+                      <Field
+                        name="property.zipcode"
+                        type="text"
+                        component={ZipCodeField}
+                        fullWidth
+                        validate={[isRequired]}
+                        className={classes.field}
+                        errorMessageClass={classes.error}
+                        onChange={onZipcodeChange ? onZipcodeChange : undefined}
+                      />
+                      {Boolean(get(city, 'label')) && (
+                        <Typography className={classes.helptext} color="primary">
+                          {`${city.label}, ${city.stateNameShort}`}
+                        </Typography>
+                      )}
+                    </div>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <Typography className={classes.label}>Listing Price:</Typography>
+                    <Field
+                      name="listingPrice"
+                      type="text"
+                      component={InputField}
+                      fullWidth
+                      validate={[isRequired]}
+                      className={classes.field}
+                      errorMessageClass={classes.error}
+                    />
+                  </Grid>
+                  <Grid item xs={4}>
+                    <Typography className={classes.label}>Home (sq. ft.):</Typography>
+                    <Field
+                      name="property.sqft"
+                      type="text"
+                      component={InputField}
+                      fullWidth
+                      validate={[isRequired]}
+                      className={classes.field}
+                      errorMessageClass={classes.error}
+                    />
+                  </Grid>
+                  {/* </Grid> */}
+                </Grid>
               </Grid>
             </Grid>
           </Grid>
@@ -196,68 +287,76 @@ class FlyerFormFields extends Component {
         <Divider className={classes.divider} />
 
         <Grid container spacing={16}>
-          <Grid item xs={4}>
-            <Typography className={classes.label}>Home Area:</Typography>
-            <Field
-              name="homeAreaId"
-              component={DropdownField}
-              options={homeAreaOptions}
-              fullWidth
-              validate={[isRequired]}
-              className={classes.field}
-              errorMessageClass={classes.error}
-              onBlur={onHomeAreaChange}
-            />
-          </Grid>
-          <Grid item xs={4}>
-            <Typography className={classes.label}>Area SQFT:</Typography>
-            <Field
-              name="areaSqft"
-              type="text"
-              component={InputField}
-              fullWidth
-              validate={[isRequired]}
-              className={classes.field}
-              errorMessageClass={classes.error}
-            />
+          <Grid item xs={8}>
+            <Grid container spacing={16}>
+              <Grid item xs={6}>
+                <Typography className={classes.label}>Home Area:</Typography>
+                <Field
+                  name="homeAreaId"
+                  component={DropdownField}
+                  options={homeAreaOptions}
+                  fullWidth
+                  validate={[isRequired]}
+                  className={classes.field}
+                  errorMessageClass={classes.error}
+                  onBlur={onHomeAreaChange}
+                />
+              </Grid>
+              <Grid item xs={6}>
+                <Typography className={classes.label}>Area (sq. ft.):</Typography>
+                <Field
+                  name="areaSqft"
+                  type="text"
+                  component={InputField}
+                  fullWidth
+                  validate={[isRequired]}
+                  className={classes.field}
+                  errorMessageClass={classes.error}
+                />
+              </Grid>
+            </Grid>
+            <Grid container spacing={16}>
+              <Grid item xs={6}>
+                <Typography className={classes.label}>Project Scale:</Typography>
+                <Field
+                  name="projectScaleId"
+                  component={DropdownField}
+                  options={scaleOptions}
+                  fullWidth
+                  validate={[isRequired]}
+                  className={classes.field}
+                  errorMessageClass={classes.error}
+                />
+              </Grid>
+              <Grid item xs={6}>
+                <Typography className={classes.label}>Project Quality:</Typography>
+                <Field
+                  name="qualityStandardId"
+                  component={DropdownField}
+                  options={qualityOptions}
+                  fullWidth
+                  validate={[isRequired]}
+                  className={classes.field}
+                  errorMessageClass={classes.error}
+                />
+              </Grid>
+            </Grid>
           </Grid>
           <Grid item xs={4}>
             <Typography className={classes.label}>SnapPrice:</Typography>
-            <Field
-              name="imageKey"
-              component={SearchableDropdownField}
-              options={imageNames}
-              fullWidth
-              validate={[isRequired]}
-              className={classes.field}
-              errorMessageClass={classes.error}
-            />
-          </Grid>
-        </Grid>
-        <Grid container spacing={16}>
-          <Grid item xs={6}>
-            <Typography className={classes.label}>Project Scale:</Typography>
-            <Field
-              name="projectScaleId"
-              component={DropdownField}
-              options={scaleOptions}
-              fullWidth
-              validate={[isRequired]}
-              className={classes.field}
-              errorMessageClass={classes.error}
-            />
-          </Grid>
-          <Grid item xs={6}>
-            <Typography className={classes.label}>Project Quality:</Typography>
-            <Field
-              name="qualityStandardId"
-              component={DropdownField}
-              options={qualityOptions}
-              fullWidth
-              validate={[isRequired]}
-              className={classes.field}
-              errorMessageClass={classes.error}
-            />
+            {snapPriceImage ? (
+              <div className={classes.image} style={{ backgroundImage: `url(${snapPriceImage.url})` }} />
+            ) : (
+              <Field
+                name="imageKey"
+                component={SearchableDropdownField}
+                options={imageNames}
+                fullWidth
+                validate={[isRequired]}
+                className={classes.field}
+                errorMessageClass={classes.error}
+              />
+            )}
           </Grid>
         </Grid>
 
