@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import PostsSectionLayout from '../PostsSectionLayout';
 
-class TipsAndIdeas extends Component {
+class TipsAndIdeasContent extends Component {
   static propTypes = {
     ids: PropTypes.object,
     imageSize: PropTypes.string
@@ -44,4 +44,4 @@ class TipsAndIdeas extends Component {
   }
 }
 
-export default TipsAndIdeas;
+export default TipsAndIdeasContent;

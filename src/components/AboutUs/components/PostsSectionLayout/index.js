@@ -3,14 +3,15 @@
 import React, { Component } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
-import { CSSTransitionGroup } from 'react-transition-group';
+import CSSTransition from 'react-transition-group/CSSTransition';
+import TransitionGroup from 'react-transition-group/TransitionGroup';
 import { Link } from 'react-router-dom';
 
 import BlogPost from '../../../BlogPost';
 import LoadingIndicator from '../../../LoadingIndicator';
 import './style.scss';
 
-class PostSectionLayout extends Component {
+class PostsSectionLayout extends Component {
   static propTypes = {
     className: PropTypes.string,
     ids: PropTypes.object,
@@ -31,30 +32,28 @@ class PostSectionLayout extends Component {
 
   renderPosts(posts) {
     const { ids, postsToShow, postType, fromContractor, imageSize } = this.props;
-    return (
-      <CSSTransitionGroup
-        component="div"
-        className="posts-section__transition-div"
-        transitionName="fade"
-        transitionEnterTimeout={500}
-        transitionLeaveTimeout={300}>
-        {this.props.postsLoading ? (
-          <LoadingIndicator size={48} />
-        ) : (
-          posts.map((post, index) => (
-            <div key={index} className="posts-section__item">
-              <BlogPost
-                ids={{ blogTitle: `${ids.blogTitlePrefix}${index + 1}`, readFull: `${ids.readFullPrefix}${index + 1}` }}
-                postType={postType}
-                post={post}
-                fromContractor={fromContractor}
-                imageSize={imageSize}
-              />
-            </div>
-          ))
-        )}
-      </CSSTransitionGroup>
-    );
+
+    if (this.props.postsLoading) {
+      return <LoadingIndicator size={48} />;
+    } else {
+      return (
+        <TransitionGroup component="div" className="posts-section__transition-div">
+          {posts.map((post, index) => (
+            <CSSTransition key={index} timeout={{ enter: 500, exit: 300 }}>
+              <div key={index} className="posts-section__item">
+                <BlogPost
+                  ids={{ blogTitle: `${ids.blogTitlePrefix}${index + 1}`, readFull: `${ids.readFullPrefix}${index + 1}` }}
+                  postType={postType}
+                  post={post}
+                  fromContractor={fromContractor}
+                  imageSize={imageSize}
+                />
+              </div>
+            </CSSTransition>
+          ))}
+        </TransitionGroup>
+      );
+    }
   }
 
   renderLink() {
@@ -96,4 +95,4 @@ class PostSectionLayout extends Component {
   }
 }
 
-export default PostSectionLayout;
+export default PostsSectionLayout;
