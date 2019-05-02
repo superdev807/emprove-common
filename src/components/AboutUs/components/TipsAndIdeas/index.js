@@ -1,7 +1,7 @@
 'use strict';
 
 import withPosts from '../../../../hocs/withPosts';
-import TipsAndIdeas from './content';
+import TipsAndIdeasContent from './content';
 
 export default withPosts({
   params: {
@@ -9,4 +9,4 @@ export default withPosts({
     category: 'featured-on-site',
     fields: 'ID,slug,title,URL,author,featured_image,excerpt,date'
   }
-})(TipsAndIdeas);
+})(TipsAndIdeasContent);

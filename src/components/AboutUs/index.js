@@ -15,7 +15,7 @@ import ForProfessionals from './components/ForProfessionals';
 // import OurInvestors from './components/OurInvestors';
 import PressAndMedia from './components/PressAndMedia/content';
 import TheTeam from './components/TheTeam';
-import TipsAndIdeas from './components/TipsAndIdeas/content';
+import TipsAndIdeasContent from './components/TipsAndIdeas/content';
 import Container from '../Container';
 import './styles.scss';
 import './partial-styles.scss';
@@ -130,7 +130,7 @@ class AboutUs extends Component {
         <Divider className="about-us__divider" />
         <Container>
           <div id="tab3">
-            <TipsAndIdeas
+            <TipsAndIdeasContent
               className="about-us__tips-and-ideas"
               fromContractor={this.props.fromContractor}
               posts={this.props.tipsAndIdeasPosts}
