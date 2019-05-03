@@ -100,7 +100,7 @@ class FlyerFormFields extends Component {
         onSubmit={handleSubmit(values =>
           this.props.onSubmit({
             ...values,
-            imageKey: snapPriceImage.imageKey
+            imageKey: values.imageKey || snapPriceImage.imageKey
           })
         )}
         className={classes.root}>
@@ -141,7 +141,7 @@ class FlyerFormFields extends Component {
               <Field
                 name="realtorPicture"
                 component={ImageField}
-                validate={[isRequired]}
+                // validate={[isRequired]}
                 errorMessageClass={classes.error}
                 uploadFolder={process.env.CLOUDINARY_REALTOR_PICTURE_FOLDER}
                 uploadPreset={process.env.CLOUDINARY_REALTOR_PICTURE_UPLOAD_PRESET}
