@@ -44,8 +44,7 @@ describe('timeline functions', () => {
 
   describe('localDateToUTC', () => {
     // need different expected value for different test timezones.
-    const expected =
-      utcOffset < -360 ? `2018-06-13T${now.utc().format('HH:mm')}` : `2018-06-12T${now.utc().format('HH:mm')}`;
+    const expected = utcOffset < -360 ? `2018-06-13T${now.utc().format('HH:mm')}` : `2018-06-12T${now.utc().format('HH:mm')}`;
 
     it('should convert local date/time to utc date/time with current time in ISO format', () => {
       expect(localDateToUTC(momentTime).slice(0, -8)).toBe(expected);
