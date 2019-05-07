@@ -58,10 +58,25 @@
       }
     }
   }
-}
 
-.sevtbum {
-  @include media('<sm') {
-    margin: auto !important;
+  &__bbb-logo {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 60px;
+    height: 98px;
+    margin: 0;
+    padding: 0;
+
+    @include media('<sm') {
+      margin: auto !important;
+    }
+
+    &-image {
+      padding: 0;
+      border: none;
+      width: 120px;
+      height: 98px;
+    };
   }
 }

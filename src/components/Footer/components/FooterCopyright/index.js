@@ -19,7 +19,7 @@ const FooterCopyright = props => {
         <div className="footer-copyright__copyright-declaration">
           © 2019{' '}
           <a href="/">
-            <strong>EMPROVE, LLC.</strong>
+            <strong>EMPROVE, Inc.</strong>
           </a>{' '}
           ALL RIGHTS RESERVED.
         </div>
@@ -27,16 +27,13 @@ const FooterCopyright = props => {
       <div className="footer-copyright__container footer-copyright__container--bbb">
         <a
           id="bbblink"
-          className="sevtbum"
+          className="sevtbum footer-copyright__bbb-logo"
           href="https://www.bbb.org/us/nv/las-vegas/profile/home-improvement/emprove-1086-90063688#bbbseal"
-          title="Emprove, Inc., Home Improvement, Las Vegas, NV"
-          style={{ display: 'block', position: 'relative', overflow: 'hidden', width: 60, height: 98, margin: 0, padding: 0 }}>
+          title="Emprove, Inc., Home Improvement, Las Vegas, NV">
           <img
-            style={{ padding: 0, border: 'none' }}
+            className="footer-copyright__bbb-logo-image"
             id="bbblinkimg"
             src="https://seal-southernnevada.bbb.org/logo/sevtbum/emprove-90063688.png"
-            width={120}
-            height={98}
             alt="Emprove, Inc., Home Improvement, Las Vegas, NV"
           />
         </a>
