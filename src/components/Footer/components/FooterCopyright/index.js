@@ -29,7 +29,9 @@ const FooterCopyright = props => {
           id="bbblink"
           className="sevtbum footer-copyright__bbb-logo"
           href="https://www.bbb.org/us/nv/las-vegas/profile/home-improvement/emprove-1086-90063688#bbbseal"
-          title="Emprove, Inc., Home Improvement, Las Vegas, NV">
+          title="Emprove, Inc., Home Improvement, Las Vegas, NV"
+          target="_blank"
+          rel="noopener noreferrer">
           <img
             className="footer-copyright__bbb-logo-image"
             id="bbblinkimg"
