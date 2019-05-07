@@ -182,6 +182,7 @@ export { default as IconPhotosAdded } from './IconPhotosAdded';
 export { default as IconPhotoUpload } from './IconPhotoUpload';
 export { default as IconPieChart } from './IconPieChart';
 export { default as IconPieChartColors } from './IconPieChartColors';
+export { default as IconPinterest } from './IconPinterest';
 export { default as IconPlanAgreement } from './IconPlanAgreement';
 export { default as IconPlane } from './IconPlane';
 export { default as IconPowderRoom } from './IconPowderRoom';
