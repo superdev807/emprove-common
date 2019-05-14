@@ -8,7 +8,7 @@ import IconLinkedIn from '../../../../icons/IconLinkedIn';
 import IconInstagram from '../../../../icons/IconInstagram';
 import './styles.scss';
 
-const SocialMediaLinks = (props) => {
+const SocialMediaLinks = props => {
   return (
     <div className="social-media-links">
       <a href="https://www.facebook.com/emproveit/" target="_blank" rel="noopener noreferrer">
