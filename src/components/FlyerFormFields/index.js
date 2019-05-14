@@ -20,6 +20,7 @@ import PhoneNumberField from '../PhoneNumberField';
 import SearchableDropdownField from '../SearchableDropdownField';
 import ZipCodeField from '../ZipCodeField';
 import metaData from '../../data/metaData.json';
+import { formatPhoneNumber } from '../../utils/phonenumberFunctions';
 import { validateEmail } from '../../utils/validators';
 
 import styles from './styles';
@@ -80,6 +81,11 @@ class FlyerFormFields extends Component {
     this.setState({ showProperties: false });
   };
 
+  handleRealtorChange = (event, value) => {
+    const { onRealtorChange } = this.props;
+    onRealtorChange && onRealtorChange(value);
+  };
+
   render() {
     const {
       city,
@@ -89,6 +95,8 @@ class FlyerFormFields extends Component {
       onHomeAreaChange,
       onZipcodeChange,
       properties,
+      realtors,
+      realtorDetails,
       submitting,
       snapPriceImage
     } = this.props;
@@ -120,7 +128,57 @@ class FlyerFormFields extends Component {
             />
           </Grid>
         </Grid>
-        <Grid container spacing={16}>
+
+        {realtors && (
+          <Grid container spacing={16}>
+            <Grid item xs={4}>
+              <Typography className={classes.label}>Realtor:</Typography>
+              <Field
+                name="realtorId"
+                component={SearchableDropdownField}
+                options={realtors}
+                fullWidth
+                validate={[isRequired]}
+                className={classes.field}
+                errorMessageClass={classes.error}
+                onChange={this.handleRealtorChange}
+              />
+            </Grid>
+          </Grid>
+        )}
+
+        <div className={classes.realtorInfo}>
+          <Grid container spacing={16}>
+            <Grid item xs={6}>
+              <div className={cx(classes.field, classes.imageField)}>
+                <Typography className={cx(classes.label, classes.imageFieldLabel)}>Logo:</Typography>
+                <div className={classes.image} style={{ backgroundImage: `url(${get(realtorDetails, 'logo.url', '')})` }} />
+              </div>
+            </Grid>
+            <Grid item xs={6}>
+              <div className={cx(classes.field, classes.imageField)}>
+                <Typography className={cx(classes.label, classes.imageFieldLabel)}>Profile photo:</Typography>
+                <div className={classes.image} style={{ backgroundImage: `url(${get(realtorDetails, 'profilePicture.url', '')})` }} />
+              </div>
+            </Grid>
+          </Grid>
+          <Grid container spacing={16}>
+            <Grid item xs={4}>
+              <Typography className={classes.label}>Realtor's Name:</Typography>
+              <Typography className={classes.textLabel}>{get(realtorDetails, 'profileName', '-')}</Typography>
+            </Grid>
+            <Grid item xs={4}>
+              <Typography className={classes.label}>Phone number:</Typography>
+              <Typography className={classes.textLabel}>{formatPhoneNumber(get(realtorDetails, 'phoneNumber', '-'))}</Typography>
+            </Grid>
+            <Grid item xs={4}>
+              <Typography className={classes.label}>Email:</Typography>
+              <Typography className={classes.textLabel}>{get(realtorDetails, 'email', '-')}</Typography>
+            </Grid>
+          </Grid>
+        </div>
+
+        {/*<Grid container spacing={16}>
           <Grid item xs={6}>
             <div className={cx(classes.field, classes.imageField)}>
               <Typography className={cx(classes.label, classes.imageFieldLabel)}>Logo:</Typography>
@@ -129,7 +187,7 @@ class FlyerFormFields extends Component {
                 component={ImageField}
                 validate={[isRequired]}
                 errorMessageClass={classes.error}
-                aspectRatio={3}
+                aspectRatio={0}
                 uploadFolder={process.env.CLOUDINARY_REALTOR_PICTURE_FOLDER}
                 uploadPreset={process.env.CLOUDINARY_REALTOR_PICTURE_UPLOAD_PRESET}
               />
@@ -188,7 +246,7 @@ class FlyerFormFields extends Component {
           </Grid>
         </Grid>
 
-        <Divider className={classes.divider} />
+        <Divider className={classes.divider} />*/}
 
         <Grid container spacing={16} justify="space-between">
           <Grid item xs={8}>

@@ -30,7 +30,8 @@ export default theme => ({
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundSize: 'cover'
+    backgroundSize: 'cover',
+    backgroundColor: 'lightgray'
   },
   withRelativePosition: {
     position: 'relative'
@@ -51,5 +52,16 @@ export default theme => ({
   },
   inputText: {
     textAlign: 'left'
+  },
+  textLabel: {
+    padding: '6px 0 7px',
+    fontWeight: 400,
+    color: theme.palette.primary.main,
+    borderBottom: '1px solid rgba(0, 0, 0, 0.12)'
+  },
+  realtorInfo: {
+    padding: 16,
+    marginBottom: 16,
+    border: '1px solid rgba(0, 0, 0, 0.12)'
   }
 });
