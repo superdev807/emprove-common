@@ -52,7 +52,7 @@ class SearchableDropdownField extends Component {
       selectClassName,
       selectClassNamePrefix
     } = this.props;
-    const selectedOption = { label: input.value, value: input.value };
+    const selectedOption = options.find(option => option.value === input.value);
 
     return (
       <FormControl id={id} className={className} error={touched && !!error} fullWidth={fullWidth}>
