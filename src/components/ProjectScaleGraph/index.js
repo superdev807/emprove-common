@@ -379,13 +379,14 @@ class ProjectScaleGraph extends Component {
   }
 
   renderMark() {
-    if (this.props.mark) {
+    const { mark, markColor } = this.props;
+    if (mark) {
       const cx = this.mapRealXToGraphX(this.props.mark.xValue);
       const cy = this.mapRealYToGraphY(this.props.mark.yValue);
 
       return (
         <g className="project-scale-graph__mark">
-          <circle cx={cx} cy={cy} r="15" fill="#ff9e3c" />
+          <circle cx={cx} cy={cy} r="15" fill={markColor ? markColor : '#ff9e3c'} />
           <circle cx={cx} cy={cy} r="5" fill="#ffffff" />
         </g>
       );
