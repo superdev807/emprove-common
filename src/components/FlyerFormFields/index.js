@@ -146,7 +146,7 @@ class FlyerFormFields extends Component {
           </Grid>
         )}
 
-        <RealtorInfo classes={classes} realtorDetails={realtorDetails} />
+        <RealtorInfo realtorDetails={realtorDetails} />
 
         <Grid container spacing={16} justify="space-between">
           <Grid item xs={8}>

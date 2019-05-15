@@ -6,6 +6,9 @@ import get from 'lodash/get';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { formatPhoneNumber } from '../../../../utils/phonenumberFunctions';
+import { withStyles } from '@material-ui/core/styles';
+
+import styles from './styles';
 
 const RealtorInfo = ({ classes, realtorDetails }) => (
   <div className={classes.realtorInfo}>
@@ -40,4 +43,4 @@ const RealtorInfo = ({ classes, realtorDetails }) => (
   </div>
 );
 
-export default RealtorInfo;
+export default withStyles(styles)(RealtorInfo);
