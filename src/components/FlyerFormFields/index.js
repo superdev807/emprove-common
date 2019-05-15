@@ -5,7 +5,6 @@ import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import cx from 'classnames';
 import get from 'lodash/get';
 import { Field } from 'redux-form';
 import { withStyles } from '@material-ui/core/styles';
@@ -17,10 +16,10 @@ import ImageField from '../ImageField';
 import InputField from '../InputField';
 import LoadingIndicator from '../LoadingIndicator';
 import PhoneNumberField from '../PhoneNumberField';
+import RealtorInfo from './components/RealtorInfo';
 import SearchableDropdownField from '../SearchableDropdownField';
 import ZipCodeField from '../ZipCodeField';
 import metaData from '../../data/metaData.json';
-import { formatPhoneNumber } from '../../utils/phonenumberFunctions';
 import { validateEmail } from '../../utils/validators';
 
 import styles from './styles';
@@ -147,106 +146,7 @@ class FlyerFormFields extends Component {
           </Grid>
         )}
 
-        <div className={classes.realtorInfo}>
-          <Grid container spacing={16}>
-            <Grid item xs={6}>
-              <div className={cx(classes.field, classes.imageField)}>
-                <Typography className={cx(classes.label, classes.imageFieldLabel)}>Logo:</Typography>
-                <div className={classes.image} style={{ backgroundImage: `url(${get(realtorDetails, 'logo.url', '')})` }} />
-              </div>
-            </Grid>
-            <Grid item xs={6}>
-              <div className={cx(classes.field, classes.imageField)}>
-                <Typography className={cx(classes.label, classes.imageFieldLabel)}>Profile photo:</Typography>
-                <div className={classes.image} style={{ backgroundImage: `url(${get(realtorDetails, 'profilePicture.url', '')})` }} />
-              </div>
-            </Grid>
-          </Grid>
-          <Grid container spacing={16}>
-            <Grid item xs={4}>
-              <Typography className={classes.label}>Realtor's Name:</Typography>
-              <Typography className={classes.textLabel}>{get(realtorDetails, 'profileName', '-')}</Typography>
-            </Grid>
-            <Grid item xs={4}>
-              <Typography className={classes.label}>Phone number:</Typography>
-              <Typography className={classes.textLabel}>{formatPhoneNumber(get(realtorDetails, 'phoneNumber', '-'))}</Typography>
-            </Grid>
-            <Grid item xs={4}>
-              <Typography className={classes.label}>Email:</Typography>
-              <Typography className={classes.textLabel}>{get(realtorDetails, 'email', '-')}</Typography>
-            </Grid>
-          </Grid>
-        </div>
-
-        {/*<Grid container spacing={16}>
-          <Grid item xs={6}>
-            <div className={cx(classes.field, classes.imageField)}>
-              <Typography className={cx(classes.label, classes.imageFieldLabel)}>Logo:</Typography>
-              <Field
-                name="realtor.logo"
-                component={ImageField}
-                validate={[isRequired]}
-                errorMessageClass={classes.error}
-                aspectRatio={0}
-                uploadFolder={process.env.CLOUDINARY_REALTOR_PICTURE_FOLDER}
-                uploadPreset={process.env.CLOUDINARY_REALTOR_PICTURE_UPLOAD_PRESET}
-              />
-            </div>
-          </Grid>
-          <Grid item xs={6}>
-            <div className={cx(classes.field, classes.imageField)}>
-              <Typography className={cx(classes.label, classes.imageFieldLabel)}>Profile photo:</Typography>
-              <Field
-                name="realtorPicture"
-                component={ImageField}
-                // validate={[isRequired]}
-                errorMessageClass={classes.error}
-                uploadFolder={process.env.CLOUDINARY_REALTOR_PICTURE_FOLDER}
-                uploadPreset={process.env.CLOUDINARY_REALTOR_PICTURE_UPLOAD_PRESET}
-              />
-            </div>
-          </Grid>
-        </Grid>
-        <Grid container spacing={16}>
-          <Grid item xs={4}>
-            <Typography className={classes.label}>Realtor's Name:</Typography>
-            <Field
-              name="realtorName"
-              type="text"
-              component={InputField}
-              fullWidth
-              validate={[isRequired]}
-              className={classes.field}
-              errorMessageClass={classes.error}
-            />
-          </Grid>
-          <Grid item xs={4}>
-            <Typography className={classes.label}>Phone number:</Typography>
-            <Field
-              name="realtorPhoneNumber"
-              type="text"
-              component={PhoneNumberField}
-              fullWidth
-              validate={[isRequired]}
-              className={classes.field}
-              errorMessageClass={classes.error}
-            />
-          </Grid>
-          <Grid item xs={4}>
-            <Typography className={classes.label}>Email:</Typography>
-            <Field
-              name="realtorEmail"
-              type="text"
-              component={InputField}
-              fullWidth
-              validate={[isValidEmail]}
-              className={classes.field}
-              errorMessageClass={classes.error}
-            />
-          </Grid>
-        </Grid>
-
-        <Divider className={classes.divider} />*/}
+        <RealtorInfo classes={classes} realtorDetails={realtorDetails} />
 
         <Grid container spacing={16} justify="space-between">
           <Grid item xs={8}>
@@ -328,7 +228,6 @@ class FlyerFormFields extends Component {
                       errorMessageClass={classes.error}
                     />
                   </Grid>
-                  {/* </Grid> */}
                 </Grid>
               </Grid>
             </Grid>
