@@ -334,7 +334,7 @@ class FlyerFormFields extends Component {
                   imageKey: values.imageKey || snapPriceImage.imageKey
                 })
               )}>
-              Preview
+              Save & Preview
             </Button>
           </Grid>
           <Grid item>
