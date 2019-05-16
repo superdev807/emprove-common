@@ -90,6 +90,7 @@ class FlyerFormFields extends Component {
       city,
       classes,
       handleSubmit,
+      hideRealtorInfo,
       imageNames,
       onHomeAreaChange,
       onZipcodeChange,
@@ -146,7 +147,7 @@ class FlyerFormFields extends Component {
           </Grid>
         )}
 
-        <RealtorInfo realtorDetails={realtorDetails} />
+        {!hideRealtorInfo && <RealtorInfo realtorDetails={realtorDetails} />}
 
         <Grid container spacing={16} justify="space-between">
           <Grid item xs={8}>
