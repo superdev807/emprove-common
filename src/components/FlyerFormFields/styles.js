@@ -55,5 +55,8 @@ export default theme => ({
   imageField: {
     width: 210,
     height: 140
+  },
+  hidden: {
+    display: 'none'
   }
 });

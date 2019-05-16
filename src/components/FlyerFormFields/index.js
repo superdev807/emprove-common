@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import cx from 'classnames';
 import get from 'lodash/get';
 import { Field } from 'redux-form';
 import { withStyles } from '@material-ui/core/styles';
@@ -90,6 +91,7 @@ class FlyerFormFields extends Component {
       city,
       classes,
       handleSubmit,
+      hideRealtorDropdown,
       hideRealtorInfo,
       imageNames,
       onHomeAreaChange,
@@ -133,16 +135,18 @@ class FlyerFormFields extends Component {
           <Grid container spacing={16}>
             <Grid item xs={4}>
               <Typography className={classes.label}>Realtor:</Typography>
-              <Field
-                name="realtorId"
-                component={SearchableDropdownField}
-                options={realtors}
-                fullWidth
-                validate={[isRequired]}
-                className={classes.field}
-                errorMessageClass={classes.error}
-                onChange={this.handleRealtorChange}
-              />
+              <div className={cx({ [classes.hidden]: hideRealtorDropdown })}>
+                <Field
+                  name="realtorId"
+                  component={SearchableDropdownField}
+                  options={realtors}
+                  fullWidth
+                  validate={[isRequired]}
+                  className={classes.field}
+                  errorMessageClass={classes.error}
+                  onChange={this.handleRealtorChange}
+                />
+              </div>
             </Grid>
           </Grid>
         )}
