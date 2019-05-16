@@ -24,8 +24,8 @@ export default theme => ({
   },
   image: {
     position: 'relative',
-    width: 100,
-    height: 100,
+    width: 210,
+    height: 140,
     top: 0,
     left: 0,
     right: 0,
@@ -51,5 +51,9 @@ export default theme => ({
   },
   inputText: {
     textAlign: 'left'
+  },
+  imageField: {
+    width: 210,
+    height: 140
   }
 });

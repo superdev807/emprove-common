@@ -150,7 +150,7 @@ class FlyerFormFields extends Component {
         {!hideRealtorInfo && <RealtorInfo realtorDetails={realtorDetails} />}
 
         <Grid container spacing={16} justify="space-between">
-          <Grid item xs={8}>
+          <Grid item xs={7}>
             <Grid container spacing={16}>
               <Grid className={classes.withRelativePosition} item xs={12}>
                 <Typography className={classes.label}>Property address:</Typography>
@@ -218,7 +218,7 @@ class FlyerFormFields extends Component {
                     />
                   </Grid>
                   <Grid item xs={4}>
-                    <Typography className={classes.label}>Home (sq. ft.):</Typography>
+                    <Typography className={classes.label}>Home (ft&sup2;):</Typography>
                     <Field
                       name="property.sqft"
                       type="text"
@@ -233,11 +233,12 @@ class FlyerFormFields extends Component {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={5}>
             <Typography className={classes.label}>Current Space:</Typography>
             <Field
               name="picture"
               component={ImageField}
+              className={classes.imageField}
               validate={[isRequired]}
               errorMessageClass={classes.error}
               aspectRatio={1.5}
@@ -250,7 +251,7 @@ class FlyerFormFields extends Component {
         <Divider className={classes.divider} />
 
         <Grid container spacing={16}>
-          <Grid item xs={8}>
+          <Grid item xs={7}>
             <Grid container spacing={16}>
               <Grid item xs={6}>
                 <Typography className={classes.label}>Home Area:</Typography>
@@ -266,7 +267,7 @@ class FlyerFormFields extends Component {
                 />
               </Grid>
               <Grid item xs={6}>
-                <Typography className={classes.label}>Area (sq. ft.):</Typography>
+                <Typography className={classes.label}>Area (ft&sup2;):</Typography>
                 <Field
                   name="areaSqft"
                   type="text"
@@ -305,7 +306,7 @@ class FlyerFormFields extends Component {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={5}>
             <Typography className={classes.label}>SnapPrice:</Typography>
             {snapPriceImage ? (
               <div className={classes.image} style={{ backgroundImage: `url(${snapPriceImage.url})` }} />
