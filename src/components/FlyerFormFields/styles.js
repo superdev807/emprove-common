@@ -47,7 +47,8 @@ export default theme => ({
   },
   arrowIcon: {
     position: 'absolute',
-    right: 0
+    right: 0,
+    top: 5
   },
   inputText: {
     textAlign: 'left'
