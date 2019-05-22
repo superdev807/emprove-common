@@ -222,6 +222,7 @@ class FlyerFormFields extends Component {
                       validate={[isRequired]}
                       className={classes.field}
                       errorMessageClass={classes.error}
+                      mask="withThousandSeparator"
                     />
                   </Grid>
                   <Grid item xs={4}>
@@ -234,6 +235,7 @@ class FlyerFormFields extends Component {
                       validate={[isRequired]}
                       className={classes.field}
                       errorMessageClass={classes.error}
+                      mask="withThousandSeparator"
                     />
                   </Grid>
                 </Grid>
@@ -283,6 +285,7 @@ class FlyerFormFields extends Component {
                   validate={[isRequired]}
                   className={classes.field}
                   errorMessageClass={classes.error}
+                  mask="withThousandSeparator"
                 />
               </Grid>
             </Grid>
