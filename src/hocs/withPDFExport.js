@@ -57,14 +57,16 @@ export default timezoneSelector => WrappedComponent => {
       });
     };
 
-    handleViewRfpBrief = (viewRfpId, callback, onClose, blocker, disableDownload) => {
+    handleViewRfpBrief = (viewRfpId, options = {}) => {
+      const { callback, onClose, blocker, disableDownload, showEditButton, skipAccountIdMatching, onEditClick } = options;
       const { exportRfpPdf, match, setSnackbar, showModal, timezone } = this.props;
       const rfpId = viewRfpId || match.params.rfpId;
 
       exportRfpPdf({
         id: rfpId,
         params: {
-          timezone: getLocalTimezone()
+          timezone: getLocalTimezone(),
+          skipAccountIdMatching
         },
         success: ({ url, fileName }) => {
           showModal('pdfViewerModal', {
@@ -76,7 +78,9 @@ export default timezoneSelector => WrappedComponent => {
             onClose,
             timezone,
             blocker,
-            disableDownload
+            disableDownload,
+            showEditButton,
+            onEditClick
           });
           callback && callback(true);
         },

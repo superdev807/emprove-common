@@ -101,7 +101,7 @@ class PdfViewerModal extends Component {
   };
 
   render() {
-    const { classes, disableDownload, isMobile, pdfKind, sendStatus, source, show, type } = this.props;
+    const { classes, disableDownload, isMobile, pdfKind, sendStatus, source, show, type, showEditButton, onEditClick } = this.props;
 
     return (
       <Dialog
@@ -127,6 +127,11 @@ class PdfViewerModal extends Component {
                 DOWNLOAD
               </Button>
             ) : null)}
+          {showEditButton && (
+            <Button variant="outlined" color="primary" className={classes.editButton} onClick={onEditClick}>
+              SIGN UP TO EDIT PLAN
+            </Button>
+          )}
           <IconButton id={pdfKind === VIEW_PDF_KIND.FULL_RFP ? 'buttons_closed_page_rfp' : undefined} onClick={this.handleClose}>
             <IconClose className={classes.topIcon} />
           </IconButton>
