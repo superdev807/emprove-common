@@ -101,7 +101,7 @@ class PdfViewerModal extends Component {
   };
 
   render() {
-    const { classes, disableDownload, isMobile, pdfKind, sendStatus, source, show, type, showEditButton } = this.props;
+    const { classes, disableDownload, isMobile, pdfKind, sendStatus, source, show, type, showEditButton, onEditClick } = this.props;
 
     return (
       <Dialog
@@ -128,7 +128,7 @@ class PdfViewerModal extends Component {
               </Button>
             ) : null)}
           {showEditButton && (
-            <Button variant="outlined" color="primary" className={classes.editButton}>
+            <Button variant="outlined" color="primary" className={classes.editButton} onClick={onEditClick}>
               SIGN UP TO EDIT PLAN
             </Button>
           )}

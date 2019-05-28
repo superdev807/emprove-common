@@ -25,3 +25,4 @@ export const translationsStatusSelector = fp.get('globalStatus.translationsStatu
 /* pdf status */
 export const exportStatusSelector = fp.get('pdf.status');
 export const sendPdfStatusSelector = fp.get('pdf.sendStatus');
+export const exportInProcessStatusSelector = createSelector(exportStatusSelector, exportStatus => exportStatus === API_PENDING);

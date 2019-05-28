@@ -58,15 +58,15 @@ export default timezoneSelector => WrappedComponent => {
     };
 
     handleViewRfpBrief = (viewRfpId, options = {}) => {
-      const { callback, onClose, blocker, disableDownload, showEditButton } = options;
-      console.log({ viewRfpId, callback, onClose, blocker, disableDownload });
+      const { callback, onClose, blocker, disableDownload, showEditButton, skipAccountIdMatching, onEditClick } = options;
       const { exportRfpPdf, match, setSnackbar, showModal, timezone } = this.props;
       const rfpId = viewRfpId || match.params.rfpId;
 
       exportRfpPdf({
         id: rfpId,
         params: {
-          timezone: getLocalTimezone()
+          timezone: getLocalTimezone(),
+          skipAccountIdMatching
         },
         success: ({ url, fileName }) => {
           showModal('pdfViewerModal', {
@@ -79,7 +79,8 @@ export default timezoneSelector => WrappedComponent => {
             timezone,
             blocker,
             disableDownload,
-            showEditButton
+            showEditButton,
+            onEditClick
           });
           callback && callback(true);
         },
