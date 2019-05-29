@@ -45,7 +45,7 @@ import { SomeComponent } from 'emprove-common';
 
 ## Development environment setup
 Note:
-- Node v8.10.0 and npm v5.6.0 are used for development (as of 04/22/2018).
+- Node v10.15.3 and npm v6.4.1 are used for development (as of 05/28/2019).
 
 Contains all the shared components, utility files, etc.
 

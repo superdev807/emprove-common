@@ -1,7 +1,7 @@
 {
   "name": "emprove-common",
   "version": "0.0.17",
-  "description": "",
+  "description": "The common library to be used by Emprove frontend applications",
   "main": "lib/index.js",
   "scripts": {
     "build": "rm -rf lib/ && babel ./src --out-dir ./lib --copy-files",
@@ -13,6 +13,10 @@
   "author": "Emprove Inc",
   "license": "UNLICENSED",
   "private": true,
+  "engines": {
+    "node": "10.15.3",
+    "npm": "6.4.1"
+  },
   "peerDependencies": {
     "@material-ui/core": "3.9.3",
     "@material-ui/icons": "3.0.2",
