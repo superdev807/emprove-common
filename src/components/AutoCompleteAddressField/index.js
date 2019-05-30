@@ -12,7 +12,7 @@ import { makeCancelable } from '../../utils/promiseFunctions';
 
 import './styles.scss';
 
-class AddressField extends Component {
+class AutoCompleteAddressField extends Component {
   constructor(props) {
     super(props);
 
@@ -25,7 +25,7 @@ class AddressField extends Component {
   componentDidMount() {
     if (!window.google) {
       this.cancelableLoadScript = makeCancelable(
-        loadScript(`https://maps.googleapis.com/maps/api/js?key=${process.env.GEOCODE_MAP_API_KEY}&libraries=places`)
+        loadScript(`https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAP_API_KEY}&libraries=places`)
       );
       this.cancelableLoadScript.promise.then(() => {
         this.setState({
@@ -115,4 +115,4 @@ class AddressField extends Component {
   }
 }
 
-export default AddressField;
+export default AutoCompleteAddressField;
