@@ -72,7 +72,14 @@ class AutoCompleteAddressField extends Component {
 
     if (type === 'text') {
       return this.state.googleReady ? (
-        <PlacesAutocomplete value={get(input, 'value.name', input.value)} onChange={this.handleChange} onSelect={this.handleSelect}>
+        <PlacesAutocomplete
+          value={get(input, 'value.name', input.value)}
+          onChange={this.handleChange}
+          onSelect={this.handleSelect}
+          searchOptions={{
+            types: ['address'],
+            componentRestrictions: { country: 'us' }
+          }}>
           {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
             <FormControl className={cx('auto-complete-address-field', className)} error={touched && !!error}>
               <div className="auto-complete-address-field__formControl">
