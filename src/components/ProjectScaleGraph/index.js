@@ -1,8 +1,10 @@
 'use strict';
 
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
+import { FormattedNumber } from 'react-intl';
+import { getMinimum, getMaximum } from '../../utils/projectCostFunctions';
 
 import './styles.scss';
 
@@ -386,11 +388,71 @@ class ProjectScaleGraph extends Component {
 
       return (
         <g className="project-scale-graph__mark">
+          {this.renderTooltip(cx, cy)}
           <circle cx={cx} cy={cy} r="15" fill={markColor ? markColor : '#ff9e3c'} />
           <circle cx={cx} cy={cy} r="5" fill="#ffffff" />
         </g>
       );
     }
+  }
+
+  renderTooltip(cx, cy) {
+    const { dataSets, mark } = this.props;
+
+    const marginTop = 40;
+    const marginLeft = 30;
+    const tooltipWidth = 200;
+    const tooltipHeight = 350;
+    const tooltipX = cx + (mark.xValue < 4 ? 50 : -tooltipWidth - 50);
+    const tooltipY = Math.max(cy - 240, 0);
+    const polygonPoints =
+      mark.xValue < 4
+        ? `${cx + 25},${cy} ${cx + 50},${cy} ${cx + 50},${cy - 15}`
+        : `${cx - 25},${cy} ${cx - 50},${cy} ${cx - 50},${cy - 15}`;
+
+    let projectScale = '';
+    const costValues = [];
+    for (let i = 1; i < 6; i++) {
+      const dataSet = dataSets[i];
+      const found = dataSet.values.find(item => item.xValue === mark.xValue);
+      const cost = found ? found.yValue : 0;
+      costValues.push({
+        label: dataSet.name,
+        min: getMinimum(cost),
+        max: getMaximum(cost)
+      });
+      projectScale = found.xLabel;
+    }
+
+    return (
+      <g className="project-scale-graph__tooltip">
+        <line
+          x1={cx}
+          y1={this.state.margin.top}
+          x2={cx}
+          y2={this.state.margin.top + this.state.grid.height}
+          stroke="#ff9e3c"
+          strokeWidth="1"
+        />
+        <polygon points={polygonPoints} fill="rgba(0,0,0,0.5)" />
+        <rect x={tooltipX} y={tooltipY} width={tooltipWidth} height={tooltipHeight} rx="10" ry="10" fill="rgba(0,0,0,0.5)" />
+        <text x={tooltipX + marginLeft} y={tooltipY + marginTop} fill="#ffffff">
+          {projectScale}
+        </text>
+        <g className="project-scale-graph__tooltip-costs">
+          {costValues.map((value, index) => (
+            <Fragment key={index}>
+              <text x={tooltipX + marginLeft} y={tooltipY + marginTop + 30 + 56 * index} fill="#ffffff">
+                • {value.label}
+              </text>
+              <text x={tooltipX + marginLeft + 10} y={tooltipY + marginTop + 54 + 56 * index} fill="#ffffff">
+                {`$${value.min.toLocaleString()} - $${value.max.toLocaleString()}`}
+              </text>
+            </Fragment>
+          ))}
+        </g>
+      </g>
+    );
   }
 
   render() {

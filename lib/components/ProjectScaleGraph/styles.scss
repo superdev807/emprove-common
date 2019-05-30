@@ -1,7 +1,11 @@
 .project-scale-graph {
+
+  $graph: &;
+
   &__svg {
     font-size: 1rem;
     font-weight: 500;
+    overflow: visible;
   }
 
   &__x-labels {
@@ -22,5 +26,29 @@
   &__plot-name {
     transform-origin: bottom right;
     font-size: 0.7em;
+  }
+
+  &__mark {
+
+    circle {
+      cursor: pointer;
+    }
+
+    &:hover {
+
+      #{$graph}__tooltip {
+        display: inline;
+      }
+    }
+  }
+
+  &__tooltip {
+    display: none;
+    font-size: 13px;
+
+    &-costs {
+      font-size: 14px;
+      font-weight: 300;
+    }
   }
 }
