@@ -10,7 +10,7 @@ import get from 'lodash/get';
 import { Field } from 'redux-form';
 import { withStyles } from '@material-ui/core/styles';
 
-// import AutoCompleteAddressField from '../AutoCompleteAddressField';
+import AutoCompleteAddressField from '../AutoCompleteAddressField';
 import DropdownField from '../DropdownField';
 import FlyerFormAddressField from './components/FlyerFormAddressField';
 import IconArrowDropdown from '../../icons/IconArrowDropdown';
@@ -95,7 +95,7 @@ class FlyerFormFields extends Component {
       hideRealtorDropdown,
       hideRealtorInfo,
       imageNames,
-      // onAddressChange,
+      onAddressChange,
       onHomeAreaChange,
       onZipcodeChange,
       properties,
@@ -167,13 +167,13 @@ class FlyerFormFields extends Component {
                       withRef
                       name="property.address1"
                       type={manualAddressEntry ? 'text' : 'button'}
-                      component={InputField}
+                      component={AutoCompleteAddressField}
                       fullWidth
                       validate={[isRequired]}
                       className={classes.field}
                       errorMessageClass={classes.error}
                       inputClasses={{ input: classes.inputText }}
-                      // onChange={onAddressChange ? onAddressChange : undefined}
+                      onBlur={onAddressChange ? onAddressChange : undefined}
                     />
                     {hasProperties && (
                       <IconArrowDropdown className={classes.arrowIcon} onClick={event => this.handleToggleProperties(event, true)} />
