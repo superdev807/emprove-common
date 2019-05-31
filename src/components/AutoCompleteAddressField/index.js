@@ -9,6 +9,7 @@ import PlacesAutocomplete, { geocodeByPlaceId } from 'react-places-autocomplete'
 
 import loadScript from '../../utils/loadScript';
 import { makeCancelable } from '../../utils/promiseFunctions';
+import { parseGeocodeApiResult } from '../../utils/geolocationFunctions';
 
 import './styles.scss';
 
@@ -46,9 +47,10 @@ class AutoCompleteAddressField extends Component {
   handleSelect = (address, placeId) => {
     geocodeByPlaceId(placeId)
       .then(results => {
-        const found = results[0].address_components.find(item => item.types[0] === 'postal_code');
-        if (found) {
-          this.props.input.onBlur({ name: address, postcode: found.long_name });
+        const result = parseGeocodeApiResult(results[0]);
+        if (result) {
+          const { postcode, name } = result;
+          this.props.input.onBlur({ name, postcode });
         } else {
           this.props.input.onBlur(address);
         }
