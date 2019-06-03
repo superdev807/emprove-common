@@ -6,17 +6,30 @@ import get from 'lodash/get';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import PlacesAutocomplete, { geocodeByPlaceId } from 'react-places-autocomplete';
+import PropTypes from 'prop-types';
 
 import loadScript from '../../utils/loadScript';
 import { makeCancelable } from '../../utils/promiseFunctions';
+import { parseGeocodeApiResult } from '../../utils/geolocationFunctions';
 
 import './styles.scss';
 
 class AutoCompleteAddressField extends Component {
+  static propTypes = {
+    variant: PropTypes.oneOf(['outlined', 'underlined']),
+    type: PropTypes.oneOf(['text', 'button'])
+  };
+
+  static defaultProps = {
+    variant: 'underlined',
+    type: 'text'
+  };
+
   constructor(props) {
     super(props);
 
     this.state = {
+      address: '',
       googleReady: Boolean(window.google)
     };
     this.cancelableLoadScript = null;
@@ -40,40 +53,41 @@ class AutoCompleteAddressField extends Component {
   }
 
   handleChange = address => {
-    this.props.input.onChange(address);
+    const { input } = this.props;
+    input ? input.onChange(address) : this.setState({ address });
   };
 
   handleSelect = (address, placeId) => {
+    const { input, onClear, onSelect } = this.props;
+    !input && this.setState({ address });
+
     geocodeByPlaceId(placeId)
       .then(results => {
-        const found = results[0].address_components.find(item => item.types[0] === 'postal_code');
-        if (found) {
-          this.props.input.onBlur({ name: address, postcode: found.long_name });
-        } else {
-          this.props.input.onBlur(address);
+        if (results.length > 0) {
+          const result = parseGeocodeApiResult(results[0]);
+          if (result) {
+            return input ? input.onBlur(result) : onSelect(result);
+          }
         }
+        input ? input.onBlur(address) : onClear();
       })
       .catch(error => {
-        this.props.input.onBlur(address);
+        console.error(error);
+        input ? input.onBlur(address) : onClear();
       });
   };
 
   render() {
-    const {
-      className,
-      errorMessageClass,
-      hideErrorText,
-      input,
-      type,
-      meta: { touched, error }
-    } = this.props;
+    const { className, errorMessageClass, hideErrorText, input, meta, type, variant } = this.props;
+    const touched = get(meta, 'touched', false);
+    const error = get(meta, 'error', null);
 
     const errorEl = !hideErrorText && touched && error ? <FormHelperText className={errorMessageClass}>{error}</FormHelperText> : null;
 
     if (type === 'text') {
       return this.state.googleReady ? (
         <PlacesAutocomplete
-          value={get(input, 'value.name', input.value)}
+          value={input ? get(input, 'value.name', input.value) : this.state.address}
           onChange={this.handleChange}
           onSelect={this.handleSelect}
           searchOptions={{
@@ -81,7 +95,7 @@ class AutoCompleteAddressField extends Component {
             componentRestrictions: { country: 'us' }
           }}>
           {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-            <FormControl className={cx('auto-complete-address-field', className)} error={touched && !!error}>
+            <FormControl className={cx('auto-complete-address-field', className, variant)} error={touched && !!error}>
               <div className="auto-complete-address-field__formControl">
                 <input
                   {...getInputProps({
