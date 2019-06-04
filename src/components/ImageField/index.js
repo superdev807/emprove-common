@@ -70,7 +70,7 @@ class ImageField extends Component {
     return (
       <FormControl className={cx(className, classes.root)} error={touched && !!error} onClick={this.handleUploadPhoto}>
         {input.value ? (
-          <div style={{ backgroundImage: `url(${input.value.url})` }} className={classes.image} />
+          <div style={{ backgroundImage: `url(${input.value.secure_url})` }} className={classes.image} />
         ) : (
           <Fragment>
             <IconAddPhotos className={classes.addImage} />
