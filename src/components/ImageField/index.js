@@ -20,6 +20,7 @@ class ImageField extends Component {
     className: PropTypes.string,
     classes: PropTypes.object.isRequired,
     clOpenUploadWidget: PropTypes.func,
+    defaultImageUrl: PropTypes.string,
     disabled: PropTypes.bool,
     errorMessageClass: PropTypes.string,
     input: PropTypes.object.isRequired,
@@ -64,13 +65,16 @@ class ImageField extends Component {
       classes,
       errorMessageClass,
       input,
+      defaultImageUrl,
       meta: { touched, error }
     } = this.props;
 
+    const imageUrl = input.value ? input.value.secure_url : defaultImageUrl;
+
     return (
       <FormControl className={cx(className, classes.root)} error={touched && !!error} onClick={this.handleUploadPhoto}>
-        {input.value ? (
-          <div style={{ backgroundImage: `url(${input.value.secure_url})` }} className={classes.image} />
+        {imageUrl ? (
+          <div style={{ backgroundImage: `url(${imageUrl})` }} className={classes.image} />
         ) : (
           <Fragment>
             <IconAddPhotos className={classes.addImage} />
