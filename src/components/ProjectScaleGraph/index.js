@@ -356,10 +356,10 @@ class ProjectScaleGraph extends Component {
 
   renderGrid() {
     return (
-      <>
+      <Fragment>
         {this.props.showVerticalGridLines && this.renderVerticalLines()}
         {this.renderHorizontalLines()}
-      </>
+      </Fragment>
     );
   }
 
@@ -393,7 +393,6 @@ class ProjectScaleGraph extends Component {
 
       return (
         <g className="project-scale-graph__mark">
-          {this.renderTooltip(cx, cy)}
           <circle cx={cx} cy={cy} r="15" fill={markColor ? markColor : '#ff9e3c'} />
           <circle cx={cx} cy={cy} r="5" fill="#ffffff" />
         </g>
@@ -401,25 +400,45 @@ class ProjectScaleGraph extends Component {
     }
   }
 
-  renderTooltip(cx, cy) {
+  renderTooltips() {
     const { dataSets, mark } = this.props;
+
+    return mark ? (
+      <g className="project-scale-graph__tooltips">
+        {this.props.dataSets[0].values.map((datum, index) => {
+          const x1 = this.mapRealXToGraphX(datum.xValue - 0.5);
+          const x2 = this.mapRealXToGraphX(datum.xValue + 0.5);
+
+          return (
+            <g key={index} className="project-scale-graph__tooltips-item">
+              <rect x={x1} y={this.state.margin.top} width={x2 - x1} height={this.state.grid.height} fill="rgba(0,0,0,0)" />
+              {this.renderTooltip(datum.xValue)}
+            </g>
+          );
+        })}
+      </g>
+    ) : null;
+  }
+
+  renderTooltip(xValue) {
+    const { dataSets } = this.props;
 
     const marginTop = 40;
     const marginLeft = 30;
     const tooltipWidth = 200;
     const tooltipHeight = 350;
-    const tooltipX = cx + (mark.xValue < 4 ? 50 : -tooltipWidth - 50);
-    const tooltipY = Math.max(cy - 240, 0);
+    const cx = this.mapRealXToGraphX(xValue);
+    const tooltipX = cx + (xValue < 4 ? 50 : -tooltipWidth - 50);
+    const tooltipY = this.state.margin.top + (this.state.grid.height - tooltipHeight) / 2;
+    const cy = tooltipY + tooltipHeight * 0.7;
     const polygonPoints =
-      mark.xValue < 4
-        ? `${cx + 25},${cy} ${cx + 50},${cy} ${cx + 50},${cy - 15}`
-        : `${cx - 25},${cy} ${cx - 50},${cy} ${cx - 50},${cy - 15}`;
+      xValue < 4 ? `${cx + 25},${cy} ${cx + 50},${cy} ${cx + 50},${cy - 15}` : `${cx - 25},${cy} ${cx - 50},${cy} ${cx - 50},${cy - 15}`;
 
     let projectScale = '';
     const costValues = [];
     for (let i = 1; i < 6; i++) {
       const dataSet = dataSets[i];
-      const found = dataSet.values.find(item => item.xValue === mark.xValue);
+      const found = dataSet.values.find(item => item.xValue === xValue);
       const cost = found ? found.yValue : 0;
       costValues.push({
         label: dataSet.name,
@@ -439,8 +458,8 @@ class ProjectScaleGraph extends Component {
           stroke="#ff9e3c"
           strokeWidth="1"
         />
-        <polygon points={polygonPoints} fill="rgba(0,0,0,0.5)" />
-        <rect x={tooltipX} y={tooltipY} width={tooltipWidth} height={tooltipHeight} rx="10" ry="10" fill="rgba(0,0,0,0.5)" />
+        <polygon points={polygonPoints} fill="rgba(0,0,0,0.6)" />
+        <rect x={tooltipX} y={tooltipY} width={tooltipWidth} height={tooltipHeight} rx="10" ry="10" fill="rgba(0,0,0,0.6)" />
         <text x={tooltipX + marginLeft} y={tooltipY + marginTop} fill="#ffffff">
           {projectScale}
         </text>
@@ -472,6 +491,7 @@ class ProjectScaleGraph extends Component {
             {this.renderXLabels()}
             {this.renderYLabels()}
             {this.renderMark()}
+            {this.renderTooltips()}
           </svg>
         ) : (
           <div>There are no data sets to make a plot</div>
