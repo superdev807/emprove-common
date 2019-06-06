@@ -9,23 +9,20 @@ import FooterList from '../FooterList';
 const getCompanyLinks = () => {
   return [
     <a href={process.env.CONSUMER_DOMAIN + '/about-emprove'}>About Emprove, Inc.</a>,
-    <a href={process.env.CONSUMER_DOMAIN + '/blog'} target="_blank" rel="noopener noreferrer">
+    <a href={process.env.CONSUMER_DOMAIN + '/blog'}>
       Blog
     </a>,
     <a href="mailto:contact@emproveit.com">Contact Us</a>,
-    /* <Link to="#">Our Team</Link>,
-    <Link to="#">Investors</Link>,
-    <Link to="#">Press & Media</Link>, */
     <a href="https://angel.co/emproveit/jobs" target="_blank" rel="noopener noreferrer">
       Careers
     </a>,
     <a href={process.env.HELP_DOMAIN} target="_blank" rel="noopener noreferrer">
       Help Center
     </a>,
-    <a href={process.env.CONSUMER_DOMAIN + '/privacy'} target="_blank" rel="noopener noreferrer">
+    <a href={process.env.CONSUMER_DOMAIN + '/privacy'}>
       Privacy Policy
     </a>,
-    <a href={process.env.CONSUMER_DOMAIN + '/terms'} target="_blank" rel="noopener noreferrer">
+    <a href={process.env.CONSUMER_DOMAIN + '/terms'}>
       Terms of Service
     </a>
   ];

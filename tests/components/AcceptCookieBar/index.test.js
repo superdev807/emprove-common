@@ -8,6 +8,22 @@ import { mount } from 'enzyme';
 import { AcceptCookieBar } from '~/components/AcceptCookieBar';
 
 describe('AcceptCookieBar component', () => {
+  const originalProcess = global.process;
+  const CONSUMER_DOMAIN = 'http://somewhere.com';
+
+  beforeAll(() => {
+    global.process = {
+      ...global.process,
+      env: {
+        CONSUMER_DOMAIN
+      }
+    };
+  });
+
+  afterAll(() => {
+    global.process = originalProcess;
+  });
+
   let component;
   const props = {
     open: true,
@@ -24,7 +40,7 @@ describe('AcceptCookieBar component', () => {
   });
 
   test('should include privacy page link', () => {
-    expect(component.find("[href='/privacy']").length).toBe(1);
+    expect(component.find("[href='" + CONSUMER_DOMAIN + "/privacy']").length).toBe(1);
   });
 
   test('should hide snackbar if open prop is not set', () => {

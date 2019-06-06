@@ -22,7 +22,7 @@ export const AcceptCookieBar = ({ acceptCookie, classes, open }) => (
       message={
         <Fragment>
           We use cookies to enhance your user experience.{' '}
-          <a href="/privacy" target="_blank" rel="noopener noreferrer" className={classes.link}>
+          <a href={process.env.CONSUMER_DOMAIN + '/privacy'} className={classes.link}>
             Learn More
           </a>
         </Fragment>
