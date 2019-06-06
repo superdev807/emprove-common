@@ -251,6 +251,8 @@ class ProjectScaleGraph extends Component {
           })}
         </g>
       );
+    } else {
+      return null;
     }
   }
   mapRealYToGraphY(realY) {
