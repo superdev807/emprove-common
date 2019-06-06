@@ -226,18 +226,13 @@ class ProjectScaleGraph extends Component {
   }
 
   renderXLabels() {
-    const lastIndex = this.props.dataSets[0].values.length - 1;
     return (
       <g className="project-scale-graph__x-labels">
-        {this.props.dataSets[0].values.map((datum, index) => {
+        {this.props.dataSets[0].values.map(datum => {
           const x = this.mapRealXToGraphX(datum.xValue);
+
           return (
-            <text
-              key={x}
-              x={x}
-              y={this.state.margin.top + this.state.grid.height}
-              textAnchor={lastIndex === index ? 'end' : 'middle'}
-              alignmentBaseline="hanging">
+            <text key={x} x={x} y={this.state.margin.top + this.state.grid.height} textAnchor="middle" alignmentBaseline="hanging">
               {datum.xLabel.split(' ').map((word, index) => (
                 <tspan key={index} x={x} dy="1.2em">
                   {word}
