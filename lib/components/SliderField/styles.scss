@@ -66,6 +66,7 @@
     display: inline-block;
     transform: translate(-50%, 50%);
     border-radius: 50%;
+    cursor: pointer;
 
     &--passed {
       background-color: $very-light-gray;

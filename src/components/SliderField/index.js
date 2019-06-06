@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Slider from '@material-ui/lab/Slider';
+import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
 import cx from 'classnames';
 import debounce from 'lodash/debounce';
@@ -38,10 +39,22 @@ class SliderField extends Component {
     }
   }
 
+  createLabel(item) {
+    return (
+      <Typography
+        onClick={() => this.handleChange(event, item.id)}
+        className={cx(
+          'slider-field__label-text',
+          { 'slider-field__label-text--selected': this.state.value === item.id },
+          this.props.classes.labelText
+        )}>
+        {item.description}
+      </Typography>
+    );
+  }
+
   renderSliderLabels() {
     const { classes, options } = this.props;
-    const { value } = this.state;
-
     const labelPosition = 100 / (options.length - 1);
 
     return (
@@ -49,11 +62,7 @@ class SliderField extends Component {
         {options.map((item, index) => {
           return (
             <div key={item.id} className={cx('slider-field__label', classes.label)} style={{ left: `${index * labelPosition}%` }}>
-              <Typography
-                onClick={() => this.handleChange(event, item.id)}
-                className={cx('slider-field__label-text', { 'slider-field__label-text--selected': value === item.id }, classes.labelText)}>
-                {item.description}
-              </Typography>
+              {this.props.showTooltip ? <Tooltip title={item.tooltipText}>{this.createLabel(item)}</Tooltip> : this.createLabel(item)}
             </div>
           );
         })}
@@ -63,19 +72,27 @@ class SliderField extends Component {
 
   renderTickMarks() {
     const { classes, options } = this.props;
-    const { value } = this.state;
-
     const tickPosition = 100 / (options.length - 1);
+
+    const createTick = (index, item) => {
+      return (
+        <div
+          key={item.id}
+          className={cx('slider-field__tick', this.props.classes.tick, { 'slider-field__tick--passed': this.state.value > item.id })}
+          style={{ left: `${index * tickPosition}%` }}
+        />
+      );
+    };
 
     return (
       <div className={cx('slider-field__ticks', classes.ticks)}>
         {options.map((item, index) => {
-          return (
-            <div
-              key={item.id}
-              className={cx('slider-field__tick', classes.tick, { 'slider-field__tick--passed': value > item.id })}
-              style={{ left: `${index * tickPosition}%` }}
-            />
+          return this.props.showTooltip ? (
+            <Tooltip key={item.id} title={item.tooltipText}>
+              {createTick(index, item)}
+            </Tooltip>
+          ) : (
+            createTick(index, item)
           );
         })}
       </div>
