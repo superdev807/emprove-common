@@ -2,6 +2,7 @@
 
 import React, { Component, Fragment } from 'react';
 import cx from 'classnames';
+import get from 'lodash/get';
 import PropTypes from 'prop-types';
 import { FormattedNumber } from 'react-intl';
 import { getMinimum, getMaximum } from '../../utils/projectCostFunctions';
@@ -226,23 +227,33 @@ class ProjectScaleGraph extends Component {
   }
 
   renderXLabels() {
-    return (
-      <g className="project-scale-graph__x-labels">
-        {this.props.dataSets[0].values.map(datum => {
-          const x = this.mapRealXToGraphX(datum.xValue);
-
-          return (
-            <text key={x} x={x} y={this.state.margin.top + this.state.grid.height} textAnchor="middle" alignmentBaseline="hanging">
-              {datum.xLabel.split(' ').map((word, index) => (
-                <tspan key={index} x={x} dy="1.2em">
-                  {word}
-                </tspan>
-              ))}
-            </text>
-          );
-        })}
-      </g>
-    );
+    const dataValues = get(this.props, 'dataSets[0].values');
+    if (dataValues) {
+      const lastIndex = dataValues.length - 1;
+      return (
+        <g className="project-scale-graph__x-labels">
+          {dataValues.map((datum, index) => {
+            const x = this.mapRealXToGraphX(datum.xValue);
+            return (
+              <text
+                key={x}
+                x={x}
+                y={this.state.margin.top + this.state.grid.height}
+                textAnchor={lastIndex === index ? 'end' : 'middle'}
+                alignmentBaseline="hanging">
+                {datum.xLabel.split(' ').map((word, index) => (
+                  <tspan key={index} x={x} dy="1.2em">
+                    {word}
+                  </tspan>
+                ))}
+              </text>
+            );
+          })}
+        </g>
+      );
+    } else {
+      return null;
+    }
   }
   mapRealYToGraphY(realY) {
     return this.state.grid.height * (realY - this.state.maxY) / (this.state.minY - this.state.maxY) + this.state.margin.top;
