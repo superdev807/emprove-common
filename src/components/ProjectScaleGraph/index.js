@@ -229,17 +229,17 @@ class ProjectScaleGraph extends Component {
   renderXLabels() {
     const dataValues = get(this.props, 'dataSets[0].values');
     if (dataValues) {
-      const lastIndex = dataValues.length - 1;
+      const lastXValue = dataValues[dataValues.length - 1].xValue;
       return (
         <g className="project-scale-graph__x-labels">
           {dataValues.map((datum, index) => {
             const x = this.mapRealXToGraphX(datum.xValue);
             return (
               <text
-                key={x}
+                key={index}
                 x={x}
                 y={this.state.margin.top + this.state.grid.height}
-                textAnchor={lastIndex === index ? 'end' : 'middle'}
+                textAnchor={datum.xValue === lastXValue ? 'end' : 'middle'}
                 alignmentBaseline="hanging">
                 {datum.xLabel.split(' ').map((word, index) => (
                   <tspan key={index} x={x} dy="1.2em">
