@@ -629,7 +629,7 @@ const TermsOfService = props => {
         <li>
           <strong>19.3 Privacy Policy. </strong>
           Please read the{' '}
-          <Link to="/privacy" rel="noopener noreferrer" target="_blank" className="terms-content__link">
+          <Link to="/privacy" className="terms-content__link">
             Emprove Privacy Policy
           </Link>{' '}
           carefully for information relating to our collection, use, storage, disclosure of your personal information. The Emprove Privacy
