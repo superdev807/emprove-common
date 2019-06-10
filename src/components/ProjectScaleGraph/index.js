@@ -499,9 +499,9 @@ class ProjectScaleGraph extends Component {
             {this.renderMark()}
             {this.renderTooltips()}
           </svg>
-        ) : (
+        ) : !this.props.hideErrorMsg ? (
           <div>There are no data sets to make a plot</div>
-        )}
+        ) : null}
       </div>
     );
   }
