@@ -1,7 +1,7 @@
 'use strict';
 
 import fp from 'lodash/fp';
-import isEqual from 'lodash';
+import isEqual from 'lodash/isEqual';
 
 export const capitalize = str => (typeof str === 'string' && str.length > 0 ? str.charAt(0).toUpperCase() + str.slice(1) : str);
 
