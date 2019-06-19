@@ -51,7 +51,8 @@
     "redux-actions": "^2.6.5",
     "redux-form": "7.4.0",
     "redux-modal": "^3.0.1",
-    "reselect": "^4.0.0"
+    "reselect": "^4.0.0",
+    "zipcodes": "^8.0.0"
   },
   "devDependencies": {
     "@babel/cli": "7.4.4",
