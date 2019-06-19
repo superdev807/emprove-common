@@ -10,7 +10,8 @@ export default theme => ({
     lineHeight: 1,
     minHeight: 0,
     fontSize: '1.4vh',
-    fontWeight: 500
+    fontWeight: 500,
+    boxShadow: 'none'
   },
   cancelButton: {
     marginRight: '1.2vh'
