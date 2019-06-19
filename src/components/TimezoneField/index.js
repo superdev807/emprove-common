@@ -3,20 +3,21 @@
 import React, { Component } from 'react';
 import Autosuggest from 'react-autosuggest';
 import cx from 'classnames';
-import fp from 'lodash/fp';
+import deburr from 'lodash/deburr';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
-import PropTypes from 'prop-types';
-import deburr from 'lodash/deburr';
+import fp from 'lodash/fp';
 import match from 'autosuggest-highlight/match';
-import moment from 'moment-timezone';
-import parse from 'autosuggest-highlight/parse';
-import TextField from '@material-ui/core/TextField';
-import Paper from '@material-ui/core/Paper';
 import MenuItem from '@material-ui/core/MenuItem';
+import moment from 'moment-timezone';
+import Paper from '@material-ui/core/Paper';
+import parse from 'autosuggest-highlight/parse';
 import Popper from '@material-ui/core/Popper';
-import { getAllTimezones } from '../../utils/timeFunctions';
+import PropTypes from 'prop-types';
+import TextField from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core/styles';
+
+import { getAllTimezones } from '../../utils/timeFunctions';
 import styles from './styles';
 
 const suggestions = getAllTimezones().map(timezone => ({
