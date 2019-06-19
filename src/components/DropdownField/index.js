@@ -1,7 +1,6 @@
 'use strict';
 
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import cx from 'classnames';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
