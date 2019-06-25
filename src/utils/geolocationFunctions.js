@@ -3,7 +3,7 @@
 import fp from 'lodash/fp';
 import get from 'lodash/get';
 
-export const getAddressComponentFromGoogle = (addressComponents, name, short = false) => {
+const getAddressComponentFromGoogle = (addressComponents, name, short = false) => {
   return fp.compose(
     //eslint-disable-line
     fp.defaultTo(''),
@@ -31,4 +31,16 @@ export const parseGeocodeApiResult = result => {
     console.error('empty address components');
     return null;
   }
+};
+
+export const parseZipcodeAndState = result => {
+  const addressComponents = get(result, 'address_components');
+  if (addressComponents) {
+    const zipcode = getAddressComponentFromGoogle(addressComponents, 'postal_code');
+    const state = getAddressComponentFromGoogle(addressComponents, 'administrative_area_level_1', true);
+    if (zipcode && state) {
+      return { zipcode, state };
+    }
+  }
+  return {};
 };
