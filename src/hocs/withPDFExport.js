@@ -5,7 +5,7 @@ import moment from 'moment';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { downloadRfpPdf, exportRfpPdf, downloadBidPdf, exportBidPdf } from '../redux/modules/pdf';
+import { downloadRfpPdf, exportRfpPdf, exportRfpSummaryPdf, downloadBidPdf, exportBidPdf } from '../redux/modules/pdf';
 import { exportStatusSelector } from '../redux/selectors';
 import { getLocalTimezone } from '../utils/timeFunctions';
 import { setSnackbar } from '../redux/modules/globalStatus';
@@ -149,6 +149,26 @@ export default timezoneSelector => WrappedComponent => {
       });
     };
 
+    handleExportRfpSummary = (rfpId, callback) => {
+      this.props.exportRfpSummaryPdf({
+        id: rfpId,
+        success: ({ url, fileName }) => {
+          this.props.showModal('pdfViewerModal', {
+            pdfKind: VIEW_PDF_KIND.RFP_SUMMARY,
+            source: url,
+            type: 'rfpSummary',
+            fileName,
+            rfpId
+          });
+          callback && callback(true);
+        },
+        fail: error => {
+          this.props.setSnackbar({ message: 'Something went wrong!', variant: 'error' });
+          callback && callback(false);
+        }
+      });
+    };
+
     downloadFile = (url, fileName) => {
       let link = document.createElement('a');
       link.href = url;
@@ -175,6 +195,7 @@ export default timezoneSelector => WrappedComponent => {
           onExportRfp={this.handleExportRfp}
           onDownloadRfp={this.handleDownloadRfp}
           onViewRfpBrief={this.handleViewRfpBrief}
+          onExportRfpSummary={this.handleExportRfpSummary}
           onExportBid={this.handleExportBid}
           onDownloadBid={this.handleDownloadBid}
           onViewBidBrief={this.handleViewBidBrief}
@@ -184,14 +205,14 @@ export default timezoneSelector => WrappedComponent => {
     }
   }
 
-  const selector = createStructuredSelector({
-    exportStatus: exportStatusSelector,
-    timezone: timezoneSelector
-  });
+  const selector = createStructuredSelector(
+    Object.assign({}, { exportStatus: exportStatusSelector }, timezoneSelector ? { timezone: timezoneSelector } : {})
+  );
 
   const actions = {
     downloadRfpPdf,
     exportRfpPdf,
+    exportRfpSummaryPdf,
     downloadBidPdf,
     exportBidPdf,
     setSnackbar,

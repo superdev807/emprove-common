@@ -35,7 +35,18 @@ class PdfViewerModal extends Component {
     show: PropTypes.bool,
     source: PropTypes.string,
     timezone: PropTypes.string,
-    type: PropTypes.oneOf(['bid', 'rfp'])
+    type: PropTypes.oneOf(['bid', 'rfp', 'rfpSummary'])
+  };
+
+  handleSendPDF = () => {
+    switch (this.props.type) {
+      case 'rfp':
+        return this.handleSendRfpPDF();
+      case 'bid':
+        return this.handleSendBidPDF();
+      case 'rfpSummary':
+        return this.handleSendRfpSummary();
+    }
   };
 
   handleSendRfpPDF = async () => {
@@ -72,6 +83,10 @@ class PdfViewerModal extends Component {
     }
   };
 
+  handleSendRfpSummary = () => {
+    // TODO
+  };
+
   handleClose = () => {
     const { handleHide, onClose } = this.props;
     onClose && onClose();
@@ -97,6 +112,8 @@ class PdfViewerModal extends Component {
       }
       link.download = this.props.fileName;
       link.dispatchEvent(new MouseEvent('click'));
+
+      this.props.setSnackbar({ message: 'Downloaded', variant: 'success' });
     }
   };
 
@@ -123,7 +140,7 @@ class PdfViewerModal extends Component {
                 className={classes.downloadButton}
                 color="primary"
                 variant="contained"
-                onClick={type === 'rfp' ? this.handleSendRfpPDF : this.handleSendBidPDF}>
+                onClick={this.handleSendPDF}>
                 DOWNLOAD
               </Button>
             ) : null)}

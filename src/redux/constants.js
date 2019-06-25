@@ -13,6 +13,7 @@ export const TOGGLE_DRAWER = 'emprove.common.TOGGLE_DRAWER';
 
 export const EXPORT_RFP_PDF = 'emprove.common.EXPORT_RFP_PDF';
 export const DOWNLOAD_RFP_PDF = 'emprove.common.DOWNLOAD_RFP_PDF';
+export const EXPORT_RFP_SUMMARY_PDF = 'emprove.common.EXPORT_RFP_SUMMARY_PDF';
 export const SEND_RFP_PDF = 'emprove.common.SEND_RFP_PDF';
 export const EXPORT_BID_PDF = 'emprove.common.EXPORT_BID_PDF';
 export const DOWNLOAD_BID_PDF = 'emprove.common.DOWNLOAD_BID_PDF';
