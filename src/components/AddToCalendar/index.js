@@ -111,7 +111,7 @@ class AddToCalendar extends Component {
       );
     } else {
       buttonProps.color = 'primary';
-      buttonProps.variant = 'raised';
+      buttonProps.variant = 'contained';
     }
 
     return <Button {...buttonProps}>Add to Calendar</Button>;
