@@ -32,3 +32,15 @@ export const parseGeocodeApiResult = result => {
     return null;
   }
 };
+
+export const parseZipcodeAndState = result => {
+  const addressComponents = get(result, 'address_components');
+  if (addressComponents) {
+    const zipcode = getAddressComponentFromGoogle(addressComponents, 'postal_code');
+    const state = getAddressComponentFromGoogle(addressComponents, 'administrative_area_level_1', true);
+    if (zipcode && state) {
+      return { zipcode, state };
+    }
+  }
+  return {};
+};
