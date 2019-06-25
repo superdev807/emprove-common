@@ -6,7 +6,8 @@ export const VIEW_PDF_KIND = {
   FULL_RFP: 'full_rfp',
   SAMPLE_RFP: 'sample_rfp',
   SAMPLE_CONTRACT: 'sample_contract',
-  SAMPLE_FLYER: 'sample_flyer'
+  SAMPLE_FLYER: 'sample_flyer',
+  RFP_SUMMARY: 'rfp_summary'
 };
 
 export const FIND_NEAR_CITY_START_RADIUS = 500; // miles

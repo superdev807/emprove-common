@@ -11,7 +11,8 @@ import {
   EXPORT_BID_PDF,
   DOWNLOAD_BID_PDF,
   SEND_BID_PDF,
-  EXPORT_CONTRACT_PDF
+  EXPORT_CONTRACT_PDF,
+  EXPORT_RFP_SUMMARY_PDF
 } from '../constants';
 
 /* Initial state */
@@ -24,6 +25,7 @@ const initialState = {
 export const exportRfpPdf = createAction(EXPORT_RFP_PDF);
 export const downloadRfpPdf = createAction(DOWNLOAD_RFP_PDF);
 export const sendRfpPdf = createAction(SEND_RFP_PDF);
+export const exportRfpSummaryPdf = createAction(EXPORT_RFP_SUMMARY_PDF);
 
 export const exportBidPdf = createAction(EXPORT_BID_PDF);
 export const downloadBidPdf = createAction(DOWNLOAD_BID_PDF);
@@ -85,6 +87,24 @@ export default handleActions(
       ...state,
       sendStatus: API_FAIL
     }),
+
+    /* exportRfpSummaryPdf actions */
+
+    [requestPending(EXPORT_RFP_SUMMARY_PDF)]: (state, { payload }) => ({
+      ...state,
+      status: API_PENDING
+    }),
+
+    [requestSuccess(EXPORT_RFP_SUMMARY_PDF)]: (state, { payload }) => ({
+      ...state,
+      status: API_SUCCESS
+    }),
+
+    [requestFail(EXPORT_RFP_SUMMARY_PDF)]: (state, { payload }) => ({
+      ...state,
+      status: API_FAIL
+    }),
+
     /* exportBidPdf actions */
 
     [requestPending(EXPORT_BID_PDF)]: (state, { payload }) => ({
