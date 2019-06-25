@@ -3,7 +3,7 @@
 import fp from 'lodash/fp';
 import get from 'lodash/get';
 
-const getAddressComponentFromGoogle = (addressComponents, name, short = false) => {
+export const getAddressComponentFromGoogle = (addressComponents, name, short = false) => {
   return fp.compose(
     //eslint-disable-line
     fp.defaultTo(''),
