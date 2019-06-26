@@ -13,18 +13,14 @@ const withRouterAndQueryParams = WrappedComponent => {
     };
 
     pushWithQuery = ({ location, queryParams }) => {
-      const { history } = this.props;
-
-      history.push({
+      this.props.history.push({
         ...location,
         search: jsonToQueryString(queryParams)
       });
     };
 
     replaceWithQuery = ({ location, queryParams }) => {
-      const { history } = this.props;
-
-      history.replace({
+      this.props.history.replace({
         ...location,
         search: jsonToQueryString(queryParams)
       });
