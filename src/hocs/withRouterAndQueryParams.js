@@ -21,9 +21,25 @@ const withRouterAndQueryParams = WrappedComponent => {
       });
     };
 
+    replaceWithQuery = ({ location, queryParams }) => {
+      const { history } = this.props;
+
+      history.replace({
+        ...location,
+        search: jsonToQueryString(queryParams)
+      });
+    };
+
     render() {
       const queryParams = parseQueryString(location.search);
-      return <WrappedComponent {...this.props} queryParams={queryParams} pushWithQuery={this.pushWithQuery} />;
+      return (
+        <WrappedComponent
+          {...this.props}
+          queryParams={queryParams}
+          pushWithQuery={this.pushWithQuery}
+          replaceWithQuery={this.replaceWithQuery}
+        />
+      );
     }
   }
 

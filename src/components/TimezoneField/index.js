@@ -128,7 +128,17 @@ export class TimezoneField extends Component {
   };
 
   render() {
-    const { className, classes, disabled, helperText, input, label, placeholder, meta: { error, touched }, theme } = this.props;
+    const {
+      className,
+      classes,
+      disabled,
+      helperText,
+      input,
+      label,
+      placeholder,
+      meta: { error, touched },
+      theme
+    } = this.props;
 
     const autosuggestProps = {
       renderInputComponent,
