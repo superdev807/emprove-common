@@ -1,6 +1,6 @@
 {
   "name": "emprove-common",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "The common library to be used by Emprove frontend applications",
   "main": "lib/index.js",
   "scripts": {
