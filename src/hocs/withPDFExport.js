@@ -158,7 +158,8 @@ export default timezoneSelector => WrappedComponent => {
             source: url,
             type: 'rfpSummary',
             fileName,
-            rfpId
+            rfpId,
+            timezone: this.props.timezone
           });
           callback && callback(true);
         },

@@ -20,7 +20,7 @@ import PdfView from '../PdfView';
 import styles from './styles';
 import { API_PENDING } from '../../redux/api/request';
 import { VIEW_PDF_KIND } from '../../config/constants';
-import { sendRfpPdf, sendBidPdf } from '../../redux/modules/pdf';
+import { sendRfpPdf, sendRfpSummaryPdf, sendBidPdf } from '../../redux/modules/pdf';
 import { isMobileSelector, sendPdfStatusSelector } from '../../redux/selectors';
 import { setSnackbar } from '../../redux/modules/globalStatus';
 
@@ -84,7 +84,20 @@ class PdfViewerModal extends Component {
   };
 
   handleSendRfpSummary = () => {
-    // TODO
+    const { rfpId } = this.props;
+
+    if (rfpId) {
+      this.props.sendRfpSummaryPdf({
+        id: rfpId,
+        data: {
+          fileName: this.props.fileName,
+          timezone: this.props.timezone
+        },
+        success: () => {
+          setSnackbar({ message: 'Successfully Sent to Your Email!', variant: 'success' });
+        }
+      });
+    }
   };
 
   handleClose = () => {
@@ -134,7 +147,7 @@ class PdfViewerModal extends Component {
               <IconButton onClick={this.handleDownloadPDF}>
                 <IconDownload className={classes.topIcon} />
               </IconButton>
-            ) : pdfKind === VIEW_PDF_KIND.FULL_RFP ? (
+            ) : pdfKind === VIEW_PDF_KIND.FULL_RFP || pdfKind === VIEW_PDF_KIND.RFP_SUMMARY ? (
               <Button
                 id="buttons_downloaded_rfp"
                 className={classes.downloadButton}
@@ -170,6 +183,7 @@ const selector = createStructuredSelector({
 const actions = {
   sendBidPdf,
   sendRfpPdf,
+  sendRfpSummaryPdf,
   setSnackbar
 };
 
