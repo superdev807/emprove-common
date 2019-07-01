@@ -94,7 +94,7 @@ class PdfViewerModal extends Component {
           timezone: this.props.timezone
         },
         success: () => {
-          setSnackbar({ message: 'Successfully Sent to Your Email!', variant: 'success' });
+          this.props.setSnackbar({ message: `Plan sent to ${this.props.email}`, variant: 'success' });
         }
       });
     }

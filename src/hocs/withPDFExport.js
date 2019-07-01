@@ -1,6 +1,7 @@
 'use strict';
 
 import React, { Component, Fragment } from 'react';
+import get from 'lodash/get';
 import moment from 'moment';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
@@ -14,7 +15,7 @@ import { withRouter } from 'react-router';
 import { API_PENDING, API_SUCCESS } from '../redux/api/request';
 import { VIEW_PDF_KIND } from '../config/constants';
 
-export default timezoneSelector => WrappedComponent => {
+export default (timezoneSelector, accountSelector) => WrappedComponent => {
   class PDFExportWrapper extends Component {
     handleExportRfp = (exportRfpId = null, callback) => {
       const rfpId = exportRfpId || this.props.match.params.rfpId;
@@ -159,7 +160,8 @@ export default timezoneSelector => WrappedComponent => {
             type: 'rfpSummary',
             fileName,
             rfpId,
-            timezone: this.props.timezone
+            timezone: this.props.timezone,
+            email: get(this.props.user, 'email')
           });
           callback && callback(true);
         },
@@ -187,7 +189,7 @@ export default timezoneSelector => WrappedComponent => {
     };
 
     render() {
-      const { exportStatus, ...others } = this.props;
+      const { exportStatus, user, ...others } = this.props;
       const isExporting = exportStatus === API_PENDING;
       return (
         <WrappedComponent
@@ -207,7 +209,11 @@ export default timezoneSelector => WrappedComponent => {
   }
 
   const selector = createStructuredSelector(
-    Object.assign({}, { exportStatus: exportStatusSelector }, timezoneSelector ? { timezone: timezoneSelector } : {})
+    Object.assign(
+      { exportStatus: exportStatusSelector },
+      accountSelector ? { user: accountSelector } : {},
+      timezoneSelector ? { timezone: timezoneSelector } : {}
+    )
   );
 
   const actions = {
