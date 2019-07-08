@@ -11,3 +11,12 @@ export const VIEW_PDF_KIND = {
 };
 
 export const FIND_NEAR_CITY_START_RADIUS = 500; // miles
+
+export const PARTNER = {
+  REDFIN: 'redfin',
+  ZILLOW: 'zillow',
+  REALTOR_DOT_COM: 'realtor-dot-com',
+  COMPASS: 'compass',
+  COLDWELL: 'coldwell',
+  KELLER_WILLIAMS: 'kw'
+};

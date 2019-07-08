@@ -4,24 +4,43 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { Link } from 'react-router-dom';
+
+import withPartner from '../../hocs/withPartner';
+import { PARTNER } from '../../config/constants';
+
 import './styles.scss';
 
-const Logo = ({ className, destination, imageClass, noLink, shortened, contractor, version, id }) => {
+export const Logo = ({ className, destination, imageClass, noLink, shortened, contractor, version, id, partner }) => {
+  let imageFilename;
   const isBeta = version === 'beta';
 
-  let imageFilename = isBeta ? 'emprove_beta_logo.svg' : 'emprove_logo.svg';
-  if (shortened) {
-    imageFilename = 'ic_e_logo.png';
-  } else if (contractor) {
-    imageFilename = isBeta ? 'emprove_pro_beta_logo.svg' : 'emprove_pro_logo.svg';
+  if (partner === PARTNER.REDFIN) {
+    imageFilename = `${process.env.IMGIX_PUBLIC_IMAGES_HOST}consumer/partner-landing/redfin_powered_by_emprove.png?auto=format`;
+  } else {
+    imageFilename = isBeta ? 'emprove_beta_logo.svg' : 'emprove_logo.svg';
+    if (shortened) {
+      imageFilename = 'ic_e_logo.png';
+    } else if (contractor) {
+      imageFilename = isBeta ? 'emprove_pro_beta_logo.svg' : 'emprove_pro_logo.svg';
+    }
+    imageFilename = `/images/${imageFilename}`;
   }
+
   let Container;
   const extraProps = {};
-  if (noLink) {
-    Container = 'div';
+
+  if (partner === PARTNER.REDFIN) {
+    Container = 'a';
+    extraProps.href = 'https://redfin.com';
+    extraProps.target = '_blank';
+    extraProps.rel = 'noopener noreferrer';
   } else {
-    Container = Link;
-    extraProps.to = destination;
+    if (noLink) {
+      Container = 'div';
+    } else {
+      Container = Link;
+      extraProps.to = destination;
+    }
   }
 
   return (
@@ -29,7 +48,7 @@ const Logo = ({ className, destination, imageClass, noLink, shortened, contracto
       className={cx('logo', { 'logo__image--shortened': shortened, 'logo__image--beta': !shortened && isBeta }, className)}
       id={id}
       {...extraProps}>
-      <img className={cx('logo__image', imageClass)} src={`/images/${imageFilename}`} alt="Emprove | Home Improvement Renewed" />
+      <img className={cx('logo__image', imageClass)} src={imageFilename} alt="Emprove | Home Improvement Renewed" />
     </Container>
   );
 };
@@ -52,4 +71,4 @@ Logo.defaultProps = {
   version: '1'
 };
 
-export default Logo;
+export default withPartner(Logo);
