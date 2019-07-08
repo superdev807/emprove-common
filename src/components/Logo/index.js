@@ -10,7 +10,7 @@ import { PARTNER } from '../../config/constants';
 
 import './styles.scss';
 
-const Logo = ({ className, destination, imageClass, noLink, shortened, contractor, version, id, partner }) => {
+export const Logo = ({ className, destination, imageClass, noLink, shortened, contractor, version, id, partner }) => {
   let imageFilename;
   const isBeta = version === 'beta';
 
