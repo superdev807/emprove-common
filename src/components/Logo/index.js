@@ -15,7 +15,7 @@ export const Logo = ({ className, destination, imageClass, noLink, shortened, co
   const isBeta = version === 'beta';
 
   if (partner === PARTNER.REDFIN) {
-    imageFilename = 'redfin/redfin_logo.png';
+    imageFilename = `${process.env.IMGIX_PUBLIC_IMAGES_HOST}consumer/partner-landing/redfin_powered_by_emprove.png?auto=format`;
   } else {
     imageFilename = isBeta ? 'emprove_beta_logo.svg' : 'emprove_logo.svg';
     if (shortened) {
@@ -23,6 +23,7 @@ export const Logo = ({ className, destination, imageClass, noLink, shortened, co
     } else if (contractor) {
       imageFilename = isBeta ? 'emprove_pro_beta_logo.svg' : 'emprove_pro_logo.svg';
     }
+    imageFilename = `/images/${imageFilename}`;
   }
 
   let Container;
@@ -32,6 +33,7 @@ export const Logo = ({ className, destination, imageClass, noLink, shortened, co
     Container = 'a';
     extraProps.href = 'https://redfin.com';
     extraProps.target = '_blank';
+    extraProps.rel = 'noopener noreferrer';
   } else {
     if (noLink) {
       Container = 'div';
@@ -46,7 +48,7 @@ export const Logo = ({ className, destination, imageClass, noLink, shortened, co
       className={cx('logo', { 'logo__image--shortened': shortened, 'logo__image--beta': !shortened && isBeta }, className)}
       id={id}
       {...extraProps}>
-      <img className={cx('logo__image', imageClass)} src={`/images/${imageFilename}`} alt="Emprove | Home Improvement Renewed" />
+      <img className={cx('logo__image', imageClass)} src={imageFilename} alt="Emprove | Home Improvement Renewed" />
     </Container>
   );
 };
