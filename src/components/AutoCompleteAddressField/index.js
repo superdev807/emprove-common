@@ -99,6 +99,7 @@ class AutoCompleteAddressField extends Component {
               <div className="auto-complete-address-field__formControl">
                 <input
                   {...getInputProps({
+                    placeholder: 'enter your home address',
                     className: 'auto-complete-address-field__input'
                   })}
                 />
