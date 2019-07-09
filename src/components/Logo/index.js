@@ -15,7 +15,12 @@ export const Logo = ({ className, destination, imageClass, noLink, shortened, co
   const isBeta = version === 'beta';
 
   if (subDomain === PARTNER.REDFIN) {
-    imageFilename = `${process.env.IMGIX_PUBLIC_IMAGES_HOST}consumer/partner-landing/redfin_powered_by_emprove.png?auto=format`;
+    if (shortened) {
+      imageFilename = 'redfin_emprove_logo.png';
+    } else {
+      imageFilename = 'redfin_powered_by_emprove.png';
+    }
+    imageFilename = `${process.env.IMGIX_PUBLIC_IMAGES_HOST}consumer/partner-landing/${imageFilename}?auto=format`;
   } else {
     imageFilename = isBeta ? 'emprove_beta_logo.svg' : 'emprove_logo.svg';
     if (shortened) {
