@@ -1,5 +1,7 @@
 @import 'variables';
 
+require('../../../../config/colors');
+
 .footer-list {
   list-style: none;
   margin: 0;
@@ -14,7 +16,7 @@
 
       &:hover {
         text-decoration: none;
-        color: $primary;
+        color: $PRIMARY;
       }
     }
   }

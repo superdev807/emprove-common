@@ -1,11 +1,11 @@
-@import 'variables';
+require('../../../../config/colors');
 
 .press-media {
   &__link-box {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: $primary;
+    color: $PRIMARY;
   }
 
   &__down-text {
@@ -14,6 +14,6 @@
 
   &__down-icon-button {
     cursor: pointer;
-    color: $primary;
+    color: $PRIMARY;
   }
 }

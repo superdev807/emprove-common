@@ -1,5 +1,7 @@
 @import 'variables';
 
+require('../../config/colors');
+
 .card-form {
   &__input {
     padding: $spacing-unit;
@@ -7,7 +9,7 @@
     margin-bottom: $spacing-unit * 3;
 
     &.StripeElement--focus {
-      border-bottom-color: $primary;
+      border-bottom-color: $PRIMARY;
     }
 
     &.StripeElement--invalid {

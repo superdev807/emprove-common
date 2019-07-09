@@ -1,5 +1,7 @@
 @import 'variables';
 
+require('../../../../config/colors');
+
 .team-member {
   font-size: 1rem;
   line-height: 1.4rem;
@@ -36,7 +38,7 @@
     align-items: center;
 
     &:after {
-      border-bottom: 3px solid $primary;
+      border-bottom: 3px solid $PRIMARY;
       content: '';
       display: block;
       width: 36px;

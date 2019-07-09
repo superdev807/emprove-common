@@ -1,6 +1,8 @@
 @import 'variables';
 @import 'mixins';
 
+require('../../config/colors');
+
 .drop-down-menu-btn {
 
   &__btn {
@@ -16,7 +18,7 @@
     }
 
     &--active {
-      border: 1px solid $primary;
+      border: 1px solid $PRIMARY;
     }
 
     &-label {
@@ -24,7 +26,7 @@
       font-weight: 600;
 
       &--active {
-        color: $primary;
+        color: $PRIMARY;
       }
     }
 

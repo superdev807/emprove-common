@@ -1,5 +1,7 @@
 @import 'variables';
 
+require('../../../../config/colors');
+
 .drop-down-menu {
   width: 100%;
 
@@ -13,7 +15,7 @@
       padding-left: 4px;
 
       &--selected {
-        color: $primary;
+        color: $PRIMARY;
       }
     }
 
@@ -29,7 +31,7 @@
       background-color: $very-light-gray;
 
       & .drop-down-menu__item-label {
-        color: $primary;
+        color: $PRIMARY;
       }
     }
   }
@@ -76,7 +78,7 @@
 
     &:hover {
       background: $very-light-gray;
-      color: $primary;
+      color: $PRIMARY;
     }
   }
 }
