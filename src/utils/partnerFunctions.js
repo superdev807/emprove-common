@@ -3,7 +3,7 @@
 import { PARTNER } from '../config/constants';
 
 export const getPartnerFromHost = () => {
-  if (process.env.REDFIN_SUBDOMAIN && process.env.REDFIN_SUBDOMAIN.includes(window.location.host)) {
+  if (process.env.IS_REDFIN) {
     return PARTNER.REDFIN;
   }
   return null;
