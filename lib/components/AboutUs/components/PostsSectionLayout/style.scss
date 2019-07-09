@@ -1,6 +1,8 @@
 @import 'variables';
 @import 'mixins';
 
+require('../../../../config/colors');
+
 .posts-section {
   padding-top: 12vh;
   text-align: center;
@@ -12,7 +14,7 @@
     padding-bottom: 2vh;
 
     span {
-      color: $primary;
+      color: $PRIMARY;
     }
   }
 
@@ -25,14 +27,14 @@
   }
 
   &__link-view-all {
-    color: $primary;
+    color: $PRIMARY;
     text-decoration: underline;
-    text-decoration-color: $primary;
+    text-decoration-color: $PRIMARY;
     font-size: 100%;
   }
 
   &--orange {
-    color: $primary;
+    color: $PRIMARY;
   }
 
   &__transition-div {

@@ -1,10 +1,9 @@
-@import 'variables';
-@import 'mixins';
+require('../../config/colors');
 
 .logo {
   font-size: 0;
   line-height: 0;
-  color: $primary;
+  color: $PRIMARY;
   text-align: left;
   height: 32px;
 

@@ -1,5 +1,7 @@
 @import 'variables';
 
+require('../../config/colors');
+
 .project-scope-field {
   &__option {
     display: flex;
@@ -36,7 +38,7 @@
       }
 
       &.replace {
-        background-color: $primary;
+        background-color: $PRIMARY;
       }
     }
   }

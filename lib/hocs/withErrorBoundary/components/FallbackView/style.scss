@@ -1,6 +1,8 @@
 @import 'variables';
 @import 'mixins';
 
+require('../../../../config/colors');
+
 .fallback-view {
   position: absolute;
   left: 0;
@@ -26,7 +28,7 @@
     font-size: 4em;
     font-weight: 500;
     margin: 6vh auto 0;
-    color: $primary;
+    color: $PRIMARY;
     @include media ('<=sm') {
       font-size: 3.5em;
       margin: 2vh auto 0;
@@ -83,7 +85,7 @@
   &__link {
     font-size: 0.8em;
     margin: 0 1em;
-    color: $primary;
+    color: $PRIMARY;
     font-weight: 400;
     cursor: pointer;
   }

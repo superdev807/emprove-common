@@ -1,6 +1,6 @@
-@import 'variables';
+require('../../../../config/colors');
 
 .how-to-use-subtitle {
-  color: $primary;
+  color: $PRIMARY;
   font-weight: 500;
 }

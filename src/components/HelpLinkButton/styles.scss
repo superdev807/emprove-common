@@ -1,6 +1,8 @@
 @import 'variables';
 @import 'common-mixins';
 
+require('../../config/colors');
+
 .help-link-button {
   height: 24px;
   width: 24px;
@@ -24,10 +26,10 @@
   }
 
   &--blink {
-    @include blinking-with-color(5, $primary);
+    @include blinking-with-color(5, $PRIMARY);
   }
 
   &--highlighted {
-    color: $primary;
+    color: $PRIMARY;
   }
 }

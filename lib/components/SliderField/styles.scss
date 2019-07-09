@@ -1,6 +1,8 @@
 @import 'variables';
 @import 'mixins';
 
+require('../../config/colors');
+
 .slider-field {
 
   &__root {
@@ -12,7 +14,7 @@
     height: 3px;
 
     &-before {
-      background-color: $primary
+      background-color: $PRIMARY;
     }
   }
 
@@ -46,7 +48,7 @@
       // }
 
       &--selected {
-        color: $primary
+        color: $PRIMARY
       }
     }
   }
@@ -61,7 +63,7 @@
   &__tick {
     width: 3px;
     height: 3px;
-    background-color: $primary;
+    background-color: $PRIMARY;
     position: absolute;
     display: inline-block;
     transform: translate(-50%, 50%);
@@ -70,7 +72,7 @@
 
     &--passed {
       background-color: $very-light-gray;
-      border: 0.1px solid $primary;
+      border: 0.1px solid $PRIMARY;
     }
   }
 }

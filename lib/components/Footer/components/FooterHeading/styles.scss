@@ -1,5 +1,7 @@
 @import 'variables';
 
+require('../../../../config/colors');
+
 .footer-heading {
   text-align: center;
   font-size: 1.25rem;
@@ -10,7 +12,7 @@
 
   &__text {
     &--highlighted {
-      color: $primary;
+      color: $PRIMARY;
     }
 
     &--emphasized {

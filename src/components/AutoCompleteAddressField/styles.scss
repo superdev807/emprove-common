@@ -1,5 +1,7 @@
 @import 'variables';
 
+require('../../config/colors');
+
 .auto-complete-address-field {
   width: 100%;
   position: relative;
@@ -44,7 +46,7 @@
         width: 100%;
         position: relative;
         font-size: 14px;
-        color: $primary;
+        color: $PRIMARY;
         cursor: text;
         display: inline-flex;
         line-height: 1.1875em;
