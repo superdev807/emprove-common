@@ -7,7 +7,7 @@ const withPartner = WrappedComponent => {
   class PartnerWrapper extends Component {
     render() {
       const partner = getPartnerFromHost();
-      return <WrappedComponent {...this.props} partner={partner} />;
+      return <WrappedComponent {...this.props} subDomain={partner} />;
     }
   }
 

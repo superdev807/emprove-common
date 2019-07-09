@@ -10,11 +10,11 @@ import { PARTNER } from '../../config/constants';
 
 import './styles.scss';
 
-export const Logo = ({ className, destination, imageClass, noLink, shortened, contractor, version, id, partner }) => {
+export const Logo = ({ className, destination, imageClass, noLink, shortened, contractor, version, id, subDomain }) => {
   let imageFilename;
   const isBeta = version === 'beta';
 
-  if (partner === PARTNER.REDFIN) {
+  if (subDomain === PARTNER.REDFIN) {
     imageFilename = `${process.env.IMGIX_PUBLIC_IMAGES_HOST}consumer/partner-landing/redfin_powered_by_emprove.png?auto=format`;
   } else {
     imageFilename = isBeta ? 'emprove_beta_logo.svg' : 'emprove_logo.svg';
@@ -29,7 +29,7 @@ export const Logo = ({ className, destination, imageClass, noLink, shortened, co
   let Container;
   const extraProps = {};
 
-  if (partner === PARTNER.REDFIN) {
+  if (subDomain === PARTNER.REDFIN) {
     Container = 'a';
     extraProps.href = 'https://redfin.com';
     extraProps.target = '_blank';
