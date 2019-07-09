@@ -4,8 +4,11 @@ import React, { Component, Fragment } from 'react';
 import cx from 'classnames';
 import get from 'lodash/get';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 import { FormattedNumber } from 'react-intl';
 import { getMinimum, getMaximum } from '../../utils/projectCostFunctions';
+import { isPhoneSelector } from '../../redux/selectors';
 
 import './styles.scss';
 
@@ -14,6 +17,7 @@ class ProjectScaleGraph extends Component {
     className: PropTypes.string,
     dataSets: PropTypes.arrayOf(PropTypes.object),
     grid: PropTypes.object,
+    isPhone: PropTypes.bool,
     margin: PropTypes.object,
     mark: PropTypes.object,
     showVerticalGridLines: PropTypes.bool,
@@ -24,6 +28,7 @@ class ProjectScaleGraph extends Component {
 
   static defaultProps = {
     grid: {},
+    isPhone: false,
     margin: { top: 32, right: 32, bottom: 64, left: 112 },
     showVerticalGridLines: false,
     showXAxis: false,
@@ -427,23 +432,23 @@ class ProjectScaleGraph extends Component {
   }
 
   renderTooltip(xValue) {
-    const { dataSets } = this.props;
-
     const marginTop = 40;
     const marginLeft = 30;
     const tooltipWidth = 200;
     const tooltipHeight = 350;
+    const isLeftTooltip = (this.props.isPhone && xValue > 2) || xValue > 3;
     const cx = this.mapRealXToGraphX(xValue);
-    const tooltipX = cx + (xValue < 4 ? 50 : -tooltipWidth - 50);
+    const tooltipX = cx + (isLeftTooltip ? -tooltipWidth - 50 : 50);
     const tooltipY = this.state.margin.top + (this.state.grid.height - tooltipHeight) / 2;
     const cy = tooltipY + tooltipHeight * 0.7;
-    const polygonPoints =
-      xValue < 4 ? `${cx + 25},${cy} ${cx + 50},${cy} ${cx + 50},${cy - 15}` : `${cx - 25},${cy} ${cx - 50},${cy} ${cx - 50},${cy - 15}`;
+    const polygonPoints = isLeftTooltip
+      ? `${cx - 25},${cy} ${cx - 50},${cy} ${cx - 50},${cy - 15}`
+      : `${cx + 25},${cy} ${cx + 50},${cy} ${cx + 50},${cy - 15}`;
 
     let projectScale = '';
     const costValues = [];
     for (let i = 1; i < 6; i++) {
-      const dataSet = dataSets[i];
+      const dataSet = this.props.dataSets[i];
       const found = dataSet.values.find(item => item.xValue === xValue);
       const cost = found ? found.yValue : 0;
       costValues.push({
@@ -507,4 +512,8 @@ class ProjectScaleGraph extends Component {
   }
 }
 
-export default ProjectScaleGraph;
+const selector = createStructuredSelector({
+  isPhone: isPhoneSelector
+});
+
+export default connect(selector)(ProjectScaleGraph);
