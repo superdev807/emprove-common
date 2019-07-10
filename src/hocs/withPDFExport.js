@@ -22,13 +22,11 @@ export default (timezoneSelector, accountSelector) => WrappedComponent => {
       const rfpId = exportRfpId || this.props.match.params.rfpId;
       const { exportRfpPdf, setSnackbar } = this.props;
       const hostPartner = getPartnerFromHost();
-      const accountPartner = get(this.props.user, 'partner');
 
       exportRfpPdf({
         id: rfpId,
         params: {
           timezone: getLocalTimezone(),
-          accountPartner,
           hostPartner
         },
         success: ({ url, fileName }) => {
@@ -47,13 +45,11 @@ export default (timezoneSelector, accountSelector) => WrappedComponent => {
       const rfpId = downloadRfpId || this.props.match.params.rfpId;
       const { downloadRfpPdf, setSnackbar } = this.props;
       const hostPartner = getPartnerFromHost();
-      const accountPartner = get(this.props.user, 'partner');
 
       downloadRfpPdf({
         id: rfpId,
         params: {
           timezone: getLocalTimezone(),
-          accountPartner,
           hostPartner
         },
         success: () => {
@@ -72,15 +68,13 @@ export default (timezoneSelector, accountSelector) => WrappedComponent => {
       const { exportRfpPdf, match, setSnackbar, showModal, timezone } = this.props;
       const rfpId = viewRfpId || match.params.rfpId;
       const hostPartner = getPartnerFromHost();
-      const accountPartner = get(this.props.user, 'partner');
 
       exportRfpPdf({
         id: rfpId,
         params: {
           timezone: getLocalTimezone(),
           skipAccountIdMatching,
-          hostPartner,
-          accountPartner
+          hostPartner
         },
         success: ({ url, fileName }) => {
           showModal('pdfViewerModal', {
@@ -165,12 +159,10 @@ export default (timezoneSelector, accountSelector) => WrappedComponent => {
 
     handleExportRfpSummary = (rfpId, callback) => {
       const hostPartner = getPartnerFromHost();
-      const accountPartner = get(this.props.user, 'partner');
       this.props.exportRfpSummaryPdf({
         id: rfpId,
         params: {
-          hostPartner,
-          accountPartner
+          hostPartner
         },
         success: ({ url, fileName }) => {
           this.props.showModal('pdfViewerModal', {
