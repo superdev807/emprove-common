@@ -34,18 +34,11 @@ export const Logo = ({ className, destination, imageClass, noLink, shortened, co
   let Container;
   const extraProps = {};
 
-  if (subDomain === PARTNER.REDFIN) {
-    Container = 'a';
-    extraProps.href = 'https://redfin.com';
-    extraProps.target = '_blank';
-    extraProps.rel = 'noopener noreferrer';
+  if (noLink) {
+    Container = 'div';
   } else {
-    if (noLink) {
-      Container = 'div';
-    } else {
-      Container = Link;
-      extraProps.to = destination;
-    }
+    Container = Link;
+    extraProps.to = destination;
   }
 
   return (
