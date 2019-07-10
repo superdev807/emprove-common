@@ -35,6 +35,7 @@ export const RfpStatus = {
 };
 
 export const HomeArea = {
+  ALL: -1,
   BACKYARD: 3,
   GUEST_BATHROOM: 6,
   MASTER_BATHROOM: 8,
