@@ -7,6 +7,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { FormattedNumber } from 'react-intl';
+
+import Colors from '../../config/colors';
 import { getMinimum, getMaximum } from '../../utils/projectCostFunctions';
 import { isPhoneSelector } from '../../redux/selectors';
 
@@ -404,7 +406,7 @@ class ProjectScaleGraph extends Component {
 
       return (
         <g className="project-scale-graph__mark">
-          <circle cx={cx} cy={cy} r="15" fill={markColor ? markColor : '#ff9e3c'} />
+          <circle cx={cx} cy={cy} r="15" fill={markColor ? markColor : Colors.PRIMARY} />
           <circle cx={cx} cy={cy} r="5" fill="#ffffff" />
         </g>
       );
@@ -432,6 +434,8 @@ class ProjectScaleGraph extends Component {
   }
 
   renderTooltip(xValue) {
+    const { markColor } = this.props;
+
     const marginTop = 40;
     const marginLeft = 30;
     const tooltipWidth = 200;
@@ -466,7 +470,7 @@ class ProjectScaleGraph extends Component {
           y1={this.state.margin.top}
           x2={cx}
           y2={this.state.margin.top + this.state.grid.height}
-          stroke="#ff9e3c"
+          stroke={markColor ? markColor : Colors.PRIMARY}
           strokeWidth="1"
         />
         <polygon points={polygonPoints} fill="rgba(0,0,0,0.6)" />

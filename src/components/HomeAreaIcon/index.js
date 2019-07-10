@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import IconHomeAreaAll from '../../icons/IconHomeAreaAll';
 import IconGuestBathroom from '../../icons/IconGuestBathroom';
 import IconMasterBathroom from '../../icons/IconMasterBathroom';
 import IconPowderRoom from '../../icons/IconPowderRoom';
@@ -25,6 +26,9 @@ class HomeAreaIcon extends Component {
   render() {
     const { homeAreaId, ...otherProps } = this.props;
 
+    if (homeAreaId == HomeArea.ALL) {
+      return <IconHomeAreaAll {...otherProps} />;
+    }
     if (homeAreaId == HomeArea.BACKYARD) {
       return <IconBackyard {...otherProps} />;
     }
@@ -79,10 +83,7 @@ class HomeAreaIcon extends Component {
 }
 
 HomeAreaIcon.propTypes = {
-  homeAreaId: PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.string
-  ]).isRequired
+  homeAreaId: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired
 };
 
 export default HomeAreaIcon;
