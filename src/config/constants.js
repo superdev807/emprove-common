@@ -18,5 +18,6 @@ export const PARTNER = {
   REALTOR_DOT_COM: 'realtor-dot-com',
   COMPASS: 'compass',
   COLDWELL: 'coldwell',
-  KELLER_WILLIAMS: 'kw'
+  KELLER_WILLIAMS: 'kw',
+  EMPROVE: 'emprove'
 };
