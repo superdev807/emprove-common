@@ -24,7 +24,7 @@ jobs:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ] || [ "${CIRCLE_BRANCH}" == "0.0.1" ] || [ "${CIRCLE_BRANCH}" == "0.0.2" ] || [ "${CIRCLE_BRANCH}" == "0.0.3" ] || [ "${CIRCLE_BRANCH}" == "0.0.4" ] || [ "${CIRCLE_BRANCH}" == "0.0.5" ] || [ "${CIRCLE_BRANCH}" == "0.0.6" ] ||
               [ "${CIRCLE_BRANCH}" == "0.0.7" ] || [ "${CIRCLE_BRANCH}" == "0.0.8" ] || [ "${CIRCLE_BRANCH}" == "0.0.9" ] || [ "${CIRCLE_BRANCH}" == "0.0.10" ] || [ "${CIRCLE_BRANCH}" == "0.0.11" ] || [ "${CIRCLE_BRANCH}" == "0.0.12" ] || [ "${CIRCLE_BRANCH}" == "0.0.13" ] ||
-              [ "${CIRCLE_BRANCH}" == "0.0.14" ] || [ "${CIRCLE_BRANCH}" == "0.0.15" ] || [ "${CIRCLE_BRANCH}" == "0.0.16" ] || [ "${CIRCLE_BRANCH}" == "0.0.17" ] || [ "${CIRCLE_BRANCH}" == "0.0.18" ] || [ "${CIRCLE_BRANCH}" == "0.0.19" ]; then
+              [ "${CIRCLE_BRANCH}" == "0.0.14" ] || [ "${CIRCLE_BRANCH}" == "0.0.15" ] || [ "${CIRCLE_BRANCH}" == "0.0.16" ] || [ "${CIRCLE_BRANCH}" == "0.0.17" ] || [ "${CIRCLE_BRANCH}" == "0.0.18" ] || [ "${CIRCLE_BRANCH}" == "0.0.19" ] || [ "${CIRCLE_BRANCH}" == "0.0.20" ]; then
               git fetch --tags
               git tag ${CIRCLE_BRANCH}-`date +%F_%H-%M-%S`
               git push origin --tags
