@@ -21,3 +21,14 @@ export const PARTNER = {
   KELLER_WILLIAMS: 'kw',
   EMPROVE: 'emprove'
 };
+
+export const COUPON_TYPE = {
+  SINGLE: 'single',
+  MULTI: 'multi'
+};
+
+export const COUPON_VALUE_TYPE = {
+  FREE: 'free',
+  DISCOUNT: 'discount',
+  VALUE_DISCOUNT: 'value_discount'
+};

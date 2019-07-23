@@ -95,3 +95,8 @@ export const decodeSpecialCharacters = str => {
     return String.fromCharCode(dec);
   });
 };
+
+//14.995 -> 14.99
+export const truncateToCentsWithoutRounding = number => {
+  return parseFloat(parseFloat(number).toFixed(2)); //toFixed becomes a string
+};
