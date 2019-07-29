@@ -42,7 +42,7 @@ export const Logo = ({ className, destination, imageClass, noLink, shortened, co
 
   return (
     <Container
-      className={cx('logo', { 'logo__image--shortened': shortened, 'logo__image--beta': !shortened }, className)}
+      className={cx('logo', { 'logo__image--shortened': shortened }, className)}
       id={id}
       {...extraProps}>
       <img className={cx('logo__image', imageClass)} src={imageFilename} alt="Emprove | Home Improvement Renewed" />
