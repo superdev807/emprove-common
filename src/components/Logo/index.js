@@ -10,7 +10,7 @@ import { PARTNER } from '../../config/constants';
 
 import './styles.scss';
 
-export const Logo = ({ className, destination, imageClass, noLink, shortened, contractor, version, id, subDomain }) => {
+export const Logo = ({ className, destination, imageClass, noLink, shortened, contractor, id, subDomain }) => {
   let imageFilename;
 
   if (subDomain === PARTNER.REDFIN) {
@@ -56,16 +56,14 @@ Logo.propTypes = {
   className: PropTypes.string,
   contractor: PropTypes.bool,
   imageClass: PropTypes.string,
-  noLink: PropTypes.bool,
-  version: PropTypes.string
+  noLink: PropTypes.bool
 };
 
 Logo.defaultProps = {
   destination: '/',
   noLink: false,
   shortened: false,
-  contractor: false,
-  version: '1'
+  contractor: false
 };
 
 export default withPartner(Logo);
