@@ -10,9 +10,8 @@ import { PARTNER } from '../../config/constants';
 
 import './styles.scss';
 
-export const Logo = ({ className, destination, imageClass, noLink, shortened, contractor, version, id, subDomain }) => {
+export const Logo = ({ className, destination, imageClass, noLink, shortened, contractor, id, subDomain }) => {
   let imageFilename;
-  const isBeta = version === 'beta';
 
   if (subDomain === PARTNER.REDFIN) {
     if (shortened) {
@@ -22,11 +21,11 @@ export const Logo = ({ className, destination, imageClass, noLink, shortened, co
     }
     imageFilename = `${process.env.IMGIX_PUBLIC_IMAGES_HOST}consumer/partner-landing/${imageFilename}?auto=format`;
   } else {
-    imageFilename = isBeta ? 'emprove_beta_logo.svg' : 'emprove_logo.svg';
+    imageFilename = 'emprove_logo.svg';
     if (shortened) {
       imageFilename = 'ic_e_logo.png';
     } else if (contractor) {
-      imageFilename = isBeta ? 'emprove_pro_beta_logo.svg' : 'emprove_pro_logo.svg';
+      imageFilename = 'emprove_pro_logo.svg';
     }
     imageFilename = `/images/${imageFilename}`;
   }
@@ -43,7 +42,7 @@ export const Logo = ({ className, destination, imageClass, noLink, shortened, co
 
   return (
     <Container
-      className={cx('logo', { 'logo__image--shortened': shortened, 'logo__image--beta': !shortened && isBeta }, className)}
+      className={cx('logo', { 'logo__image--shortened': shortened, 'logo__image': !shortened }, className)}
       id={id}
       {...extraProps}>
       <img className={cx('logo__image', imageClass)} src={imageFilename} alt="Emprove | Home Improvement Renewed" />
@@ -57,16 +56,14 @@ Logo.propTypes = {
   className: PropTypes.string,
   contractor: PropTypes.bool,
   imageClass: PropTypes.string,
-  noLink: PropTypes.bool,
-  version: PropTypes.string
+  noLink: PropTypes.bool
 };
 
 Logo.defaultProps = {
   destination: '/',
   noLink: false,
   shortened: false,
-  contractor: false,
-  version: '1'
+  contractor: false
 };
 
 export default withPartner(Logo);
