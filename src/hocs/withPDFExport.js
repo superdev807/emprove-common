@@ -14,20 +14,20 @@ import { show as showModal } from 'redux-modal';
 import { withRouter } from 'react-router';
 import { API_PENDING, API_SUCCESS } from '../redux/api/request';
 import { VIEW_PDF_KIND } from '../config/constants';
-import { getPartnerFromHost } from '../utils/partnerFunctions';
+// import { getPartnerFromHost } from '../utils/partnerFunctions';
 
 export default (timezoneSelector, accountSelector) => WrappedComponent => {
   class PDFExportWrapper extends Component {
     handleExportRfp = (exportRfpId = null, callback) => {
       const rfpId = exportRfpId || this.props.match.params.rfpId;
       const { exportRfpPdf, setSnackbar } = this.props;
-      const hostPartner = getPartnerFromHost();
+      // const hostPartner = getPartnerFromHost();
 
       exportRfpPdf({
         id: rfpId,
         params: {
-          timezone: getLocalTimezone(),
-          hostPartner
+          timezone: getLocalTimezone()
+          // hostPartner
         },
         success: ({ url, fileName }) => {
           this.downloadFile(url, fileName);
@@ -44,13 +44,13 @@ export default (timezoneSelector, accountSelector) => WrappedComponent => {
     handleDownloadRfp = (downloadRfpId, callback) => {
       const rfpId = downloadRfpId || this.props.match.params.rfpId;
       const { downloadRfpPdf, setSnackbar } = this.props;
-      const hostPartner = getPartnerFromHost();
+      // const hostPartner = getPartnerFromHost();
 
       downloadRfpPdf({
         id: rfpId,
         params: {
-          timezone: getLocalTimezone(),
-          hostPartner
+          timezone: getLocalTimezone()
+          // hostPartner
         },
         success: () => {
           setSnackbar({ message: 'Successfully Sent to Your Email!', variant: 'success' });
@@ -67,14 +67,14 @@ export default (timezoneSelector, accountSelector) => WrappedComponent => {
       const { callback, onClose, blocker, disableDownload, showEditButton, skipAccountIdMatching, onEditClick } = options;
       const { exportRfpPdf, match, setSnackbar, showModal, timezone } = this.props;
       const rfpId = viewRfpId || match.params.rfpId;
-      const hostPartner = getPartnerFromHost();
+      // const hostPartner = getPartnerFromHost();
 
       exportRfpPdf({
         id: rfpId,
         params: {
           timezone: getLocalTimezone(),
-          skipAccountIdMatching,
-          hostPartner
+          skipAccountIdMatching
+          // hostPartner
         },
         success: ({ url, fileName }) => {
           showModal('pdfViewerModal', {
@@ -158,12 +158,12 @@ export default (timezoneSelector, accountSelector) => WrappedComponent => {
     };
 
     handleExportRfpSummary = (rfpId, callback) => {
-      const hostPartner = getPartnerFromHost();
+      // const hostPartner = getPartnerFromHost();
       this.props.exportRfpSummaryPdf({
         id: rfpId,
-        params: {
-          hostPartner
-        },
+        // params: {
+        //   hostPartner
+        // },
         success: ({ url, fileName }) => {
           this.props.showModal('pdfViewerModal', {
             pdfKind: VIEW_PDF_KIND.RFP_SUMMARY,
