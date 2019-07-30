@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { Link } from 'react-router-dom';
 
-import withPartner from '../../hocs/withPartner';
+// import withPartner from '../../hocs/withPartner';
 import { PARTNER } from '../../config/constants';
 
 import './styles.scss';
@@ -13,14 +13,14 @@ import './styles.scss';
 export const Logo = ({ className, destination, imageClass, noLink, shortened, contractor, id, subDomain }) => {
   let imageFilename;
 
-  if (subDomain === PARTNER.REDFIN) {
-    if (shortened) {
-      imageFilename = 'redfin_emprove_logo.png';
-    } else {
-      imageFilename = 'redfin_powered_by_emprove.png';
-    }
-    imageFilename = `${process.env.IMGIX_PUBLIC_IMAGES_HOST}consumer/partner-landing/${imageFilename}?auto=format`;
-  } else {
+  // if (subDomain === PARTNER.REDFIN) {
+  //   if (shortened) {
+  //     imageFilename = 'redfin_emprove_logo.png';
+  //   } else {
+  //     imageFilename = 'redfin_powered_by_emprove.png';
+  //   }
+  //   imageFilename = `${process.env.IMGIX_PUBLIC_IMAGES_HOST}consumer/partner-landing/${imageFilename}?auto=format`;
+  // } else {
     imageFilename = 'emprove_logo.svg';
     if (shortened) {
       imageFilename = 'ic_e_logo.png';
@@ -28,7 +28,7 @@ export const Logo = ({ className, destination, imageClass, noLink, shortened, co
       imageFilename = 'emprove_pro_logo.svg';
     }
     imageFilename = `/images/${imageFilename}`;
-  }
+  // }
 
   let Container;
   const extraProps = {};
@@ -66,4 +66,5 @@ Logo.defaultProps = {
   contractor: false
 };
 
-export default withPartner(Logo);
+// export default withPartner(Logo);
+export default Logo;
