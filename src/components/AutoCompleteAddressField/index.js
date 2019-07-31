@@ -18,7 +18,7 @@ import './styles.scss';
 
 class AutoCompleteAddressField extends Component {
   static propTypes = {
-    variant: PropTypes.oneOf(['outlined', 'underlined, standard']),
+    variant: PropTypes.oneOf(['outlined', 'underlined', 'standard']),
     type: PropTypes.oneOf(['text', 'button'])
   };
 
