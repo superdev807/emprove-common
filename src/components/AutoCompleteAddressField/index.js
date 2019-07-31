@@ -1,10 +1,12 @@
 'use strict';
 
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import cx from 'classnames';
 import get from 'lodash/get';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
+import InputLabel from '@material-ui/core/InputLabel';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
 import PlacesAutocomplete, { geocodeByPlaceId } from 'react-places-autocomplete';
 import PropTypes from 'prop-types';
 
@@ -16,7 +18,7 @@ import './styles.scss';
 
 class AutoCompleteAddressField extends Component {
   static propTypes = {
-    variant: PropTypes.oneOf(['outlined', 'underlined']),
+    variant: PropTypes.oneOf(['outlined', 'underlined, standard']),
     type: PropTypes.oneOf(['text', 'button'])
   };
 
@@ -33,6 +35,7 @@ class AutoCompleteAddressField extends Component {
       googleReady: Boolean(window.google)
     };
     this.cancelableLoadScript = null;
+    this.outlinedFieldLabelRef = React.createRef();
   }
 
   componentDidMount() {
@@ -66,7 +69,7 @@ class AutoCompleteAddressField extends Component {
         if (results.length > 0) {
           const result = parseGeocodeApiResult(results[0]);
           if (result) {
-            return input ? input.onBlur(result) : onSelect(result);
+            return onSelect ? onSelect(result) : input && input.onBlur(result);
           }
         }
         input ? input.onBlur(address) : onClear();
@@ -78,7 +81,7 @@ class AutoCompleteAddressField extends Component {
   };
 
   render() {
-    const { className, errorMessageClass, hideErrorText, input, meta, type, variant } = this.props;
+    const { className, errorMessageClass, hideErrorText, input, label, meta, type, variant } = this.props;
     const touched = get(meta, 'touched', false);
     const error = get(meta, 'error', null);
 
@@ -97,12 +100,30 @@ class AutoCompleteAddressField extends Component {
           {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
             <FormControl className={cx('auto-complete-address-field', className, variant)} error={touched && !!error}>
               <div className="auto-complete-address-field__formControl">
-                <input
-                  {...getInputProps({
-                    placeholder: 'enter your home address',
-                    className: 'auto-complete-address-field__input'
-                  })}
-                />
+                {variant === 'outlined' ? (
+                  <Fragment>
+                    {label && (
+                      <InputLabel {...this.props.inputLabelProps} ref={this.outlinedFieldLabelRef}>
+                        {label}
+                      </InputLabel>
+                    )}
+                    <OutlinedInput
+                      {...getInputProps({
+                        placeholder: 'enter your home address',
+                        className: 'auto-complete-address-field__input',
+                        labelWidth: get(this.outlinedFieldLabelRef, 'offsetWidth', 0),
+                        inputProps: this.props.inputProps
+                      })}
+                    />
+                  </Fragment>
+                ) : (
+                  <input
+                    {...getInputProps({
+                      placeholder: 'enter your home address',
+                      className: 'auto-complete-address-field__input'
+                    })}
+                  />
+                )}
               </div>
               {suggestions.length > 0 && (
                 <div className="auto-complete-address-field__dropdown">

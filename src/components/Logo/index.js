@@ -21,13 +21,13 @@ export const Logo = ({ className, destination, imageClass, noLink, shortened, co
   //   }
   //   imageFilename = `${process.env.IMGIX_PUBLIC_IMAGES_HOST}consumer/partner-landing/${imageFilename}?auto=format`;
   // } else {
-    imageFilename = 'emprove_logo.svg';
-    if (shortened) {
-      imageFilename = 'ic_e_logo.png';
-    } else if (contractor) {
-      imageFilename = 'emprove_pro_logo.svg';
-    }
-    imageFilename = `/images/${imageFilename}`;
+  imageFilename = 'emprove_logo.svg';
+  if (shortened) {
+    imageFilename = 'ic_e_logo.png';
+  } else if (contractor) {
+    imageFilename = 'emprove_pro_logo.svg';
+  }
+  imageFilename = `/images/${imageFilename}`;
   // }
 
   let Container;
@@ -41,10 +41,7 @@ export const Logo = ({ className, destination, imageClass, noLink, shortened, co
   }
 
   return (
-    <Container
-      className={cx('logo', { 'logo__image--shortened': shortened, 'logo__image': !shortened }, className)}
-      id={id}
-      {...extraProps}>
+    <Container className={cx('logo', { 'logo__image--shortened': shortened, logo__image: !shortened }, className)} id={id} {...extraProps}>
       <img className={cx('logo__image', imageClass)} src={imageFilename} alt="Emprove | Home Improvement Renewed" />
     </Container>
   );

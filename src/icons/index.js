@@ -136,6 +136,7 @@ export { default as IconHandTouch } from './IconHandTouch';
 export { default as IconHeartWithCircle } from './IconHeartWithCircle';
 export { default as IconHelp } from './IconHelp';
 export { default as IconHomeOwner } from './IconHomeOwner';
+export { default as IconHomeEstimator } from './IconHomeEstimator';
 export { default as IconImage } from './IconImage';
 export { default as IconInfo } from './IconInfo';
 export { default as IconInstagram } from './IconInstagram';
