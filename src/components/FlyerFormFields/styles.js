@@ -2,16 +2,16 @@
 
 export default theme => ({
   root: {
-    marginTop: theme.spacing.unit * 2
+    marginTop: theme.spacing(2)
   },
   label: {
-    marginTop: theme.spacing.unit / 2
+    marginTop: theme.spacing(0.5)
   },
   field: {
-    marginBottom: theme.spacing.unit * 2
+    marginBottom: theme.spacing(2)
   },
   divider: {
-    margin: `${theme.spacing.unit * 2}px 0`
+    margin: `${theme.spacing(2)}px 0`
   },
   error: {
     fontSize: 10
@@ -22,7 +22,7 @@ export default theme => ({
     display: 'flex'
   },
   imageFieldLabel: {
-    marginRight: theme.spacing.unit * 2
+    marginRight: theme.spacing(2)
   },
   image: {
     position: 'relative',

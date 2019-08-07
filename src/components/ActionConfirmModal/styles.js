@@ -3,7 +3,7 @@
 export default theme => ({
   dialogActions: {
     textAlign: 'right',
-    paddingTop: theme.spacing.unit * 2
+    paddingTop: theme.spacing(2)
   },
   button: {
     height: 30,

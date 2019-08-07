@@ -88,7 +88,7 @@ class CardForm extends Component {
     return (
       <form onSubmit={this.handleSubmit} className="credit-card-form">
         <CardNumberElement className="card-form__input" {...this.getElementOptions} />
-        <Grid container spacing={16}>
+        <Grid container spacing={2}>
           <Grid item xs={8}>
             <CardExpiryElement className="card-form__input" {...this.getElementOptions} />
           </Grid>

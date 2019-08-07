@@ -9,7 +9,7 @@ export default theme => ({
     position: 'relative'
   },
   paper: {
-    margin: `${theme.spacing.unit}px 0`
+    margin: `${theme.spacing(1)}px 0`
   },
   mobileDocument: {
     height: 'calc(100% - 48px)',

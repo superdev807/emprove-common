@@ -12,7 +12,7 @@ import styles from './styles';
 
 const RealtorInfo = ({ classes, realtorDetails }) => (
   <div className={classes.realtorInfo}>
-    <Grid container spacing={16}>
+    <Grid container spacing={2}>
       <Grid item xs={6}>
         <div className={cx(classes.field, classes.imageField)}>
           <Typography className={cx(classes.label, classes.imageFieldLabel)}>Logo:</Typography>
@@ -26,7 +26,7 @@ const RealtorInfo = ({ classes, realtorDetails }) => (
         </div>
       </Grid>
     </Grid>
-    <Grid container spacing={16}>
+    <Grid container spacing={2}>
       <Grid item xs={4}>
         <Typography className={classes.label}>Realtor&apos;s Name:</Typography>
         <Typography className={classes.textLabel}>{get(realtorDetails, 'profileName', '-')}</Typography>

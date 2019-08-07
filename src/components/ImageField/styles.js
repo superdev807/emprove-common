@@ -8,7 +8,7 @@ export default theme => ({
     width: 100,
     height: 100,
     cursor: 'pointer',
-    marginTop: theme.spacing.unit,
+    marginTop: theme.spacing(1),
     border: `1px solid ${theme.palette.grey[300]}`,
     '&:hover svg': {
       opacity: 1
@@ -38,6 +38,6 @@ export default theme => ({
   error: {
     position: 'absolute',
     left: 0,
-    bottom: -theme.spacing.unit * 2
+    bottom: -theme.spacing(2)
   }
 });

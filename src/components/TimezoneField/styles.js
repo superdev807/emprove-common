@@ -22,7 +22,7 @@ export default theme => ({
     listStyleType: 'none'
   },
   divider: {
-    height: theme.spacing.unit * 2
+    height: theme.spacing(2)
   },
   input: {
     color: theme.palette.text.primary,
