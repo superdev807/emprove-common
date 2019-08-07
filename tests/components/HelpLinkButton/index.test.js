@@ -38,7 +38,7 @@ describe('HelpLinkButton component', () => {
   test('should display a clickable icon that links to the help domain slash a certain `path` given as prop', () => {
     component.setProps({ path: 'some-other-guide/further-information' });
 
-    expect(component.dive().name()).toBe('IconButton');
+    expect(component.dive().name()).toBe('ForwardRef(IconButton)');
     expect(component.prop('href')).toBe(`${HELP_DOMAIN}/some-other-guide/further-information`);
   });
 

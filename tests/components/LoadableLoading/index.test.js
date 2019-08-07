@@ -28,7 +28,7 @@ describe('LoadableLoading component', () => {
 
     const snackbar = component.dive();
     expect(snackbar.name()).not.toBe('LoadingIndicator');
-    expect(snackbar.name()).toBe('Snackbar');
+    expect(snackbar.name()).toBe('ForwardRef(Snackbar)');
     expect(snackbar.prop('open')).toBe(true);
   });
 

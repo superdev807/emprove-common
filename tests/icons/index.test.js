@@ -12,7 +12,7 @@ describe('Icon components', () => {
       const Icon = require(`../../src/icons/${iconComponentName}`).default;
       const component = shallow(<Icon />);
 
-      expect(component.dive().find('SvgIcon').length).toBe(1);
+      expect(component.dive().find('ForwardRef(SvgIcon)').length).toBe(1);
     });
   });
 
@@ -30,13 +30,13 @@ describe('Icon components', () => {
         expect(
           component
             .dive()
-            .find('SvgIcon')
+            .find('ForwardRef(SvgIcon)')
             .prop('className')
         ).toBe(props.className);
         expect(
           component
             .dive()
-            .find('SvgIcon')
+            .find('ForwardRef(SvgIcon)')
             .prop('someRandomProp')
         ).toBe(true);
       } catch (error) {

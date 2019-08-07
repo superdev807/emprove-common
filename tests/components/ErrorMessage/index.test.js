@@ -27,7 +27,7 @@ describe('ErrorMessage component', () => {
       onTryAgainClick: handleTryAgainClick
     });
 
-    const button = component.find('WithStyles(Button)');
+    const button = component.find('WithStyles(ForwardRef(Button))');
     expect(button.length).toBe(1);
     expect(button.prop('onClick')).toBe(handleTryAgainClick);
   });

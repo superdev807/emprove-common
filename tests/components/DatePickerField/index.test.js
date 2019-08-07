@@ -66,7 +66,7 @@ describe('DatePickerField', () => {
   });
 
   it('should render MUI input component with the input value', () => {
-    const muiInput = mounted.find('WithStyles(Input)');
+    const muiInput = mounted.find('WithStyles(ForwardRef(Input))');
     expect(muiInput.prop('value')).toBe('08/22/2018');
   });
 });

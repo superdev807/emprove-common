@@ -109,4 +109,4 @@ class CardForm extends Component {
   }
 }
 
-export default compose(injectStripe, withTheme())(CardForm);
+export default compose(injectStripe, withTheme)(CardForm);
