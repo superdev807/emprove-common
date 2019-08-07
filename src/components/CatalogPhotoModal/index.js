@@ -32,14 +32,14 @@ class CatalogPhotoModal extends React.Component {
 
   handleImageLoad = () => {
     this.setState({ loading: false });
-  }
+  };
 
   handleImageError = () => {
     this.setState({
       loading: false,
       error: 'Could not load image. Please close the dialog and try again.'
     });
-  }
+  };
 
   render() {
     const { image } = this.props;
@@ -47,10 +47,11 @@ class CatalogPhotoModal extends React.Component {
 
     return (
       <Modal disableAutoFocus open={this.props.open} onClose={this.props.onClose}>
-        <div className={cx('catalog-photo-modal', {
-          'catalog-photo-modal--loading': this.state.loading,
-          'catalog-photo-modal--error': this.state.error
-        })}>
+        <div
+          className={cx('catalog-photo-modal', {
+            'catalog-photo-modal--loading': this.state.loading,
+            'catalog-photo-modal--error': this.state.error
+          })}>
           <CatalogPhoto
             className={cx('catalog-photo-modal__catalog-photo', { 'catalog-photo-modal__catalog-photo--loading': this.state.loading })}
             imageUrl={process.env.IMGIX_CATALOG_IMAGES_HOST + image.imageKey}
@@ -58,7 +59,9 @@ class CatalogPhotoModal extends React.Component {
             onLoad={this.handleImageLoad}
             onError={this.handleImageError}
           />
-          {this.state.loading ? <LoadingIndicator /> : (
+          {this.state.loading ? (
+            <LoadingIndicator />
+          ) : (
             <CatalogPhotoHeader
               className="catalog-photo-modal__catalog-photo-header"
               designStyle={image.style}
@@ -68,14 +71,18 @@ class CatalogPhotoModal extends React.Component {
             />
           )}
           <CloseButton className="catalog-photo-modal__close-button" onClick={this.props.onClose} />
-          <DreamItLink browseFilter={imageName.toLowerCase().replace(/ /g, '-')} disabled={this.state.loading} fromContractor={this.props.fromContractor} />
+          <DreamItLink
+            browseFilter={imageName.toLowerCase().replace(/ /g, '-')}
+            disabled={this.state.loading}
+            fromContractor={this.props.fromContractor}
+          />
           {this.state.loading && <span className="catalog-photo-modal__message">Loading image...</span>}
           {this.state.error && <span className="catalog-photo-modal__message--error">{this.state.error}</span>}
         </div>
       </Modal>
     );
   }
-};
+}
 
 CatalogPhotoModal.propTypes = {
   image: PropTypes.object,

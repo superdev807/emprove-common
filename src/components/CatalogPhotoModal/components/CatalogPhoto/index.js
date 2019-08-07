@@ -6,7 +6,7 @@ import cx from 'classnames';
 
 import './styles.scss';
 
-const CatalogPhoto = (props) => {
+const CatalogPhoto = props => {
   return (
     <img
       className={cx('catalog-photo', props.className)}
