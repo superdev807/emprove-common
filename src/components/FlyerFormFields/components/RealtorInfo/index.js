@@ -28,7 +28,7 @@ const RealtorInfo = ({ classes, realtorDetails }) => (
     </Grid>
     <Grid container spacing={16}>
       <Grid item xs={4}>
-        <Typography className={classes.label}>Realtor's Name:</Typography>
+        <Typography className={classes.label}>Realtor&apos;s Name:</Typography>
         <Typography className={classes.textLabel}>{get(realtorDetails, 'profileName', '-')}</Typography>
       </Grid>
       <Grid item xs={4}>

@@ -20,7 +20,6 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
-    'no-extra-boolean-cast': 0,
     'no-unused-vars': ['error', { args: 'none' }],
     'react/prop-types': 1,
     'react/sort-comp': 1,

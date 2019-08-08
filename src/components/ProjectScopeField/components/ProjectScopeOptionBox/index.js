@@ -1,9 +1,8 @@
 'use strict';
 
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
@@ -101,7 +100,7 @@ class ProjectScopeOptionBox extends Component {
               onClick={this.handleClickDetail}
               variant="contained"
               classes={{ label: 'project-scope-option-box__include-button--no-capitalize' }}>
-              What's included
+              What&apos;s included
             </Button>
           </div>
         )}

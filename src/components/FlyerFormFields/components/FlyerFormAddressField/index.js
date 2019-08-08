@@ -12,7 +12,7 @@ import './styles.scss';
 
 class FlyerFormAddressField extends Component {
   render() {
-    const { anchorEl, onClickManualEntry, onClickProperty, onClose, open, properties } = this.props;
+    const { anchorEl, onClickManualEntry, onClickProperty, open, properties } = this.props;
 
     return (
       <Popper className="flyer-address-field-popper" open={open} anchorEl={anchorEl} disablePortal>

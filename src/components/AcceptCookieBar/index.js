@@ -1,12 +1,9 @@
 'use strict';
 
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import Button from '@material-ui/core/Button';
-import moment from 'moment';
-import PropTypes from 'prop-types';
 import Snackbar from '@material-ui/core/Snackbar';
 import SnackbarContent from '@material-ui/core/SnackbarContent';
-import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
 import styles from './styles';

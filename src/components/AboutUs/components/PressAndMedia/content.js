@@ -6,8 +6,6 @@ import PropTypes from 'prop-types';
 import PostsSectionLayout from '../PostsSectionLayout';
 import './style.scss';
 
-const INITIAL_POSTS_TO_SHOW = 3;
-
 class PressAndMedia extends Component {
   static propTypes = {
     className: PropTypes.string,
@@ -32,9 +30,6 @@ class PressAndMedia extends Component {
   }
 
   render() {
-    const { postsToShow } = this.state;
-    const { posts, fromContractor } = this.props;
-
     const title = (
       <div>
         PRESS&nbsp;
@@ -48,14 +43,14 @@ class PressAndMedia extends Component {
       <PostsSectionLayout
         className={this.props.className}
         linkRoute="/press-and-media"
-        fromContractor={fromContractor}
+        fromContractor={this.props.fromContractor}
         description=""
         linkText="view all press and media"
         title={title}
         isLink
         posts={this.getPosts()}
         postType="press-and-media"
-        postsToShow={postsToShow}
+        postsToShow={this.state.postsToShow}
       />
     );
   }

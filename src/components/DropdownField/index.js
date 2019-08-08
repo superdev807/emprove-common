@@ -4,10 +4,8 @@ import React, { Component } from 'react';
 import cx from 'classnames';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
-import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
 import PropTypes from 'prop-types';
 import Select from '@material-ui/core/Select';
 import TextField from '@material-ui/core/TextField';
@@ -57,7 +55,6 @@ class DropdownField extends Component {
       className,
       classes,
       capitalize,
-      disabled,
       disableUnderline,
       errorMessageClass,
       fullWidth,

@@ -5,7 +5,7 @@ import get from 'lodash/get';
 
 const getAddressComponentFromGoogle = (addressComponents, name, short = false) => {
   return fp.compose(
-    //eslint-disable-line
+    // eslint-disable-line
     fp.defaultTo(''),
     fp.get(short ? 'short_name' : 'long_name'),
     fp.find(item => item.types.includes(name))

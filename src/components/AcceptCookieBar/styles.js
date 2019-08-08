@@ -17,13 +17,6 @@ export default theme => ({
   },
   action: {
     paddingLeft: theme.spacing.unit,
-    marginRight: 0
-  },
-  link: {
-    color: 'white',
-    textDecoration: 'underline'
-  },
-  action: {
     color: 'white',
     borderColor: 'white',
     marginRight: 0,
@@ -31,5 +24,9 @@ export default theme => ({
     '&:hover, &:active': {
       color: theme.palette.primary.main
     }
+  },
+  link: {
+    color: 'white',
+    textDecoration: 'underline'
   }
 });

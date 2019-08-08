@@ -1,11 +1,9 @@
 'use strict';
 
 import React from 'react';
-import cx from 'classnames';
 import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
-import FormLabel from '@material-ui/core/FormLabel';
 import MuiSwitch from '@material-ui/core/Switch';
 import { withStyles } from '@material-ui/core/styles';
 

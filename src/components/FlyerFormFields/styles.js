@@ -17,6 +17,8 @@ export default theme => ({
     fontSize: 10
   },
   imageField: {
+    width: 210,
+    height: 140,
     display: 'flex'
   },
   imageFieldLabel: {
@@ -52,10 +54,6 @@ export default theme => ({
   },
   inputText: {
     textAlign: 'left'
-  },
-  imageField: {
-    width: 210,
-    height: 140
   },
   hidden: {
     display: 'none'

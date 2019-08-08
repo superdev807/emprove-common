@@ -129,7 +129,7 @@ class AutoCompleteAddressField extends Component {
                 <div className="auto-complete-address-field__dropdown">
                   {/*loading && <div>Loading...</div>*/}
                   {suggestions.map(suggestion => (
-                    <div
+                    <div key={suggestion.id}
                       {...getSuggestionItemProps(suggestion, {
                         className: cx('auto-complete-address-field__dropdown-item', {
                           'auto-complete-address-field__dropdown-item--active': suggestion.active

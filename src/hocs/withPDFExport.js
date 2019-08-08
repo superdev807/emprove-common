@@ -1,8 +1,7 @@
 'use strict';
 
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import get from 'lodash/get';
-import moment from 'moment';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -12,7 +11,7 @@ import { getLocalTimezone } from '../utils/timeFunctions';
 import { setSnackbar } from '../redux/modules/globalStatus';
 import { show as showModal } from 'redux-modal';
 import { withRouter } from 'react-router';
-import { API_PENDING, API_SUCCESS } from '../redux/api/request';
+import { API_PENDING } from '../redux/api/request';
 import { VIEW_PDF_KIND } from '../config/constants';
 // import { getPartnerFromHost } from '../utils/partnerFunctions';
 
@@ -200,7 +199,7 @@ export default (timezoneSelector, accountSelector) => WrappedComponent => {
     };
 
     render() {
-      const { exportStatus, user, ...others } = this.props;
+      const { exportStatus, ...others } = this.props;
       const isExporting = exportStatus === API_PENDING;
 
       return (

@@ -2,11 +2,9 @@
 
 import React from 'react';
 import MuiCheckbox from '@material-ui/core/Checkbox';
-import cx from 'classnames';
 import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
-import FormLabel from '@material-ui/core/FormLabel';
 import { withStyles } from '@material-ui/core/styles';
 
 import { checkboxStyles, styles } from './styles';

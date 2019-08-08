@@ -545,7 +545,7 @@ const TermsOfService = props => {
           <strong>18.4 Notice of Arbitration; Process. </strong>A party who intends to seek arbitration must first send a written notice of
           the dispute to the other party by certified U.S. Mail or by Federal Express (signature required) or, only if that other party has
           not provided a current physical address, then by electronic mail (“<strong>Notice of Arbitration</strong>”). Emprove’s address for
-          Notice is: Emprove, Inc., 10150 Covington Cross Drive, Las Vegas, NV  89144-6567. The Notice of Arbitration must: (a) describe the
+          Notice is: Emprove, Inc., 10150 Covington Cross Drive, Las Vegas, NV 89144-6567. The Notice of Arbitration must: (a) describe the
           nature and basis of the claim or dispute; and (b) set forth the specific relief sought (“<strong>Demand</strong>”). The parties
           will make good faith efforts to resolve the claim directly, but if the parties do not reach an agreement to do so within 30 days
           after the Notice of Arbitration is received, you or Emprove may commence an arbitration proceeding. All arbitration proceedings
@@ -655,7 +655,7 @@ const TermsOfService = props => {
         </li>
         <li>
           <strong>19.6 Contact Information. </strong>The Service is offered by Emprove, Inc., located at 10150 Covington Cross Drive, Las
-          Vegas, NV 89144-6567. You may contact us by sending correspondence via{' '}
+          Vegas, NV 89144-6567. You may contact us by sending correspondence via{' '}
           <a href={process.env.HELP_DOMAIN} rel="noopener noreferrer" target="_blank" className="terms-content__link">
             Emprove’s Help Center
           </a>.

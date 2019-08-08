@@ -6,7 +6,6 @@ import Draggable from 'react-draggable';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import Snackbar from '@material-ui/core/Snackbar';
-import Typography from '@material-ui/core/Typography';
 import './style.scss';
 
 moment.relativeTimeThreshold('s', 59);

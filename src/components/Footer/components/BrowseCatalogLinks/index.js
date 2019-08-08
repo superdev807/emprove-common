@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import FooterList from '../FooterList';
 import './styles.scss';
 
+/* eslint-disable react/jsx-key */
 // TODO: use values from metaData
 const homeAreas = [
   'BY HOME AREA',
@@ -30,6 +31,7 @@ const homeStyles = [
   <Link to="/browse/traditional-homes">Traditional</Link>,
   <Link to="/browse/transitional-homes">Transitional</Link>
 ];
+/* eslint-enable react/jsx-key */
 
 const BrowseCatalogLinks = props => {
   return (

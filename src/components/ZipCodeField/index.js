@@ -56,7 +56,6 @@ export class ZipCodeField extends Component {
       inputClasses,
       inputLabelProps,
       label,
-      labelClassName,
       meta: { touched, error },
       placeholder,
       type,

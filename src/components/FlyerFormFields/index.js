@@ -17,12 +17,10 @@ import IconArrowDropdown from '../../icons/IconArrowDropdown';
 import ImageField from '../ImageField';
 import InputField from '../InputField';
 import LoadingIndicator from '../LoadingIndicator';
-import PhoneNumberField from '../PhoneNumberField';
 import RealtorInfo from './components/RealtorInfo';
 import SearchableDropdownField from '../SearchableDropdownField';
 import ZipCodeField from '../ZipCodeField';
 import metaData from '../../data/metaData.json';
-import { validateEmail } from '../../utils/validators';
 
 import styles from './styles';
 
@@ -31,7 +29,6 @@ const scaleOptions = metaData.projectScale.slice(0, 4).map(scale => ({ value: sc
 const qualityOptions = metaData.qualityStandard.map(quality => ({ value: quality.id, label: quality.label }));
 
 const isRequired = value => (!value ? 'This field is required' : undefined);
-const isValidEmail = value => (value && !validateEmail(value) ? 'Invalid email address' : undefined);
 
 class FlyerFormFields extends Component {
   constructor(props) {
@@ -163,7 +160,6 @@ class FlyerFormFields extends Component {
                 <Fragment>
                   <div className={classes.addressFieldContainer} ref={this.addressFieldRef} onClick={this.handleToggleProperties}>
                     <Field
-                      ref="address1"
                       withRef
                       name="property.address1"
                       type={manualAddressEntry ? 'text' : 'button'}

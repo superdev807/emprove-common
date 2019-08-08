@@ -1,6 +1,6 @@
 'use strict';
 
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
 import Checkbox from '@material-ui/core/Checkbox';
 import CheckBoxIcon from '@material-ui/icons/CheckBox';

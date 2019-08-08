@@ -70,7 +70,7 @@ class DatePickerField extends Component {
   };
 
   renderInput = props => {
-    const { classes, datePickerInputText, helperText, input, inputRef, label, placeholder, variant } = this.props;
+    const { classes, datePickerInputText, helperText, input, label, placeholder, variant } = this.props;
     const inputProps = { ...props, className: datePickerInputText ? datePickerInputText : 'datePickerInputText' };
 
     return variant === 'outlined' ? (
@@ -139,9 +139,7 @@ class DatePickerField extends Component {
       helperText,
       errorClassName,
       hideErrorText,
-      disableDatePast,
       viewDate,
-      alignment, // left or right
       variant
     } = this.props;
 

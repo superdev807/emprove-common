@@ -12,6 +12,7 @@ export const PhoneNumberMask = ({ inputRef, ...inputProps }) => (
   <MaskedInput
     {...inputProps}
     mask={['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+    // eslint-disable-next-line no-extra-boolean-cast
     showMask={!Boolean(inputProps.placeholder)} //placeholder doesn't show if showMask is true
   />
 );

@@ -73,7 +73,7 @@ class CardForm extends Component {
   }
 
   render() {
-    const { classes, disabled, stripe } = this.props;
+    const { disabled, stripe } = this.props;
     const { error, tokenCreating } = this.state;
 
     if (stripe === null) {
