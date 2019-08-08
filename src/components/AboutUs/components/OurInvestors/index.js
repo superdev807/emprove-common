@@ -34,7 +34,7 @@ const OurInvestors = (props) => {
       <div key={investor.id} className="our-investors__investor">
         <Investor investor={investorWithImageUrl} />
       </div>
-    )
+    );
   });
 
   return (

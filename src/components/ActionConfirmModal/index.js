@@ -2,7 +2,6 @@
 
 import React, { Component } from 'react';
 import { compose } from 'redux';
-import { connect } from 'react-redux';
 import { connectModal } from 'redux-modal';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
@@ -12,11 +11,8 @@ import cx from 'classnames';
 import Button from '@material-ui/core/Button';
 import CloseButton from '../CloseButton';
 import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import withMobileDialog from '@material-ui/core/withMobileDialog';
 import Typography from '@material-ui/core/Typography';
 import styles from './styles';
 

@@ -5,15 +5,8 @@ import cx from 'classnames';
 import Grid from '@material-ui/core/Grid';
 import MobileDetect from 'mobile-detect';
 import ProjectScopeOptionBox from './components/ProjectScopeOptionBox';
-import Typography from '@material-ui/core/Typography';
 import options from './projectScopeOptions';
 import './style.scss';
-
-const chartOptions = [
-  { value: 'refinish', label: 'Refinish' },
-  { value: 'replace', label: 'New / Replace' },
-  { value: 'keep', label: 'Keep Existing' }
-];
 
 class ProjectScopeField extends Component {
   constructor(props) {
@@ -32,7 +25,6 @@ class ProjectScopeField extends Component {
 
   render() {
     const {
-      meta: { error },
       className,
       input,
       showScaleInfo,

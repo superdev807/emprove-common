@@ -1,11 +1,11 @@
 'use strict';
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import FooterList from '../FooterList';
 
 //This is converted into a function because the test couldn't inject process.env.CONSUMER_DOMAIN at runtime.
+/* eslint-disable react/jsx-key */
 const getCompanyLinks = () => {
   return [
     <a href={process.env.CONSUMER_DOMAIN + '/about-emprove'}>About Emprove, Inc.</a>,
@@ -21,6 +21,7 @@ const getCompanyLinks = () => {
     <a href={process.env.CONSUMER_DOMAIN + '/terms'}>Terms of Service</a>
   ];
 };
+/* eslint-enable react/jsx-key */
 
 const CompanyLinks = props => {
   return <FooterList items={getCompanyLinks()} />;

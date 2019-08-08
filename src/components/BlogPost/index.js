@@ -3,7 +3,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import { Link } from 'react-router-dom';
 
 import { decodeSpecialCharacters } from '../../utils/pureFunctions';
 import './style.scss';
@@ -23,20 +22,19 @@ class BlogPost extends Component {
   };
 
   getURL() {
-    const { post, postType, fromContractor } = this.props;
+    const { post, postType } = this.props;
 
-    let url = '';
     if (post && post.URL) {
-      if (fromContractor) {
-        return (url = `${process.env.CONSUMER_DOMAIN}/${postType}/${post.ID}/${post.slug}`);
+      if (this.props.fromContractor) {
+        return `${process.env.CONSUMER_DOMAIN}/${postType}/${post.ID}/${post.slug}`;
       }
-      return (url = `/${postType}/${post.ID}/${post.slug}`);
+      return `/${postType}/${post.ID}/${post.slug}`;
     }
   }
 
   getFeaturedImage() {
-    const { imageSize, post } = this.props;
-    return post.featured_image + (imageSize ? imageSize : '');
+    const { imageSize } = this.props;
+    return this.props.post.featured_image + (imageSize ? imageSize : '');
   }
 
   render() {

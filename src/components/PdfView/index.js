@@ -80,7 +80,7 @@ class PdfView extends Component {
   };
 
   render() {
-    const { classes, source, show, showPageButtons, handleHide, isMobile } = this.props;
+    const { classes, source, showPageButtons, isMobile } = this.props;
     const { currentPage, numPages, width } = this.state;
     const hasButtons = showPageButtons && isMobile;
 

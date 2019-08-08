@@ -6,7 +6,6 @@ import get from 'lodash/get';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { FormattedNumber } from 'react-intl';
 
 import Colors from '../../config/colors';
 import { getMinimum, getMaximum } from '../../utils/projectCostFunctions';
@@ -414,7 +413,7 @@ class ProjectScaleGraph extends Component {
   }
 
   renderTooltips() {
-    const { dataSets, mark } = this.props;
+    const { mark } = this.props;
 
     return mark ? (
       <g className="project-scale-graph__tooltips">

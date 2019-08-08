@@ -43,7 +43,7 @@ class DreamItPartial extends Component {
             STYLE IT
           </div>
           <div id="dreamItBody" className="dreamItBody">
-            Our photos aren't just pretty... they're PrettySmart! As you select photos you like, they send costing information to our{' '}
+            Our photos aren&apos;t just pretty... they&apos;re PrettySmart! As you select photos you like, they send costing information to our{' '}
             estimator, the most advanced budgeting tool in the residential design and construction industry.
           </div>
 

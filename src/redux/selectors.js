@@ -5,24 +5,24 @@ import { createSelector } from 'reselect';
 
 import { API_PENDING } from './api/request';
 
-/* post */
+// post
 export const postLoadingSelector = fp.compose(postStatus => postStatus === API_PENDING, fp.get('post.postStatus'));
 export const postsLoadingSelector = fp.compose(postsStatus => postsStatus === API_PENDING, fp.get('post.postsStatus'));
 export const postsSelector = fp.get('post.posts');
 export const postSelector = fp.get('post.post');
 
-/* device */
+// device
 export const isMobileSelector = fp.get('device.isMobile');
 export const isPhoneSelector = fp.get('device.isPhone');
 export const isTabletSelector = fp.get('device.isTablet');
 export const usingDesktopSelector = createSelector(isMobileSelector, isMobile => !isMobile);
 
-/* global status */
+//  global status
 export const globalStatusSelector = fp.get('globalStatus');
 export const translationsSelector = fp.get('globalStatus.translations');
 export const translationsStatusSelector = fp.get('globalStatus.translationsStatus');
 
-/* pdf status */
+// pdf status
 export const exportStatusSelector = fp.get('pdf.status');
 export const sendPdfStatusSelector = fp.get('pdf.sendStatus');
 export const exportInProcessStatusSelector = createSelector(exportStatusSelector, exportStatus => exportStatus === API_PENDING);

@@ -2,8 +2,6 @@
 
 import React from 'react';
 import MuiSnackbar from '@material-ui/core/Snackbar';
-import IconButton from '@material-ui/core/IconButton';
-import IconClose from '@material-ui/icons/Close';
 import SnackbarContent from '../SnackbarContent';
 import { compose } from 'redux';
 import { connect } from 'react-redux';

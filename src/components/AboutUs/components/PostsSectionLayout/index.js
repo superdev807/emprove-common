@@ -31,7 +31,7 @@ class PostsSectionLayout extends Component {
   };
 
   renderPosts(posts) {
-    const { ids, postsToShow, postType, fromContractor, imageSize } = this.props;
+    const { ids } = this.props;
 
     if (this.props.postsLoading) {
       return <LoadingIndicator size={48} />;
@@ -43,10 +43,10 @@ class PostsSectionLayout extends Component {
               <div key={index} className="posts-section__item">
                 <BlogPost
                   ids={{ blogTitle: `${ids.blogTitlePrefix}${index + 1}`, readFull: `${ids.readFullPrefix}${index + 1}` }}
-                  postType={postType}
+                  postType={this.props.postType}
                   post={post}
-                  fromContractor={fromContractor}
-                  imageSize={imageSize}
+                  fromContractor={this.props.fromContractor}
+                  imageSize={this.props.imageSize}
                 />
               </div>
             </CSSTransition>
@@ -57,9 +57,9 @@ class PostsSectionLayout extends Component {
   }
 
   renderLink() {
-    const { ids, isLink, fromContractor, linkRoute, linkText } = this.props;
+    const { isLink, linkRoute, linkText } = this.props;
 
-    if (fromContractor) {
+    if (this.props.fromContractor) {
       if (isLink) {
         return (
           <a href={process.env.CONSUMER_DOMAIN + linkRoute} className="posts-section__link-view-all">
@@ -70,7 +70,7 @@ class PostsSectionLayout extends Component {
     } else {
       if (isLink) {
         return (
-          <Link id={ids.seeMore} to={linkRoute} className="posts-section__link-view-all">
+          <Link id={this.props.ids.seeMore} to={linkRoute} className="posts-section__link-view-all">
             {linkText}
           </Link>
         );
@@ -80,14 +80,12 @@ class PostsSectionLayout extends Component {
   }
 
   render() {
-    const { title, posts, description } = this.props;
-
     return (
       <div className={cx('posts-section', this.props.className)} ref={container => (this.container = container)}>
-        <div className="posts-section__title">{title}</div>
+        <div className="posts-section__title">{this.props.title}</div>
 
-        <div className="posts-section__description">{description}</div>
-        {this.renderPosts(posts)}
+        <div className="posts-section__description">{this.props.description}</div>
+        {this.renderPosts(this.props.posts)}
 
         <div className="posts-section__link-container">{this.renderLink()}</div>
       </div>

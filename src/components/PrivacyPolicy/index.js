@@ -1,6 +1,6 @@
 'use strict';
 
-import React, { Component } from 'react';
+import React from 'react';
 
 import './styles.scss';
 
@@ -33,12 +33,12 @@ const PrivacyPolicy = props => {
             <b>Cookies and Automatically Collected Information</b> When you use the Service, we may send one or more cookies – small text
             files containing a string of alphanumeric characters – to your device. We may use both session cookies and persistent cookies. A
             session cookie disappears after you close your browser. A persistent cookie remains after you close your browser and may be used
-            by your browser on subsequent visits to the Service. Please review your web browser “Help" file to learn the proper way to
+            by your browser on subsequent visits to the Service. Please review your web browser ”Help” file to learn the proper way to
             modify your cookie settings. Please note that if you delete, or choose not to accept, cookies from the Service, you may not be
             able to utilize the features of the Service to their fullest potential. <br />
             <br />
-            We may also automatically record certain information from your device by using various types of technology, including “clear
-            gifs" or “web beacons.” This automatically collected information may include your IP address or other device address or ID, web
+            We may also automatically record certain information from your device by using various types of technology, including ”clear
+            gifs” or ”web beacons.” This automatically collected information may include your IP address or other device address or ID, web
             browser and/or device type, the web pages or sites that you visit just before or just after you use the Service, the pages or
             other content you view or otherwise interact with on the Service, and the dates and times that you visit, access, or use the
             Service. We also may use these technologies to collect information regarding your interaction with email messages, such as

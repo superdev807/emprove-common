@@ -5,6 +5,7 @@ import React from 'react';
 import FooterList from '../FooterList';
 import './styles.scss';
 
+/* eslint-disable react/jsx-key */
 const instructions = [
   <span className="how-to-use-subtitle">STYLE IT</span>,
   'Be inspired by our PrettySmart photos',
@@ -18,6 +19,7 @@ const instructions = [
   'Compare proposals to make a well informed selection',
   'Create a General Contractor work agreement'
 ];
+/* eslint-enable react/jsx-key */
 
 const HowToUse = (props) => {
   return (

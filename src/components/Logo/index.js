@@ -6,7 +6,7 @@ import cx from 'classnames';
 import { Link } from 'react-router-dom';
 
 // import withPartner from '../../hocs/withPartner';
-import { PARTNER } from '../../config/constants';
+// import { PARTNER } from '../../config/constants';
 
 import './styles.scss';
 

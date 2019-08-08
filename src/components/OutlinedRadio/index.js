@@ -1,7 +1,6 @@
 'use strict';
 
 import React, { Fragment } from 'react';
-import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import MuiRadio from '@material-ui/core/Radio';
 import RadioButtonChecked from '@material-ui/icons/RadioButtonChecked';

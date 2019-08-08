@@ -90,10 +90,8 @@ class CurrencyInputField extends Component {
       label,
       meta: { touched, error },
       placeholder,
-      rightAligned,
-      type
+      rightAligned
     } = this.props;
-    const { focused } = this.state;
 
     return (
       <FormControl className={className} error={touched && !!error} fullWidth={fullWidth}>

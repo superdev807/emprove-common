@@ -2,14 +2,12 @@
 
 import React, { Component } from 'react';
 import Autosuggest from 'react-autosuggest';
-import cx from 'classnames';
 import deburr from 'lodash/deburr';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import fp from 'lodash/fp';
 import match from 'autosuggest-highlight/match';
 import MenuItem from '@material-ui/core/MenuItem';
-import moment from 'moment-timezone';
 import Paper from '@material-ui/core/Paper';
 import parse from 'autosuggest-highlight/parse';
 import Popper from '@material-ui/core/Popper';
@@ -131,13 +129,11 @@ export class TimezoneField extends Component {
     const {
       className,
       classes,
-      disabled,
       helperText,
       input,
       label,
       placeholder,
-      meta: { error, touched },
-      theme
+      meta: { error, touched }
     } = this.props;
 
     const autosuggestProps = {
