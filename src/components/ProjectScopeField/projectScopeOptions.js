@@ -2,7 +2,7 @@
 
 import React, { Fragment } from 'react';
 
-module.exports = [
+export default [
   {
     label: (
       <Fragment>
