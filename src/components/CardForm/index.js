@@ -16,10 +16,15 @@ import './style.scss';
 class CardForm extends Component {
   static propTypes = {
     disabled: PropTypes.bool,
+    buttonText: PropTypes.string,
     email: PropTypes.string.isRequired,
     onSubmit: PropTypes.func.isRequired,
     stripe: PropTypes.object,
     theme: PropTypes.object.isRequired
+  };
+
+  static defaultProps = {
+    buttonText: 'Confirm'
   };
 
   constructor(props) {
@@ -97,7 +102,7 @@ class CardForm extends Component {
           </Typography>
         )}
         <Button variant="contained" fullWidth type="submit" color="primary" disabled={tokenCreating || disabled}>
-          Confirm
+          {this.props.buttonText}
         </Button>
       </form>
     );
