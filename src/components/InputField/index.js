@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import cx from 'classnames';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
+import debounce from 'lodash/debounce';
 import get from 'lodash/get';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -53,6 +54,9 @@ export class InputField extends Component {
     super(props);
 
     this.labelRef = React.createRef();
+    if (props.debounceOnChange) {
+      this.handleChange = debounce(this.handleChange, 300);
+    }
   }
 
   componentDidMount() {
