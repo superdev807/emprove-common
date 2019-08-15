@@ -1,10 +1,7 @@
 'use strict';
 
-// This used to be .babelrc. It has to be babel.config.js in order for Jest to work.
-// Jest does not like the { modules: false } for @babel/preset-env.
-// So, we need a different preset for the test env.
 module.exports = {
-  presets: [['@babel/preset-env', { modules: false }], '@babel/preset-react'],
+  presets: ['@babel/preset-env', '@babel/preset-react'],
   plugins: [
     ['@babel/plugin-proposal-decorators', { legacy: true }],
     '@babel/plugin-proposal-function-sent',
@@ -16,22 +13,5 @@ module.exports = {
     '@babel/plugin-syntax-import-meta',
     ['@babel/plugin-proposal-class-properties', { loose: false }],
     '@babel/plugin-proposal-json-strings'
-  ],
-  env: {
-    test: {
-      presets: ['@babel/preset-env', '@babel/preset-react'],
-      plugins: [
-        ['@babel/plugin-proposal-decorators', { legacy: true }],
-        '@babel/plugin-proposal-function-sent',
-        '@babel/plugin-proposal-export-namespace-from',
-        '@babel/plugin-proposal-numeric-separator',
-        '@babel/plugin-proposal-throw-expressions',
-
-        '@babel/plugin-syntax-dynamic-import',
-        '@babel/plugin-syntax-import-meta',
-        ['@babel/plugin-proposal-class-properties', { loose: false }],
-        '@babel/plugin-proposal-json-strings'
-      ]
-    }
-  }
+  ]
 };
