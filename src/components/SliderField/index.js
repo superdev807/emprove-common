@@ -24,7 +24,7 @@ class SliderField extends Component {
 
   componentDidMount() {
     this.setState({
-      value: this.props.input.value
+      value: this.props.input.value || 0
     });
   }
 
