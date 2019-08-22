@@ -23,6 +23,6 @@ describe('CloseButton component', () => {
   });
 
   test('should display a Close icon (X)', () => {
-    expect(component.children().dive().name()).toBe('CloseIcon');
+    expect(component.children().dive().name()).toBe('WithStyles(ForwardRef(SvgIcon))');
   });
 });

@@ -35,7 +35,7 @@ describe('CollapseButton component', () => {
         .children()
         .dive()
         .name()
-    ).toBe('ExpandMoreIcon');
+    ).toBe('WithStyles(ForwardRef(SvgIcon))');
   });
 
   test('should show an expand less icon if collapsed prop is false', () => {
@@ -45,6 +45,6 @@ describe('CollapseButton component', () => {
         .children()
         .dive()
         .name()
-    ).toBe('ExpandLessIcon');
+    ).toBe('WithStyles(ForwardRef(SvgIcon))');
   });
 });

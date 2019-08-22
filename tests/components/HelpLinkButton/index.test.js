@@ -32,7 +32,7 @@ describe('HelpLinkButton component', () => {
   });
 
   test('should display a help icon', () => {
-    expect(component.children().dive().name()).toBe('HelpOutlineIcon');
+    expect(component.children().dive().name()).toBe('WithStyles(ForwardRef(SvgIcon))');
   });
 
   test('should display a clickable icon that links to the help domain slash a certain `path` given as prop', () => {
