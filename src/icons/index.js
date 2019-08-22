@@ -70,6 +70,7 @@ export { default as IconFacebook } from './IconFacebook';
 export { default as IconFacebookLetter } from './IconFacebookLetter';
 export { default as IconFavorite } from './IconFavorite';
 export { default as IconFavoriteBorder } from './IconFavoriteBorder';
+export { default as IconHandClick } from './IconHandClick';
 export { default as IconUL2BathroomAccessories } from './IconUL2BathroomAccessories';
 export { default as IconUL2Cabinets } from './IconUL2Cabinets';
 export { default as IconUL2Casework } from './IconUL2Casework';
