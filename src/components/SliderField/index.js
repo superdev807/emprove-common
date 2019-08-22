@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Slider from '@material-ui/lab/Slider';
+import Slider from '@material-ui/core/Slider';
 import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
 import cx from 'classnames';
@@ -24,7 +24,7 @@ class SliderField extends Component {
 
   componentDidMount() {
     this.setState({
-      value: this.props.input.value
+      value: this.props.input.value || 0
     });
   }
 
@@ -157,7 +157,7 @@ class SliderField extends Component {
         {helpText && <Typography className={cx('slider-field__helpText', classes.helpTextClassName)} />}
         <Slider
           {...input}
-          classes={{ root: 'slider-field__root', track: 'slider-field__track', trackBefore: 'slider-field__track-before' }}
+          classes={{ root: 'slider-field__root', rail: 'slider-field__track', track: 'slider-field__track-before' }}
           value={this.state.value}
           min={min}
           max={max}

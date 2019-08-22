@@ -7,10 +7,10 @@ export default theme => ({
     border: '1px solid rgba(0, 0, 0, 0.12)'
   },
   label: {
-    marginTop: theme.spacing.unit / 2
+    marginTop: theme.spacing(0.5)
   },
   field: {
-    marginBottom: theme.spacing.unit * 2
+    marginBottom: theme.spacing(2)
   },
   image: {
     position: 'relative',
@@ -27,7 +27,7 @@ export default theme => ({
     display: 'flex'
   },
   imageFieldLabel: {
-    marginRight: theme.spacing.unit * 2
+    marginRight: theme.spacing(2)
   },
   textLabel: {
     padding: '6px 0 7px',

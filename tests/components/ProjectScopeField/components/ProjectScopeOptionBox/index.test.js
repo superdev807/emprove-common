@@ -46,7 +46,7 @@ describe('ProjectScopeOptionBox component', () => {
 
     expect(
       component
-        .find('WithStyles(Typography)')
+        .find('WithStyles(ForwardRef(Typography))')
         .first()
         .children()
         .text()
@@ -81,7 +81,7 @@ describe('ProjectScopeOptionBox component', () => {
   });
 
   test('should display a Select button', () => {
-    const button = component.find('WithStyles(Button)');
+    const button = component.find('WithStyles(ForwardRef(Button))');
 
     expect(button.length).toBe(1);
     expect(button.prop('color')).toBe('primary');
@@ -92,7 +92,7 @@ describe('ProjectScopeOptionBox component', () => {
   test('should not show a select button if given showSelectButton prop with false value', () => {
     component.setProps({ showSelectButton: false });
 
-    expect(component.find('WithStyles(Button)').length).toBe(0);
+    expect(component.find('WithStyles(ForwardRef(Button))').length).toBe(0);
   });
 
   test('should allow a className passed by the parent', () => {

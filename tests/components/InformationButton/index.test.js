@@ -22,7 +22,7 @@ describe('InformationButton', () => {
   });
 
   it('should show the informationModal when clicked', () => {
-    component.find('WithStyles(IconButton)').prop('onClick')();
+    component.find('WithStyles(ForwardRef(IconButton))').prop('onClick')();
 
     expect(props.showModal).toHaveBeenCalledTimes(1);
     expect(props.showModal.mock.calls[0][0]).toBe('informationModal');

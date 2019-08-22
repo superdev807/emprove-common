@@ -35,7 +35,7 @@ class ProjectScopeField extends Component {
 
     return (
       <div className={cx('project-scope-field', { [className]: Boolean(className) })}>
-        <Grid container spacing={24}>
+        <Grid container spacing={3}>
           {options.map((option, index) => {
             return (
               <Grid key={index} item className="project-scope-field__option">

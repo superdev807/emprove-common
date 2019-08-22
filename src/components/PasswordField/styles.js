@@ -13,7 +13,7 @@ export default theme => ({
     color: theme.palette.text.primary
   },
   paper: {
-    padding: theme.spacing.unit,
+    padding: theme.spacing(1),
     position: 'relative',
     zIndex: 1
   },
@@ -27,7 +27,7 @@ export const validatorTextStyles = theme => ({
   icon: {
     fontSize: '0.8rem',
     verticalAlign: 'middle',
-    marginRight: theme.spacing.unit / 2
+    marginRight: theme.spacing(0.5)
   },
   text: {
     verticalAlign: 'middle'

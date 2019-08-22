@@ -131,7 +131,7 @@ class FlyerFormFields extends Component {
         </Grid>
 
         {realtors && (
-          <Grid container spacing={16}>
+          <Grid container spacing={2}>
             <Grid item xs={4}>
               <Typography className={classes.label}>Realtor:</Typography>
               <div className={cx({ [classes.hidden]: hideRealtorDropdown })}>
@@ -152,9 +152,9 @@ class FlyerFormFields extends Component {
 
         {!hideRealtorInfo && <RealtorInfo realtorDetails={realtorDetails} />}
 
-        <Grid container spacing={16} justify="space-between">
+        <Grid container spacing={2} justify="space-between">
           <Grid item xs={7}>
-            <Grid container spacing={16}>
+            <Grid container spacing={2}>
               <Grid className={classes.withRelativePosition} item xs={12}>
                 <Typography className={classes.label}>Property address:</Typography>
                 <Fragment>
@@ -187,7 +187,7 @@ class FlyerFormFields extends Component {
                     />
                   )}
                 </Fragment>
-                <Grid container alignItems="center" spacing={16}>
+                <Grid container alignItems="center" spacing={2}>
                   <Grid item xs={4}>
                     <Typography className={classes.label}>Zipcode:</Typography>
                     <div className={classes.withRelativePosition}>
@@ -255,9 +255,9 @@ class FlyerFormFields extends Component {
 
         <Divider className={classes.divider} />
 
-        <Grid container spacing={16}>
+        <Grid container spacing={2}>
           <Grid item xs={7}>
-            <Grid container spacing={16}>
+            <Grid container spacing={2}>
               <Grid item xs={6}>
                 <Typography className={classes.label}>Home Area:</Typography>
                 <Field
@@ -285,7 +285,7 @@ class FlyerFormFields extends Component {
                 />
               </Grid>
             </Grid>
-            <Grid container spacing={16}>
+            <Grid container spacing={2}>
               <Grid item xs={6}>
                 <Typography className={classes.label}>Project Scale:</Typography>
                 <Field
@@ -330,7 +330,7 @@ class FlyerFormFields extends Component {
           </Grid>
         </Grid>
 
-        <Grid container justify="flex-end" spacing={16}>
+        <Grid container justify="flex-end" spacing={2}>
           <Grid item>
             <Button
               variant="contained"

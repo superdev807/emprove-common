@@ -55,7 +55,7 @@ describe('InformationModal', () => {
 
     expect(
       component
-        .find('WithStyles(DialogTitle)')
+        .find('WithStyles(ForwardRef(DialogTitle))')
         .children()
         .text()
     ).toBe(title);
@@ -64,7 +64,7 @@ describe('InformationModal', () => {
   it('should display a list of paragraphs for the body', () => {
     component.setProps({ body: ['p1', 'p2', 'p3'] });
 
-    const paragraphs = component.find('WithStyles(DialogContent)').children();
+    const paragraphs = component.find('WithStyles(ForwardRef(DialogContent))').children();
     expect(
       paragraphs
         .at(0)
@@ -89,7 +89,7 @@ describe('InformationModal', () => {
     const terms = [{ id: 1 }, { id: 2 }, { id: 3 }];
     component.setProps({ terms });
 
-    const definitions = component.find('WithStyles(DialogContent) InformationDefinition');
+    const definitions = component.find('WithStyles(ForwardRef(DialogContent)) InformationDefinition');
     expect(definitions.at(0).prop('term')).toBe(terms[0]);
     expect(definitions.at(1).prop('term')).toBe(terms[1]);
     expect(definitions.at(2).prop('term')).toBe(terms[2]);
@@ -99,7 +99,7 @@ describe('InformationModal', () => {
     const images = [{ id: 1, filename: 'image1.png' }, { id: 2, filename: 'image2.png' }, { id: 3, filename: 'image3.png' }];
     component.setProps({ images });
 
-    const informationImages = component.find('WithStyles(DialogContent) InformationImage');
+    const informationImages = component.find('WithStyles(ForwardRef(DialogContent)) InformationImage');
     images.forEach((image, index) => {
       const actualImage = informationImages.at(index).prop('image');
       expect(actualImage.id).toBe(images[index].id);

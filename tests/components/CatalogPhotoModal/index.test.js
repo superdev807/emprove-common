@@ -39,21 +39,21 @@ describe('CatalogPhotoModal component', () => {
   });
 
   it('should display a modal', () => {
-    expect(component.find('WithStyles(Modal)').length).toBe(1);
+    expect(component.find('ForwardRef(Modal)').length).toBe(1);
   });
 
   it('should display a modal whose opening is controlled by open prop', () => {
     component.setProps({ open: true });
-    expect(component.find('WithStyles(Modal)').prop('open')).toBe(true);
+    expect(component.find('ForwardRef(Modal)').prop('open')).toBe(true);
 
     component.setProps({ open: false });
-    expect(component.find('WithStyles(Modal)').prop('open')).toBe(false);
+    expect(component.find('ForwardRef(Modal)').prop('open')).toBe(false);
   });
 
   it('should display a modal that calls onClose prop upon closing', () => {
     const onClose = jest.fn();
     component.setProps({ onClose });
-    expect(component.find('WithStyles(Modal)').prop('onClose')).toBe(onClose);
+    expect(component.find('ForwardRef(Modal)').prop('onClose')).toBe(onClose);
   });
 
   it('should display a CatalogPhoto', () => {

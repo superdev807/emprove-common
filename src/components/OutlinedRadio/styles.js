@@ -23,8 +23,8 @@ export const labelStyles = theme => ({
   label: {
     color: theme.palette.primary.main,
     textAlign: 'center',
-    paddingLeft: theme.spacing.unit,
-    paddingRight: theme.spacing.unit,
+    paddingLeft: theme.spacing(1),
+    paddingRight: theme.spacing(1),
     [theme.breakpoints.up('md')]: {
       minWidth: 80
     }

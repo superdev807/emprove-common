@@ -7,7 +7,7 @@ export default theme => ({
   content: {
     backgroundColor: theme.palette.text.primary,
     borderRadius: 0,
-    padding: `${theme.spacing.unit}px ${theme.spacing.unit * 2}px`,
+    padding: `${theme.spacing(1)}px ${theme.spacing(2)}px`,
     width: '100%',
     maxWidth: '100%'
   },
@@ -16,7 +16,7 @@ export default theme => ({
     padding: 0
   },
   action: {
-    paddingLeft: theme.spacing.unit,
+    paddingLeft: theme.spacing(1),
     color: 'white',
     borderColor: 'white',
     marginRight: 0,
