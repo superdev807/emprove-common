@@ -157,7 +157,7 @@ class SliderField extends Component {
         {helpText && <Typography className={cx('slider-field__helpText', classes.helpTextClassName)} />}
         <Slider
           {...input}
-          classes={{ root: 'slider-field__root', track: 'slider-field__track', trackBefore: 'slider-field__track-before' }}
+          classes={{ root: 'slider-field__root', rail: 'slider-field__track', track: 'slider-field__track-before' }}
           value={this.state.value}
           min={min}
           max={max}
