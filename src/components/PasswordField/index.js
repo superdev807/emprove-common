@@ -140,7 +140,7 @@ export class PasswordField extends Component {
           open={true}
           // open={meterOpen && !(hasMinLengthChars && hasLetters && hasNumbers && hasSpecialChars)}
           transition
-          disablePortal={false}>
+          disablePortal>
           {({ TransitionProps, placement }) => (
             <Fade {...TransitionProps}>
               <Paper aria-hidden={!meterOpen} elevation={5} className={classes.paper}>
