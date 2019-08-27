@@ -34,6 +34,7 @@ export class PasswordField extends Component {
     className: PropTypes.string,
     classes: PropTypes.object.isRequired,
     disabled: PropTypes.bool,
+    errorMessageClass: PropTypes.string,
     fullWidth: PropTypes.bool,
     helperText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     input: PropTypes.object.isRequired,
@@ -132,7 +133,7 @@ export class PasswordField extends Component {
             onFocus={this.handleFocus}
             onBlur={this.handleBlur}
           />
-          {!hideErrorText && touched && error && <FormHelperText className={classes.errorText}>{error}</FormHelperText>}
+          {!hideErrorText && touched && error && <FormHelperText className={this.props.errorMessageClass}>{error}</FormHelperText>}
         </FormControl>
         <Popper
           style={{ position: 'fixed', zIndex: 1 }} // assigning style because doesn't take className

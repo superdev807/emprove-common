@@ -20,9 +20,6 @@ export default theme => ({
   popperClose: {
     zIndex: theme.zIndex.tooltip,
     pointerEvents: 'none'
-  },
-  errorText: {
-    fontSize: 10
   }
 });
 
