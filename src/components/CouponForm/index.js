@@ -39,8 +39,7 @@ class CouponForm extends Component {
         <span className="coupon-form__label">Coupon Code:</span>
         <TextField
           className="coupon-form__input"
-          classes={{ root: 'coupon-form__input-root' }}
-          InputProps={{ classes: { input: 'coupon-form__input-field' } }}
+          InputProps={{ classes: { input: 'coupon-form__input-field', root: 'coupon-form__input-root' } }}
           variant="outlined"
           size="small"
           value={couponCode}
