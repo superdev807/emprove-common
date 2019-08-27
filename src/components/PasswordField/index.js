@@ -104,6 +104,7 @@ export class PasswordField extends Component {
     const hasSpecialChars = passwordValidator.hasSpecialChars(input.value || '');
     const hasMinLengthChars = passwordValidator.hasMinLengthChars(input.value || '');
 
+    console.log('common updated');
     return (
       <div>
         <FormControl className={className} error={touched && !!error} fullWidth={fullWidth}>
