@@ -20,7 +20,10 @@ import styles, { validatorTextStyles } from './styles';
 import { passwordValidator } from '../../utils/validators';
 
 export const ValidationText = withStyles(validatorTextStyles)(({ children, classes, success }) => (
-  <Typography variant="caption" gutterBottom className={cx({ [classes.success]: success, [classes.fail]: !success })}>
+  <Typography
+    variant="caption"
+    gutterBottom
+    className={cx(classes.validationText, { [classes.success]: success, [classes.fail]: !success })}>
     {success ? <IconCheck color="inherit" className={classes.icon} /> : <IconClose color="inherit" className={classes.icon} />}
     <span className={classes.text}>{children}</span>
   </Typography>
@@ -31,6 +34,7 @@ export class PasswordField extends Component {
     className: PropTypes.string,
     classes: PropTypes.object.isRequired,
     disabled: PropTypes.bool,
+    errorMessageClass: PropTypes.string,
     fullWidth: PropTypes.bool,
     helperText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     input: PropTypes.object.isRequired,
@@ -129,9 +133,13 @@ export class PasswordField extends Component {
             onFocus={this.handleFocus}
             onBlur={this.handleBlur}
           />
-          {!hideErrorText && touched && error && <FormHelperText>{error}</FormHelperText>}
+          {!hideErrorText && touched && error && <FormHelperText className={this.props.errorMessageClass}>{error}</FormHelperText>}
         </FormControl>
-        <Popper open={meterOpen && !(hasMinLengthChars && hasLetters && hasNumbers && hasSpecialChars)} transition disablePortal>
+        <Popper
+          style={{ position: 'fixed', zIndex: 1 }} // assigning style because doesn't take className
+          open={meterOpen && !(hasMinLengthChars && hasLetters && hasNumbers && hasSpecialChars)}
+          transition
+          disablePortal>
           {({ TransitionProps, placement }) => (
             <Fade {...TransitionProps}>
               <Paper aria-hidden={!meterOpen} elevation={5} className={classes.paper}>
