@@ -136,7 +136,7 @@ export class PasswordField extends Component {
           {!hideErrorText && touched && error && <FormHelperText>{error}</FormHelperText>}
         </FormControl>
         <Popper
-          className={classes.popper}
+          style={{ zIndex: 1 }}
           // open={meterOpen && !(hasMinLengthChars && hasLetters && hasNumbers && hasSpecialChars)}
           open={true}
           transition
