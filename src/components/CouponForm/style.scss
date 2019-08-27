@@ -28,6 +28,10 @@ require('../../config/colors');
     font-size: 0.8rem;
   }
 
+  &__input-root {
+    height: 100%;
+  }
+
   &__btn {
     box-shadow: none;
     margin-left: 10px;
