@@ -33,6 +33,7 @@ require('../../config/colors');
     margin-left: 10px;
     border-radius: 4px;
     width: 15%;
+    padding: 7px;
 
     @include media('<=md') {
       width: 12%;
