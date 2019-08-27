@@ -136,7 +136,8 @@ export class PasswordField extends Component {
         </FormControl>
         <Popper
           style={{ position: 'fixed', zIndex: 1 }} // assigning style because doesn't take className
-          open={meterOpen && !(hasMinLengthChars && hasLetters && hasNumbers && hasSpecialChars)}
+          open={true}
+          // open={meterOpen && !(hasMinLengthChars && hasLetters && hasNumbers && hasSpecialChars)}
           transition
           disablePortal={false}>
           {({ TransitionProps, placement }) => (
