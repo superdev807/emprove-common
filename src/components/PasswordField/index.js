@@ -67,11 +67,11 @@ export class PasswordField extends Component {
 
   handleBlur = event => {
     const { input, placeholder } = this.props;
-    if (placeholder) {
-      event.target.placeholder = placeholder;
-    }
-    this.setState({ meterOpen: false });
-    input.onBlur(event);
+    // if (placeholder) {
+    //   event.target.placeholder = placeholder;
+    // }
+    // this.setState({ meterOpen: false });
+    // input.onBlur(event);
   };
 
   render() {
@@ -134,7 +134,12 @@ export class PasswordField extends Component {
           />
           {!hideErrorText && touched && error && <FormHelperText>{error}</FormHelperText>}
         </FormControl>
-        <Popper open={meterOpen && !(hasMinLengthChars && hasLetters && hasNumbers && hasSpecialChars)} transition disablePortal>
+        <Popper
+          className={classes.popper}
+          // open={meterOpen && !(hasMinLengthChars && hasLetters && hasNumbers && hasSpecialChars)}
+          open={true}
+          transition
+          disablePortal>
           {({ TransitionProps, placement }) => (
             <Fade {...TransitionProps}>
               <Paper aria-hidden={!meterOpen} elevation={5} className={classes.paper}>

@@ -40,5 +40,8 @@ export const validatorTextStyles = theme => ({
   },
   validationText: {
     display: 'block'
+  },
+  popper: {
+    zIndex: 100
   }
 });
