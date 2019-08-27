@@ -104,6 +104,7 @@ export class PasswordField extends Component {
     const hasSpecialChars = passwordValidator.hasSpecialChars(input.value || '');
     const hasMinLengthChars = passwordValidator.hasMinLengthChars(input.value || '');
 
+    console.log('1');
     return (
       <div>
         <FormControl className={className} error={touched && !!error} fullWidth={fullWidth}>
@@ -135,7 +136,7 @@ export class PasswordField extends Component {
           {!hideErrorText && touched && error && <FormHelperText>{error}</FormHelperText>}
         </FormControl>
         <Popper
-          style={{ position: 'fixed', zIndex: 1 }} // assigning style because doesn't take className
+          style={{ zIndex: 1 }} // assigning style because doesn't take className
           open={true}
           // open={meterOpen && !(hasMinLengthChars && hasLetters && hasNumbers && hasSpecialChars)}
           transition
