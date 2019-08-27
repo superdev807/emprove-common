@@ -20,7 +20,10 @@ import styles, { validatorTextStyles } from './styles';
 import { passwordValidator } from '../../utils/validators';
 
 export const ValidationText = withStyles(validatorTextStyles)(({ children, classes, success }) => (
-  <Typography variant="caption" gutterBottom className={cx({ [classes.success]: success, [classes.fail]: !success })}>
+  <Typography
+    variant="caption"
+    gutterBottom
+    className={cx(classes.validationText, { [classes.success]: success, [classes.fail]: !success })}>
     {success ? <IconCheck color="inherit" className={classes.icon} /> : <IconClose color="inherit" className={classes.icon} />}
     <span className={classes.text}>{children}</span>
   </Typography>

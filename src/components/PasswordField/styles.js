@@ -37,5 +37,8 @@ export const validatorTextStyles = theme => ({
   },
   fail: {
     color: theme.palette.error.main
+  },
+  validationText: {
+    display: 'block'
   }
 });
