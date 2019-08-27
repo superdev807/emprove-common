@@ -132,7 +132,7 @@ export class PasswordField extends Component {
             onFocus={this.handleFocus}
             onBlur={this.handleBlur}
           />
-          {!hideErrorText && touched && error && <FormHelperText>{error}</FormHelperText>}
+          {!hideErrorText && touched && error && <FormHelperText className={classes.errorText}>{error}</FormHelperText>}
         </FormControl>
         <Popper
           style={{ position: 'fixed', zIndex: 1 }} // assigning style because doesn't take className
