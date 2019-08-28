@@ -62,7 +62,7 @@ export class PasswordField extends Component {
   handleFocus = event => {
     const { input } = this.props;
     event.target.placeholder = '';
-    this.setState({ meterOpen: true });
+    this.setState({ meterOpen: true, anchorEl: event.target });
     input.onFocus(event);
   };
 
@@ -71,7 +71,7 @@ export class PasswordField extends Component {
     if (placeholder) {
       event.target.placeholder = placeholder;
     }
-    this.setState({ meterOpen: false });
+    this.setState({ meterOpen: false, anchorEl: null });
     input.onBlur(event);
   };
 
@@ -138,6 +138,7 @@ export class PasswordField extends Component {
         <Popper
           style={{ position: 'fixed', zIndex: 1 }} // assigning style because doesn't take className
           open={meterOpen && !(hasMinLengthChars && hasLetters && hasNumbers && hasSpecialChars)}
+          anchorEl={this.state.anchorEl}
           transition
           disablePortal>
           {({ TransitionProps, placement }) => (
