@@ -5,7 +5,6 @@ import SvgIcon from '@material-ui/core/SvgIcon';
 
 const IconAddCreditCard = props => (
   <SvgIcon x={0} y={0} viewBox="0 0 24 24" xmlSpace="preserve" {...props}>
-    {/* <style>{'.prefix__st1{fill:#888}'}</style> */}
     <path fill="none" d="M0 0h24v24H0z" />
     <path
       className="prefix__st1"

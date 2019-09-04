@@ -20,6 +20,7 @@ class CardForm extends Component {
     email: PropTypes.string.isRequired,
     onSubmit: PropTypes.func.isRequired,
     stripe: PropTypes.object,
+    showCancelSaveButtons: PropTypes.bool,
     theme: PropTypes.object.isRequired
   };
 
@@ -101,7 +102,7 @@ class CardForm extends Component {
             {error}
           </Typography>
         )}
-        {this.props.useTwoBtns ? (
+        {this.props.showCancelSaveButtons ? (
           <div className="card-form__btns-container">
             <Button
               className="card-form__btn-action card-form__btn-action--margin-right"
