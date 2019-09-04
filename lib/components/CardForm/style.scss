@@ -20,4 +20,18 @@ require('../../config/colors');
   &__error {
     margin-bottom: $spacing-unit * 2;
   }
+
+  &__btns-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  &__btn-action {
+    width: 120px;
+
+    &--margin-right {
+      margin-right: 1.5rem;
+    }
+  }
 }
