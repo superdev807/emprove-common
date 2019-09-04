@@ -149,6 +149,7 @@ export { default as IconNewSiteVisitInvites } from './IconNewSiteVisitInvites';
 export { default as IconNewStyle } from './IconNewStyle';
 export { default as IconNewStyleColors } from './IconNewStyleColors';
 export { default as IconNextArrow } from './IconNextArrow';
+export { default as IconNoCreditCard } from './IconNoCreditCard';
 export { default as IconNote } from './IconNote';
 export { default as IconNotesAndPhotos } from './IconNotesAndPhotos';
 export { default as IconOffice } from './IconOffice';
