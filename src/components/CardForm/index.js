@@ -20,6 +20,7 @@ class CardForm extends Component {
     email: PropTypes.string.isRequired,
     onSubmit: PropTypes.func.isRequired,
     stripe: PropTypes.object,
+    showCancelSaveButtons: PropTypes.bool,
     theme: PropTypes.object.isRequired
   };
 
@@ -78,7 +79,7 @@ class CardForm extends Component {
   }
 
   render() {
-    const { disabled, stripe } = this.props;
+    const { disabled, stripe, onCancel } = this.props;
     const { error, tokenCreating } = this.state;
 
     if (stripe === null) {
@@ -101,9 +102,24 @@ class CardForm extends Component {
             {error}
           </Typography>
         )}
-        <Button variant="contained" fullWidth type="submit" color="primary" disabled={tokenCreating || disabled}>
-          {this.props.buttonText}
-        </Button>
+        {this.props.showCancelSaveButtons ? (
+          <div className="card-form__btns-container">
+            <Button
+              className="card-form__btn-action card-form__btn-action--margin-right"
+              variant="text"
+              color="primary"
+              onClick={onCancel ? onCancel : undefined}>
+              Cancel
+            </Button>
+            <Button className="card-form__btn-action" variant="contained" color="primary" type="submit">
+              Save
+            </Button>
+          </div>
+        ) : (
+          <Button variant="contained" fullWidth type="submit" color="primary" disabled={tokenCreating || disabled}>
+            {this.props.buttonText}
+          </Button>
+        )}
       </form>
     );
   }

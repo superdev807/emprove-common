@@ -11,7 +11,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
-import { NumberMask, PhoneNumberMask } from '../../utils/mask';
+import { DateMMYYMask, NumberMask, PhoneNumberMask } from '../../utils/mask';
 import { NumberFormatCustom } from '../../utils/numberFunctions';
 
 import { withStyles } from '@material-ui/core/styles';
@@ -147,6 +147,8 @@ export class InputField extends Component {
       maskingComponent = NumberFormatCustom;
     } else if (mask === 'phoneNumber') {
       maskingComponent = PhoneNumberMask;
+    } else if (mask === 'mmyy') {
+      maskingComponent = DateMMYYMask;
     }
 
     const labelContent = label && (

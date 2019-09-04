@@ -6,6 +6,7 @@ export { default as IconActionNew } from './IconActionNew';
 export { default as IconActionRemove } from './IconActionRemove';
 export { default as IconActionRepaint } from './IconActionRepaint';
 export { default as IconActionReplace } from './IconActionReplace';
+export { default as IconAddCreditCard } from './IconAddCreditCard';
 export { default as IconAddPhotos } from './IconAddPhotos';
 export { default as IconAddPlus } from './IconAddPlus';
 export { default as IconAddress } from './IconAddress';
