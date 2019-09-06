@@ -12,6 +12,15 @@
   }
 }
 
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+  
 @mixin fadeIn {
   @keyframes fadeIn {
     from {
@@ -56,4 +65,13 @@
   animation-iteration-count: $iteration-count;
   animation-direction: alternate;
   animation-play-state: running;
+}
+
+@mixin fadeOut( $duration: 0.5s, $delay: 3s) {
+  animation-name: fadeOut;
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-timing-function: linear;
+  animation-direction: forwards;
+  animation-fill-mode: forwards;
 }
