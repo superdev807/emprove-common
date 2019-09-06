@@ -12,9 +12,10 @@ import styles, { labelStyles, radioStyles } from './styles';
 export const Radio = withStyles(radioStyles)(MuiRadio);
 export const ControlLabel = withStyles(labelStyles)(FormControlLabel);
 
-const OutlinedRadio = ({ checked, classes, className, disabled, label, value, ...props }) =>
-  disabled ? (
-    <ControlLabel className={className} control={<Fragment />} label={label} disabled {...props} />
+const OutlinedRadio = React.forwardRef((props, ref) => {
+  const { checked, classes, className, disabled, label, value, ...otherProps } = props;
+  return disabled ? (
+    <ControlLabel className={className} control={<Fragment />} ref={ref} label={label} disabled {...otherProps} />
   ) : (
     <ControlLabel
       value={value}
@@ -27,9 +28,11 @@ const OutlinedRadio = ({ checked, classes, className, disabled, label, value, ..
           checkedIcon={<RadioButtonChecked className={classes.checkIcon} />}
         />
       }
+      ref={ref}
       label={label}
-      {...props}
+      {...otherProps}
     />
   );
+});
 
 export default withStyles(styles)(OutlinedRadio);
