@@ -53,13 +53,11 @@ export default class TetheredDateTime extends DateTime {
         {input}
         <Popper open={open} anchorEl={anchorEl} placement="bottom-start" transition className="rdtPopper">
           {({ TransitionProps }) => (
-            <Fade {...TransitionProps} timeout={50}>
-              <ClickAwayListener onClickAway={this.handleClickAway}>
-                <Paper className="rdtPicker" elevation={3}>
-                  <CalendarContainer view={currentView} viewProps={this.getComponentProps()} />
-                </Paper>
-              </ClickAwayListener>
-            </Fade>
+            <ClickAwayListener onClickAway={this.handleClickAway}>
+              <Paper className="rdtPicker" elevation={3}>
+                <CalendarContainer view={currentView} viewProps={this.getComponentProps()} />
+              </Paper>
+            </ClickAwayListener>
           )}
         </Popper>
       </div>
