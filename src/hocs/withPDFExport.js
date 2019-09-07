@@ -12,6 +12,7 @@ import { setSnackbar } from '../redux/modules/globalStatus';
 import { show as showModal } from 'redux-modal';
 import { withRouter } from 'react-router';
 import { API_PENDING } from '../redux/api/request';
+import { parseQueryString } from '../utils/pureFunctions';
 import { VIEW_PDF_KIND } from '../config/constants';
 // import { getPartnerFromHost } from '../utils/partnerFunctions';
 
@@ -132,25 +133,26 @@ export default (timezoneSelector, accountSelector) => WrappedComponent => {
     };
 
     handleViewBidBrief = (viewBidId, callback, onClose) => {
-      const { exportBidPdf, match, setSnackbar, showModal, timezone } = this.props;
-      const bidId = viewBidId || match.params.bidId;
+      const bidId = viewBidId || this.props.match.params.bidId;
+      const activationCode = get(parseQueryString(this.props.location.search), 'activationCode') || '';
 
-      exportBidPdf({
+      this.props.exportBidPdf({
         id: bidId,
+        params: { activationCode },
         success: ({ url, fileName }) => {
-          showModal('pdfViewerModal', {
+          this.props.showModal('pdfViewerModal', {
             pdfKind: VIEW_PDF_KIND.FULL_RFP,
             source: url,
             type: 'bid',
             fileName,
             bidId,
             onClose,
-            timezone
+            timezone: this.props.timezone
           });
           callback && callback(true);
         },
         fail: error => {
-          setSnackbar({ message: 'Something went wrong!', variant: 'error' });
+          this.props.setSnackbar({ message: 'Something went wrong!', variant: 'error' });
           callback && callback(false);
         }
       });
