@@ -317,7 +317,8 @@ class ProjectScaleGraph extends Component {
       // angle for the text to be aligned with upper line
       theta = Math.atan((yd - yc) / (xd - xc));
 
-      distanceToUpper = (yb - yd - 6) / 2;
+      const alignConstant = this.props.isPhone ? 10 : -6;
+      distanceToUpper = (yb - yd + alignConstant) / 2;
     }
 
     // to move the text upward vertically
