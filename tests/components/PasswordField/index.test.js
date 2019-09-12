@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Fade from '@material-ui/core/Fade';
+import Popper from '@material-ui/core/Popper';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import IconCheck from '@material-ui/icons/Check';
 import IconClose from '@material-ui/icons/Close';
@@ -36,10 +37,11 @@ describe('PasswordField', () => {
     //The "mount" below is giving the UnhandledPromiseRejectionWarning: TypeError: document.createRange is not a function.
     //So, a fix is added above.
     wrapper = mount(<PasswordField {...props} />);
+    wrapper.setState({ anchorEl: wrapper.find(Input).getDOMNode() });
   });
 
   it('should render dropdown popper on focus', () => {
-    wrapper.setState({ meterOpen: true });
+    wrapper.setState({ meterOpen: true, anchorEl: wrapper.find(Input).getDOMNode() });
     expect(wrapper.find(Fade).length).toBe(1);
   });
 
