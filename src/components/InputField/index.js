@@ -132,7 +132,6 @@ export class InputField extends Component {
     const InputComponent = outlined ? OutlinedInput : Input;
     const moreProps = {};
 
-    console.log('me me me');
     if (outlined) {
       if (typeof inputLabelProps.shrink !== 'undefined') {
         moreProps.notched = inputLabelProps.shrink;
