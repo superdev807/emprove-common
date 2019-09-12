@@ -45,10 +45,10 @@ describe('PasswordField', () => {
     expect(wrapper.find(Fade).length).toBe(1);
   });
 
-  // it('should render dropdown popper on blur', () => {
-  //   wrapper.setState({ meterOpen: false });
-  //   expect(wrapper.find(Fade).length).toBe(0);
-  // });
+  it('should render dropdown popper on blur', () => {
+    wrapper.setState({ meterOpen: false });
+    expect(wrapper.find(Fade).length).toBe(0);
+  });
 
   it('should render value correctly', () => {
     const value = 'P@ssw0rd';
