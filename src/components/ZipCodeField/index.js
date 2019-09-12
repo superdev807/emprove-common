@@ -71,7 +71,7 @@ export class ZipCodeField extends Component {
       if (typeof inputLabelProps.shrink !== 'undefined') {
         moreProps.notched = inputLabelProps.shrink;
       }
-      moreProps.labelWidth = get(this.labelRef, 'current.offsetWidth', 0);
+      moreProps.labelWidth = get(this.labelRef, 'current.offsetWidth') || 0;
     }
 
     const inputComponentProps = {
