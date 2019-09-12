@@ -10,7 +10,6 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
 import { DateMMYYMask, NumberMask, PhoneNumberMask } from '../../utils/mask';
 import { NumberFormatCustom } from '../../utils/numberFunctions';
 
@@ -61,7 +60,6 @@ export class InputField extends Component {
 
   componentDidMount() {
     if (this.props.variant === 'outlined') {
-      this.labelNode = ReactDOM.findDOMNode(this.labelRef.current);
       this.forceUpdate();
     }
   }
@@ -133,11 +131,13 @@ export class InputField extends Component {
     const outlined = variant === 'outlined';
     const InputComponent = outlined ? OutlinedInput : Input;
     const moreProps = {};
+
+    console.log('me me me');
     if (outlined) {
       if (typeof inputLabelProps.shrink !== 'undefined') {
         moreProps.notched = inputLabelProps.shrink;
       }
-      moreProps.labelWidth = (this.labelNode && this.labelNode.offsetWidth) || 0;
+      moreProps.labelWidth = get(this.labelRef, 'current.offsetWidth', 0);
     }
 
     let maskingComponent;

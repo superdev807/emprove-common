@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import cx from 'classnames';
-import ReactDOM from 'react-dom';
+import get from 'lodash/get';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Input from '@material-ui/core/Input';
@@ -30,7 +30,6 @@ export class ZipCodeField extends Component {
 
   componentDidMount() {
     if (this.props.variant === 'outlined') {
-      this.labelNode = ReactDOM.findDOMNode(this.labelRef.current);
       this.forceUpdate();
     }
   }
@@ -72,7 +71,7 @@ export class ZipCodeField extends Component {
       if (typeof inputLabelProps.shrink !== 'undefined') {
         moreProps.notched = inputLabelProps.shrink;
       }
-      moreProps.labelWidth = (this.labelNode && this.labelNode.offsetWidth) || 0;
+      moreProps.labelWidth = get(this.labelRef, 'current.offsetWidth', 0);
     }
 
     const inputComponentProps = {
