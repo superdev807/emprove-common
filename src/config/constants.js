@@ -32,3 +32,7 @@ export const COUPON_VALUE_TYPE = {
   DISCOUNT: 'discount',
   VALUE_DISCOUNT: 'value_discount'
 };
+
+export const FORM = Object.freeze({
+  FLYER: 'flyerForm'
+});
