@@ -7,7 +7,8 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import cx from 'classnames';
 import get from 'lodash/get';
-import { Field } from 'redux-form';
+import { compose } from 'redux';
+import { Field, reduxForm } from 'redux-form';
 import { withStyles } from '@material-ui/core/styles';
 
 import AutoCompleteAddressField from '../AutoCompleteAddressField';
@@ -21,6 +22,7 @@ import RealtorInfo from './components/RealtorInfo';
 import SearchableDropdownField from '../SearchableDropdownField';
 import ZipCodeField from '../ZipCodeField';
 import metaData from '../../data/metaData.json';
+import { FORM } from '~/config/constants';
 
 import styles from './styles';
 
@@ -88,7 +90,7 @@ class FlyerFormFields extends Component {
     const {
       city,
       classes,
-      handleSubmit,
+      flyerForm: { handleSubmit },
       hideRealtorDropdown,
       hideRealtorInfo,
       imageNames,
@@ -346,6 +348,20 @@ class FlyerFormFields extends Component {
             </Button>
           </Grid>
           <Grid item>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={handleSubmit(values =>
+                this.props.onSubmit({
+                  ...values,
+                  shareOnSubmit: true,
+                  imageKey: values.imageKey || snapPriceImage.imageKey
+                })
+              )}>
+              Save & Share
+            </Button>
+          </Grid>
+          <Grid item>
             <Button type="submit" variant="contained" color="primary">
               Save
             </Button>
@@ -357,4 +373,11 @@ class FlyerFormFields extends Component {
   }
 }
 
-export default withStyles(styles)(FlyerFormFields);
+export default compose(
+  reduxForm({
+    form: FORM.FLYER,
+    enableReinitialize: true,
+    propNamespace: FORM.FLYER
+  }),
+  withStyles(styles)
+)(FlyerFormFields);
