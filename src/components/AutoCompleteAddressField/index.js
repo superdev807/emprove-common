@@ -109,7 +109,7 @@ class AutoCompleteAddressField extends Component {
                     )}
                     <OutlinedInput
                       {...getInputProps({
-                        placeholder: 'enter your home address',
+                        placeholder: 'enter home address',
                         className: 'auto-complete-address-field__input',
                         labelWidth: get(this.outlinedFieldLabelRef, 'offsetWidth', 0),
                         inputProps: this.props.inputProps
@@ -119,7 +119,7 @@ class AutoCompleteAddressField extends Component {
                 ) : (
                   <input
                     {...getInputProps({
-                      placeholder: 'enter your home address',
+                      placeholder: 'enter home address',
                       className: 'auto-complete-address-field__input'
                     })}
                   />
@@ -129,7 +129,8 @@ class AutoCompleteAddressField extends Component {
                 <div className="auto-complete-address-field__dropdown">
                   {/*loading && <div>Loading...</div>*/}
                   {suggestions.map(suggestion => (
-                    <div key={suggestion.id}
+                    <div
+                      key={suggestion.id}
                       {...getSuggestionItemProps(suggestion, {
                         className: cx('auto-complete-address-field__dropdown-item', {
                           'auto-complete-address-field__dropdown-item--active': suggestion.active

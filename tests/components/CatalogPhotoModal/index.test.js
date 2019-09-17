@@ -22,7 +22,7 @@ describe('CatalogPhotoModal component', () => {
       ...global.process,
       env: {
         IMGIX_CATALOG_IMAGES_HOST
-      },
+      }
     };
   });
 
@@ -33,7 +33,7 @@ describe('CatalogPhotoModal component', () => {
   beforeEach(() => {
     props = {
       image: undefined,
-      fromContractor: undefined,
+      fromContractor: undefined
     };
     component = shallow(<CatalogPhotoModal {...props} />);
   });
@@ -108,6 +108,11 @@ describe('CatalogPhotoModal component', () => {
     const error = 'Failed to fetch image';
     component.setState({ error });
 
-    expect(component.find('span[className="catalog-photo-modal__message--error"]').children().text()).toBe(error);
+    expect(
+      component
+        .find('span[className="catalog-photo-modal__message--error"]')
+        .children()
+        .text()
+    ).toBe(error);
   });
 });
