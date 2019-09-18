@@ -33,7 +33,8 @@ describe('CatalogPhotoModal component', () => {
   beforeEach(() => {
     props = {
       image: undefined,
-      fromContractor: undefined
+      fromContractor: undefined,
+      open: true
     };
     component = shallow(<CatalogPhotoModal {...props} />);
   });
