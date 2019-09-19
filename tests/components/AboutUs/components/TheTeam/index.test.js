@@ -17,12 +17,10 @@ describe('TheTeam component', () => {
   it('should include all the team members, in order', () => {
     const members = [
       'James Noel',
-      'Linda Lee',
-      'Andrew Pascal',
       'Ervi Bongso',
+      'Andrew Pascal',
       'Tonson Back',
       'Mike Gonzales',
-      'JoAnne McCauley',
       'Domini Noel',
       'Iris Sin',
       'Kiwook Kwon',
