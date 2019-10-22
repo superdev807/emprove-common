@@ -9,7 +9,7 @@ const PROJECT_SCALE = {
   title: 'Project Scale',
   body: [
     'Project Scale defines the high-level amount of work to be undertaken for a project.',
-    'There are four scale packages to help you initially estimate your project’s costs. You can also update.',
+    'There are four scale packages to help you initially estimate your project’s costs. These packages can also be customized.',
     '• Light Refresh – “Freshen it up with a repaint, new flooring, and a few other upgrades”',
     '• Upgrade Finishes – “A facelift for your space, with new hard surfaces and a repaint”',
     '• Light Renovation – “A brand new look, keeping plumbing and walls where they are”',
@@ -21,8 +21,8 @@ const PROJECT_SCALE = {
 const OVERALL_QUALITY = {
   title: 'Project Quality',
   body: [
-    'Project Quality is an overall rating made up of material quality, labor quality, and fit and finish quality.',
-    'Initially you we ask you to select your project’s overall quality rating for the purposes of cost estimation. Once you start a project, you can fine tune the quality rating for each of the features in your project.',
+    'Project Quality is an overall rating made up of material quality, labor quality, and finish quality.',
+    'Initially we ask you to select your project’s overall quality rating for the purposes of cost estimation. Once you start a project, you can fine tune the quality rating for each of the features in your project.',
     'There are five project quality ratings ranging from the least expensive “Best Value” to the most expensive “Luxurious”.'
   ],
   terms: [
